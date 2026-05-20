@@ -1,0 +1,59 @@
+{
+  "code": "eunbi_017_city_street_white_cardigan_073655",
+  "index": 17,
+  "original_file": "base_images/eunbi/스크린샷 2026-05-20 오후 7.36.55.png",
+  "renamed_reference": "characters/woongbbi/eunbi/source_images/eunbi_017_city_street_white_cardigan_073655.jpg",
+  "sha256": "d9c4a9847d1dcd1958bf7ed5c191893cd5cc50bb13ddbdeecea9cafc79e080e0",
+  "width": 1538,
+  "height": 1242,
+  "orientation": "landscape",
+  "scene": "resort_pool_ocean_snorkel",
+  "location_type": "resort, beach, pool, ocean, sunset",
+  "outfit_summary": "green bikini, pink swimwear, rash guard, casual vacation wear",
+  "season_context": "summer",
+  "mood": "active, beachy, playful",
+  "camera_angle": "front, side, underwater, low angle",
+  "shot_type": "swimwear_full_body",
+  "favorite_cues": [
+    "swimming",
+    "snorkeling",
+    "pool",
+    "sunsets"
+  ],
+  "image_based_persona_cues": [
+    "adventurous vacation mood",
+    "physically confident, playful poses"
+  ],
+  "dominant_colors": [
+    "#8c98a7",
+    "#282e2f",
+    "#6b747b",
+    "#aab9c5",
+    "#dee9ec"
+  ],
+  "generation_tags": [
+    "active",
+    "green_bikini",
+    "resort",
+    "resort_pool_ocean_snorkel",
+    "summer"
+  ],
+  "body_part_references": {
+    "face": "characters/woongbbi/eunbi/references/parts/face/eunbi_017_city_street_white_cardigan_073655__face.jpg",
+    "eyes": "characters/woongbbi/eunbi/references/parts/eyes/eunbi_017_city_street_white_cardigan_073655__eyes.jpg",
+    "nose": "characters/woongbbi/eunbi/references/parts/nose/eunbi_017_city_street_white_cardigan_073655__nose.jpg",
+    "mouth": "characters/woongbbi/eunbi/references/parts/mouth/eunbi_017_city_street_white_cardigan_073655__mouth.jpg",
+    "ears": "characters/woongbbi/eunbi/references/parts/ears/eunbi_017_city_street_white_cardigan_073655__ears.jpg",
+    "hair": "characters/woongbbi/eunbi/references/parts/hair/eunbi_017_city_street_white_cardigan_073655__hair.jpg",
+    "neck_shoulders": "characters/woongbbi/eunbi/references/parts/neck_shoulders/eunbi_017_city_street_white_cardigan_073655__neck_shoulders.jpg",
+    "chest_torso": "characters/woongbbi/eunbi/references/parts/chest_torso/eunbi_017_city_street_white_cardigan_073655__chest_torso.jpg",
+    "waist_belly": "characters/woongbbi/eunbi/references/parts/waist_belly/eunbi_017_city_street_white_cardigan_073655__waist_belly.jpg",
+    "arms_hands": "characters/woongbbi/eunbi/references/parts/arms_hands/eunbi_017_city_street_white_cardigan_073655__arms_hands.jpg",
+    "hands": "characters/woongbbi/eunbi/references/parts/hands/eunbi_017_city_street_white_cardigan_073655__hands.jpg",
+    "legs": "characters/woongbbi/eunbi/references/parts/legs/eunbi_017_city_street_white_cardigan_073655__legs.jpg",
+    "feet": "characters/woongbbi/eunbi/references/parts/feet/eunbi_017_city_street_white_cardigan_073655__feet.jpg",
+    "lower_body": "characters/woongbbi/eunbi/references/parts/lower_body/eunbi_017_city_street_white_cardigan_073655__lower_body.jpg",
+    "full_outfit": "characters/woongbbi/eunbi/references/parts/full_outfit/eunbi_017_city_street_white_cardigan_073655__full_outfit.jpg"
+  },
+  "analysis_confidence": "group-level visual analysis from contact sheets plus deterministic crop references"
+}

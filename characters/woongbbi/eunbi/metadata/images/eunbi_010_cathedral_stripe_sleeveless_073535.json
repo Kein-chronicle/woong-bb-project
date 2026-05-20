@@ -1,0 +1,58 @@
+{
+  "code": "eunbi_010_cathedral_stripe_sleeveless_073535",
+  "index": 10,
+  "original_file": "base_images/eunbi/스크린샷 2026-05-20 오후 7.35.35.png",
+  "renamed_reference": "characters/woongbbi/eunbi/source_images/eunbi_010_cathedral_stripe_sleeveless_073535.jpg",
+  "sha256": "f07fc776938ba432e5383cf307f1a87828da07e8551cb8f4a79d5604f3f71499",
+  "width": 1362,
+  "height": 1662,
+  "orientation": "portrait",
+  "scene": "cafe_riverside_station_city",
+  "location_type": "cafe, riverside park, station, city landmark",
+  "outfit_summary": "white cardigan or sleeveless black/white city casual",
+  "season_context": "spring_to_summer",
+  "mood": "bright, approachable, soft smile",
+  "camera_angle": "front selfie and seated three-quarter",
+  "shot_type": "portrait_to_full_body",
+  "favorite_cues": [
+    "cafes",
+    "riverside hangouts",
+    "city walks"
+  ],
+  "image_based_persona_cues": [
+    "warm smile",
+    "easy casual sociability"
+  ],
+  "dominant_colors": [
+    "#6a6060",
+    "#997f7d",
+    "#2f2629",
+    "#aaa1a4",
+    "#b8cbdd"
+  ],
+  "generation_tags": [
+    "bright",
+    "cafe",
+    "cafe_riverside_station_city",
+    "spring_to_summer",
+    "white_cardigan_or_sleeveless_black_white_city_casual"
+  ],
+  "body_part_references": {
+    "face": "characters/woongbbi/eunbi/references/parts/face/eunbi_010_cathedral_stripe_sleeveless_073535__face.jpg",
+    "eyes": "characters/woongbbi/eunbi/references/parts/eyes/eunbi_010_cathedral_stripe_sleeveless_073535__eyes.jpg",
+    "nose": "characters/woongbbi/eunbi/references/parts/nose/eunbi_010_cathedral_stripe_sleeveless_073535__nose.jpg",
+    "mouth": "characters/woongbbi/eunbi/references/parts/mouth/eunbi_010_cathedral_stripe_sleeveless_073535__mouth.jpg",
+    "ears": "characters/woongbbi/eunbi/references/parts/ears/eunbi_010_cathedral_stripe_sleeveless_073535__ears.jpg",
+    "hair": "characters/woongbbi/eunbi/references/parts/hair/eunbi_010_cathedral_stripe_sleeveless_073535__hair.jpg",
+    "neck_shoulders": "characters/woongbbi/eunbi/references/parts/neck_shoulders/eunbi_010_cathedral_stripe_sleeveless_073535__neck_shoulders.jpg",
+    "chest_torso": "characters/woongbbi/eunbi/references/parts/chest_torso/eunbi_010_cathedral_stripe_sleeveless_073535__chest_torso.jpg",
+    "waist_belly": "characters/woongbbi/eunbi/references/parts/waist_belly/eunbi_010_cathedral_stripe_sleeveless_073535__waist_belly.jpg",
+    "arms_hands": "characters/woongbbi/eunbi/references/parts/arms_hands/eunbi_010_cathedral_stripe_sleeveless_073535__arms_hands.jpg",
+    "hands": "characters/woongbbi/eunbi/references/parts/hands/eunbi_010_cathedral_stripe_sleeveless_073535__hands.jpg",
+    "legs": "characters/woongbbi/eunbi/references/parts/legs/eunbi_010_cathedral_stripe_sleeveless_073535__legs.jpg",
+    "feet": "characters/woongbbi/eunbi/references/parts/feet/eunbi_010_cathedral_stripe_sleeveless_073535__feet.jpg",
+    "lower_body": "characters/woongbbi/eunbi/references/parts/lower_body/eunbi_010_cathedral_stripe_sleeveless_073535__lower_body.jpg",
+    "full_outfit": "characters/woongbbi/eunbi/references/parts/full_outfit/eunbi_010_cathedral_stripe_sleeveless_073535__full_outfit.jpg"
+  },
+  "analysis_confidence": "group-level visual analysis from contact sheets plus deterministic crop references"
+}

@@ -1,0 +1,58 @@
+{
+  "code": "eunbi_153_gym_running_beach_play_075903",
+  "index": 153,
+  "original_file": "base_images/eunbi/스크린샷 2026-05-20 오후 7.59.03.png",
+  "renamed_reference": "characters/woongbbi/eunbi/source_images/eunbi_153_gym_running_beach_play_075903.jpg",
+  "sha256": "83e078ec494bb695225142d78d807b82c819247aa88671e2b6da13753b4ec380",
+  "width": 590,
+  "height": 1116,
+  "orientation": "portrait",
+  "scene": "gym_running_beach_play",
+  "location_type": "gym, night running route, beach",
+  "outfit_summary": "sports bra, shorts, rash guard, black swimsuit",
+  "season_context": "summer",
+  "mood": "energetic, sporty, playful",
+  "camera_angle": "mirror selfie, running side, beach candid",
+  "shot_type": "full_body",
+  "favorite_cues": [
+    "running",
+    "gym",
+    "beach games"
+  ],
+  "image_based_persona_cues": [
+    "high-energy playful streak",
+    "sporty confidence"
+  ],
+  "dominant_colors": [
+    "#372d1a",
+    "#403a31",
+    "#211b11",
+    "#5e5039",
+    "#8f7b5b"
+  ],
+  "generation_tags": [
+    "energetic",
+    "gym",
+    "gym_running_beach_play",
+    "sports_bra",
+    "summer"
+  ],
+  "body_part_references": {
+    "face": "characters/woongbbi/eunbi/references/parts/face/eunbi_153_gym_running_beach_play_075903__face.jpg",
+    "eyes": "characters/woongbbi/eunbi/references/parts/eyes/eunbi_153_gym_running_beach_play_075903__eyes.jpg",
+    "nose": "characters/woongbbi/eunbi/references/parts/nose/eunbi_153_gym_running_beach_play_075903__nose.jpg",
+    "mouth": "characters/woongbbi/eunbi/references/parts/mouth/eunbi_153_gym_running_beach_play_075903__mouth.jpg",
+    "ears": "characters/woongbbi/eunbi/references/parts/ears/eunbi_153_gym_running_beach_play_075903__ears.jpg",
+    "hair": "characters/woongbbi/eunbi/references/parts/hair/eunbi_153_gym_running_beach_play_075903__hair.jpg",
+    "neck_shoulders": "characters/woongbbi/eunbi/references/parts/neck_shoulders/eunbi_153_gym_running_beach_play_075903__neck_shoulders.jpg",
+    "chest_torso": "characters/woongbbi/eunbi/references/parts/chest_torso/eunbi_153_gym_running_beach_play_075903__chest_torso.jpg",
+    "waist_belly": "characters/woongbbi/eunbi/references/parts/waist_belly/eunbi_153_gym_running_beach_play_075903__waist_belly.jpg",
+    "arms_hands": "characters/woongbbi/eunbi/references/parts/arms_hands/eunbi_153_gym_running_beach_play_075903__arms_hands.jpg",
+    "hands": "characters/woongbbi/eunbi/references/parts/hands/eunbi_153_gym_running_beach_play_075903__hands.jpg",
+    "legs": "characters/woongbbi/eunbi/references/parts/legs/eunbi_153_gym_running_beach_play_075903__legs.jpg",
+    "feet": "characters/woongbbi/eunbi/references/parts/feet/eunbi_153_gym_running_beach_play_075903__feet.jpg",
+    "lower_body": "characters/woongbbi/eunbi/references/parts/lower_body/eunbi_153_gym_running_beach_play_075903__lower_body.jpg",
+    "full_outfit": "characters/woongbbi/eunbi/references/parts/full_outfit/eunbi_153_gym_running_beach_play_075903__full_outfit.jpg"
+  },
+  "analysis_confidence": "group-level visual analysis from contact sheets plus deterministic crop references"
+}

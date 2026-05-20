@@ -1,0 +1,58 @@
+{
+  "code": "eunbi_071_museum_park_observatory_city_074538",
+  "index": 71,
+  "original_file": "base_images/eunbi/스크린샷 2026-05-20 오후 7.45.38.png",
+  "renamed_reference": "characters/woongbbi/eunbi/source_images/eunbi_071_museum_park_observatory_city_074538.jpg",
+  "sha256": "4c1fd9ac4736d768aeb4b5b60130e7b596f5d5836b71c841ba663e882f1d8dc5",
+  "width": 864,
+  "height": 1170,
+  "orientation": "portrait",
+  "scene": "museum_park_observatory_city",
+  "location_type": "museum, park, observatory, urban landmark",
+  "outfit_summary": "white top with black skirt, cap, soft pink shirt, black skirt",
+  "season_context": "spring_to_autumn",
+  "mood": "polished, curious, touristy",
+  "camera_angle": "front, profile, back view",
+  "shot_type": "full_body_to_half_body",
+  "favorite_cues": [
+    "museums",
+    "city landmarks",
+    "coffee"
+  ],
+  "image_based_persona_cues": [
+    "curious traveler",
+    "stylish but practical"
+  ],
+  "dominant_colors": [
+    "#433f3e",
+    "#5a5658",
+    "#1a1918",
+    "#767576",
+    "#aaa59f"
+  ],
+  "generation_tags": [
+    "museum",
+    "museum_park_observatory_city",
+    "polished",
+    "spring_to_autumn",
+    "white_top_with_black_skirt"
+  ],
+  "body_part_references": {
+    "face": "characters/woongbbi/eunbi/references/parts/face/eunbi_071_museum_park_observatory_city_074538__face.jpg",
+    "eyes": "characters/woongbbi/eunbi/references/parts/eyes/eunbi_071_museum_park_observatory_city_074538__eyes.jpg",
+    "nose": "characters/woongbbi/eunbi/references/parts/nose/eunbi_071_museum_park_observatory_city_074538__nose.jpg",
+    "mouth": "characters/woongbbi/eunbi/references/parts/mouth/eunbi_071_museum_park_observatory_city_074538__mouth.jpg",
+    "ears": "characters/woongbbi/eunbi/references/parts/ears/eunbi_071_museum_park_observatory_city_074538__ears.jpg",
+    "hair": "characters/woongbbi/eunbi/references/parts/hair/eunbi_071_museum_park_observatory_city_074538__hair.jpg",
+    "neck_shoulders": "characters/woongbbi/eunbi/references/parts/neck_shoulders/eunbi_071_museum_park_observatory_city_074538__neck_shoulders.jpg",
+    "chest_torso": "characters/woongbbi/eunbi/references/parts/chest_torso/eunbi_071_museum_park_observatory_city_074538__chest_torso.jpg",
+    "waist_belly": "characters/woongbbi/eunbi/references/parts/waist_belly/eunbi_071_museum_park_observatory_city_074538__waist_belly.jpg",
+    "arms_hands": "characters/woongbbi/eunbi/references/parts/arms_hands/eunbi_071_museum_park_observatory_city_074538__arms_hands.jpg",
+    "hands": "characters/woongbbi/eunbi/references/parts/hands/eunbi_071_museum_park_observatory_city_074538__hands.jpg",
+    "legs": "characters/woongbbi/eunbi/references/parts/legs/eunbi_071_museum_park_observatory_city_074538__legs.jpg",
+    "feet": "characters/woongbbi/eunbi/references/parts/feet/eunbi_071_museum_park_observatory_city_074538__feet.jpg",
+    "lower_body": "characters/woongbbi/eunbi/references/parts/lower_body/eunbi_071_museum_park_observatory_city_074538__lower_body.jpg",
+    "full_outfit": "characters/woongbbi/eunbi/references/parts/full_outfit/eunbi_071_museum_park_observatory_city_074538__full_outfit.jpg"
+  },
+  "analysis_confidence": "group-level visual analysis from contact sheets plus deterministic crop references"
+}

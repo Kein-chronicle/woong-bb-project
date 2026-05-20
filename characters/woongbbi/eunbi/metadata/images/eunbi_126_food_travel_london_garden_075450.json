@@ -1,0 +1,59 @@
+{
+  "code": "eunbi_126_food_travel_london_garden_075450",
+  "index": 126,
+  "original_file": "base_images/eunbi/스크린샷 2026-05-20 오후 7.54.50.png",
+  "renamed_reference": "characters/woongbbi/eunbi/source_images/eunbi_126_food_travel_london_garden_075450.jpg",
+  "sha256": "53743e5830f7aabfad3e5fe9cfccb90e3a38c90d613152c62656954aa1d15efc",
+  "width": 514,
+  "height": 646,
+  "orientation": "portrait",
+  "scene": "food_travel_london_garden",
+  "location_type": "cafe, train, garden, temple, London bridge, restaurant",
+  "outfit_summary": "black dress, white summer dress, black coat, knit top",
+  "season_context": "summer_to_winter",
+  "mood": "food-loving, polished, expressive",
+  "camera_angle": "front portrait, side dining, travel full body",
+  "shot_type": "portrait_to_full_body",
+  "favorite_cues": [
+    "desserts",
+    "restaurants",
+    "flowers",
+    "European city travel"
+  ],
+  "image_based_persona_cues": [
+    "expressive smile",
+    "romantic travel taste"
+  ],
+  "dominant_colors": [
+    "#414238",
+    "#22211e",
+    "#585942",
+    "#6f7054",
+    "#8b8d6d"
+  ],
+  "generation_tags": [
+    "black_dress",
+    "cafe",
+    "food-loving",
+    "food_travel_london_garden",
+    "summer_to_winter"
+  ],
+  "body_part_references": {
+    "face": "characters/woongbbi/eunbi/references/parts/face/eunbi_126_food_travel_london_garden_075450__face.jpg",
+    "eyes": "characters/woongbbi/eunbi/references/parts/eyes/eunbi_126_food_travel_london_garden_075450__eyes.jpg",
+    "nose": "characters/woongbbi/eunbi/references/parts/nose/eunbi_126_food_travel_london_garden_075450__nose.jpg",
+    "mouth": "characters/woongbbi/eunbi/references/parts/mouth/eunbi_126_food_travel_london_garden_075450__mouth.jpg",
+    "ears": "characters/woongbbi/eunbi/references/parts/ears/eunbi_126_food_travel_london_garden_075450__ears.jpg",
+    "hair": "characters/woongbbi/eunbi/references/parts/hair/eunbi_126_food_travel_london_garden_075450__hair.jpg",
+    "neck_shoulders": "characters/woongbbi/eunbi/references/parts/neck_shoulders/eunbi_126_food_travel_london_garden_075450__neck_shoulders.jpg",
+    "chest_torso": "characters/woongbbi/eunbi/references/parts/chest_torso/eunbi_126_food_travel_london_garden_075450__chest_torso.jpg",
+    "waist_belly": "characters/woongbbi/eunbi/references/parts/waist_belly/eunbi_126_food_travel_london_garden_075450__waist_belly.jpg",
+    "arms_hands": "characters/woongbbi/eunbi/references/parts/arms_hands/eunbi_126_food_travel_london_garden_075450__arms_hands.jpg",
+    "hands": "characters/woongbbi/eunbi/references/parts/hands/eunbi_126_food_travel_london_garden_075450__hands.jpg",
+    "legs": "characters/woongbbi/eunbi/references/parts/legs/eunbi_126_food_travel_london_garden_075450__legs.jpg",
+    "feet": "characters/woongbbi/eunbi/references/parts/feet/eunbi_126_food_travel_london_garden_075450__feet.jpg",
+    "lower_body": "characters/woongbbi/eunbi/references/parts/lower_body/eunbi_126_food_travel_london_garden_075450__lower_body.jpg",
+    "full_outfit": "characters/woongbbi/eunbi/references/parts/full_outfit/eunbi_126_food_travel_london_garden_075450__full_outfit.jpg"
+  },
+  "analysis_confidence": "group-level visual analysis from contact sheets plus deterministic crop references"
+}

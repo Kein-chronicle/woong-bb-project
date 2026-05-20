@@ -1,0 +1,58 @@
+{
+  "code": "eunbi_219_riverside_sporty_preppy_city_080821",
+  "index": 219,
+  "original_file": "base_images/eunbi/스크린샷 2026-05-20 오후 8.08.21.png",
+  "renamed_reference": "characters/woongbbi/eunbi/source_images/eunbi_219_riverside_sporty_preppy_city_080821.jpg",
+  "sha256": "a86944dbd5bf8e00379325164d4ea8a9234fe373fc49093d0e4cd4a8b3844728",
+  "width": 928,
+  "height": 1416,
+  "orientation": "portrait",
+  "scene": "riverside_sporty_preppy_city",
+  "location_type": "shopping, riverside park, brick street, bridge district",
+  "outfit_summary": "white sporty top, black biker shorts, plaid skirt, black blazer set",
+  "season_context": "spring_to_autumn",
+  "mood": "sporty-preppy urban",
+  "camera_angle": "front, side, back, walking",
+  "shot_type": "full_body",
+  "favorite_cues": [
+    "shopping",
+    "riverside walks",
+    "iced drinks"
+  ],
+  "image_based_persona_cues": [
+    "lively city confidence",
+    "preppy playful styling"
+  ],
+  "dominant_colors": [
+    "#292727",
+    "#bfb3a3",
+    "#c6bcab",
+    "#837a6d",
+    "#d1c7b9"
+  ],
+  "generation_tags": [
+    "riverside_sporty_preppy_city",
+    "shopping",
+    "sporty-preppy_urban",
+    "spring_to_autumn",
+    "white_sporty_top"
+  ],
+  "body_part_references": {
+    "face": "characters/woongbbi/eunbi/references/parts/face/eunbi_219_riverside_sporty_preppy_city_080821__face.jpg",
+    "eyes": "characters/woongbbi/eunbi/references/parts/eyes/eunbi_219_riverside_sporty_preppy_city_080821__eyes.jpg",
+    "nose": "characters/woongbbi/eunbi/references/parts/nose/eunbi_219_riverside_sporty_preppy_city_080821__nose.jpg",
+    "mouth": "characters/woongbbi/eunbi/references/parts/mouth/eunbi_219_riverside_sporty_preppy_city_080821__mouth.jpg",
+    "ears": "characters/woongbbi/eunbi/references/parts/ears/eunbi_219_riverside_sporty_preppy_city_080821__ears.jpg",
+    "hair": "characters/woongbbi/eunbi/references/parts/hair/eunbi_219_riverside_sporty_preppy_city_080821__hair.jpg",
+    "neck_shoulders": "characters/woongbbi/eunbi/references/parts/neck_shoulders/eunbi_219_riverside_sporty_preppy_city_080821__neck_shoulders.jpg",
+    "chest_torso": "characters/woongbbi/eunbi/references/parts/chest_torso/eunbi_219_riverside_sporty_preppy_city_080821__chest_torso.jpg",
+    "waist_belly": "characters/woongbbi/eunbi/references/parts/waist_belly/eunbi_219_riverside_sporty_preppy_city_080821__waist_belly.jpg",
+    "arms_hands": "characters/woongbbi/eunbi/references/parts/arms_hands/eunbi_219_riverside_sporty_preppy_city_080821__arms_hands.jpg",
+    "hands": "characters/woongbbi/eunbi/references/parts/hands/eunbi_219_riverside_sporty_preppy_city_080821__hands.jpg",
+    "legs": "characters/woongbbi/eunbi/references/parts/legs/eunbi_219_riverside_sporty_preppy_city_080821__legs.jpg",
+    "feet": "characters/woongbbi/eunbi/references/parts/feet/eunbi_219_riverside_sporty_preppy_city_080821__feet.jpg",
+    "lower_body": "characters/woongbbi/eunbi/references/parts/lower_body/eunbi_219_riverside_sporty_preppy_city_080821__lower_body.jpg",
+    "full_outfit": "characters/woongbbi/eunbi/references/parts/full_outfit/eunbi_219_riverside_sporty_preppy_city_080821__full_outfit.jpg"
+  },
+  "analysis_confidence": "group-level visual analysis from contact sheets plus deterministic crop references"
+}

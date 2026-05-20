@@ -1,0 +1,59 @@
+{
+  "code": "eunbi_109_swim_pool_freediving_075046",
+  "index": 109,
+  "original_file": "base_images/eunbi/스크린샷 2026-05-20 오후 7.50.46.png",
+  "renamed_reference": "characters/woongbbi/eunbi/source_images/eunbi_109_swim_pool_freediving_075046.jpg",
+  "sha256": "15baf13a5b645551e061d41f534ccb0068426f5667a17e78426dcf0340727b60",
+  "width": 1012,
+  "height": 1488,
+  "orientation": "portrait",
+  "scene": "swim_pool_freediving",
+  "location_type": "indoor pool, beach, boat, underwater reef",
+  "outfit_summary": "one-piece swimsuit, bikini, swim cap, fins",
+  "season_context": "summer",
+  "mood": "aquatic, athletic, free",
+  "camera_angle": "front, side, underwater long shot",
+  "shot_type": "full_body_underwater",
+  "favorite_cues": [
+    "swimming",
+    "freediving",
+    "boats",
+    "reef water"
+  ],
+  "image_based_persona_cues": [
+    "adventurous water confidence",
+    "playful athletic discipline"
+  ],
+  "dominant_colors": [
+    "#6b6c7b",
+    "#171b1f",
+    "#bec5cf",
+    "#32363d",
+    "#573d34"
+  ],
+  "generation_tags": [
+    "aquatic",
+    "indoor_pool",
+    "one-piece_swimsuit",
+    "summer",
+    "swim_pool_freediving"
+  ],
+  "body_part_references": {
+    "face": "characters/woongbbi/eunbi/references/parts/face/eunbi_109_swim_pool_freediving_075046__face.jpg",
+    "eyes": "characters/woongbbi/eunbi/references/parts/eyes/eunbi_109_swim_pool_freediving_075046__eyes.jpg",
+    "nose": "characters/woongbbi/eunbi/references/parts/nose/eunbi_109_swim_pool_freediving_075046__nose.jpg",
+    "mouth": "characters/woongbbi/eunbi/references/parts/mouth/eunbi_109_swim_pool_freediving_075046__mouth.jpg",
+    "ears": "characters/woongbbi/eunbi/references/parts/ears/eunbi_109_swim_pool_freediving_075046__ears.jpg",
+    "hair": "characters/woongbbi/eunbi/references/parts/hair/eunbi_109_swim_pool_freediving_075046__hair.jpg",
+    "neck_shoulders": "characters/woongbbi/eunbi/references/parts/neck_shoulders/eunbi_109_swim_pool_freediving_075046__neck_shoulders.jpg",
+    "chest_torso": "characters/woongbbi/eunbi/references/parts/chest_torso/eunbi_109_swim_pool_freediving_075046__chest_torso.jpg",
+    "waist_belly": "characters/woongbbi/eunbi/references/parts/waist_belly/eunbi_109_swim_pool_freediving_075046__waist_belly.jpg",
+    "arms_hands": "characters/woongbbi/eunbi/references/parts/arms_hands/eunbi_109_swim_pool_freediving_075046__arms_hands.jpg",
+    "hands": "characters/woongbbi/eunbi/references/parts/hands/eunbi_109_swim_pool_freediving_075046__hands.jpg",
+    "legs": "characters/woongbbi/eunbi/references/parts/legs/eunbi_109_swim_pool_freediving_075046__legs.jpg",
+    "feet": "characters/woongbbi/eunbi/references/parts/feet/eunbi_109_swim_pool_freediving_075046__feet.jpg",
+    "lower_body": "characters/woongbbi/eunbi/references/parts/lower_body/eunbi_109_swim_pool_freediving_075046__lower_body.jpg",
+    "full_outfit": "characters/woongbbi/eunbi/references/parts/full_outfit/eunbi_109_swim_pool_freediving_075046__full_outfit.jpg"
+  },
+  "analysis_confidence": "group-level visual analysis from contact sheets plus deterministic crop references"
+}

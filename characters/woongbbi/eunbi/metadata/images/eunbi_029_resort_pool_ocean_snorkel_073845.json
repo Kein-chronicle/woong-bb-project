@@ -1,0 +1,59 @@
+{
+  "code": "eunbi_029_resort_pool_ocean_snorkel_073845",
+  "index": 29,
+  "original_file": "base_images/eunbi/스크린샷 2026-05-20 오후 7.38.45.png",
+  "renamed_reference": "characters/woongbbi/eunbi/source_images/eunbi_029_resort_pool_ocean_snorkel_073845.jpg",
+  "sha256": "3bed24152ef7899ba5220efcbb63ad3260bcdf8f492489ee2ec3b755c135d58f",
+  "width": 1388,
+  "height": 1690,
+  "orientation": "portrait",
+  "scene": "resort_pool_ocean_snorkel",
+  "location_type": "resort, beach, pool, ocean, sunset",
+  "outfit_summary": "green bikini, pink swimwear, rash guard, casual vacation wear",
+  "season_context": "summer",
+  "mood": "active, beachy, playful",
+  "camera_angle": "front, side, underwater, low angle",
+  "shot_type": "swimwear_full_body",
+  "favorite_cues": [
+    "swimming",
+    "snorkeling",
+    "pool",
+    "sunsets"
+  ],
+  "image_based_persona_cues": [
+    "adventurous vacation mood",
+    "physically confident, playful poses"
+  ],
+  "dominant_colors": [
+    "#a89f8c",
+    "#706a5f",
+    "#212a20",
+    "#544a40",
+    "#3d3c33"
+  ],
+  "generation_tags": [
+    "active",
+    "green_bikini",
+    "resort",
+    "resort_pool_ocean_snorkel",
+    "summer"
+  ],
+  "body_part_references": {
+    "face": "characters/woongbbi/eunbi/references/parts/face/eunbi_029_resort_pool_ocean_snorkel_073845__face.jpg",
+    "eyes": "characters/woongbbi/eunbi/references/parts/eyes/eunbi_029_resort_pool_ocean_snorkel_073845__eyes.jpg",
+    "nose": "characters/woongbbi/eunbi/references/parts/nose/eunbi_029_resort_pool_ocean_snorkel_073845__nose.jpg",
+    "mouth": "characters/woongbbi/eunbi/references/parts/mouth/eunbi_029_resort_pool_ocean_snorkel_073845__mouth.jpg",
+    "ears": "characters/woongbbi/eunbi/references/parts/ears/eunbi_029_resort_pool_ocean_snorkel_073845__ears.jpg",
+    "hair": "characters/woongbbi/eunbi/references/parts/hair/eunbi_029_resort_pool_ocean_snorkel_073845__hair.jpg",
+    "neck_shoulders": "characters/woongbbi/eunbi/references/parts/neck_shoulders/eunbi_029_resort_pool_ocean_snorkel_073845__neck_shoulders.jpg",
+    "chest_torso": "characters/woongbbi/eunbi/references/parts/chest_torso/eunbi_029_resort_pool_ocean_snorkel_073845__chest_torso.jpg",
+    "waist_belly": "characters/woongbbi/eunbi/references/parts/waist_belly/eunbi_029_resort_pool_ocean_snorkel_073845__waist_belly.jpg",
+    "arms_hands": "characters/woongbbi/eunbi/references/parts/arms_hands/eunbi_029_resort_pool_ocean_snorkel_073845__arms_hands.jpg",
+    "hands": "characters/woongbbi/eunbi/references/parts/hands/eunbi_029_resort_pool_ocean_snorkel_073845__hands.jpg",
+    "legs": "characters/woongbbi/eunbi/references/parts/legs/eunbi_029_resort_pool_ocean_snorkel_073845__legs.jpg",
+    "feet": "characters/woongbbi/eunbi/references/parts/feet/eunbi_029_resort_pool_ocean_snorkel_073845__feet.jpg",
+    "lower_body": "characters/woongbbi/eunbi/references/parts/lower_body/eunbi_029_resort_pool_ocean_snorkel_073845__lower_body.jpg",
+    "full_outfit": "characters/woongbbi/eunbi/references/parts/full_outfit/eunbi_029_resort_pool_ocean_snorkel_073845__full_outfit.jpg"
+  },
+  "analysis_confidence": "group-level visual analysis from contact sheets plus deterministic crop references"
+}

@@ -1,0 +1,59 @@
+{
+  "code": "eunbi_189_campus_winter_bookstore_sports_shop_080406",
+  "index": 189,
+  "original_file": "base_images/eunbi/스크린샷 2026-05-20 오후 8.04.06.png",
+  "renamed_reference": "characters/woongbbi/eunbi/source_images/eunbi_189_campus_winter_bookstore_sports_shop_080406.jpg",
+  "sha256": "d8d04faccc8d4d72e32f9d2eca577de2698c5dcfd3a0417c2f4c37cc6b3b82b6",
+  "width": 1026,
+  "height": 1556,
+  "orientation": "portrait",
+  "scene": "campus_winter_bookstore_sports_shop",
+  "location_type": "campus, fitting room, observatory, bookstore, outdoor fire, sports shop",
+  "outfit_summary": "pink sweatshirt, quilted coat, fuzzy coat, beanie, gray/black sportswear",
+  "season_context": "winter",
+  "mood": "cozy, studious, sporty",
+  "camera_angle": "mirror, seated, profile, full body",
+  "shot_type": "portrait_to_full_body",
+  "favorite_cues": [
+    "books",
+    "shopping",
+    "warm indoor cafes",
+    "winter outings"
+  ],
+  "image_based_persona_cues": [
+    "cozy intellectual note",
+    "practical sporty side"
+  ],
+  "dominant_colors": [
+    "#514534",
+    "#1a1a19",
+    "#5d513f",
+    "#393126",
+    "#7c7366"
+  ],
+  "generation_tags": [
+    "campus",
+    "campus_winter_bookstore_sports_shop",
+    "cozy",
+    "pink_sweatshirt",
+    "winter"
+  ],
+  "body_part_references": {
+    "face": "characters/woongbbi/eunbi/references/parts/face/eunbi_189_campus_winter_bookstore_sports_shop_080406__face.jpg",
+    "eyes": "characters/woongbbi/eunbi/references/parts/eyes/eunbi_189_campus_winter_bookstore_sports_shop_080406__eyes.jpg",
+    "nose": "characters/woongbbi/eunbi/references/parts/nose/eunbi_189_campus_winter_bookstore_sports_shop_080406__nose.jpg",
+    "mouth": "characters/woongbbi/eunbi/references/parts/mouth/eunbi_189_campus_winter_bookstore_sports_shop_080406__mouth.jpg",
+    "ears": "characters/woongbbi/eunbi/references/parts/ears/eunbi_189_campus_winter_bookstore_sports_shop_080406__ears.jpg",
+    "hair": "characters/woongbbi/eunbi/references/parts/hair/eunbi_189_campus_winter_bookstore_sports_shop_080406__hair.jpg",
+    "neck_shoulders": "characters/woongbbi/eunbi/references/parts/neck_shoulders/eunbi_189_campus_winter_bookstore_sports_shop_080406__neck_shoulders.jpg",
+    "chest_torso": "characters/woongbbi/eunbi/references/parts/chest_torso/eunbi_189_campus_winter_bookstore_sports_shop_080406__chest_torso.jpg",
+    "waist_belly": "characters/woongbbi/eunbi/references/parts/waist_belly/eunbi_189_campus_winter_bookstore_sports_shop_080406__waist_belly.jpg",
+    "arms_hands": "characters/woongbbi/eunbi/references/parts/arms_hands/eunbi_189_campus_winter_bookstore_sports_shop_080406__arms_hands.jpg",
+    "hands": "characters/woongbbi/eunbi/references/parts/hands/eunbi_189_campus_winter_bookstore_sports_shop_080406__hands.jpg",
+    "legs": "characters/woongbbi/eunbi/references/parts/legs/eunbi_189_campus_winter_bookstore_sports_shop_080406__legs.jpg",
+    "feet": "characters/woongbbi/eunbi/references/parts/feet/eunbi_189_campus_winter_bookstore_sports_shop_080406__feet.jpg",
+    "lower_body": "characters/woongbbi/eunbi/references/parts/lower_body/eunbi_189_campus_winter_bookstore_sports_shop_080406__lower_body.jpg",
+    "full_outfit": "characters/woongbbi/eunbi/references/parts/full_outfit/eunbi_189_campus_winter_bookstore_sports_shop_080406__full_outfit.jpg"
+  },
+  "analysis_confidence": "group-level visual analysis from contact sheets plus deterministic crop references"
+}

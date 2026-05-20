@@ -1,0 +1,6 @@
+telegram-session.env
+*.log
+session/
+.DS_Store
+**/.DS_Store
+working/

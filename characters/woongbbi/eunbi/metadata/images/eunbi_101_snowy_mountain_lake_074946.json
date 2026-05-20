@@ -1,0 +1,58 @@
+{
+  "code": "eunbi_101_snowy_mountain_lake_074946",
+  "index": 101,
+  "original_file": "base_images/eunbi/스크린샷 2026-05-20 오후 7.49.46.png",
+  "renamed_reference": "characters/woongbbi/eunbi/source_images/eunbi_101_snowy_mountain_lake_074946.jpg",
+  "sha256": "5661b5cabb3cb9f172c3783bb544bc0cd6b24550a873dabacc64429a8eff839a",
+  "width": 1384,
+  "height": 900,
+  "orientation": "landscape",
+  "scene": "snowy_mountain_lake",
+  "location_type": "snowy forest, mountain lake, alpine overlook",
+  "outfit_summary": "hoodie, puffer jacket, winter outerwear",
+  "season_context": "winter",
+  "mood": "cozy, resilient, scenic",
+  "camera_angle": "front, profile, selfie, walking",
+  "shot_type": "full_body_to_portrait",
+  "favorite_cues": [
+    "snow",
+    "mountains",
+    "warm drinks"
+  ],
+  "image_based_persona_cues": [
+    "quiet endurance",
+    "enjoys dramatic nature settings"
+  ],
+  "dominant_colors": [
+    "#7a9fcc",
+    "#151929",
+    "#bad0e1",
+    "#343244",
+    "#5f7397"
+  ],
+  "generation_tags": [
+    "cozy",
+    "hoodie",
+    "snowy_forest",
+    "snowy_mountain_lake",
+    "winter"
+  ],
+  "body_part_references": {
+    "face": "characters/woongbbi/eunbi/references/parts/face/eunbi_101_snowy_mountain_lake_074946__face.jpg",
+    "eyes": "characters/woongbbi/eunbi/references/parts/eyes/eunbi_101_snowy_mountain_lake_074946__eyes.jpg",
+    "nose": "characters/woongbbi/eunbi/references/parts/nose/eunbi_101_snowy_mountain_lake_074946__nose.jpg",
+    "mouth": "characters/woongbbi/eunbi/references/parts/mouth/eunbi_101_snowy_mountain_lake_074946__mouth.jpg",
+    "ears": "characters/woongbbi/eunbi/references/parts/ears/eunbi_101_snowy_mountain_lake_074946__ears.jpg",
+    "hair": "characters/woongbbi/eunbi/references/parts/hair/eunbi_101_snowy_mountain_lake_074946__hair.jpg",
+    "neck_shoulders": "characters/woongbbi/eunbi/references/parts/neck_shoulders/eunbi_101_snowy_mountain_lake_074946__neck_shoulders.jpg",
+    "chest_torso": "characters/woongbbi/eunbi/references/parts/chest_torso/eunbi_101_snowy_mountain_lake_074946__chest_torso.jpg",
+    "waist_belly": "characters/woongbbi/eunbi/references/parts/waist_belly/eunbi_101_snowy_mountain_lake_074946__waist_belly.jpg",
+    "arms_hands": "characters/woongbbi/eunbi/references/parts/arms_hands/eunbi_101_snowy_mountain_lake_074946__arms_hands.jpg",
+    "hands": "characters/woongbbi/eunbi/references/parts/hands/eunbi_101_snowy_mountain_lake_074946__hands.jpg",
+    "legs": "characters/woongbbi/eunbi/references/parts/legs/eunbi_101_snowy_mountain_lake_074946__legs.jpg",
+    "feet": "characters/woongbbi/eunbi/references/parts/feet/eunbi_101_snowy_mountain_lake_074946__feet.jpg",
+    "lower_body": "characters/woongbbi/eunbi/references/parts/lower_body/eunbi_101_snowy_mountain_lake_074946__lower_body.jpg",
+    "full_outfit": "characters/woongbbi/eunbi/references/parts/full_outfit/eunbi_101_snowy_mountain_lake_074946__full_outfit.jpg"
+  },
+  "analysis_confidence": "group-level visual analysis from contact sheets plus deterministic crop references"
+}

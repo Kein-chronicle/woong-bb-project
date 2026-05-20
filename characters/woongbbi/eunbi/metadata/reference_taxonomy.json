@@ -1,0 +1,2114 @@
+{
+  "face_front_best": [
+    {
+      "index": 6,
+      "code": "eunbi_006_cafe_smile_black_sleeveless_073456",
+      "source": "characters/woongbbi/eunbi/references/curated/face_front_best/eunbi_006_cafe_smile_black_sleeveless_073456.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/face_front_best/eunbi_006_cafe_smile_black_sleeveless_073456__preferred_face.jpg",
+      "scene": "cafe_riverside_station_city",
+      "season": "spring_to_summer",
+      "outfit": "white cardigan or sleeveless black/white city casual"
+    },
+    {
+      "index": 9,
+      "code": "eunbi_009_station_selfie_white_knit_073523",
+      "source": "characters/woongbbi/eunbi/references/curated/face_front_best/eunbi_009_station_selfie_white_knit_073523.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/face_front_best/eunbi_009_station_selfie_white_knit_073523__preferred_face.jpg",
+      "scene": "cafe_riverside_station_city",
+      "season": "spring_to_summer",
+      "outfit": "white cardigan or sleeveless black/white city casual"
+    },
+    {
+      "index": 15,
+      "code": "eunbi_015_anime_wall_fuzzy_hat_073630",
+      "source": "characters/woongbbi/eunbi/references/curated/face_front_best/eunbi_015_anime_wall_fuzzy_hat_073630.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/face_front_best/eunbi_015_anime_wall_fuzzy_hat_073630__preferred_face.jpg",
+      "scene": "resort_pool_ocean_snorkel",
+      "season": "summer",
+      "outfit": "green bikini, pink swimwear, rash guard, casual vacation wear"
+    },
+    {
+      "index": 16,
+      "code": "eunbi_016_doorway_fuzzy_hat_peace_073639",
+      "source": "characters/woongbbi/eunbi/references/curated/face_front_best/eunbi_016_doorway_fuzzy_hat_peace_073639.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/face_front_best/eunbi_016_doorway_fuzzy_hat_peace_073639__preferred_face.jpg",
+      "scene": "resort_pool_ocean_snorkel",
+      "season": "summer",
+      "outfit": "green bikini, pink swimwear, rash guard, casual vacation wear"
+    },
+    {
+      "index": 42,
+      "code": "eunbi_042_tennis_court_autumn_walk_074047",
+      "source": "characters/woongbbi/eunbi/references/curated/face_front_best/eunbi_042_tennis_court_autumn_walk_074047.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/face_front_best/eunbi_042_tennis_court_autumn_walk_074047__preferred_face.jpg",
+      "scene": "tennis_court_autumn_walk",
+      "season": "autumn",
+      "outfit": "oversized hoodie or sweatshirt with shorts and sneakers"
+    },
+    {
+      "index": 60,
+      "code": "eunbi_060_museum_park_observatory_city_074346",
+      "source": "characters/woongbbi/eunbi/references/curated/face_front_best/eunbi_060_museum_park_observatory_city_074346.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/face_front_best/eunbi_060_museum_park_observatory_city_074346__preferred_face.jpg",
+      "scene": "museum_park_observatory_city",
+      "season": "spring_to_autumn",
+      "outfit": "white top with black skirt, cap, soft pink shirt, black skirt"
+    },
+    {
+      "index": 83,
+      "code": "eunbi_083_campus_river_mountain_fall_074709",
+      "source": "characters/woongbbi/eunbi/references/curated/face_front_best/eunbi_083_campus_river_mountain_fall_074709.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/face_front_best/eunbi_083_campus_river_mountain_fall_074709__preferred_face.jpg",
+      "scene": "campus_river_mountain_fall",
+      "season": "autumn_to_winter",
+      "outfit": "black jacket, pink knit, white cardigan, brown jacket, fleece hoodie"
+    },
+    {
+      "index": 111,
+      "code": "eunbi_111_swim_pool_freediving_075106",
+      "source": "characters/woongbbi/eunbi/references/curated/face_front_best/eunbi_111_swim_pool_freediving_075106.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/face_front_best/eunbi_111_swim_pool_freediving_075106__preferred_face.jpg",
+      "scene": "swim_pool_freediving",
+      "season": "summer",
+      "outfit": "one-piece swimsuit, bikini, swim cap, fins"
+    },
+    {
+      "index": 128,
+      "code": "eunbi_128_food_travel_london_garden_075505",
+      "source": "characters/woongbbi/eunbi/references/curated/face_front_best/eunbi_128_food_travel_london_garden_075505.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/face_front_best/eunbi_128_food_travel_london_garden_075505__preferred_face.jpg",
+      "scene": "food_travel_london_garden",
+      "season": "summer_to_winter",
+      "outfit": "black dress, white summer dress, black coat, knit top"
+    },
+    {
+      "index": 147,
+      "code": "eunbi_147_food_travel_london_garden_075812",
+      "source": "characters/woongbbi/eunbi/references/curated/face_front_best/eunbi_147_food_travel_london_garden_075812.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/face_front_best/eunbi_147_food_travel_london_garden_075812__preferred_face.jpg",
+      "scene": "food_travel_london_garden",
+      "season": "summer_to_winter",
+      "outfit": "black dress, white summer dress, black coat, knit top"
+    },
+    {
+      "index": 170,
+      "code": "eunbi_170_dining_autumn_city_casual_080126",
+      "source": "characters/woongbbi/eunbi/references/curated/face_front_best/eunbi_170_dining_autumn_city_casual_080126.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/face_front_best/eunbi_170_dining_autumn_city_casual_080126__preferred_face.jpg",
+      "scene": "dining_autumn_city_casual",
+      "season": "autumn",
+      "outfit": "dark blouse, red sleeveless knit, hoodie, leather jacket, sunglasses"
+    },
+    {
+      "index": 183,
+      "code": "eunbi_183_campus_winter_bookstore_sports_shop_080307",
+      "source": "characters/woongbbi/eunbi/references/curated/face_front_best/eunbi_183_campus_winter_bookstore_sports_shop_080307.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/face_front_best/eunbi_183_campus_winter_bookstore_sports_shop_080307__preferred_face.jpg",
+      "scene": "campus_winter_bookstore_sports_shop",
+      "season": "winter",
+      "outfit": "pink sweatshirt, quilted coat, fuzzy coat, beanie, gray/black sportswear"
+    },
+    {
+      "index": 195,
+      "code": "eunbi_195_campus_winter_bookstore_sports_shop_080452",
+      "source": "characters/woongbbi/eunbi/references/curated/face_front_best/eunbi_195_campus_winter_bookstore_sports_shop_080452.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/face_front_best/eunbi_195_campus_winter_bookstore_sports_shop_080452__preferred_face.jpg",
+      "scene": "campus_winter_bookstore_sports_shop",
+      "season": "winter",
+      "outfit": "pink sweatshirt, quilted coat, fuzzy coat, beanie, gray/black sportswear"
+    },
+    {
+      "index": 203,
+      "code": "eunbi_203_cafe_mirror_fitting_room_080603",
+      "source": "characters/woongbbi/eunbi/references/curated/face_front_best/eunbi_203_cafe_mirror_fitting_room_080603.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/face_front_best/eunbi_203_cafe_mirror_fitting_room_080603__preferred_face.jpg",
+      "scene": "cafe_mirror_fitting_room",
+      "season": "spring_to_autumn",
+      "outfit": "black/cream fitted tops, gray pants, mini skirt, ankle boots"
+    },
+    {
+      "index": 230,
+      "code": "eunbi_230_close_portrait_cafe_evening_080950",
+      "source": "characters/woongbbi/eunbi/references/curated/face_front_best/eunbi_230_close_portrait_cafe_evening_080950.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/face_front_best/eunbi_230_close_portrait_cafe_evening_080950__preferred_face.jpg",
+      "scene": "close_portrait_cafe_evening",
+      "season": "autumn_to_winter",
+      "outfit": "blue fuzzy knit, graphic tee with glasses, formal black blazer, black evening dress"
+    },
+    {
+      "index": 231,
+      "code": "eunbi_231_close_portrait_cafe_evening_081030",
+      "source": "characters/woongbbi/eunbi/references/curated/face_front_best/eunbi_231_close_portrait_cafe_evening_081030.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/face_front_best/eunbi_231_close_portrait_cafe_evening_081030__preferred_face.jpg",
+      "scene": "close_portrait_cafe_evening",
+      "season": "autumn_to_winter",
+      "outfit": "blue fuzzy knit, graphic tee with glasses, formal black blazer, black evening dress"
+    },
+    {
+      "index": 232,
+      "code": "eunbi_232_close_portrait_cafe_evening_081043",
+      "source": "characters/woongbbi/eunbi/references/curated/face_front_best/eunbi_232_close_portrait_cafe_evening_081043.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/face_front_best/eunbi_232_close_portrait_cafe_evening_081043__preferred_face.jpg",
+      "scene": "close_portrait_cafe_evening",
+      "season": "autumn_to_winter",
+      "outfit": "blue fuzzy knit, graphic tee with glasses, formal black blazer, black evening dress"
+    },
+    {
+      "index": 233,
+      "code": "eunbi_233_close_portrait_cafe_evening_081054",
+      "source": "characters/woongbbi/eunbi/references/curated/face_front_best/eunbi_233_close_portrait_cafe_evening_081054.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/face_front_best/eunbi_233_close_portrait_cafe_evening_081054__preferred_face.jpg",
+      "scene": "close_portrait_cafe_evening",
+      "season": "autumn_to_winter",
+      "outfit": "blue fuzzy knit, graphic tee with glasses, formal black blazer, black evening dress"
+    }
+  ],
+  "face_side_profile": [
+    {
+      "index": 62,
+      "code": "eunbi_062_museum_park_observatory_city_074410",
+      "source": "characters/woongbbi/eunbi/references/curated/face_side_profile/eunbi_062_museum_park_observatory_city_074410.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/face_side_profile/eunbi_062_museum_park_observatory_city_074410__preferred_face.jpg",
+      "scene": "museum_park_observatory_city",
+      "season": "spring_to_autumn",
+      "outfit": "white top with black skirt, cap, soft pink shirt, black skirt"
+    },
+    {
+      "index": 67,
+      "code": "eunbi_067_museum_park_observatory_city_074503",
+      "source": "characters/woongbbi/eunbi/references/curated/face_side_profile/eunbi_067_museum_park_observatory_city_074503.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/face_side_profile/eunbi_067_museum_park_observatory_city_074503__preferred_face.jpg",
+      "scene": "museum_park_observatory_city",
+      "season": "spring_to_autumn",
+      "outfit": "white top with black skirt, cap, soft pink shirt, black skirt"
+    },
+    {
+      "index": 69,
+      "code": "eunbi_069_museum_park_observatory_city_074516",
+      "source": "characters/woongbbi/eunbi/references/curated/face_side_profile/eunbi_069_museum_park_observatory_city_074516.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/face_side_profile/eunbi_069_museum_park_observatory_city_074516__preferred_face.jpg",
+      "scene": "museum_park_observatory_city",
+      "season": "spring_to_autumn",
+      "outfit": "white top with black skirt, cap, soft pink shirt, black skirt"
+    },
+    {
+      "index": 76,
+      "code": "eunbi_076_campus_river_mountain_fall_074615",
+      "source": "characters/woongbbi/eunbi/references/curated/face_side_profile/eunbi_076_campus_river_mountain_fall_074615.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/face_side_profile/eunbi_076_campus_river_mountain_fall_074615__preferred_face.jpg",
+      "scene": "campus_river_mountain_fall",
+      "season": "autumn_to_winter",
+      "outfit": "black jacket, pink knit, white cardigan, brown jacket, fleece hoodie"
+    },
+    {
+      "index": 87,
+      "code": "eunbi_087_campus_river_mountain_fall_074739",
+      "source": "characters/woongbbi/eunbi/references/curated/face_side_profile/eunbi_087_campus_river_mountain_fall_074739.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/face_side_profile/eunbi_087_campus_river_mountain_fall_074739__preferred_face.jpg",
+      "scene": "campus_river_mountain_fall",
+      "season": "autumn_to_winter",
+      "outfit": "black jacket, pink knit, white cardigan, brown jacket, fleece hoodie"
+    },
+    {
+      "index": 93,
+      "code": "eunbi_093_snowy_mountain_lake_074843",
+      "source": "characters/woongbbi/eunbi/references/curated/face_side_profile/eunbi_093_snowy_mountain_lake_074843.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/face_side_profile/eunbi_093_snowy_mountain_lake_074843__preferred_face.jpg",
+      "scene": "snowy_mountain_lake",
+      "season": "winter",
+      "outfit": "hoodie, puffer jacket, winter outerwear"
+    },
+    {
+      "index": 99,
+      "code": "eunbi_099_snowy_mountain_lake_074927",
+      "source": "characters/woongbbi/eunbi/references/curated/face_side_profile/eunbi_099_snowy_mountain_lake_074927.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/face_side_profile/eunbi_099_snowy_mountain_lake_074927__preferred_face.jpg",
+      "scene": "snowy_mountain_lake",
+      "season": "winter",
+      "outfit": "hoodie, puffer jacket, winter outerwear"
+    },
+    {
+      "index": 102,
+      "code": "eunbi_102_swim_pool_freediving_074957",
+      "source": "characters/woongbbi/eunbi/references/curated/face_side_profile/eunbi_102_swim_pool_freediving_074957.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/face_side_profile/eunbi_102_swim_pool_freediving_074957__preferred_face.jpg",
+      "scene": "swim_pool_freediving",
+      "season": "summer",
+      "outfit": "one-piece swimsuit, bikini, swim cap, fins"
+    },
+    {
+      "index": 123,
+      "code": "eunbi_123_food_travel_london_garden_075350",
+      "source": "characters/woongbbi/eunbi/references/curated/face_side_profile/eunbi_123_food_travel_london_garden_075350.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/face_side_profile/eunbi_123_food_travel_london_garden_075350__preferred_face.jpg",
+      "scene": "food_travel_london_garden",
+      "season": "summer_to_winter",
+      "outfit": "black dress, white summer dress, black coat, knit top"
+    },
+    {
+      "index": 129,
+      "code": "eunbi_129_food_travel_london_garden_075516",
+      "source": "characters/woongbbi/eunbi/references/curated/face_side_profile/eunbi_129_food_travel_london_garden_075516.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/face_side_profile/eunbi_129_food_travel_london_garden_075516__preferred_face.jpg",
+      "scene": "food_travel_london_garden",
+      "season": "summer_to_winter",
+      "outfit": "black dress, white summer dress, black coat, knit top"
+    },
+    {
+      "index": 141,
+      "code": "eunbi_141_food_travel_london_garden_075654",
+      "source": "characters/woongbbi/eunbi/references/curated/face_side_profile/eunbi_141_food_travel_london_garden_075654.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/face_side_profile/eunbi_141_food_travel_london_garden_075654__preferred_face.jpg",
+      "scene": "food_travel_london_garden",
+      "season": "summer_to_winter",
+      "outfit": "black dress, white summer dress, black coat, knit top"
+    },
+    {
+      "index": 144,
+      "code": "eunbi_144_food_travel_london_garden_075722",
+      "source": "characters/woongbbi/eunbi/references/curated/face_side_profile/eunbi_144_food_travel_london_garden_075722.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/face_side_profile/eunbi_144_food_travel_london_garden_075722__preferred_face.jpg",
+      "scene": "food_travel_london_garden",
+      "season": "summer_to_winter",
+      "outfit": "black dress, white summer dress, black coat, knit top"
+    },
+    {
+      "index": 162,
+      "code": "eunbi_162_dining_autumn_city_casual_080016",
+      "source": "characters/woongbbi/eunbi/references/curated/face_side_profile/eunbi_162_dining_autumn_city_casual_080016.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/face_side_profile/eunbi_162_dining_autumn_city_casual_080016__preferred_face.jpg",
+      "scene": "dining_autumn_city_casual",
+      "season": "autumn",
+      "outfit": "dark blouse, red sleeveless knit, hoodie, leather jacket, sunglasses"
+    },
+    {
+      "index": 201,
+      "code": "eunbi_201_cafe_mirror_fitting_room_080542",
+      "source": "characters/woongbbi/eunbi/references/curated/face_side_profile/eunbi_201_cafe_mirror_fitting_room_080542.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/face_side_profile/eunbi_201_cafe_mirror_fitting_room_080542__preferred_face.jpg",
+      "scene": "cafe_mirror_fitting_room",
+      "season": "spring_to_autumn",
+      "outfit": "black/cream fitted tops, gray pants, mini skirt, ankle boots"
+    }
+  ],
+  "hair_reference": [
+    {
+      "index": 47,
+      "code": "eunbi_047_tennis_court_autumn_walk_074143",
+      "source": "characters/woongbbi/eunbi/references/curated/hair_reference/eunbi_047_tennis_court_autumn_walk_074143.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/hair_reference/eunbi_047_tennis_court_autumn_walk_074143__preferred_hair.jpg",
+      "scene": "tennis_court_autumn_walk",
+      "season": "autumn",
+      "outfit": "oversized hoodie or sweatshirt with shorts and sneakers"
+    },
+    {
+      "index": 55,
+      "code": "eunbi_055_museum_park_observatory_city_074308",
+      "source": "characters/woongbbi/eunbi/references/curated/hair_reference/eunbi_055_museum_park_observatory_city_074308.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/hair_reference/eunbi_055_museum_park_observatory_city_074308__preferred_hair.jpg",
+      "scene": "museum_park_observatory_city",
+      "season": "spring_to_autumn",
+      "outfit": "white top with black skirt, cap, soft pink shirt, black skirt"
+    },
+    {
+      "index": 67,
+      "code": "eunbi_067_museum_park_observatory_city_074503",
+      "source": "characters/woongbbi/eunbi/references/curated/hair_reference/eunbi_067_museum_park_observatory_city_074503.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/hair_reference/eunbi_067_museum_park_observatory_city_074503__preferred_hair.jpg",
+      "scene": "museum_park_observatory_city",
+      "season": "spring_to_autumn",
+      "outfit": "white top with black skirt, cap, soft pink shirt, black skirt"
+    },
+    {
+      "index": 68,
+      "code": "eunbi_068_museum_park_observatory_city_074510",
+      "source": "characters/woongbbi/eunbi/references/curated/hair_reference/eunbi_068_museum_park_observatory_city_074510.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/hair_reference/eunbi_068_museum_park_observatory_city_074510__preferred_hair.jpg",
+      "scene": "museum_park_observatory_city",
+      "season": "spring_to_autumn",
+      "outfit": "white top with black skirt, cap, soft pink shirt, black skirt"
+    },
+    {
+      "index": 69,
+      "code": "eunbi_069_museum_park_observatory_city_074516",
+      "source": "characters/woongbbi/eunbi/references/curated/hair_reference/eunbi_069_museum_park_observatory_city_074516.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/hair_reference/eunbi_069_museum_park_observatory_city_074516__preferred_hair.jpg",
+      "scene": "museum_park_observatory_city",
+      "season": "spring_to_autumn",
+      "outfit": "white top with black skirt, cap, soft pink shirt, black skirt"
+    },
+    {
+      "index": 77,
+      "code": "eunbi_077_campus_river_mountain_fall_074621",
+      "source": "characters/woongbbi/eunbi/references/curated/hair_reference/eunbi_077_campus_river_mountain_fall_074621.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/hair_reference/eunbi_077_campus_river_mountain_fall_074621__preferred_hair.jpg",
+      "scene": "campus_river_mountain_fall",
+      "season": "autumn_to_winter",
+      "outfit": "black jacket, pink knit, white cardigan, brown jacket, fleece hoodie"
+    },
+    {
+      "index": 83,
+      "code": "eunbi_083_campus_river_mountain_fall_074709",
+      "source": "characters/woongbbi/eunbi/references/curated/hair_reference/eunbi_083_campus_river_mountain_fall_074709.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/hair_reference/eunbi_083_campus_river_mountain_fall_074709__preferred_hair.jpg",
+      "scene": "campus_river_mountain_fall",
+      "season": "autumn_to_winter",
+      "outfit": "black jacket, pink knit, white cardigan, brown jacket, fleece hoodie"
+    },
+    {
+      "index": 111,
+      "code": "eunbi_111_swim_pool_freediving_075106",
+      "source": "characters/woongbbi/eunbi/references/curated/hair_reference/eunbi_111_swim_pool_freediving_075106.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/hair_reference/eunbi_111_swim_pool_freediving_075106__preferred_hair.jpg",
+      "scene": "swim_pool_freediving",
+      "season": "summer",
+      "outfit": "one-piece swimsuit, bikini, swim cap, fins"
+    },
+    {
+      "index": 132,
+      "code": "eunbi_132_food_travel_london_garden_075542",
+      "source": "characters/woongbbi/eunbi/references/curated/hair_reference/eunbi_132_food_travel_london_garden_075542.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/hair_reference/eunbi_132_food_travel_london_garden_075542__preferred_hair.jpg",
+      "scene": "food_travel_london_garden",
+      "season": "summer_to_winter",
+      "outfit": "black dress, white summer dress, black coat, knit top"
+    },
+    {
+      "index": 170,
+      "code": "eunbi_170_dining_autumn_city_casual_080126",
+      "source": "characters/woongbbi/eunbi/references/curated/hair_reference/eunbi_170_dining_autumn_city_casual_080126.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/hair_reference/eunbi_170_dining_autumn_city_casual_080126__preferred_hair.jpg",
+      "scene": "dining_autumn_city_casual",
+      "season": "autumn",
+      "outfit": "dark blouse, red sleeveless knit, hoodie, leather jacket, sunglasses"
+    },
+    {
+      "index": 177,
+      "code": "eunbi_177_dining_autumn_city_casual_080222",
+      "source": "characters/woongbbi/eunbi/references/curated/hair_reference/eunbi_177_dining_autumn_city_casual_080222.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/hair_reference/eunbi_177_dining_autumn_city_casual_080222__preferred_hair.jpg",
+      "scene": "dining_autumn_city_casual",
+      "season": "autumn",
+      "outfit": "dark blouse, red sleeveless knit, hoodie, leather jacket, sunglasses"
+    },
+    {
+      "index": 198,
+      "code": "eunbi_198_campus_winter_bookstore_sports_shop_080517",
+      "source": "characters/woongbbi/eunbi/references/curated/hair_reference/eunbi_198_campus_winter_bookstore_sports_shop_080517.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/hair_reference/eunbi_198_campus_winter_bookstore_sports_shop_080517__preferred_hair.jpg",
+      "scene": "campus_winter_bookstore_sports_shop",
+      "season": "winter",
+      "outfit": "pink sweatshirt, quilted coat, fuzzy coat, beanie, gray/black sportswear"
+    },
+    {
+      "index": 203,
+      "code": "eunbi_203_cafe_mirror_fitting_room_080603",
+      "source": "characters/woongbbi/eunbi/references/curated/hair_reference/eunbi_203_cafe_mirror_fitting_room_080603.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/hair_reference/eunbi_203_cafe_mirror_fitting_room_080603__preferred_hair.jpg",
+      "scene": "cafe_mirror_fitting_room",
+      "season": "spring_to_autumn",
+      "outfit": "black/cream fitted tops, gray pants, mini skirt, ankle boots"
+    },
+    {
+      "index": 230,
+      "code": "eunbi_230_close_portrait_cafe_evening_080950",
+      "source": "characters/woongbbi/eunbi/references/curated/hair_reference/eunbi_230_close_portrait_cafe_evening_080950.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/hair_reference/eunbi_230_close_portrait_cafe_evening_080950__preferred_hair.jpg",
+      "scene": "close_portrait_cafe_evening",
+      "season": "autumn_to_winter",
+      "outfit": "blue fuzzy knit, graphic tee with glasses, formal black blazer, black evening dress"
+    },
+    {
+      "index": 231,
+      "code": "eunbi_231_close_portrait_cafe_evening_081030",
+      "source": "characters/woongbbi/eunbi/references/curated/hair_reference/eunbi_231_close_portrait_cafe_evening_081030.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/hair_reference/eunbi_231_close_portrait_cafe_evening_081030__preferred_hair.jpg",
+      "scene": "close_portrait_cafe_evening",
+      "season": "autumn_to_winter",
+      "outfit": "blue fuzzy knit, graphic tee with glasses, formal black blazer, black evening dress"
+    }
+  ],
+  "full_body_silhouette": [
+    {
+      "index": 17,
+      "code": "eunbi_017_city_street_white_cardigan_073655",
+      "source": "characters/woongbbi/eunbi/references/curated/full_body_silhouette/eunbi_017_city_street_white_cardigan_073655.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/full_body_silhouette/eunbi_017_city_street_white_cardigan_073655__preferred_full_outfit.jpg",
+      "scene": "resort_pool_ocean_snorkel",
+      "season": "summer",
+      "outfit": "green bikini, pink swimwear, rash guard, casual vacation wear"
+    },
+    {
+      "index": 18,
+      "code": "eunbi_018_city_street_playful_pose_073703",
+      "source": "characters/woongbbi/eunbi/references/curated/full_body_silhouette/eunbi_018_city_street_playful_pose_073703.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/full_body_silhouette/eunbi_018_city_street_playful_pose_073703__preferred_full_outfit.jpg",
+      "scene": "resort_pool_ocean_snorkel",
+      "season": "summer",
+      "outfit": "green bikini, pink swimwear, rash guard, casual vacation wear"
+    },
+    {
+      "index": 52,
+      "code": "eunbi_052_museum_park_observatory_city_074239",
+      "source": "characters/woongbbi/eunbi/references/curated/full_body_silhouette/eunbi_052_museum_park_observatory_city_074239.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/full_body_silhouette/eunbi_052_museum_park_observatory_city_074239__preferred_full_outfit.jpg",
+      "scene": "museum_park_observatory_city",
+      "season": "spring_to_autumn",
+      "outfit": "white top with black skirt, cap, soft pink shirt, black skirt"
+    },
+    {
+      "index": 64,
+      "code": "eunbi_064_museum_park_observatory_city_074428",
+      "source": "characters/woongbbi/eunbi/references/curated/full_body_silhouette/eunbi_064_museum_park_observatory_city_074428.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/full_body_silhouette/eunbi_064_museum_park_observatory_city_074428__preferred_full_outfit.jpg",
+      "scene": "museum_park_observatory_city",
+      "season": "spring_to_autumn",
+      "outfit": "white top with black skirt, cap, soft pink shirt, black skirt"
+    },
+    {
+      "index": 74,
+      "code": "eunbi_074_campus_river_mountain_fall_074603",
+      "source": "characters/woongbbi/eunbi/references/curated/full_body_silhouette/eunbi_074_campus_river_mountain_fall_074603.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/full_body_silhouette/eunbi_074_campus_river_mountain_fall_074603__preferred_full_outfit.jpg",
+      "scene": "campus_river_mountain_fall",
+      "season": "autumn_to_winter",
+      "outfit": "black jacket, pink knit, white cardigan, brown jacket, fleece hoodie"
+    },
+    {
+      "index": 90,
+      "code": "eunbi_090_snowy_mountain_lake_074814",
+      "source": "characters/woongbbi/eunbi/references/curated/full_body_silhouette/eunbi_090_snowy_mountain_lake_074814.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/full_body_silhouette/eunbi_090_snowy_mountain_lake_074814__preferred_full_outfit.jpg",
+      "scene": "snowy_mountain_lake",
+      "season": "winter",
+      "outfit": "hoodie, puffer jacket, winter outerwear"
+    },
+    {
+      "index": 96,
+      "code": "eunbi_096_snowy_mountain_lake_074903",
+      "source": "characters/woongbbi/eunbi/references/curated/full_body_silhouette/eunbi_096_snowy_mountain_lake_074903.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/full_body_silhouette/eunbi_096_snowy_mountain_lake_074903__preferred_full_outfit.jpg",
+      "scene": "snowy_mountain_lake",
+      "season": "winter",
+      "outfit": "hoodie, puffer jacket, winter outerwear"
+    },
+    {
+      "index": 103,
+      "code": "eunbi_103_swim_pool_freediving_075004",
+      "source": "characters/woongbbi/eunbi/references/curated/full_body_silhouette/eunbi_103_swim_pool_freediving_075004.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/full_body_silhouette/eunbi_103_swim_pool_freediving_075004__preferred_full_outfit.jpg",
+      "scene": "swim_pool_freediving",
+      "season": "summer",
+      "outfit": "one-piece swimsuit, bikini, swim cap, fins"
+    },
+    {
+      "index": 133,
+      "code": "eunbi_133_food_travel_london_garden_075549",
+      "source": "characters/woongbbi/eunbi/references/curated/full_body_silhouette/eunbi_133_food_travel_london_garden_075549.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/full_body_silhouette/eunbi_133_food_travel_london_garden_075549__preferred_full_outfit.jpg",
+      "scene": "food_travel_london_garden",
+      "season": "summer_to_winter",
+      "outfit": "black dress, white summer dress, black coat, knit top"
+    },
+    {
+      "index": 143,
+      "code": "eunbi_143_food_travel_london_garden_075715",
+      "source": "characters/woongbbi/eunbi/references/curated/full_body_silhouette/eunbi_143_food_travel_london_garden_075715.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/full_body_silhouette/eunbi_143_food_travel_london_garden_075715__preferred_full_outfit.jpg",
+      "scene": "food_travel_london_garden",
+      "season": "summer_to_winter",
+      "outfit": "black dress, white summer dress, black coat, knit top"
+    },
+    {
+      "index": 152,
+      "code": "eunbi_152_gym_running_beach_play_075855",
+      "source": "characters/woongbbi/eunbi/references/curated/full_body_silhouette/eunbi_152_gym_running_beach_play_075855.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/full_body_silhouette/eunbi_152_gym_running_beach_play_075855__preferred_full_outfit.jpg",
+      "scene": "gym_running_beach_play",
+      "season": "summer",
+      "outfit": "sports bra, shorts, rash guard, black swimsuit"
+    },
+    {
+      "index": 164,
+      "code": "eunbi_164_dining_autumn_city_casual_080034",
+      "source": "characters/woongbbi/eunbi/references/curated/full_body_silhouette/eunbi_164_dining_autumn_city_casual_080034.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/full_body_silhouette/eunbi_164_dining_autumn_city_casual_080034__preferred_full_outfit.jpg",
+      "scene": "dining_autumn_city_casual",
+      "season": "autumn",
+      "outfit": "dark blouse, red sleeveless knit, hoodie, leather jacket, sunglasses"
+    },
+    {
+      "index": 183,
+      "code": "eunbi_183_campus_winter_bookstore_sports_shop_080307",
+      "source": "characters/woongbbi/eunbi/references/curated/full_body_silhouette/eunbi_183_campus_winter_bookstore_sports_shop_080307.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/full_body_silhouette/eunbi_183_campus_winter_bookstore_sports_shop_080307__preferred_full_outfit.jpg",
+      "scene": "campus_winter_bookstore_sports_shop",
+      "season": "winter",
+      "outfit": "pink sweatshirt, quilted coat, fuzzy coat, beanie, gray/black sportswear"
+    },
+    {
+      "index": 198,
+      "code": "eunbi_198_campus_winter_bookstore_sports_shop_080517",
+      "source": "characters/woongbbi/eunbi/references/curated/full_body_silhouette/eunbi_198_campus_winter_bookstore_sports_shop_080517.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/full_body_silhouette/eunbi_198_campus_winter_bookstore_sports_shop_080517__preferred_full_outfit.jpg",
+      "scene": "campus_winter_bookstore_sports_shop",
+      "season": "winter",
+      "outfit": "pink sweatshirt, quilted coat, fuzzy coat, beanie, gray/black sportswear"
+    },
+    {
+      "index": 209,
+      "code": "eunbi_209_cafe_mirror_fitting_room_080704",
+      "source": "characters/woongbbi/eunbi/references/curated/full_body_silhouette/eunbi_209_cafe_mirror_fitting_room_080704.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/full_body_silhouette/eunbi_209_cafe_mirror_fitting_room_080704__preferred_full_outfit.jpg",
+      "scene": "cafe_mirror_fitting_room",
+      "season": "spring_to_autumn",
+      "outfit": "black/cream fitted tops, gray pants, mini skirt, ankle boots"
+    },
+    {
+      "index": 216,
+      "code": "eunbi_216_riverside_sporty_preppy_city_080757",
+      "source": "characters/woongbbi/eunbi/references/curated/full_body_silhouette/eunbi_216_riverside_sporty_preppy_city_080757.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/full_body_silhouette/eunbi_216_riverside_sporty_preppy_city_080757__preferred_full_outfit.jpg",
+      "scene": "riverside_sporty_preppy_city",
+      "season": "spring_to_autumn",
+      "outfit": "white sporty top, black biker shorts, plaid skirt, black blazer set"
+    },
+    {
+      "index": 223,
+      "code": "eunbi_223_riverside_sporty_preppy_city_080850",
+      "source": "characters/woongbbi/eunbi/references/curated/full_body_silhouette/eunbi_223_riverside_sporty_preppy_city_080850.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/full_body_silhouette/eunbi_223_riverside_sporty_preppy_city_080850__preferred_full_outfit.jpg",
+      "scene": "riverside_sporty_preppy_city",
+      "season": "spring_to_autumn",
+      "outfit": "white sporty top, black biker shorts, plaid skirt, black blazer set"
+    },
+    {
+      "index": 226,
+      "code": "eunbi_226_riverside_sporty_preppy_city_080919",
+      "source": "characters/woongbbi/eunbi/references/curated/full_body_silhouette/eunbi_226_riverside_sporty_preppy_city_080919.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/full_body_silhouette/eunbi_226_riverside_sporty_preppy_city_080919__preferred_full_outfit.jpg",
+      "scene": "riverside_sporty_preppy_city",
+      "season": "spring_to_autumn",
+      "outfit": "white sporty top, black biker shorts, plaid skirt, black blazer set"
+    },
+    {
+      "index": 227,
+      "code": "eunbi_227_riverside_sporty_preppy_city_080926",
+      "source": "characters/woongbbi/eunbi/references/curated/full_body_silhouette/eunbi_227_riverside_sporty_preppy_city_080926.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/full_body_silhouette/eunbi_227_riverside_sporty_preppy_city_080926__preferred_full_outfit.jpg",
+      "scene": "riverside_sporty_preppy_city",
+      "season": "spring_to_autumn",
+      "outfit": "white sporty top, black biker shorts, plaid skirt, black blazer set"
+    }
+  ],
+  "summer_water_sport": [
+    {
+      "index": 11,
+      "code": "eunbi_011_resort_green_bikini_sunset_073546",
+      "source": "characters/woongbbi/eunbi/references/curated/summer_water_sport/eunbi_011_resort_green_bikini_sunset_073546.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/summer_water_sport/eunbi_011_resort_green_bikini_sunset_073546__preferred_full_outfit.jpg",
+      "scene": "resort_pool_ocean_snorkel",
+      "season": "summer",
+      "outfit": "green bikini, pink swimwear, rash guard, casual vacation wear"
+    },
+    {
+      "index": 28,
+      "code": "eunbi_028_resort_pool_ocean_snorkel_073835",
+      "source": "characters/woongbbi/eunbi/references/curated/summer_water_sport/eunbi_028_resort_pool_ocean_snorkel_073835.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/summer_water_sport/eunbi_028_resort_pool_ocean_snorkel_073835__preferred_full_outfit.jpg",
+      "scene": "resort_pool_ocean_snorkel",
+      "season": "summer",
+      "outfit": "green bikini, pink swimwear, rash guard, casual vacation wear"
+    },
+    {
+      "index": 32,
+      "code": "eunbi_032_resort_pool_ocean_snorkel_073916",
+      "source": "characters/woongbbi/eunbi/references/curated/summer_water_sport/eunbi_032_resort_pool_ocean_snorkel_073916.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/summer_water_sport/eunbi_032_resort_pool_ocean_snorkel_073916__preferred_full_outfit.jpg",
+      "scene": "resort_pool_ocean_snorkel",
+      "season": "summer",
+      "outfit": "green bikini, pink swimwear, rash guard, casual vacation wear"
+    },
+    {
+      "index": 36,
+      "code": "eunbi_036_resort_pool_ocean_snorkel_073952",
+      "source": "characters/woongbbi/eunbi/references/curated/summer_water_sport/eunbi_036_resort_pool_ocean_snorkel_073952.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/summer_water_sport/eunbi_036_resort_pool_ocean_snorkel_073952__preferred_full_outfit.jpg",
+      "scene": "resort_pool_ocean_snorkel",
+      "season": "summer",
+      "outfit": "green bikini, pink swimwear, rash guard, casual vacation wear"
+    },
+    {
+      "index": 38,
+      "code": "eunbi_038_resort_pool_ocean_snorkel_074009",
+      "source": "characters/woongbbi/eunbi/references/curated/summer_water_sport/eunbi_038_resort_pool_ocean_snorkel_074009.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/summer_water_sport/eunbi_038_resort_pool_ocean_snorkel_074009__preferred_full_outfit.jpg",
+      "scene": "resort_pool_ocean_snorkel",
+      "season": "summer",
+      "outfit": "green bikini, pink swimwear, rash guard, casual vacation wear"
+    },
+    {
+      "index": 102,
+      "code": "eunbi_102_swim_pool_freediving_074957",
+      "source": "characters/woongbbi/eunbi/references/curated/summer_water_sport/eunbi_102_swim_pool_freediving_074957.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/summer_water_sport/eunbi_102_swim_pool_freediving_074957__preferred_full_outfit.jpg",
+      "scene": "swim_pool_freediving",
+      "season": "summer",
+      "outfit": "one-piece swimsuit, bikini, swim cap, fins"
+    },
+    {
+      "index": 103,
+      "code": "eunbi_103_swim_pool_freediving_075004",
+      "source": "characters/woongbbi/eunbi/references/curated/summer_water_sport/eunbi_103_swim_pool_freediving_075004.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/summer_water_sport/eunbi_103_swim_pool_freediving_075004__preferred_full_outfit.jpg",
+      "scene": "swim_pool_freediving",
+      "season": "summer",
+      "outfit": "one-piece swimsuit, bikini, swim cap, fins"
+    },
+    {
+      "index": 104,
+      "code": "eunbi_104_swim_pool_freediving_075011",
+      "source": "characters/woongbbi/eunbi/references/curated/summer_water_sport/eunbi_104_swim_pool_freediving_075011.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/summer_water_sport/eunbi_104_swim_pool_freediving_075011__preferred_full_outfit.jpg",
+      "scene": "swim_pool_freediving",
+      "season": "summer",
+      "outfit": "one-piece swimsuit, bikini, swim cap, fins"
+    },
+    {
+      "index": 109,
+      "code": "eunbi_109_swim_pool_freediving_075046",
+      "source": "characters/woongbbi/eunbi/references/curated/summer_water_sport/eunbi_109_swim_pool_freediving_075046.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/summer_water_sport/eunbi_109_swim_pool_freediving_075046__preferred_full_outfit.jpg",
+      "scene": "swim_pool_freediving",
+      "season": "summer",
+      "outfit": "one-piece swimsuit, bikini, swim cap, fins"
+    },
+    {
+      "index": 111,
+      "code": "eunbi_111_swim_pool_freediving_075106",
+      "source": "characters/woongbbi/eunbi/references/curated/summer_water_sport/eunbi_111_swim_pool_freediving_075106.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/summer_water_sport/eunbi_111_swim_pool_freediving_075106__preferred_full_outfit.jpg",
+      "scene": "swim_pool_freediving",
+      "season": "summer",
+      "outfit": "one-piece swimsuit, bikini, swim cap, fins"
+    },
+    {
+      "index": 114,
+      "code": "eunbi_114_swim_pool_freediving_075125",
+      "source": "characters/woongbbi/eunbi/references/curated/summer_water_sport/eunbi_114_swim_pool_freediving_075125.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/summer_water_sport/eunbi_114_swim_pool_freediving_075125__preferred_full_outfit.jpg",
+      "scene": "swim_pool_freediving",
+      "season": "summer",
+      "outfit": "one-piece swimsuit, bikini, swim cap, fins"
+    },
+    {
+      "index": 115,
+      "code": "eunbi_115_swim_pool_freediving_075131",
+      "source": "characters/woongbbi/eunbi/references/curated/summer_water_sport/eunbi_115_swim_pool_freediving_075131.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/summer_water_sport/eunbi_115_swim_pool_freediving_075131__preferred_full_outfit.jpg",
+      "scene": "swim_pool_freediving",
+      "season": "summer",
+      "outfit": "one-piece swimsuit, bikini, swim cap, fins"
+    },
+    {
+      "index": 116,
+      "code": "eunbi_116_swim_pool_freediving_075137",
+      "source": "characters/woongbbi/eunbi/references/curated/summer_water_sport/eunbi_116_swim_pool_freediving_075137.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/summer_water_sport/eunbi_116_swim_pool_freediving_075137__preferred_full_outfit.jpg",
+      "scene": "swim_pool_freediving",
+      "season": "summer",
+      "outfit": "one-piece swimsuit, bikini, swim cap, fins"
+    },
+    {
+      "index": 155,
+      "code": "eunbi_155_gym_running_beach_play_075920",
+      "source": "characters/woongbbi/eunbi/references/curated/summer_water_sport/eunbi_155_gym_running_beach_play_075920.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/summer_water_sport/eunbi_155_gym_running_beach_play_075920__preferred_full_outfit.jpg",
+      "scene": "gym_running_beach_play",
+      "season": "summer",
+      "outfit": "sports bra, shorts, rash guard, black swimsuit"
+    },
+    {
+      "index": 156,
+      "code": "eunbi_156_gym_running_beach_play_075927",
+      "source": "characters/woongbbi/eunbi/references/curated/summer_water_sport/eunbi_156_gym_running_beach_play_075927.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/summer_water_sport/eunbi_156_gym_running_beach_play_075927__preferred_full_outfit.jpg",
+      "scene": "gym_running_beach_play",
+      "season": "summer",
+      "outfit": "sports bra, shorts, rash guard, black swimsuit"
+    },
+    {
+      "index": 212,
+      "code": "eunbi_212_riverside_sporty_preppy_city_080732",
+      "source": "characters/woongbbi/eunbi/references/curated/summer_water_sport/eunbi_212_riverside_sporty_preppy_city_080732.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/summer_water_sport/eunbi_212_riverside_sporty_preppy_city_080732__preferred_full_outfit.jpg",
+      "scene": "riverside_sporty_preppy_city",
+      "season": "spring_to_autumn",
+      "outfit": "white sporty top, black biker shorts, plaid skirt, black blazer set"
+    },
+    {
+      "index": 216,
+      "code": "eunbi_216_riverside_sporty_preppy_city_080757",
+      "source": "characters/woongbbi/eunbi/references/curated/summer_water_sport/eunbi_216_riverside_sporty_preppy_city_080757.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/summer_water_sport/eunbi_216_riverside_sporty_preppy_city_080757__preferred_full_outfit.jpg",
+      "scene": "riverside_sporty_preppy_city",
+      "season": "spring_to_autumn",
+      "outfit": "white sporty top, black biker shorts, plaid skirt, black blazer set"
+    }
+  ],
+  "cafe_food_lifestyle": [
+    {
+      "index": 5,
+      "code": "eunbi_005_cafe_mirror_brown_jacket_073446",
+      "source": "characters/woongbbi/eunbi/references/curated/cafe_food_lifestyle/eunbi_005_cafe_mirror_brown_jacket_073446.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/cafe_food_lifestyle/eunbi_005_cafe_mirror_brown_jacket_073446__preferred_full_outfit.jpg",
+      "scene": "cafe_riverside_station_city",
+      "season": "spring_to_summer",
+      "outfit": "white cardigan or sleeveless black/white city casual"
+    },
+    {
+      "index": 6,
+      "code": "eunbi_006_cafe_smile_black_sleeveless_073456",
+      "source": "characters/woongbbi/eunbi/references/curated/cafe_food_lifestyle/eunbi_006_cafe_smile_black_sleeveless_073456.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/cafe_food_lifestyle/eunbi_006_cafe_smile_black_sleeveless_073456__preferred_full_outfit.jpg",
+      "scene": "cafe_riverside_station_city",
+      "season": "spring_to_summer",
+      "outfit": "white cardigan or sleeveless black/white city casual"
+    },
+    {
+      "index": 56,
+      "code": "eunbi_056_museum_park_observatory_city_074317",
+      "source": "characters/woongbbi/eunbi/references/curated/cafe_food_lifestyle/eunbi_056_museum_park_observatory_city_074317.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/cafe_food_lifestyle/eunbi_056_museum_park_observatory_city_074317__preferred_full_outfit.jpg",
+      "scene": "museum_park_observatory_city",
+      "season": "spring_to_autumn",
+      "outfit": "white top with black skirt, cap, soft pink shirt, black skirt"
+    },
+    {
+      "index": 123,
+      "code": "eunbi_123_food_travel_london_garden_075350",
+      "source": "characters/woongbbi/eunbi/references/curated/cafe_food_lifestyle/eunbi_123_food_travel_london_garden_075350.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/cafe_food_lifestyle/eunbi_123_food_travel_london_garden_075350__preferred_full_outfit.jpg",
+      "scene": "food_travel_london_garden",
+      "season": "summer_to_winter",
+      "outfit": "black dress, white summer dress, black coat, knit top"
+    },
+    {
+      "index": 124,
+      "code": "eunbi_124_food_travel_london_garden_075404",
+      "source": "characters/woongbbi/eunbi/references/curated/cafe_food_lifestyle/eunbi_124_food_travel_london_garden_075404.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/cafe_food_lifestyle/eunbi_124_food_travel_london_garden_075404__preferred_full_outfit.jpg",
+      "scene": "food_travel_london_garden",
+      "season": "summer_to_winter",
+      "outfit": "black dress, white summer dress, black coat, knit top"
+    },
+    {
+      "index": 130,
+      "code": "eunbi_130_food_travel_london_garden_075523",
+      "source": "characters/woongbbi/eunbi/references/curated/cafe_food_lifestyle/eunbi_130_food_travel_london_garden_075523.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/cafe_food_lifestyle/eunbi_130_food_travel_london_garden_075523__preferred_full_outfit.jpg",
+      "scene": "food_travel_london_garden",
+      "season": "summer_to_winter",
+      "outfit": "black dress, white summer dress, black coat, knit top"
+    },
+    {
+      "index": 134,
+      "code": "eunbi_134_food_travel_london_garden_075559",
+      "source": "characters/woongbbi/eunbi/references/curated/cafe_food_lifestyle/eunbi_134_food_travel_london_garden_075559.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/cafe_food_lifestyle/eunbi_134_food_travel_london_garden_075559__preferred_full_outfit.jpg",
+      "scene": "food_travel_london_garden",
+      "season": "summer_to_winter",
+      "outfit": "black dress, white summer dress, black coat, knit top"
+    },
+    {
+      "index": 135,
+      "code": "eunbi_135_food_travel_london_garden_075606",
+      "source": "characters/woongbbi/eunbi/references/curated/cafe_food_lifestyle/eunbi_135_food_travel_london_garden_075606.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/cafe_food_lifestyle/eunbi_135_food_travel_london_garden_075606__preferred_full_outfit.jpg",
+      "scene": "food_travel_london_garden",
+      "season": "summer_to_winter",
+      "outfit": "black dress, white summer dress, black coat, knit top"
+    },
+    {
+      "index": 161,
+      "code": "eunbi_161_dining_autumn_city_casual_080009",
+      "source": "characters/woongbbi/eunbi/references/curated/cafe_food_lifestyle/eunbi_161_dining_autumn_city_casual_080009.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/cafe_food_lifestyle/eunbi_161_dining_autumn_city_casual_080009__preferred_full_outfit.jpg",
+      "scene": "dining_autumn_city_casual",
+      "season": "autumn",
+      "outfit": "dark blouse, red sleeveless knit, hoodie, leather jacket, sunglasses"
+    },
+    {
+      "index": 162,
+      "code": "eunbi_162_dining_autumn_city_casual_080016",
+      "source": "characters/woongbbi/eunbi/references/curated/cafe_food_lifestyle/eunbi_162_dining_autumn_city_casual_080016.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/cafe_food_lifestyle/eunbi_162_dining_autumn_city_casual_080016__preferred_full_outfit.jpg",
+      "scene": "dining_autumn_city_casual",
+      "season": "autumn",
+      "outfit": "dark blouse, red sleeveless knit, hoodie, leather jacket, sunglasses"
+    },
+    {
+      "index": 163,
+      "code": "eunbi_163_dining_autumn_city_casual_080023",
+      "source": "characters/woongbbi/eunbi/references/curated/cafe_food_lifestyle/eunbi_163_dining_autumn_city_casual_080023.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/cafe_food_lifestyle/eunbi_163_dining_autumn_city_casual_080023__preferred_full_outfit.jpg",
+      "scene": "dining_autumn_city_casual",
+      "season": "autumn",
+      "outfit": "dark blouse, red sleeveless knit, hoodie, leather jacket, sunglasses"
+    },
+    {
+      "index": 166,
+      "code": "eunbi_166_dining_autumn_city_casual_080049",
+      "source": "characters/woongbbi/eunbi/references/curated/cafe_food_lifestyle/eunbi_166_dining_autumn_city_casual_080049.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/cafe_food_lifestyle/eunbi_166_dining_autumn_city_casual_080049__preferred_full_outfit.jpg",
+      "scene": "dining_autumn_city_casual",
+      "season": "autumn",
+      "outfit": "dark blouse, red sleeveless knit, hoodie, leather jacket, sunglasses"
+    },
+    {
+      "index": 187,
+      "code": "eunbi_187_campus_winter_bookstore_sports_shop_080349",
+      "source": "characters/woongbbi/eunbi/references/curated/cafe_food_lifestyle/eunbi_187_campus_winter_bookstore_sports_shop_080349.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/cafe_food_lifestyle/eunbi_187_campus_winter_bookstore_sports_shop_080349__preferred_full_outfit.jpg",
+      "scene": "campus_winter_bookstore_sports_shop",
+      "season": "winter",
+      "outfit": "pink sweatshirt, quilted coat, fuzzy coat, beanie, gray/black sportswear"
+    },
+    {
+      "index": 193,
+      "code": "eunbi_193_campus_winter_bookstore_sports_shop_080437",
+      "source": "characters/woongbbi/eunbi/references/curated/cafe_food_lifestyle/eunbi_193_campus_winter_bookstore_sports_shop_080437.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/cafe_food_lifestyle/eunbi_193_campus_winter_bookstore_sports_shop_080437__preferred_full_outfit.jpg",
+      "scene": "campus_winter_bookstore_sports_shop",
+      "season": "winter",
+      "outfit": "pink sweatshirt, quilted coat, fuzzy coat, beanie, gray/black sportswear"
+    },
+    {
+      "index": 194,
+      "code": "eunbi_194_campus_winter_bookstore_sports_shop_080443",
+      "source": "characters/woongbbi/eunbi/references/curated/cafe_food_lifestyle/eunbi_194_campus_winter_bookstore_sports_shop_080443.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/cafe_food_lifestyle/eunbi_194_campus_winter_bookstore_sports_shop_080443__preferred_full_outfit.jpg",
+      "scene": "campus_winter_bookstore_sports_shop",
+      "season": "winter",
+      "outfit": "pink sweatshirt, quilted coat, fuzzy coat, beanie, gray/black sportswear"
+    },
+    {
+      "index": 207,
+      "code": "eunbi_207_cafe_mirror_fitting_room_080639",
+      "source": "characters/woongbbi/eunbi/references/curated/cafe_food_lifestyle/eunbi_207_cafe_mirror_fitting_room_080639.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/cafe_food_lifestyle/eunbi_207_cafe_mirror_fitting_room_080639__preferred_full_outfit.jpg",
+      "scene": "cafe_mirror_fitting_room",
+      "season": "spring_to_autumn",
+      "outfit": "black/cream fitted tops, gray pants, mini skirt, ankle boots"
+    },
+    {
+      "index": 229,
+      "code": "eunbi_229_close_portrait_cafe_evening_080941",
+      "source": "characters/woongbbi/eunbi/references/curated/cafe_food_lifestyle/eunbi_229_close_portrait_cafe_evening_080941.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/cafe_food_lifestyle/eunbi_229_close_portrait_cafe_evening_080941__preferred_full_outfit.jpg",
+      "scene": "close_portrait_cafe_evening",
+      "season": "autumn_to_winter",
+      "outfit": "blue fuzzy knit, graphic tee with glasses, formal black blazer, black evening dress"
+    }
+  ],
+  "autumn_city_casual": [
+    {
+      "index": 41,
+      "code": "eunbi_041_tennis_court_autumn_walk_074038",
+      "source": "characters/woongbbi/eunbi/references/curated/autumn_city_casual/eunbi_041_tennis_court_autumn_walk_074038.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/autumn_city_casual/eunbi_041_tennis_court_autumn_walk_074038__preferred_full_outfit.jpg",
+      "scene": "tennis_court_autumn_walk",
+      "season": "autumn",
+      "outfit": "oversized hoodie or sweatshirt with shorts and sneakers"
+    },
+    {
+      "index": 44,
+      "code": "eunbi_044_tennis_court_autumn_walk_074119",
+      "source": "characters/woongbbi/eunbi/references/curated/autumn_city_casual/eunbi_044_tennis_court_autumn_walk_074119.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/autumn_city_casual/eunbi_044_tennis_court_autumn_walk_074119__preferred_full_outfit.jpg",
+      "scene": "tennis_court_autumn_walk",
+      "season": "autumn",
+      "outfit": "oversized hoodie or sweatshirt with shorts and sneakers"
+    },
+    {
+      "index": 48,
+      "code": "eunbi_048_tennis_court_autumn_walk_074157",
+      "source": "characters/woongbbi/eunbi/references/curated/autumn_city_casual/eunbi_048_tennis_court_autumn_walk_074157.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/autumn_city_casual/eunbi_048_tennis_court_autumn_walk_074157__preferred_full_outfit.jpg",
+      "scene": "tennis_court_autumn_walk",
+      "season": "autumn",
+      "outfit": "oversized hoodie or sweatshirt with shorts and sneakers"
+    },
+    {
+      "index": 49,
+      "code": "eunbi_049_tennis_court_autumn_walk_074203",
+      "source": "characters/woongbbi/eunbi/references/curated/autumn_city_casual/eunbi_049_tennis_court_autumn_walk_074203.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/autumn_city_casual/eunbi_049_tennis_court_autumn_walk_074203__preferred_full_outfit.jpg",
+      "scene": "tennis_court_autumn_walk",
+      "season": "autumn",
+      "outfit": "oversized hoodie or sweatshirt with shorts and sneakers"
+    },
+    {
+      "index": 72,
+      "code": "eunbi_072_campus_river_mountain_fall_074551",
+      "source": "characters/woongbbi/eunbi/references/curated/autumn_city_casual/eunbi_072_campus_river_mountain_fall_074551.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/autumn_city_casual/eunbi_072_campus_river_mountain_fall_074551__preferred_full_outfit.jpg",
+      "scene": "campus_river_mountain_fall",
+      "season": "autumn_to_winter",
+      "outfit": "black jacket, pink knit, white cardigan, brown jacket, fleece hoodie"
+    },
+    {
+      "index": 73,
+      "code": "eunbi_073_campus_river_mountain_fall_074557",
+      "source": "characters/woongbbi/eunbi/references/curated/autumn_city_casual/eunbi_073_campus_river_mountain_fall_074557.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/autumn_city_casual/eunbi_073_campus_river_mountain_fall_074557__preferred_full_outfit.jpg",
+      "scene": "campus_river_mountain_fall",
+      "season": "autumn_to_winter",
+      "outfit": "black jacket, pink knit, white cardigan, brown jacket, fleece hoodie"
+    },
+    {
+      "index": 74,
+      "code": "eunbi_074_campus_river_mountain_fall_074603",
+      "source": "characters/woongbbi/eunbi/references/curated/autumn_city_casual/eunbi_074_campus_river_mountain_fall_074603.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/autumn_city_casual/eunbi_074_campus_river_mountain_fall_074603__preferred_full_outfit.jpg",
+      "scene": "campus_river_mountain_fall",
+      "season": "autumn_to_winter",
+      "outfit": "black jacket, pink knit, white cardigan, brown jacket, fleece hoodie"
+    },
+    {
+      "index": 75,
+      "code": "eunbi_075_campus_river_mountain_fall_074609",
+      "source": "characters/woongbbi/eunbi/references/curated/autumn_city_casual/eunbi_075_campus_river_mountain_fall_074609.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/autumn_city_casual/eunbi_075_campus_river_mountain_fall_074609__preferred_full_outfit.jpg",
+      "scene": "campus_river_mountain_fall",
+      "season": "autumn_to_winter",
+      "outfit": "black jacket, pink knit, white cardigan, brown jacket, fleece hoodie"
+    },
+    {
+      "index": 76,
+      "code": "eunbi_076_campus_river_mountain_fall_074615",
+      "source": "characters/woongbbi/eunbi/references/curated/autumn_city_casual/eunbi_076_campus_river_mountain_fall_074615.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/autumn_city_casual/eunbi_076_campus_river_mountain_fall_074615__preferred_full_outfit.jpg",
+      "scene": "campus_river_mountain_fall",
+      "season": "autumn_to_winter",
+      "outfit": "black jacket, pink knit, white cardigan, brown jacket, fleece hoodie"
+    },
+    {
+      "index": 79,
+      "code": "eunbi_079_campus_river_mountain_fall_074634",
+      "source": "characters/woongbbi/eunbi/references/curated/autumn_city_casual/eunbi_079_campus_river_mountain_fall_074634.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/autumn_city_casual/eunbi_079_campus_river_mountain_fall_074634__preferred_full_outfit.jpg",
+      "scene": "campus_river_mountain_fall",
+      "season": "autumn_to_winter",
+      "outfit": "black jacket, pink knit, white cardigan, brown jacket, fleece hoodie"
+    },
+    {
+      "index": 80,
+      "code": "eunbi_080_campus_river_mountain_fall_074641",
+      "source": "characters/woongbbi/eunbi/references/curated/autumn_city_casual/eunbi_080_campus_river_mountain_fall_074641.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/autumn_city_casual/eunbi_080_campus_river_mountain_fall_074641__preferred_full_outfit.jpg",
+      "scene": "campus_river_mountain_fall",
+      "season": "autumn_to_winter",
+      "outfit": "black jacket, pink knit, white cardigan, brown jacket, fleece hoodie"
+    },
+    {
+      "index": 167,
+      "code": "eunbi_167_dining_autumn_city_casual_080100",
+      "source": "characters/woongbbi/eunbi/references/curated/autumn_city_casual/eunbi_167_dining_autumn_city_casual_080100.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/autumn_city_casual/eunbi_167_dining_autumn_city_casual_080100__preferred_full_outfit.jpg",
+      "scene": "dining_autumn_city_casual",
+      "season": "autumn",
+      "outfit": "dark blouse, red sleeveless knit, hoodie, leather jacket, sunglasses"
+    },
+    {
+      "index": 168,
+      "code": "eunbi_168_dining_autumn_city_casual_080106",
+      "source": "characters/woongbbi/eunbi/references/curated/autumn_city_casual/eunbi_168_dining_autumn_city_casual_080106.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/autumn_city_casual/eunbi_168_dining_autumn_city_casual_080106__preferred_full_outfit.jpg",
+      "scene": "dining_autumn_city_casual",
+      "season": "autumn",
+      "outfit": "dark blouse, red sleeveless knit, hoodie, leather jacket, sunglasses"
+    },
+    {
+      "index": 169,
+      "code": "eunbi_169_dining_autumn_city_casual_080112",
+      "source": "characters/woongbbi/eunbi/references/curated/autumn_city_casual/eunbi_169_dining_autumn_city_casual_080112.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/autumn_city_casual/eunbi_169_dining_autumn_city_casual_080112__preferred_full_outfit.jpg",
+      "scene": "dining_autumn_city_casual",
+      "season": "autumn",
+      "outfit": "dark blouse, red sleeveless knit, hoodie, leather jacket, sunglasses"
+    },
+    {
+      "index": 171,
+      "code": "eunbi_171_dining_autumn_city_casual_080133",
+      "source": "characters/woongbbi/eunbi/references/curated/autumn_city_casual/eunbi_171_dining_autumn_city_casual_080133.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/autumn_city_casual/eunbi_171_dining_autumn_city_casual_080133__preferred_full_outfit.jpg",
+      "scene": "dining_autumn_city_casual",
+      "season": "autumn",
+      "outfit": "dark blouse, red sleeveless knit, hoodie, leather jacket, sunglasses"
+    },
+    {
+      "index": 173,
+      "code": "eunbi_173_dining_autumn_city_casual_080152",
+      "source": "characters/woongbbi/eunbi/references/curated/autumn_city_casual/eunbi_173_dining_autumn_city_casual_080152.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/autumn_city_casual/eunbi_173_dining_autumn_city_casual_080152__preferred_full_outfit.jpg",
+      "scene": "dining_autumn_city_casual",
+      "season": "autumn",
+      "outfit": "dark blouse, red sleeveless knit, hoodie, leather jacket, sunglasses"
+    },
+    {
+      "index": 174,
+      "code": "eunbi_174_dining_autumn_city_casual_080158",
+      "source": "characters/woongbbi/eunbi/references/curated/autumn_city_casual/eunbi_174_dining_autumn_city_casual_080158.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/autumn_city_casual/eunbi_174_dining_autumn_city_casual_080158__preferred_full_outfit.jpg",
+      "scene": "dining_autumn_city_casual",
+      "season": "autumn",
+      "outfit": "dark blouse, red sleeveless knit, hoodie, leather jacket, sunglasses"
+    },
+    {
+      "index": 180,
+      "code": "eunbi_180_campus_winter_bookstore_sports_shop_080245",
+      "source": "characters/woongbbi/eunbi/references/curated/autumn_city_casual/eunbi_180_campus_winter_bookstore_sports_shop_080245.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/autumn_city_casual/eunbi_180_campus_winter_bookstore_sports_shop_080245__preferred_full_outfit.jpg",
+      "scene": "campus_winter_bookstore_sports_shop",
+      "season": "winter",
+      "outfit": "pink sweatshirt, quilted coat, fuzzy coat, beanie, gray/black sportswear"
+    },
+    {
+      "index": 181,
+      "code": "eunbi_181_campus_winter_bookstore_sports_shop_080251",
+      "source": "characters/woongbbi/eunbi/references/curated/autumn_city_casual/eunbi_181_campus_winter_bookstore_sports_shop_080251.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/autumn_city_casual/eunbi_181_campus_winter_bookstore_sports_shop_080251__preferred_full_outfit.jpg",
+      "scene": "campus_winter_bookstore_sports_shop",
+      "season": "winter",
+      "outfit": "pink sweatshirt, quilted coat, fuzzy coat, beanie, gray/black sportswear"
+    }
+  ],
+  "winter_travel_cozy": [
+    {
+      "index": 88,
+      "code": "eunbi_088_campus_river_mountain_fall_074756",
+      "source": "characters/woongbbi/eunbi/references/curated/winter_travel_cozy/eunbi_088_campus_river_mountain_fall_074756.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/winter_travel_cozy/eunbi_088_campus_river_mountain_fall_074756__preferred_full_outfit.jpg",
+      "scene": "campus_river_mountain_fall",
+      "season": "autumn_to_winter",
+      "outfit": "black jacket, pink knit, white cardigan, brown jacket, fleece hoodie"
+    },
+    {
+      "index": 89,
+      "code": "eunbi_089_campus_river_mountain_fall_074802",
+      "source": "characters/woongbbi/eunbi/references/curated/winter_travel_cozy/eunbi_089_campus_river_mountain_fall_074802.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/winter_travel_cozy/eunbi_089_campus_river_mountain_fall_074802__preferred_full_outfit.jpg",
+      "scene": "campus_river_mountain_fall",
+      "season": "autumn_to_winter",
+      "outfit": "black jacket, pink knit, white cardigan, brown jacket, fleece hoodie"
+    },
+    {
+      "index": 90,
+      "code": "eunbi_090_snowy_mountain_lake_074814",
+      "source": "characters/woongbbi/eunbi/references/curated/winter_travel_cozy/eunbi_090_snowy_mountain_lake_074814.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/winter_travel_cozy/eunbi_090_snowy_mountain_lake_074814__preferred_full_outfit.jpg",
+      "scene": "snowy_mountain_lake",
+      "season": "winter",
+      "outfit": "hoodie, puffer jacket, winter outerwear"
+    },
+    {
+      "index": 91,
+      "code": "eunbi_091_snowy_mountain_lake_074821",
+      "source": "characters/woongbbi/eunbi/references/curated/winter_travel_cozy/eunbi_091_snowy_mountain_lake_074821.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/winter_travel_cozy/eunbi_091_snowy_mountain_lake_074821__preferred_full_outfit.jpg",
+      "scene": "snowy_mountain_lake",
+      "season": "winter",
+      "outfit": "hoodie, puffer jacket, winter outerwear"
+    },
+    {
+      "index": 94,
+      "code": "eunbi_094_snowy_mountain_lake_074851",
+      "source": "characters/woongbbi/eunbi/references/curated/winter_travel_cozy/eunbi_094_snowy_mountain_lake_074851.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/winter_travel_cozy/eunbi_094_snowy_mountain_lake_074851__preferred_full_outfit.jpg",
+      "scene": "snowy_mountain_lake",
+      "season": "winter",
+      "outfit": "hoodie, puffer jacket, winter outerwear"
+    },
+    {
+      "index": 95,
+      "code": "eunbi_095_snowy_mountain_lake_074857",
+      "source": "characters/woongbbi/eunbi/references/curated/winter_travel_cozy/eunbi_095_snowy_mountain_lake_074857.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/winter_travel_cozy/eunbi_095_snowy_mountain_lake_074857__preferred_full_outfit.jpg",
+      "scene": "snowy_mountain_lake",
+      "season": "winter",
+      "outfit": "hoodie, puffer jacket, winter outerwear"
+    },
+    {
+      "index": 96,
+      "code": "eunbi_096_snowy_mountain_lake_074903",
+      "source": "characters/woongbbi/eunbi/references/curated/winter_travel_cozy/eunbi_096_snowy_mountain_lake_074903.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/winter_travel_cozy/eunbi_096_snowy_mountain_lake_074903__preferred_full_outfit.jpg",
+      "scene": "snowy_mountain_lake",
+      "season": "winter",
+      "outfit": "hoodie, puffer jacket, winter outerwear"
+    },
+    {
+      "index": 97,
+      "code": "eunbi_097_snowy_mountain_lake_074914",
+      "source": "characters/woongbbi/eunbi/references/curated/winter_travel_cozy/eunbi_097_snowy_mountain_lake_074914.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/winter_travel_cozy/eunbi_097_snowy_mountain_lake_074914__preferred_full_outfit.jpg",
+      "scene": "snowy_mountain_lake",
+      "season": "winter",
+      "outfit": "hoodie, puffer jacket, winter outerwear"
+    },
+    {
+      "index": 98,
+      "code": "eunbi_098_snowy_mountain_lake_074921",
+      "source": "characters/woongbbi/eunbi/references/curated/winter_travel_cozy/eunbi_098_snowy_mountain_lake_074921.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/winter_travel_cozy/eunbi_098_snowy_mountain_lake_074921__preferred_full_outfit.jpg",
+      "scene": "snowy_mountain_lake",
+      "season": "winter",
+      "outfit": "hoodie, puffer jacket, winter outerwear"
+    },
+    {
+      "index": 99,
+      "code": "eunbi_099_snowy_mountain_lake_074927",
+      "source": "characters/woongbbi/eunbi/references/curated/winter_travel_cozy/eunbi_099_snowy_mountain_lake_074927.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/winter_travel_cozy/eunbi_099_snowy_mountain_lake_074927__preferred_full_outfit.jpg",
+      "scene": "snowy_mountain_lake",
+      "season": "winter",
+      "outfit": "hoodie, puffer jacket, winter outerwear"
+    },
+    {
+      "index": 100,
+      "code": "eunbi_100_snowy_mountain_lake_074935",
+      "source": "characters/woongbbi/eunbi/references/curated/winter_travel_cozy/eunbi_100_snowy_mountain_lake_074935.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/winter_travel_cozy/eunbi_100_snowy_mountain_lake_074935__preferred_full_outfit.jpg",
+      "scene": "snowy_mountain_lake",
+      "season": "winter",
+      "outfit": "hoodie, puffer jacket, winter outerwear"
+    },
+    {
+      "index": 101,
+      "code": "eunbi_101_snowy_mountain_lake_074946",
+      "source": "characters/woongbbi/eunbi/references/curated/winter_travel_cozy/eunbi_101_snowy_mountain_lake_074946.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/winter_travel_cozy/eunbi_101_snowy_mountain_lake_074946__preferred_full_outfit.jpg",
+      "scene": "snowy_mountain_lake",
+      "season": "winter",
+      "outfit": "hoodie, puffer jacket, winter outerwear"
+    },
+    {
+      "index": 183,
+      "code": "eunbi_183_campus_winter_bookstore_sports_shop_080307",
+      "source": "characters/woongbbi/eunbi/references/curated/winter_travel_cozy/eunbi_183_campus_winter_bookstore_sports_shop_080307.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/winter_travel_cozy/eunbi_183_campus_winter_bookstore_sports_shop_080307__preferred_full_outfit.jpg",
+      "scene": "campus_winter_bookstore_sports_shop",
+      "season": "winter",
+      "outfit": "pink sweatshirt, quilted coat, fuzzy coat, beanie, gray/black sportswear"
+    },
+    {
+      "index": 184,
+      "code": "eunbi_184_campus_winter_bookstore_sports_shop_080314",
+      "source": "characters/woongbbi/eunbi/references/curated/winter_travel_cozy/eunbi_184_campus_winter_bookstore_sports_shop_080314.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/winter_travel_cozy/eunbi_184_campus_winter_bookstore_sports_shop_080314__preferred_full_outfit.jpg",
+      "scene": "campus_winter_bookstore_sports_shop",
+      "season": "winter",
+      "outfit": "pink sweatshirt, quilted coat, fuzzy coat, beanie, gray/black sportswear"
+    },
+    {
+      "index": 186,
+      "code": "eunbi_186_campus_winter_bookstore_sports_shop_080344",
+      "source": "characters/woongbbi/eunbi/references/curated/winter_travel_cozy/eunbi_186_campus_winter_bookstore_sports_shop_080344.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/winter_travel_cozy/eunbi_186_campus_winter_bookstore_sports_shop_080344__preferred_full_outfit.jpg",
+      "scene": "campus_winter_bookstore_sports_shop",
+      "season": "winter",
+      "outfit": "pink sweatshirt, quilted coat, fuzzy coat, beanie, gray/black sportswear"
+    },
+    {
+      "index": 187,
+      "code": "eunbi_187_campus_winter_bookstore_sports_shop_080349",
+      "source": "characters/woongbbi/eunbi/references/curated/winter_travel_cozy/eunbi_187_campus_winter_bookstore_sports_shop_080349.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/winter_travel_cozy/eunbi_187_campus_winter_bookstore_sports_shop_080349__preferred_full_outfit.jpg",
+      "scene": "campus_winter_bookstore_sports_shop",
+      "season": "winter",
+      "outfit": "pink sweatshirt, quilted coat, fuzzy coat, beanie, gray/black sportswear"
+    },
+    {
+      "index": 188,
+      "code": "eunbi_188_campus_winter_bookstore_sports_shop_080356",
+      "source": "characters/woongbbi/eunbi/references/curated/winter_travel_cozy/eunbi_188_campus_winter_bookstore_sports_shop_080356.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/winter_travel_cozy/eunbi_188_campus_winter_bookstore_sports_shop_080356__preferred_full_outfit.jpg",
+      "scene": "campus_winter_bookstore_sports_shop",
+      "season": "winter",
+      "outfit": "pink sweatshirt, quilted coat, fuzzy coat, beanie, gray/black sportswear"
+    },
+    {
+      "index": 189,
+      "code": "eunbi_189_campus_winter_bookstore_sports_shop_080406",
+      "source": "characters/woongbbi/eunbi/references/curated/winter_travel_cozy/eunbi_189_campus_winter_bookstore_sports_shop_080406.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/winter_travel_cozy/eunbi_189_campus_winter_bookstore_sports_shop_080406__preferred_full_outfit.jpg",
+      "scene": "campus_winter_bookstore_sports_shop",
+      "season": "winter",
+      "outfit": "pink sweatshirt, quilted coat, fuzzy coat, beanie, gray/black sportswear"
+    },
+    {
+      "index": 190,
+      "code": "eunbi_190_campus_winter_bookstore_sports_shop_080412",
+      "source": "characters/woongbbi/eunbi/references/curated/winter_travel_cozy/eunbi_190_campus_winter_bookstore_sports_shop_080412.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/winter_travel_cozy/eunbi_190_campus_winter_bookstore_sports_shop_080412__preferred_full_outfit.jpg",
+      "scene": "campus_winter_bookstore_sports_shop",
+      "season": "winter",
+      "outfit": "pink sweatshirt, quilted coat, fuzzy coat, beanie, gray/black sportswear"
+    },
+    {
+      "index": 191,
+      "code": "eunbi_191_campus_winter_bookstore_sports_shop_080419",
+      "source": "characters/woongbbi/eunbi/references/curated/winter_travel_cozy/eunbi_191_campus_winter_bookstore_sports_shop_080419.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/winter_travel_cozy/eunbi_191_campus_winter_bookstore_sports_shop_080419__preferred_full_outfit.jpg",
+      "scene": "campus_winter_bookstore_sports_shop",
+      "season": "winter",
+      "outfit": "pink sweatshirt, quilted coat, fuzzy coat, beanie, gray/black sportswear"
+    }
+  ],
+  "sporty_preppy_city": [
+    {
+      "index": 149,
+      "code": "eunbi_149_gym_running_beach_play_075829",
+      "source": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_149_gym_running_beach_play_075829.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_149_gym_running_beach_play_075829__preferred_full_outfit.jpg",
+      "scene": "gym_running_beach_play",
+      "season": "summer",
+      "outfit": "sports bra, shorts, rash guard, black swimsuit"
+    },
+    {
+      "index": 150,
+      "code": "eunbi_150_gym_running_beach_play_075842",
+      "source": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_150_gym_running_beach_play_075842.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_150_gym_running_beach_play_075842__preferred_full_outfit.jpg",
+      "scene": "gym_running_beach_play",
+      "season": "summer",
+      "outfit": "sports bra, shorts, rash guard, black swimsuit"
+    },
+    {
+      "index": 151,
+      "code": "eunbi_151_gym_running_beach_play_075848",
+      "source": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_151_gym_running_beach_play_075848.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_151_gym_running_beach_play_075848__preferred_full_outfit.jpg",
+      "scene": "gym_running_beach_play",
+      "season": "summer",
+      "outfit": "sports bra, shorts, rash guard, black swimsuit"
+    },
+    {
+      "index": 152,
+      "code": "eunbi_152_gym_running_beach_play_075855",
+      "source": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_152_gym_running_beach_play_075855.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_152_gym_running_beach_play_075855__preferred_full_outfit.jpg",
+      "scene": "gym_running_beach_play",
+      "season": "summer",
+      "outfit": "sports bra, shorts, rash guard, black swimsuit"
+    },
+    {
+      "index": 153,
+      "code": "eunbi_153_gym_running_beach_play_075903",
+      "source": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_153_gym_running_beach_play_075903.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_153_gym_running_beach_play_075903__preferred_full_outfit.jpg",
+      "scene": "gym_running_beach_play",
+      "season": "summer",
+      "outfit": "sports bra, shorts, rash guard, black swimsuit"
+    },
+    {
+      "index": 154,
+      "code": "eunbi_154_gym_running_beach_play_075911",
+      "source": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_154_gym_running_beach_play_075911.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_154_gym_running_beach_play_075911__preferred_full_outfit.jpg",
+      "scene": "gym_running_beach_play",
+      "season": "summer",
+      "outfit": "sports bra, shorts, rash guard, black swimsuit"
+    },
+    {
+      "index": 196,
+      "code": "eunbi_196_campus_winter_bookstore_sports_shop_080502",
+      "source": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_196_campus_winter_bookstore_sports_shop_080502.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_196_campus_winter_bookstore_sports_shop_080502__preferred_full_outfit.jpg",
+      "scene": "campus_winter_bookstore_sports_shop",
+      "season": "winter",
+      "outfit": "pink sweatshirt, quilted coat, fuzzy coat, beanie, gray/black sportswear"
+    },
+    {
+      "index": 197,
+      "code": "eunbi_197_campus_winter_bookstore_sports_shop_080509",
+      "source": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_197_campus_winter_bookstore_sports_shop_080509.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_197_campus_winter_bookstore_sports_shop_080509__preferred_full_outfit.jpg",
+      "scene": "campus_winter_bookstore_sports_shop",
+      "season": "winter",
+      "outfit": "pink sweatshirt, quilted coat, fuzzy coat, beanie, gray/black sportswear"
+    },
+    {
+      "index": 198,
+      "code": "eunbi_198_campus_winter_bookstore_sports_shop_080517",
+      "source": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_198_campus_winter_bookstore_sports_shop_080517.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_198_campus_winter_bookstore_sports_shop_080517__preferred_full_outfit.jpg",
+      "scene": "campus_winter_bookstore_sports_shop",
+      "season": "winter",
+      "outfit": "pink sweatshirt, quilted coat, fuzzy coat, beanie, gray/black sportswear"
+    },
+    {
+      "index": 199,
+      "code": "eunbi_199_campus_winter_bookstore_sports_shop_080524",
+      "source": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_199_campus_winter_bookstore_sports_shop_080524.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_199_campus_winter_bookstore_sports_shop_080524__preferred_full_outfit.jpg",
+      "scene": "campus_winter_bookstore_sports_shop",
+      "season": "winter",
+      "outfit": "pink sweatshirt, quilted coat, fuzzy coat, beanie, gray/black sportswear"
+    },
+    {
+      "index": 200,
+      "code": "eunbi_200_campus_winter_bookstore_sports_shop_080532",
+      "source": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_200_campus_winter_bookstore_sports_shop_080532.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_200_campus_winter_bookstore_sports_shop_080532__preferred_full_outfit.jpg",
+      "scene": "campus_winter_bookstore_sports_shop",
+      "season": "winter",
+      "outfit": "pink sweatshirt, quilted coat, fuzzy coat, beanie, gray/black sportswear"
+    },
+    {
+      "index": 210,
+      "code": "eunbi_210_riverside_sporty_preppy_city_080712",
+      "source": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_210_riverside_sporty_preppy_city_080712.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_210_riverside_sporty_preppy_city_080712__preferred_full_outfit.jpg",
+      "scene": "riverside_sporty_preppy_city",
+      "season": "spring_to_autumn",
+      "outfit": "white sporty top, black biker shorts, plaid skirt, black blazer set"
+    },
+    {
+      "index": 211,
+      "code": "eunbi_211_riverside_sporty_preppy_city_080719",
+      "source": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_211_riverside_sporty_preppy_city_080719.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_211_riverside_sporty_preppy_city_080719__preferred_full_outfit.jpg",
+      "scene": "riverside_sporty_preppy_city",
+      "season": "spring_to_autumn",
+      "outfit": "white sporty top, black biker shorts, plaid skirt, black blazer set"
+    },
+    {
+      "index": 212,
+      "code": "eunbi_212_riverside_sporty_preppy_city_080732",
+      "source": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_212_riverside_sporty_preppy_city_080732.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_212_riverside_sporty_preppy_city_080732__preferred_full_outfit.jpg",
+      "scene": "riverside_sporty_preppy_city",
+      "season": "spring_to_autumn",
+      "outfit": "white sporty top, black biker shorts, plaid skirt, black blazer set"
+    },
+    {
+      "index": 213,
+      "code": "eunbi_213_riverside_sporty_preppy_city_080739",
+      "source": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_213_riverside_sporty_preppy_city_080739.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_213_riverside_sporty_preppy_city_080739__preferred_full_outfit.jpg",
+      "scene": "riverside_sporty_preppy_city",
+      "season": "spring_to_autumn",
+      "outfit": "white sporty top, black biker shorts, plaid skirt, black blazer set"
+    },
+    {
+      "index": 214,
+      "code": "eunbi_214_riverside_sporty_preppy_city_080745",
+      "source": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_214_riverside_sporty_preppy_city_080745.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_214_riverside_sporty_preppy_city_080745__preferred_full_outfit.jpg",
+      "scene": "riverside_sporty_preppy_city",
+      "season": "spring_to_autumn",
+      "outfit": "white sporty top, black biker shorts, plaid skirt, black blazer set"
+    },
+    {
+      "index": 215,
+      "code": "eunbi_215_riverside_sporty_preppy_city_080752",
+      "source": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_215_riverside_sporty_preppy_city_080752.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_215_riverside_sporty_preppy_city_080752__preferred_full_outfit.jpg",
+      "scene": "riverside_sporty_preppy_city",
+      "season": "spring_to_autumn",
+      "outfit": "white sporty top, black biker shorts, plaid skirt, black blazer set"
+    },
+    {
+      "index": 216,
+      "code": "eunbi_216_riverside_sporty_preppy_city_080757",
+      "source": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_216_riverside_sporty_preppy_city_080757.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_216_riverside_sporty_preppy_city_080757__preferred_full_outfit.jpg",
+      "scene": "riverside_sporty_preppy_city",
+      "season": "spring_to_autumn",
+      "outfit": "white sporty top, black biker shorts, plaid skirt, black blazer set"
+    },
+    {
+      "index": 217,
+      "code": "eunbi_217_riverside_sporty_preppy_city_080804",
+      "source": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_217_riverside_sporty_preppy_city_080804.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_217_riverside_sporty_preppy_city_080804__preferred_full_outfit.jpg",
+      "scene": "riverside_sporty_preppy_city",
+      "season": "spring_to_autumn",
+      "outfit": "white sporty top, black biker shorts, plaid skirt, black blazer set"
+    },
+    {
+      "index": 218,
+      "code": "eunbi_218_riverside_sporty_preppy_city_080815",
+      "source": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_218_riverside_sporty_preppy_city_080815.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_218_riverside_sporty_preppy_city_080815__preferred_full_outfit.jpg",
+      "scene": "riverside_sporty_preppy_city",
+      "season": "spring_to_autumn",
+      "outfit": "white sporty top, black biker shorts, plaid skirt, black blazer set"
+    },
+    {
+      "index": 219,
+      "code": "eunbi_219_riverside_sporty_preppy_city_080821",
+      "source": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_219_riverside_sporty_preppy_city_080821.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_219_riverside_sporty_preppy_city_080821__preferred_full_outfit.jpg",
+      "scene": "riverside_sporty_preppy_city",
+      "season": "spring_to_autumn",
+      "outfit": "white sporty top, black biker shorts, plaid skirt, black blazer set"
+    },
+    {
+      "index": 220,
+      "code": "eunbi_220_riverside_sporty_preppy_city_080827",
+      "source": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_220_riverside_sporty_preppy_city_080827.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_220_riverside_sporty_preppy_city_080827__preferred_full_outfit.jpg",
+      "scene": "riverside_sporty_preppy_city",
+      "season": "spring_to_autumn",
+      "outfit": "white sporty top, black biker shorts, plaid skirt, black blazer set"
+    },
+    {
+      "index": 221,
+      "code": "eunbi_221_riverside_sporty_preppy_city_080834",
+      "source": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_221_riverside_sporty_preppy_city_080834.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_221_riverside_sporty_preppy_city_080834__preferred_full_outfit.jpg",
+      "scene": "riverside_sporty_preppy_city",
+      "season": "spring_to_autumn",
+      "outfit": "white sporty top, black biker shorts, plaid skirt, black blazer set"
+    },
+    {
+      "index": 222,
+      "code": "eunbi_222_riverside_sporty_preppy_city_080843",
+      "source": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_222_riverside_sporty_preppy_city_080843.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_222_riverside_sporty_preppy_city_080843__preferred_full_outfit.jpg",
+      "scene": "riverside_sporty_preppy_city",
+      "season": "spring_to_autumn",
+      "outfit": "white sporty top, black biker shorts, plaid skirt, black blazer set"
+    },
+    {
+      "index": 223,
+      "code": "eunbi_223_riverside_sporty_preppy_city_080850",
+      "source": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_223_riverside_sporty_preppy_city_080850.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_223_riverside_sporty_preppy_city_080850__preferred_full_outfit.jpg",
+      "scene": "riverside_sporty_preppy_city",
+      "season": "spring_to_autumn",
+      "outfit": "white sporty top, black biker shorts, plaid skirt, black blazer set"
+    },
+    {
+      "index": 224,
+      "code": "eunbi_224_riverside_sporty_preppy_city_080857",
+      "source": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_224_riverside_sporty_preppy_city_080857.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_224_riverside_sporty_preppy_city_080857__preferred_full_outfit.jpg",
+      "scene": "riverside_sporty_preppy_city",
+      "season": "spring_to_autumn",
+      "outfit": "white sporty top, black biker shorts, plaid skirt, black blazer set"
+    },
+    {
+      "index": 225,
+      "code": "eunbi_225_riverside_sporty_preppy_city_080903",
+      "source": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_225_riverside_sporty_preppy_city_080903.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_225_riverside_sporty_preppy_city_080903__preferred_full_outfit.jpg",
+      "scene": "riverside_sporty_preppy_city",
+      "season": "spring_to_autumn",
+      "outfit": "white sporty top, black biker shorts, plaid skirt, black blazer set"
+    },
+    {
+      "index": 226,
+      "code": "eunbi_226_riverside_sporty_preppy_city_080919",
+      "source": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_226_riverside_sporty_preppy_city_080919.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_226_riverside_sporty_preppy_city_080919__preferred_full_outfit.jpg",
+      "scene": "riverside_sporty_preppy_city",
+      "season": "spring_to_autumn",
+      "outfit": "white sporty top, black biker shorts, plaid skirt, black blazer set"
+    },
+    {
+      "index": 227,
+      "code": "eunbi_227_riverside_sporty_preppy_city_080926",
+      "source": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_227_riverside_sporty_preppy_city_080926.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_227_riverside_sporty_preppy_city_080926__preferred_full_outfit.jpg",
+      "scene": "riverside_sporty_preppy_city",
+      "season": "spring_to_autumn",
+      "outfit": "white sporty top, black biker shorts, plaid skirt, black blazer set"
+    },
+    {
+      "index": 228,
+      "code": "eunbi_228_riverside_sporty_preppy_city_080932",
+      "source": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_228_riverside_sporty_preppy_city_080932.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/sporty_preppy_city/eunbi_228_riverside_sporty_preppy_city_080932__preferred_full_outfit.jpg",
+      "scene": "riverside_sporty_preppy_city",
+      "season": "spring_to_autumn",
+      "outfit": "white sporty top, black biker shorts, plaid skirt, black blazer set"
+    }
+  ],
+  "hands_props_gestures": [
+    {
+      "index": 5,
+      "code": "eunbi_005_cafe_mirror_brown_jacket_073446",
+      "source": "characters/woongbbi/eunbi/references/curated/hands_props_gestures/eunbi_005_cafe_mirror_brown_jacket_073446.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/hands_props_gestures/eunbi_005_cafe_mirror_brown_jacket_073446__preferred_hands.jpg",
+      "scene": "cafe_riverside_station_city",
+      "season": "spring_to_summer",
+      "outfit": "white cardigan or sleeveless black/white city casual"
+    },
+    {
+      "index": 15,
+      "code": "eunbi_015_anime_wall_fuzzy_hat_073630",
+      "source": "characters/woongbbi/eunbi/references/curated/hands_props_gestures/eunbi_015_anime_wall_fuzzy_hat_073630.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/hands_props_gestures/eunbi_015_anime_wall_fuzzy_hat_073630__preferred_hands.jpg",
+      "scene": "resort_pool_ocean_snorkel",
+      "season": "summer",
+      "outfit": "green bikini, pink swimwear, rash guard, casual vacation wear"
+    },
+    {
+      "index": 16,
+      "code": "eunbi_016_doorway_fuzzy_hat_peace_073639",
+      "source": "characters/woongbbi/eunbi/references/curated/hands_props_gestures/eunbi_016_doorway_fuzzy_hat_peace_073639.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/hands_props_gestures/eunbi_016_doorway_fuzzy_hat_peace_073639__preferred_hands.jpg",
+      "scene": "resort_pool_ocean_snorkel",
+      "season": "summer",
+      "outfit": "green bikini, pink swimwear, rash guard, casual vacation wear"
+    },
+    {
+      "index": 28,
+      "code": "eunbi_028_resort_pool_ocean_snorkel_073835",
+      "source": "characters/woongbbi/eunbi/references/curated/hands_props_gestures/eunbi_028_resort_pool_ocean_snorkel_073835.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/hands_props_gestures/eunbi_028_resort_pool_ocean_snorkel_073835__preferred_hands.jpg",
+      "scene": "resort_pool_ocean_snorkel",
+      "season": "summer",
+      "outfit": "green bikini, pink swimwear, rash guard, casual vacation wear"
+    },
+    {
+      "index": 56,
+      "code": "eunbi_056_museum_park_observatory_city_074317",
+      "source": "characters/woongbbi/eunbi/references/curated/hands_props_gestures/eunbi_056_museum_park_observatory_city_074317.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/hands_props_gestures/eunbi_056_museum_park_observatory_city_074317__preferred_hands.jpg",
+      "scene": "museum_park_observatory_city",
+      "season": "spring_to_autumn",
+      "outfit": "white top with black skirt, cap, soft pink shirt, black skirt"
+    },
+    {
+      "index": 60,
+      "code": "eunbi_060_museum_park_observatory_city_074346",
+      "source": "characters/woongbbi/eunbi/references/curated/hands_props_gestures/eunbi_060_museum_park_observatory_city_074346.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/hands_props_gestures/eunbi_060_museum_park_observatory_city_074346__preferred_hands.jpg",
+      "scene": "museum_park_observatory_city",
+      "season": "spring_to_autumn",
+      "outfit": "white top with black skirt, cap, soft pink shirt, black skirt"
+    },
+    {
+      "index": 68,
+      "code": "eunbi_068_museum_park_observatory_city_074510",
+      "source": "characters/woongbbi/eunbi/references/curated/hands_props_gestures/eunbi_068_museum_park_observatory_city_074510.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/hands_props_gestures/eunbi_068_museum_park_observatory_city_074510__preferred_hands.jpg",
+      "scene": "museum_park_observatory_city",
+      "season": "spring_to_autumn",
+      "outfit": "white top with black skirt, cap, soft pink shirt, black skirt"
+    },
+    {
+      "index": 74,
+      "code": "eunbi_074_campus_river_mountain_fall_074603",
+      "source": "characters/woongbbi/eunbi/references/curated/hands_props_gestures/eunbi_074_campus_river_mountain_fall_074603.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/hands_props_gestures/eunbi_074_campus_river_mountain_fall_074603__preferred_hands.jpg",
+      "scene": "campus_river_mountain_fall",
+      "season": "autumn_to_winter",
+      "outfit": "black jacket, pink knit, white cardigan, brown jacket, fleece hoodie"
+    },
+    {
+      "index": 123,
+      "code": "eunbi_123_food_travel_london_garden_075350",
+      "source": "characters/woongbbi/eunbi/references/curated/hands_props_gestures/eunbi_123_food_travel_london_garden_075350.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/hands_props_gestures/eunbi_123_food_travel_london_garden_075350__preferred_hands.jpg",
+      "scene": "food_travel_london_garden",
+      "season": "summer_to_winter",
+      "outfit": "black dress, white summer dress, black coat, knit top"
+    },
+    {
+      "index": 125,
+      "code": "eunbi_125_food_travel_london_garden_075442",
+      "source": "characters/woongbbi/eunbi/references/curated/hands_props_gestures/eunbi_125_food_travel_london_garden_075442.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/hands_props_gestures/eunbi_125_food_travel_london_garden_075442__preferred_hands.jpg",
+      "scene": "food_travel_london_garden",
+      "season": "summer_to_winter",
+      "outfit": "black dress, white summer dress, black coat, knit top"
+    },
+    {
+      "index": 134,
+      "code": "eunbi_134_food_travel_london_garden_075559",
+      "source": "characters/woongbbi/eunbi/references/curated/hands_props_gestures/eunbi_134_food_travel_london_garden_075559.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/hands_props_gestures/eunbi_134_food_travel_london_garden_075559__preferred_hands.jpg",
+      "scene": "food_travel_london_garden",
+      "season": "summer_to_winter",
+      "outfit": "black dress, white summer dress, black coat, knit top"
+    },
+    {
+      "index": 135,
+      "code": "eunbi_135_food_travel_london_garden_075606",
+      "source": "characters/woongbbi/eunbi/references/curated/hands_props_gestures/eunbi_135_food_travel_london_garden_075606.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/hands_props_gestures/eunbi_135_food_travel_london_garden_075606__preferred_hands.jpg",
+      "scene": "food_travel_london_garden",
+      "season": "summer_to_winter",
+      "outfit": "black dress, white summer dress, black coat, knit top"
+    },
+    {
+      "index": 148,
+      "code": "eunbi_148_food_travel_london_garden_075819",
+      "source": "characters/woongbbi/eunbi/references/curated/hands_props_gestures/eunbi_148_food_travel_london_garden_075819.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/hands_props_gestures/eunbi_148_food_travel_london_garden_075819__preferred_hands.jpg",
+      "scene": "food_travel_london_garden",
+      "season": "summer_to_winter",
+      "outfit": "black dress, white summer dress, black coat, knit top"
+    },
+    {
+      "index": 159,
+      "code": "eunbi_159_gym_running_beach_play_075950",
+      "source": "characters/woongbbi/eunbi/references/curated/hands_props_gestures/eunbi_159_gym_running_beach_play_075950.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/hands_props_gestures/eunbi_159_gym_running_beach_play_075950__preferred_hands.jpg",
+      "scene": "gym_running_beach_play",
+      "season": "summer",
+      "outfit": "sports bra, shorts, rash guard, black swimsuit"
+    },
+    {
+      "index": 162,
+      "code": "eunbi_162_dining_autumn_city_casual_080016",
+      "source": "characters/woongbbi/eunbi/references/curated/hands_props_gestures/eunbi_162_dining_autumn_city_casual_080016.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/hands_props_gestures/eunbi_162_dining_autumn_city_casual_080016__preferred_hands.jpg",
+      "scene": "dining_autumn_city_casual",
+      "season": "autumn",
+      "outfit": "dark blouse, red sleeveless knit, hoodie, leather jacket, sunglasses"
+    },
+    {
+      "index": 202,
+      "code": "eunbi_202_cafe_mirror_fitting_room_080554",
+      "source": "characters/woongbbi/eunbi/references/curated/hands_props_gestures/eunbi_202_cafe_mirror_fitting_room_080554.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/hands_props_gestures/eunbi_202_cafe_mirror_fitting_room_080554__preferred_hands.jpg",
+      "scene": "cafe_mirror_fitting_room",
+      "season": "spring_to_autumn",
+      "outfit": "black/cream fitted tops, gray pants, mini skirt, ankle boots"
+    },
+    {
+      "index": 204,
+      "code": "eunbi_204_cafe_mirror_fitting_room_080612",
+      "source": "characters/woongbbi/eunbi/references/curated/hands_props_gestures/eunbi_204_cafe_mirror_fitting_room_080612.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/hands_props_gestures/eunbi_204_cafe_mirror_fitting_room_080612__preferred_hands.jpg",
+      "scene": "cafe_mirror_fitting_room",
+      "season": "spring_to_autumn",
+      "outfit": "black/cream fitted tops, gray pants, mini skirt, ankle boots"
+    },
+    {
+      "index": 205,
+      "code": "eunbi_205_cafe_mirror_fitting_room_080620",
+      "source": "characters/woongbbi/eunbi/references/curated/hands_props_gestures/eunbi_205_cafe_mirror_fitting_room_080620.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/hands_props_gestures/eunbi_205_cafe_mirror_fitting_room_080620__preferred_hands.jpg",
+      "scene": "cafe_mirror_fitting_room",
+      "season": "spring_to_autumn",
+      "outfit": "black/cream fitted tops, gray pants, mini skirt, ankle boots"
+    },
+    {
+      "index": 217,
+      "code": "eunbi_217_riverside_sporty_preppy_city_080804",
+      "source": "characters/woongbbi/eunbi/references/curated/hands_props_gestures/eunbi_217_riverside_sporty_preppy_city_080804.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/hands_props_gestures/eunbi_217_riverside_sporty_preppy_city_080804__preferred_hands.jpg",
+      "scene": "riverside_sporty_preppy_city",
+      "season": "spring_to_autumn",
+      "outfit": "white sporty top, black biker shorts, plaid skirt, black blazer set"
+    },
+    {
+      "index": 220,
+      "code": "eunbi_220_riverside_sporty_preppy_city_080827",
+      "source": "characters/woongbbi/eunbi/references/curated/hands_props_gestures/eunbi_220_riverside_sporty_preppy_city_080827.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/hands_props_gestures/eunbi_220_riverside_sporty_preppy_city_080827__preferred_hands.jpg",
+      "scene": "riverside_sporty_preppy_city",
+      "season": "spring_to_autumn",
+      "outfit": "white sporty top, black biker shorts, plaid skirt, black blazer set"
+    },
+    {
+      "index": 232,
+      "code": "eunbi_232_close_portrait_cafe_evening_081043",
+      "source": "characters/woongbbi/eunbi/references/curated/hands_props_gestures/eunbi_232_close_portrait_cafe_evening_081043.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/hands_props_gestures/eunbi_232_close_portrait_cafe_evening_081043__preferred_hands.jpg",
+      "scene": "close_portrait_cafe_evening",
+      "season": "autumn_to_winter",
+      "outfit": "blue fuzzy knit, graphic tee with glasses, formal black blazer, black evening dress"
+    }
+  ],
+  "legs_feet_shoes": [
+    {
+      "index": 44,
+      "code": "eunbi_044_tennis_court_autumn_walk_074119",
+      "source": "characters/woongbbi/eunbi/references/curated/legs_feet_shoes/eunbi_044_tennis_court_autumn_walk_074119.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/legs_feet_shoes/eunbi_044_tennis_court_autumn_walk_074119__preferred_legs.jpg",
+      "scene": "tennis_court_autumn_walk",
+      "season": "autumn",
+      "outfit": "oversized hoodie or sweatshirt with shorts and sneakers"
+    },
+    {
+      "index": 45,
+      "code": "eunbi_045_tennis_court_autumn_walk_074126",
+      "source": "characters/woongbbi/eunbi/references/curated/legs_feet_shoes/eunbi_045_tennis_court_autumn_walk_074126.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/legs_feet_shoes/eunbi_045_tennis_court_autumn_walk_074126__preferred_legs.jpg",
+      "scene": "tennis_court_autumn_walk",
+      "season": "autumn",
+      "outfit": "oversized hoodie or sweatshirt with shorts and sneakers"
+    },
+    {
+      "index": 46,
+      "code": "eunbi_046_tennis_court_autumn_walk_074133",
+      "source": "characters/woongbbi/eunbi/references/curated/legs_feet_shoes/eunbi_046_tennis_court_autumn_walk_074133.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/legs_feet_shoes/eunbi_046_tennis_court_autumn_walk_074133__preferred_legs.jpg",
+      "scene": "tennis_court_autumn_walk",
+      "season": "autumn",
+      "outfit": "oversized hoodie or sweatshirt with shorts and sneakers"
+    },
+    {
+      "index": 64,
+      "code": "eunbi_064_museum_park_observatory_city_074428",
+      "source": "characters/woongbbi/eunbi/references/curated/legs_feet_shoes/eunbi_064_museum_park_observatory_city_074428.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/legs_feet_shoes/eunbi_064_museum_park_observatory_city_074428__preferred_legs.jpg",
+      "scene": "museum_park_observatory_city",
+      "season": "spring_to_autumn",
+      "outfit": "white top with black skirt, cap, soft pink shirt, black skirt"
+    },
+    {
+      "index": 65,
+      "code": "eunbi_065_museum_park_observatory_city_074434",
+      "source": "characters/woongbbi/eunbi/references/curated/legs_feet_shoes/eunbi_065_museum_park_observatory_city_074434.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/legs_feet_shoes/eunbi_065_museum_park_observatory_city_074434__preferred_legs.jpg",
+      "scene": "museum_park_observatory_city",
+      "season": "spring_to_autumn",
+      "outfit": "white top with black skirt, cap, soft pink shirt, black skirt"
+    },
+    {
+      "index": 66,
+      "code": "eunbi_066_museum_park_observatory_city_074442",
+      "source": "characters/woongbbi/eunbi/references/curated/legs_feet_shoes/eunbi_066_museum_park_observatory_city_074442.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/legs_feet_shoes/eunbi_066_museum_park_observatory_city_074442__preferred_legs.jpg",
+      "scene": "museum_park_observatory_city",
+      "season": "spring_to_autumn",
+      "outfit": "white top with black skirt, cap, soft pink shirt, black skirt"
+    },
+    {
+      "index": 92,
+      "code": "eunbi_092_snowy_mountain_lake_074837",
+      "source": "characters/woongbbi/eunbi/references/curated/legs_feet_shoes/eunbi_092_snowy_mountain_lake_074837.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/legs_feet_shoes/eunbi_092_snowy_mountain_lake_074837__preferred_legs.jpg",
+      "scene": "snowy_mountain_lake",
+      "season": "winter",
+      "outfit": "hoodie, puffer jacket, winter outerwear"
+    },
+    {
+      "index": 93,
+      "code": "eunbi_093_snowy_mountain_lake_074843",
+      "source": "characters/woongbbi/eunbi/references/curated/legs_feet_shoes/eunbi_093_snowy_mountain_lake_074843.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/legs_feet_shoes/eunbi_093_snowy_mountain_lake_074843__preferred_legs.jpg",
+      "scene": "snowy_mountain_lake",
+      "season": "winter",
+      "outfit": "hoodie, puffer jacket, winter outerwear"
+    },
+    {
+      "index": 152,
+      "code": "eunbi_152_gym_running_beach_play_075855",
+      "source": "characters/woongbbi/eunbi/references/curated/legs_feet_shoes/eunbi_152_gym_running_beach_play_075855.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/legs_feet_shoes/eunbi_152_gym_running_beach_play_075855__preferred_legs.jpg",
+      "scene": "gym_running_beach_play",
+      "season": "summer",
+      "outfit": "sports bra, shorts, rash guard, black swimsuit"
+    },
+    {
+      "index": 153,
+      "code": "eunbi_153_gym_running_beach_play_075903",
+      "source": "characters/woongbbi/eunbi/references/curated/legs_feet_shoes/eunbi_153_gym_running_beach_play_075903.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/legs_feet_shoes/eunbi_153_gym_running_beach_play_075903__preferred_legs.jpg",
+      "scene": "gym_running_beach_play",
+      "season": "summer",
+      "outfit": "sports bra, shorts, rash guard, black swimsuit"
+    },
+    {
+      "index": 154,
+      "code": "eunbi_154_gym_running_beach_play_075911",
+      "source": "characters/woongbbi/eunbi/references/curated/legs_feet_shoes/eunbi_154_gym_running_beach_play_075911.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/legs_feet_shoes/eunbi_154_gym_running_beach_play_075911__preferred_legs.jpg",
+      "scene": "gym_running_beach_play",
+      "season": "summer",
+      "outfit": "sports bra, shorts, rash guard, black swimsuit"
+    },
+    {
+      "index": 183,
+      "code": "eunbi_183_campus_winter_bookstore_sports_shop_080307",
+      "source": "characters/woongbbi/eunbi/references/curated/legs_feet_shoes/eunbi_183_campus_winter_bookstore_sports_shop_080307.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/legs_feet_shoes/eunbi_183_campus_winter_bookstore_sports_shop_080307__preferred_legs.jpg",
+      "scene": "campus_winter_bookstore_sports_shop",
+      "season": "winter",
+      "outfit": "pink sweatshirt, quilted coat, fuzzy coat, beanie, gray/black sportswear"
+    },
+    {
+      "index": 184,
+      "code": "eunbi_184_campus_winter_bookstore_sports_shop_080314",
+      "source": "characters/woongbbi/eunbi/references/curated/legs_feet_shoes/eunbi_184_campus_winter_bookstore_sports_shop_080314.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/legs_feet_shoes/eunbi_184_campus_winter_bookstore_sports_shop_080314__preferred_legs.jpg",
+      "scene": "campus_winter_bookstore_sports_shop",
+      "season": "winter",
+      "outfit": "pink sweatshirt, quilted coat, fuzzy coat, beanie, gray/black sportswear"
+    },
+    {
+      "index": 198,
+      "code": "eunbi_198_campus_winter_bookstore_sports_shop_080517",
+      "source": "characters/woongbbi/eunbi/references/curated/legs_feet_shoes/eunbi_198_campus_winter_bookstore_sports_shop_080517.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/legs_feet_shoes/eunbi_198_campus_winter_bookstore_sports_shop_080517__preferred_legs.jpg",
+      "scene": "campus_winter_bookstore_sports_shop",
+      "season": "winter",
+      "outfit": "pink sweatshirt, quilted coat, fuzzy coat, beanie, gray/black sportswear"
+    },
+    {
+      "index": 199,
+      "code": "eunbi_199_campus_winter_bookstore_sports_shop_080524",
+      "source": "characters/woongbbi/eunbi/references/curated/legs_feet_shoes/eunbi_199_campus_winter_bookstore_sports_shop_080524.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/legs_feet_shoes/eunbi_199_campus_winter_bookstore_sports_shop_080524__preferred_legs.jpg",
+      "scene": "campus_winter_bookstore_sports_shop",
+      "season": "winter",
+      "outfit": "pink sweatshirt, quilted coat, fuzzy coat, beanie, gray/black sportswear"
+    },
+    {
+      "index": 209,
+      "code": "eunbi_209_cafe_mirror_fitting_room_080704",
+      "source": "characters/woongbbi/eunbi/references/curated/legs_feet_shoes/eunbi_209_cafe_mirror_fitting_room_080704.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/legs_feet_shoes/eunbi_209_cafe_mirror_fitting_room_080704__preferred_legs.jpg",
+      "scene": "cafe_mirror_fitting_room",
+      "season": "spring_to_autumn",
+      "outfit": "black/cream fitted tops, gray pants, mini skirt, ankle boots"
+    },
+    {
+      "index": 212,
+      "code": "eunbi_212_riverside_sporty_preppy_city_080732",
+      "source": "characters/woongbbi/eunbi/references/curated/legs_feet_shoes/eunbi_212_riverside_sporty_preppy_city_080732.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/legs_feet_shoes/eunbi_212_riverside_sporty_preppy_city_080732__preferred_legs.jpg",
+      "scene": "riverside_sporty_preppy_city",
+      "season": "spring_to_autumn",
+      "outfit": "white sporty top, black biker shorts, plaid skirt, black blazer set"
+    },
+    {
+      "index": 216,
+      "code": "eunbi_216_riverside_sporty_preppy_city_080757",
+      "source": "characters/woongbbi/eunbi/references/curated/legs_feet_shoes/eunbi_216_riverside_sporty_preppy_city_080757.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/legs_feet_shoes/eunbi_216_riverside_sporty_preppy_city_080757__preferred_legs.jpg",
+      "scene": "riverside_sporty_preppy_city",
+      "season": "spring_to_autumn",
+      "outfit": "white sporty top, black biker shorts, plaid skirt, black blazer set"
+    },
+    {
+      "index": 218,
+      "code": "eunbi_218_riverside_sporty_preppy_city_080815",
+      "source": "characters/woongbbi/eunbi/references/curated/legs_feet_shoes/eunbi_218_riverside_sporty_preppy_city_080815.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/legs_feet_shoes/eunbi_218_riverside_sporty_preppy_city_080815__preferred_legs.jpg",
+      "scene": "riverside_sporty_preppy_city",
+      "season": "spring_to_autumn",
+      "outfit": "white sporty top, black biker shorts, plaid skirt, black blazer set"
+    },
+    {
+      "index": 223,
+      "code": "eunbi_223_riverside_sporty_preppy_city_080850",
+      "source": "characters/woongbbi/eunbi/references/curated/legs_feet_shoes/eunbi_223_riverside_sporty_preppy_city_080850.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/legs_feet_shoes/eunbi_223_riverside_sporty_preppy_city_080850__preferred_legs.jpg",
+      "scene": "riverside_sporty_preppy_city",
+      "season": "spring_to_autumn",
+      "outfit": "white sporty top, black biker shorts, plaid skirt, black blazer set"
+    },
+    {
+      "index": 226,
+      "code": "eunbi_226_riverside_sporty_preppy_city_080919",
+      "source": "characters/woongbbi/eunbi/references/curated/legs_feet_shoes/eunbi_226_riverside_sporty_preppy_city_080919.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/legs_feet_shoes/eunbi_226_riverside_sporty_preppy_city_080919__preferred_legs.jpg",
+      "scene": "riverside_sporty_preppy_city",
+      "season": "spring_to_autumn",
+      "outfit": "white sporty top, black biker shorts, plaid skirt, black blazer set"
+    },
+    {
+      "index": 227,
+      "code": "eunbi_227_riverside_sporty_preppy_city_080926",
+      "source": "characters/woongbbi/eunbi/references/curated/legs_feet_shoes/eunbi_227_riverside_sporty_preppy_city_080926.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/legs_feet_shoes/eunbi_227_riverside_sporty_preppy_city_080926__preferred_legs.jpg",
+      "scene": "riverside_sporty_preppy_city",
+      "season": "spring_to_autumn",
+      "outfit": "white sporty top, black biker shorts, plaid skirt, black blazer set"
+    }
+  ],
+  "places_travel_anchor": [
+    {
+      "index": 1,
+      "code": "eunbi_001_hanok_pink_top_side_073350",
+      "source": "characters/woongbbi/eunbi/references/curated/places_travel_anchor/eunbi_001_hanok_pink_top_side_073350.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/places_travel_anchor/eunbi_001_hanok_pink_top_side_073350__preferred_full_outfit.jpg",
+      "scene": "tropical_coast_and_hanok_trip",
+      "season": "summer",
+      "outfit": "pink/green summer tops with denim or swimwear"
+    },
+    {
+      "index": 2,
+      "code": "eunbi_002_boat_ocean_white_top_073410",
+      "source": "characters/woongbbi/eunbi/references/curated/places_travel_anchor/eunbi_002_boat_ocean_white_top_073410.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/places_travel_anchor/eunbi_002_boat_ocean_white_top_073410__preferred_full_outfit.jpg",
+      "scene": "tropical_coast_and_hanok_trip",
+      "season": "summer",
+      "outfit": "pink/green summer tops with denim or swimwear"
+    },
+    {
+      "index": 3,
+      "code": "eunbi_003_beach_green_top_sunglasses_073421",
+      "source": "characters/woongbbi/eunbi/references/curated/places_travel_anchor/eunbi_003_beach_green_top_sunglasses_073421.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/places_travel_anchor/eunbi_003_beach_green_top_sunglasses_073421__preferred_full_outfit.jpg",
+      "scene": "tropical_coast_and_hanok_trip",
+      "season": "summer",
+      "outfit": "pink/green summer tops with denim or swimwear"
+    },
+    {
+      "index": 10,
+      "code": "eunbi_010_cathedral_stripe_sleeveless_073535",
+      "source": "characters/woongbbi/eunbi/references/curated/places_travel_anchor/eunbi_010_cathedral_stripe_sleeveless_073535.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/places_travel_anchor/eunbi_010_cathedral_stripe_sleeveless_073535__preferred_full_outfit.jpg",
+      "scene": "cafe_riverside_station_city",
+      "season": "spring_to_summer",
+      "outfit": "white cardigan or sleeveless black/white city casual"
+    },
+    {
+      "index": 19,
+      "code": "eunbi_019_riverside_picnic_tree_073715",
+      "source": "characters/woongbbi/eunbi/references/curated/places_travel_anchor/eunbi_019_riverside_picnic_tree_073715.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/places_travel_anchor/eunbi_019_riverside_picnic_tree_073715__preferred_full_outfit.jpg",
+      "scene": "resort_pool_ocean_snorkel",
+      "season": "summer",
+      "outfit": "green bikini, pink swimwear, rash guard, casual vacation wear"
+    },
+    {
+      "index": 20,
+      "code": "eunbi_020_riverside_tree_icecream_073725",
+      "source": "characters/woongbbi/eunbi/references/curated/places_travel_anchor/eunbi_020_riverside_tree_icecream_073725.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/places_travel_anchor/eunbi_020_riverside_tree_icecream_073725__preferred_full_outfit.jpg",
+      "scene": "resort_pool_ocean_snorkel",
+      "season": "summer",
+      "outfit": "green bikini, pink swimwear, rash guard, casual vacation wear"
+    },
+    {
+      "index": 52,
+      "code": "eunbi_052_museum_park_observatory_city_074239",
+      "source": "characters/woongbbi/eunbi/references/curated/places_travel_anchor/eunbi_052_museum_park_observatory_city_074239.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/places_travel_anchor/eunbi_052_museum_park_observatory_city_074239__preferred_full_outfit.jpg",
+      "scene": "museum_park_observatory_city",
+      "season": "spring_to_autumn",
+      "outfit": "white top with black skirt, cap, soft pink shirt, black skirt"
+    },
+    {
+      "index": 57,
+      "code": "eunbi_057_museum_park_observatory_city_074324",
+      "source": "characters/woongbbi/eunbi/references/curated/places_travel_anchor/eunbi_057_museum_park_observatory_city_074324.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/places_travel_anchor/eunbi_057_museum_park_observatory_city_074324__preferred_full_outfit.jpg",
+      "scene": "museum_park_observatory_city",
+      "season": "spring_to_autumn",
+      "outfit": "white top with black skirt, cap, soft pink shirt, black skirt"
+    },
+    {
+      "index": 70,
+      "code": "eunbi_070_museum_park_observatory_city_074530",
+      "source": "characters/woongbbi/eunbi/references/curated/places_travel_anchor/eunbi_070_museum_park_observatory_city_074530.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/places_travel_anchor/eunbi_070_museum_park_observatory_city_074530__preferred_full_outfit.jpg",
+      "scene": "museum_park_observatory_city",
+      "season": "spring_to_autumn",
+      "outfit": "white top with black skirt, cap, soft pink shirt, black skirt"
+    },
+    {
+      "index": 86,
+      "code": "eunbi_086_campus_river_mountain_fall_074732",
+      "source": "characters/woongbbi/eunbi/references/curated/places_travel_anchor/eunbi_086_campus_river_mountain_fall_074732.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/places_travel_anchor/eunbi_086_campus_river_mountain_fall_074732__preferred_full_outfit.jpg",
+      "scene": "campus_river_mountain_fall",
+      "season": "autumn_to_winter",
+      "outfit": "black jacket, pink knit, white cardigan, brown jacket, fleece hoodie"
+    },
+    {
+      "index": 88,
+      "code": "eunbi_088_campus_river_mountain_fall_074756",
+      "source": "characters/woongbbi/eunbi/references/curated/places_travel_anchor/eunbi_088_campus_river_mountain_fall_074756.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/places_travel_anchor/eunbi_088_campus_river_mountain_fall_074756__preferred_full_outfit.jpg",
+      "scene": "campus_river_mountain_fall",
+      "season": "autumn_to_winter",
+      "outfit": "black jacket, pink knit, white cardigan, brown jacket, fleece hoodie"
+    },
+    {
+      "index": 90,
+      "code": "eunbi_090_snowy_mountain_lake_074814",
+      "source": "characters/woongbbi/eunbi/references/curated/places_travel_anchor/eunbi_090_snowy_mountain_lake_074814.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/places_travel_anchor/eunbi_090_snowy_mountain_lake_074814__preferred_full_outfit.jpg",
+      "scene": "snowy_mountain_lake",
+      "season": "winter",
+      "outfit": "hoodie, puffer jacket, winter outerwear"
+    },
+    {
+      "index": 94,
+      "code": "eunbi_094_snowy_mountain_lake_074851",
+      "source": "characters/woongbbi/eunbi/references/curated/places_travel_anchor/eunbi_094_snowy_mountain_lake_074851.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/places_travel_anchor/eunbi_094_snowy_mountain_lake_074851__preferred_full_outfit.jpg",
+      "scene": "snowy_mountain_lake",
+      "season": "winter",
+      "outfit": "hoodie, puffer jacket, winter outerwear"
+    },
+    {
+      "index": 136,
+      "code": "eunbi_136_food_travel_london_garden_075617",
+      "source": "characters/woongbbi/eunbi/references/curated/places_travel_anchor/eunbi_136_food_travel_london_garden_075617.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/places_travel_anchor/eunbi_136_food_travel_london_garden_075617__preferred_full_outfit.jpg",
+      "scene": "food_travel_london_garden",
+      "season": "summer_to_winter",
+      "outfit": "black dress, white summer dress, black coat, knit top"
+    },
+    {
+      "index": 137,
+      "code": "eunbi_137_food_travel_london_garden_075624",
+      "source": "characters/woongbbi/eunbi/references/curated/places_travel_anchor/eunbi_137_food_travel_london_garden_075624.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/places_travel_anchor/eunbi_137_food_travel_london_garden_075624__preferred_full_outfit.jpg",
+      "scene": "food_travel_london_garden",
+      "season": "summer_to_winter",
+      "outfit": "black dress, white summer dress, black coat, knit top"
+    },
+    {
+      "index": 143,
+      "code": "eunbi_143_food_travel_london_garden_075715",
+      "source": "characters/woongbbi/eunbi/references/curated/places_travel_anchor/eunbi_143_food_travel_london_garden_075715.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/places_travel_anchor/eunbi_143_food_travel_london_garden_075715__preferred_full_outfit.jpg",
+      "scene": "food_travel_london_garden",
+      "season": "summer_to_winter",
+      "outfit": "black dress, white summer dress, black coat, knit top"
+    },
+    {
+      "index": 144,
+      "code": "eunbi_144_food_travel_london_garden_075722",
+      "source": "characters/woongbbi/eunbi/references/curated/places_travel_anchor/eunbi_144_food_travel_london_garden_075722.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/places_travel_anchor/eunbi_144_food_travel_london_garden_075722__preferred_full_outfit.jpg",
+      "scene": "food_travel_london_garden",
+      "season": "summer_to_winter",
+      "outfit": "black dress, white summer dress, black coat, knit top"
+    },
+    {
+      "index": 224,
+      "code": "eunbi_224_riverside_sporty_preppy_city_080857",
+      "source": "characters/woongbbi/eunbi/references/curated/places_travel_anchor/eunbi_224_riverside_sporty_preppy_city_080857.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/places_travel_anchor/eunbi_224_riverside_sporty_preppy_city_080857__preferred_full_outfit.jpg",
+      "scene": "riverside_sporty_preppy_city",
+      "season": "spring_to_autumn",
+      "outfit": "white sporty top, black biker shorts, plaid skirt, black blazer set"
+    },
+    {
+      "index": 226,
+      "code": "eunbi_226_riverside_sporty_preppy_city_080919",
+      "source": "characters/woongbbi/eunbi/references/curated/places_travel_anchor/eunbi_226_riverside_sporty_preppy_city_080919.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/places_travel_anchor/eunbi_226_riverside_sporty_preppy_city_080919__preferred_full_outfit.jpg",
+      "scene": "riverside_sporty_preppy_city",
+      "season": "spring_to_autumn",
+      "outfit": "white sporty top, black biker shorts, plaid skirt, black blazer set"
+    },
+    {
+      "index": 234,
+      "code": "eunbi_234_close_portrait_cafe_evening_081103",
+      "source": "characters/woongbbi/eunbi/references/curated/places_travel_anchor/eunbi_234_close_portrait_cafe_evening_081103.jpg",
+      "preferred_part": "characters/woongbbi/eunbi/references/curated/places_travel_anchor/eunbi_234_close_portrait_cafe_evening_081103__preferred_full_outfit.jpg",
+      "scene": "close_portrait_cafe_evening",
+      "season": "autumn_to_winter",
+      "outfit": "blue fuzzy knit, graphic tee with glasses, formal black blazer, black evening dress"
+    }
+  ]
+}

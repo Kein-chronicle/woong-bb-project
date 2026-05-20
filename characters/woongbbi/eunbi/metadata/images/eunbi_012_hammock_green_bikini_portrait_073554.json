@@ -1,0 +1,59 @@
+{
+  "code": "eunbi_012_hammock_green_bikini_portrait_073554",
+  "index": 12,
+  "original_file": "base_images/eunbi/스크린샷 2026-05-20 오후 7.35.54.png",
+  "renamed_reference": "characters/woongbbi/eunbi/source_images/eunbi_012_hammock_green_bikini_portrait_073554.jpg",
+  "sha256": "030a744e0662643c01cf9869846c9d6d229e6e725b9444d210065e16113859f7",
+  "width": 1716,
+  "height": 1246,
+  "orientation": "landscape",
+  "scene": "resort_pool_ocean_snorkel",
+  "location_type": "resort, beach, pool, ocean, sunset",
+  "outfit_summary": "green bikini, pink swimwear, rash guard, casual vacation wear",
+  "season_context": "summer",
+  "mood": "active, beachy, playful",
+  "camera_angle": "front, side, underwater, low angle",
+  "shot_type": "swimwear_full_body",
+  "favorite_cues": [
+    "swimming",
+    "snorkeling",
+    "pool",
+    "sunsets"
+  ],
+  "image_based_persona_cues": [
+    "adventurous vacation mood",
+    "physically confident, playful poses"
+  ],
+  "dominant_colors": [
+    "#282125",
+    "#595864",
+    "#948181",
+    "#c0a69c",
+    "#dbc6c1"
+  ],
+  "generation_tags": [
+    "active",
+    "green_bikini",
+    "resort",
+    "resort_pool_ocean_snorkel",
+    "summer"
+  ],
+  "body_part_references": {
+    "face": "characters/woongbbi/eunbi/references/parts/face/eunbi_012_hammock_green_bikini_portrait_073554__face.jpg",
+    "eyes": "characters/woongbbi/eunbi/references/parts/eyes/eunbi_012_hammock_green_bikini_portrait_073554__eyes.jpg",
+    "nose": "characters/woongbbi/eunbi/references/parts/nose/eunbi_012_hammock_green_bikini_portrait_073554__nose.jpg",
+    "mouth": "characters/woongbbi/eunbi/references/parts/mouth/eunbi_012_hammock_green_bikini_portrait_073554__mouth.jpg",
+    "ears": "characters/woongbbi/eunbi/references/parts/ears/eunbi_012_hammock_green_bikini_portrait_073554__ears.jpg",
+    "hair": "characters/woongbbi/eunbi/references/parts/hair/eunbi_012_hammock_green_bikini_portrait_073554__hair.jpg",
+    "neck_shoulders": "characters/woongbbi/eunbi/references/parts/neck_shoulders/eunbi_012_hammock_green_bikini_portrait_073554__neck_shoulders.jpg",
+    "chest_torso": "characters/woongbbi/eunbi/references/parts/chest_torso/eunbi_012_hammock_green_bikini_portrait_073554__chest_torso.jpg",
+    "waist_belly": "characters/woongbbi/eunbi/references/parts/waist_belly/eunbi_012_hammock_green_bikini_portrait_073554__waist_belly.jpg",
+    "arms_hands": "characters/woongbbi/eunbi/references/parts/arms_hands/eunbi_012_hammock_green_bikini_portrait_073554__arms_hands.jpg",
+    "hands": "characters/woongbbi/eunbi/references/parts/hands/eunbi_012_hammock_green_bikini_portrait_073554__hands.jpg",
+    "legs": "characters/woongbbi/eunbi/references/parts/legs/eunbi_012_hammock_green_bikini_portrait_073554__legs.jpg",
+    "feet": "characters/woongbbi/eunbi/references/parts/feet/eunbi_012_hammock_green_bikini_portrait_073554__feet.jpg",
+    "lower_body": "characters/woongbbi/eunbi/references/parts/lower_body/eunbi_012_hammock_green_bikini_portrait_073554__lower_body.jpg",
+    "full_outfit": "characters/woongbbi/eunbi/references/parts/full_outfit/eunbi_012_hammock_green_bikini_portrait_073554__full_outfit.jpg"
+  },
+  "analysis_confidence": "group-level visual analysis from contact sheets plus deterministic crop references"
+}

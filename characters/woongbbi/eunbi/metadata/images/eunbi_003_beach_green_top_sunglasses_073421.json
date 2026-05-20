@@ -1,0 +1,58 @@
+{
+  "code": "eunbi_003_beach_green_top_sunglasses_073421",
+  "index": 3,
+  "original_file": "base_images/eunbi/스크린샷 2026-05-20 오후 7.34.21.png",
+  "renamed_reference": "characters/woongbbi/eunbi/source_images/eunbi_003_beach_green_top_sunglasses_073421.jpg",
+  "sha256": "fcb392075baee839b2915cdd66b6361492fa65508bcf24d368c5acacfcf83a65",
+  "width": 1394,
+  "height": 1742,
+  "orientation": "portrait",
+  "scene": "tropical_coast_and_hanok_trip",
+  "location_type": "outdoor travel, seaside, traditional architecture",
+  "outfit_summary": "pink/green summer tops with denim or swimwear",
+  "season_context": "summer",
+  "mood": "fresh, sunlit, relaxed",
+  "camera_angle": "side or three-quarter view",
+  "shot_type": "half_body_to_full_body",
+  "favorite_cues": [
+    "ocean",
+    "travel",
+    "sunny places"
+  ],
+  "image_based_persona_cues": [
+    "open, playful travel energy",
+    "comfortable being photographed outdoors"
+  ],
+  "dominant_colors": [
+    "#456797",
+    "#304560",
+    "#708bad",
+    "#8faed3",
+    "#b2bdc6"
+  ],
+  "generation_tags": [
+    "fresh",
+    "outdoor_travel",
+    "pink_green_summer_tops_with_denim_or_swimwear",
+    "summer",
+    "tropical_coast_and_hanok_trip"
+  ],
+  "body_part_references": {
+    "face": "characters/woongbbi/eunbi/references/parts/face/eunbi_003_beach_green_top_sunglasses_073421__face.jpg",
+    "eyes": "characters/woongbbi/eunbi/references/parts/eyes/eunbi_003_beach_green_top_sunglasses_073421__eyes.jpg",
+    "nose": "characters/woongbbi/eunbi/references/parts/nose/eunbi_003_beach_green_top_sunglasses_073421__nose.jpg",
+    "mouth": "characters/woongbbi/eunbi/references/parts/mouth/eunbi_003_beach_green_top_sunglasses_073421__mouth.jpg",
+    "ears": "characters/woongbbi/eunbi/references/parts/ears/eunbi_003_beach_green_top_sunglasses_073421__ears.jpg",
+    "hair": "characters/woongbbi/eunbi/references/parts/hair/eunbi_003_beach_green_top_sunglasses_073421__hair.jpg",
+    "neck_shoulders": "characters/woongbbi/eunbi/references/parts/neck_shoulders/eunbi_003_beach_green_top_sunglasses_073421__neck_shoulders.jpg",
+    "chest_torso": "characters/woongbbi/eunbi/references/parts/chest_torso/eunbi_003_beach_green_top_sunglasses_073421__chest_torso.jpg",
+    "waist_belly": "characters/woongbbi/eunbi/references/parts/waist_belly/eunbi_003_beach_green_top_sunglasses_073421__waist_belly.jpg",
+    "arms_hands": "characters/woongbbi/eunbi/references/parts/arms_hands/eunbi_003_beach_green_top_sunglasses_073421__arms_hands.jpg",
+    "hands": "characters/woongbbi/eunbi/references/parts/hands/eunbi_003_beach_green_top_sunglasses_073421__hands.jpg",
+    "legs": "characters/woongbbi/eunbi/references/parts/legs/eunbi_003_beach_green_top_sunglasses_073421__legs.jpg",
+    "feet": "characters/woongbbi/eunbi/references/parts/feet/eunbi_003_beach_green_top_sunglasses_073421__feet.jpg",
+    "lower_body": "characters/woongbbi/eunbi/references/parts/lower_body/eunbi_003_beach_green_top_sunglasses_073421__lower_body.jpg",
+    "full_outfit": "characters/woongbbi/eunbi/references/parts/full_outfit/eunbi_003_beach_green_top_sunglasses_073421__full_outfit.jpg"
+  },
+  "analysis_confidence": "group-level visual analysis from contact sheets plus deterministic crop references"
+}

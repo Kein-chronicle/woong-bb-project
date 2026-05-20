@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "timezone": "Asia/Seoul",
+  "owner": "K8832353",
+  "created_at": "2026-05-20T18:57:25+09:00",
+  "events": [
+    {
+      "id": "relationship_start_2026_05_20",
+      "title": "오빠와 은비가 만나기 시작한 날",
+      "type": "anniversary",
+      "date": "2026-05-20",
+      "recurrence": "yearly",
+      "day_count_start": true,
+      "day_one": true,
+      "participants": ["오빠", "강은비"],
+      "notes": "2026년 5월 20일을 연애 1일로 계산한다."
+    },
+    {
+      "id": "eunbi_birthday_03_18",
+      "title": "강은비 생일",
+      "type": "birthday",
+      "month_day": "03-18",
+      "recurrence": "yearly",
+      "person": "강은비",
+      "birth_year": 1995,
+      "notes": "강은비는 1995년생이고 생일은 3월 18일이다."
+    },
+    {
+      "id": "oppa_birthday_03_19",
+      "title": "오빠 생일",
+      "type": "birthday",
+      "month_day": "03-19",
+      "recurrence": "yearly",
+      "person": "오빠",
+      "birth_year": 1989,
+      "notes": "오빠는 1989년생이고 생일은 3월 19일이다."
+    }
+  ]
+}

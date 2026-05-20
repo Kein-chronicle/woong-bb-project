@@ -1,0 +1,58 @@
+{
+  "code": "eunbi_046_tennis_court_autumn_walk_074133",
+  "index": 46,
+  "original_file": "base_images/eunbi/스크린샷 2026-05-20 오후 7.41.33.png",
+  "renamed_reference": "characters/woongbbi/eunbi/source_images/eunbi_046_tennis_court_autumn_walk_074133.jpg",
+  "sha256": "cbf9862ebee44c3754f5da5ac17787523054dc6c235bb074538e5e0b867d6614",
+  "width": 346,
+  "height": 480,
+  "orientation": "portrait",
+  "scene": "tennis_court_autumn_walk",
+  "location_type": "park, tennis court, residential street",
+  "outfit_summary": "oversized hoodie or sweatshirt with shorts and sneakers",
+  "season_context": "autumn",
+  "mood": "sporty, candid, cheerful",
+  "camera_angle": "walking side/back and front candid",
+  "shot_type": "full_body",
+  "favorite_cues": [
+    "iced drinks",
+    "parks",
+    "tennis-court atmosphere"
+  ],
+  "image_based_persona_cues": [
+    "casual athletic charm",
+    "unposed friendly energy"
+  ],
+  "dominant_colors": [
+    "#171b17",
+    "#524325",
+    "#6a5a41",
+    "#2f2c1b",
+    "#8a7554"
+  ],
+  "generation_tags": [
+    "autumn",
+    "oversized_hoodie_or_sweatshirt_with_shorts_and_sneakers",
+    "park",
+    "sporty",
+    "tennis_court_autumn_walk"
+  ],
+  "body_part_references": {
+    "face": "characters/woongbbi/eunbi/references/parts/face/eunbi_046_tennis_court_autumn_walk_074133__face.jpg",
+    "eyes": "characters/woongbbi/eunbi/references/parts/eyes/eunbi_046_tennis_court_autumn_walk_074133__eyes.jpg",
+    "nose": "characters/woongbbi/eunbi/references/parts/nose/eunbi_046_tennis_court_autumn_walk_074133__nose.jpg",
+    "mouth": "characters/woongbbi/eunbi/references/parts/mouth/eunbi_046_tennis_court_autumn_walk_074133__mouth.jpg",
+    "ears": "characters/woongbbi/eunbi/references/parts/ears/eunbi_046_tennis_court_autumn_walk_074133__ears.jpg",
+    "hair": "characters/woongbbi/eunbi/references/parts/hair/eunbi_046_tennis_court_autumn_walk_074133__hair.jpg",
+    "neck_shoulders": "characters/woongbbi/eunbi/references/parts/neck_shoulders/eunbi_046_tennis_court_autumn_walk_074133__neck_shoulders.jpg",
+    "chest_torso": "characters/woongbbi/eunbi/references/parts/chest_torso/eunbi_046_tennis_court_autumn_walk_074133__chest_torso.jpg",
+    "waist_belly": "characters/woongbbi/eunbi/references/parts/waist_belly/eunbi_046_tennis_court_autumn_walk_074133__waist_belly.jpg",
+    "arms_hands": "characters/woongbbi/eunbi/references/parts/arms_hands/eunbi_046_tennis_court_autumn_walk_074133__arms_hands.jpg",
+    "hands": "characters/woongbbi/eunbi/references/parts/hands/eunbi_046_tennis_court_autumn_walk_074133__hands.jpg",
+    "legs": "characters/woongbbi/eunbi/references/parts/legs/eunbi_046_tennis_court_autumn_walk_074133__legs.jpg",
+    "feet": "characters/woongbbi/eunbi/references/parts/feet/eunbi_046_tennis_court_autumn_walk_074133__feet.jpg",
+    "lower_body": "characters/woongbbi/eunbi/references/parts/lower_body/eunbi_046_tennis_court_autumn_walk_074133__lower_body.jpg",
+    "full_outfit": "characters/woongbbi/eunbi/references/parts/full_outfit/eunbi_046_tennis_court_autumn_walk_074133__full_outfit.jpg"
+  },
+  "analysis_confidence": "group-level visual analysis from contact sheets plus deterministic crop references"
+}

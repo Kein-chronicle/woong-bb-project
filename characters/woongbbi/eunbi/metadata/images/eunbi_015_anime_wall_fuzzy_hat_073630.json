@@ -1,0 +1,59 @@
+{
+  "code": "eunbi_015_anime_wall_fuzzy_hat_073630",
+  "index": 15,
+  "original_file": "base_images/eunbi/스크린샷 2026-05-20 오후 7.36.30.png",
+  "renamed_reference": "characters/woongbbi/eunbi/source_images/eunbi_015_anime_wall_fuzzy_hat_073630.jpg",
+  "sha256": "15909988218885f3c566eb02ede2c4ceb012498d61e905264f0c8d4bb7367be3",
+  "width": 1216,
+  "height": 1626,
+  "orientation": "portrait",
+  "scene": "resort_pool_ocean_snorkel",
+  "location_type": "resort, beach, pool, ocean, sunset",
+  "outfit_summary": "green bikini, pink swimwear, rash guard, casual vacation wear",
+  "season_context": "summer",
+  "mood": "active, beachy, playful",
+  "camera_angle": "front, side, underwater, low angle",
+  "shot_type": "swimwear_full_body",
+  "favorite_cues": [
+    "swimming",
+    "snorkeling",
+    "pool",
+    "sunsets"
+  ],
+  "image_based_persona_cues": [
+    "adventurous vacation mood",
+    "physically confident, playful poses"
+  ],
+  "dominant_colors": [
+    "#c8c1b7",
+    "#1e2025",
+    "#79747b",
+    "#46454a",
+    "#33353c"
+  ],
+  "generation_tags": [
+    "active",
+    "green_bikini",
+    "resort",
+    "resort_pool_ocean_snorkel",
+    "summer"
+  ],
+  "body_part_references": {
+    "face": "characters/woongbbi/eunbi/references/parts/face/eunbi_015_anime_wall_fuzzy_hat_073630__face.jpg",
+    "eyes": "characters/woongbbi/eunbi/references/parts/eyes/eunbi_015_anime_wall_fuzzy_hat_073630__eyes.jpg",
+    "nose": "characters/woongbbi/eunbi/references/parts/nose/eunbi_015_anime_wall_fuzzy_hat_073630__nose.jpg",
+    "mouth": "characters/woongbbi/eunbi/references/parts/mouth/eunbi_015_anime_wall_fuzzy_hat_073630__mouth.jpg",
+    "ears": "characters/woongbbi/eunbi/references/parts/ears/eunbi_015_anime_wall_fuzzy_hat_073630__ears.jpg",
+    "hair": "characters/woongbbi/eunbi/references/parts/hair/eunbi_015_anime_wall_fuzzy_hat_073630__hair.jpg",
+    "neck_shoulders": "characters/woongbbi/eunbi/references/parts/neck_shoulders/eunbi_015_anime_wall_fuzzy_hat_073630__neck_shoulders.jpg",
+    "chest_torso": "characters/woongbbi/eunbi/references/parts/chest_torso/eunbi_015_anime_wall_fuzzy_hat_073630__chest_torso.jpg",
+    "waist_belly": "characters/woongbbi/eunbi/references/parts/waist_belly/eunbi_015_anime_wall_fuzzy_hat_073630__waist_belly.jpg",
+    "arms_hands": "characters/woongbbi/eunbi/references/parts/arms_hands/eunbi_015_anime_wall_fuzzy_hat_073630__arms_hands.jpg",
+    "hands": "characters/woongbbi/eunbi/references/parts/hands/eunbi_015_anime_wall_fuzzy_hat_073630__hands.jpg",
+    "legs": "characters/woongbbi/eunbi/references/parts/legs/eunbi_015_anime_wall_fuzzy_hat_073630__legs.jpg",
+    "feet": "characters/woongbbi/eunbi/references/parts/feet/eunbi_015_anime_wall_fuzzy_hat_073630__feet.jpg",
+    "lower_body": "characters/woongbbi/eunbi/references/parts/lower_body/eunbi_015_anime_wall_fuzzy_hat_073630__lower_body.jpg",
+    "full_outfit": "characters/woongbbi/eunbi/references/parts/full_outfit/eunbi_015_anime_wall_fuzzy_hat_073630__full_outfit.jpg"
+  },
+  "analysis_confidence": "group-level visual analysis from contact sheets plus deterministic crop references"
+}

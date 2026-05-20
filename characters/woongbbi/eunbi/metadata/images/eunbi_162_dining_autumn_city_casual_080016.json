@@ -1,0 +1,58 @@
+{
+  "code": "eunbi_162_dining_autumn_city_casual_080016",
+  "index": 162,
+  "original_file": "base_images/eunbi/스크린샷 2026-05-20 오후 8.00.16.png",
+  "renamed_reference": "characters/woongbbi/eunbi/source_images/eunbi_162_dining_autumn_city_casual_080016.jpg",
+  "sha256": "300d04c31ef72870a6ea3289a9e5787da18ea6c0c56203fc35b82d9405984790",
+  "width": 954,
+  "height": 1216,
+  "orientation": "portrait",
+  "scene": "dining_autumn_city_casual",
+  "location_type": "restaurant, riverside, street, park",
+  "outfit_summary": "dark blouse, red sleeveless knit, hoodie, leather jacket, sunglasses",
+  "season_context": "autumn",
+  "mood": "casual city life, food-focused",
+  "camera_angle": "seated dining, walking, selfie",
+  "shot_type": "portrait_to_full_body",
+  "favorite_cues": [
+    "good food",
+    "coffee",
+    "autumn walks"
+  ],
+  "image_based_persona_cues": [
+    "easygoing city rhythm",
+    "comfortable mixing cute and cool styling"
+  ],
+  "dominant_colors": [
+    "#322f2f",
+    "#121315",
+    "#6c6053",
+    "#ae9478",
+    "#cdc4b0"
+  ],
+  "generation_tags": [
+    "autumn",
+    "casual_city_life",
+    "dark_blouse",
+    "dining_autumn_city_casual",
+    "restaurant"
+  ],
+  "body_part_references": {
+    "face": "characters/woongbbi/eunbi/references/parts/face/eunbi_162_dining_autumn_city_casual_080016__face.jpg",
+    "eyes": "characters/woongbbi/eunbi/references/parts/eyes/eunbi_162_dining_autumn_city_casual_080016__eyes.jpg",
+    "nose": "characters/woongbbi/eunbi/references/parts/nose/eunbi_162_dining_autumn_city_casual_080016__nose.jpg",
+    "mouth": "characters/woongbbi/eunbi/references/parts/mouth/eunbi_162_dining_autumn_city_casual_080016__mouth.jpg",
+    "ears": "characters/woongbbi/eunbi/references/parts/ears/eunbi_162_dining_autumn_city_casual_080016__ears.jpg",
+    "hair": "characters/woongbbi/eunbi/references/parts/hair/eunbi_162_dining_autumn_city_casual_080016__hair.jpg",
+    "neck_shoulders": "characters/woongbbi/eunbi/references/parts/neck_shoulders/eunbi_162_dining_autumn_city_casual_080016__neck_shoulders.jpg",
+    "chest_torso": "characters/woongbbi/eunbi/references/parts/chest_torso/eunbi_162_dining_autumn_city_casual_080016__chest_torso.jpg",
+    "waist_belly": "characters/woongbbi/eunbi/references/parts/waist_belly/eunbi_162_dining_autumn_city_casual_080016__waist_belly.jpg",
+    "arms_hands": "characters/woongbbi/eunbi/references/parts/arms_hands/eunbi_162_dining_autumn_city_casual_080016__arms_hands.jpg",
+    "hands": "characters/woongbbi/eunbi/references/parts/hands/eunbi_162_dining_autumn_city_casual_080016__hands.jpg",
+    "legs": "characters/woongbbi/eunbi/references/parts/legs/eunbi_162_dining_autumn_city_casual_080016__legs.jpg",
+    "feet": "characters/woongbbi/eunbi/references/parts/feet/eunbi_162_dining_autumn_city_casual_080016__feet.jpg",
+    "lower_body": "characters/woongbbi/eunbi/references/parts/lower_body/eunbi_162_dining_autumn_city_casual_080016__lower_body.jpg",
+    "full_outfit": "characters/woongbbi/eunbi/references/parts/full_outfit/eunbi_162_dining_autumn_city_casual_080016__full_outfit.jpg"
+  },
+  "analysis_confidence": "group-level visual analysis from contact sheets plus deterministic crop references"
+}

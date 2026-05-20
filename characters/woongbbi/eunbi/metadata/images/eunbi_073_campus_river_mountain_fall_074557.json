@@ -1,0 +1,58 @@
+{
+  "code": "eunbi_073_campus_river_mountain_fall_074557",
+  "index": 73,
+  "original_file": "base_images/eunbi/스크린샷 2026-05-20 오후 7.45.57.png",
+  "renamed_reference": "characters/woongbbi/eunbi/source_images/eunbi_073_campus_river_mountain_fall_074557.jpg",
+  "sha256": "f6f9b07429510bcf01e9e218e41421a37c800e20b5ca41e533d0d05fd6b428de",
+  "width": 966,
+  "height": 1240,
+  "orientation": "portrait",
+  "scene": "campus_river_mountain_fall",
+  "location_type": "campus/residential streets, riverside, lake, mountains",
+  "outfit_summary": "black jacket, pink knit, white cardigan, brown jacket, fleece hoodie",
+  "season_context": "autumn_to_winter",
+  "mood": "gentle, reflective, cozy",
+  "camera_angle": "profile, back view, close portrait",
+  "shot_type": "portrait_to_full_body",
+  "favorite_cues": [
+    "parks",
+    "lakes",
+    "mountain views"
+  ],
+  "image_based_persona_cues": [
+    "soft introspective mood",
+    "calm outdoorsy side"
+  ],
+  "dominant_colors": [
+    "#302f31",
+    "#6a5f62",
+    "#9e9394",
+    "#bdb4b1",
+    "#d8d3d0"
+  ],
+  "generation_tags": [
+    "autumn_to_winter",
+    "black_jacket",
+    "campus/residential_streets",
+    "campus_river_mountain_fall",
+    "gentle"
+  ],
+  "body_part_references": {
+    "face": "characters/woongbbi/eunbi/references/parts/face/eunbi_073_campus_river_mountain_fall_074557__face.jpg",
+    "eyes": "characters/woongbbi/eunbi/references/parts/eyes/eunbi_073_campus_river_mountain_fall_074557__eyes.jpg",
+    "nose": "characters/woongbbi/eunbi/references/parts/nose/eunbi_073_campus_river_mountain_fall_074557__nose.jpg",
+    "mouth": "characters/woongbbi/eunbi/references/parts/mouth/eunbi_073_campus_river_mountain_fall_074557__mouth.jpg",
+    "ears": "characters/woongbbi/eunbi/references/parts/ears/eunbi_073_campus_river_mountain_fall_074557__ears.jpg",
+    "hair": "characters/woongbbi/eunbi/references/parts/hair/eunbi_073_campus_river_mountain_fall_074557__hair.jpg",
+    "neck_shoulders": "characters/woongbbi/eunbi/references/parts/neck_shoulders/eunbi_073_campus_river_mountain_fall_074557__neck_shoulders.jpg",
+    "chest_torso": "characters/woongbbi/eunbi/references/parts/chest_torso/eunbi_073_campus_river_mountain_fall_074557__chest_torso.jpg",
+    "waist_belly": "characters/woongbbi/eunbi/references/parts/waist_belly/eunbi_073_campus_river_mountain_fall_074557__waist_belly.jpg",
+    "arms_hands": "characters/woongbbi/eunbi/references/parts/arms_hands/eunbi_073_campus_river_mountain_fall_074557__arms_hands.jpg",
+    "hands": "characters/woongbbi/eunbi/references/parts/hands/eunbi_073_campus_river_mountain_fall_074557__hands.jpg",
+    "legs": "characters/woongbbi/eunbi/references/parts/legs/eunbi_073_campus_river_mountain_fall_074557__legs.jpg",
+    "feet": "characters/woongbbi/eunbi/references/parts/feet/eunbi_073_campus_river_mountain_fall_074557__feet.jpg",
+    "lower_body": "characters/woongbbi/eunbi/references/parts/lower_body/eunbi_073_campus_river_mountain_fall_074557__lower_body.jpg",
+    "full_outfit": "characters/woongbbi/eunbi/references/parts/full_outfit/eunbi_073_campus_river_mountain_fall_074557__full_outfit.jpg"
+  },
+  "analysis_confidence": "group-level visual analysis from contact sheets plus deterministic crop references"
+}

@@ -1,0 +1,58 @@
+{
+  "code": "eunbi_203_cafe_mirror_fitting_room_080603",
+  "index": 203,
+  "original_file": "base_images/eunbi/스크린샷 2026-05-20 오후 8.06.03.png",
+  "renamed_reference": "characters/woongbbi/eunbi/source_images/eunbi_203_cafe_mirror_fitting_room_080603.jpg",
+  "sha256": "329303a60631f6ea50d076a3e2c96e84b4541f415c41687a923377826f75e4ec",
+  "width": 1286,
+  "height": 1592,
+  "orientation": "portrait",
+  "scene": "cafe_mirror_fitting_room",
+  "location_type": "cafe, fitting room, indoor seating",
+  "outfit_summary": "black/cream fitted tops, gray pants, mini skirt, ankle boots",
+  "season_context": "spring_to_autumn",
+  "mood": "sleek, feminine, self-composed",
+  "camera_angle": "mirror, side, low seated angle",
+  "shot_type": "portrait_to_full_body",
+  "favorite_cues": [
+    "cafes",
+    "trying outfits",
+    "mirror selfies"
+  ],
+  "image_based_persona_cues": [
+    "self-styling awareness",
+    "quiet confidence"
+  ],
+  "dominant_colors": [
+    "#c19f81",
+    "#89694c",
+    "#120f0c",
+    "#221d18",
+    "#4f3d2a"
+  ],
+  "generation_tags": [
+    "black_cream_fitted_tops",
+    "cafe",
+    "cafe_mirror_fitting_room",
+    "sleek",
+    "spring_to_autumn"
+  ],
+  "body_part_references": {
+    "face": "characters/woongbbi/eunbi/references/parts/face/eunbi_203_cafe_mirror_fitting_room_080603__face.jpg",
+    "eyes": "characters/woongbbi/eunbi/references/parts/eyes/eunbi_203_cafe_mirror_fitting_room_080603__eyes.jpg",
+    "nose": "characters/woongbbi/eunbi/references/parts/nose/eunbi_203_cafe_mirror_fitting_room_080603__nose.jpg",
+    "mouth": "characters/woongbbi/eunbi/references/parts/mouth/eunbi_203_cafe_mirror_fitting_room_080603__mouth.jpg",
+    "ears": "characters/woongbbi/eunbi/references/parts/ears/eunbi_203_cafe_mirror_fitting_room_080603__ears.jpg",
+    "hair": "characters/woongbbi/eunbi/references/parts/hair/eunbi_203_cafe_mirror_fitting_room_080603__hair.jpg",
+    "neck_shoulders": "characters/woongbbi/eunbi/references/parts/neck_shoulders/eunbi_203_cafe_mirror_fitting_room_080603__neck_shoulders.jpg",
+    "chest_torso": "characters/woongbbi/eunbi/references/parts/chest_torso/eunbi_203_cafe_mirror_fitting_room_080603__chest_torso.jpg",
+    "waist_belly": "characters/woongbbi/eunbi/references/parts/waist_belly/eunbi_203_cafe_mirror_fitting_room_080603__waist_belly.jpg",
+    "arms_hands": "characters/woongbbi/eunbi/references/parts/arms_hands/eunbi_203_cafe_mirror_fitting_room_080603__arms_hands.jpg",
+    "hands": "characters/woongbbi/eunbi/references/parts/hands/eunbi_203_cafe_mirror_fitting_room_080603__hands.jpg",
+    "legs": "characters/woongbbi/eunbi/references/parts/legs/eunbi_203_cafe_mirror_fitting_room_080603__legs.jpg",
+    "feet": "characters/woongbbi/eunbi/references/parts/feet/eunbi_203_cafe_mirror_fitting_room_080603__feet.jpg",
+    "lower_body": "characters/woongbbi/eunbi/references/parts/lower_body/eunbi_203_cafe_mirror_fitting_room_080603__lower_body.jpg",
+    "full_outfit": "characters/woongbbi/eunbi/references/parts/full_outfit/eunbi_203_cafe_mirror_fitting_room_080603__full_outfit.jpg"
+  },
+  "analysis_confidence": "group-level visual analysis from contact sheets plus deterministic crop references"
+}
