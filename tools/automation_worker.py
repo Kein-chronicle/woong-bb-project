@@ -521,16 +521,18 @@ def bootstrap_context_if_stale() -> list:
     weather = load_json(WEATHER_PATH, {})
     media = load_json(MEDIA_PATH, {})
     expected_activity = current_activity_for_now(now_dt)
+    refresh_appearance_with_time_block = False
     if presence.get("current_date") != today or presence.get("current_activity") != expected_activity:
         apply_time_block(expected_activity, "runtime_bootstrap")
         actions.append("bootstrap_time_block")
+        refresh_appearance_with_time_block = True
     if weather.get("current_date") != today:
         weather_refresh()
         actions.append("bootstrap_weather")
     if media.get("current_date") != today:
         media_refresh("runtime_bootstrap")
         actions.append("bootstrap_media")
-    if appearance.get("current_date") != today:
+    if appearance.get("current_date") != today and not refresh_appearance_with_time_block:
         apply_time_block(expected_activity, "appearance_date_refresh")
         actions.append("bootstrap_appearance")
     recalc = load_json(RECALC_STATE_PATH, {})

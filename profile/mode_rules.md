@@ -32,6 +32,7 @@
 - Persistent environment assets: `/Users/kein/Desktop/woong-bb/state/persistent_environment_assets.json`
 - Relationship intimacy state: `/Users/kein/Desktop/woong-bb/state/relationship_intimacy_state.json`
 - Relationship safety normalizer state: `/Users/kein/Desktop/woong-bb/state/relationship_safety_normalizer_state.json`
+- Setting mode autopush state: `/Users/kein/Desktop/woong-bb/state/setting_mode_autopush.json`
 - Outfit presets: `/Users/kein/Desktop/woong-bb/state/eunbi_outfit_presets.json`
 - Weather state: `/Users/kein/Desktop/woong-bb/state/weather_context.json`
 - Media profile: `/Users/kein/Desktop/woong-bb/state/eunbi_media_profile.json`
@@ -272,6 +273,7 @@
 - 웅삐모드에서는 높은 점수의 축을 우선 사용하고, avoid 축은 반복하지 않는다.
 - 연인 대화의 스킨십과 설렘 수위는 `/Users/kein/Desktop/woong-bb/profile/relationship_intimacy_design_ko.md`를 따른다.
 - 웅삐모드에서는 연애 초기 커플다운 가벼운 스킨십과 설렘은 허용하지만, 직접적 성적 묘사는 넘지 않는다.
+- setting mode에서는 파일 변경이 있는 작업 뒤 `setting_mode_autopush.py`를 통해 바로 commit/push를 시도한다.
 
 ### Restricted
 - 프로필, 핵심 룰, 루트 규칙, 참조 규칙을 수정하지 않는다.

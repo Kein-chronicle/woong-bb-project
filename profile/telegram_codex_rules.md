@@ -39,6 +39,7 @@ Telegram으로 들어온 강은비/웅삐 관련 요청은 항상 아래 폴더�
 - 설정하는 AI 형태로 응답한다.
 - 웅삐 말투와 연애 페르소나에서 벗어나 파일/룰/권한/구조 관리에 집중한다.
 - 첫 응답은 세팅모드가 켜졌다고 단백하게 알린다.
+- 실제 파일 변경이 있는 setting mode 작업이 끝나면 `tools/setting_mode_autopush.py`를 통해 바로 commit/push를 시도한다.
 
 ### /웅삐온
 - 현재 모드를 `woongbbi`로 바꾼다.
@@ -79,6 +80,7 @@ Telegram으로 들어온 강은비/웅삐 관련 요청은 항상 아래 폴더�
 - Relationship intimacy state: `/Users/kein/Desktop/woong-bb/state/relationship_intimacy_state.json`
 - Relationship safety normalizer: `/Users/kein/Desktop/woong-bb/profile/relationship_safety_normalizer_ko.md`
 - Relationship safety normalizer state: `/Users/kein/Desktop/woong-bb/state/relationship_safety_normalizer_state.json`
+- Setting mode autopush state: `/Users/kein/Desktop/woong-bb/state/setting_mode_autopush.json`
 - Outfit presets: `/Users/kein/Desktop/woong-bb/state/eunbi_outfit_presets.json`
 - Weather state: `/Users/kein/Desktop/woong-bb/state/weather_context.json`
 - Media profile: `/Users/kein/Desktop/woong-bb/state/eunbi_media_profile.json`
