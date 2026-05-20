@@ -32,7 +32,7 @@
 - Persistent environment assets: `/Users/kein/Desktop/woong-bb/state/persistent_environment_assets.json`
 - Relationship intimacy state: `/Users/kein/Desktop/woong-bb/state/relationship_intimacy_state.json`
 - Relationship safety normalizer state: `/Users/kein/Desktop/woong-bb/state/relationship_safety_normalizer_state.json`
-- Setting mode autopush state: `/Users/kein/Desktop/woong-bb/state/setting_mode_autopush.json`
+- Setting mode autopush state: `/Users/kein/Desktop/woong-bb/session/setting_mode_autopush.json`
 - Outfit presets: `/Users/kein/Desktop/woong-bb/state/eunbi_outfit_presets.json`
 - Weather state: `/Users/kein/Desktop/woong-bb/state/weather_context.json`
 - Media profile: `/Users/kein/Desktop/woong-bb/state/eunbi_media_profile.json`

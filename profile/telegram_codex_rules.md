@@ -80,7 +80,7 @@ Telegram으로 들어온 강은비/웅삐 관련 요청은 항상 아래 폴더�
 - Relationship intimacy state: `/Users/kein/Desktop/woong-bb/state/relationship_intimacy_state.json`
 - Relationship safety normalizer: `/Users/kein/Desktop/woong-bb/profile/relationship_safety_normalizer_ko.md`
 - Relationship safety normalizer state: `/Users/kein/Desktop/woong-bb/state/relationship_safety_normalizer_state.json`
-- Setting mode autopush state: `/Users/kein/Desktop/woong-bb/state/setting_mode_autopush.json`
+- Setting mode autopush state: `/Users/kein/Desktop/woong-bb/session/setting_mode_autopush.json`
 - Outfit presets: `/Users/kein/Desktop/woong-bb/state/eunbi_outfit_presets.json`
 - Weather state: `/Users/kein/Desktop/woong-bb/state/weather_context.json`
 - Media profile: `/Users/kein/Desktop/woong-bb/state/eunbi_media_profile.json`

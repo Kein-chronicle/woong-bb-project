@@ -6,7 +6,13 @@ from pathlib import Path
 
 
 ROOT = Path("/Users/kein/Desktop/woong-bb")
-STATE_PATH = ROOT / "state" / "setting_mode_autopush.json"
+STATE_PATH = ROOT / "session" / "setting_mode_autopush.json"
+IGNORED_AUTOPUSH_PATHS = {
+    "state/automation_health.json",
+    "state/automation_supervisor_state.json",
+    "state/automation_worker.lock",
+    "state/automation_worker_state.json",
+}
 
 
 def run_git(*args: str) -> subprocess.CompletedProcess:
@@ -65,9 +71,16 @@ def main() -> int:
         return 0
 
     changed_files = [line[3:] for line in lines if len(line) > 3]
+    changed_files = [path for path in changed_files if path not in IGNORED_AUTOPUSH_PATHS]
+    if not changed_files:
+        state["last_result"] = "ignored_runtime_changes_only"
+        state["last_changed_files"] = []
+        save_state(state)
+        print(json.dumps({"ok": True, "result": "ignored_runtime_changes_only"}, ensure_ascii=False))
+        return 0
     state["last_changed_files"] = changed_files
 
-    add = run_git("add", "-A")
+    add = run_git("add", "-A", "--", *changed_files)
     if add.returncode != 0:
         state["last_result"] = "git_add_failed"
         save_state(state)
