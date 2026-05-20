@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "managed_by": "automation_supervisor",
+  "enabled": true,
+  "health": "running",
+  "singleton_lock": {
+    "path": "/Users/kein/Desktop/woong-bb/state/automation_worker.lock",
+    "active": true,
+    "generation": 1
+  },
+  "active_pid": 73911,
+  "last_heartbeat_at": "2026-05-21T07:40:27+09:00",
+  "last_success_at": "2026-05-21T07:40:27+09:00",
+  "last_error_at": null,
+  "last_error_summary": null,
+  "duplicate_suspected": false,
+  "pending_control_action": null,
+  "last_applied_action": "start",
+  "last_applied_at": "2026-05-21T01:06:21+09:00",
+  "last_action_result": "started",
+  "notes": "worker 감시와 제어를 위한 supervisor 상태"
+}

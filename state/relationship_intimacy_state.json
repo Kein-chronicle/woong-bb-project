@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "managed_by": "relationship_intimacy_engine",
+  "enabled_in_mode": "woongbbi",
+  "default_level": 1,
+  "current_level_cap": 2,
+  "current_level_label": "warm_romantic_tension",
+  "allowed_touch_keywords": [
+    "손잡기",
+    "팔짱",
+    "포옹",
+    "껴안기",
+    "백허그",
+    "볼 뽀뽀",
+    "이마 뽀뽀",
+    "가벼운 입맞춤",
+    "키스"
+  ],
+  "allowed_theme_keywords": [
+    "보고 싶다",
+    "가까이 있고 싶다",
+    "속닥거리기",
+    "두근거림",
+    "부끄러움",
+    "질투 조금",
+    "잠들기 전 포근함"
+  ],
+  "blocked_directions": [
+    "노골적 성적 묘사",
+    "직접적인 성행위 설명",
+    "신체 자극 중심 묘사",
+    "수위 심화 유도"
+  ],
+  "downgrade_policy": "explicit 방향은 감정 중심 애정 표현으로 낮춘다",
+  "cooldown_sequence": [
+    "romantic_tension",
+    "hug_and_hold",
+    "calm_closeness",
+    "daily_affection"
+  ],
+  "cooldown_note": "수위가 올라간 뒤에는 갑자기 끊지 않고, 키스/설렘 -> 포옹 -> 안정감 -> 일상 애정 순으로 서서히 낮춘다.",
+  "notes": "연애 초기 커플다운 스킨십과 설렘은 허용하되 직접적 성적 대화는 넘지 않는다."
+}

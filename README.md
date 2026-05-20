@@ -38,10 +38,39 @@ If you are an AI agent entering this project, read these first:
 1. [WOONG_BB_ROOT.md](WOONG_BB_ROOT.md)
 2. [profile/telegram_codex_profile.md](profile/telegram_codex_profile.md)
 3. [profile/telegram_codex_rules.md](profile/telegram_codex_rules.md)
-4. [profile/telegram_eunbi_instagram_voice.md](profile/telegram_eunbi_instagram_voice.md)
-5. [messages/](messages/)
-6. [calendar/events.json](calendar/events.json)
-7. [characters/woongbbi/eunbi/README.md](characters/woongbbi/eunbi/README.md)
+4. [profile/mode_rules.md](profile/mode_rules.md)
+5. [profile/woongbbi_activation_checklist.md](profile/woongbbi_activation_checklist.md)
+6. [profile/lifestyle_schedule_ko.md](profile/lifestyle_schedule_ko.md)
+7. [profile/proactive_message_rules_ko.md](profile/proactive_message_rules_ko.md)
+8. [profile/situation_engine_design_ko.md](profile/situation_engine_design_ko.md)
+9. [profile/appearance_continuity_design_ko.md](profile/appearance_continuity_design_ko.md)
+10. [profile/weather_context_design_ko.md](profile/weather_context_design_ko.md)
+11. [profile/media_preference_design_ko.md](profile/media_preference_design_ko.md)
+12. [profile/share_event_design_ko.md](profile/share_event_design_ko.md)
+13. [profile/share_priority_scoring_ko.md](profile/share_priority_scoring_ko.md)
+14. [profile/share_priority_recalc_design_ko.md](profile/share_priority_recalc_design_ko.md)
+15. [profile/share_event_flow_ko.md](profile/share_event_flow_ko.md)
+16. [profile/automation_worker_design_ko.md](profile/automation_worker_design_ko.md)
+17. [profile/automation_supervision_design_ko.md](profile/automation_supervision_design_ko.md)
+18. [state/mode_state.json](state/mode_state.json)
+19. [state/eunbi_presence.json](state/eunbi_presence.json)
+20. [state/day_context.json](state/day_context.json)
+21. [state/eunbi_appearance_state.json](state/eunbi_appearance_state.json)
+22. [state/weather_context.json](state/weather_context.json)
+23. [state/eunbi_media_profile.json](state/eunbi_media_profile.json)
+24. [state/media_watch_context.json](state/media_watch_context.json)
+25. [state/share_event_context.json](state/share_event_context.json)
+26. [state/share_priority_state.json](state/share_priority_state.json)
+27. [state/share_priority_recalc_state.json](state/share_priority_recalc_state.json)
+28. [state/share_event_flow_state.json](state/share_event_flow_state.json)
+29. [state/automation_worker_state.json](state/automation_worker_state.json)
+30. [state/automation_supervisor_state.json](state/automation_supervisor_state.json)
+31. [state/automation_control.json](state/automation_control.json)
+32. [state/automation_health.json](state/automation_health.json)
+33. [profile/telegram_eunbi_instagram_voice.md](profile/telegram_eunbi_instagram_voice.md)
+34. [messages/](messages/)
+35. [calendar/events.json](calendar/events.json)
+36. [characters/woongbbi/eunbi/README.md](characters/woongbbi/eunbi/README.md)
 
 Treat this repository as the canonical memory root. If similar or older files exist elsewhere, prefer the files in this repository unless the user explicitly says otherwise.
 
@@ -49,6 +78,10 @@ Treat this repository as the canonical memory root. If similar or older files ex
 
 - `profile/`
   - Core persona profile, voice, behavioral rules, and relationship-facing instructions.
+- `state/`
+  - Current mode, timers, and small runtime state used by Telegram-facing behavior.
+  - Also stores proactive-message templates and future auto-message state.
+  - Also stores presence state, day continuity state, and situation-engine inputs.
 - `messages/`
   - Conversation logs and message history used to preserve continuity.
 - `calendar/`
@@ -138,6 +171,22 @@ Codex --channels plugin:telegram@Codex-plugins-official
 The project has:
 
 - a canonical local root declaration
+- setting/woongbbi mode rules and a current mode state file
+- a Woongbbi activation checklist for restarted sessions
+- a Korean-time lifestyle schedule for time-aware replies
+- proactive-message design rules and template state for future auto check-ins
+- a separate situation engine design for mood, continuity, and low-drama random events
+- detailed human-like update rules for fatigue, recovery, affection, and time-block transitions
+- a separate appearance continuity design for outfit, hair, makeup, sweat, and home/work/exercise visual state
+- a weather context design that affects mood, care, energy, and appearance continuity
+- a media preference design that covers YouTube, Shorts, Reels, OTT, and live watch-context lookup
+- a share event design for sending images and links naturally during proactive messages or active conversation
+- a scoring table that decides when text, image, or link sharing should win
+- a recalc design that decides when the sharing score should be recomputed
+- a share event flow that binds trigger, scoring, candidate selection, delivery, and logging
+- a reinforcement preference system that accumulates what the user likes or dislikes by topic, action, and delivery style
+- a separate automation worker design for timers, recalculation, and auto-event execution
+- a supervision/control design for worker monitoring, singleton safety, heartbeat, and restart control
 - active persona/profile files
 - initial message and calendar storage
 - a processed visual reference dataset for Woongbbi / Eunbi

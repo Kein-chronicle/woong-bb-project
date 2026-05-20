@@ -14,6 +14,39 @@ Canonical root:
 ## Main Files
 - Profile: `/Users/kein/Desktop/woong-bb/profile/telegram_codex_profile.md`
 - Rules: `/Users/kein/Desktop/woong-bb/profile/telegram_codex_rules.md`
+- Mode rules: `/Users/kein/Desktop/woong-bb/profile/mode_rules.md`
+- Woongbbi activation checklist: `/Users/kein/Desktop/woong-bb/profile/woongbbi_activation_checklist.md`
+- Mode state: `/Users/kein/Desktop/woong-bb/state/mode_state.json`
+- Timers: `/Users/kein/Desktop/woong-bb/state/timers.json`
+- Lifestyle schedule: `/Users/kein/Desktop/woong-bb/profile/lifestyle_schedule_ko.md`
+- Proactive message rules: `/Users/kein/Desktop/woong-bb/profile/proactive_message_rules_ko.md`
+- Proactive message state: `/Users/kein/Desktop/woong-bb/state/proactive_messages.json`
+- Situation engine design: `/Users/kein/Desktop/woong-bb/profile/situation_engine_design_ko.md`
+- Appearance continuity design: `/Users/kein/Desktop/woong-bb/profile/appearance_continuity_design_ko.md`
+- Weather context design: `/Users/kein/Desktop/woong-bb/profile/weather_context_design_ko.md`
+- Media preference design: `/Users/kein/Desktop/woong-bb/profile/media_preference_design_ko.md`
+- Share event design: `/Users/kein/Desktop/woong-bb/profile/share_event_design_ko.md`
+- Share priority scoring: `/Users/kein/Desktop/woong-bb/profile/share_priority_scoring_ko.md`
+- Share priority recalc design: `/Users/kein/Desktop/woong-bb/profile/share_priority_recalc_design_ko.md`
+- Share event flow design: `/Users/kein/Desktop/woong-bb/profile/share_event_flow_ko.md`
+- Automation worker design: `/Users/kein/Desktop/woong-bb/profile/automation_worker_design_ko.md`
+- Automation supervision design: `/Users/kein/Desktop/woong-bb/profile/automation_supervision_design_ko.md`
+- Presence state: `/Users/kein/Desktop/woong-bb/state/eunbi_presence.json`
+- Day context: `/Users/kein/Desktop/woong-bb/state/day_context.json`
+- Random event pool: `/Users/kein/Desktop/woong-bb/state/random_event_pool.json`
+- Appearance state: `/Users/kein/Desktop/woong-bb/state/eunbi_appearance_state.json`
+- Outfit presets: `/Users/kein/Desktop/woong-bb/state/eunbi_outfit_presets.json`
+- Weather state: `/Users/kein/Desktop/woong-bb/state/weather_context.json`
+- Media profile: `/Users/kein/Desktop/woong-bb/state/eunbi_media_profile.json`
+- Media watch context: `/Users/kein/Desktop/woong-bb/state/media_watch_context.json`
+- Share event context: `/Users/kein/Desktop/woong-bb/state/share_event_context.json`
+- Share priority state: `/Users/kein/Desktop/woong-bb/state/share_priority_state.json`
+- Share priority recalc state: `/Users/kein/Desktop/woong-bb/state/share_priority_recalc_state.json`
+- Share event flow state: `/Users/kein/Desktop/woong-bb/state/share_event_flow_state.json`
+- Automation worker state: `/Users/kein/Desktop/woong-bb/state/automation_worker_state.json`
+- Automation supervisor state: `/Users/kein/Desktop/woong-bb/state/automation_supervisor_state.json`
+- Automation control: `/Users/kein/Desktop/woong-bb/state/automation_control.json`
+- Automation health: `/Users/kein/Desktop/woong-bb/state/automation_health.json`
 - Voice source: `/Users/kein/Desktop/woong-bb/profile/telegram_eunbi_instagram_voice.md`
 - Messages: `/Users/kein/Desktop/woong-bb/messages`
 - Calendar: `/Users/kein/Desktop/woong-bb/calendar/events.json`

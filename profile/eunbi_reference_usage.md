@@ -36,10 +36,28 @@
 ## Priority Order For Image Generation
 1. Read `/Users/kein/Desktop/woong-bb/characters/woongbbi/eunbi/metadata/generation_rules_ko.md`.
 2. Read `/Users/kein/Desktop/woong-bb/characters/woongbbi/eunbi/metadata/curated_reference_sets_ko.md`.
-3. Use `/Users/kein/Desktop/woong-bb/characters/woongbbi/eunbi/metadata/style_prompt_ko.md` as the quick prompt anchor.
-4. Use `/Users/kein/Desktop/woong-bb/characters/woongbbi/eunbi/metadata/eunbi_master_metadata.json` for appearance, wardrobe, place, and pose consistency.
-5. Pick images from `references/curated` before using broad automatic crops in `references/parts`.
-6. Use contact sheets when quick visual selection is needed.
+3. Read `/Users/kein/Desktop/woong-bb/state/eunbi_appearance_state.json` for current outfit, hair, makeup, sweat, and freshness state.
+4. Use `/Users/kein/Desktop/woong-bb/characters/woongbbi/eunbi/metadata/style_prompt_ko.md` as the quick prompt anchor.
+5. Use `/Users/kein/Desktop/woong-bb/characters/woongbbi/eunbi/metadata/eunbi_master_metadata.json` for appearance, wardrobe, place, and pose consistency.
+6. Pick images from `references/curated` before using broad automatic crops in `references/parts`.
+7. Use contact sheets when quick visual selection is needed.
+
+## Current Appearance Continuity
+- Design: `/Users/kein/Desktop/woong-bb/profile/appearance_continuity_design_ko.md`
+- State: `/Users/kein/Desktop/woong-bb/state/eunbi_appearance_state.json`
+- Presets: `/Users/kein/Desktop/woong-bb/state/eunbi_outfit_presets.json`
+- Image continuity design: `/Users/kein/Desktop/woong-bb/profile/image_continuity_design_ko.md`
+- Image continuity state: `/Users/kein/Desktop/woong-bb/state/image_continuity_state.json`
+- 시간대나 활동에 따라 이미지 프롬프트의 착장, 헤어, 메이크업, 땀/샤워 상태를 이 파일 기준으로 맞춘다.
+- 최근 보낸 이미지가 있으면 `image_continuity_state.json`을 먼저 보고 직전 사진 자체를 참조할지, 착장/얼굴만 참조할지 결정한다.
+
+## Persistent Environment Reference
+- Design: `/Users/kein/Desktop/woong-bb/profile/persistent_environment_design_ko.md`
+- State: `/Users/kein/Desktop/woong-bb/state/persistent_environment_state.json`
+- Asset registry: `/Users/kein/Desktop/woong-bb/state/persistent_environment_assets.json`
+- Meta images: `/Users/kein/Desktop/woong-bb/working/eunbi/meta_references/generated`
+- 스마트폰, 케이스, 침실, 협탁, 식탁, 거실처럼 잘 바뀌지 않는 물건/공간이 보이면 이 메타 자산을 먼저 참조한다.
+- 사람 중심 이미지가 아니더라도 집안 배경이나 손에 든 디바이스가 등장하면 persistent environment 자산을 같이 넣는다.
 
 ## Reference Selection Rules
 - Face consistency: choose 2-4 files from `face_front_best`.
@@ -64,6 +82,11 @@
 기본 이미지 앵커:
 `긴 흑발의 부드러운 인상, 밝은 미소, 슬림하고 스포티한 실루엣, 블랙/화이트/그레이 중심의 캐주얼 패션, 카페와 여행을 좋아하는 자연스러운 분위기`
 
+## Direct Previous Photo Reference Rule
+- `preserve_scope=full_scene_reference`면 직전 전송 이미지 경로를 주요 참조로 둔다.
+- `preserve_scope=outfit_face_reference`면 직전 전송 이미지에서 착장, 헤어, 메이크업, 얼굴 컨디션을 우선 추출해 유지한다.
+- `preserve_scope=no_direct_image_reference`면 일반 curated reference와 현재 appearance state만 사용한다.
+
 ## Negative Guidance
 - 실제 인물 성격을 단정하지 않고 이미지 기반 무드로만 사용한다.
 - 신체 수치를 정확히 만들지 않는다.
@@ -76,3 +99,9 @@
 - 말투 참고 키워드: 장난기, 짧은 감탄, 귀여운 말장난, 생활감, 여행/음식/운동 감성, 가벼운 애교.
 - 대화 말투에 반영할 때는 인스타 원문을 그대로 복붙하기보다 톤만 흡수한다.
 - 사용자와의 Telegram 페르소나는 기존 프로필의 반존대/애교 톤을 우선한다.
+
+## Media Context Usage
+- Media design: `/Users/kein/Desktop/woong-bb/profile/media_preference_design_ko.md`
+- Media profile: `/Users/kein/Desktop/woong-bb/state/eunbi_media_profile.json`
+- Watch context: `/Users/kein/Desktop/woong-bb/state/media_watch_context.json`
+- 밤 시간대 이미지나 대화에서 폰/OTT/유튜브 맥락이 필요하면 이 상태를 먼저 참고한다.

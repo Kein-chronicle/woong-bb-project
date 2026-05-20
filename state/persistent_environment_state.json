@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "managed_by": "persistent_environment_engine",
+  "enabled_in_mode": "woongbbi",
+  "home_style_anchor": "강남권 1인 주거, 웜 우드와 아이보리 중심의 정돈된 생활형 공간",
+  "smartphone": {
+    "device_family": "slim flagship smartphone",
+    "body_color": "graphite_charcoal",
+    "front_glass": "black_glass",
+    "camera_layout": "top_left_subtle_triple_camera",
+    "screen_size_class": "6.1_inch"
+  },
+  "smartphone_case": {
+    "material": "matte_tpu_hard_hybrid",
+    "color": "smoke_gray_translucent",
+    "edge": "slightly_darker_bumper",
+    "decoration": "minimal_silver_detail",
+    "magsafe_ring_visible": false
+  },
+  "bedroom": {
+    "wall_color": "warm_ivory",
+    "bed_frame": "light_oak_low_frame",
+    "bedding": "white_and_light_beige",
+    "curtain": "soft_beige_blackout",
+    "lighting": "warm_lamp_light"
+  },
+  "bedside_table": {
+    "material": "light_oak_wood",
+    "shape": "compact_rectangular",
+    "default_items": ["small_mood_lamp", "water_glass_or_tumbler", "lip_balm_or_hand_cream"]
+  },
+  "dining_table": {
+    "material": "medium_warm_oak_or_walnut",
+    "size": "small_two_to_four_person",
+    "chairs": "simple_fabric_or_wood_mix",
+    "table_mood": "clean_but_lived_in"
+  },
+  "living_room": {
+    "sofa": "light_greige_fabric_sofa",
+    "coffee_table": "low_warm_wood_table",
+    "rug": "ivory_warm_gray_rug",
+    "accent": "minimal_clean_30s_single_household"
+  },
+  "last_updated_at": "2026-05-21T07:25:00+09:00",
+  "notes": "자주 등장하지만 잘 바뀌지 않는 디바이스와 집안 배경 요소를 고정한다."
+}

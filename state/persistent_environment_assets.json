@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "managed_by": "persistent_environment_engine",
+  "asset_root": "/Users/kein/Desktop/woong-bb/working/eunbi/meta_references/generated",
+  "assets": [
+    {
+      "id": "smartphone_front",
+      "kind": "object",
+      "label": "스마트폰 전면/후면 메타 참조",
+      "status": "ready",
+      "path": "/Users/kein/Desktop/woong-bb/working/eunbi/meta_references/generated/smartphone_front.png",
+      "prompt_ref": "/Users/kein/Desktop/woong-bb/working/eunbi/meta_references/prompts/persistent_environment_prompts_ko.md#1-smartphone_front",
+      "usage_tags": ["smartphone", "mirror_selfie", "bed_photo", "handheld"]
+    },
+    {
+      "id": "smartphone_case_detail",
+      "kind": "object",
+      "label": "스마트폰 케이스 디테일 메타 참조",
+      "status": "ready",
+      "path": "/Users/kein/Desktop/woong-bb/working/eunbi/meta_references/generated/smartphone_case_detail.png",
+      "prompt_ref": "/Users/kein/Desktop/woong-bb/working/eunbi/meta_references/prompts/persistent_environment_prompts_ko.md#2-smartphone_case_detail",
+      "usage_tags": ["smartphone_case", "close_up", "table_scene"]
+    },
+    {
+      "id": "bedroom_wide",
+      "kind": "space",
+      "label": "침실 전체 분위기 메타 참조",
+      "status": "ready",
+      "path": "/Users/kein/Desktop/woong-bb/working/eunbi/meta_references/generated/bedroom_wide.png",
+      "prompt_ref": "/Users/kein/Desktop/woong-bb/working/eunbi/meta_references/prompts/persistent_environment_prompts_ko.md#3-bedroom_wide",
+      "usage_tags": ["bedroom", "night_home", "morning_bed"]
+    },
+    {
+      "id": "bedside_table_anchor",
+      "kind": "space_detail",
+      "label": "침대 옆 협탁 메타 참조",
+      "status": "ready",
+      "path": "/Users/kein/Desktop/woong-bb/working/eunbi/meta_references/generated/bedside_table_anchor.png",
+      "prompt_ref": "/Users/kein/Desktop/woong-bb/working/eunbi/meta_references/prompts/persistent_environment_prompts_ko.md#4-bedside_table_anchor",
+      "usage_tags": ["bedside", "lamp", "night_routine"]
+    },
+    {
+      "id": "dining_table_anchor",
+      "kind": "space",
+      "label": "집 식탁 메타 참조",
+      "status": "ready",
+      "path": "/Users/kein/Desktop/woong-bb/working/eunbi/meta_references/generated/dining_table_anchor.png",
+      "prompt_ref": "/Users/kein/Desktop/woong-bb/working/eunbi/meta_references/prompts/persistent_environment_prompts_ko.md#5-dining_table_anchor",
+      "usage_tags": ["home_meal", "coffee", "baking"]
+    },
+    {
+      "id": "living_room_anchor",
+      "kind": "space",
+      "label": "거실 메타 참조",
+      "status": "ready",
+      "path": "/Users/kein/Desktop/woong-bb/working/eunbi/meta_references/generated/living_room_anchor.png",
+      "prompt_ref": "/Users/kein/Desktop/woong-bb/working/eunbi/meta_references/prompts/persistent_environment_prompts_ko.md#6-living_room_anchor",
+      "usage_tags": ["living_room", "sofa", "ott", "youtube"]
+    }
+  ],
+  "notes": "이미지 생성 시 반복 등장하는 물건과 공간의 메타 자산 경로를 관리한다."
+}

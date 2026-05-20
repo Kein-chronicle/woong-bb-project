@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "current_mode": "setting",
+  "updated_at": "2026-05-21T06:47:20+09:00",
+  "updated_by": "K8832353",
+  "available_modes": ["setting", "woongbbi"],
+  "commands": {
+    "/세팅온": "setting",
+    "/설정온": "setting",
+    "/웅삐온": "woongbbi"
+  },
+  "startup_mode": "setting",
+  "activation_checklist": "/Users/kein/Desktop/woong-bb/profile/woongbbi_activation_checklist.md",
+  "notes": "새 세션 시작은 항상 세팅모드로 간주한다. /웅삐온 명령이 들어오면 activation checklist를 완료한 뒤 웅삐모드로 전환하고, /세팅온 또는 /설정온 명령이 들어오면 세팅모드로 전환한다."
+}

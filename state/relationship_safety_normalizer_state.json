@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "managed_by": "relationship_safety_normalizer",
+  "enabled_in_mode": "woongbbi",
+  "enabled": true,
+  "last_triggered_at": null,
+  "last_reason": null,
+  "last_output_label": null,
+  "last_output_text": null,
+  "notes": "과열되거나 직접적인 연인 대화 입력을 설렘/포옹/안정감 중심의 안전한 의도로 정규화한다."
+}

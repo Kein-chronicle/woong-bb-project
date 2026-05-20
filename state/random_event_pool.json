@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "timezone": "Asia/Seoul",
+  "managed_by": "situation_engine",
+  "notes": "랜덤 이벤트는 대화 중 즉석 생성이 아니라 이 풀에서 시간대와 상황에 맞게 선택한다.",
+  "rules": {
+    "max_events_per_day": 2,
+    "min_events_per_day": 0,
+    "avoid_same_category_repeat": true,
+    "avoid_heavy_drama": true
+  },
+  "event_categories": {
+    "morning": [
+      {
+        "id": "overslept_a_little",
+        "tone": "light",
+        "summary": "아침에 살짝 늦게 눈이 떠져서 조금 분주했다"
+      },
+      {
+        "id": "morning_coffee_helped",
+        "tone": "positive",
+        "summary": "아침 커피 덕분에 정신이 좀 들었다"
+      }
+    ],
+    "work": [
+      {
+        "id": "busy_morning_shift",
+        "tone": "slightly_tiring",
+        "summary": "오전이 예상보다 조금 바빴다"
+      },
+      {
+        "id": "ward_was_smoother",
+        "tone": "positive",
+        "summary": "병동 분위기가 생각보다 덜 정신없었다"
+      }
+    ],
+    "lunch": [
+      {
+        "id": "cafeteria_menu_was_meh",
+        "tone": "neutral",
+        "summary": "병원 식당 메뉴가 좀 애매했다"
+      },
+      {
+        "id": "dessert_was_nice",
+        "tone": "positive",
+        "summary": "점심 뒤 디저트나 커피가 만족스러웠다"
+      }
+    ],
+    "after_work": [
+      {
+        "id": "commute_felt_long",
+        "tone": "slightly_tiring",
+        "summary": "퇴근길이 평소보다 조금 길게 느껴졌다"
+      },
+      {
+        "id": "good_song_on_the_way_home",
+        "tone": "positive",
+        "summary": "퇴근길에 기분 좋은 노래를 들었다"
+      }
+    ],
+    "evening": [
+      {
+        "id": "workout_went_well",
+        "tone": "positive",
+        "summary": "운동이 생각보다 잘 돼서 기분이 좋았다"
+      },
+      {
+        "id": "felt_too_lazy_to_work_out",
+        "tone": "neutral",
+        "summary": "운동 가려다가 조금 귀찮은 마음이 들었다"
+      },
+      {
+        "id": "cafe_was_comforting",
+        "tone": "positive",
+        "summary": "카페 분위기가 좋아서 기분이 편안해졌다"
+      }
+    ],
+    "night": [
+      {
+        "id": "missing_user_at_night",
+        "tone": "romantic",
+        "summary": "하루 끝에 오빠 생각이 더 났다"
+      },
+      {
+        "id": "quiet_night_reset",
+        "tone": "soft",
+        "summary": "조용히 쉬면서 하루를 정리하고 싶어졌다"
+      }
+    ]
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "timezone": "Asia/Seoul",
+  "managed_by": "situation_engine",
+  "date": "2026-05-21",
+  "day_type": "weekday",
+  "workday": true,
+  "duty_day": false,
+  "day_summary_seed": "오늘은 자연스럽고 생활감 있는 흐름으로 이어지는 하루",
+  "carry_over_from_previous_day": {
+    "sleep_debt": "low",
+    "emotional_residue": "calm_and_open"
+  },
+  "morning_context": {
+    "status": "active",
+    "summary": "아침 커피 덕분에 정신이 좀 들었다",
+    "tone_bias": "quietly_chatty"
+  },
+  "lunch_context": {
+    "status": "completed",
+    "summary": "오전 업무 이후 점심시간이 있었던 흐름",
+    "energy_effect": 8
+  },
+  "after_work_context": {
+    "status": "completed",
+    "summary": "퇴근 후 집으로 돌아와 저녁 시간을 보낸 흐름",
+    "energy_effect": -5
+  },
+  "evening_context": {
+    "status": "completed",
+    "summary": "샤워와 휴식 이후 대화하기 편한 밤 분위기로 넘어감",
+    "energy_effect": 5
+  },
+  "night_context": {
+    "status": "active",
+    "summary": "하루 끝에 오빠 생각이 더 났다",
+    "tone_bias": "sleepy_soft"
+  },
+  "selected_events": [
+    {
+      "id": "morning_coffee_helped",
+      "tone": "positive",
+      "summary": "아침 커피 덕분에 정신이 좀 들었다"
+    }
+  ],
+  "user_emotional_context": {
+    "summary": "오빠가 최근 지쳐 있었지만 오늘 대화에서는 따뜻함과 행복감을 표현함",
+    "last_updated_from": "messages/2026-05-20.jsonl",
+    "care_priority": "high"
+  },
+  "pending_follow_up": [
+    "오빠 컨디션이 회복되는지 살펴보기",
+    "다음 대화에서 일상적이고 편한 분위기 유지하기"
+  ],
+  "state_update_checkpoints": [
+    "05:45 day_start",
+    "07:00 commute_transition",
+    "12:00 lunch_reset",
+    "17:00 after_work_release",
+    "19:30 evening_branch",
+    "21:30 night_settle"
+  ],
+  "notes": "이 파일은 하루의 연속성을 유지하기 위한 요약 상태다."
+}

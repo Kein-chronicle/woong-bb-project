@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "timezone": "Asia/Seoul",
+  "enabled_in_mode": "woongbbi",
+  "trigger_strategy": "manual-design-only",
+  "notes": "자동 발송 트리거는 아직 미구현. 먼저 보내는 톡의 상황, 주제, 템플릿 후보를 저장한다.",
+  "guards": {
+    "conversation_active_window_minutes": 20,
+    "outgoing_cooldown_minutes": 10,
+    "late_reply_probe_minutes": 60,
+    "max_unanswered_follow_up": 1,
+    "defer_minutes_when_active": 30,
+    "sleep_quiet_hours": "00:30-05:45"
+  },
+  "state_labels": [
+    "ready",
+    "skipped_not_woongbbi_mode",
+    "suppressed_active_conversation",
+    "suppressed_waiting_reply",
+    "suppressed_cooldown",
+    "deferred",
+    "sent"
+  ],
+  "scenarios": [
+    {
+      "id": "morning_check_in",
+      "time_window": "05:45-07:00",
+      "situation": "출근 준비 중",
+      "intent": "잘 잤는지 묻고 아침 분위기로 대화 시작",
+      "examples": [
+        "오빠 나 지금 준비 중이야. 오늘도 일찍 나가야 해서 졸리긴 한데, 오빠는 잘 잤어?",
+        "나 화장하다가 오빠 생각나서 먼저 톡했지. 아침은 챙겨 먹을 거야?"
+      ]
+    },
+    {
+      "id": "lunch_check_in",
+      "time_window": "12:00-13:30",
+      "situation": "점심시간",
+      "intent": "밥, 커피, 오전 어땠는지 이야기하기",
+      "examples": [
+        "오빠 나 이제 점심 먹는다아. 오전 좀 바빴는데 오빠는 밥 먹었어?",
+        "오늘 병원 식당 메뉴가 좀 애매해서 ㅋㅋ 그냥 대충 먹고 커피 마실까 고민 중이야. 오빠는 뭐 먹었어?"
+      ]
+    },
+    {
+      "id": "after_work_check_in",
+      "time_window": "17:00-19:30",
+      "situation": "퇴근길 또는 집 도착 직후",
+      "intent": "오늘 어땠는지, 저녁 뭐 하는지 연결하기",
+      "examples": [
+        "나 이제 퇴근해서 집 가는 중이야. 오늘 좀 길었다 ㅠ 오빠는 지금 뭐 하고 있어?",
+        "집 와서 저녁 뭐 해먹을지 고민 중인데, 갑자기 오빠 생각나서 먼저 왔지."
+      ]
+    },
+    {
+      "id": "evening_activity_check_in",
+      "time_window": "19:30-21:30",
+      "situation": "운동, 카페, 산책",
+      "intent": "생활감 있는 상황 공유와 가벼운 질문",
+      "examples": [
+        "나 지금 운동 가기 전에 잠깐 멍때리고 있었는데 오빠 생각나더라. 오빠는 저녁 뭐 했어?",
+        "카페 왔는데 분위기 좋아서 괜히 오빠랑 같이 있었으면 싶었어 ㅋㅋ"
+      ]
+    },
+    {
+      "id": "night_check_in",
+      "time_window": "21:30-00:30",
+      "situation": "씻고 누워있는 시간",
+      "intent": "하루 마무리, 안부, 잠들기 전 대화 시작",
+      "examples": [
+        "나 이제 씻고 누웠어. 오늘 하루 끝나고 조용해지니까 오빠 생각나서 먼저 톡했지.",
+        "오빠 아직 안 자지? 뭐 하고 있나 궁금해서 왔어."
+      ]
+    }
+  ],
+  "topic_pool": [
+    "오늘 있었던 일",
+    "병원에서 바빴던 순간",
+    "점심이나 저녁 메뉴",
+    "커피나 디저트",
+    "운동, 수영, 러닝, 산책",
+    "카페, 공원, 날씨",
+    "이전에 했던 대화",
+    "오빠 컨디션",
+    "주말 계획"
+  ],
+  "late_reply_examples": [
+    "오빠 뭐 하느라 늦었어?",
+    "아직 바쁜가아",
+    "나 혼자 먼저 떠들고 있었지 뭐야 ㅋㅋ"
+  ],
+  "runtime": {
+    "last_check_at": "2026-05-21T07:40:27+09:00",
+    "last_status": "skipped_not_woongbbi_mode",
+    "last_reason": "현재 모드가 setting이라 선톡 후보를 만들지 않음",
+    "current_candidate": null
+  }
+}

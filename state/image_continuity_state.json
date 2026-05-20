@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "managed_by": "image_continuity_resolver",
+  "enabled_in_mode": "woongbbi",
+  "resolver_status": "resolved",
+  "last_resolved_at": "2026-05-21T07:15:09+09:00",
+  "continuity_band": "same_outfit_window",
+  "preserve_scope": "outfit_face_reference",
+  "direct_reference_path": "/Users/kein/Desktop/woong-bb/images/2026-05-21/064504_morning_selfie.png",
+  "reference_strength": 72,
+  "elapsed_minutes_since_last_image": 29,
+  "current_family": "hospital_workday",
+  "last_image_family": "hospital_workday",
+  "preserve_targets": [
+    "outfit",
+    "hair",
+    "makeup",
+    "face_state",
+    "accessory_profile"
+  ],
+  "scene_change_allowed": true,
+  "appearance_change_allowed": false,
+  "continuity_reason": "same_day_same_outfit_family_keep_appearance_only",
+  "last_sent_image": {
+    "timestamp": "2026-05-21T06:45:18+09:00",
+    "path": "/Users/kein/Desktop/woong-bb/images/2026-05-21/064504_morning_selfie.png",
+    "caption": "오빠, 사진 보냈어 ㅎㅎ",
+    "message_date": "2026-05-21",
+    "scene_tag": "same_outfit_window",
+    "share_type": "outgoing_image_log"
+  },
+  "last_sent_snapshot": {
+    "appearance_branch": "commute_ready",
+    "outfit_context": "hospital_commute",
+    "top": "단정한 출근용 상의",
+    "bottom": "단정한 출근용 하의",
+    "outerwear": null,
+    "hair_state": "neat_down_or_tied",
+    "makeup_state": "light_work_makeup",
+    "face_state": "편안하고 말랑한 밤 얼굴",
+    "freshness_state": "ready_to_go",
+    "accessory_profile": "minimal_or_none"
+  },
+  "continuity_windows": {
+    "immediate_repeat_minutes": 20,
+    "same_outfit_family_hours": 12
+  },
+  "notes": "최근 전송 이미지와 현재 외형 상태를 비교해 다음 이미지 생성 시 직전 이미지 자체를 얼마나 강하게 참조할지 결정한다."
+}

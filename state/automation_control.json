@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "managed_by": "automation_control_plane",
+  "launch_authorization": "explicit_user_command_only",
+  "launch_ready": true,
+  "requested_action": null,
+  "requested_at": null,
+  "requested_by": null,
+  "request_note": null,
+  "notes": "마스터의 명시적 시작 지시 전에는 start를 적용하지 않고 control plane만 준비한다"
+}

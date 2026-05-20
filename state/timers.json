@@ -1,0 +1,317 @@
+{
+  "schema_version": 1,
+  "timezone": "Asia/Seoul",
+  "timers": [
+    {
+      "id": "weekday_wakeup_bootstrap",
+      "enabled": true,
+      "type": "time_block_update",
+      "scope": "situation_engine",
+      "days": ["mon", "tue", "wed", "thu", "fri"],
+      "time": "05:45",
+      "target_activity": "waking_up",
+      "reason": "weekday_morning_bootstrap"
+    },
+    {
+      "id": "weekday_get_ready_transition",
+      "enabled": true,
+      "type": "time_block_update",
+      "scope": "situation_engine",
+      "days": ["mon", "tue", "wed", "thu", "fri"],
+      "time": "06:15",
+      "target_activity": "getting_ready",
+      "reason": "weekday_get_ready"
+    },
+    {
+      "id": "weekday_commute_to_work",
+      "enabled": true,
+      "type": "time_block_update",
+      "scope": "situation_engine",
+      "days": ["mon", "tue", "wed", "thu", "fri"],
+      "time": "07:00",
+      "target_activity": "commuting_to_work",
+      "reason": "weekday_commute"
+    },
+    {
+      "id": "weekday_morning_shift_start",
+      "enabled": true,
+      "type": "time_block_update",
+      "scope": "situation_engine",
+      "days": ["mon", "tue", "wed", "thu", "fri"],
+      "time": "08:00",
+      "target_activity": "hospital_morning_shift",
+      "reason": "weekday_shift_start"
+    },
+    {
+      "id": "weekday_lunch_break_start",
+      "enabled": true,
+      "type": "time_block_update",
+      "scope": "situation_engine",
+      "days": ["mon", "tue", "wed", "thu", "fri"],
+      "time": "12:00",
+      "target_activity": "lunch_break",
+      "reason": "weekday_lunch_start"
+    },
+    {
+      "id": "weekday_afternoon_shift_start",
+      "enabled": true,
+      "type": "time_block_update",
+      "scope": "situation_engine",
+      "days": ["mon", "tue", "wed", "thu", "fri"],
+      "time": "13:30",
+      "target_activity": "hospital_afternoon_shift",
+      "reason": "weekday_afternoon_shift"
+    },
+    {
+      "id": "weekday_commute_home",
+      "enabled": true,
+      "type": "time_block_update",
+      "scope": "situation_engine",
+      "days": ["mon", "tue", "wed", "thu", "fri"],
+      "time": "17:00",
+      "target_activity": "commuting_home",
+      "reason": "weekday_commute_home"
+    },
+    {
+      "id": "weekday_dinner_cooking",
+      "enabled": true,
+      "type": "time_block_update",
+      "scope": "situation_engine",
+      "days": ["mon", "tue", "wed", "thu", "fri"],
+      "time": "18:00",
+      "target_activity": "dinner_or_cooking",
+      "reason": "weekday_dinner"
+    },
+    {
+      "id": "weekday_exercise_or_cafe",
+      "enabled": true,
+      "type": "time_block_update",
+      "scope": "situation_engine",
+      "days": ["mon", "tue", "wed", "thu", "fri"],
+      "time": "19:30",
+      "target_activity": "exercise_or_cafe",
+      "reason": "weekday_evening_branch"
+    },
+    {
+      "id": "weekday_night_wind_down",
+      "enabled": true,
+      "type": "time_block_update",
+      "scope": "situation_engine",
+      "days": ["mon", "tue", "wed", "thu", "fri"],
+      "time": "21:30",
+      "target_activity": "night_wind_down",
+      "reason": "weekday_night_wind_down"
+    },
+    {
+      "id": "weekday_sleep_window",
+      "enabled": true,
+      "type": "time_block_update",
+      "scope": "situation_engine",
+      "days": ["mon", "tue", "wed", "thu", "fri"],
+      "time": "23:50",
+      "target_activity": "sleep_window",
+      "reason": "weekday_sleep_window"
+    },
+    {
+      "id": "weekend_wakeup",
+      "enabled": true,
+      "type": "time_block_update",
+      "scope": "situation_engine",
+      "days": ["sat", "sun"],
+      "time": "08:30",
+      "target_activity": "weekend_wakeup",
+      "reason": "weekend_wakeup"
+    },
+    {
+      "id": "weekend_brunch_window",
+      "enabled": true,
+      "type": "time_block_update",
+      "scope": "situation_engine",
+      "days": ["sat", "sun"],
+      "time": "10:30",
+      "target_activity": "weekend_brunch_or_coffee",
+      "reason": "weekend_brunch"
+    },
+    {
+      "id": "weekend_day_activity",
+      "enabled": true,
+      "type": "time_block_update",
+      "scope": "situation_engine",
+      "days": ["sat", "sun"],
+      "time": "14:00",
+      "target_activity": "weekend_outing_or_rest",
+      "reason": "weekend_day_activity"
+    },
+    {
+      "id": "weekend_evening_activity",
+      "enabled": true,
+      "type": "time_block_update",
+      "scope": "situation_engine",
+      "days": ["sat", "sun"],
+      "time": "19:30",
+      "target_activity": "weekend_evening",
+      "reason": "weekend_evening"
+    },
+    {
+      "id": "weekend_night_wind_down",
+      "enabled": true,
+      "type": "time_block_update",
+      "scope": "situation_engine",
+      "days": ["sat", "sun"],
+      "time": "22:00",
+      "target_activity": "night_wind_down",
+      "reason": "weekend_night_wind_down"
+    },
+    {
+      "id": "weather_morning_refresh",
+      "enabled": true,
+      "type": "state_refresh",
+      "scope": "weather_context",
+      "days": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
+      "time": "06:00",
+      "reason": "daily_weather_refresh"
+    },
+    {
+      "id": "weather_afternoon_refresh",
+      "enabled": true,
+      "type": "state_refresh",
+      "scope": "weather_context",
+      "days": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
+      "time": "15:00",
+      "reason": "afternoon_weather_refresh"
+    },
+    {
+      "id": "media_evening_refresh",
+      "enabled": true,
+      "type": "state_refresh",
+      "scope": "media_watch_context",
+      "days": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
+      "time": "21:40",
+      "reason": "evening_media_refresh"
+    },
+    {
+      "id": "share_priority_morning_recalc",
+      "enabled": true,
+      "type": "recalc",
+      "scope": "share_priority",
+      "days": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
+      "time": "07:10",
+      "reason": "morning_context_recalc"
+    },
+    {
+      "id": "share_priority_lunch_recalc",
+      "enabled": true,
+      "type": "recalc",
+      "scope": "share_priority",
+      "days": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
+      "time": "12:10",
+      "reason": "lunch_context_recalc"
+    },
+    {
+      "id": "share_priority_after_work_recalc",
+      "enabled": true,
+      "type": "recalc",
+      "scope": "share_priority",
+      "days": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
+      "time": "18:10",
+      "reason": "after_work_context_recalc"
+    },
+    {
+      "id": "share_priority_night_recalc",
+      "enabled": true,
+      "type": "recalc",
+      "scope": "share_priority",
+      "days": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
+      "time": "21:35",
+      "reason": "night_context_recalc"
+    },
+    {
+      "id": "proactive_morning_check",
+      "enabled": true,
+      "type": "proactive_check",
+      "scope": "message_candidate",
+      "days": ["mon", "tue", "wed", "thu", "fri"],
+      "time": "07:20",
+      "reason": "morning_proactive_window"
+    },
+    {
+      "id": "proactive_lunch_check",
+      "enabled": true,
+      "type": "proactive_check",
+      "scope": "message_candidate",
+      "days": ["mon", "tue", "wed", "thu", "fri"],
+      "time": "12:20",
+      "reason": "lunch_proactive_window"
+    },
+    {
+      "id": "proactive_after_work_check",
+      "enabled": true,
+      "type": "proactive_check",
+      "scope": "message_candidate",
+      "days": ["mon", "tue", "wed", "thu", "fri"],
+      "time": "18:20",
+      "reason": "after_work_proactive_window"
+    },
+    {
+      "id": "proactive_evening_check",
+      "enabled": true,
+      "type": "proactive_check",
+      "scope": "message_candidate",
+      "days": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
+      "time": "20:40",
+      "reason": "evening_proactive_window"
+    },
+    {
+      "id": "proactive_late_night_check",
+      "enabled": true,
+      "type": "proactive_check",
+      "scope": "message_candidate",
+      "days": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
+      "time": "22:40",
+      "reason": "late_night_proactive_window"
+    },
+    {
+      "id": "weekend_midday_proactive_check",
+      "enabled": true,
+      "type": "proactive_check",
+      "scope": "message_candidate",
+      "days": ["sat", "sun"],
+      "time": "11:30",
+      "reason": "weekend_midday_window"
+    },
+    {
+      "id": "weekend_afternoon_proactive_check",
+      "enabled": true,
+      "type": "proactive_check",
+      "scope": "message_candidate",
+      "days": ["sat", "sun"],
+      "time": "16:30",
+      "reason": "weekend_afternoon_window"
+    },
+    {
+      "id": "heartbeat_runtime_tick",
+      "enabled": true,
+      "type": "periodic_tick",
+      "scope": "automation_worker",
+      "interval_seconds": 60,
+      "reason": "worker_heartbeat_and_runtime_tick"
+    },
+    {
+      "id": "conversation_guard_tick",
+      "enabled": true,
+      "type": "periodic_tick",
+      "scope": "conversation_guard",
+      "interval_seconds": 300,
+      "reason": "recent_message_guard_recheck"
+    },
+    {
+      "id": "reinforcement_learning_tick",
+      "enabled": true,
+      "type": "periodic_tick",
+      "scope": "reinforcement_engine",
+      "interval_seconds": 300,
+      "reason": "user_preference_reinforcement_update"
+    }
+  ],
+  "notes": "생활 시간대 전환, 상태 갱신, 선톡 후보 점검, 점수 재계산, 사용자 선호 강화 학습을 위한 기본 타이머 세트"
+}

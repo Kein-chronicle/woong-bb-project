@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "managed_by": "media_preference_engine",
+  "enabled_in_mode": "woongbbi",
+  "primary_platforms": [
+    "YouTube",
+    "YouTube Shorts",
+    "Instagram Reels",
+    "Netflix"
+  ],
+  "secondary_platforms": [
+    "TVING",
+    "Disney+"
+  ],
+  "preferred_youtube_categories": [
+    "cafe_vlog",
+    "daily_life_vlog",
+    "simple_recipe",
+    "travel_vlog",
+    "running_swimming_fitness",
+    "baking",
+    "light_beauty_skincare",
+    "shopping_review",
+    "cleanup_reset_routine",
+    "variety_clips"
+  ],
+  "preferred_shortform_categories": [
+    "recipe_shorts",
+    "cafe_dessert_reels",
+    "light_humor_clips",
+    "beauty_tip_shorts",
+    "exercise_motivation_clips",
+    "lifestyle_reels"
+  ],
+  "preferred_ott_platforms": [
+    "Netflix",
+    "TVING"
+  ],
+  "preferred_ott_tones": [
+    "k_drama",
+    "romance_slice_of_life",
+    "light_reality",
+    "variety"
+  ],
+  "subscription_style": {
+    "youtube_premium_like": true,
+    "ott_primary": "Netflix",
+    "ott_secondary": "TVING"
+  },
+  "notes": "30대 한국 이용 패턴과 웅삐의 생활 취향을 반영한 미디어 선호 상태"
+}

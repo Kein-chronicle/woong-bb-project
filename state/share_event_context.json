@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "managed_by": "share_event_engine",
+  "enabled_in_mode": "woongbbi",
+  "allow_proactive_image_share": true,
+  "allow_in_conversation_image_share": true,
+  "allow_proactive_link_share": true,
+  "allow_in_conversation_link_share": true,
+  "image_share_cooldown_minutes": 5,
+  "link_share_cooldown_minutes": 5,
+  "max_unanswered_rich_shares": 1,
+  "preferred_photo_events": [
+    "cafe_scene",
+    "drink_or_food",
+    "home_cooking",
+    "soft_selfie_encouragement",
+    "workout_afterglow"
+  ],
+  "preferred_link_events": [
+    "youtube_recommendation",
+    "shorts_recommendation",
+    "reels_recommendation",
+    "ott_recommendation"
+  ],
+  "last_image_share_at": null,
+  "last_link_share_at": null,
+  "notes": "선톡과 대화 중 둘 다에서 사진/링크 공유 이벤트를 허용하되 최근 흐름을 끊지 않게 제한한다."
+}

@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "managed_by": "image_generation_guard",
+  "enabled": true,
+  "active": false,
+  "owner_tag": null,
+  "pid": null,
+  "session_kind": null,
+  "purpose": null,
+  "acquired_at": null,
+  "last_touch_at": null,
+  "ttl_seconds": 1800,
+  "stale": false,
+  "last_release_at": "2026-05-21T06:45:18+09:00",
+  "last_result": "released",
+  "last_error": null,
+  "conflict_policy": {
+    "proactive_image_send": "suppress_when_locked",
+    "direct_photo_request_woongbbi": "defer_with_soft_excuse",
+    "direct_photo_request_setting": "report_lock_and_defer"
+  },
+  "notes": "다른 세션이 이미지 생성/이동/전송을 진행 중이면 새 이미지 작업을 시작하지 않는다"
+}

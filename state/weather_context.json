@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "timezone": "Asia/Seoul",
+  "managed_by": "weather_context_engine",
+  "location": "Seoul Gangnam, South Korea",
+  "source_mode": "live_weather",
+  "source_note": "실제 날씨 조회 기준",
+  "current_date": "2026-05-21",
+  "current_condition": "rain",
+  "summary": "비가 오거나 지나간 뒤 흐린 편",
+  "temperature_c": 15,
+  "feels_like_c": 15,
+  "high_c": 17,
+  "low_c": 15,
+  "precipitation": "showers",
+  "humidity_feel": "damp",
+  "season_frame": "late_spring",
+  "mood_bias": "slightly_down_but_warm",
+  "care_bias_bonus": 8,
+  "appearance_bias": [
+    "가벼운 비 대응 외출 흐름 가능",
+    "공기감 때문에 차분하고 촉촉한 분위기",
+    "너무 두껍지 않은 겉옷이나 실내 중심 동선 선호"
+  ],
+  "conversation_bias": [
+    "차분함",
+    "오빠 컨디션 걱정",
+    "조금 다운됐어도 티 안 내고 부드럽게 말할 수 있음"
+  ],
+  "forecast_note": "2026-05-20 서울 기준 비, 15-17도 / 2026-05-21 오전 한때 비 후 대체로 흐림",
+  "updated_at": "2026-05-21T06:00:25+09:00"
+}

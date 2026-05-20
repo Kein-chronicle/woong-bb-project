@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "managed_by": "image_generation_settings",
+  "generation_enabled": true,
+  "changed_at": "2026-05-21T06:42:24+09:00",
+  "changed_by": "master_request",
+  "change_reason": "master requested image generation on",
+  "when_disabled": {
+    "proactive_image_send": "disabled",
+    "direct_photo_request_woongbbi": "defer_without_guard_check",
+    "direct_photo_request_setting": "report_disabled_without_guard_check"
+  },
+  "notes": "전역 이미지 생성 on/off 스위치. off면 guard 확인 전에 즉시 생성 불가 처리한다"
+}
