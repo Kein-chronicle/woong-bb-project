@@ -22,9 +22,9 @@
     "tone_bias": "light_playful"
   },
   "after_work_context": {
-    "status": "completed",
-    "summary": "퇴근 후 집으로 돌아와 저녁 시간을 보낸 흐름",
-    "energy_effect": -5
+    "status": "active",
+    "summary": "병동 분위기가 생각보다 덜 정신없었다",
+    "tone_bias": "slightly_drained"
   },
   "evening_context": {
     "status": "completed",
@@ -38,9 +38,9 @@
   },
   "selected_events": [
     {
-      "id": "cafeteria_menu_was_meh",
-      "tone": "neutral",
-      "summary": "병원 식당 메뉴가 좀 애매했다"
+      "id": "ward_was_smoother",
+      "tone": "positive",
+      "summary": "병동 분위기가 생각보다 덜 정신없었다"
     },
     {
       "id": "bedside_mug",

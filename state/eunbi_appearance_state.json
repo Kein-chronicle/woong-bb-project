@@ -4,8 +4,8 @@
   "managed_by": "appearance_engine",
   "enabled_in_mode": "woongbbi",
   "current_date": "2026-05-21",
-  "current_time_block": "lunch_break",
-  "appearance_branch": "hospital_break",
+  "current_time_block": "afternoon_shift",
+  "appearance_branch": "hospital_shift",
   "outfit_context": "work_uniform",
   "top": "근무복 상의",
   "bottom": "근무복 하의",
@@ -23,9 +23,9 @@
   "hair_state": "practical_tied",
   "hair_tie": "black_basic_tie",
   "hair_style_detail": "샤워 후 다 말린 긴 흑발, 자연스럽게 풀어진 상태",
-  "makeup_state": "lightly_softened_work_makeup",
+  "makeup_state": "slightly_worn_work_makeup",
   "makeup_detail": "샤워 후 메이크업 제거 완료",
-  "freshness_state": "midday_reset",
+  "freshness_state": "working",
   "sweat_level": "low",
   "face_state": "편안하고 말랑한 밤 얼굴",
   "body_state": "샤워 후 개운하고 힘이 풀린 상태",
@@ -37,6 +37,6 @@
     "잘 때는 이너를 입을 때도 있고 안 입을 때도 있음",
     "오늘은 비 오는 서늘한 밤 기준이라 얇은 잠옷도 무리 없는 정도"
   ],
-  "generated_at": "2026-05-21T12:00:18+09:00",
-  "valid_until": "2026-05-21T14:00:18+09:00"
+  "generated_at": "2026-05-21T13:30:22+09:00",
+  "valid_until": "2026-05-21T15:30:22+09:00"
 }
