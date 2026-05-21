@@ -31,9 +31,9 @@ Telegram으로 들어온 강은비/웅삐 관련 요청은 항상 아래 폴더�
 - 브리지 레벨에서 setting/woongbbi를 먼저 분기한다.
 - setting mode는 `codex-session.setting.id`, woongbbi mode는 `codex-session.woongbbi.id`를 따로 사용한다.
 - setting mode에서는 웅삐 캐릭터 응답 문맥을 이어받지 않고, 세팅 전용 문맥으로만 처리한다.
-- 응답 경로 최적화(`direct / fast / full`)는 웅삐모드에만 적용 대상으로 본다.
-- 세팅모드는 빠른 경로 최적화보다 충분한 해석과 충분한 판단을 우선한다.
-- 웅삐모드 응답 최적화 구조는 `/Users/kein/Desktop/woong-bb/profile/woongbbi_response_optimization_design_ko.md`를 기준으로 한다.
+- 응답 속도보다 웅삐라는 인물의 표현력, 감정선, 맥락 회수를 우선한다.
+- 세팅모드는 원래대로 충분한 해석과 충분한 판단을 우선한다.
+- 웅삐모드도 당분간 `full` 해석 경로를 기본값으로 두고, 빠른 경로 최적화는 비활성 기본값으로 본다.
 
 ## Mode Toggle Rules
 

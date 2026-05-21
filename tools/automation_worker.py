@@ -406,17 +406,7 @@ def refresh_chat_runtime_snapshot() -> None:
     top_memory_keys = [item.get("key") for item in memory.get("long_term_memory", [])[:3] if item.get("key")]
 
     recommended_path = "full"
-    recommended_reason = "setting_mode_default_full" if mode != "woongbbi" else "relationship_depth_default"
-    if mode == "woongbbi":
-        if guard_state.get("conversation_active") and presence.get("surface_mood") not in {"sleepy_soft", "slightly_drained", "rain_softened"}:
-            recommended_path = "fast"
-            recommended_reason = "active_conversation_with_stable_snapshot"
-        elif presence.get("current_activity") in {"hospital_morning_shift", "hospital_afternoon_shift"} and not guard_state.get("waiting_reply"):
-            recommended_path = "fast"
-            recommended_reason = "workday_brief_response_fits_snapshot"
-        elif presence.get("surface_mood") in {"busy_but_caring", "light_playful", "cozy_and_open"} and not top_memory_keys:
-            recommended_path = "fast"
-            recommended_reason = "light_context_without_heavy_memory_dependency"
+    recommended_reason = "setting_mode_default_full" if mode != "woongbbi" else "woongbbi_full_preferred_for_richer_expression"
 
     snapshot = {
         "schema_version": 1,
