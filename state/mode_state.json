@@ -1,9 +1,12 @@
 {
   "schema_version": 1,
-  "current_mode": "setting",
-  "updated_at": "2026-05-21T06:47:20+09:00",
+  "current_mode": "woongbbi",
+  "updated_at": "2026-05-21T04:52:26.963Z",
   "updated_by": "K8832353",
-  "available_modes": ["setting", "woongbbi"],
+  "available_modes": [
+    "setting",
+    "woongbbi"
+  ],
   "commands": {
     "/세팅온": "setting",
     "/설정온": "setting",
