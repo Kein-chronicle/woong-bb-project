@@ -27,10 +27,10 @@
     "default_sentence_limit": 2
   },
   "runtime": {
-    "last_status": "suppressed_sleep_quiet_hours",
+    "last_status": "skipped_not_woongbbi_mode",
     "last_voice_sent_at": null,
     "last_voice_type": null,
-    "last_suppressed_reason": "수면 시간대라 후보 생성 억제",
+    "last_suppressed_reason": "현재 모드가 setting이라 선톡 후보를 만들지 않음",
     "last_candidate_text": null,
     "last_profile": null
   }
