@@ -62,6 +62,7 @@ PROACTIVE_PATTERN_REPORT_PATH = STATE / "proactive_pattern_report.json"
 VOICE_FEEDBACK_LOG_PATH = STATE / "voice_feedback_log.jsonl"
 REPETITION_REPORT_PATH = STATE / "repetition_report.json"
 RELATIONSHIP_PROGRESS_NOTES_PATH = STATE / "relationship_progress_notes.json"
+CHAT_RUNTIME_SNAPSHOT_PATH = STATE / "chat_runtime_snapshot.json"
 
 RUNNING = True
 DAY_NAMES = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]
@@ -376,6 +377,77 @@ def refresh_relationship_progress_notes() -> None:
         }
     )
     save_json(RELATIONSHIP_PROGRESS_NOTES_PATH, state)
+
+
+def refresh_chat_runtime_snapshot() -> None:
+    mode = load_json(MODE_PATH, {}).get("current_mode", "setting")
+    presence = load_json(PRESENCE_PATH, {})
+    variance = load_json(REPLY_VARIANCE_PATH, {})
+    guard_state = compute_conversation_guard()
+    memory = load_json(MEMORY_DECAY_PATH, {})
+    image_settings = load_json(IMAGE_SETTINGS_PATH, {})
+    image_guard = load_json(IMAGE_GUARD_PATH, {})
+    voice_ctx = load_json(VOICE_SHARE_CONTEXT_PATH, {})
+    media_ctx = load_json(MEDIA_PATH, {})
+    blocked = load_json(PHRASE_REPETITION_GUARD_PATH, {}).get("blocked_phrases", [])
+
+    available_voice = mode == "woongbbi" and not guard_state.get("waiting_reply") and not guard_state.get("outgoing_cooldown")
+    last_voice_at = voice_ctx.get("runtime", {}).get("last_voice_sent_at")
+    if last_voice_at:
+        try:
+            cooldown = int(voice_ctx.get("cooldowns", {}).get("proactive_voice_minutes", 15))
+            if (now_local() - datetime.fromisoformat(last_voice_at)).total_seconds() <= cooldown * 60:
+                available_voice = False
+        except Exception:
+            pass
+
+    available_image = bool(image_settings.get("generation_enabled")) and not bool(image_guard.get("active"))
+    available_link = bool(media_ctx.get("last_known_url"))
+    top_memory_keys = [item.get("key") for item in memory.get("long_term_memory", [])[:3] if item.get("key")]
+
+    recommended_path = "full"
+    recommended_reason = "setting_mode_default_full" if mode != "woongbbi" else "relationship_depth_default"
+    if mode == "woongbbi":
+        if guard_state.get("conversation_active") and presence.get("surface_mood") not in {"sleepy_soft", "slightly_drained", "rain_softened"}:
+            recommended_path = "fast"
+            recommended_reason = "active_conversation_with_stable_snapshot"
+        elif presence.get("current_activity") in {"hospital_morning_shift", "hospital_afternoon_shift"} and not guard_state.get("waiting_reply"):
+            recommended_path = "fast"
+            recommended_reason = "workday_brief_response_fits_snapshot"
+        elif presence.get("surface_mood") in {"busy_but_caring", "light_playful", "cozy_and_open"} and not top_memory_keys:
+            recommended_path = "fast"
+            recommended_reason = "light_context_without_heavy_memory_dependency"
+
+    snapshot = {
+        "schema_version": 1,
+        "managed_by": "automation_worker",
+        "current_mode": mode,
+        "current_activity": presence.get("current_activity"),
+        "current_time_block": presence.get("current_time_block"),
+        "surface_mood": presence.get("surface_mood"),
+        "energy_level": presence.get("energy_level"),
+        "affection_level": presence.get("affection_level"),
+        "care_bias": presence.get("care_bias"),
+        "reply_variance_profile": variance.get("current_profile"),
+        "blocked_phrases": blocked,
+        "conversation_guard_summary": {
+            "conversation_active": guard_state.get("conversation_active"),
+            "waiting_reply": guard_state.get("waiting_reply"),
+            "outgoing_cooldown": guard_state.get("outgoing_cooldown"),
+            "late_reply_ok": guard_state.get("late_reply_ok"),
+        },
+        "top_memory_keys": top_memory_keys,
+        "available_rich_channels": {
+            "text": True,
+            "image": available_image,
+            "voice": available_voice,
+            "link": available_link,
+        },
+        "recommended_response_path": recommended_path,
+        "recommended_response_reason": recommended_reason,
+        "last_updated_at": now_iso(),
+    }
+    save_json(CHAT_RUNTIME_SNAPSHOT_PATH, snapshot)
 
 
 def recent_outgoing_rich_share(minutes: int = 5) -> bool:
@@ -1138,6 +1210,7 @@ def refresh_human_runtime_layers() -> None:
     refresh_phrase_repetition_guard()
     refresh_repetition_report()
     refresh_relationship_progress_notes()
+    refresh_chat_runtime_snapshot()
 
 
 def weather_refresh() -> None:
@@ -1375,6 +1448,7 @@ def apply_time_block(activity: str, reason: str) -> None:
     refresh_day_satisfaction_state()
     refresh_phrase_repetition_guard()
     refresh_mood_timeline()
+    refresh_chat_runtime_snapshot()
 
     category_map = {
         "waking_up": "morning",
@@ -2170,6 +2244,7 @@ def main() -> int:
             control_result = handle_control(generation)
             bootstrap_results = bootstrap_context_if_stale()
             timer_results = process_due_timers()
+            refresh_chat_runtime_snapshot()
             mode = load_json(MODE_PATH, {}).get("current_mode", "setting")
             timers_count = len(load_json(TIMERS_PATH, {}).get("timers", []))
             if control_result:

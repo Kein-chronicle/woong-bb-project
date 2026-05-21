@@ -3,9 +3,9 @@
   "managed_by": "share_priority_recalc_engine",
   "enabled_in_mode": "woongbbi",
   "needs_recalc": false,
-  "last_recalc_at": "2026-05-21T08:01:09+09:00",
-  "last_recalc_reason": "runtime_pending_recalc",
-  "next_suggested_recalc_at": "2026-05-21T08:00:09+09:00",
+  "last_recalc_at": "2026-05-21T12:10:19+09:00",
+  "last_recalc_reason": "lunch_context_recalc",
+  "next_suggested_recalc_at": "2026-05-21T12:00:18+09:00",
   "pending_trigger": null,
   "recalc_cooldown_seconds": 60,
   "notes": "공유 우선순위 점수표 재계산 시점과 이유를 관리한다."

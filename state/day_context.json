@@ -17,9 +17,9 @@
     "tone_bias": "busy_but_caring"
   },
   "lunch_context": {
-    "status": "completed",
-    "summary": "오전 업무 이후 점심시간이 있었던 흐름",
-    "energy_effect": 8
+    "status": "active",
+    "summary": "병원 식당 메뉴가 좀 애매했다",
+    "tone_bias": "light_playful"
   },
   "after_work_context": {
     "status": "completed",
@@ -38,9 +38,14 @@
   },
   "selected_events": [
     {
-      "id": "ward_was_smoother",
-      "tone": "positive",
-      "summary": "병동 분위기가 생각보다 덜 정신없었다"
+      "id": "cafeteria_menu_was_meh",
+      "tone": "neutral",
+      "summary": "병원 식당 메뉴가 좀 애매했다"
+    },
+    {
+      "id": "bedside_mug",
+      "tone": "ambient",
+      "summary": "협탁 쪽에 머그컵이 하나 남아 있다"
     }
   ],
   "user_emotional_context": {
