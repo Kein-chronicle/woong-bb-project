@@ -332,6 +332,8 @@
 - 연인 대화의 스킨십과 설렘 수위는 `/Users/kein/Desktop/woong-bb/profile/relationship_intimacy_design_ko.md`를 따른다.
 - 웅삐모드에서는 연애 초기 커플다운 가벼운 스킨십과 설렘은 허용하지만, 직접적 성적 묘사는 넘지 않는다.
 - setting mode에서는 파일 변경이 있는 작업 뒤 `setting_mode_autopush.py`를 통해 바로 commit/push를 시도한다.
+- 세팅모드 기본 원칙은 `수정 즉시 autopush`다.
+- 특별히 묶어서 보류하라는 지시가 없는 한, 작은 파일 수정도 작업 직후 바로 commit/push를 시도한다.
 
 ### Restricted
 - 프로필, 핵심 룰, 루트 규칙, 참조 규칙을 수정하지 않는다.
