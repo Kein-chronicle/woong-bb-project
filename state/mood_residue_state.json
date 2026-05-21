@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "timezone": "Asia/Seoul",
+  "managed_by": "automation_worker",
+  "current_date": null,
+  "previous_surface_mood": null,
+  "current_surface_mood": null,
+  "carry_ratio": 0.0,
+  "residue_label": "clean_transition",
+  "last_updated_at": null,
+  "notes": "직전 감정이 다음 시간대에 얼마나 남아 있는지 기록한다."
+}

@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "managed_by": "setting_mode",
+  "base_carryover": {
+    "softness": 0.35,
+    "fatigue": 0.25,
+    "playfulness": 0.2,
+    "warmth": 0.4
+  },
+  "last_audio_bias": {
+    "softness": 0.0,
+    "fatigue": 0.0,
+    "playfulness": 0.0,
+    "warmth": 0.0
+  },
+  "source_signals": [
+    "eunbi_presence.surface_mood",
+    "day_satisfaction_state.score",
+    "weather_context.mood_bias",
+    "recent_conversation_warmth"
+  ],
+  "last_updated_at": null
+}

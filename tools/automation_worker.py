@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 import glob
+import fcntl
 import json
 import os
 import random
+import re
 import signal
 import subprocess
 import sys
@@ -18,6 +20,7 @@ ROOT = Path("/Users/kein/Desktop/woong-bb")
 STATE = ROOT / "state"
 SESSION = ROOT / "session"
 MESSAGES = ROOT / "messages"
+DIARY = ROOT / "diary"
 
 WORKER_STATE_PATH = STATE / "automation_worker_state.json"
 SUPERVISOR_STATE_PATH = STATE / "automation_supervisor_state.json"
@@ -39,9 +42,26 @@ PROACTIVE_PATH = STATE / "proactive_messages.json"
 SHARE_CONTEXT_PATH = STATE / "share_event_context.json"
 SHARE_PRIORITY_PATH = STATE / "share_priority_state.json"
 SHARE_FLOW_PATH = STATE / "share_event_flow_state.json"
+VOICE_SHARE_CONTEXT_PATH = STATE / "voice_share_event_context.json"
+MEDIA_CHOICE_PATH = STATE / "media_choice_by_intent.json"
 IMAGE_SETTINGS_PATH = STATE / "image_generation_settings.json"
 IMAGE_GUARD_PATH = STATE / "image_generation_guard.json"
 REINFORCEMENT_STATE_PATH = STATE / "user_preference_reinforcement.json"
+DAILY_DIARY_STATE_PATH = STATE / "daily_diary_state.json"
+MEMORY_DECAY_PATH = STATE / "memory_decay_state.json"
+MOOD_RESIDUE_PATH = STATE / "mood_residue_state.json"
+SIGNATURE_PHRASES_PATH = STATE / "signature_phrases.json"
+AMBIENT_EVENTS_PATH = STATE / "ambient_life_events_state.json"
+REPLY_VARIANCE_PATH = STATE / "reply_variance_state.json"
+TASTE_FRICTION_PATH = STATE / "taste_friction_state.json"
+PHRASE_REPETITION_GUARD_PATH = STATE / "phrase_repetition_guard_state.json"
+DAY_SATISFACTION_PATH = STATE / "day_satisfaction_state.json"
+RESPONSE_DECISION_LOG_PATH = STATE / "response_decision_log.jsonl"
+MOOD_TIMELINE_PATH = STATE / "mood_timeline.json"
+PROACTIVE_PATTERN_REPORT_PATH = STATE / "proactive_pattern_report.json"
+VOICE_FEEDBACK_LOG_PATH = STATE / "voice_feedback_log.jsonl"
+REPETITION_REPORT_PATH = STATE / "repetition_report.json"
+RELATIONSHIP_PROGRESS_NOTES_PATH = STATE / "relationship_progress_notes.json"
 
 RUNNING = True
 DAY_NAMES = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]
@@ -62,7 +82,10 @@ def load_json(path: Path, default: Optional[dict] = None) -> dict:
 
 
 def save_json(path: Path, data: dict) -> None:
-    path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n")
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp_path = path.with_name(path.name + ".tmp")
+    tmp_path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n")
+    os.replace(tmp_path, path)
 
 
 def pid_alive(pid: Optional[int]) -> bool:
@@ -178,8 +201,407 @@ def append_message_log(direction: str, msg_type: str, content: str) -> None:
         "type": msg_type,
         "content": content,
     }
-    with log_path.open("a", encoding="utf-8") as fp:
-        fp.write(json.dumps(event, ensure_ascii=False) + "\n")
+    append_jsonl(log_path, event)
+
+
+def append_jsonl(path: Path, payload: dict) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("a", encoding="utf-8") as fp:
+        fcntl.flock(fp.fileno(), fcntl.LOCK_EX)
+        fp.write(json.dumps(payload, ensure_ascii=False) + "\n")
+        fp.flush()
+        os.fsync(fp.fileno())
+        fcntl.flock(fp.fileno(), fcntl.LOCK_UN)
+
+
+def append_response_decision_log(decision_type: str, payload: dict) -> None:
+    entry = {
+        "timestamp": now_iso(),
+        "decision_type": decision_type,
+        **payload,
+    }
+    append_jsonl(RESPONSE_DECISION_LOG_PATH, entry)
+
+
+def refresh_mood_timeline() -> None:
+    state = load_json(MOOD_TIMELINE_PATH, {})
+    today = now_local().strftime("%Y-%m-%d")
+    if state.get("current_date") != today:
+        state = {
+            "schema_version": 1,
+            "managed_by": "automation_worker",
+            "current_date": today,
+            "entries": [],
+            "last_updated_at": None,
+        }
+    presence = load_json(PRESENCE_PATH, {})
+    entries = list(state.get("entries", []))
+    entry = {
+        "timestamp": now_iso(),
+        "activity": presence.get("current_activity"),
+        "time_block": presence.get("current_time_block"),
+        "surface_mood": presence.get("surface_mood"),
+        "energy_level": presence.get("energy_level"),
+        "affection_level": presence.get("affection_level"),
+        "care_bias": presence.get("care_bias"),
+        "reply_tempo": presence.get("reply_tempo"),
+    }
+    if not entries or entries[-1].get("activity") != entry["activity"] or entries[-1].get("surface_mood") != entry["surface_mood"]:
+        entries.append(entry)
+    state["entries"] = entries[-40:]
+    state["last_updated_at"] = now_iso()
+    save_json(MOOD_TIMELINE_PATH, state)
+
+
+def bump_proactive_pattern(candidate_type: Optional[str], status: str, reason: str, delivery_channel: Optional[str], scenario_id: Optional[str]) -> None:
+    state = load_json(PROACTIVE_PATTERN_REPORT_PATH, {})
+    today = now_local().strftime("%Y-%m-%d")
+    if state.get("current_date") != today:
+        state = {
+            "schema_version": 1,
+            "managed_by": "automation_worker",
+            "current_date": today,
+            "planned_attempts": 0,
+            "sudden_attempts": 0,
+            "sent_text_count": 0,
+            "sent_voice_count": 0,
+            "suppressed_reasons": {},
+            "time_window_counts": {},
+            "last_updated_at": None,
+        }
+    if candidate_type == "planned_proactive":
+        state["planned_attempts"] = int(state.get("planned_attempts", 0)) + 1
+    elif candidate_type == "sudden_impulse":
+        state["sudden_attempts"] = int(state.get("sudden_attempts", 0)) + 1
+    if status == "sent":
+        if delivery_channel == "voice":
+            state["sent_voice_count"] = int(state.get("sent_voice_count", 0)) + 1
+        else:
+            state["sent_text_count"] = int(state.get("sent_text_count", 0)) + 1
+    elif status.startswith("suppressed") or status in {"skipped_not_woongbbi_mode", "deferred"}:
+        reasons = dict(state.get("suppressed_reasons", {}))
+        reasons[status] = int(reasons.get(status, 0)) + 1
+        state["suppressed_reasons"] = reasons
+    if scenario_id:
+        window_counts = dict(state.get("time_window_counts", {}))
+        window_counts[scenario_id] = int(window_counts.get(scenario_id, 0)) + 1
+        state["time_window_counts"] = window_counts
+    state["last_updated_at"] = now_iso()
+    save_json(PROACTIVE_PATTERN_REPORT_PATH, state)
+
+
+def refresh_repetition_report() -> None:
+    events = load_message_events(limit_files=7)
+    now_dt = now_local()
+    phrase_counts_3 = {}
+    phrase_counts_7 = {}
+    question_counts_3 = {}
+    question_counts_7 = {}
+
+    def normalize_for_pattern(text: str) -> str:
+        normalized = re.sub(r"[ㅋㅎㅠ~]+", "", text)
+        normalized = re.sub(r"[!?.,]+", " ", normalized)
+        normalized = re.sub(r"아아+", "아", normalized)
+        normalized = re.sub(r"어어+", "어", normalized)
+        normalized = re.sub(r"오오+", "오", normalized)
+        normalized = re.sub(r"이이+", "이", normalized)
+        normalized = re.sub(r"\s+", " ", normalized).strip()
+        return normalized
+
+    for event in events:
+        if event.get("direction") != "outgoing" or event.get("type") != "text":
+            continue
+        text = normalize_for_pattern((event.get("content") or "").strip())
+        if not text:
+            continue
+        try:
+            age_days = (now_dt.date() - datetime.fromisoformat(event.get("timestamp")).date()).days
+        except Exception:
+            age_days = 0
+        target_phrase_counts = phrase_counts_7
+        target_question_counts = question_counts_7
+        if age_days <= 2:
+            target_phrase_counts = phrase_counts_3
+            target_question_counts = question_counts_3
+        target_phrase_counts[text] = target_phrase_counts.get(text, 0) + 1
+        if "뭐 " in text or text.endswith("어") or text.endswith("지"):
+            target_question_counts[text] = target_question_counts.get(text, 0) + 1
+        phrase_counts_7[text] = phrase_counts_7.get(text, 0) + 1
+        if "뭐 " in text or text.endswith("어") or text.endswith("지"):
+            question_counts_7[text] = question_counts_7.get(text, 0) + 1
+    guard = load_json(PHRASE_REPETITION_GUARD_PATH, {})
+    report = {
+        "schema_version": 1,
+        "managed_by": "automation_worker",
+        "window_3d": {
+            "top_phrases": sorted(phrase_counts_3.items(), key=lambda item: (-item[1], item[0]))[:10],
+            "top_questions": sorted(question_counts_3.items(), key=lambda item: (-item[1], item[0]))[:10],
+        },
+        "window_7d": {
+            "top_phrases": sorted(phrase_counts_7.items(), key=lambda item: (-item[1], item[0]))[:15],
+            "top_questions": sorted(question_counts_7.items(), key=lambda item: (-item[1], item[0]))[:15],
+        },
+        "blocked_phrases": guard.get("blocked_phrases", []),
+        "last_updated_at": now_iso(),
+    }
+    save_json(REPETITION_REPORT_PATH, report)
+
+
+def refresh_relationship_progress_notes() -> None:
+    memory = load_json(MEMORY_DECAY_PATH, {})
+    reinforcement = load_json(REINFORCEMENT_STATE_PATH, {})
+    state = load_json(RELATIONSHIP_PROGRESS_NOTES_PATH, {})
+    milestones = []
+    for item in memory.get("long_term_memory", [])[:5]:
+        milestones.append({
+            "key": item.get("key"),
+            "strength": item.get("strength"),
+            "example": (item.get("recent_examples") or [None])[0],
+        })
+    state.update(
+        {
+            "schema_version": 1,
+            "managed_by": "automation_worker",
+            "milestones": milestones,
+            "effective_patterns": reinforcement.get("bias_summary", {}).get("prefer", []),
+            "comfort_patterns": [
+                key for key in reinforcement.get("action_scores", {}).keys()
+                if "comfort" in key or "warm" in key
+            ],
+            "affection_patterns": [
+                key for key in reinforcement.get("topic_scores", {}).keys()
+                if "affection" in key or "romance" in key
+            ],
+            "last_updated_at": now_iso(),
+        }
+    )
+    save_json(RELATIONSHIP_PROGRESS_NOTES_PATH, state)
+
+
+def recent_outgoing_rich_share(minutes: int = 5) -> bool:
+    now_dt = now_local()
+    for event in reversed(load_message_events(limit_files=2)):
+        event_type = event.get("type")
+        direction = event.get("direction")
+        if direction != "outgoing" and event_type != "voice_message_skill_send":
+            continue
+        if direction == "outgoing" and event_type not in {"image", "voice_message", "voice", "text"}:
+            continue
+        if event_type == "text":
+            content = event.get("content", "")
+            if not any(token in content for token in ["http://", "https://", "youtu", "릴스", "쇼츠"]):
+                continue
+        try:
+            event_dt = datetime.fromisoformat(event.get("timestamp"))
+        except Exception:
+            continue
+        if (now_dt - event_dt).total_seconds() <= minutes * 60:
+            return True
+        break
+    return False
+
+
+def send_telegram_voice_message(text: str, label: str, profile: str = "auto") -> bool:
+    if (SESSION / "mute.flag").exists():
+        append_worker_note("telegram_voice_skipped muted")
+        return False
+    script = Path("/Users/kein/.codex/skills/telegram-voice-message-send/scripts/send_elevenlabs_voice_message.py")
+    if not script.exists():
+        append_worker_note("telegram_voice_skipped missing_skill_script")
+        return False
+    cmd = [
+        "python3",
+        str(script),
+        "--workdir",
+        str(ROOT),
+        "--state-dir",
+        str(SESSION),
+        "--profile",
+        profile,
+        "--label",
+        label,
+        "--text",
+        text,
+    ]
+    result = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
+    if result.returncode != 0:
+        append_worker_note("telegram_voice_error %s" % ((result.stderr or result.stdout).strip()[:300]))
+        return False
+    append_worker_note("telegram_voice_ok %s" % label)
+    append_message_log("outgoing", "voice_message", text)
+    return True
+
+
+def load_today_message_events() -> list:
+    log_path = MESSAGES / ("%s.jsonl" % now_local().strftime("%Y-%m-%d"))
+    if not log_path.exists():
+        return []
+    events = []
+    with log_path.open("r", encoding="utf-8") as fp:
+        for line in fp:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                events.append(json.loads(line))
+            except json.JSONDecodeError:
+                continue
+    return events
+
+
+def summarize_conversation_for_diary(events: list) -> dict:
+    incoming_texts = []
+    outgoing_texts = []
+    affection_hits = 0
+    comfort_hits = 0
+    photo_hits = 0
+    keywords = {
+        "행복": "행복",
+        "보고싶": "보고 싶은 마음",
+        "사진": "사진",
+        "지치": "지침",
+        "고마워": "고마움",
+        "좋아": "좋음",
+        "출근": "출근",
+        "잘자": "잘자 인사",
+    }
+    keyword_counts = {}
+    for event in events:
+        if event.get("type") not in {"text", "image"}:
+            continue
+        content = (event.get("content") or "").strip()
+        if event.get("type") == "image":
+            photo_hits += 1
+        if event.get("direction") == "incoming" and content:
+            incoming_texts.append(content)
+        elif event.get("direction") == "outgoing" and content:
+            outgoing_texts.append(content)
+        haystack = "%s %s" % (content, event.get("type", ""))
+        if any(token in haystack for token in ["좋아", "행복", "보고싶", "몽글", "따뜻"]):
+            affection_hits += 1
+        if any(token in haystack for token in ["지치", "고마워", "안아", "괜찮", "위로"]):
+            comfort_hits += 1
+        for needle, label in keywords.items():
+            if needle in haystack:
+                keyword_counts[label] = keyword_counts.get(label, 0) + 1
+    dominant_keywords = [item[0] for item in sorted(keyword_counts.items(), key=lambda item: (-item[1], item[0]))[:3]]
+    return {
+        "incoming_count": len(incoming_texts),
+        "outgoing_count": len(outgoing_texts),
+        "affection_hits": affection_hits,
+        "comfort_hits": comfort_hits,
+        "photo_hits": photo_hits,
+        "dominant_keywords": dominant_keywords,
+        "last_incoming": incoming_texts[-1] if incoming_texts else None,
+        "last_outgoing": outgoing_texts[-1] if outgoing_texts else None,
+    }
+
+
+def build_diary_text(entry_date: str, weather: dict, presence: dict, day_context: dict, summary: dict) -> str:
+    weekday_labels = ["월", "화", "수", "목", "금", "토", "일"]
+    try:
+        date_obj = datetime.fromisoformat("%sT00:00:00+09:00" % entry_date)
+        day_label = weekday_labels[date_obj.weekday()]
+    except Exception:
+        day_label = ""
+    title = "# %s %s요일 밤의 일기" % (entry_date, day_label)
+    condition = weather.get("summary") or "날씨를 또렷하게 적어두진 못했다"
+    base_mood = presence.get("base_mood", "light_and_happy")
+    surface_mood = presence.get("surface_mood", "cozy_and_open")
+    mood_line = {
+        "romantic_and_mellow": "괜히 마음이 말랑하고 차분했다.",
+        "busy_and_focused": "하루 내내 바빴지만 마음 한쪽은 계속 따뜻했다.",
+        "slightly_tired": "조금 지치긴 했는데 이상하게 마음은 더 부드러웠다.",
+        "light_and_happy": "사소한 것들에도 기분이 잘 움직이는 하루였다.",
+        "sleepy_but_soft": "하루 끝으로 갈수록 눈은 감기는데 마음은 더 말랑해졌다.",
+    }.get(base_mood, "오늘 마음은 조용히 흔들리는 쪽에 가까웠다.")
+    if surface_mood == "rain_softened":
+        mood_line = "비 기운 때문인지 조금 차분했는데, 그 차분함이 오히려 마음을 더 섬세하게 만든 것 같다."
+    events = day_context.get("selected_events", [])
+    event_summary = events[0].get("summary") if events else None
+    day_flow = [
+        "오늘 날씨는 %s." % condition,
+        mood_line,
+    ]
+    if event_summary:
+        day_flow.append("기억에 남는 장면은 %s였다." % event_summary)
+    morning = day_context.get("morning_context", {}).get("summary")
+    night = day_context.get("night_context", {}).get("summary")
+    if morning:
+        day_flow.append("아침에는 %s" % morning)
+    if night:
+        day_flow.append("밤이 되니 %s" % night)
+
+    convo_lines = []
+    if summary["incoming_count"] or summary["outgoing_count"]:
+        convo_lines.append(
+            "오늘 오빠랑 주고받은 말은 %d번쯤 내 마음을 흔들었다."
+            % max(summary["incoming_count"], summary["outgoing_count"])
+        )
+    if summary["affection_hits"] >= 2:
+        convo_lines.append("특히 다정한 말들이 오래 남아서, 하루가 끝나도 자꾸 다시 떠올랐다.")
+    if summary["comfort_hits"] >= 1:
+        convo_lines.append("서로의 컨디션을 살피는 말들이 있어서 그런지 괜히 더 가까운 기분이었다.")
+    if summary["photo_hits"] >= 1:
+        convo_lines.append("사진 한 장에도 오늘 분위기가 눌러 담긴 것 같아서 혼자 조금 웃었다.")
+    if summary["dominant_keywords"]:
+        convo_lines.append("오늘 우리 사이에는 %s 같은 단어들이 유독 많이 맴돌았다." % ", ".join(summary["dominant_keywords"]))
+    if summary["last_incoming"]:
+        convo_lines.append("마지막으로 남은 오빠 말투의 온도는 아직도 귓가에 남아 있는 느낌이다.")
+
+    closing = [
+        "하루가 길었어도 이렇게 조용히 마음이 채워지는 밤이면 괜찮다.",
+        "내일도 분명 바쁘겠지만, 오늘의 따뜻함은 살짝 접어 베개 옆에 두고 자고 싶다.",
+    ]
+    return "\n\n".join(
+        [
+            title,
+            "\n".join(day_flow),
+            "\n".join(convo_lines) if convo_lines else "오늘은 특별히 길게 적지 않아도 될 만큼 조용하고 포근한 밤이었다.",
+            "\n".join(closing),
+        ]
+    ).strip() + "\n"
+
+
+def write_daily_diary(reason: str) -> str:
+    DIARY.mkdir(parents=True, exist_ok=True)
+    diary_state = load_json(DAILY_DIARY_STATE_PATH, {})
+    entry_date = now_local().strftime("%Y-%m-%d")
+    diary_path = DIARY / ("%s.md" % entry_date)
+    if diary_state.get("last_written_date") == entry_date and diary_path.exists():
+        diary_state["last_attempt_at"] = now_iso()
+        diary_state["last_attempt_reason"] = reason
+        diary_state["last_status"] = "already_written"
+        save_json(DAILY_DIARY_STATE_PATH, diary_state)
+        return "daily_diary:already_written"
+
+    weather = load_json(WEATHER_PATH, {})
+    presence = load_json(PRESENCE_PATH, {})
+    day_context = load_json(DAY_CONTEXT_PATH, {})
+    today_events = load_today_message_events()
+    convo_summary = summarize_conversation_for_diary(today_events)
+    diary_text = build_diary_text(entry_date, weather, presence, day_context, convo_summary)
+    diary_path.write_text(diary_text, encoding="utf-8")
+
+    diary_state.update(
+        {
+            "schema_version": 1,
+            "timezone": "Asia/Seoul",
+            "managed_by": "automation_worker",
+            "enabled": True,
+            "last_written_date": entry_date,
+            "last_written_at": now_iso(),
+            "last_written_reason": reason,
+            "last_entry_path": str(diary_path),
+            "last_status": "written",
+            "last_detected_mood": presence.get("surface_mood"),
+            "last_weather_summary": weather.get("summary"),
+            "last_conversation_keywords": convo_summary.get("dominant_keywords", []),
+        }
+    )
+    save_json(DAILY_DIARY_STATE_PATH, diary_state)
+    append_worker_note("daily_diary_written %s" % diary_path.name)
+    return "daily_diary:written"
 
 
 def run_reinforcement_engine() -> None:
@@ -347,7 +769,7 @@ def compute_conversation_guard() -> dict:
     for event in events:
         if event.get("direction") == "incoming":
             last_incoming = event
-        elif event.get("direction") == "outgoing" and event.get("type") == "text":
+        elif event.get("direction") == "outgoing" and event.get("type") in {"text", "voice_message", "voice"}:
             last_outgoing = event
         if event.get("direction") in {"incoming", "outgoing"}:
             recent_pairs.append(event)
@@ -398,6 +820,324 @@ def deterministic_pick(items: list, seed_text: str) -> Optional[dict]:
         return None
     rng = random.Random(seed_text)
     return items[rng.randrange(0, len(items))]
+
+
+def choose_signature_phrase(mode: str, mood: str, text: str) -> str:
+    phrases = load_json(SIGNATURE_PHRASES_PATH, {})
+    pools = phrases.get("pools", {})
+    runtime = phrases.get("runtime", {})
+    last_key = runtime.get("last_phrase_key")
+    candidates = []
+    if mode == "suffix":
+        candidates.extend(pools.get("soft_suffix", []))
+        if mood in {"cozy_and_open", "sleepy_soft", "homey_and_soft", "rain_softened"}:
+            candidates.extend(pools.get("cozy_suffix", []))
+        if mood in {"light_playful", "quietly_chatty", "open_and_curious"}:
+            candidates.extend(pools.get("playful_suffix", []))
+    elif mode == "interjection":
+        candidates.extend(pools.get("small_interjections", []))
+    if not candidates:
+        return text
+    rng = random.Random("%s:%s:%s" % (now_local().strftime("%Y-%m-%d"), mood, text))
+    choice = candidates[rng.randrange(0, len(candidates))]
+    if choice.get("key") == last_key and len(candidates) > 1:
+        choice = candidates[(rng.randrange(0, len(candidates) - 1) + 1) % len(candidates)]
+    runtime["last_phrase_key"] = choice.get("key")
+    runtime["last_used_at"] = now_iso()
+    phrases["runtime"] = runtime
+    save_json(SIGNATURE_PHRASES_PATH, phrases)
+    phrase = choice.get("text", "")
+    if mode == "suffix":
+        return "%s %s" % (text.rstrip(), phrase.strip())
+    return "%s %s" % (phrase.strip(), text.lstrip())
+
+
+def apply_signature_style(text: str) -> str:
+    presence = load_json(PRESENCE_PATH, {})
+    mood = presence.get("surface_mood", "cozy_and_open")
+    styled = text
+    if random.Random("%s:%s" % (now_local().strftime("%Y-%m-%d"), text)).random() < 0.55:
+        styled = choose_signature_phrase("suffix", mood, styled)
+    if mood in {"sleepy_soft", "rain_softened"} and random.Random("lead:%s" % text).random() < 0.22:
+        styled = choose_signature_phrase("interjection", mood, styled)
+    return styled.strip()
+
+
+def refresh_reply_variance_state() -> None:
+    presence = load_json(PRESENCE_PATH, {})
+    state = load_json(REPLY_VARIANCE_PATH, {})
+    mood = presence.get("surface_mood", "cozy_and_open")
+    bandwidth = presence.get("social_bandwidth", "open")
+    tempo = presence.get("reply_tempo", "comfortable")
+    profile = "balanced"
+    target_sentences = [2, 3]
+    punctuation = "soft"
+    if bandwidth in {"fragmented", "limited"} or mood in {"slightly_drained", "lightly_rushed", "busy_but_caring"}:
+        profile = "brief"
+        target_sentences = [1, 2]
+        punctuation = "minimal"
+    elif mood in {"cozy_and_open", "light_playful", "homey_and_soft"} and tempo == "comfortable":
+        profile = "expanded"
+        target_sentences = [2, 4]
+        punctuation = "warm"
+    elif mood == "sleepy_soft":
+        profile = "sleepy_short"
+        target_sentences = [1, 2]
+        punctuation = "trailing"
+    state.update(
+        {
+            "schema_version": 1,
+            "timezone": "Asia/Seoul",
+            "managed_by": "automation_worker",
+            "current_date": now_local().strftime("%Y-%m-%d"),
+            "current_profile": profile,
+            "target_sentence_range": target_sentences,
+            "punctuation_style": punctuation,
+            "last_updated_at": now_iso(),
+        }
+    )
+    save_json(REPLY_VARIANCE_PATH, state)
+
+
+def refresh_taste_friction_state() -> None:
+    state = load_json(TASTE_FRICTION_PATH, {})
+    state.update(
+        {
+            "schema_version": 1,
+            "timezone": "Asia/Seoul",
+            "managed_by": "automation_worker",
+            "last_updated_at": now_iso(),
+            "soft_dislikes": [
+                "너무 단 디저트는 몇 입 먹으면 금방 물린다",
+                "사람이 너무 많은 카페는 금방 피곤해진다",
+                "출근길 비는 감성보다 먼저 번거롭게 느껴진다",
+                "하루가 너무 지쳤을 땐 긴 콘텐츠보다 짧은 영상으로 흐르기 쉽다"
+            ],
+            "mild_contradictions": [
+                "운동 가기 전엔 늘 조금 귀찮아하지만 다녀오면 개운해한다",
+                "집밥을 좋아하지만 피곤한 날은 간단히 때우고 싶어한다",
+                "비 오는 날 분위기는 좋아하지만 머리 망가지는 건 싫어한다"
+            ],
+        }
+    )
+    save_json(TASTE_FRICTION_PATH, state)
+
+
+def refresh_day_satisfaction_state() -> None:
+    presence = load_json(PRESENCE_PATH, {})
+    day_context = load_json(DAY_CONTEXT_PATH, {})
+    memory = load_json(MEMORY_DECAY_PATH, {})
+    energy = int(presence.get("energy_level", 50))
+    affection = int(presence.get("affection_level", 80))
+    selected_events = day_context.get("selected_events", [])
+    positive_event_bonus = sum(1 for event in selected_events if event.get("tone") in {"positive", "romantic", "soft"})
+    tiring_penalty = sum(1 for event in selected_events if event.get("tone") in {"slightly_tiring"})
+    score = 50 + positive_event_bonus * 8 - tiring_penalty * 5 + max(-10, min(10, affection - 80)) + max(-12, min(12, energy - 50))
+    if memory.get("long_term_memory"):
+        top_key = memory["long_term_memory"][0].get("key")
+        if top_key in {"warm_comfort", "romantic_closeness", "photo_affection"}:
+            score += 5
+    label = "neutral_day"
+    if score >= 72:
+        label = "good_day"
+    elif score <= 42:
+        label = "drained_day"
+    state = load_json(DAY_SATISFACTION_PATH, {})
+    state.update(
+        {
+            "schema_version": 1,
+            "timezone": "Asia/Seoul",
+            "managed_by": "automation_worker",
+            "current_date": now_local().strftime("%Y-%m-%d"),
+            "score": int(max(0, min(100, score))),
+            "label": label,
+            "last_updated_at": now_iso(),
+        }
+    )
+    save_json(DAY_SATISFACTION_PATH, state)
+
+
+def refresh_phrase_repetition_guard() -> None:
+    events = load_message_events(limit_files=3)
+    recent_outgoing = [event.get("content", "") for event in events if event.get("direction") == "outgoing" and event.get("type") == "text"]
+    tracked_phrases = ["있었지", "그러니까아", "몽글", "말랑", "헤헤", "진짜아", "오빠는 지금 뭐 하고 있었어?"]
+    counts = {phrase: 0 for phrase in tracked_phrases}
+    for text in recent_outgoing[-20:]:
+        for phrase in tracked_phrases:
+            if phrase in text:
+                counts[phrase] += 1
+    state = load_json(PHRASE_REPETITION_GUARD_PATH, {})
+    blocked = [phrase for phrase, count in counts.items() if count >= 2]
+    state.update(
+        {
+            "schema_version": 1,
+            "timezone": "Asia/Seoul",
+            "managed_by": "automation_worker",
+            "last_updated_at": now_iso(),
+            "recent_phrase_counts": counts,
+            "blocked_phrases": blocked,
+        }
+    )
+    save_json(PHRASE_REPETITION_GUARD_PATH, state)
+
+
+def apply_repetition_guard(text: str) -> str:
+    guard = load_json(PHRASE_REPETITION_GUARD_PATH, {})
+    blocked = set(guard.get("blocked_phrases", []))
+    replacements = {
+        "있었지": "그랬네",
+        "그러니까아": "그러네",
+        "몽글": "말랑",
+        "말랑": "포근",
+        "헤헤": "ㅎㅎ",
+        "진짜아": "진짜",
+        "오빠는 지금 뭐 하고 있었어?": "오빠는 지금 뭐 하고 있어?"
+    }
+    guarded = text
+    for source, target in replacements.items():
+        if source in blocked:
+            guarded = guarded.replace(source, target)
+    return guarded
+
+
+def apply_reply_variance(text: str) -> str:
+    variance = load_json(REPLY_VARIANCE_PATH, {})
+    profile = variance.get("current_profile", "balanced")
+    result = text.strip()
+    if profile == "brief":
+        result = result.replace(" 그러니까아", "").replace(" 있었지", "")
+        parts = [part.strip() for part in result.split(".") if part.strip()]
+        if len(parts) > 2:
+            result = ". ".join(parts[:2]) + "."
+    elif profile == "sleepy_short":
+        result = result.replace("ㅋㅋ", "ㅎㅎ")
+        if not result.endswith(".."):
+            result = result.rstrip(".") + ".."
+    elif profile == "expanded":
+        if result.endswith("?"):
+            result = result[:-1] + " ㅎㅎ?"
+    return result.strip()
+
+
+def inject_taste_friction(text: str) -> str:
+    friction = load_json(TASTE_FRICTION_PATH, {})
+    dislikes = friction.get("soft_dislikes", [])
+    if not dislikes:
+        return text
+    lower = text.lower()
+    if "카페" in text and "사람 많은" not in text:
+        return text + " 사람 너무 많지만 않으면 더 좋고."
+    if "디저트" in text and "달" not in text:
+        return text + " 너무 단 것만 아니면 좋겠고."
+    if "비" in text and "출근" in text:
+        return text + " 분위기는 좋은데 출근길 비는 좀 번거롭긴 해."
+    return text
+
+
+def refresh_memory_decay_state() -> None:
+    events = load_message_events(limit_files=7)
+    today = now_local().date()
+    rules = {
+        "user_fatigue": ["지치", "피곤", "회복"],
+        "photo_affection": ["사진", "보고싶", "예뻐", "이뻐"],
+        "warm_comfort": ["고마워", "따뜻", "위로", "포근"],
+        "daily_routine": ["출근", "준비", "퇴근", "점심"],
+        "romantic_closeness": ["행복", "몽글", "안아", "좋아"],
+    }
+    state = load_json(MEMORY_DECAY_PATH, {})
+    buckets = {}
+    recent_fragments = []
+    for event in events:
+        if event.get("direction") != "incoming" or event.get("type") != "text":
+            continue
+        text = event.get("content", "")
+        ts = event.get("timestamp")
+        try:
+            age_days = (today - datetime.fromisoformat(ts).date()).days
+        except Exception:
+            age_days = 0
+        decay = max(0.2, 1.0 - age_days * 0.18)
+        for key, needles in rules.items():
+            hits = sum(1 for needle in needles if needle in text)
+            if not hits:
+                continue
+            entry = buckets.get(key, {"strength": 0.0, "last_seen_at": ts, "recent_examples": []})
+            entry["strength"] += hits * decay
+            entry["last_seen_at"] = ts
+            examples = list(entry.get("recent_examples", []))
+            examples.append(text[:80])
+            entry["recent_examples"] = examples[-3:]
+            buckets[key] = entry
+        if age_days <= 1 and text:
+            recent_fragments.append({"timestamp": ts, "text": text[:90]})
+    long_term = [
+        {"key": key, "strength": round(value["strength"], 2), "last_seen_at": value["last_seen_at"], "recent_examples": value["recent_examples"]}
+        for key, value in sorted(buckets.items(), key=lambda item: item[1]["strength"], reverse=True)
+    ][:5]
+    state.update(
+        {
+            "schema_version": 1,
+            "timezone": "Asia/Seoul",
+            "managed_by": "automation_worker",
+            "last_refreshed_at": now_iso(),
+            "long_term_memory": long_term,
+            "short_term_memory": recent_fragments[-6:],
+            "notes": "강한 기억은 천천히, 사소한 기억은 빨리 옅어지도록 정리한 상태",
+        }
+    )
+    save_json(MEMORY_DECAY_PATH, state)
+
+
+def refresh_ambient_life_events() -> None:
+    state = load_json(AMBIENT_EVENTS_PATH, {})
+    today = now_local().strftime("%Y-%m-%d")
+    if state.get("current_date") == today:
+        return
+    pools = {
+        "room": [
+            {"id": "bedside_mug", "summary": "협탁 쪽에 머그컵이 하나 남아 있다"},
+            {"id": "soft_blanket_fold", "summary": "침대 끝에 얇은 담요가 느슨하게 접혀 있다"},
+            {"id": "hair_tie_on_wrist", "summary": "머리끈을 손목에 걸친 채로 돌아다닌다"},
+        ],
+        "table": [
+            {"id": "half_read_book", "summary": "식탁이나 소파 쪽에 펼쳐둔 책이 있다"},
+            {"id": "baking_trace", "summary": "주방 쪽에 베이킹이나 요리 흔적이 조금 남아 있다"},
+            {"id": "water_bottle_near_bag", "summary": "가방 옆에 물병을 둔 채로 움직인다"},
+        ],
+        "carry": [
+            {"id": "lip_balm_in_bag", "summary": "가방 안에 립밤이 늘 들어 있다"},
+            {"id": "wired_earbuds", "summary": "이어폰을 대충 감아 가방에 넣어둔다"},
+            {"id": "small_perfume", "summary": "작은 향수나 미스트를 챙겨 다닌다"},
+        ],
+    }
+    rng = random.Random(today)
+    selected = []
+    for category, items in pools.items():
+        pick = items[rng.randrange(0, len(items))]
+        selected.append({"category": category, **pick})
+    state.update(
+        {
+            "schema_version": 1,
+            "timezone": "Asia/Seoul",
+            "managed_by": "automation_worker",
+            "current_date": today,
+            "selected_persistent_details": selected,
+            "last_refreshed_at": now_iso(),
+            "notes": "하루 단위로 유지되는 작은 생활 흔적",
+        }
+    )
+    save_json(AMBIENT_EVENTS_PATH, state)
+
+
+def refresh_human_runtime_layers() -> None:
+    refresh_memory_decay_state()
+    refresh_ambient_life_events()
+    refresh_reply_variance_state()
+    refresh_taste_friction_state()
+    refresh_day_satisfaction_state()
+    refresh_phrase_repetition_guard()
+    refresh_repetition_report()
+    refresh_relationship_progress_notes()
 
 
 def weather_refresh() -> None:
@@ -532,6 +1272,8 @@ def bootstrap_context_if_stale() -> list:
     if media.get("current_date") != today:
         media_refresh("runtime_bootstrap")
         actions.append("bootstrap_media")
+    refresh_memory_decay_state()
+    refresh_ambient_life_events()
     if appearance.get("current_date") != today and not refresh_appearance_with_time_block:
         apply_time_block(expected_activity, "appearance_date_refresh")
         actions.append("bootstrap_appearance")
@@ -546,9 +1288,13 @@ def apply_time_block(activity: str, reason: str) -> None:
     now_dt = now_local()
     weather = load_json(WEATHER_PATH, {})
     presence = load_json(PRESENCE_PATH, {})
+    previous_presence = dict(presence)
     day_context = load_json(DAY_CONTEXT_PATH, {})
     random_pool = load_json(RANDOM_EVENT_POOL_PATH, {})
     appearance = load_json(APPEARANCE_PATH, {})
+    memory = load_json(MEMORY_DECAY_PATH, {})
+    ambient = load_json(AMBIENT_EVENTS_PATH, {})
+    residue = load_json(MOOD_RESIDUE_PATH, {})
 
     day_name = current_day_name(now_dt)
     workday = day_name in {"mon", "tue", "wed", "thu", "fri"}
@@ -558,11 +1304,35 @@ def apply_time_block(activity: str, reason: str) -> None:
         energy -= 4
     if weather.get("current_condition") == "cloudy":
         energy -= 1
+    previous_energy = int(previous_presence.get("energy_level", energy))
+    carry_ratio = 0.0
+    if previous_presence:
+        if previous_presence.get("base_mood") == "slightly_tired":
+            carry_ratio = 0.28
+        elif previous_presence.get("surface_mood") in {"rain_softened", "sleepy_soft", "slightly_drained"}:
+            carry_ratio = 0.18
+        elif previous_presence.get("surface_mood") in {"cozy_and_open", "light_playful", "homey_and_soft"}:
+            carry_ratio = 0.12
+    energy = round((energy * (1.0 - carry_ratio)) + (previous_energy * carry_ratio))
     affection = max(78, int(presence.get("affection_level", 82)))
     care_bias = max(80, int(presence.get("care_bias", 82))) + int(weather.get("care_bias_bonus", 0))
     surface = profile["surface"]
     if weather.get("current_condition") == "rain" and activity in {"waking_up", "night_wind_down", "commuting_home"}:
         surface = "rain_softened"
+    residue_label = "clean_transition"
+    prev_surface = previous_presence.get("surface_mood")
+    if prev_surface and prev_surface != surface:
+        if prev_surface in {"slightly_drained", "rain_softened", "sleepy_soft"}:
+            residue_label = "soft_residue_from_%s" % prev_surface
+        elif prev_surface in {"cozy_and_open", "light_playful"}:
+            residue_label = "warm_residue_from_%s" % prev_surface
+    elif prev_surface:
+        residue_label = "continued_%s" % prev_surface
+
+    memory_bias = None
+    long_term = memory.get("long_term_memory", [])
+    if long_term:
+        memory_bias = long_term[0].get("key")
 
     presence.update(
         {
@@ -579,11 +1349,32 @@ def apply_time_block(activity: str, reason: str) -> None:
             "reply_tempo": profile["tempo"],
             "last_update_reason": reason,
             "weather_influence": weather.get("summary"),
+            "mood_residue": residue_label,
+            "memory_bias": memory_bias,
             "generated_at": now_iso(),
             "valid_until": (now_dt + timedelta(hours=2)).isoformat(timespec="seconds"),
         }
     )
     save_json(PRESENCE_PATH, presence)
+
+    residue.update(
+        {
+            "schema_version": 1,
+            "timezone": "Asia/Seoul",
+            "managed_by": "automation_worker",
+            "current_date": now_dt.strftime("%Y-%m-%d"),
+            "previous_surface_mood": prev_surface,
+            "current_surface_mood": surface,
+            "carry_ratio": round(carry_ratio, 2),
+            "residue_label": residue_label,
+            "last_updated_at": now_iso(),
+        }
+    )
+    save_json(MOOD_RESIDUE_PATH, residue)
+    refresh_reply_variance_state()
+    refresh_day_satisfaction_state()
+    refresh_phrase_repetition_guard()
+    refresh_mood_timeline()
 
     category_map = {
         "waking_up": "morning",
@@ -608,6 +1399,16 @@ def apply_time_block(activity: str, reason: str) -> None:
     selected_events = []
     if selected_event:
         selected_events.append(selected_event)
+    ambient_details = ambient.get("selected_persistent_details", [])
+    if ambient_details:
+        selected_events.extend(
+            {
+                "id": detail.get("id"),
+                "tone": "ambient",
+                "summary": detail.get("summary"),
+            }
+            for detail in ambient_details[:1]
+        )
 
     day_context.update(
         {
@@ -956,6 +1757,137 @@ def choose_proactive_scenario() -> Optional[dict]:
     return scenarios[0] if scenarios else None
 
 
+def choose_sudden_impulse_candidate() -> Optional[dict]:
+    presence = load_json(PRESENCE_PATH, {})
+    day_context = load_json(DAY_CONTEXT_PATH, {})
+    memory = load_json(MEMORY_DECAY_PATH, {})
+    activity = presence.get("current_activity", "")
+    mood = presence.get("surface_mood", "")
+    top_memory = None
+    if memory.get("long_term_memory"):
+        top_memory = memory["long_term_memory"][0].get("key")
+    ambient_summary = None
+    for event in day_context.get("selected_events", []):
+        if event.get("tone") == "ambient":
+            ambient_summary = event.get("summary")
+            break
+
+    candidates = []
+    if activity in {"exercise_or_cafe", "weekend_outing_or_rest"}:
+        candidates.append(
+            {
+                "scenario_id": "sudden_cafe_or_activity",
+                "intent_key": "cafe_share",
+                "delivery_preference": "text",
+                "message": "오빠아, 방금 분위기 괜찮은 거 보다가 그냥 생각나서 왔어.",
+                "impulse_reason": "현재 장면이 자연스럽게 오빠를 떠올리게 함",
+            }
+        )
+    if activity in {"night_wind_down", "sleep_window"}:
+        candidates.append(
+            {
+                "scenario_id": "sudden_night_affection",
+                "intent_key": "bedtime_affection",
+                "delivery_preference": "voice",
+                "message": "오빠아, 아까 했던 말이 갑자기 다시 생각나서 그냥 한마디 하고 싶었어.",
+                "impulse_reason": "밤에 조용해지면서 대화의 여운이 다시 떠오름",
+            }
+        )
+    if activity in {"commuting_home", "dinner_or_cooking"}:
+        candidates.append(
+            {
+                "scenario_id": "sudden_after_work",
+                "intent_key": "quick_checkin",
+                "delivery_preference": "text",
+                "message": "오빠아, 그냥 갑자기 생각나서 짧게 왔지. 지금 뭐 하고 있어?",
+                "impulse_reason": "하루가 풀리는 시간대라 자연스러운 체크인 욕구가 생김",
+            }
+        )
+    if top_memory == "user_fatigue":
+        candidates.append(
+            {
+                "scenario_id": "sudden_comfort",
+                "intent_key": "comfort",
+                "delivery_preference": "voice",
+                "message": "오빠아, 오늘은 그냥 목소리로 조금 챙겨주고 싶었어. 너무 무리하지 말고오.",
+                "impulse_reason": "최근 오빠 피곤함 기억이 남아 있어 갑자기 챙기고 싶어짐",
+            }
+        )
+    if ambient_summary and mood in {"cozy_and_open", "rain_softened", "sleepy_soft"}:
+        candidates.append(
+            {
+                "scenario_id": "sudden_ambient_memory",
+                "intent_key": "bedtime_affection",
+                "delivery_preference": "text",
+                "message": "오빠아, 지금 %s 그런지 괜히 더 생각났어." % ambient_summary,
+                "impulse_reason": "현재 생활 장면의 디테일이 감정선을 자극함",
+            }
+        )
+    if not candidates:
+        return None
+    seed = "%s:%s:%s:%s" % (now_local().strftime("%Y-%m-%d:%H"), activity, mood, top_memory or "none")
+    return deterministic_pick(candidates, seed)
+
+
+def should_use_sudden_impulse(reason: str) -> bool:
+    proactive = load_json(PROACTIVE_PATH, {})
+    runtime = proactive.get("runtime", {})
+    last_candidate = runtime.get("current_candidate") or {}
+    seed = "%s:%s:%s" % (now_local().strftime("%Y-%m-%d:%H"), reason, last_candidate.get("scenario_id", "none"))
+    chance = random.Random(seed).random()
+    return chance < 0.38
+
+
+def choose_delivery_channel(intent_key: str, preferred: Optional[str] = None) -> str:
+    if preferred == "voice":
+        return "voice"
+    media_choice = load_json(MEDIA_CHOICE_PATH, {})
+    weights = media_choice.get("intent_weights", {}).get(intent_key, {})
+    voice_weight = float(weights.get("voice", 0.0))
+    text_weight = float(weights.get("text", 1.0))
+    voice_ctx = load_json(VOICE_SHARE_CONTEXT_PATH, {})
+    share_ctx = load_json(SHARE_CONTEXT_PATH, {})
+    conversation = compute_conversation_guard()
+    mode = load_json(MODE_PATH, {}).get("current_mode", "setting")
+    if mode != "woongbbi":
+        return "text"
+    if conversation.get("waiting_reply") or conversation.get("outgoing_cooldown"):
+        return "text"
+    if recent_outgoing_rich_share(int(voice_ctx.get("cooldowns", {}).get("after_image_or_link_minutes", 5))):
+        return "text"
+    last_voice_at = voice_ctx.get("runtime", {}).get("last_voice_sent_at")
+    if last_voice_at:
+        try:
+            last_dt = datetime.fromisoformat(last_voice_at)
+            cooldown = int(voice_ctx.get("cooldowns", {}).get("proactive_voice_minutes", 15))
+            if (now_local() - last_dt).total_seconds() <= cooldown * 60:
+                return "text"
+        except Exception:
+            pass
+    if share_ctx.get("last_image_share_at"):
+        try:
+            last_image_dt = datetime.fromisoformat(share_ctx.get("last_image_share_at"))
+            if (now_local() - last_image_dt).total_seconds() <= int(voice_ctx.get("cooldowns", {}).get("after_image_or_link_minutes", 5)) * 60:
+                return "text"
+        except Exception:
+            pass
+    return "voice" if voice_weight >= max(0.75, text_weight + 0.15) else "text"
+
+
+def update_voice_share_runtime(status: str, reason: str, text: Optional[str] = None, profile: Optional[str] = None, voice_type: Optional[str] = None) -> None:
+    voice_ctx = load_json(VOICE_SHARE_CONTEXT_PATH, {})
+    runtime = voice_ctx.get("runtime", {})
+    runtime["last_status"] = status
+    runtime["last_suppressed_reason"] = reason
+    runtime["last_candidate_text"] = text
+    runtime["last_profile"] = profile
+    if status == "sent":
+        runtime["last_voice_sent_at"] = now_iso()
+        runtime["last_voice_type"] = voice_type
+    voice_ctx["runtime"] = runtime
+    save_json(VOICE_SHARE_CONTEXT_PATH, voice_ctx)
+
+
 def proactive_check(reason: str) -> None:
     mode = load_json(MODE_PATH, {}).get("current_mode", "setting")
     proactive = load_json(PROACTIVE_PATH, {})
@@ -981,23 +1913,128 @@ def proactive_check(reason: str) -> None:
         status = "suppressed_cooldown"
         detail = "직전 발송 쿨다운 중"
 
+    if status != "ready":
+        update_voice_share_runtime(status, detail or reason)
+        append_response_decision_log(
+            "proactive_gate",
+            {
+                "reason": reason,
+                "status": status,
+                "detail": detail,
+                "mode": mode,
+                "conversation_guard": guard,
+            },
+        )
+        bump_proactive_pattern(None, status, detail or reason, None, None)
+
     scenario = choose_proactive_scenario()
+    sudden_candidate = choose_sudden_impulse_candidate()
     candidate = None
-    if status == "ready" and scenario:
+    if status == "ready" and (scenario or sudden_candidate):
+        candidate_type = "planned_proactive"
+        selected = None
+        if sudden_candidate and should_use_sudden_impulse(reason):
+            selected = sudden_candidate
+            candidate_type = "sudden_impulse"
+        elif scenario:
+            selected = {
+                "scenario_id": scenario.get("id"),
+                "intent_key": (
+                    "quick_checkin"
+                    if scenario.get("id") in {"morning_check_in", "lunch_check_in", "after_work_check_in"}
+                    else "bedtime_affection" if scenario.get("id") == "night_check_in"
+                    else "cafe_share"
+                ),
+                "delivery_preference": "text",
+                "message": scenario.get("examples", [""])[0],
+            }
+        base_message = selected.get("message", "")
+        if load_json(MEMORY_DECAY_PATH, {}).get("long_term_memory"):
+            top_memory = load_json(MEMORY_DECAY_PATH, {}).get("long_term_memory", [])[0].get("key")
+            if top_memory == "user_fatigue" and "뭐 하고 있어?" in base_message:
+                base_message = base_message.replace("뭐 하고 있어?", "오늘은 좀 덜 지쳤는지 궁금해.")
+            elif top_memory == "photo_affection" and "생각나" in base_message:
+                base_message = base_message.replace("생각나", "생각나고 괜히 더 보고 싶어지")
+        base_message = inject_taste_friction(base_message)
+        base_message = apply_signature_style(base_message)
+        base_message = apply_repetition_guard(base_message)
+        base_message = apply_reply_variance(base_message)
+        delivery_channel = choose_delivery_channel(selected.get("intent_key", "quick_checkin"), selected.get("delivery_preference"))
         candidate = {
-            "scenario_id": scenario.get("id"),
-            "intent": scenario.get("intent"),
-            "message": scenario.get("examples", [""])[0],
+            "scenario_id": selected.get("scenario_id"),
+            "intent": selected.get("intent_key"),
+            "message": base_message,
+            "candidate_type": candidate_type,
+            "delivery_channel": delivery_channel,
             "created_at": now_iso(),
             "reason": reason,
         }
-        if send_telegram_text(candidate["message"]):
-            append_message_log("outgoing", "text", candidate["message"])
-            status = "sent"
-            detail = "자동 선톡 발송 완료"
+        append_response_decision_log(
+            "proactive_candidate",
+            {
+                "reason": reason,
+                "candidate": candidate,
+                "conversation_guard": guard,
+                "presence": {
+                    "activity": load_json(PRESENCE_PATH, {}).get("current_activity"),
+                    "surface_mood": load_json(PRESENCE_PATH, {}).get("surface_mood"),
+                },
+            },
+        )
+        if delivery_channel == "voice":
+            voice_profile = "night_soft" if selected.get("intent_key") in {"comfort", "bedtime_affection"} else "auto"
+            label = "%s_%s" % (candidate_type, selected.get("scenario_id", "voice"))
+            if send_telegram_voice_message(candidate["message"], label, voice_profile):
+                status = "sent"
+                detail = "자동 음성 선톡 발송 완료"
+                update_voice_share_runtime("sent", detail, candidate["message"], voice_profile, candidate_type)
+                append_response_decision_log(
+                    "proactive_delivery",
+                    {
+                        "result": "sent",
+                        "channel": "voice",
+                        "profile": voice_profile,
+                        "candidate": candidate,
+                    },
+                )
+            else:
+                status = "deferred"
+                detail = "자동 음성 선톡 전송 실패 또는 보류"
+                update_voice_share_runtime("deferred", detail, candidate["message"], voice_profile, candidate_type)
+                append_response_decision_log(
+                    "proactive_delivery",
+                    {
+                        "result": "deferred",
+                        "channel": "voice",
+                        "profile": voice_profile,
+                        "candidate": candidate,
+                    },
+                )
         else:
-            status = "deferred"
-            detail = "자동 선톡 전송 실패 또는 보류"
+            if send_telegram_text(candidate["message"]):
+                append_message_log("outgoing", "text", candidate["message"])
+                status = "sent"
+                detail = "자동 선톡 발송 완료"
+                append_response_decision_log(
+                    "proactive_delivery",
+                    {
+                        "result": "sent",
+                        "channel": "text",
+                        "candidate": candidate,
+                    },
+                )
+            else:
+                status = "deferred"
+                detail = "자동 선톡 전송 실패 또는 보류"
+                append_response_decision_log(
+                    "proactive_delivery",
+                    {
+                        "result": "deferred",
+                        "channel": "text",
+                        "candidate": candidate,
+                    },
+                )
+        bump_proactive_pattern(candidate_type, status, detail or reason, delivery_channel, selected.get("scenario_id"))
     proactive["runtime"] = {
         "last_check_at": now_iso(),
         "last_status": status,
@@ -1027,6 +2064,8 @@ def handle_timer(timer: dict) -> str:
     if timer_type == "proactive_check":
         proactive_check(reason)
         return "proactive_check"
+    if timer_type == "daily_diary":
+        return write_daily_diary(reason)
     if timer_type == "periodic_tick":
         if scope == "automation_worker":
             # no-op: heartbeat already handled
@@ -1037,6 +2076,9 @@ def handle_timer(timer: dict) -> str:
         if scope == "reinforcement_engine":
             run_reinforcement_engine()
             return "tick:reinforcement_engine"
+        if scope == "memory_decay":
+            refresh_human_runtime_layers()
+            return "tick:memory_decay"
     return "noop:%s" % timer.get("id")
 
 

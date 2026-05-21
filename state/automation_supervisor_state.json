@@ -8,15 +8,15 @@
     "active": true,
     "generation": 1
   },
-  "active_pid": 73911,
-  "last_heartbeat_at": "2026-05-21T07:45:27+09:00",
-  "last_success_at": "2026-05-21T07:45:27+09:00",
+  "active_pid": 92123,
+  "last_heartbeat_at": "2026-05-21T11:37:45+09:00",
+  "last_success_at": "2026-05-21T11:37:45+09:00",
   "last_error_at": null,
   "last_error_summary": null,
   "duplicate_suspected": false,
   "pending_control_action": null,
   "last_applied_action": "start",
-  "last_applied_at": "2026-05-21T01:06:21+09:00",
+  "last_applied_at": "2026-05-21T11:34:45+09:00",
   "last_action_result": "started",
   "notes": "worker 감시와 제어를 위한 supervisor 상태"
 }

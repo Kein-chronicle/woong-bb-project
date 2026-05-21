@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "managed_by": "setting_mode",
+  "enabled": true,
+  "phrases": [
+    {
+      "text": "응",
+      "weight": 0.4
+    },
+    {
+      "text": "있잖아",
+      "weight": 0.25
+    },
+    {
+      "text": "아니이",
+      "weight": 0.18
+    },
+    {
+      "text": "그치",
+      "weight": 0.2
+    },
+    {
+      "text": "잠깐",
+      "weight": 0.12
+    }
+  ],
+  "max_insertions_per_message": 1,
+  "last_updated_at": null
+}

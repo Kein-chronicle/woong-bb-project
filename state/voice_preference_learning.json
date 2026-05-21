@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "managed_by": "setting_mode",
+  "intent_scores": {
+    "night_comfort_voice": 0,
+    "work_quiet_checkin_voice": 0,
+    "post_workout_voice": 0,
+    "cafe_hushed_voice": 0,
+    "direct_requested_phrase_voice": 0
+  },
+  "style_scores": {
+    "soft_warm": 0,
+    "quiet_caring": 0,
+    "breathy_playful": 0,
+    "short_affection": 0
+  },
+  "recent_positive_cues": [],
+  "recent_negative_cues": [],
+  "last_updated_at": null
+}

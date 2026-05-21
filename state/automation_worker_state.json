@@ -5,18 +5,20 @@
   "recommended_runtime": "python_sidecar_worker",
   "recommended_supervisor": "launchd_or_screen",
   "poll_interval_seconds": 60,
-  "last_run_at": "2026-05-21T07:45:27+09:00",
-  "last_result": "timers:3",
+  "last_run_at": "2026-05-21T11:37:45+09:00",
+  "last_result": "timers:1",
   "notes": "자동 이벤트, 재계산, 상태 갱신을 담당할 별도 워커 프로세스 설계 상태",
   "timer_history": {
-    "heartbeat_runtime_tick": "2026-05-21T07:45:27+09:00",
-    "conversation_guard_tick": "2026-05-21T07:45:27+09:00",
+    "heartbeat_runtime_tick": "2026-05-21T11:37:45+09:00",
+    "conversation_guard_tick": "2026-05-21T11:32:50+09:00",
     "weekday_wakeup_bootstrap": "2026-05-21T05:45:25+09:00",
     "weather_morning_refresh": "2026-05-21T06:00:25+09:00",
     "weekday_get_ready_transition": "2026-05-21T06:15:26+09:00",
-    "reinforcement_learning_tick": "2026-05-21T07:45:27+09:00",
+    "reinforcement_learning_tick": "2026-05-21T11:32:50+09:00",
     "weekday_commute_to_work": "2026-05-21T07:00:26+09:00",
     "share_priority_morning_recalc": "2026-05-21T07:10:27+09:00",
-    "proactive_morning_check": "2026-05-21T07:20:27+09:00"
+    "proactive_morning_check": "2026-05-21T07:20:27+09:00",
+    "weekday_morning_shift_start": "2026-05-21T08:00:09+09:00",
+    "memory_decay_tick": "2026-05-21T11:31:50+09:00"
   }
 }

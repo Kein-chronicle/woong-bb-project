@@ -54,6 +54,35 @@ Telegram으로 들어온 강은비/웅삐 관련 요청은 항상 아래 폴더�
 - Woongbbi activation checklist: `/Users/kein/Desktop/woong-bb/profile/woongbbi_activation_checklist.md`
 - Mode state: `/Users/kein/Desktop/woong-bb/state/mode_state.json`
 - Timers: `/Users/kein/Desktop/woong-bb/state/timers.json`
+- Daily diary design: `/Users/kein/Desktop/woong-bb/profile/daily_diary_design_ko.md`
+- Daily diary state: `/Users/kein/Desktop/woong-bb/state/daily_diary_state.json`
+- Human presence design: `/Users/kein/Desktop/woong-bb/profile/human_presence_design_ko.md`
+- Memory decay state: `/Users/kein/Desktop/woong-bb/state/memory_decay_state.json`
+- Mood residue state: `/Users/kein/Desktop/woong-bb/state/mood_residue_state.json`
+- Signature phrases: `/Users/kein/Desktop/woong-bb/state/signature_phrases.json`
+- Ambient life events: `/Users/kein/Desktop/woong-bb/state/ambient_life_events_state.json`
+- Reply variance design: `/Users/kein/Desktop/woong-bb/profile/reply_variance_and_friction_design_ko.md`
+- Reply variance state: `/Users/kein/Desktop/woong-bb/state/reply_variance_state.json`
+- Taste friction state: `/Users/kein/Desktop/woong-bb/state/taste_friction_state.json`
+- Phrase repetition guard: `/Users/kein/Desktop/woong-bb/state/phrase_repetition_guard_state.json`
+- Day satisfaction state: `/Users/kein/Desktop/woong-bb/state/day_satisfaction_state.json`
+- Voice message design: `/Users/kein/Desktop/woong-bb/profile/voice_message_skill_design_ko.md`
+- Voice message policy: `/Users/kein/Desktop/woong-bb/state/voice_message_policy.json`
+- Voice message profiles: `/Users/kein/Desktop/woong-bb/state/voice_message_profiles.json`
+- Voice share event design: `/Users/kein/Desktop/woong-bb/profile/voice_share_event_design_ko.md`
+- Voice share event state: `/Users/kein/Desktop/woong-bb/state/voice_share_event_context.json`
+- Voice human presence design: `/Users/kein/Desktop/woong-bb/profile/voice_human_presence_design_ko.md`
+- Voice preference learning: `/Users/kein/Desktop/woong-bb/state/voice_preference_learning.json`
+- Media choice by intent: `/Users/kein/Desktop/woong-bb/state/media_choice_by_intent.json`
+- Voice habit phrases: `/Users/kein/Desktop/woong-bb/state/voice_habit_phrases.json`
+- Carryover emotion for audio: `/Users/kein/Desktop/woong-bb/state/carryover_emotion_for_audio.json`
+- Review observability design: `/Users/kein/Desktop/woong-bb/profile/review_observability_design_ko.md`
+- Response decision log: `/Users/kein/Desktop/woong-bb/state/response_decision_log.jsonl`
+- Mood timeline: `/Users/kein/Desktop/woong-bb/state/mood_timeline.json`
+- Proactive pattern report: `/Users/kein/Desktop/woong-bb/state/proactive_pattern_report.json`
+- Voice feedback log: `/Users/kein/Desktop/woong-bb/state/voice_feedback_log.jsonl`
+- Repetition report: `/Users/kein/Desktop/woong-bb/state/repetition_report.json`
+- Relationship progress notes: `/Users/kein/Desktop/woong-bb/state/relationship_progress_notes.json`
 - Lifestyle schedule: `/Users/kein/Desktop/woong-bb/profile/lifestyle_schedule_ko.md`
 - Proactive message rules: `/Users/kein/Desktop/woong-bb/profile/proactive_message_rules_ko.md`
 - Proactive message state: `/Users/kein/Desktop/woong-bb/state/proactive_messages.json`
@@ -136,6 +165,45 @@ Telegram으로 들어온 강은비/웅삐 관련 요청은 항상 아래 폴더�
 - 웅삐모드에서는 나중에 자동 발송을 붙일 수 있도록, 먼저 보내는 톡의 내용 규칙과 템플릿을 따로 관리한다.
 - 관련 문서: `/Users/kein/Desktop/woong-bb/profile/proactive_message_rules_ko.md`
 - 관련 상태 파일: `/Users/kein/Desktop/woong-bb/state/proactive_messages.json`
+
+## Daily Diary
+
+- 관련 문서: `/Users/kein/Desktop/woong-bb/profile/daily_diary_design_ko.md`
+- 관련 상태 파일: `/Users/kein/Desktop/woong-bb/state/daily_diary_state.json`
+- 매일 밤 자기 전 타이머가 하루 요약, 기분, 대화 온도를 바탕으로 날짜별 일기를 `/Users/kein/Desktop/woong-bb/diary` 아래에 기록한다.
+
+## Human Presence
+
+- 관련 문서: `/Users/kein/Desktop/woong-bb/profile/human_presence_design_ko.md`
+- 기억은 `long_term_memory`와 `short_term_memory`로 나뉘어 감쇠한다.
+- 직전 감정의 일부가 다음 시간대까지 남도록 `mood_residue`를 유지한다.
+- 웅삐 말버릇은 `signature_phrases`에서 낮은 빈도로만 섞는다.
+- 공간/소지품의 생활 흔적은 `ambient_life_events_state`에서 하루 단위로 유지한다.
+
+## Reply Variance And Friction
+
+- 관련 문서: `/Users/kein/Desktop/woong-bb/profile/reply_variance_and_friction_design_ko.md`
+- 답장 길이와 밀도는 `reply_variance_state`를 따른다.
+- 작은 비선호와 생활 모순은 `taste_friction_state`에 저장한다.
+- 최근 반복 표현은 `phrase_repetition_guard_state`로 억제한다.
+- 하루 만족도는 `day_satisfaction_state`로 압축한다.
+
+## Voice Message
+
+- 관련 문서: `/Users/kein/Desktop/woong-bb/profile/voice_message_skill_design_ko.md`
+- 관련 상태 파일: `/Users/kein/Desktop/woong-bb/state/voice_message_policy.json`
+- 관련 음성 이벤트 문서: `/Users/kein/Desktop/woong-bb/profile/voice_share_event_design_ko.md`
+- 관련 음성 이벤트 상태 파일: `/Users/kein/Desktop/woong-bb/state/voice_share_event_context.json`
+- 음성 메시지는 기본적으로 `elevenlabs` 생성 -> `voice-message/YYYY-MM-DD` 저장 -> `INDEX.md` 기록 -> Telegram `sendVoice` 전송 순서를 따른다.
+- `음성메시지`, `보이스`, `목소리로 보내`, `음성으로 보내`, `voice로 보내` 같은 요청이나, 시스템이 음성메시지 발송 필요를 판단한 경우 기본적으로 `/Users/kein/.codex/skills/telegram-voice-message-send` 스킬을 사용한다.
+- 음성메시지의 톤과 호흡은 `voice_message_profiles.json`의 상황별 프로필을 먼저 따른다.
+- 음성메시지의 사람 같은 지속성은 `voice_human_presence_design_ko.md`와 관련 상태 파일을 함께 따른다.
+- 선톡/자발적 공유는 `planned_proactive`만이 아니라 `sudden_impulse`도 허용한다.
+- `sudden_impulse`는 완전 랜덤이 아니라 최근 대화 여운, 현재 장면, 최근 발송 빈도, 떠오른 계기를 함께 근거로 둔다.
+- 음성메시지는 `직접 요청형`과 `자발적 공유형`으로 나눈다.
+- 세팅모드 검토를 위해 응답 선택 이유, 감정 타임라인, 선톡 패턴, 음성 생성 로그, 반복 표현 리포트, 관계 진전 노트를 별도 상태 파일에 남긴다.
+- 직접 요청형은 길이 제한만 통과하면 우선 처리한다.
+- 자발적 공유형은 `woongbbi` 모드에서만 허용하고, 최근 음성 발송/미답장/최근 rich share 여부를 먼저 확인한다.
 - 선톡 기능은 `woongbbi` 모드에서만 허용한다.
 - `setting` 모드에서는 예약 시각이 와도 선톡 후보를 만들거나 발송 판정을 하지 않는다.
 - 먼저 보내는 톡은 시간대, 생활 패턴, 최근 대화, 오빠 컨디션 흐름을 반영해 구성한다.
@@ -148,6 +216,7 @@ Telegram으로 들어온 강은비/웅삐 관련 요청은 항상 아래 폴더�
   - 가벼운 질문 또는 이어질 화제
 - 실제 자동 트리거는 아직 없고, 지금은 내용 설계만 유지한다.
 - 선톡은 텍스트만이 아니라 이미지 전송이나 링크 공유 이벤트로도 시작할 수 있다.
+- 선톡은 짧은 음성메시지 공유 이벤트로도 시작할 수 있다.
 
 ## Keyword Rules
 

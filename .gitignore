@@ -1,4 +1,8 @@
 telegram-session.env
+azure-speech.env
+session/azure-speech.env
+elevenlabs.env
+session/elevenlabs.env
 *.log
 session/
 .DS_Store

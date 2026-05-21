@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "managed_by": "setting_mode",
+  "primary_engine": "elevenlabs",
+  "fallback_engine": "azure",
+  "fallback_enabled": false,
+  "default_delivery_method": "sendVoice",
+  "default_breath_preset": 2,
+  "max_chars": 220,
+  "save_root": "/Users/kein/Desktop/woong-bb/voice-message",
+  "index_filename": "INDEX.md",
+  "allow_setting_mode_test": true,
+  "allow_woongbbi_mode_send": true,
+  "notes": "음성 생성, 저장, 전송 루프의 기본 정책"
+}

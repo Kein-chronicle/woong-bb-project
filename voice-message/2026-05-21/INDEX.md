@@ -1,0 +1,173 @@
+# 2026-05-21 Voice Messages
+
+## Files
+
+- `090453_test_ko_female.mp3`
+  - created_at: `09:04:54`
+  - text: 안녕 오빠, 테스트 음성이야. 오늘도 너무 무리하지 말고 잘 챙겨.
+- `090844_compare_sunhi_base.mp3`
+  - created_at: `09:08:44`
+  - voice: `ko-KR-SunHiNeural`
+  - rate/pitch/volume: `-3%` / `0%` / `medium`
+  - text: 오빠, 안녕. 이건 첫 번째 비교 음성이야. 오늘도 너무 무리하지 말고, 잘 챙겨.
+- `090844_compare_jimin_soft.mp3`
+  - created_at: `09:08:44`
+  - voice: `ko-KR-JiMinNeural`
+  - rate/pitch/volume: `-6%` / `0%` / `medium`
+  - text: 오빠, 안녕. 이건 두 번째 비교 음성이야. 오늘 하루도 너무 무리하지 말고, 잘 챙겨.
+- `090844_compare_sunhi_conversational.mp3`
+  - created_at: `09:08:46`
+  - voice: `ko-KR-SunHiNeural`
+  - rate/pitch/volume: `-7%` / `-1%` / `medium`
+  - text: 오빠, 안녕. 이건 테스트로 한번 말해보는 거야. 오늘도 너무 무리하지 말고, 밥도 잘 챙겨 먹어.
+- `095144_elevenlabs_test_ko.mp3`
+  - created_at: `09:51:48`
+  - engine: `elevenlabs`
+  - model: `eleven_multilingual_v2`
+  - settings: `stability=0.42` / `similarity=0.82` / `style=0.18` / `speaker_boost=true`
+  - text: 오빠, 안녕. 이건 ElevenLabs 테스트 음성이야. 오늘도 너무 무리하지 말고, 밥 잘 챙겨 먹어.
+- `095644_elevenlabs_breath_test_short.mp3`
+  - created_at: `09:56:45`
+  - engine: `elevenlabs`
+  - model: `eleven_multilingual_v2`
+  - settings: `stability=0.42` / `similarity=0.82` / `style=0.18` / `speaker_boost=true`
+  - text: 오빠, 안녕. 이건, 짧게 보내보는 테스트 음성이야. 오늘도, 너무 무리하지 말고. 밥, 잘 챙겨 먹어.
+- `095911_breath_case_1_light.mp3`
+  - created_at: `09:59:12`
+  - engine: `elevenlabs`
+  - model: `eleven_multilingual_v2`
+  - settings: `stability=0.42` / `similarity=0.82` / `style=0.18` / `speaker_boost=true`
+  - text: 오빠, 안녕. 이건 1번 호흡 테스트야. 오늘도 너무 무리하지 말고, 밥 잘 챙겨 먹어.
+- `095912_breath_case_2_medium.mp3`
+  - created_at: `09:59:14`
+  - engine: `elevenlabs`
+  - model: `eleven_multilingual_v2`
+  - settings: `stability=0.42` / `similarity=0.82` / `style=0.18` / `speaker_boost=true`
+  - text: 오빠, 안녕. 이건, 2번 호흡 테스트야. 오늘도, 너무 무리하지 말고. 밥, 잘 챙겨 먹어.
+- `095914_breath_case_3_strong.mp3`
+  - created_at: `09:59:15`
+  - engine: `elevenlabs`
+  - model: `eleven_multilingual_v2`
+  - settings: `stability=0.42` / `similarity=0.82` / `style=0.18` / `speaker_boost=true`
+  - text: 오빠. 안녕. 이건, 3번 호흡 테스트야. 오늘도, 너무 무리하지 말고. 밥도, 꼭. 잘 챙겨 먹어.
+- `100049_breath_case_2a_soft.mp3`
+  - created_at: `10:00:50`
+  - engine: `elevenlabs`
+  - model: `eleven_multilingual_v2`
+  - settings: `stability=0.42` / `similarity=0.82` / `style=0.18` / `speaker_boost=true`
+  - text: 오빠, 안녕. 이건, 2번에 가깝게 조정한 첫 번째 테스트야. 오늘도, 너무 무리하지 말고. 밥, 잘 챙겨 먹어.
+- `100050_breath_case_2b_warm.mp3`
+  - created_at: `10:00:52`
+  - engine: `elevenlabs`
+  - model: `eleven_multilingual_v2`
+  - settings: `stability=0.42` / `similarity=0.82` / `style=0.18` / `speaker_boost=true`
+  - text: 오빠, 안녕. 이건, 2번에 가깝게 조금 더 다정하게 말해보는 테스트야. 오늘도, 너무 무리하지 말고. 밥, 잘 챙겨 먹어.
+- `100052_breath_case_2c_short.mp3`
+  - created_at: `10:00:54`
+  - engine: `elevenlabs`
+  - model: `eleven_multilingual_v2`
+  - settings: `stability=0.42` / `similarity=0.82` / `style=0.18` / `speaker_boost=true`
+  - text: 오빠, 안녕. 이건, 2번에 가깝게 조금 더 짧게 말해보는 테스트야. 오늘도, 너무 무리하지 말고. 잘 챙겨.
+- `100935_skill_loop_test.mp3`
+  - created_at: `10:09:39`
+  - engine: `elevenlabs`
+  - breath_preset: `2`
+  - text: 오빠, 안녕. 이건 스킬 루프 테스트야. 오늘도, 너무 무리하지 말고,. 밥, 잘 챙겨 먹어.
+- `102252_situation_work_quiet.mp3`
+  - created_at: `10:22:53`
+  - engine: `elevenlabs`
+  - profile: `work_quiet`
+  - breath_preset: `2`
+  - text: 오빠, 나 지금 잠깐 짬 나서 보낸다. 오늘도 너무 무리하지 말고,, 잘 챙겨.
+- `102256_situation_cafe_hushed.mp3`
+  - created_at: `10:22:57`
+  - engine: `elevenlabs`
+  - profile: `cafe_hushed`
+  - breath_preset: `2`
+  - text: 오빠, 나 지금 카페야. 잠깐 앉아 있으니까, 오빠 생각나서 보냈어. 오늘 어때?
+- `102300_situation_night_soft.mp3`
+  - created_at: `10:23:02`
+  - engine: `elevenlabs`
+  - profile: `night_soft`
+  - breath_preset: `2`
+  - text: 오빠, 나 이제 조용히 쉬고 있어. 오늘도 고생 많았어. 너무 늦기 전에, 푹 쉬어.
+- `102817_profile_work_quiet_v2.mp3`
+  - created_at: `10:28:18`
+  - engine: `elevenlabs`
+  - profile: `work_quiet`
+  - breath_preset: `2`
+  - stability: `0.8`
+  - similarity_boost: `0.86`
+  - style: `0.02`
+  - use_speaker_boost: `false`
+  - text: 오빠, 나. 지금 잠깐 짬 나서 보냈어. 오늘도 무리하지 말고 점심은 꼭 챙겨.
+- `102821_profile_cafe_hushed_v2.mp3`
+  - created_at: `10:28:22`
+  - engine: `elevenlabs`
+  - profile: `cafe_hushed`
+  - breath_preset: `2`
+  - stability: `0.58`
+  - similarity_boost: `0.84`
+  - style: `0.18`
+  - use_speaker_boost: `false`
+  - text: 오빠, 나 지금, 카페 잠깐 들렀어. 커피 기다리다가 오빠 생각났지.
+- `102825_profile_night_soft_v2.mp3`
+  - created_at: `10:28:26`
+  - engine: `elevenlabs`
+  - profile: `night_soft`
+  - breath_preset: `2`
+  - stability: `0.72`
+  - similarity_boost: `0.88`
+  - style: `0.06`
+  - use_speaker_boost: `false`
+  - text: 오빠, 나 이제 씻고 누웠어. 오늘도 고생 많았고, 너무 무리하지 말고,, 잘 자.
+- `102829_profile_post_workout_v2.mp3`
+  - created_at: `10:28:31`
+  - engine: `elevenlabs`
+  - profile: `post_workout_breathing`
+  - breath_preset: `2`
+  - stability: `0.38`
+  - similarity_boost: `0.78`
+  - style: `0.3`
+  - use_speaker_boost: `true`
+  - text: 오빠, 나, 지금, 운동 끝나고. 왔어. 아직 조금, 숨차는데, 괜히 오빠 생각나서 보냈지.
+- `102846_profile_post_workout_v3.mp3`
+  - created_at: `10:28:47`
+  - engine: `elevenlabs`
+  - profile: `post_workout_breathing`
+  - breath_preset: `3`
+  - stability: `0.38`
+  - similarity_boost: `0.78`
+  - style: `0.3`
+  - use_speaker_boost: `true`
+  - text: 오빠, 나, 지금, 운동 끝나고. 왔어. 아직 조금, 숨차는데, 괜히 오빠 생각나서 보냈지.
+- `103326_cadence_calm_v1.mp3`
+  - created_at: `10:33:28`
+  - engine: `elevenlabs`
+  - profile: `calm_daily`
+  - breath_preset: `2`
+  - stability: `0.5`
+  - similarity_boost: `0.84`
+  - style: `0.16`
+  - use_speaker_boost: `true`
+  - text: 오빠아, 나 지금 잠깐 생각나서 보냈어, 오늘도 너무 무리하지 말고,, 밥은 꼭 챙겨 먹어.
+- `103330_cadence_night_v1.mp3`
+  - created_at: `10:33:32`
+  - engine: `elevenlabs`
+  - profile: `night_soft`
+  - breath_preset: `2`
+  - stability: `0.72`
+  - similarity_boost: `0.88`
+  - style: `0.06`
+  - use_speaker_boost: `false`
+  - text: 오빠아, 나 이제 씻고 누웠어어, 오늘도 고생 많았고, 너무 무리하지 말고,, 잘 자어,.
+- `103335_cadence_work_v1.mp3`
+  - created_at: `10:33:36`
+  - engine: `elevenlabs`
+  - profile: `work_quiet`
+  - breath_preset: `2`
+  - stability: `0.8`
+  - similarity_boost: `0.86`
+  - style: `0.02`
+  - use_speaker_boost: `false`
+  - text: 오빠, 나, 지금 잠깐 짬 나서 보냈어., 오늘도 너무 무리하지 말고, 점심은 꼭 챙겨

@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "timezone": "Asia/Seoul",
+  "managed_by": "automation_worker",
+  "last_updated_at": "2026-05-21T11:31:50+09:00",
+  "recent_phrase_counts": {
+    "있었지": 0,
+    "그러니까아": 0,
+    "몽글": 2,
+    "말랑": 1,
+    "헤헤": 2,
+    "진짜아": 0,
+    "오빠는 지금 뭐 하고 있었어?": 0
+  },
+  "blocked_phrases": [
+    "몽글",
+    "헤헤"
+  ],
+  "notes": "최근 반복된 표현을 세어 같은 문장 습관이 과하게 겹치지 않게 막는다."
+}

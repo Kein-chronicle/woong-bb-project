@@ -271,6 +271,15 @@
       "reason": "late_night_proactive_window"
     },
     {
+      "id": "daily_bedtime_diary",
+      "enabled": true,
+      "type": "daily_diary",
+      "scope": "diary_writer",
+      "days": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
+      "time": "23:20",
+      "reason": "bedtime_diary_write"
+    },
+    {
       "id": "weekend_midday_proactive_check",
       "enabled": true,
       "type": "proactive_check",
@@ -311,7 +320,15 @@
       "scope": "reinforcement_engine",
       "interval_seconds": 300,
       "reason": "user_preference_reinforcement_update"
+    },
+    {
+      "id": "memory_decay_tick",
+      "enabled": true,
+      "type": "periodic_tick",
+      "scope": "memory_decay",
+      "interval_seconds": 900,
+      "reason": "refresh_memory_decay_and_ambient_events"
     }
   ],
-  "notes": "생활 시간대 전환, 상태 갱신, 선톡 후보 점검, 점수 재계산, 사용자 선호 강화 학습을 위한 기본 타이머 세트"
+  "notes": "생활 시간대 전환, 상태 갱신, 선톡 후보 점검, 점수 재계산, 사용자 선호 강화 학습, 자기 전 일기 생성, 기억 감쇠와 생활 흔적 갱신을 위한 기본 타이머 세트"
 }

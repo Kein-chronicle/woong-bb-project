@@ -71,6 +71,9 @@ If you are an AI agent entering this project, read these first:
 34. [messages/](messages/)
 35. [calendar/events.json](calendar/events.json)
 36. [characters/woongbbi/eunbi/README.md](characters/woongbbi/eunbi/README.md)
+37. [profile/azure_speech_setup_ko.md](profile/azure_speech_setup_ko.md)
+38. [profile/elevenlabs_setup_ko.md](profile/elevenlabs_setup_ko.md)
+39. [profile/voice_clone_collection_guide_ko.md](profile/voice_clone_collection_guide_ko.md)
 
 Treat this repository as the canonical memory root. If similar or older files exist elsewhere, prefer the files in this repository unless the user explicitly says otherwise.
 
@@ -154,6 +157,8 @@ This folder was also prepared for a Telegram-linked Codex workflow.
 Operational notes:
 
 - `telegram-session.env` and `session/` may contain local runtime state.
+- Azure Speech 음성 설정 예시는 `azure-speech.env.example`에 둔다.
+- ElevenLabs 음성 설정 예시는 `elevenlabs.env.example`에 둔다.
 - Tokens and session data should not be shared publicly.
 - A new Telegram/Codex session should use this repository as its working root.
 

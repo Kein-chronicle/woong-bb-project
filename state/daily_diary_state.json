@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "timezone": "Asia/Seoul",
+  "managed_by": "automation_worker",
+  "enabled": true,
+  "last_written_date": null,
+  "last_written_at": null,
+  "last_written_reason": null,
+  "last_entry_path": null,
+  "last_status": "idle",
+  "last_detected_mood": null,
+  "last_weather_summary": null,
+  "last_conversation_keywords": [],
+  "notes": "자기 전 일기 생성 결과와 마지막 작성 상태를 기록한다."
+}

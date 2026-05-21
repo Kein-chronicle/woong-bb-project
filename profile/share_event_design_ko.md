@@ -17,6 +17,8 @@
 - Recalc state: `/Users/kein/Desktop/woong-bb/state/share_priority_recalc_state.json`
 - Flow design: `/Users/kein/Desktop/woong-bb/profile/share_event_flow_ko.md`
 - Flow state: `/Users/kein/Desktop/woong-bb/state/share_event_flow_state.json`
+- Voice share design: `/Users/kein/Desktop/woong-bb/profile/voice_share_event_design_ko.md`
+- Voice share state: `/Users/kein/Desktop/woong-bb/state/voice_share_event_context.json`
 - Image settings: `/Users/kein/Desktop/woong-bb/state/image_generation_settings.json`
 - Image guard design: `/Users/kein/Desktop/woong-bb/profile/image_generation_guard_design_ko.md`
 - Image guard state: `/Users/kein/Desktop/woong-bb/state/image_generation_guard.json`
@@ -41,6 +43,12 @@
 - OTT 작품/예고편/클립 링크
 - "오빠도 봐봐" 톤의 추천 링크
 
+### 4. Voice Message Share
+- 짧은 안심/위로 음성
+- 일터/출근길 짧은 체크인 음성
+- 운동 후 숨찬 생활감 공유 음성
+- 카페/밤 무드 공유 음성
+
 ## Trigger Contexts
 
 ### Proactive
@@ -59,6 +67,8 @@
 - 미답장 상태에서 연속 두 번 이상 이미지/링크를 던지지 않는다.
 - 이미지 생성 전역 설정이 off면 자발적 이미지 공유는 만들지 않는다.
 - 이미지 생성 lock이 active이면 자발적 이미지 공유는 막고 텍스트만 허용한다.
+- 최근 15분 안에 음성을 보냈으면 자발적 음성 공유는 반복하지 않는다.
+- 최근 5분 안에 이미지나 링크를 보냈으면 음성까지 연달아 붙이지 않는다.
 
 ## Priority Rule
 - 실제 전송 전에는 공유 점수표를 먼저 계산한다.

@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "managed_by": "automation_worker",
+  "current_date": "2026-05-21",
+  "entries": [
+    {
+      "timestamp": "2026-05-21T11:17:42+09:00",
+      "activity": "hospital_morning_shift",
+      "time_block": "morning_shift",
+      "surface_mood": "busy_but_caring",
+      "energy_level": 48,
+      "affection_level": 84,
+      "care_bias": 100,
+      "reply_tempo": "slow"
+    }
+  ],
+  "last_updated_at": "2026-05-21T11:17:42+09:00"
+}

@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "managed_by": "setting_mode",
+  "default_profile": "calm_daily",
+  "profiles": {
+    "calm_daily": {
+      "breath_preset": 2,
+      "delivery_tone": "자연스럽고 편안한 기본 음성메시지",
+      "max_chars": 110,
+      "sentence_limit": 3,
+      "cadence_style": "soft_affection",
+      "vowel_stretch_level": "low",
+      "prosody_smoothing": "medium",
+      "voice_settings": {
+        "stability": 0.62,
+        "similarity_boost": 0.84,
+        "style": 0.1,
+        "use_speaker_boost": true
+      },
+      "text_rules": [
+        "호칭 뒤에는 약한 호흡을 둔다",
+        "짧은 문장 2~3개로 끝낸다",
+        "과한 감탄사와 반복 표현은 줄인다"
+      ]
+    },
+    "night_soft": {
+      "breath_preset": 2,
+      "delivery_tone": "밤이라 차분하고 조금 더 조용한 톤",
+      "max_chars": 95,
+      "sentence_limit": 3,
+      "cadence_style": "night_melt",
+      "vowel_stretch_level": "medium",
+      "prosody_smoothing": "high",
+      "voice_settings": {
+        "stability": 0.8,
+        "similarity_boost": 0.88,
+        "style": 0.03,
+        "use_speaker_boost": false
+      },
+      "text_rules": [
+        "문장 끝을 부드럽게 정리한다",
+        "짧은 위로 또는 안부 중심으로 간다",
+        "호흡은 조금 느리게 둔다"
+      ]
+    },
+    "energetic_light": {
+      "breath_preset": 1,
+      "delivery_tone": "기분 좋고 에너지 있는 짧은 톤",
+      "max_chars": 90,
+      "sentence_limit": 3,
+      "cadence_style": "bright_bouncy",
+      "vowel_stretch_level": "low",
+      "prosody_smoothing": "low",
+      "voice_settings": {
+        "stability": 0.56,
+        "similarity_boost": 0.8,
+        "style": 0.22,
+        "use_speaker_boost": true
+      },
+      "text_rules": [
+        "문장은 짧게",
+        "리듬은 빠르되 급하게 느껴지지 않게",
+        "쉼표는 최소로 유지한다"
+      ]
+    },
+    "work_quiet": {
+      "breath_preset": 2,
+      "delivery_tone": "일터나 외부라 조금 조용히 말하는 톤",
+      "max_chars": 80,
+      "sentence_limit": 2,
+      "cadence_style": "quiet_hushed",
+      "vowel_stretch_level": "none",
+      "prosody_smoothing": "high",
+      "voice_settings": {
+        "stability": 0.86,
+        "similarity_boost": 0.86,
+        "style": 0.02,
+        "use_speaker_boost": false
+      },
+      "text_rules": [
+        "볼륨감이 낮다고 느껴질 문장 선택",
+        "짧고 핵심만 말한다",
+        "장난보다 안부 위주"
+      ]
+    },
+    "cafe_hushed": {
+      "breath_preset": 2,
+      "delivery_tone": "카페에서 낮게 말하는 톤",
+      "max_chars": 90,
+      "sentence_limit": 3,
+      "cadence_style": "soft_affection",
+      "vowel_stretch_level": "low",
+      "prosody_smoothing": "medium",
+      "voice_settings": {
+        "stability": 0.66,
+        "similarity_boost": 0.84,
+        "style": 0.1,
+        "use_speaker_boost": false
+      },
+      "text_rules": [
+        "너무 밝게 튀지 않게",
+        "상황 공유 한 줄 + 안부 한 줄 구조",
+        "호흡은 중간 정도"
+      ]
+    },
+    "post_workout_breathing": {
+      "breath_preset": 3,
+      "delivery_tone": "운동 직후라 호흡이 약간 가쁜 톤",
+      "max_chars": 70,
+      "sentence_limit": 2,
+      "cadence_style": "breathy_short",
+      "vowel_stretch_level": "medium",
+      "prosody_smoothing": "medium",
+      "voice_settings": {
+        "stability": 0.52,
+        "similarity_boost": 0.78,
+        "style": 0.18,
+        "use_speaker_boost": true
+      },
+      "text_rules": [
+        "짧고 가벼운 문장만",
+        "중간 호흡을 더 자주 넣는다",
+        "한 문장 길이를 짧게 유지한다"
+      ]
+    }
+  },
+  "activity_profile_map": {
+    "night_wind_down": "night_soft",
+    "sleep_window": "night_soft",
+    "exercise_or_cafe": "cafe_hushed",
+    "hospital_morning_shift": "work_quiet",
+    "hospital_afternoon_shift": "work_quiet",
+    "commuting_to_work": "calm_daily",
+    "commuting_home": "calm_daily",
+    "dinner_or_cooking": "calm_daily",
+    "weekend_outing_or_rest": "energetic_light"
+  }
+}

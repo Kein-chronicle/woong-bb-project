@@ -8,8 +8,8 @@
   "strong_link_threshold": 80,
   "last_decision": "text_only",
   "last_image_score": -11,
-  "last_link_score": -17,
-  "last_time_block_bias": "commute_to_work",
+  "last_link_score": -22,
+  "last_time_block_bias": "morning_shift",
   "last_applied_penalties": [
     "link_no_real_url",
     "active_conversation_penalty"

@@ -2,10 +2,10 @@
   "schema_version": 1,
   "managed_by": "share_event_flow_engine",
   "enabled_in_mode": "woongbbi",
-  "last_trigger_type": "morning_context_recalc",
+  "last_trigger_type": "runtime_pending_recalc",
   "last_flow_result": "text_only",
   "last_flow_reason": "현재는 텍스트 우선 유지가 자연스러움",
   "last_downgrade_reason": "link_no_real_url",
-  "last_executed_at": "2026-05-21T07:10:27+09:00",
+  "last_executed_at": "2026-05-21T08:01:09+09:00",
   "notes": "공유 이벤트 호출 흐름의 마지막 실행 결과를 기록한다."
 }
