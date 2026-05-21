@@ -2,7 +2,7 @@
   "schema_version": 1,
   "timezone": "Asia/Seoul",
   "managed_by": "automation_worker",
-  "last_refreshed_at": "2026-05-21T13:27:22+09:00",
+  "last_refreshed_at": "2026-05-21T13:28:22+09:00",
   "long_term_memory": [
     {
       "key": "photo_affection",
