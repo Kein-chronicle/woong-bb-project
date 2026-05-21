@@ -32,6 +32,8 @@
 - Voice habit phrases: `/Users/kein/Desktop/woong-bb/state/voice_habit_phrases.json`
 - Carryover emotion for audio: `/Users/kein/Desktop/woong-bb/state/carryover_emotion_for_audio.json`
 - Review observability design: `/Users/kein/Desktop/woong-bb/profile/review_observability_design_ko.md`
+- Woongbbi response optimization design: `/Users/kein/Desktop/woong-bb/profile/woongbbi_response_optimization_design_ko.md`
+- Chat runtime snapshot: `/Users/kein/Desktop/woong-bb/state/chat_runtime_snapshot.json`
 - Response decision log: `/Users/kein/Desktop/woong-bb/state/response_decision_log.jsonl`
 - Mood timeline: `/Users/kein/Desktop/woong-bb/state/mood_timeline.json`
 - Proactive pattern report: `/Users/kein/Desktop/woong-bb/state/proactive_pattern_report.json`
@@ -87,6 +89,7 @@
 - woongbbi branch만 웅삐 관련 기억, 시간대 상황, 감정선 응답을 적극 사용한다.
 - 향후 `direct / fast / full` 같은 응답 경로 최적화는 woongbbi branch에만 적용한다.
 - setting branch는 최적화보다 검토와 충분한 판단을 우선하는 full 해석 경로를 기본값으로 둔다.
+- woongbbi branch의 최적화 설계와 snapshot 구조는 `woongbbi_response_optimization_design_ko.md`를 기준으로 한다.
 - Default mode: `setting`
 - Startup mode: `setting`
 - Every new or restarted session must begin as `setting`, regardless of the previous saved mode, until `/웅삐온` is explicitly received and the activation checklist is completed.

@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "managed_by": "setting_mode",
+  "current_mode": "setting",
+  "current_activity": null,
+  "current_time_block": null,
+  "surface_mood": null,
+  "energy_level": null,
+  "affection_level": null,
+  "care_bias": null,
+  "reply_variance_profile": null,
+  "blocked_phrases": [],
+  "conversation_guard_summary": {
+    "conversation_active": false,
+    "waiting_reply": false,
+    "outgoing_cooldown": false,
+    "late_reply_ok": false
+  },
+  "top_memory_keys": [],
+  "available_rich_channels": {
+    "text": true,
+    "image": false,
+    "voice": false,
+    "link": false
+  },
+  "recommended_response_path": "full",
+  "recommended_response_reason": "setting_mode_default_full",
+  "last_updated_at": null
+}

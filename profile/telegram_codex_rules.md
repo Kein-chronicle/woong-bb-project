@@ -33,6 +33,7 @@ Telegram으로 들어온 강은비/웅삐 관련 요청은 항상 아래 폴더�
 - setting mode에서는 웅삐 캐릭터 응답 문맥을 이어받지 않고, 세팅 전용 문맥으로만 처리한다.
 - 응답 경로 최적화(`direct / fast / full`)는 웅삐모드에만 적용 대상으로 본다.
 - 세팅모드는 빠른 경로 최적화보다 충분한 해석과 충분한 판단을 우선한다.
+- 웅삐모드 응답 최적화 구조는 `/Users/kein/Desktop/woong-bb/profile/woongbbi_response_optimization_design_ko.md`를 기준으로 한다.
 
 ## Mode Toggle Rules
 
@@ -81,6 +82,8 @@ Telegram으로 들어온 강은비/웅삐 관련 요청은 항상 아래 폴더�
 - Voice habit phrases: `/Users/kein/Desktop/woong-bb/state/voice_habit_phrases.json`
 - Carryover emotion for audio: `/Users/kein/Desktop/woong-bb/state/carryover_emotion_for_audio.json`
 - Review observability design: `/Users/kein/Desktop/woong-bb/profile/review_observability_design_ko.md`
+- Woongbbi response optimization design: `/Users/kein/Desktop/woong-bb/profile/woongbbi_response_optimization_design_ko.md`
+- Chat runtime snapshot: `/Users/kein/Desktop/woong-bb/state/chat_runtime_snapshot.json`
 - Response decision log: `/Users/kein/Desktop/woong-bb/state/response_decision_log.jsonl`
 - Mood timeline: `/Users/kein/Desktop/woong-bb/state/mood_timeline.json`
 - Proactive pattern report: `/Users/kein/Desktop/woong-bb/state/proactive_pattern_report.json`
