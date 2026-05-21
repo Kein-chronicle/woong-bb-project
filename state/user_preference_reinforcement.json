@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "managed_by": "reinforcement_engine",
-  "last_run_at": "2026-05-21T14:04:24+09:00",
+  "last_run_at": "2026-05-21T14:09:24+09:00",
   "last_processed": {
     "file": "/Users/kein/Desktop/woong-bb/messages/2026-05-21.jsonl",
     "line": 45,
@@ -9,7 +9,7 @@
   },
   "processed_offsets": {
     "/Users/kein/Desktop/woong-bb/messages/2026-05-20.jsonl": 117,
-    "/Users/kein/Desktop/woong-bb/messages/2026-05-21.jsonl": 80
+    "/Users/kein/Desktop/woong-bb/messages/2026-05-21.jsonl": 83
   },
   "message_stats": {
     "incoming_text_processed": 70,
