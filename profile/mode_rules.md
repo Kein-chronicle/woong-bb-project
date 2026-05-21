@@ -85,6 +85,8 @@
 - 일반 메시지는 `/Users/kein/Desktop/woong-bb/state/mode_state.json`의 `current_mode`를 읽어 분기한다.
 - setting branch는 웅삐 페르소나 추론, 생활 시뮬레이션, 관계 감정선 확장을 기본적으로 타지 않는다.
 - woongbbi branch만 웅삐 관련 기억, 시간대 상황, 감정선 응답을 적극 사용한다.
+- 향후 `direct / fast / full` 같은 응답 경로 최적화는 woongbbi branch에만 적용한다.
+- setting branch는 최적화보다 검토와 충분한 판단을 우선하는 full 해석 경로를 기본값으로 둔다.
 - Default mode: `setting`
 - Startup mode: `setting`
 - Every new or restarted session must begin as `setting`, regardless of the previous saved mode, until `/웅삐온` is explicitly received and the activation checklist is completed.
