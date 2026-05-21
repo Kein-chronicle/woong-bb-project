@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "managed_by": "automation_worker",
-  "current_mode": "setting",
+  "current_mode": "woongbbi",
   "current_activity": "hospital_afternoon_shift",
   "current_time_block": "afternoon_shift",
   "surface_mood": "slightly_drained",
@@ -27,10 +27,10 @@
   "available_rich_channels": {
     "text": true,
     "image": false,
-    "voice": false,
+    "voice": true,
     "link": false
   },
-  "recommended_response_path": "full",
-  "recommended_response_reason": "setting_mode_default_full",
-  "last_updated_at": "2026-05-21T13:59:23+09:00"
+  "recommended_response_path": "fast",
+  "recommended_response_reason": "workday_brief_response_fits_snapshot",
+  "last_updated_at": "2026-05-21T14:00:23+09:00"
 }
