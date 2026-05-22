@@ -1,0 +1,18 @@
+{
+  "state_key": "available",
+  "availability": "open",
+  "followup_policy": "default",
+  "tone_hint": "neutral",
+  "confidence": 0.35,
+  "reason": "현재 유지 중인 상대 상태는 없고 최근 메시지 기준으로 기본 응답 가능 상태",
+  "source_timestamp": "2026-05-22T12:00:53.888Z",
+  "source_excerpt": "그랬나보다 ㅎㅎ 옆에 있어준다니까 편하게 잠들거같아..ㅎㅎ",
+  "applies_until": null,
+  "should_suppress_waiting_reply": false,
+  "active_state_keys": [],
+  "active_state_summaries": [],
+  "sticky_fact_summaries": [],
+  "schema_version": 1,
+  "managed_by": "automation_worker",
+  "last_updated_at": "2026-05-23T08:54:00+09:00"
+}

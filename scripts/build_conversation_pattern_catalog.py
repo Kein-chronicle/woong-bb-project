@@ -59,6 +59,30 @@ MESSAGE_EXCLUDE_PATTERNS = [
     r"먼저 그런 톡",
 ]
 
+RAW_EXCLUDE_PATTERNS = [
+    r"^(안녕하세요|여러분)",
+    r"^(오늘은|이번 영상)",
+    r"(구독|좋아요|댓글|알림설정)",
+    r"(보여드릴게요|소개해드릴게요|찍어볼게요)",
+    r"(브이로그 시작|영상 끝까지)",
+    r"(welcome back|subscribe|like and comment)",
+]
+
+RAW_FRAGMENT_PATTERNS = [
+    r"^[가-힣a-zA-Z]{1,2}$",
+    r"(구군|우이도|따$)",
+    r"^(그리고|근데|그래서|근데도)$",
+    r"(같이)$",
+]
+NATURALNESS_EXCLUDE_PATTERNS = [
+    r"먼저 왔어",
+    r"와\s?줘서",
+    r"지금 왔다",
+    r"지금 왔어",
+    r"보고 싶어지서",
+    r"그러니까아",
+]
+
 
 def normalize(text: str) -> str:
     return re.sub(r"\s+", " ", (text or "")).strip()
@@ -128,6 +152,10 @@ def has_noise_repetition(text: str) -> bool:
     return bool(re.search(r"(.)\1\1\1", compact))
 
 
+def matches_any(text: str, patterns: list) -> bool:
+    return any(re.search(pattern, text, re.IGNORECASE) for pattern in patterns)
+
+
 def clean_example(text: str) -> bool:
     if not text or len(text) < 6:
         return False
@@ -135,18 +163,33 @@ def clean_example(text: str) -> bool:
         return False
     if text.lower() == "vs":
         return False
+    if matches_any(text, NATURALNESS_EXCLUDE_PATTERNS):
+        return False
     return True
+
+
+def has_dialogue_markers(text: str) -> bool:
+    return bool(
+        re.search(
+            r"(오빠|자기|여보|너|나|우리|응|웅|어|그래|맞아|왜|뭐|어때|했어|할래|싶어|\?)",
+            text,
+        )
+    )
 
 
 def raw_quality_score(text: str) -> int:
     score = 0
-    if 6 <= len(text) <= 42:
+    if 8 <= len(text) <= 72:
         score += 1
-    if korean_ratio(text) >= 0.45:
+    if korean_ratio(text) >= 0.55:
         score += 1
     if not has_noise_repetition(text):
         score += 1
-    if not re.search(r"(구군|우이도|따$|^\w{1,2}$)", text):
+    if not matches_any(text, RAW_FRAGMENT_PATTERNS):
+        score += 1
+    if not matches_any(text, RAW_EXCLUDE_PATTERNS):
+        score += 1
+    if has_dialogue_markers(text):
         score += 1
     if classify(text):
         score += 1
@@ -176,6 +219,11 @@ def is_romantic_runtime_text(text: str) -> bool:
     return message_quality_score(text) >= 4
 
 
+def source_selection_score(data: dict) -> int:
+    selection = data.get("selection_quality") or {}
+    return int(selection.get("score") or 0)
+
+
 def collect_from_raw():
     buckets = {}
     source_rows = []
@@ -183,15 +231,33 @@ def collect_from_raw():
     for path_str in glob.glob(str(RAW_DIR / "*.json")):
         path = Path(path_str)
         data = json.loads(path.read_text(encoding="utf-8"))
+        source_score = source_selection_score(data)
+        source_passed = bool((data.get("selection_quality") or {}).get("passed", False))
         kept = 0
         scores = []
+        if data.get("selection_quality") and not source_passed:
+            source_rows.append(
+                {
+                    "video_id": data.get("video_id"),
+                    "title": data.get("title"),
+                    "lang": data.get("lang"),
+                    "event_count": len(data.get("events", [])),
+                    "accepted_event_count": 0,
+                    "acceptance_ratio": 0.0,
+                    "avg_quality_score": 0.0,
+                    "source_selection_score": source_score,
+                    "source_selection_passed": source_passed,
+                    "source_url": data.get("source_url"),
+                }
+            )
+            continue
         for event in data.get("events", []):
-            text = normalize(event.get("text", ""))
+            text = normalize(event.get("text_ko") or event.get("text", ""))
             if not clean_example(text):
                 continue
             score = raw_quality_score(text)
             scores.append(score)
-            if score < 3:
+            if score < 5:
                 continue
             tags = classify(text)
             if not tags:
@@ -210,6 +276,8 @@ def collect_from_raw():
                 "accepted_event_count": kept,
                 "acceptance_ratio": round(kept / max(len(data.get("events", [])), 1), 3),
                 "avg_quality_score": round(sum(scores) / max(len(scores), 1), 2),
+                "source_selection_score": source_score,
+                "source_selection_passed": source_passed,
                 "source_url": data.get("source_url"),
             }
         )
@@ -258,6 +326,8 @@ def collect_from_approved_patterns():
         category = row.get("category")
         if not text or not category:
             continue
+        if matches_any(text, NATURALNESS_EXCLUDE_PATTERNS):
+            continue
         buckets.setdefault(category, [])
         buckets[category].append(text)
     return {key: dedupe_keep_order(values) for key, values in buckets.items()}
@@ -290,8 +360,9 @@ def build_pattern_catalog(raw_buckets: dict, runtime_buckets: dict, user_buckets
         runtime_examples = runtime_buckets.get(key, [])[-8:]
         user_examples = user_buckets.get(key, [])[-8:]
         approved_examples = approved_buckets.get(key, [])[:8]
-        corpus_examples = raw_buckets.get(key, [])[:12]
-        merged = dedupe_keep_order(approved_examples + runtime_examples + user_examples + corpus_examples)
+        corpus_examples = raw_buckets.get(key, [])[:6]
+        trusted_examples = dedupe_keep_order(approved_examples + runtime_examples + user_examples)
+        merged = trusted_examples[:12] if trusted_examples else corpus_examples[:6]
         catalog[key] = {
             "count": len(merged),
             "examples": merged[:12],
@@ -299,6 +370,7 @@ def build_pattern_catalog(raw_buckets: dict, runtime_buckets: dict, user_buckets
             "runtime_examples": runtime_examples,
             "user_examples": user_examples,
             "corpus_examples": corpus_examples,
+            "trusted_example_count": len(trusted_examples),
             "length_profile": text_length_profile(merged),
         }
     return catalog
@@ -310,13 +382,14 @@ def build_move_blueprints(pattern_catalog: dict) -> dict:
         fallback = []
         for category in categories:
             payload = pattern_catalog.get(category) or {}
+            preferred.extend(payload.get("approved_examples", [])[:2])
             preferred.extend(payload.get("runtime_examples", [])[:3])
             preferred.extend(payload.get("user_examples", [])[:2])
             if allow_corpus:
                 fallback.extend(payload.get("corpus_examples", [])[:3])
         return dedupe_keep_order(preferred + fallback)[:6]
 
-        return {
+    return {
         "soft_observation": {
             "categories": ["scene_share", "emotion_check"],
             "examples": examples_for("scene_share", "emotion_check"),
@@ -361,9 +434,11 @@ def collect_texts_for_categories(pattern_catalog: dict, categories: list, prefer
     for category in categories:
         payload = pattern_catalog.get(category) or {}
         if prefer_runtime:
+            rows.extend(payload.get("approved_examples", []))
             rows.extend(payload.get("runtime_examples", []))
             rows.extend(payload.get("user_examples", []))
-        rows.extend(payload.get("corpus_examples", []))
+        if not rows:
+            rows.extend(payload.get("corpus_examples", []))
     return dedupe_keep_order(rows)
 
 
@@ -465,6 +540,7 @@ def build_catalog():
             "romantic_outgoing_count": len(outgoing),
             "romantic_incoming_count": len(incoming),
             "approved_pattern_count": sum(len(values) for values in approved_buckets.values()),
+            "trusted_corpus_source_count": sum(1 for row in source_rows if row.get("source_selection_passed")),
             "quality_report_path": str(QUALITY_REPORT_PATH),
         },
         "pattern_catalog": pattern_catalog,
@@ -477,11 +553,12 @@ def build_catalog():
         },
         "runtime_filter_notes": [
             "세팅, 파일, 프로세스, 이미지 생성 관련 문장은 연인 대화 패턴 학습에서 제외한다.",
-            "자동 자막은 품질 점수 3점 이상만 카탈로그에 반영한다.",
+            "자동 자막은 소스 단위 대화성 검사와 문장 단위 품질 검사를 모두 통과한 경우에만 보조 예시로 반영한다.",
             "실제 대화 로그는 웅삐다운 발화만 추려서 우선 반영한다.",
             "자동 승인형으로 통과한 패턴은 approved layer에서 우선 반영한다.",
+            "원시 코퍼스는 직접 규칙 후보가 아니라 보조 근거로만 취급한다.",
         ],
-        "notes": "공개 커플 코퍼스와 실제 웅삐 대화 로그를 섞되, 연인 대화다운 발화만 정제해 쓴 패턴 카탈로그",
+        "notes": "공개 커플 코퍼스는 보조 근거로 제한하고, 실제 웅삐 대화 로그와 승인 패턴을 우선하는 보수적 패턴 카탈로그",
     }
 
 
@@ -493,7 +570,7 @@ def write_profile(catalog: dict):
         "## 목적",
         "",
         "- 실제 연인처럼 보이는 질문, 대답, 선톡 흐름을 카테고리별로 정리한다.",
-        "- 자동 자막 코퍼스는 품질 점수를 거친 뒤 쓰고, 실제 웅삐 로그는 세팅 문장을 제외하고 반영한다.",
+        "- 자동 자막 코퍼스는 대화성 검사를 통과한 경우에만 보조 예시로 쓰고, 실제 웅삐 로그는 세팅 문장을 제외하고 우선 반영한다.",
         "",
         "## 데이터 요약",
         "",
@@ -502,6 +579,7 @@ def write_profile(catalog: dict):
         f"- romantic_outgoing_count: {summary.get('romantic_outgoing_count', 0)}",
         f"- romantic_incoming_count: {summary.get('romantic_incoming_count', 0)}",
         f"- approved_pattern_count: {summary.get('approved_pattern_count', 0)}",
+        f"- trusted_corpus_source_count: {summary.get('trusted_corpus_source_count', 0)}",
         "",
         "## 길이 가이드",
         "",

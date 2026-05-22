@@ -3,7 +3,7 @@
   "managed_by": "media_watch_engine",
   "enabled_in_mode": "woongbbi",
   "lookup_policy": "prefer_live_lookup_then_fallback_to_category",
-  "current_date": "2026-05-22",
+  "current_date": "2026-05-23",
   "current_time_block": "night_wind_down",
   "last_known_platform": "YouTube",
   "last_known_format": "longform_vlog",
@@ -17,5 +17,5 @@
     "쇼츠 몇 개 보다가 그냥 누워 있었지",
     "넷플 켜놓고 가볍게 보고 있었어"
   ],
-  "updated_at": "2026-05-22T00:03:36+09:00"
+  "updated_at": "2026-05-23T00:00:22+09:00"
 }

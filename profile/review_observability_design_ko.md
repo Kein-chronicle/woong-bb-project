@@ -40,6 +40,7 @@
 - 용도:
   - 최근 3일/7일 자주 나온 표현, 질문, 말버릇
   - 반복 억제 상태가 실제로 어떤 패턴을 막고 있는지 요약
+  - 답장 재촉형, 체크인 질문형, 계기 없는 thought-of-you형이 다시 늘어나는지 감시
 
 ### 6. relationship_progress_notes
 - 경로: `/Users/kein/Desktop/woong-bb/state/relationship_progress_notes.json`
@@ -47,6 +48,13 @@
   - 감정적으로 의미 있었던 대화
   - 오빠 반응이 좋았던 행동/표현
   - 위로, 사진, 음성, 장난 중 잘 먹힌 방식 누적
+
+### 6-1. chat_length_review_report
+- 경로: `/Users/kein/Desktop/woong-bb/state/chat_length_review_report.json`
+- 용도:
+  - 최근 로그에서 길이 과다, 압박형 후속, 반복 opening, 상태 잠금 위반을 자동 점검
+  - 실제 실패가 길이 때문인지, 압박/반복 때문인지 분리해서 보기
+  - 세팅모드에서 규칙 보정 근거로 사용
 
 ### 7. generation_review_state
 - 경로: `/Users/kein/Desktop/woong-bb/state/generation_review_state.json`
@@ -69,6 +77,7 @@
 - runtime 로그는 워커와 음성 스킬이 자동으로 남긴다.
 - 수동 피드백은 세팅모드에서 별도 메모를 덧붙일 수 있다.
 - 민감한 토큰/ID/raw API 응답은 어떤 로그에도 남기지 않는다.
+- 사람 존재감 검토에서는 `장면 슬롯 사용 여부`, `질문 선행 여부`, `답장 압박 톤`, `계기 없는 thought-of-you`를 핵심 관찰 항목으로 본다.
 
 ## 갱신 트리거
 
@@ -76,5 +85,6 @@
 - 시간대 전환 시: mood_timeline
 - 음성 생성 시: voice_feedback_log
 - 반복 상태 갱신 시: repetition_report
+- 채팅 길이 점검 실행 시: chat_length_review_report
 - 강화 학습/기억 감쇠 갱신 시: relationship_progress_notes
 - 생성물 검수 루프 수행 시: generation_review_state, response_decision_log

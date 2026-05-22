@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "default_mode": "adaptive",
+  "bands": {
+    "micro": {
+      "sentence_range": [1, 1],
+      "char_range": [12, 35],
+      "question_limit": 1
+    },
+    "short": {
+      "sentence_range": [1, 3],
+      "char_range": [35, 95],
+      "question_limit": 1
+    },
+    "medium": {
+      "sentence_range": [2, 4],
+      "char_range": [90, 180],
+      "question_limit": 1
+    },
+    "long": {
+      "sentence_range": [3, 6],
+      "char_range": [170, 320],
+      "question_limit": 2
+    }
+  },
+  "intent_defaults": {
+    "fact_check": "short",
+    "preference_or_choice": "short",
+    "emotion_signal": "medium",
+    "repair_or_conflict": "long",
+    "bonding_or_flirting": "medium"
+  },
+  "state_modifiers": {
+    "busy": -1,
+    "tired": 0,
+    "available": 0,
+    "fragile": 1
+  },
+  "risk_modifiers": {
+    "low": 0,
+    "medium": 0,
+    "high": 1
+  },
+  "special_rules": {
+    "coordination_prefer_shorter": true,
+    "repair_minimum_band": "medium",
+    "repeat_long_hard_cap": 2,
+    "split_when_busy_and_answer_wants_long": true
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "timezone": "Asia/Seoul",
+  "managed_by": "setting_mode",
+  "weekend_default": "off",
+  "date_overrides": {},
+  "notes": "주말은 기본 휴무. 특정 날짜에만 mode를 duty 또는 work로 넣어 당직/특별근무를 연다."
+}

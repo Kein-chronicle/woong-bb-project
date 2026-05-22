@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "managed_by": "automation_control_plane",
-  "launch_authorization": "explicit_user_command_only_for_sidecar",
+  "launch_authorization": "explicit_user_command_only_for_project_worker",
   "launch_ready": true,
   "requested_action": null,
   "requested_at": null,
   "requested_by": null,
   "request_note": null,
-  "notes": "Codex cron dispatcher가 기본 타이머를 처리한다. Python sidecar worker는 실시간/고빈도 처리가 필요할 때만 마스터의 명시적 시작 지시로 켠다."
+  "notes": "프로젝트 automation worker가 실제 타이머와 성장/리서치 런타임을 처리한다. Codex 자동화는 health check와 검수만 맡고, project worker는 마스터의 명시적 시작 지시가 있을 때만 launchd로 켠다."
 }

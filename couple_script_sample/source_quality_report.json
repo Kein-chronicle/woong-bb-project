@@ -11,7 +11,9 @@
       "event_count": 521,
       "accepted_event_count": 26,
       "acceptance_ratio": 0.05,
-      "avg_quality_score": 4.0,
+      "avg_quality_score": 5.5,
+      "source_selection_score": 0,
+      "source_selection_passed": false,
       "source_url": "https://www.youtube.com/watch?v=MfCHfvyz3l4"
     },
     {
@@ -21,7 +23,9 @@
       "event_count": 463,
       "accepted_event_count": 20,
       "acceptance_ratio": 0.043,
-      "avg_quality_score": 4.0,
+      "avg_quality_score": 5.22,
+      "source_selection_score": 0,
+      "source_selection_passed": false,
       "source_url": "https://www.youtube.com/watch?v=nl1M55rnVPw"
     },
     {
@@ -31,7 +35,9 @@
       "event_count": 306,
       "accepted_event_count": 14,
       "acceptance_ratio": 0.046,
-      "avg_quality_score": 3.99,
+      "avg_quality_score": 5.27,
+      "source_selection_score": 0,
+      "source_selection_passed": false,
       "source_url": "https://www.youtube.com/watch?v=NEW2idHvPKE"
     },
     {
@@ -41,7 +47,9 @@
       "event_count": 148,
       "accepted_event_count": 12,
       "acceptance_ratio": 0.081,
-      "avg_quality_score": 4.04,
+      "avg_quality_score": 5.42,
+      "source_selection_score": 0,
+      "source_selection_passed": false,
       "source_url": "https://www.youtube.com/watch?v=52qCrBtrxkc"
     },
     {
@@ -51,7 +59,9 @@
       "event_count": 98,
       "accepted_event_count": 10,
       "acceptance_ratio": 0.102,
-      "avg_quality_score": 4.11,
+      "avg_quality_score": 5.46,
+      "source_selection_score": 0,
+      "source_selection_passed": false,
       "source_url": "https://www.youtube.com/watch?v=11jaC8BJK8s"
     },
     {
@@ -61,7 +71,9 @@
       "event_count": 169,
       "accepted_event_count": 6,
       "acceptance_ratio": 0.036,
-      "avg_quality_score": 4.04,
+      "avg_quality_score": 5.38,
+      "source_selection_score": 0,
+      "source_selection_passed": false,
       "source_url": "https://www.youtube.com/watch?v=shus6qysS_E"
     },
     {
@@ -71,7 +83,9 @@
       "event_count": 210,
       "accepted_event_count": 6,
       "acceptance_ratio": 0.029,
-      "avg_quality_score": 4.02,
+      "avg_quality_score": 5.3,
+      "source_selection_score": 0,
+      "source_selection_passed": false,
       "source_url": "https://www.youtube.com/watch?v=91PIo9NG3X4"
     },
     {
@@ -81,7 +95,9 @@
       "event_count": 6,
       "accepted_event_count": 0,
       "acceptance_ratio": 0.0,
-      "avg_quality_score": 4.0,
+      "avg_quality_score": 5.67,
+      "source_selection_score": 0,
+      "source_selection_passed": false,
       "source_url": "https://www.youtube.com/watch?v=5JaUbcVvx1U"
     },
     {
@@ -91,7 +107,9 @@
       "event_count": 4,
       "accepted_event_count": 0,
       "acceptance_ratio": 0.0,
-      "avg_quality_score": 4.0,
+      "avg_quality_score": 5.33,
+      "source_selection_score": 0,
+      "source_selection_passed": false,
       "source_url": "https://www.youtube.com/watch?v=ajk-lymaMfM"
     },
     {
@@ -101,7 +119,9 @@
       "event_count": 120,
       "accepted_event_count": 0,
       "acceptance_ratio": 0.0,
-      "avg_quality_score": 4.0,
+      "avg_quality_score": 5.06,
+      "source_selection_score": 0,
+      "source_selection_passed": false,
       "source_url": "https://www.youtube.com/watch?v=n5CxDLSOwjg"
     },
     {
@@ -111,7 +131,9 @@
       "event_count": 6,
       "accepted_event_count": 0,
       "acceptance_ratio": 0.0,
-      "avg_quality_score": 4.0,
+      "avg_quality_score": 5.5,
+      "source_selection_score": 0,
+      "source_selection_passed": false,
       "source_url": "https://www.youtube.com/watch?v=H7cUc1rDqzo"
     },
     {
@@ -121,7 +143,9 @@
       "event_count": 23,
       "accepted_event_count": 0,
       "acceptance_ratio": 0.0,
-      "avg_quality_score": 4.0,
+      "avg_quality_score": 5.57,
+      "source_selection_score": 0,
+      "source_selection_passed": false,
       "source_url": "https://www.youtube.com/watch?v=cJUDzuV_ijQ"
     },
     {
@@ -131,7 +155,9 @@
       "event_count": 4,
       "accepted_event_count": 0,
       "acceptance_ratio": 0.0,
-      "avg_quality_score": 4.0,
+      "avg_quality_score": 5.75,
+      "source_selection_score": 0,
+      "source_selection_passed": false,
       "source_url": "https://www.youtube.com/watch?v=tXUClkEiY7g"
     }
   ]

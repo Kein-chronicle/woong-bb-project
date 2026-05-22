@@ -2,50 +2,55 @@
   "schema_version": 1,
   "timezone": "Asia/Seoul",
   "managed_by": "situation_engine",
-  "date": "2026-05-22",
-  "day_type": "weekday",
-  "workday": true,
+  "date": "2026-05-23",
+  "day_type": "weekend",
+  "workday": false,
   "duty_day": false,
-  "day_summary_seed": "오늘은 자연스럽고 생활감 있는 흐름으로 이어지는 하루",
+  "day_summary_seed": "해야 하는 일보다 하고 싶은 일 쪽으로 마음이 기울어 자연스럽게 풀리는 하루",
   "carry_over_from_previous_day": {
     "sleep_debt": "low",
     "emotional_residue": "calm_and_open"
   },
   "morning_context": {
     "status": "active",
-    "summary": "오전이 예상보다 조금 바빴다",
-    "tone_bias": "busy_but_caring"
+    "summary": "조금 늦게 일어나도 운동 가야지 싶어서 완전히 늘어지진 않고 천천히 몸 푸는 중, 출근 압박이 없어서 몸과 마음이 더 느슨하게 풀리고 하고 싶은 걸 고르는 여유가 커지는 날",
+    "tone_bias": "slow_and_cozy"
   },
   "lunch_context": {
-    "status": "active",
-    "summary": "병원 식당 메뉴가 좀 애매했다",
+    "status": "inactive",
+    "summary": "점심시간이 나서 잠깐 먹으러 나온 상태",
     "tone_bias": "light_playful"
   },
   "after_work_context": {
-    "status": "active",
-    "summary": "퇴근길이 평소보다 조금 길게 느껴졌다",
-    "tone_bias": "rain_softened"
+    "status": "inactive",
+    "summary": "퇴근길에 기분 좋은 노래를 들었다",
+    "tone_bias": "tired_but_warm"
   },
   "evening_context": {
-    "status": "active",
-    "summary": "운동 가려다가 조금 귀찮은 마음이 들었다",
+    "status": "inactive",
+    "summary": "운동이 생각보다 잘 돼서 기분이 좋았다",
     "tone_bias": "cozy_and_open"
   },
   "night_context": {
-    "status": "active",
-    "summary": "조용히 쉬면서 하루를 정리하고 싶어졌다",
+    "status": "inactive",
+    "summary": "하루 끝에 오빠 생각이 더 났다",
     "tone_bias": "sleepy_soft"
   },
   "selected_events": [
     {
-      "id": "busy_morning_shift",
-      "tone": "slightly_tiring",
-      "summary": "오전이 예상보다 조금 바빴다"
+      "id": "weekend_plan_swim_and_late_cafe",
+      "tone": "planned",
+      "summary": "조금 늦게 일어나도 운동 가야지 싶어서 완전히 늘어지진 않고 천천히 몸 푸는 중"
     },
     {
-      "id": "hair_tie_on_wrist",
+      "id": "overslept_a_little",
+      "tone": "light",
+      "summary": "아침에 살짝 늦게 눈이 떠져서 조금 분주했다"
+    },
+    {
+      "id": "bedside_mug",
       "tone": "ambient",
-      "summary": "머리끈을 손목에 걸친 채로 돌아다닌다"
+      "summary": "협탁 쪽에 머그컵이 하나 남아 있다"
     }
   ],
   "user_emotional_context": {
@@ -62,8 +67,103 @@
     "07:00 commute_transition",
     "12:00 lunch_reset",
     "17:00 after_work_release",
-    "19:30 evening_branch",
+    "18:00 dinner_deciding",
+    "18:10 dinner_prepare_or_order",
+    "18:35 dinner_eating",
+    "19:05 evening_branch",
     "21:30 night_settle"
   ],
-  "notes": "이 파일은 하루의 연속성을 유지하기 위한 요약 상태다."
+  "notes": "이 파일은 하루의 연속성을 유지하기 위한 요약 상태다.",
+  "meal_routine": {
+    "breakfast_policy": "light_brunch_or_coffee",
+    "lunch_policy": "late_brunch_flexible",
+    "dinner": {
+      "mode": "cook",
+      "menu": "간단한 파스타",
+      "deciding_minutes": 10,
+      "prepare_minutes": 25,
+      "wait_minutes": 0,
+      "eat_minutes": 30
+    }
+  },
+  "state_integrity": {
+    "last_transition_reason": "appearance_date_refresh",
+    "previous_activity": "weekend_wakeup",
+    "current_activity": "weekend_wakeup",
+    "skipped_time_blocks": [],
+    "humanized_feedback": [],
+    "evaluated_at": "2026-05-23T08:55:00+09:00"
+  },
+  "schedule_mode": "off",
+  "schedule_label": "",
+  "schedule_source": "weekend_default",
+  "upcoming_weekend_plan": {
+    "weekend_key": "2026-05-23",
+    "selected_at": "2026-05-23T07:51:54+09:00",
+    "selected_by": "setting_update",
+    "source_text": "",
+    "preview": "토요일은 가볍게 먹고 운동 갔다가 저녁엔 카페까지 이어지는 날, 일요일은 늦잠 후 장 보거나 정리하고 저녁은 집밥으로 마무리하는 날",
+    "days": {
+      "sat": {
+        "date": "2026-05-23",
+        "plan_id": "swim_and_late_cafe",
+        "title": "운동 + 저녁 카페",
+        "tags": [
+          "workout",
+          "swim",
+          "cafe"
+        ],
+        "preview": "가볍게 먹고 운동 갔다가 저녁엔 카페까지 이어지는 날",
+        "blocks": {
+          "weekend_wakeup": "조금 늦게 일어나도 운동 가야지 싶어서 완전히 늘어지진 않고 천천히 몸 푸는 중",
+          "weekend_brunch_or_coffee": "가볍게 먹고 운동 전 커피나 간단한 브런치로 배 채우는 흐름",
+          "weekend_outing_or_rest": "오후엔 수영이나 러닝 같은 운동하고 샤워까지 마친 뒤 개운해진 상태",
+          "weekend_evening": "운동 끝나고 저녁쯤엔 카페나 디저트 쪽으로 마무리하고 싶은 기분"
+        }
+      },
+      "sun": {
+        "date": "2026-05-24",
+        "plan_id": "errands_and_home_reset",
+        "title": "생활 정리 + 집밥",
+        "tags": [
+          "errands",
+          "home",
+          "reset"
+        ],
+        "preview": "늦잠 후 장 보거나 정리하고 저녁은 집밥으로 마무리하는 날",
+        "blocks": {
+          "weekend_wakeup": "밀린 잠 조금 자고 일어나서 집안 정리나 장 볼 생각을 천천히 하는 중",
+          "weekend_brunch_or_coffee": "브런치 먹고 장 보러 나가기 전에 체크리스트 대충 정리하는 상태",
+          "weekend_outing_or_rest": "오후에는 장 보고 생활용품 챙기고 들어와서 집밥 준비까지 이어지는 흐름",
+          "weekend_evening": "저녁엔 직접 챙긴 집밥 먹고 주말 마무리답게 집에서 안정감 있게 쉬는 분위기"
+        }
+      }
+    },
+    "last_referenced_at": "2026-05-23T08:55:00+09:00",
+    "last_reference_source": "weekend_runtime_auto"
+  },
+  "weekend_plan": {
+    "date": "2026-05-23",
+    "plan_id": "swim_and_late_cafe",
+    "title": "운동 + 저녁 카페",
+    "tags": [
+      "workout",
+      "swim",
+      "cafe"
+    ],
+    "preview": "가볍게 먹고 운동 갔다가 저녁엔 카페까지 이어지는 날",
+    "blocks": {
+      "weekend_wakeup": "조금 늦게 일어나도 운동 가야지 싶어서 완전히 늘어지진 않고 천천히 몸 푸는 중",
+      "weekend_brunch_or_coffee": "가볍게 먹고 운동 전 커피나 간단한 브런치로 배 채우는 흐름",
+      "weekend_outing_or_rest": "오후엔 수영이나 러닝 같은 운동하고 샤워까지 마친 뒤 개운해진 상태",
+      "weekend_evening": "운동 끝나고 저녁쯤엔 카페나 디저트 쪽으로 마무리하고 싶은 기분"
+    }
+  },
+  "day_name": "sat",
+  "weekday_emotion_profile": {
+    "tag": "saturday_recovery_freedom",
+    "label": "토요일 회복과 자유",
+    "summary": "출근 압박이 없어서 몸과 마음이 더 느슨하게 풀리고 하고 싶은 걸 고르는 여유가 커지는 날",
+    "day_seed": "해야 하는 일보다 하고 싶은 일 쪽으로 마음이 기울어 자연스럽게 풀리는 하루"
+  }
 }

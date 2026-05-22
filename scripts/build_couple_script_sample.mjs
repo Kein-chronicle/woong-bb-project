@@ -37,6 +37,54 @@ const BLOCKLIST_TITLE_PATTERNS = [
   /music/i,
   /lyric/i,
   /challenge song/i,
+  /육아/,
+  /임신/,
+  /출산/,
+  /family/i,
+  /kids/i,
+  /baby/i,
+];
+
+const RELATIONSHIP_TITLE_PATTERNS = [
+  /커플/,
+  /부부/,
+  /신혼/,
+  /장기연애/,
+  /연애/,
+  /남친/,
+  /여친/,
+  /couple/i,
+  /married/i,
+  /relationship/i,
+  /boyfriend/i,
+  /girlfriend/i,
+];
+
+const DIALOGUE_TITLE_PATTERNS = [
+  /q&a/i,
+  /대화/,
+  /토크/,
+  /문답/,
+  /밸런스/,
+  /talk/i,
+  /conversation/i,
+  /questions?/i,
+  /vlog/i,
+];
+
+const AUDIENCE_ADDRESS_PATTERNS = [
+  /^(안녕하세요|여러분)/,
+  /^(오늘은|이번 영상)/,
+  /(구독|좋아요|댓글|알림)/,
+  /(보여드릴게요|소개해드릴게요|찍어볼게요)/,
+  /(welcome back|subscribe|like and comment)/i,
+];
+
+const DIALOGUE_REPLY_PATTERNS = [
+  /^(응|어|웅|그래|맞아|아니|그러게|근데|왜|헐|오|음)\b/,
+  /(오빠|자기|여보|너|나|우리)/,
+  /\?$/,
+  /(했어|할래|같아|싶어|거야|되네|맞지|있지)\.?$/,
 ];
 
 class CDPClient {
@@ -271,6 +319,81 @@ function decodeText(text) {
     .replace(/&gt;/g, ">");
 }
 
+function countMatches(events, predicate) {
+  return events.reduce((count, event) => count + (predicate(event) ? 1 : 0), 0);
+}
+
+function eventText(event) {
+  return (event.text || "").replace(/\s+/g, " ").trim();
+}
+
+function looksLikeAudienceAddress(text) {
+  return AUDIENCE_ADDRESS_PATTERNS.some((pattern) => pattern.test(text));
+}
+
+function looksLikeDialogueLine(text) {
+  if (!text) return false;
+  if (text.length < 6 || text.length > 90) return false;
+  if (looksLikeAudienceAddress(text)) return false;
+  if (/^[^가-힣a-zA-Z0-9]+$/.test(text)) return false;
+  if (/^[A-Z\s]{6,}$/i.test(text) && !/[가-힣]/.test(text)) return false;
+  if (/^[^가-힣a-zA-Z]*$/.test(text)) return false;
+  return true;
+}
+
+function looksLikeRelationshipTitle(title) {
+  return RELATIONSHIP_TITLE_PATTERNS.some((pattern) => pattern.test(title));
+}
+
+function looksLikeDialogueTitle(title) {
+  return DIALOGUE_TITLE_PATTERNS.some((pattern) => pattern.test(title));
+}
+
+function evaluateTranscriptQuality({ title, query, events }) {
+  const usableEvents = events.map(eventText).filter(Boolean);
+  const dialogueLikeCount = countMatches(usableEvents, looksLikeDialogueLine);
+  const audienceAddressCount = countMatches(usableEvents, looksLikeAudienceAddress);
+  const replyLikeCount = countMatches(usableEvents, (text) =>
+    DIALOGUE_REPLY_PATTERNS.some((pattern) => pattern.test(text)),
+  );
+  const questionCount = countMatches(usableEvents, (text) => /\?$/.test(text) || /(뭐|왜|어때|했어|갈래|할까)/.test(text));
+  const relationshipTitle = looksLikeRelationshipTitle(title) || looksLikeRelationshipTitle(query);
+  const dialogueTitle = looksLikeDialogueTitle(title) || looksLikeDialogueTitle(query);
+  const dialogueRatio = usableEvents.length ? dialogueLikeCount / usableEvents.length : 0;
+  const audienceRatio = usableEvents.length ? audienceAddressCount / usableEvents.length : 1;
+  const replyRatio = usableEvents.length ? replyLikeCount / usableEvents.length : 0;
+  const questionRatio = usableEvents.length ? questionCount / usableEvents.length : 0;
+
+  let score = 0;
+  if (relationshipTitle) score += 2;
+  if (dialogueTitle) score += 1;
+  if (dialogueRatio >= 0.65) score += 2;
+  else if (dialogueRatio >= 0.5) score += 1;
+  if (replyRatio >= 0.2) score += 1;
+  if (questionRatio >= 0.08) score += 1;
+  if (audienceRatio <= 0.06) score += 1;
+
+  const reasons = [];
+  if (!relationshipTitle) reasons.push("relationship_title_weak");
+  if (!dialogueTitle) reasons.push("dialogue_title_weak");
+  if (dialogueRatio < 0.5) reasons.push("dialogue_ratio_low");
+  if (replyRatio < 0.15) reasons.push("reply_ratio_low");
+  if (audienceRatio > 0.08) reasons.push("audience_ratio_high");
+
+  return {
+    score,
+    passed: relationshipTitle && dialogueRatio >= 0.5 && replyRatio >= 0.15 && audienceRatio <= 0.08 && score >= 4,
+    relationship_title: relationshipTitle,
+    dialogue_title: dialogueTitle,
+    event_count: usableEvents.length,
+    dialogue_ratio: Number(dialogueRatio.toFixed(3)),
+    reply_ratio: Number(replyRatio.toFixed(3)),
+    question_ratio: Number(questionRatio.toFixed(3)),
+    audience_ratio: Number(audienceRatio.toFixed(3)),
+    reasons,
+  };
+}
+
 function normalizeCaptionEvents(transcriptJson) {
   const events = [];
   for (const event of transcriptJson.events || []) {
@@ -395,6 +518,15 @@ async function main() {
     for (const item of collected) {
       const normalized = normalizeCaptionEvents(item.transcriptJson);
       if (normalized.length < 20) continue;
+      const selectionQuality = evaluateTranscriptQuality({
+        title: item.title,
+        query: item.query,
+        events: normalized,
+      });
+      if (!selectionQuality.passed) {
+        log("skip low-dialogue source", item.videoId, JSON.stringify(selectionQuality));
+        continue;
+      }
       const translated = await translateEventsIfNeeded(normalized, item.lang);
       const bundles = buildBundlesFromEvents(item, translated, bundleIndex);
 
@@ -417,6 +549,7 @@ async function main() {
             source_lang: item.lang,
             timedtext_url: item.timedtextUrl,
             query: item.query,
+            selection_quality: selectionQuality,
             events: translated,
           },
           null,
@@ -430,6 +563,7 @@ async function main() {
         source_url: `https://www.youtube.com/watch?v=${item.videoId}`,
         source_lang: item.lang,
         query: item.query,
+        selection_quality: selectionQuality,
         raw_file: path.relative(OUT_DIR, rawPath),
       });
 
@@ -452,6 +586,7 @@ async function main() {
       "- 한국어 자막이 있으면 그대로 정리했습니다.",
       "- 영어 자막만 있는 경우 Google 번역 공개 엔드포인트로 한국어 초벌 번역을 만들었습니다.",
       "- 화자 구분은 자동 자막의 시간축만으로는 정확히 분리되지 않아 `화자A(추정)` / `화자B(추정)` 형태로 교대 추정했습니다.",
+      "- 원본 영상은 제목 적합성과 자막의 대화성 점수를 함께 보고 선별합니다.",
       "- 실제 연구용으로 쓸 때는 관심 있는 묶음을 다시 원본 영상에서 청취 확인하는 것이 좋습니다.",
       "",
       "## files",

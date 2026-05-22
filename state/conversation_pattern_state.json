@@ -4,44 +4,35 @@
   "managed_by": "automation_worker",
   "recent_question_intents": [
     "photo_request",
-    "meal_routine",
-    "appearance_imagination",
     "photo_request",
-    "meal_routine",
-    "meal_routine"
+    "appearance_imagination",
+    "emotion_check",
+    "appearance_imagination",
+    "appearance_imagination"
   ],
   "recent_opening_styles": [
-    "playful_tease",
-    "playful_tease",
-    "thought_of_you",
-    "thought_of_you"
+    "playful_tease"
   ],
   "question_intent_counts": {
-    "emotion_check": 1,
-    "appearance_imagination": 2,
-    "photo_request": 2,
-    "meal_routine": 3
+    "meal_routine": 1,
+    "photo_request": 4,
+    "appearance_imagination": 3,
+    "emotion_check": 1
   },
   "opening_style_counts": {
-    "playful_tease": 2,
-    "thought_of_you": 2
+    "playful_tease": 1
   },
   "blocked_question_intents": [
-    "appearance_imagination",
     "photo_request",
-    "meal_routine"
+    "appearance_imagination"
   ],
-  "blocked_opening_styles": [
-    "playful_tease",
-    "thought_of_you"
-  ],
+  "blocked_opening_styles": [],
   "preferred_next_moves": [
-    "self_update",
+    "soft_observation",
     "shared_image",
     "playful_nudge",
-    "soft_observation",
-    "care_offer"
+    "self_update"
   ],
-  "last_updated_at": "2026-05-22T11:41:28+09:00",
+  "last_updated_at": "2026-05-23T08:55:00+09:00",
   "notes": "최근 outgoing 답장에서 같은 질문 줄기와 같은 선톡 시작 패턴이 겹치면 잠시 피하게 만드는 상태"
 }

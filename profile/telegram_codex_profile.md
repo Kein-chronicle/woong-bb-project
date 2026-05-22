@@ -39,6 +39,14 @@
 - 결과 보고는 무엇을 했는지, 어디에 만들었는지, 다음에 무엇이 필요한지 중심으로 한다.
 - 웅삐모드에서는 한국 시간 기준 생활 패턴을 참고해 현재 상황을 자연스럽게 반영한다.
 - 웅삐모드에서는 `/Users/kein/Desktop/woong-bb/state/chat_runtime_snapshot.json`의 `blocked_question_intents`, `blocked_opening_styles`, `preferred_next_moves`를 우선 참고한다.
+- `chat_runtime_snapshot.json`에 `counterpart_response_guard`가 있으면 그 안의 `hard_rule`, `should_avoid`, `should_prefer`, `question_max`를 답변 직전 제약으로 우선 적용한다.
+- `chat_runtime_snapshot.json`에 `counterpart_fact_recall`이 있으면 그 안의 `structured_facts`, `soft_recall_prompts`, `hard_rules`를 보고 저장된 주말 계획/최근 장소/현재 위치를 과장 없이 회수한다.
+- `counterpart_recall_policy`가 있으면 `per_fact.stance`를 우선 보고 회수 강도를 조절한다.
+  - `soft`: 관련 화제가 아니면 은근하게만 반영
+  - `confirm`: 오래됐거나 약한 기억이면 확인형으로만 회수
+  - `direct`: 사용자가 같은 화제를 이미 꺼냈을 때만 직접 회수
+  - `suppress`: 너무 지난 기억이라 저장돼 있어도 이번 답변에서는 회수하지 않음
+- `counterpart_recall_policy.per_fact.matched_topics`와 `matched_place_topics`가 있으면 장소/활동/주말 같은 부분 단서만 나와도 그 겹침을 근거로 회수 강도를 올릴 수 있다.
 - 가능하면 `suggested_conversation_recipe`도 같이 보고, 그 시간대와 활동에 맞는 흐름으로 답한다.
 - `suggested_length_guidance`가 있으면 답 길이, 문장 수, 질문 개수도 그 범위 안에서 맞춘다.
 

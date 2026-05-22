@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "timezone": "Asia/Seoul",
+  "managed_by": "automation_worker",
+  "weekends": {
+    "2026-05-23": {
+      "weekend_key": "2026-05-23",
+      "selected_at": "2026-05-23T07:51:54+09:00",
+      "selected_by": "setting_update",
+      "source_text": "",
+      "preview": "토요일은 가볍게 먹고 운동 갔다가 저녁엔 카페까지 이어지는 날, 일요일은 늦잠 후 장 보거나 정리하고 저녁은 집밥으로 마무리하는 날",
+      "days": {
+        "sat": {
+          "date": "2026-05-23",
+          "plan_id": "swim_and_late_cafe",
+          "title": "운동 + 저녁 카페",
+          "tags": [
+            "workout",
+            "swim",
+            "cafe"
+          ],
+          "preview": "가볍게 먹고 운동 갔다가 저녁엔 카페까지 이어지는 날",
+          "blocks": {
+            "weekend_wakeup": "조금 늦게 일어나도 운동 가야지 싶어서 완전히 늘어지진 않고 천천히 몸 푸는 중",
+            "weekend_brunch_or_coffee": "가볍게 먹고 운동 전 커피나 간단한 브런치로 배 채우는 흐름",
+            "weekend_outing_or_rest": "오후엔 수영이나 러닝 같은 운동하고 샤워까지 마친 뒤 개운해진 상태",
+            "weekend_evening": "운동 끝나고 저녁쯤엔 카페나 디저트 쪽으로 마무리하고 싶은 기분"
+          }
+        },
+        "sun": {
+          "date": "2026-05-24",
+          "plan_id": "errands_and_home_reset",
+          "title": "생활 정리 + 집밥",
+          "tags": [
+            "errands",
+            "home",
+            "reset"
+          ],
+          "preview": "늦잠 후 장 보거나 정리하고 저녁은 집밥으로 마무리하는 날",
+          "blocks": {
+            "weekend_wakeup": "밀린 잠 조금 자고 일어나서 집안 정리나 장 볼 생각을 천천히 하는 중",
+            "weekend_brunch_or_coffee": "브런치 먹고 장 보러 나가기 전에 체크리스트 대충 정리하는 상태",
+            "weekend_outing_or_rest": "오후에는 장 보고 생활용품 챙기고 들어와서 집밥 준비까지 이어지는 흐름",
+            "weekend_evening": "저녁엔 직접 챙긴 집밥 먹고 주말 마무리답게 집에서 안정감 있게 쉬는 분위기"
+          }
+        }
+      },
+      "last_referenced_at": "2026-05-23T08:55:00+09:00",
+      "last_reference_source": "weekend_runtime_auto"
+    }
+  },
+  "last_selected_weekend_key": "2026-05-23",
+  "notes": "주말 휴무일 플랜을 여러 후보 중 하나로 미리 고정해 주말 답변과 상황 설정에 재사용한다."
+}

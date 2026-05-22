@@ -1,20 +1,21 @@
 # Automation Worker Design
 
 ## Recommendation
-현재 기본 구조에서는 `Codex cron dispatcher`가 가장 안정적이다.
+현재 기본 구조에서는 프로젝트가 직접 소유하는 `automation_worker`를 주 실행기로 두는 편이 맞다.
 
-별도 Python sidecar worker는 계속 떠 있어야 하는 고빈도/실시간 감지가 필요할 때만 보조로 켠다.
+Codex 자동화는 실제 서비스 동작을 돌리지 않고, health check와 검수 보고만 맡는다.
 
 ## Why This Is Best
 - 이미 운영 도구가 Python 기반이다.
 - 상태 파일이 전부 JSON/JSONL이라 Python이 다루기 쉽다.
-- Codex 자동화가 주기 실행과 실패 보고를 맡으면 long-running worker lock/heartbeat 꼬임이 줄어든다.
-- 고정 시각 타이머는 한 번 실행하고 끝나는 원샷 작업이라 cron dispatcher와 잘 맞는다.
+- 프로젝트 안에서 `launchd`나 동급 supervisor로 worker를 소유하면 실제 동작 로직과 상태를 한 곳에서 추적할 수 있다.
+- 선톡, 상태 전환, 성장/리서치 같은 런타임 동작은 서비스 자체의 워커가 책임지는 편이 역할이 선명하다.
 - Telegram 브리지와 자동 타이머 처리를 분리하면 대화 응답과 자동 이벤트가 서로 덜 꼬인다.
 
 ## Recommended Shape
 - 이름: `woong-bb-automation-worker`
-- 기본 실행기: `/Users/kein/Desktop/woong-bb/tools/run_due_codex_timers.py`
+- 기본 실행기: `/Users/kein/Desktop/woong-bb/tools/automation_worker.py`
+- launchd 관리 스크립트: `/Users/kein/Desktop/woong-bb/tools/manage_automation_worker.py`
 - 원샷 타이머 실행기: `/Users/kein/Desktop/woong-bb/tools/run_timer_once.py`
 - 역할:
   - 시간대 전환 감지
@@ -23,10 +24,12 @@
   - 선톡 후보 생성
   - 이미지/링크 공유 후보 계산
   - 실제 발송 가능 여부 판정
+  - 성장/리서치 tick 실행
 
 ## Supervision Dependency
-- 기본 타이머는 Codex automation `woong-bb-codex-timer-dispatcher`가 처리한다.
-- sidecar worker를 켜는 경우에는 단독으로만 두지 않고 supervisor/control layer와 함께 운영한다.
+- 기본 타이머는 프로젝트 worker가 처리한다.
+- Codex 자동화는 worker 상태 감시, 정적 검증, 코드/상태 검수만 담당한다.
+- worker는 `launchd`나 동급 supervisor와 control/state layer를 함께 운영한다.
 - 관련 문서: `/Users/kein/Desktop/woong-bb/profile/automation_supervision_design_ko.md`
 - 관련 상태 파일:
   - `/Users/kein/Desktop/woong-bb/state/automation_supervisor_state.json`
@@ -38,10 +41,11 @@
 - 실제 sidecar worker 시작은 마스터의 명시적 지시 전까지 금지한다.
 - 준비가 끝나면 자동으로 시작하지 않고, `실행 가능 상태`와 확인 항목을 보고한 뒤 시작 여부를 묻는다.
 - 기본 상태는 `disabled/stopped`로 유지한다.
+- launch agent 설치까지는 해도 되지만, 실제 `bootstrap/start`는 명시 지시 전까지 하지 않는다.
 
 ## Process Model
-- 기본: Codex cron이 1시간마다 dispatcher를 실행하고, 그 사이 due 된 고정 시각 타이머를 idempotent하게 처리한다.
-- 보조: sidecar worker는 실시간 미답장 감지, 5분 단위 대화 guard, 즉시성 높은 이벤트 약속 처리에만 사용한다.
+- 기본: project-owned worker가 60초 poll로 타이머와 상태 갱신을 직접 처리한다.
+- 보조: `run_timer_once.py`와 `run_due_codex_timers.py`는 수동 복구나 단발 실행용으로만 남긴다.
 
 ## Avoid
 - 모든 작업을 sidecar worker 하나에 몰아넣기
@@ -71,9 +75,11 @@
 ## Ops Recommendation
 - 1순위: `launchd`로 macOS 백그라운드 관리
 - 2순위: 기존 botctl 스타일로 screen 프로세스 관리
+- 설치/상태 확인용 스크립트는 `tools/manage_automation_worker.py`를 사용한다.
 
 ## Final Recommendation
 - 구현 언어: Python
-- 기본 실행 형태: Codex cron dispatcher
-- sidecar 실행 형태: Telegram 브리지와 분리된 단일 워커, 명시적 요청 시에만 사용
-- 프로세스 관리: 기본은 Codex automation, sidecar가 필요하면 `launchd` 또는 `screen + control/state files`
+- 기본 실행 형태: project-owned long-running worker
+- 실행 진입점: `/Users/kein/Desktop/woong-bb/tools/automation_worker.py`
+- 프로세스 관리: 기본은 `launchd`, 대안은 `screen + control/state files`
+- Codex 자동화 역할: health watch, 코드 검수, 안전한 운영 리포트

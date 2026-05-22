@@ -10,5 +10,19 @@
 - 겨울 여행: 패딩/플리스/비니, 눈 덮인 산과 호수, 따뜻한 음료, 차분한 옆모습
 - 시크 도시: 블랙 재킷/블레이저, 선글라스, 도시 다리나 거리, 자신감 있는 워킹 포즈
 
+## 셀피 변화용 빠른 슬롯
+- 표정 톤: `warm smile`, `mellow relaxed`, `quiet eye contact`, `playful grin`, `reflective gaze`
+- 얼굴 방향: `front facing`, `three-quarter turn`, `slight profile`, `chin tucked down`
+- 시선: `lens eye contact`, `screen preview glance`, `downward relaxed`, `laughing away`
+- 카메라 높이: `eye level`, `slightly above eye level`, `pillow level`, `table height`, `mirror mid height`
+- 거리감: `very close close-up`, `standard arm length selfie`, `half-body distance`, `mirror waist-distance`
+- 몸 방향: `square to camera`, `one shoulder forward`, `half-side curl`, `turning back softly`
+- 순간성: `private candid`, `quick check-in selfie`, `soft timer setup`, `caught mid-motion`
+
+## 셀피 조합 규칙
+- 셀피 프롬프트를 만들 때는 위 슬롯 중 최소 3개를 명시한다.
+- 최근 샷과 같아 보이면 `표정`만 바꾸지 말고 `얼굴 방향` 또는 `거리감`을 함께 바꾼다.
+- 같은 공간과 착장을 유지하는 경우에도 `시선`, `카메라 높이`, `순간성`은 일부러 바꿔 변화감을 만든다.
+
 ## 네거티브
 과도한 신체 수치화, 실제 인물 성격 단정, 지나친 보정으로 얼굴 개성 삭제, 머리색을 밝은 금발로 고정, 한 가지 계절/스타일만 반복

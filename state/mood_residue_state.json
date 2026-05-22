@@ -2,11 +2,11 @@
   "schema_version": 1,
   "timezone": "Asia/Seoul",
   "managed_by": "automation_worker",
-  "current_date": "2026-05-22",
-  "previous_surface_mood": "busy_but_caring",
-  "current_surface_mood": "busy_but_caring",
+  "current_date": "2026-05-23",
+  "previous_surface_mood": "slow_and_cozy",
+  "current_surface_mood": "slow_and_cozy",
   "carry_ratio": 0.0,
-  "residue_label": "continued_busy_but_caring",
-  "last_updated_at": "2026-05-22T08:00:25+09:00",
+  "residue_label": "continued_slow_and_cozy",
+  "last_updated_at": "2026-05-23T08:55:00+09:00",
   "notes": "직전 감정이 다음 시간대에 얼마나 남아 있는지 기록한다."
 }

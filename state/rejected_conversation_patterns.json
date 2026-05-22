@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "managed_by": "conversation_learning_loop",
-  "updated_at": "2026-05-22T11:00:39+09:00",
+  "updated_at": "2026-05-23T08:22:14+09:00",
   "patterns": [
     {
       "id": "care_offer__도란도란-대화를-하고-천천히이-시간을",
@@ -39,6 +39,41 @@
       "rejected_at": "2026-05-22T09:30:10+09:00"
     },
     {
+      "id": "care_offer__천천히-가야-돼-아-말이-좀-이상하다",
+      "text": "천천히 가야 돼 아 말이 좀 이상하다",
+      "category": "care_offer",
+      "change_type": "tone_adjustment",
+      "application_scope": "hybrid",
+      "asset_type": "text",
+      "source_type": "trusted_catalog_seed",
+      "source_ref": "/Users/kein/Library/Mobile Documents/com~apple~CloudDocs/Desktop/woong-bb/state/conversation_pattern_catalog.json",
+      "canonical_checks": {
+        "passed": false,
+        "reasons": [
+          "non_dialogue_noise"
+        ],
+        "identity_safe": true,
+        "job_safe": true,
+        "relationship_safe": true,
+        "intimacy_safe": true,
+        "tone_safe": true,
+        "language_safe": true,
+        "naturalness_safe": true
+      },
+      "routing": {
+        "generation_targets": [
+          "conversation_pattern_catalog",
+          "approved_conversation_patterns"
+        ],
+        "review_targets": [
+          "rejected_conversation_patterns",
+          "generation_review_state"
+        ]
+      },
+      "updated_at": "2026-05-23T08:22:14+09:00",
+      "rejected_at": "2026-05-23T08:22:14+09:00"
+    },
+    {
       "id": "care_offer__천천히-가야-된다",
       "text": "천천히 가야 된다",
       "category": "care_offer",
@@ -72,6 +107,42 @@
       },
       "updated_at": "2026-05-22T09:57:37+09:00",
       "rejected_at": "2026-05-22T09:57:37+09:00"
+    },
+    {
+      "id": "current_state_check__그냥-뭐-해달라고-다-해주고-막-어",
+      "text": "그냥 뭐 해달라고 다 해주고 막 어",
+      "category": "current_state_check",
+      "change_type": "pattern_change",
+      "application_scope": "hybrid",
+      "asset_type": "text",
+      "source_type": "trusted_catalog_seed",
+      "source_ref": "/Users/kein/Library/Mobile Documents/com~apple~CloudDocs/Desktop/woong-bb/state/conversation_pattern_catalog.json",
+      "canonical_checks": {
+        "passed": false,
+        "reasons": [
+          "naturalness_conflict"
+        ],
+        "identity_safe": true,
+        "job_safe": true,
+        "relationship_safe": true,
+        "intimacy_safe": true,
+        "tone_safe": true,
+        "language_safe": true,
+        "naturalness_safe": false
+      },
+      "routing": {
+        "generation_targets": [
+          "conversation_pattern_catalog",
+          "approved_conversation_patterns",
+          "conversation_pattern_state"
+        ],
+        "review_targets": [
+          "rejected_conversation_patterns",
+          "generation_review_state"
+        ]
+      },
+      "updated_at": "2026-05-23T08:22:14+09:00",
+      "rejected_at": "2026-05-23T08:22:14+09:00"
     },
     {
       "id": "current_state_check__지역-어디야-여기-대부도-가는-길인데",

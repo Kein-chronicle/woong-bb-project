@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
   "managed_by": "conversation_learning_loop",
-  "updated_at": "2026-05-22T11:00:39+09:00",
+  "updated_at": "2026-05-23T08:22:14+09:00",
   "last_bootstrapped_at": "2026-05-22T09:29:26+09:00",
-  "last_reviewed_at": "2026-05-22T11:00:39+09:00",
-  "last_applied_at": "2026-05-22T11:00:39+09:00",
-  "last_candidate_count": 19,
-  "last_approved_count": 19,
-  "last_rejected_count": 0,
+  "last_reviewed_at": "2026-05-23T08:22:14+09:00",
+  "last_applied_at": "2026-05-23T08:05:20+09:00",
+  "last_candidate_count": 32,
+  "last_approved_count": 30,
+  "last_rejected_count": 2,
   "last_rebuild_triggered": true,
   "notes": "대화 학습 루프 실행 메타데이터"
 }

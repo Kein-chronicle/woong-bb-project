@@ -23,7 +23,10 @@ Canonical root:
 - Timers: `/Users/kein/Desktop/woong-bb/state/timers.json`
 - Lifestyle schedule: `/Users/kein/Desktop/woong-bb/profile/lifestyle_schedule_ko.md`
 - Proactive message rules: `/Users/kein/Desktop/woong-bb/profile/proactive_message_rules_ko.md`
+- Chat length adaptation framework: `/Users/kein/Desktop/woong-bb/profile/chat_length_adaptation_framework_ko.md`
+- Counterpart state memory design: `/Users/kein/Desktop/woong-bb/profile/counterpart_state_memory_design_ko.md`
 - Proactive message state: `/Users/kein/Desktop/woong-bb/state/proactive_messages.json`
+- Chat length policy state: `/Users/kein/Desktop/woong-bb/state/chat_length_policy.json`
 - Situation engine design: `/Users/kein/Desktop/woong-bb/profile/situation_engine_design_ko.md`
 - Appearance continuity design: `/Users/kein/Desktop/woong-bb/profile/appearance_continuity_design_ko.md`
 - Weather context design: `/Users/kein/Desktop/woong-bb/profile/weather_context_design_ko.md`
@@ -50,6 +53,8 @@ Canonical root:
 - Automation supervisor state: `/Users/kein/Desktop/woong-bb/state/automation_supervisor_state.json`
 - Automation control: `/Users/kein/Desktop/woong-bb/state/automation_control.json`
 - Automation health: `/Users/kein/Desktop/woong-bb/state/automation_health.json`
+- Counterpart state memory: `/Users/kein/Desktop/woong-bb/state/counterpart_state_memory.json`
+- Chat length review report: `/Users/kein/Desktop/woong-bb/state/chat_length_review_report.json`
 - Voice source: `/Users/kein/Desktop/woong-bb/profile/telegram_eunbi_instagram_voice.md`
 - Messages: `/Users/kein/Desktop/woong-bb/messages`
 - Calendar: `/Users/kein/Desktop/woong-bb/calendar/events.json`
@@ -58,5 +63,6 @@ Canonical root:
 - User-shared photo asset design: `/Users/kein/Desktop/woong-bb/profile/user_shared_photo_asset_memory_design_ko.md`
 - User-shared photo asset registry: `/Users/kein/Desktop/woong-bb/state/user_shared_photo_asset_registry.json`
 - User-shared photo asset tool: `/Users/kein/Desktop/woong-bb/tools/user_shared_photo_asset_memory.py`
+- Chat length review tool: `/Users/kein/Desktop/woong-bb/tools/chat_length_review.py`
 - Base images: `/Users/kein/Desktop/woong-bb/base_images/eunbi`
 - Telegram session state: `/Users/kein/Desktop/woong-bb/session`

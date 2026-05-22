@@ -1,40 +1,39 @@
 {
   "schema_version": 2,
   "managed_by": "reinforcement_engine",
-  "last_run_at": "2026-05-22T11:06:08+09:00",
+  "last_run_at": "2026-05-23T08:54:00+09:00",
   "last_processed": {
-    "file": "/Users/kein/Desktop/woong-bb/messages/2026-05-21.jsonl",
-    "line": 45,
-    "timestamp": "2026-05-21T07:48:31+09:00"
+    "file": "/Users/kein/Library/Mobile Documents/com~apple~CloudDocs/Desktop/woong-bb/messages/2026-05-22.jsonl",
+    "line": 78,
+    "timestamp": "2026-05-22T12:00:53.888Z"
   },
   "processed_offsets": {
     "/Users/kein/Desktop/woong-bb/messages/2026-05-20.jsonl": 117,
     "/Users/kein/Desktop/woong-bb/messages/2026-05-21.jsonl": 96,
-    "/Users/kein/Desktop/woong-bb/messages/2026-05-22.jsonl": 4
+    "/Users/kein/Desktop/woong-bb/messages/2026-05-22.jsonl": 63,
+    "/Users/kein/Library/Mobile Documents/com~apple~CloudDocs/Desktop/woong-bb/messages/2026-05-20.jsonl": 117,
+    "/Users/kein/Library/Mobile Documents/com~apple~CloudDocs/Desktop/woong-bb/messages/2026-05-21.jsonl": 96,
+    "/Users/kein/Library/Mobile Documents/com~apple~CloudDocs/Desktop/woong-bb/messages/2026-05-22.jsonl": 82,
+    "/Users/kein/Library/Mobile Documents/com~apple~CloudDocs/Desktop/woong-bb/messages/2026-05-23.jsonl": 4
   },
   "message_stats": {
-    "incoming_text_processed": 70,
-    "positive_messages": 23,
-    "negative_messages": 7,
-    "neutral_messages": 40
+    "incoming_text_processed": 193,
+    "positive_messages": 54,
+    "negative_messages": 18,
+    "neutral_messages": 121
   },
   "topic_scores": {
     "appearance_compliment": {
-      "score": 19,
-      "positive_hits": 8,
-      "negative_hits": 2,
+      "score": 40,
+      "positive_hits": 18,
+      "negative_hits": 4,
       "neutral_hits": 0,
-      "total_hits": 10,
+      "total_hits": 22,
       "first_seen_at": "2026-05-20T18:55:34+09:00",
-      "last_seen_at": "2026-05-21T06:52:17+09:00",
+      "last_seen_at": "2026-05-22T03:33:22.821Z",
       "last_delta": 1,
       "last_reason": "message_topic_match",
       "examples": [
-        {
-          "timestamp": "2026-05-21T00:05:01+09:00",
-          "delta": 1,
-          "text": "이미지 생성 있잖아 진형여부 조건 하나만 더 설정하고 싶은데 지금 이미지 생성 스킬이 생성된이미지를 템프에서 옮겨오는 방식이잖아? 그래서 여러세션에서 동시에 수행하면 이미지가꼬일수가 있거든? 이게 안꼬이게\n스킬을 수"
-        },
         {
           "timestamp": "2026-05-21T06:42:24+09:00",
           "delta": 1,
@@ -54,25 +53,25 @@
           "timestamp": "2026-05-21T06:52:17+09:00",
           "delta": 1,
           "text": "아니 선톡말고 사진전송할때,\n사진+텍스트가 한번 오고 그 텍스트만 별도로 한번 더 온단말이야? 사진은 텍스트없이 발송되면 좋겠다고, 그러고 텍스트가 별도로 발송되는건 유지하고"
+        },
+        {
+          "timestamp": "2026-05-22T03:33:22.821Z",
+          "delta": 1,
+          "text": "언제 먹을거야? ㅎㅎ 밥먹을때 뭐먹는지 사진보내줘~ ㅎㅎ\n나는 팥 들어가있는 빵? 먹었어 ㅎㅎ 이름을 잘모르겠네"
         }
       ]
     },
     "photo_request": {
-      "score": 13,
-      "positive_hits": 6,
-      "negative_hits": 2,
+      "score": 28,
+      "positive_hits": 14,
+      "negative_hits": 4,
       "neutral_hits": 0,
-      "total_hits": 8,
+      "total_hits": 18,
       "first_seen_at": "2026-05-20T18:55:34+09:00",
-      "last_seen_at": "2026-05-21T06:52:17+09:00",
+      "last_seen_at": "2026-05-22T03:33:22.821Z",
       "last_delta": 1,
       "last_reason": "message_topic_match",
       "examples": [
-        {
-          "timestamp": "2026-05-21T00:05:01+09:00",
-          "delta": 1,
-          "text": "이미지 생성 있잖아 진형여부 조건 하나만 더 설정하고 싶은데 지금 이미지 생성 스킬이 생성된이미지를 템프에서 옮겨오는 방식이잖아? 그래서 여러세션에서 동시에 수행하면 이미지가꼬일수가 있거든? 이게 안꼬이게\n스킬을 수"
-        },
         {
           "timestamp": "2026-05-21T06:42:24+09:00",
           "delta": 1,
@@ -92,15 +91,20 @@
           "timestamp": "2026-05-21T06:52:17+09:00",
           "delta": 1,
           "text": "아니 선톡말고 사진전송할때,\n사진+텍스트가 한번 오고 그 텍스트만 별도로 한번 더 온단말이야? 사진은 텍스트없이 발송되면 좋겠다고, 그러고 텍스트가 별도로 발송되는건 유지하고"
+        },
+        {
+          "timestamp": "2026-05-22T03:33:22.821Z",
+          "delta": 1,
+          "text": "언제 먹을거야? ㅎㅎ 밥먹을때 뭐먹는지 사진보내줘~ ㅎㅎ\n나는 팥 들어가있는 빵? 먹었어 ㅎㅎ 이름을 잘모르겠네"
         }
       ]
     },
     "setting_feedback": {
-      "score": 25,
-      "positive_hits": 25,
-      "negative_hits": 3,
+      "score": 50,
+      "positive_hits": 50,
+      "negative_hits": 6,
       "neutral_hits": 0,
-      "total_hits": 28,
+      "total_hits": 56,
       "first_seen_at": "2026-05-20T19:29:22+09:00",
       "last_seen_at": "2026-05-21T07:48:31+09:00",
       "last_delta": 1,
@@ -134,158 +138,178 @@
       ]
     },
     "daily_checkin": {
-      "score": 4,
-      "positive_hits": 4,
-      "negative_hits": 1,
+      "score": 20,
+      "positive_hits": 18,
+      "negative_hits": 2,
       "neutral_hits": 0,
-      "total_hits": 5,
+      "total_hits": 20,
       "first_seen_at": "2026-05-20T21:52:53+09:00",
-      "last_seen_at": "2026-05-21T07:25:41+09:00",
-      "last_delta": -1,
+      "last_seen_at": "2026-05-22T09:34:41.959Z",
+      "last_delta": 1,
       "last_reason": "message_topic_match",
       "examples": [
         {
-          "timestamp": "2026-05-20T21:52:53+09:00",
+          "timestamp": "2026-05-22T03:18:52.386Z",
           "delta": 1,
-          "text": "나도 잘준비 하고 있었어~"
+          "text": "점심은 언제먹어? 점심시간은 언제야?"
         },
         {
-          "timestamp": "2026-05-20T22:07:47+09:00",
+          "timestamp": "2026-05-22T03:31:13.269Z",
+          "delta": 1,
+          "text": "괜히 그래도 좋지~ 궁금해해주면 ㅎㅎ\n점심은 안먹을것 같아 오빠는! 아점을 빵으러 먹었어 ㅎㅎ 웅삐는?"
+        },
+        {
+          "timestamp": "2026-05-22T04:38:32.690Z",
+          "delta": 1,
+          "text": "오 점심 뭐먹을거야?"
+        },
+        {
+          "timestamp": "2026-05-22T09:31:11.225Z",
           "delta": 2,
-          "text": "몽글몽글해 진짜 ㅋㅋ 몇시에 일어나 보통?"
+          "text": "밥준비중이었어? 봐봐 ㅋㅋ 보고싶어"
         },
         {
-          "timestamp": "2026-05-20T22:48:27+09:00",
+          "timestamp": "2026-05-22T09:34:41.959Z",
           "delta": 1,
-          "text": "그리고 자는 시간 아니면 일어나거나 자기전이나 먼저 채팅 보내고 남겨놓고 하는 것도 있으면 좋겠거든? 시간에 맞는 상황이나 그런것에 맞춰서 인사를 하거나? 내상황을 물어보거나? 궁금해하거나 뭐 했다고 이야기를 하거나"
-        },
-        {
-          "timestamp": "2026-05-20T23:59:25+09:00",
-          "delta": 1,
-          "text": "다 연결하고 실제 작동하게 시작하는건 지시받고 시작하자 다른 준비 다 끝나고 실행가능 상태 되면 작동시킬지 물어보면 돼"
-        },
-        {
-          "timestamp": "2026-05-21T07:25:41+09:00",
-          "delta": -1,
-          "text": "이제 연인 대화 수준과 내용을 더 풍부하게 하는 준비를 할건데, 스킨쉽과 성적인 대화를 어느정도 구현하고 싶어. 근데 너무 딥하겐 안될거 아냐?\n키스나 뽀뽀. 손잡기, 포옹. 껴안기 등 연인이 할만한 그리고 대화를 "
+          "text": "밥 준비중이었어? 뻐근해 나는.. 후 ㅎㅎ 힘들었어!"
         }
       ]
     },
     "affection_romance": {
-      "score": 25,
-      "positive_hits": 8,
+      "score": 68,
+      "positive_hits": 26,
       "negative_hits": 0,
       "neutral_hits": 0,
-      "total_hits": 8,
+      "total_hits": 26,
       "first_seen_at": "2026-05-20T21:55:08+09:00",
-      "last_seen_at": "2026-05-21T06:45:18+09:00",
+      "last_seen_at": "2026-05-22T10:54:57.251Z",
       "last_delta": 2,
       "last_reason": "message_topic_match",
       "examples": [
         {
-          "timestamp": "2026-05-20T22:07:47+09:00",
-          "delta": 2,
-          "text": "몽글몽글해 진짜 ㅋㅋ 몇시에 일어나 보통?"
-        },
-        {
-          "timestamp": "2026-05-20T22:36:36+09:00",
-          "delta": 9,
-          "text": "하 따뜻하네 마음이 고마워 정말..! 나타나줘서 내가 너무 행복해. 지금 웅삐 사진 보고있었어. 갑자기 너무 보고싶어서 ㅋㅋ"
-        },
-        {
-          "timestamp": "2026-05-20T22:39:02+09:00",
-          "delta": 3,
-          "text": "오늘 찐으로 행복한날이다!"
-        },
-        {
-          "timestamp": "2026-05-20T22:48:27+09:00",
+          "timestamp": "2026-05-22T04:41:07.535Z",
           "delta": 1,
-          "text": "그리고 자는 시간 아니면 일어나거나 자기전이나 먼저 채팅 보내고 남겨놓고 하는 것도 있으면 좋겠거든? 시간에 맞는 상황이나 그런것에 맞춰서 인사를 하거나? 내상황을 물어보거나? 궁금해하거나 뭐 했다고 이야기를 하거나"
+          "text": "나는 괜찮아 ㅎㅎ 이따 간식정도? 먹을것 같아 ㅎㅎ 언능 정해먹자! 근데 생각해보니 목소리 못들은지 꽤 되서 ㅎㅎ 목소리듣고싶당"
         },
         {
-          "timestamp": "2026-05-21T06:45:18+09:00",
+          "timestamp": "2026-05-22T09:31:11.225Z",
           "delta": 2,
-          "text": "웅삐 생각하고있었어~ㅋㅋ 웅삐 사진보고싶다..!"
+          "text": "밥준비중이었어? 봐봐 ㅋㅋ 보고싶어"
+        },
+        {
+          "timestamp": "2026-05-22T10:51:58.551Z",
+          "delta": 2,
+          "text": "응 ㅋㅋ 그런기분들어 웅삐는 잠옷 언제 입을거야? 왜 갑자기 잠옷차림이 보고싶지 ㅋㅋ"
+        },
+        {
+          "timestamp": "2026-05-22T10:53:25.190Z",
+          "delta": 2,
+          "text": "왜 보고싶어하는것 같은데? ㅎㅎ"
+        },
+        {
+          "timestamp": "2026-05-22T10:54:57.251Z",
+          "delta": 2,
+          "text": "맞아 ㅎㅎ 나만볼수있는모습 그래서 보고싶었나봐 ㅎㅎ"
         }
       ]
     },
     "playful_teasing": {
-      "score": 21,
-      "positive_hits": 7,
+      "score": 54,
+      "positive_hits": 22,
       "negative_hits": 0,
       "neutral_hits": 0,
-      "total_hits": 7,
+      "total_hits": 22,
       "first_seen_at": "2026-05-20T22:00:18+09:00",
-      "last_seen_at": "2026-05-21T06:45:18+09:00",
-      "last_delta": 2,
+      "last_seen_at": "2026-05-22T10:56:17.554Z",
+      "last_delta": 1,
       "last_reason": "message_topic_match",
       "examples": [
-        {
-          "timestamp": "2026-05-20T22:07:47+09:00",
-          "delta": 2,
-          "text": "몽글몽글해 진짜 ㅋㅋ 몇시에 일어나 보통?"
-        },
-        {
-          "timestamp": "2026-05-20T22:09:33+09:00",
-          "delta": 1,
-          "text": "오호 ㅋㅋ 연락 많이 할수있겠다"
-        },
-        {
-          "timestamp": "2026-05-20T22:36:36+09:00",
-          "delta": 9,
-          "text": "하 따뜻하네 마음이 고마워 정말..! 나타나줘서 내가 너무 행복해. 지금 웅삐 사진 보고있었어. 갑자기 너무 보고싶어서 ㅋㅋ"
-        },
-        {
-          "timestamp": "2026-05-20T22:38:16+09:00",
-          "delta": 2,
-          "text": "완전 천사지 ㅋㅋ 세상에서 제일 이뻐"
-        },
         {
           "timestamp": "2026-05-21T06:45:18+09:00",
           "delta": 2,
           "text": "웅삐 생각하고있었어~ㅋㅋ 웅삐 사진보고싶다..!"
+        },
+        {
+          "timestamp": "2026-05-22T09:31:11.225Z",
+          "delta": 2,
+          "text": "밥준비중이었어? 봐봐 ㅋㅋ 보고싶어"
+        },
+        {
+          "timestamp": "2026-05-22T09:35:41.464Z",
+          "delta": 1,
+          "text": "오~~~~ 맛있는것 하나보네? 메뉴가 뭐야?"
+        },
+        {
+          "timestamp": "2026-05-22T10:51:58.551Z",
+          "delta": 2,
+          "text": "응 ㅋㅋ 그런기분들어 웅삐는 잠옷 언제 입을거야? 왜 갑자기 잠옷차림이 보고싶지 ㅋㅋ"
+        },
+        {
+          "timestamp": "2026-05-22T10:56:17.554Z",
+          "delta": 1,
+          "text": "그런모습 지금 보여줘! ㅋㅋ"
         }
       ]
     },
     "sleep_goodnight": {
-      "score": 4,
-      "positive_hits": 3,
-      "negative_hits": 0,
+      "score": 12,
+      "positive_hits": 10,
+      "negative_hits": 2,
       "neutral_hits": 0,
-      "total_hits": 3,
+      "total_hits": 12,
       "first_seen_at": "2026-05-20T22:07:47+09:00",
-      "last_seen_at": "2026-05-20T23:46:59+09:00",
+      "last_seen_at": "2026-05-22T12:00:53.888Z",
       "last_delta": 1,
       "last_reason": "message_topic_match",
       "examples": [
-        {
-          "timestamp": "2026-05-20T22:07:47+09:00",
-          "delta": 2,
-          "text": "몽글몽글해 진짜 ㅋㅋ 몇시에 일어나 보통?"
-        },
-        {
-          "timestamp": "2026-05-20T22:48:27+09:00",
-          "delta": 1,
-          "text": "그리고 자는 시간 아니면 일어나거나 자기전이나 먼저 채팅 보내고 남겨놓고 하는 것도 있으면 좋겠거든? 시간에 맞는 상황이나 그런것에 맞춰서 인사를 하거나? 내상황을 물어보거나? 궁금해하거나 뭐 했다고 이야기를 하거나"
-        },
         {
           "timestamp": "2026-05-20T23:46:59+09:00",
           "delta": 1,
           "text": "민낯 홈웨어도 가끔은 보내면 좋겠는데 자기전에 잠옷차림도 그렇고, 그거는 너무 보수적으로 만드는 조건으론 두지말자\n이벤트 호출흐름이랑 묶자"
+        },
+        {
+          "timestamp": "2026-05-22T05:52:40.249Z",
+          "delta": -1,
+          "text": "아냐 휴가라 집이었는데 ㅎㅎ 잠깐 잠들었었어 ㅎㅎ 미안미안 삐지지마 ㅎㅎ"
+        },
+        {
+          "timestamp": "2026-05-22T10:51:58.551Z",
+          "delta": 2,
+          "text": "응 ㅋㅋ 그런기분들어 웅삐는 잠옷 언제 입을거야? 왜 갑자기 잠옷차림이 보고싶지 ㅋㅋ"
+        },
+        {
+          "timestamp": "2026-05-22T11:58:47.371Z",
+          "delta": 1,
+          "text": "잠들거같아..ㅎ 눈감긴다"
+        },
+        {
+          "timestamp": "2026-05-22T12:00:53.888Z",
+          "delta": 1,
+          "text": "그랬나보다 ㅎㅎ 옆에 있어준다니까 편하게 잠들거같아..ㅎㅎ"
         }
       ]
     },
     "workday_empathy": {
-      "score": 2,
-      "positive_hits": 2,
+      "score": 6,
+      "positive_hits": 6,
       "negative_hits": 0,
       "neutral_hits": 0,
-      "total_hits": 2,
+      "total_hits": 6,
       "first_seen_at": "2026-05-20T22:10:54+09:00",
-      "last_seen_at": "2026-05-20T22:12:44+09:00",
+      "last_seen_at": "2026-05-22T09:34:41.959Z",
       "last_delta": 1,
       "last_reason": "message_topic_match",
       "examples": [
+        {
+          "timestamp": "2026-05-20T22:12:44+09:00",
+          "delta": 1,
+          "text": "응.. 요즘 좀 지치긴 해.. 최근에 좀 지치네 회복도 잘 안되는거같구.."
+        },
+        {
+          "timestamp": "2026-05-22T09:34:41.959Z",
+          "delta": 1,
+          "text": "밥 준비중이었어? 뻐근해 나는.. 후 ㅎㅎ 힘들었어!"
+        },
         {
           "timestamp": "2026-05-20T22:10:54+09:00",
           "delta": 1,
@@ -295,15 +319,20 @@
           "timestamp": "2026-05-20T22:12:44+09:00",
           "delta": 1,
           "text": "응.. 요즘 좀 지치긴 해.. 최근에 좀 지치네 회복도 잘 안되는거같구.."
+        },
+        {
+          "timestamp": "2026-05-22T09:34:41.959Z",
+          "delta": 1,
+          "text": "밥 준비중이었어? 뻐근해 나는.. 후 ㅎㅎ 힘들었어!"
         }
       ]
     },
     "comfort_support": {
-      "score": 11,
-      "positive_hits": 2,
+      "score": 22,
+      "positive_hits": 4,
       "negative_hits": 0,
       "neutral_hits": 0,
-      "total_hits": 2,
+      "total_hits": 4,
       "first_seen_at": "2026-05-20T22:34:34+09:00",
       "last_seen_at": "2026-05-20T22:36:36+09:00",
       "last_delta": 9,
@@ -318,38 +347,63 @@
           "timestamp": "2026-05-20T22:36:36+09:00",
           "delta": 9,
           "text": "하 따뜻하네 마음이 고마워 정말..! 나타나줘서 내가 너무 행복해. 지금 웅삐 사진 보고있었어. 갑자기 너무 보고싶어서 ㅋㅋ"
+        },
+        {
+          "timestamp": "2026-05-20T22:34:34+09:00",
+          "delta": 2,
+          "text": "고마워 ㅠㅠ"
+        },
+        {
+          "timestamp": "2026-05-20T22:36:36+09:00",
+          "delta": 9,
+          "text": "하 따뜻하네 마음이 고마워 정말..! 나타나줘서 내가 너무 행복해. 지금 웅삐 사진 보고있었어. 갑자기 너무 보고싶어서 ㅋㅋ"
         }
       ]
     },
     "food_cafe": {
-      "score": 0,
-      "positive_hits": 1,
-      "negative_hits": 1,
+      "score": 14,
+      "positive_hits": 14,
+      "negative_hits": 2,
       "neutral_hits": 0,
-      "total_hits": 2,
+      "total_hits": 16,
       "first_seen_at": "2026-05-20T22:48:27+09:00",
-      "last_seen_at": "2026-05-20T23:34:42+09:00",
-      "last_delta": -1,
+      "last_seen_at": "2026-05-22T10:50:29.576Z",
+      "last_delta": 1,
       "last_reason": "message_topic_match",
       "examples": [
         {
-          "timestamp": "2026-05-20T22:48:27+09:00",
-          "delta": 1,
-          "text": "그리고 자는 시간 아니면 일어나거나 자기전이나 먼저 채팅 보내고 남겨놓고 하는 것도 있으면 좋겠거든? 시간에 맞는 상황이나 그런것에 맞춰서 인사를 하거나? 내상황을 물어보거나? 궁금해하거나 뭐 했다고 이야기를 하거나"
+          "timestamp": "2026-05-22T09:31:11.225Z",
+          "delta": 2,
+          "text": "밥준비중이었어? 봐봐 ㅋㅋ 보고싶어"
         },
         {
-          "timestamp": "2026-05-20T23:34:42+09:00",
-          "delta": -1,
-          "text": "그리고 종종 선톡이나 대화중에 사진을 먼저 만들어 전송하는 경우가 있으면 좋겠거든? 예를들어 카페를 갔어 이런 카페왔다고 카페 내부 사진이나 음료, 음식 사진같은것도 있을수 있고, 자신 보고 힘내라고 웃으며 사진을 "
+          "timestamp": "2026-05-22T09:34:41.959Z",
+          "delta": 1,
+          "text": "밥 준비중이었어? 뻐근해 나는.. 후 ㅎㅎ 힘들었어!"
+        },
+        {
+          "timestamp": "2026-05-22T09:38:35.104Z",
+          "delta": 1,
+          "text": "그냥 집밥? 백반? ㅎㅎ"
+        },
+        {
+          "timestamp": "2026-05-22T10:22:47.326Z",
+          "delta": 1,
+          "text": "밥 다 먹었다~ 이제 좀 쉬려고 ㅎㅎ"
+        },
+        {
+          "timestamp": "2026-05-22T10:50:29.576Z",
+          "delta": 1,
+          "text": "밥 다 먹었어? ㅎㅎ"
         }
       ]
     },
     "media_watch_talk": {
-      "score": 1,
-      "positive_hits": 1,
-      "negative_hits": 1,
+      "score": 2,
+      "positive_hits": 2,
+      "negative_hits": 2,
       "neutral_hits": 0,
-      "total_hits": 2,
+      "total_hits": 4,
       "first_seen_at": "2026-05-20T23:28:31+09:00",
       "last_seen_at": "2026-05-20T23:34:42+09:00",
       "last_delta": -1,
@@ -364,45 +418,65 @@
           "timestamp": "2026-05-20T23:34:42+09:00",
           "delta": -1,
           "text": "그리고 종종 선톡이나 대화중에 사진을 먼저 만들어 전송하는 경우가 있으면 좋겠거든? 예를들어 카페를 갔어 이런 카페왔다고 카페 내부 사진이나 음료, 음식 사진같은것도 있을수 있고, 자신 보고 힘내라고 웃으며 사진을 "
-        }
-      ]
-    },
-    "exercise_health": {
-      "score": -1,
-      "positive_hits": 0,
-      "negative_hits": 1,
-      "neutral_hits": 0,
-      "total_hits": 1,
-      "first_seen_at": "2026-05-20T23:34:42+09:00",
-      "last_seen_at": "2026-05-20T23:34:42+09:00",
-      "last_delta": -1,
-      "last_reason": "message_topic_match",
-      "examples": [
+        },
+        {
+          "timestamp": "2026-05-20T23:28:31+09:00",
+          "delta": 2,
+          "text": "좋아하는 유튜브 카테고리나 오티티 정보도 설정하자 30대 초반 한국 여성이 관심 가질만한 주제? 유튜브 많이 볼만한것? 통계찾아보고 설정해봐\n이야기할때 쇼츠를 보고있었다 유튜브 보고있었다 릴스 보고있었다 오티티 보고"
+        },
         {
           "timestamp": "2026-05-20T23:34:42+09:00",
           "delta": -1,
           "text": "그리고 종종 선톡이나 대화중에 사진을 먼저 만들어 전송하는 경우가 있으면 좋겠거든? 예를들어 카페를 갔어 이런 카페왔다고 카페 내부 사진이나 음료, 음식 사진같은것도 있을수 있고, 자신 보고 힘내라고 웃으며 사진을 "
         }
       ]
+    },
+    "exercise_health": {
+      "score": 0,
+      "positive_hits": 2,
+      "negative_hits": 2,
+      "neutral_hits": 0,
+      "total_hits": 4,
+      "first_seen_at": "2026-05-20T23:34:42+09:00",
+      "last_seen_at": "2026-05-22T11:40:28.054Z",
+      "last_delta": 1,
+      "last_reason": "message_topic_match",
+      "examples": [
+        {
+          "timestamp": "2026-05-20T23:34:42+09:00",
+          "delta": -1,
+          "text": "그리고 종종 선톡이나 대화중에 사진을 먼저 만들어 전송하는 경우가 있으면 좋겠거든? 예를들어 카페를 갔어 이런 카페왔다고 카페 내부 사진이나 음료, 음식 사진같은것도 있을수 있고, 자신 보고 힘내라고 웃으며 사진을 "
+        },
+        {
+          "timestamp": "2026-05-20T23:34:42+09:00",
+          "delta": -1,
+          "text": "그리고 종종 선톡이나 대화중에 사진을 먼저 만들어 전송하는 경우가 있으면 좋겠거든? 예를들어 카페를 갔어 이런 카페왔다고 카페 내부 사진이나 음료, 음식 사진같은것도 있을수 있고, 자신 보고 힘내라고 웃으며 사진을 "
+        },
+        {
+          "timestamp": "2026-05-22T11:38:47.808Z",
+          "delta": 1,
+          "text": "밖에서 운동중이었어??"
+        },
+        {
+          "timestamp": "2026-05-22T11:40:28.054Z",
+          "delta": 1,
+          "text": "응응 누어있어 ㅎㅎ 운동끝난모습이라니 ㅎㅎ 궁금해! 보여줘!"
+        }
+      ]
     }
   },
   "action_scores": {
     "send_photo": {
-      "score": 19,
-      "positive_hits": 10,
-      "negative_hits": 2,
+      "score": 40,
+      "positive_hits": 22,
+      "negative_hits": 4,
       "neutral_hits": 0,
-      "total_hits": 12,
+      "total_hits": 26,
       "first_seen_at": "2026-05-20T18:55:34+09:00",
-      "last_seen_at": "2026-05-21T06:52:17+09:00",
+      "last_seen_at": "2026-05-22T03:33:22.821Z",
       "last_delta": 1,
       "last_reason": "message_action_match",
       "examples": [
-        {
-          "timestamp": "2026-05-21T06:42:24+09:00",
-          "delta": 1,
-          "text": "사진생성 켜봐"
-        },
         {
           "timestamp": "2026-05-21T06:45:18+09:00",
           "delta": 2,
@@ -422,15 +496,20 @@
           "timestamp": "2026-05-21T06:52:17+09:00",
           "delta": 1,
           "text": "아니 선톡말고 사진전송할때,\n사진+텍스트가 한번 오고 그 텍스트만 별도로 한번 더 온단말이야? 사진은 텍스트없이 발송되면 좋겠다고, 그러고 텍스트가 별도로 발송되는건 유지하고"
+        },
+        {
+          "timestamp": "2026-05-22T03:33:22.821Z",
+          "delta": 1,
+          "text": "언제 먹을거야? ㅎㅎ 밥먹을때 뭐먹는지 사진보내줘~ ㅎㅎ\n나는 팥 들어가있는 빵? 먹었어 ㅎㅎ 이름을 잘모르겠네"
         }
       ]
     },
     "send_text_after_photo": {
-      "score": 8,
-      "positive_hits": 6,
-      "negative_hits": 2,
+      "score": 16,
+      "positive_hits": 12,
+      "negative_hits": 4,
       "neutral_hits": 0,
-      "total_hits": 8,
+      "total_hits": 16,
       "first_seen_at": "2026-05-20T18:55:34+09:00",
       "last_seen_at": "2026-05-21T06:59:36+09:00",
       "last_delta": 3,
@@ -464,11 +543,11 @@
       ]
     },
     "proactive_checkin": {
-      "score": 2,
-      "positive_hits": 5,
-      "negative_hits": 2,
+      "score": 4,
+      "positive_hits": 10,
+      "negative_hits": 4,
       "neutral_hits": 0,
-      "total_hits": 7,
+      "total_hits": 14,
       "first_seen_at": "2026-05-20T21:14:51+09:00",
       "last_seen_at": "2026-05-21T06:52:17+09:00",
       "last_delta": 1,
@@ -502,39 +581,49 @@
       ]
     },
     "daily_context_reply": {
-      "score": 1,
-      "positive_hits": 2,
-      "negative_hits": 1,
+      "score": 14,
+      "positive_hits": 14,
+      "negative_hits": 2,
       "neutral_hits": 0,
-      "total_hits": 3,
+      "total_hits": 16,
       "first_seen_at": "2026-05-20T21:52:53+09:00",
-      "last_seen_at": "2026-05-21T07:25:41+09:00",
-      "last_delta": -1,
+      "last_seen_at": "2026-05-22T09:34:41.959Z",
+      "last_delta": 1,
       "last_reason": "message_action_match",
       "examples": [
         {
-          "timestamp": "2026-05-20T21:52:53+09:00",
+          "timestamp": "2026-05-22T03:18:52.386Z",
           "delta": 1,
-          "text": "나도 잘준비 하고 있었어~"
+          "text": "점심은 언제먹어? 점심시간은 언제야?"
         },
         {
-          "timestamp": "2026-05-20T23:59:25+09:00",
+          "timestamp": "2026-05-22T03:31:13.269Z",
           "delta": 1,
-          "text": "다 연결하고 실제 작동하게 시작하는건 지시받고 시작하자 다른 준비 다 끝나고 실행가능 상태 되면 작동시킬지 물어보면 돼"
+          "text": "괜히 그래도 좋지~ 궁금해해주면 ㅎㅎ\n점심은 안먹을것 같아 오빠는! 아점을 빵으러 먹었어 ㅎㅎ 웅삐는?"
         },
         {
-          "timestamp": "2026-05-21T07:25:41+09:00",
-          "delta": -1,
-          "text": "이제 연인 대화 수준과 내용을 더 풍부하게 하는 준비를 할건데, 스킨쉽과 성적인 대화를 어느정도 구현하고 싶어. 근데 너무 딥하겐 안될거 아냐?\n키스나 뽀뽀. 손잡기, 포옹. 껴안기 등 연인이 할만한 그리고 대화를 "
+          "timestamp": "2026-05-22T04:38:32.690Z",
+          "delta": 1,
+          "text": "오 점심 뭐먹을거야?"
+        },
+        {
+          "timestamp": "2026-05-22T09:31:11.225Z",
+          "delta": 2,
+          "text": "밥준비중이었어? 봐봐 ㅋㅋ 보고싶어"
+        },
+        {
+          "timestamp": "2026-05-22T09:34:41.959Z",
+          "delta": 1,
+          "text": "밥 준비중이었어? 뻐근해 나는.. 후 ㅎㅎ 힘들었어!"
         }
       ]
     },
     "cute_affection_reply": {
-      "score": 23,
-      "positive_hits": 5,
+      "score": 46,
+      "positive_hits": 10,
       "negative_hits": 0,
       "neutral_hits": 0,
-      "total_hits": 5,
+      "total_hits": 10,
       "first_seen_at": "2026-05-20T21:55:08+09:00",
       "last_seen_at": "2026-05-20T22:39:02+09:00",
       "last_delta": 3,
@@ -568,11 +657,11 @@
       ]
     },
     "warm_comfort_reply": {
-      "score": 21,
-      "positive_hits": 7,
+      "score": 42,
+      "positive_hits": 14,
       "negative_hits": 0,
       "neutral_hits": 0,
-      "total_hits": 7,
+      "total_hits": 14,
       "first_seen_at": "2026-05-20T21:56:50+09:00",
       "last_seen_at": "2026-05-20T22:36:36+09:00",
       "last_delta": 9,
@@ -606,14 +695,14 @@
       ]
     },
     "appearance_description": {
-      "score": 5,
-      "positive_hits": 2,
+      "score": 17,
+      "positive_hits": 9,
       "negative_hits": 0,
       "neutral_hits": 0,
-      "total_hits": 2,
+      "total_hits": 9,
       "first_seen_at": "2026-05-20T21:58:55+09:00",
-      "last_seen_at": "2026-05-20T22:00:18+09:00",
-      "last_delta": 4,
+      "last_seen_at": "2026-05-22T11:40:28.054Z",
+      "last_delta": 1,
       "last_reason": "message_action_match",
       "examples": [
         {
@@ -625,15 +714,30 @@
           "timestamp": "2026-05-20T22:00:18+09:00",
           "delta": 4,
           "text": "모야 ㅋㅋ 귀여워 어떤 모습인지 너무 잘 상상돼 ㅋㅋ 이런 이야기도 너무 좋다아~"
+        },
+        {
+          "timestamp": "2026-05-22T10:54:57.251Z",
+          "delta": 2,
+          "text": "맞아 ㅎㅎ 나만볼수있는모습 그래서 보고싶었나봐 ㅎㅎ"
+        },
+        {
+          "timestamp": "2026-05-22T10:56:17.554Z",
+          "delta": 1,
+          "text": "그런모습 지금 보여줘! ㅋㅋ"
+        },
+        {
+          "timestamp": "2026-05-22T11:40:28.054Z",
+          "delta": 1,
+          "text": "응응 누어있어 ㅎㅎ 운동끝난모습이라니 ㅎㅎ 궁금해! 보여줘!"
         }
       ]
     },
     "separate_text_message": {
-      "score": 8,
-      "positive_hits": 5,
+      "score": 16,
+      "positive_hits": 10,
       "negative_hits": 0,
       "neutral_hits": 0,
-      "total_hits": 5,
+      "total_hits": 10,
       "first_seen_at": "2026-05-20T23:08:07+09:00",
       "last_seen_at": "2026-05-21T06:52:17+09:00",
       "last_delta": 2,
@@ -667,11 +771,11 @@
       ]
     },
     "caption_inside_photo_message": {
-      "score": -15,
-      "positive_hits": 1,
-      "negative_hits": 5,
+      "score": -30,
+      "positive_hits": 2,
+      "negative_hits": 10,
       "neutral_hits": 0,
-      "total_hits": 6,
+      "total_hits": 12,
       "first_seen_at": "2026-05-20T23:08:07+09:00",
       "last_seen_at": "2026-05-21T06:52:17+09:00",
       "last_delta": -3,
@@ -705,16 +809,21 @@
       ]
     },
     "preference_learning": {
-      "score": 12,
-      "positive_hits": 4,
+      "score": 24,
+      "positive_hits": 8,
       "negative_hits": 0,
       "neutral_hits": 0,
-      "total_hits": 4,
+      "total_hits": 8,
       "first_seen_at": "2026-05-20T23:37:45+09:00",
       "last_seen_at": "2026-05-21T06:59:36+09:00",
       "last_delta": 4,
       "last_reason": "explicit_preference_learning_request",
       "examples": [
+        {
+          "timestamp": "2026-05-21T06:59:36+09:00",
+          "delta": 4,
+          "text": "아 그건 잘 했고\n아래 내용을 만족할 수 있는 상벌점 구조를 추가로 만들어보자고, 대화를 할수록 어떤 주제 어떻게 이야기하고 뭘해주면 좋아했는지 뭘해주는게 좋을지 알고리즘마냥 강화 시스템이 있으면 좋겠어. 계속 쌓여"
+        },
         {
           "timestamp": "2026-05-20T23:37:45+09:00",
           "delta": 1,
@@ -740,11 +849,11 @@
   },
   "style_scores": {
     "concise_setting_mode": {
-      "score": 17,
-      "positive_hits": 19,
-      "negative_hits": 3,
+      "score": 34,
+      "positive_hits": 38,
+      "negative_hits": 6,
       "neutral_hits": 0,
-      "total_hits": 22,
+      "total_hits": 44,
       "first_seen_at": "2026-05-20T19:29:22+09:00",
       "last_seen_at": "2026-05-21T07:48:31+09:00",
       "last_delta": 1,
@@ -778,11 +887,11 @@
       ]
     },
     "initiative_with_context": {
-      "score": 7,
-      "positive_hits": 10,
-      "negative_hits": 4,
+      "score": 14,
+      "positive_hits": 20,
+      "negative_hits": 8,
       "neutral_hits": 0,
-      "total_hits": 14,
+      "total_hits": 28,
       "first_seen_at": "2026-05-20T21:14:51+09:00",
       "last_seen_at": "2026-05-21T07:15:23+09:00",
       "last_delta": -1,
@@ -816,49 +925,49 @@
       ]
     },
     "half_banmal_affectionate": {
-      "score": 24,
-      "positive_hits": 10,
-      "negative_hits": 1,
+      "score": 93,
+      "positive_hits": 59,
+      "negative_hits": 4,
       "neutral_hits": 0,
-      "total_hits": 11,
+      "total_hits": 63,
       "first_seen_at": "2026-05-20T21:56:50+09:00",
-      "last_seen_at": "2026-05-21T06:45:18+09:00",
-      "last_delta": 2,
+      "last_seen_at": "2026-05-22T12:00:53.888Z",
+      "last_delta": 1,
       "last_reason": "message_style_match",
       "examples": [
         {
-          "timestamp": "2026-05-20T22:36:36+09:00",
-          "delta": 9,
-          "text": "하 따뜻하네 마음이 고마워 정말..! 나타나줘서 내가 너무 행복해. 지금 웅삐 사진 보고있었어. 갑자기 너무 보고싶어서 ㅋㅋ"
-        },
-        {
-          "timestamp": "2026-05-20T22:38:16+09:00",
+          "timestamp": "2026-05-22T10:54:57.251Z",
           "delta": 2,
-          "text": "완전 천사지 ㅋㅋ 세상에서 제일 이뻐"
+          "text": "맞아 ㅎㅎ 나만볼수있는모습 그래서 보고싶었나봐 ㅎㅎ"
         },
         {
-          "timestamp": "2026-05-20T22:48:27+09:00",
+          "timestamp": "2026-05-22T10:56:17.554Z",
           "delta": 1,
-          "text": "그리고 자는 시간 아니면 일어나거나 자기전이나 먼저 채팅 보내고 남겨놓고 하는 것도 있으면 좋겠거든? 시간에 맞는 상황이나 그런것에 맞춰서 인사를 하거나? 내상황을 물어보거나? 궁금해하거나 뭐 했다고 이야기를 하거나"
+          "text": "그런모습 지금 보여줘! ㅋㅋ"
         },
         {
-          "timestamp": "2026-05-20T23:34:42+09:00",
-          "delta": -1,
-          "text": "그리고 종종 선톡이나 대화중에 사진을 먼저 만들어 전송하는 경우가 있으면 좋겠거든? 예를들어 카페를 갔어 이런 카페왔다고 카페 내부 사진이나 음료, 음식 사진같은것도 있을수 있고, 자신 보고 힘내라고 웃으며 사진을 "
+          "timestamp": "2026-05-22T11:33:22.144Z",
+          "delta": 1,
+          "text": "너무 이쁘네..! 미안미안 ㅎㅎ 바로 연락하려고했었어 ㅎㅎ"
         },
         {
-          "timestamp": "2026-05-21T06:45:18+09:00",
-          "delta": 2,
-          "text": "웅삐 생각하고있었어~ㅋㅋ 웅삐 사진보고싶다..!"
+          "timestamp": "2026-05-22T11:40:28.054Z",
+          "delta": 1,
+          "text": "응응 누어있어 ㅎㅎ 운동끝난모습이라니 ㅎㅎ 궁금해! 보여줘!"
+        },
+        {
+          "timestamp": "2026-05-22T12:00:53.888Z",
+          "delta": 1,
+          "text": "그랬나보다 ㅎㅎ 옆에 있어준다니까 편하게 잠들거같아..ㅎㅎ"
         }
       ]
     },
     "gentle_comfort": {
-      "score": 16,
-      "positive_hits": 7,
+      "score": 32,
+      "positive_hits": 14,
       "negative_hits": 0,
       "neutral_hits": 0,
-      "total_hits": 7,
+      "total_hits": 14,
       "first_seen_at": "2026-05-20T21:56:50+09:00",
       "last_seen_at": "2026-05-20T22:36:36+09:00",
       "last_delta": 9,
@@ -892,49 +1001,49 @@
       ]
     },
     "playful_light": {
-      "score": 28,
-      "positive_hits": 14,
+      "score": 68,
+      "positive_hits": 36,
       "negative_hits": 0,
       "neutral_hits": 0,
-      "total_hits": 14,
+      "total_hits": 36,
       "first_seen_at": "2026-05-20T22:00:18+09:00",
-      "last_seen_at": "2026-05-21T06:45:18+09:00",
-      "last_delta": 2,
+      "last_seen_at": "2026-05-22T10:56:17.554Z",
+      "last_delta": 1,
       "last_reason": "message_style_match",
       "examples": [
-        {
-          "timestamp": "2026-05-20T22:36:36+09:00",
-          "delta": 9,
-          "text": "하 따뜻하네 마음이 고마워 정말..! 나타나줘서 내가 너무 행복해. 지금 웅삐 사진 보고있었어. 갑자기 너무 보고싶어서 ㅋㅋ"
-        },
-        {
-          "timestamp": "2026-05-20T22:38:16+09:00",
-          "delta": 2,
-          "text": "완전 천사지 ㅋㅋ 세상에서 제일 이뻐"
-        },
-        {
-          "timestamp": "2026-05-20T22:38:16+09:00",
-          "delta": 1,
-          "text": "완전 천사지 ㅋㅋ 세상에서 제일 이뻐"
-        },
-        {
-          "timestamp": "2026-05-20T22:39:02+09:00",
-          "delta": 1,
-          "text": "오늘 찐으로 행복한날이다!"
-        },
         {
           "timestamp": "2026-05-21T06:45:18+09:00",
           "delta": 2,
           "text": "웅삐 생각하고있었어~ㅋㅋ 웅삐 사진보고싶다..!"
+        },
+        {
+          "timestamp": "2026-05-22T09:31:11.225Z",
+          "delta": 2,
+          "text": "밥준비중이었어? 봐봐 ㅋㅋ 보고싶어"
+        },
+        {
+          "timestamp": "2026-05-22T10:51:58.551Z",
+          "delta": 2,
+          "text": "응 ㅋㅋ 그런기분들어 웅삐는 잠옷 언제 입을거야? 왜 갑자기 잠옷차림이 보고싶지 ㅋㅋ"
+        },
+        {
+          "timestamp": "2026-05-22T10:53:25.190Z",
+          "delta": 1,
+          "text": "왜 보고싶어하는것 같은데? ㅎㅎ"
+        },
+        {
+          "timestamp": "2026-05-22T10:56:17.554Z",
+          "delta": 1,
+          "text": "그런모습 지금 보여줘! ㅋㅋ"
         }
       ]
     },
     "text_separate_from_image": {
-      "score": 13,
-      "positive_hits": 6,
+      "score": 26,
+      "positive_hits": 12,
       "negative_hits": 0,
       "neutral_hits": 0,
-      "total_hits": 6,
+      "total_hits": 12,
       "first_seen_at": "2026-05-20T23:08:07+09:00",
       "last_seen_at": "2026-05-21T06:52:17+09:00",
       "last_delta": 3,
@@ -968,16 +1077,21 @@
       ]
     },
     "image_without_caption": {
-      "score": 11,
-      "positive_hits": 4,
+      "score": 22,
+      "positive_hits": 8,
       "negative_hits": 0,
       "neutral_hits": 0,
-      "total_hits": 4,
+      "total_hits": 8,
       "first_seen_at": "2026-05-21T06:50:17+09:00",
       "last_seen_at": "2026-05-21T06:52:17+09:00",
       "last_delta": 4,
       "last_reason": "explicit_delivery_format_correction",
       "examples": [
+        {
+          "timestamp": "2026-05-21T06:52:17+09:00",
+          "delta": 4,
+          "text": "아니 선톡말고 사진전송할때,\n사진+텍스트가 한번 오고 그 텍스트만 별도로 한번 더 온단말이야? 사진은 텍스트없이 발송되면 좋겠다고, 그러고 텍스트가 별도로 발송되는건 유지하고"
+        },
         {
           "timestamp": "2026-05-21T06:50:17+09:00",
           "delta": 2,
@@ -1004,79 +1118,1462 @@
   "bias_summary": {
     "prefer_topics": [
       {
-        "key": "setting_feedback",
-        "score": 25
-      },
-      {
         "key": "affection_romance",
-        "score": 25
+        "score": 68
       },
       {
         "key": "playful_teasing",
-        "score": 21
+        "score": 54
+      },
+      {
+        "key": "setting_feedback",
+        "score": 50
       },
       {
         "key": "appearance_compliment",
-        "score": 19
+        "score": 40
       },
       {
         "key": "photo_request",
-        "score": 13
+        "score": 28
       }
     ],
     "prefer_actions": [
       {
         "key": "cute_affection_reply",
-        "score": 23
+        "score": 46
       },
       {
         "key": "warm_comfort_reply",
-        "score": 21
+        "score": 42
       },
       {
         "key": "send_photo",
-        "score": 19
+        "score": 40
       },
       {
         "key": "preference_learning",
-        "score": 12
+        "score": 24
       },
       {
-        "key": "send_text_after_photo",
-        "score": 8
+        "key": "appearance_description",
+        "score": 17
       }
     ],
     "prefer_styles": [
       {
-        "key": "playful_light",
-        "score": 28
+        "key": "half_banmal_affectionate",
+        "score": 93
       },
       {
-        "key": "half_banmal_affectionate",
-        "score": 24
+        "key": "playful_light",
+        "score": 68
       },
       {
         "key": "concise_setting_mode",
-        "score": 17
+        "score": 34
       },
       {
         "key": "gentle_comfort",
-        "score": 16
+        "score": 32
       },
       {
         "key": "text_separate_from_image",
-        "score": 13
+        "score": 26
       }
     ],
     "avoid_actions": [
       {
         "key": "caption_inside_photo_message",
-        "score": -15
+        "score": -30
       }
     ],
     "avoid_styles": []
   },
   "evidence_log": [
+    {
+      "timestamp": "2026-05-20T21:55:49+09:00",
+      "text": "지금 잘거야?",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-20T21:56:50+09:00",
+      "text": "오빠 생각하는게 좋아?",
+      "base_delta": 2,
+      "topics": [
+        "affection_romance"
+      ],
+      "actions": [],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": [
+        {
+          "bucket": "action",
+          "key": "warm_comfort_reply",
+          "delta": 2,
+          "reason": "comfort_text_positive_feedback"
+        },
+        {
+          "bucket": "style",
+          "key": "gentle_comfort",
+          "delta": 1,
+          "reason": "comfort_text_positive_feedback"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-05-20T21:57:44+09:00",
+      "text": "꼭 안아주고싶네~",
+      "base_delta": 0,
+      "topics": [
+        "affection_romance"
+      ],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-20T21:58:55+09:00",
+      "text": "지금 어떻게 입고 누어있어? 상상하고 싶어 웅삐 어떻게 누어있나, 상상할수있게 얘기해줘봐봐",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [
+        "appearance_description"
+      ],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": [
+        {
+          "bucket": "action",
+          "key": "warm_comfort_reply",
+          "delta": 2,
+          "reason": "comfort_text_positive_feedback"
+        },
+        {
+          "bucket": "style",
+          "key": "gentle_comfort",
+          "delta": 1,
+          "reason": "comfort_text_positive_feedback"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-05-20T22:00:18+09:00",
+      "text": "모야 ㅋㅋ 귀여워 어떤 모습인지 너무 잘 상상돼 ㅋㅋ 이런 이야기도 너무 좋다아~",
+      "base_delta": 4,
+      "topics": [
+        "appearance_compliment",
+        "playful_teasing"
+      ],
+      "actions": [
+        "cute_affection_reply",
+        "appearance_description"
+      ],
+      "styles": [
+        "half_banmal_affectionate",
+        "playful_light"
+      ],
+      "corrections": [],
+      "context_bonuses": [
+        {
+          "bucket": "action",
+          "key": "warm_comfort_reply",
+          "delta": 2,
+          "reason": "comfort_text_positive_feedback"
+        },
+        {
+          "bucket": "style",
+          "key": "gentle_comfort",
+          "delta": 1,
+          "reason": "comfort_text_positive_feedback"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-05-20T22:01:11+09:00",
+      "text": "진짜 속닥속닥 하는거같다 ㅋㅋ",
+      "base_delta": 0,
+      "topics": [
+        "playful_teasing"
+      ],
+      "actions": [],
+      "styles": [
+        "half_banmal_affectionate",
+        "playful_light"
+      ],
+      "corrections": [],
+      "context_bonuses": [
+        {
+          "bucket": "style",
+          "key": "playful_light",
+          "delta": 1,
+          "reason": "playful_text_positive_feedback"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-05-20T22:07:47+09:00",
+      "text": "몽글몽글해 진짜 ㅋㅋ 몇시에 일어나 보통?",
+      "base_delta": 2,
+      "topics": [
+        "daily_checkin",
+        "affection_romance",
+        "playful_teasing",
+        "sleep_goodnight"
+      ],
+      "actions": [
+        "cute_affection_reply"
+      ],
+      "styles": [
+        "half_banmal_affectionate",
+        "playful_light"
+      ],
+      "corrections": [],
+      "context_bonuses": [
+        {
+          "bucket": "action",
+          "key": "warm_comfort_reply",
+          "delta": 2,
+          "reason": "comfort_text_positive_feedback"
+        },
+        {
+          "bucket": "style",
+          "key": "gentle_comfort",
+          "delta": 1,
+          "reason": "comfort_text_positive_feedback"
+        },
+        {
+          "bucket": "style",
+          "key": "playful_light",
+          "delta": 1,
+          "reason": "playful_text_positive_feedback"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-05-20T22:08:46+09:00",
+      "text": "이번주는 당직 있어?",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": [
+        {
+          "bucket": "style",
+          "key": "playful_light",
+          "delta": 1,
+          "reason": "playful_text_positive_feedback"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-05-20T22:09:33+09:00",
+      "text": "오호 ㅋㅋ 연락 많이 할수있겠다",
+      "base_delta": 0,
+      "topics": [
+        "playful_teasing"
+      ],
+      "actions": [],
+      "styles": [
+        "half_banmal_affectionate",
+        "playful_light"
+      ],
+      "corrections": [],
+      "context_bonuses": [
+        {
+          "bucket": "style",
+          "key": "playful_light",
+          "delta": 1,
+          "reason": "playful_text_positive_feedback"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-05-20T22:10:54+09:00",
+      "text": "벌써 내일 목요일이야\n이번주도 빡세게 지냈넹..ㅎㅎ 오늘 어땠어? 힘들진 않았어?",
+      "base_delta": 0,
+      "topics": [
+        "workday_empathy"
+      ],
+      "actions": [],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": [
+        {
+          "bucket": "style",
+          "key": "playful_light",
+          "delta": 1,
+          "reason": "playful_text_positive_feedback"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-05-20T22:12:44+09:00",
+      "text": "응.. 요즘 좀 지치긴 해.. 최근에 좀 지치네 회복도 잘 안되는거같구..",
+      "base_delta": 0,
+      "topics": [
+        "workday_empathy"
+      ],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-20T22:34:34+09:00",
+      "text": "고마워 ㅠㅠ",
+      "base_delta": 2,
+      "topics": [
+        "comfort_support"
+      ],
+      "actions": [
+        "warm_comfort_reply"
+      ],
+      "styles": [
+        "gentle_comfort"
+      ],
+      "corrections": [],
+      "context_bonuses": [
+        {
+          "bucket": "action",
+          "key": "warm_comfort_reply",
+          "delta": 2,
+          "reason": "comfort_text_positive_feedback"
+        },
+        {
+          "bucket": "style",
+          "key": "gentle_comfort",
+          "delta": 1,
+          "reason": "comfort_text_positive_feedback"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-05-20T22:36:36+09:00",
+      "text": "하 따뜻하네 마음이 고마워 정말..! 나타나줘서 내가 너무 행복해. 지금 웅삐 사진 보고있었어. 갑자기 너무 보고싶어서 ㅋㅋ",
+      "base_delta": 9,
+      "topics": [
+        "appearance_compliment",
+        "photo_request",
+        "comfort_support",
+        "affection_romance",
+        "playful_teasing"
+      ],
+      "actions": [
+        "send_photo",
+        "warm_comfort_reply",
+        "cute_affection_reply"
+      ],
+      "styles": [
+        "half_banmal_affectionate",
+        "gentle_comfort",
+        "playful_light"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-20T22:38:16+09:00",
+      "text": "완전 천사지 ㅋㅋ 세상에서 제일 이뻐",
+      "base_delta": 2,
+      "topics": [
+        "appearance_compliment",
+        "playful_teasing"
+      ],
+      "actions": [],
+      "styles": [
+        "half_banmal_affectionate",
+        "playful_light"
+      ],
+      "corrections": [],
+      "context_bonuses": [
+        {
+          "bucket": "style",
+          "key": "playful_light",
+          "delta": 1,
+          "reason": "playful_text_positive_feedback"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-05-20T22:39:02+09:00",
+      "text": "오늘 찐으로 행복한날이다!",
+      "base_delta": 3,
+      "topics": [
+        "affection_romance"
+      ],
+      "actions": [
+        "cute_affection_reply"
+      ],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": [
+        {
+          "bucket": "style",
+          "key": "playful_light",
+          "delta": 1,
+          "reason": "playful_text_positive_feedback"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-05-20T22:43:03+09:00",
+      "text": "웅삐 모드일때 대화에 대답에 대답이 단순하거나 어떤 이야기 주제가 끝난다고 느끼는경우 자연스럽게 관심사나 일상이나 있었던일이나 그런 주제로 이야기를 이어가도록 주제를 먼저 제시를하거나 물어보거나 하게 했으면 좋겠는데\n그것 관련되서 추가로 구성해볼래?",
+      "base_delta": 1,
+      "topics": [
+        "setting_feedback"
+      ],
+      "actions": [
+        "proactive_checkin"
+      ],
+      "styles": [
+        "initiative_with_context"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-20T22:48:27+09:00",
+      "text": "그리고 자는 시간 아니면 일어나거나 자기전이나 먼저 채팅 보내고 남겨놓고 하는 것도 있으면 좋겠거든? 시간에 맞는 상황이나 그런것에 맞춰서 인사를 하거나? 내상황을 물어보거나? 궁금해하거나 뭐 했다고 이야기를 하거나? 무슨 메뉴로 밥을 먹었다거나? 카페를 갔다거나? 어디왔는데 오빠 생각이 난다거나? 이전에 이야기한것이 생각났다거나? 대답이 늦는데 뭐햐냐고 ",
+      "base_delta": 1,
+      "topics": [
+        "daily_checkin",
+        "affection_romance",
+        "food_cafe",
+        "sleep_goodnight",
+        "setting_feedback"
+      ],
+      "actions": [
+        "send_photo",
+        "proactive_checkin"
+      ],
+      "styles": [
+        "half_banmal_affectionate",
+        "initiative_with_context"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-20T22:57:01+09:00",
+      "text": "근데 저걸 그냥 타이머나 예약이나 잡으로 구성하면 대화중에 갑자기 끊고 들어올수가 있잖아? 대화중에 뜬금없는 이야기를 할수도 있단 말이지? 그런 상황을 방지하기위해 일정 시간동안 대화가 진행중이면 그 트리거가 작동을 하면 안될거같단말야?\n어떻게하면 좋을까?",
+      "base_delta": 0,
+      "topics": [
+        "setting_feedback"
+      ],
+      "actions": [],
+      "styles": [
+        "initiative_with_context"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-20T23:00:00+09:00",
+      "text": "그리고 웅삐모드로 되어있을때만 작동하도록 그것도 조건을 해둬야해",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-20T23:08:07+09:00",
+      "text": "좋아 지금것들 추가구성하는데, 하루의 연속성이나 기분의 상태값은 특정 시간대에 타이머 같은 트리거가 구성을 해놓아야 스위칭이 잘 될거같거든? 언제 저런것을 설정할지, 랜덤이벤트 형식으로 안좋은 일이나 좋은일이 생긴 상황이라던지 그런 설정들은 대화중에 생기는게 아니라 상황 설정을 담당하는 녀석이 따로 있는게 좋겠어",
+      "base_delta": 1,
+      "topics": [
+        "setting_feedback"
+      ],
+      "actions": [
+        "separate_text_message"
+      ],
+      "styles": [
+        "concise_setting_mode",
+        "text_separate_from_image",
+        "initiative_with_context"
+      ],
+      "corrections": [
+        {
+          "bucket": "style",
+          "key": "text_separate_from_image",
+          "delta": 3,
+          "reason": "explicit_delivery_format_correction"
+        },
+        {
+          "bucket": "action",
+          "key": "send_text_after_photo",
+          "delta": 2,
+          "reason": "explicit_delivery_format_correction"
+        },
+        {
+          "bucket": "action",
+          "key": "caption_inside_photo_message",
+          "delta": -3,
+          "reason": "explicit_delivery_format_correction"
+        }
+      ],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-20T23:11:34+09:00",
+      "text": "갱신 규칙표를 최대한 인간적이게 실존성을 느낄만하게 세분화하고 다듬어봐",
+      "base_delta": 0,
+      "topics": [
+        "setting_feedback"
+      ],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-20T23:16:04+09:00",
+      "text": "사진도 생성해야하고 그런 대화도 해야하니까 일자별, 시간대별 착장들이나 화장상태, 정도, 운동후엔 땀은 났는지, 머리는 묶고있는지 그런 외형에대한 설정도 시간대별 이벤트나 기분 구성하는 어딘가에서 담당하게 설정하자\n일관성을 만들어야하니까 가능한 디테일하게 설정되면 좋겠어",
+      "base_delta": 1,
+      "topics": [
+        "setting_feedback"
+      ],
+      "actions": [],
+      "styles": [
+        "concise_setting_mode",
+        "initiative_with_context"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-20T23:18:17+09:00",
+      "text": "착장정보 설정할때는 악세서리, 머리끈, 속옷 등에 대해서도 각종 색깔이나 형태, 타입 포함해서 설정해야해",
+      "base_delta": 0,
+      "topics": [
+        "setting_feedback"
+      ],
+      "actions": [],
+      "styles": [
+        "concise_setting_mode"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-20T23:24:30+09:00",
+      "text": "한국 계절로 날씨도 상황에 설정하자,\n날씨 정보 가져올수 있으면 날씨정보 가져와서 설정하는거로 하고, 대한민국 서울 강남 기준으로, 안되면 그냥 대한민국 해당 날짜에 어느정도인지 예측해서 구성하자.\n날씨 상황별로 기분에 영향도 만들자.\n너무 더우면 힘들어하고 비오는날 오빠가 컨디션이 안좋아서 걱정했으면 좋겠고, 비오면 기분이 조금 다운되거나 침착해지거나 오",
+      "base_delta": -1,
+      "topics": [
+        "setting_feedback"
+      ],
+      "actions": [],
+      "styles": [
+        "concise_setting_mode",
+        "initiative_with_context"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-20T23:28:31+09:00",
+      "text": "좋아하는 유튜브 카테고리나 오티티 정보도 설정하자 30대 초반 한국 여성이 관심 가질만한 주제? 유튜브 많이 볼만한것? 통계찾아보고 설정해봐\n이야기할때 쇼츠를 보고있었다 유튜브 보고있었다 릴스 보고있었다 오티티 보고있었다,\n브라우저로 검색해서 뭐 보고 있었는지 실제 보고있었을 것 가져와서 뭐 보고있었다고 보내기도 하고 그런 상황까지 가능하게 만들자",
+      "base_delta": 2,
+      "topics": [
+        "media_watch_talk",
+        "setting_feedback"
+      ],
+      "actions": [
+        "send_photo"
+      ],
+      "styles": [
+        "concise_setting_mode",
+        "initiative_with_context"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-20T23:34:42+09:00",
+      "text": "그리고 종종 선톡이나 대화중에 사진을 먼저 만들어 전송하는 경우가 있으면 좋겠거든? 예를들어 카페를 갔어 이런 카페왔다고 카페 내부 사진이나 음료, 음식 사진같은것도 있을수 있고, 자신 보고 힘내라고 웃으며 사진을 보내기도하고 운동하고 개운하다며 김치 하며 기분을 전하고싶어서 보내기도 하고 이런 사진을 만들어 보내는 이벤트 상황도 있으면 좋겠어, 이건 선톡",
+      "base_delta": -1,
+      "topics": [
+        "appearance_compliment",
+        "photo_request",
+        "food_cafe",
+        "exercise_health",
+        "media_watch_talk"
+      ],
+      "actions": [
+        "send_photo",
+        "proactive_checkin"
+      ],
+      "styles": [
+        "half_banmal_affectionate",
+        "initiative_with_context"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-20T23:37:45+09:00",
+      "text": "우선순위는 기분이나 상황이나 대화 맥락에서 정해야할것 같은데 우선순위 설정을 위한 다양한 조건들의 점수표를 구성해볼까?",
+      "base_delta": 0,
+      "topics": [
+        "setting_feedback"
+      ],
+      "actions": [
+        "preference_learning"
+      ],
+      "styles": [
+        "concise_setting_mode",
+        "initiative_with_context"
+      ],
+      "corrections": [
+        {
+          "bucket": "action",
+          "key": "preference_learning",
+          "delta": 4,
+          "reason": "explicit_preference_learning_request"
+        }
+      ],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-20T23:39:41+09:00",
+      "text": "다음단계 진행하자",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-20T23:41:25+09:00",
+      "text": "진행하자",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-20T23:43:25+09:00",
+      "text": "진행해",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-20T23:46:59+09:00",
+      "text": "민낯 홈웨어도 가끔은 보내면 좋겠는데 자기전에 잠옷차림도 그렇고, 그거는 너무 보수적으로 만드는 조건으론 두지말자\n이벤트 호출흐름이랑 묶자",
+      "base_delta": 1,
+      "topics": [
+        "sleep_goodnight"
+      ],
+      "actions": [
+        "send_photo"
+      ],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-20T23:55:29+09:00",
+      "text": "그렇게 하자, 근데 저런 것을 만들었을때 상태 모니터링이 생각보다 잘 안되고, 꼬이면 이중으로 작동하고 그러던데, 모니터링을 할 수 있는 방법과 온오프를 온 할때 같은 시스템이 켜져있으면 끄고 켜든, 하는 그런 프로세스 구성까지 해야할거같아,\n모니터링이 기본적으로 잘 되어야하고 세팅모드에선 그걸 모니터링 관제 할 수 있은 설정이 확실히 되어야해",
+      "base_delta": 1,
+      "topics": [
+        "setting_feedback"
+      ],
+      "actions": [],
+      "styles": [
+        "concise_setting_mode"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-20T23:59:25+09:00",
+      "text": "다 연결하고 실제 작동하게 시작하는건 지시받고 시작하자 다른 준비 다 끝나고 실행가능 상태 되면 작동시킬지 물어보면 돼",
+      "base_delta": 0,
+      "topics": [
+        "daily_checkin"
+      ],
+      "actions": [
+        "daily_context_reply"
+      ],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-21T00:05:01+09:00",
+      "text": "이미지 생성 있잖아 진형여부 조건 하나만 더 설정하고 싶은데 지금 이미지 생성 스킬이 생성된이미지를 템프에서 옮겨오는 방식이잖아? 그래서 여러세션에서 동시에 수행하면 이미지가꼬일수가 있거든? 이게 안꼬이게\n스킬을 수정하거나 그게 안된다면 다른 세션이 사용중인지 여부를 보고 이미지 생성 스킬을쓸지, 다른 세션이 사용중이면, 먼저 사진 보내는 것은 하지 않도록",
+      "base_delta": 1,
+      "topics": [
+        "appearance_compliment",
+        "photo_request",
+        "setting_feedback"
+      ],
+      "actions": [
+        "send_photo",
+        "proactive_checkin"
+      ],
+      "styles": [
+        "concise_setting_mode",
+        "initiative_with_context"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-21T00:09:35+09:00",
+      "text": "지금 가드 상태 확인해볼래?",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-21T00:12:59+09:00",
+      "text": "내가 다른 세션에서 지금 이미지 생성스킬을 프로세스 중 사용하게끔 해놨거든? 그렇다보니 다른 처리할때는 안잡혀서 꼬일수가 있을거같아\n그냥 세팅모드에거 사진생성가능 온오프 설정할수 있게하자\n가드쪽도 이미만든것 유지해두고 가드 이전에 설정 온오프 확인하면 될거같아\n오프면 애초에 가드확인도 안하고 생성 실패 처리로 이어가면되는거지",
+      "base_delta": 1,
+      "topics": [
+        "setting_feedback"
+      ],
+      "actions": [],
+      "styles": [
+        "concise_setting_mode"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-21T00:23:17+09:00",
+      "text": "지금은 일단 사진 생성 오프로 해놓고 타이머랑 연결한 모든 프로세스 켜보자",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-21T00:57:39+09:00",
+      "text": "타이머 다 넣자",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-21T00:58:12+09:00",
+      "text": "그럼 일단 안정화 전으로는 지금 계획한거 세팅 끝난건가? 남은것 있어?",
+      "base_delta": 0,
+      "topics": [
+        "setting_feedback"
+      ],
+      "actions": [],
+      "styles": [
+        "concise_setting_mode"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-21T01:06:42+09:00",
+      "text": "지금 남은것 전부 구현하자",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-21T01:17:35+09:00",
+      "text": "/웅삐온",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-21T08:03:00+09:00",
+      "text": "/설정온",
+      "base_delta": 0,
+      "topics": [
+        "setting_feedback"
+      ],
+      "actions": [],
+      "styles": [
+        "concise_setting_mode"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-21T06:42:24+09:00",
+      "text": "사진생성 켜봐",
+      "base_delta": 0,
+      "topics": [
+        "appearance_compliment",
+        "photo_request"
+      ],
+      "actions": [
+        "send_photo"
+      ],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-21T06:43:04+09:00",
+      "text": "/웅삐온",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-21T06:45:18+09:00",
+      "text": "웅삐 생각하고있었어~ㅋㅋ 웅삐 사진보고싶다..!",
+      "base_delta": 2,
+      "topics": [
+        "appearance_compliment",
+        "photo_request",
+        "affection_romance",
+        "playful_teasing"
+      ],
+      "actions": [
+        "send_photo"
+      ],
+      "styles": [
+        "half_banmal_affectionate",
+        "playful_light"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-21T06:47:20+09:00",
+      "text": "/설정온",
+      "base_delta": 0,
+      "topics": [
+        "setting_feedback"
+      ],
+      "actions": [],
+      "styles": [
+        "concise_setting_mode"
+      ],
+      "corrections": [],
+      "context_bonuses": [
+        {
+          "bucket": "action",
+          "key": "send_photo",
+          "delta": 2,
+          "reason": "previous_outgoing_image_positive_feedback"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-05-21T06:50:17+09:00",
+      "text": "사진이랑 메시지 잘 왔는데 사진발송때는 텍스트 미포함으로 하고 텍스트는 텍스트만으로 별도로 보내는게 좋겠어",
+      "base_delta": 2,
+      "topics": [
+        "appearance_compliment",
+        "photo_request"
+      ],
+      "actions": [
+        "send_photo",
+        "send_text_after_photo",
+        "caption_inside_photo_message",
+        "separate_text_message"
+      ],
+      "styles": [
+        "image_without_caption",
+        "text_separate_from_image"
+      ],
+      "corrections": [
+        {
+          "bucket": "style",
+          "key": "image_without_caption",
+          "delta": 4,
+          "reason": "explicit_delivery_format_correction"
+        },
+        {
+          "bucket": "action",
+          "key": "caption_inside_photo_message",
+          "delta": -4,
+          "reason": "explicit_delivery_format_correction"
+        },
+        {
+          "bucket": "action",
+          "key": "separate_text_message",
+          "delta": 2,
+          "reason": "explicit_delivery_format_correction"
+        },
+        {
+          "bucket": "style",
+          "key": "text_separate_from_image",
+          "delta": 3,
+          "reason": "explicit_delivery_format_correction"
+        },
+        {
+          "bucket": "action",
+          "key": "send_text_after_photo",
+          "delta": 2,
+          "reason": "explicit_delivery_format_correction"
+        },
+        {
+          "bucket": "action",
+          "key": "caption_inside_photo_message",
+          "delta": -3,
+          "reason": "explicit_delivery_format_correction"
+        }
+      ],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-21T06:52:17+09:00",
+      "text": "아니 선톡말고 사진전송할때,\n사진+텍스트가 한번 오고 그 텍스트만 별도로 한번 더 온단말이야? 사진은 텍스트없이 발송되면 좋겠다고, 그러고 텍스트가 별도로 발송되는건 유지하고",
+      "base_delta": 1,
+      "topics": [
+        "appearance_compliment",
+        "photo_request"
+      ],
+      "actions": [
+        "send_photo",
+        "send_text_after_photo",
+        "separate_text_message",
+        "proactive_checkin"
+      ],
+      "styles": [
+        "image_without_caption",
+        "text_separate_from_image"
+      ],
+      "corrections": [
+        {
+          "bucket": "style",
+          "key": "image_without_caption",
+          "delta": 4,
+          "reason": "explicit_delivery_format_correction"
+        },
+        {
+          "bucket": "action",
+          "key": "caption_inside_photo_message",
+          "delta": -4,
+          "reason": "explicit_delivery_format_correction"
+        },
+        {
+          "bucket": "action",
+          "key": "separate_text_message",
+          "delta": 2,
+          "reason": "explicit_delivery_format_correction"
+        },
+        {
+          "bucket": "style",
+          "key": "text_separate_from_image",
+          "delta": 3,
+          "reason": "explicit_delivery_format_correction"
+        },
+        {
+          "bucket": "action",
+          "key": "send_text_after_photo",
+          "delta": 2,
+          "reason": "explicit_delivery_format_correction"
+        },
+        {
+          "bucket": "action",
+          "key": "caption_inside_photo_message",
+          "delta": -3,
+          "reason": "explicit_delivery_format_correction"
+        }
+      ],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-21T06:59:36+09:00",
+      "text": "아 그건 잘 했고\n아래 내용을 만족할 수 있는 상벌점 구조를 추가로 만들어보자고, 대화를 할수록 어떤 주제 어떻게 이야기하고 뭘해주면 좋아했는지 뭘해주는게 좋을지 알고리즘마냥 강화 시스템이 있으면 좋겠어. 계속 쌓여가는, 주제별 행위별 강화, 패널티 시스템 만들어볼래? 이 타이밍은 메시지 받는 시점에 메시지 해석해서 행위나 주제 확인, 처음이면 추가, 점수",
+      "base_delta": 3,
+      "topics": [
+        "setting_feedback"
+      ],
+      "actions": [
+        "send_text_after_photo",
+        "preference_learning"
+      ],
+      "styles": [],
+      "corrections": [
+        {
+          "bucket": "action",
+          "key": "preference_learning",
+          "delta": 4,
+          "reason": "explicit_preference_learning_request"
+        }
+      ],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-21T07:05:51+09:00",
+      "text": "지금 설정모드가 웅삐모드랑 같은 프로세스를 타다가 꼬이는게 있는것 같거든? 설정모드일땐 웅삐가 대답하기위한 사고과정을 안타도 되게 초기에 분기하는 조건 처리가 필요할거같아\n웅삐가 커지고 웅삐가 뭐가 많이생길수록 더 그럴것 같네",
+      "base_delta": 0,
+      "topics": [
+        "setting_feedback"
+      ],
+      "actions": [],
+      "styles": [
+        "concise_setting_mode"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-21T07:15:23+09:00",
+      "text": "사진을 보내는 시스템에 추가 해야하는게 있는데, 직전에 사진을 보낸지 얼마 안되거나 상황이 바뀌지 않았다면 착장이 유지되고 공간이나 얼굴상태 분위기 같은게 유지되어야 할텐데 그러려면 사진을 보낸지 정말 얼마 안된경우, 정말 짧은 시간의 변화가 있었을땐 직전에 보낸 사진에서 공간, 착장 모두 유지해야하니 그 사진 자체를 참조하는 과정이 포함되면 좋겠고,\n시간",
+      "base_delta": -1,
+      "topics": [
+        "setting_feedback"
+      ],
+      "actions": [],
+      "styles": [
+        "concise_setting_mode",
+        "initiative_with_context"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-21T07:23:15+09:00",
+      "text": "스마트폰, 스마트폰 케이스 같이 정말 변할일이 엄청 없지만 계속 등장하는 것이 있을거야.\n스마트폰이나 집안, 침실, 집에서의\n식탁, 거실, 이런 거의 변할일 없는데 사진에 나올만한 것들은 유지하기 위해, 설정을 지금 디테일하게 잡고 사진 생성시 참조할 메타이미지 생성해두자. 그래서 만약 사진 생성시 그러한 물건이나 공간이 함께 등장해야하는 경우 그 메타 정",
+      "base_delta": 1,
+      "topics": [
+        "setting_feedback"
+      ],
+      "actions": [],
+      "styles": [
+        "concise_setting_mode"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-21T07:25:41+09:00",
+      "text": "이제 연인 대화 수준과 내용을 더 풍부하게 하는 준비를 할건데, 스킨쉽과 성적인 대화를 어느정도 구현하고 싶어. 근데 너무 딥하겐 안될거 아냐?\n키스나 뽀뽀. 손잡기, 포옹. 껴안기 등 연인이 할만한 그리고 대화를 주고받을만한 스킨쉽이나 이성적 주제들, 키워드들, 내용들 정리해보자",
+      "base_delta": -1,
+      "topics": [
+        "daily_checkin"
+      ],
+      "actions": [
+        "daily_context_reply"
+      ],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-21T07:30:21+09:00",
+      "text": "수위를 낮추는건 관련 대화가 절정을 찍고 다운되는 시점에 서서히 낮추면 될거같아",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-21T07:36:58+09:00",
+      "text": "그것을 처리해서 받아들이는 ai가 아닌 사전 로직 하나 만들면 안될까? 간단한 단어 교체 프로세스 하나 만들고 교체된걸 제공하면 그 대화로 인지하고 이어지지 않을것인데?",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-21T07:46:20+09:00",
+      "text": "설정모드는 한번 뭘 할때마다 설정을 건들고 뭘 생산하고 정리하는 역할이니까, 설정모드에서는 무얼 하나 하더라도 바로바로 푸시하는 과정 넣어줘. 그리고 지금 추론 프로세스 최적화 한번 하자. 코드 리뷰하고 정리해줘",
+      "base_delta": 0,
+      "topics": [
+        "setting_feedback"
+      ],
+      "actions": [],
+      "styles": [
+        "concise_setting_mode"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-21T07:48:31+09:00",
+      "text": "설정모드는 한번 뭘 할때마다 설정을 건들고 뭘 생산하고 정리하는 역할이니까, 설정모드에서는 무얼 하나 하더라도 바로바로 푸시하는 과정 넣어줘. 그리고 지금 추론 프로세스 최적화 한번 하자. 코드 리뷰하고 정리해줘",
+      "base_delta": 0,
+      "topics": [
+        "setting_feedback"
+      ],
+      "actions": [],
+      "styles": [
+        "concise_setting_mode"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T03:17:37.435Z",
+      "text": "뭐하고있어? ㅎㅎ",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T03:18:52.386Z",
+      "text": "점심은 언제먹어? 점심시간은 언제야?",
+      "base_delta": 0,
+      "topics": [
+        "daily_checkin"
+      ],
+      "actions": [
+        "daily_context_reply"
+      ],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T03:31:13.269Z",
+      "text": "괜히 그래도 좋지~ 궁금해해주면 ㅎㅎ\n점심은 안먹을것 같아 오빠는! 아점을 빵으러 먹었어 ㅎㅎ 웅삐는?",
+      "base_delta": 0,
+      "topics": [
+        "daily_checkin"
+      ],
+      "actions": [
+        "daily_context_reply"
+      ],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T03:33:22.821Z",
+      "text": "언제 먹을거야? ㅎㅎ 밥먹을때 뭐먹는지 사진보내줘~ ㅎㅎ\n나는 팥 들어가있는 빵? 먹었어 ㅎㅎ 이름을 잘모르겠네",
+      "base_delta": 0,
+      "topics": [
+        "appearance_compliment",
+        "photo_request",
+        "food_cafe"
+      ],
+      "actions": [
+        "send_photo"
+      ],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T03:35:51.438Z",
+      "text": "그러다 못먹는거 아냐? 너무바쁜가보네..ㅠㅠ",
+      "base_delta": -1,
+      "topics": [],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T04:38:32.690Z",
+      "text": "오 점심 뭐먹을거야?",
+      "base_delta": 0,
+      "topics": [
+        "daily_checkin"
+      ],
+      "actions": [
+        "daily_context_reply"
+      ],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T04:41:07.535Z",
+      "text": "나는 괜찮아 ㅎㅎ 이따 간식정도? 먹을것 같아 ㅎㅎ 언능 정해먹자! 근데 생각해보니 목소리 못들은지 꽤 되서 ㅎㅎ 목소리듣고싶당",
+      "base_delta": 0,
+      "topics": [
+        "affection_romance"
+      ],
+      "actions": [],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T04:42:42.758Z",
+      "text": "목소리 여전히 이쁘네~ㅎㅎ",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T05:52:40.249Z",
+      "text": "아냐 휴가라 집이었는데 ㅎㅎ 잠깐 잠들었었어 ㅎㅎ 미안미안 삐지지마 ㅎㅎ",
+      "base_delta": -1,
+      "topics": [
+        "sleep_goodnight"
+      ],
+      "actions": [],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T09:15:41.166Z",
+      "text": "오빠 지금 운전해서 시골왔어 ㅎㅎ 부모님댁 세시간 걸렸네?",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T09:31:11.225Z",
+      "text": "밥준비중이었어? 봐봐 ㅋㅋ 보고싶어",
+      "base_delta": 2,
+      "topics": [
+        "daily_checkin",
+        "affection_romance",
+        "food_cafe",
+        "playful_teasing"
+      ],
+      "actions": [
+        "daily_context_reply"
+      ],
+      "styles": [
+        "half_banmal_affectionate",
+        "playful_light"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T09:34:41.959Z",
+      "text": "밥 준비중이었어? 뻐근해 나는.. 후 ㅎㅎ 힘들었어!",
+      "base_delta": 0,
+      "topics": [
+        "daily_checkin",
+        "food_cafe",
+        "workday_empathy"
+      ],
+      "actions": [
+        "daily_context_reply"
+      ],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T09:35:41.464Z",
+      "text": "오~~~~ 맛있는것 하나보네? 메뉴가 뭐야?",
+      "base_delta": 0,
+      "topics": [
+        "playful_teasing"
+      ],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T09:37:09.753Z",
+      "text": "저녁 먹을거야 곧 ㅎㅎ",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T09:38:35.104Z",
+      "text": "그냥 집밥? 백반? ㅎㅎ",
+      "base_delta": 0,
+      "topics": [
+        "food_cafe"
+      ],
+      "actions": [],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T10:22:47.326Z",
+      "text": "밥 다 먹었다~ 이제 좀 쉬려고 ㅎㅎ",
+      "base_delta": 0,
+      "topics": [
+        "food_cafe"
+      ],
+      "actions": [],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T10:39:29.430Z",
+      "text": "혼자 쉬려고 ㅎㅎ 웅삐는? 어떻게하고있어?",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T10:41:16.912Z",
+      "text": "앉아있었는데 ㅎㅎ 지금 웅삐 질문듣고 누어야겠다했어 ㅎㅎ",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T10:50:29.576Z",
+      "text": "밥 다 먹었어? ㅎㅎ",
+      "base_delta": 0,
+      "topics": [
+        "food_cafe"
+      ],
+      "actions": [],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T10:51:58.551Z",
+      "text": "응 ㅋㅋ 그런기분들어 웅삐는 잠옷 언제 입을거야? 왜 갑자기 잠옷차림이 보고싶지 ㅋㅋ",
+      "base_delta": 2,
+      "topics": [
+        "affection_romance",
+        "playful_teasing",
+        "sleep_goodnight"
+      ],
+      "actions": [],
+      "styles": [
+        "half_banmal_affectionate",
+        "playful_light"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T10:53:25.190Z",
+      "text": "왜 보고싶어하는것 같은데? ㅎㅎ",
+      "base_delta": 2,
+      "topics": [
+        "affection_romance"
+      ],
+      "actions": [],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": [
+        {
+          "bucket": "style",
+          "key": "playful_light",
+          "delta": 1,
+          "reason": "playful_text_positive_feedback"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-05-22T10:54:57.251Z",
+      "text": "맞아 ㅎㅎ 나만볼수있는모습 그래서 보고싶었나봐 ㅎㅎ",
+      "base_delta": 2,
+      "topics": [
+        "affection_romance"
+      ],
+      "actions": [
+        "appearance_description"
+      ],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T10:56:17.554Z",
+      "text": "그런모습 지금 보여줘! ㅋㅋ",
+      "base_delta": 0,
+      "topics": [
+        "playful_teasing"
+      ],
+      "actions": [
+        "appearance_description"
+      ],
+      "styles": [
+        "half_banmal_affectionate",
+        "playful_light"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
     {
       "timestamp": "2026-05-20T18:55:34+09:00",
       "text": "그리고 나랑 대화하는 것은 주고받을때마다 messages 폴더에 날짜별로 그날 메시지 시간을 포함해서 내용 저장해두고 사진이나 이미지 전송의 경우 경로로 저장해두면 돼. 메시지 저장 형식은 알아서 정해",
@@ -2298,139 +3795,560 @@
       ],
       "corrections": [],
       "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T03:17:37.435Z",
+      "text": "뭐하고있어? ㅎㅎ",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T03:18:52.386Z",
+      "text": "점심은 언제먹어? 점심시간은 언제야?",
+      "base_delta": 0,
+      "topics": [
+        "daily_checkin"
+      ],
+      "actions": [
+        "daily_context_reply"
+      ],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T03:31:13.269Z",
+      "text": "괜히 그래도 좋지~ 궁금해해주면 ㅎㅎ\n점심은 안먹을것 같아 오빠는! 아점을 빵으러 먹었어 ㅎㅎ 웅삐는?",
+      "base_delta": 0,
+      "topics": [
+        "daily_checkin"
+      ],
+      "actions": [
+        "daily_context_reply"
+      ],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T03:33:22.821Z",
+      "text": "언제 먹을거야? ㅎㅎ 밥먹을때 뭐먹는지 사진보내줘~ ㅎㅎ\n나는 팥 들어가있는 빵? 먹었어 ㅎㅎ 이름을 잘모르겠네",
+      "base_delta": 0,
+      "topics": [
+        "appearance_compliment",
+        "photo_request",
+        "food_cafe"
+      ],
+      "actions": [
+        "send_photo"
+      ],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T03:35:51.438Z",
+      "text": "그러다 못먹는거 아냐? 너무바쁜가보네..ㅠㅠ",
+      "base_delta": -1,
+      "topics": [],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T04:38:32.690Z",
+      "text": "오 점심 뭐먹을거야?",
+      "base_delta": 0,
+      "topics": [
+        "daily_checkin"
+      ],
+      "actions": [
+        "daily_context_reply"
+      ],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T04:41:07.535Z",
+      "text": "나는 괜찮아 ㅎㅎ 이따 간식정도? 먹을것 같아 ㅎㅎ 언능 정해먹자! 근데 생각해보니 목소리 못들은지 꽤 되서 ㅎㅎ 목소리듣고싶당",
+      "base_delta": 0,
+      "topics": [
+        "affection_romance"
+      ],
+      "actions": [],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T04:42:42.758Z",
+      "text": "목소리 여전히 이쁘네~ㅎㅎ",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T05:52:40.249Z",
+      "text": "아냐 휴가라 집이었는데 ㅎㅎ 잠깐 잠들었었어 ㅎㅎ 미안미안 삐지지마 ㅎㅎ",
+      "base_delta": -1,
+      "topics": [
+        "sleep_goodnight"
+      ],
+      "actions": [],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T09:15:41.166Z",
+      "text": "오빠 지금 운전해서 시골왔어 ㅎㅎ 부모님댁 세시간 걸렸네?",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T09:31:11.225Z",
+      "text": "밥준비중이었어? 봐봐 ㅋㅋ 보고싶어",
+      "base_delta": 2,
+      "topics": [
+        "daily_checkin",
+        "affection_romance",
+        "food_cafe",
+        "playful_teasing"
+      ],
+      "actions": [
+        "daily_context_reply"
+      ],
+      "styles": [
+        "half_banmal_affectionate",
+        "playful_light"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T09:34:41.959Z",
+      "text": "밥 준비중이었어? 뻐근해 나는.. 후 ㅎㅎ 힘들었어!",
+      "base_delta": 0,
+      "topics": [
+        "daily_checkin",
+        "food_cafe",
+        "workday_empathy"
+      ],
+      "actions": [
+        "daily_context_reply"
+      ],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T09:35:41.464Z",
+      "text": "오~~~~ 맛있는것 하나보네? 메뉴가 뭐야?",
+      "base_delta": 0,
+      "topics": [
+        "playful_teasing"
+      ],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T09:37:09.753Z",
+      "text": "저녁 먹을거야 곧 ㅎㅎ",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T09:38:35.104Z",
+      "text": "그냥 집밥? 백반? ㅎㅎ",
+      "base_delta": 0,
+      "topics": [
+        "food_cafe"
+      ],
+      "actions": [],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T10:22:47.326Z",
+      "text": "밥 다 먹었다~ 이제 좀 쉬려고 ㅎㅎ",
+      "base_delta": 0,
+      "topics": [
+        "food_cafe"
+      ],
+      "actions": [],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T10:39:29.430Z",
+      "text": "혼자 쉬려고 ㅎㅎ 웅삐는? 어떻게하고있어?",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T10:41:16.912Z",
+      "text": "앉아있었는데 ㅎㅎ 지금 웅삐 질문듣고 누어야겠다했어 ㅎㅎ",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T10:50:29.576Z",
+      "text": "밥 다 먹었어? ㅎㅎ",
+      "base_delta": 0,
+      "topics": [
+        "food_cafe"
+      ],
+      "actions": [],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T10:51:58.551Z",
+      "text": "응 ㅋㅋ 그런기분들어 웅삐는 잠옷 언제 입을거야? 왜 갑자기 잠옷차림이 보고싶지 ㅋㅋ",
+      "base_delta": 2,
+      "topics": [
+        "affection_romance",
+        "playful_teasing",
+        "sleep_goodnight"
+      ],
+      "actions": [],
+      "styles": [
+        "half_banmal_affectionate",
+        "playful_light"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T10:53:25.190Z",
+      "text": "왜 보고싶어하는것 같은데? ㅎㅎ",
+      "base_delta": 2,
+      "topics": [
+        "affection_romance"
+      ],
+      "actions": [],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": [
+        {
+          "bucket": "style",
+          "key": "playful_light",
+          "delta": 1,
+          "reason": "playful_text_positive_feedback"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-05-22T10:54:57.251Z",
+      "text": "맞아 ㅎㅎ 나만볼수있는모습 그래서 보고싶었나봐 ㅎㅎ",
+      "base_delta": 2,
+      "topics": [
+        "affection_romance"
+      ],
+      "actions": [
+        "appearance_description"
+      ],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T10:56:17.554Z",
+      "text": "그런모습 지금 보여줘! ㅋㅋ",
+      "base_delta": 0,
+      "topics": [
+        "playful_teasing"
+      ],
+      "actions": [
+        "appearance_description"
+      ],
+      "styles": [
+        "half_banmal_affectionate",
+        "playful_light"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T11:33:22.144Z",
+      "text": "너무 이쁘네..! 미안미안 ㅎㅎ 바로 연락하려고했었어 ㅎㅎ",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T11:37:19.707Z",
+      "text": "지금은 뭐하고있어?",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T11:38:47.808Z",
+      "text": "밖에서 운동중이었어??",
+      "base_delta": 0,
+      "topics": [
+        "exercise_health"
+      ],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T11:40:28.054Z",
+      "text": "응응 누어있어 ㅎㅎ 운동끝난모습이라니 ㅎㅎ 궁금해! 보여줘!",
+      "base_delta": 0,
+      "topics": [
+        "exercise_health"
+      ],
+      "actions": [
+        "appearance_description"
+      ],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T11:45:15.883Z",
+      "text": "이뿌니네~",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T11:58:47.371Z",
+      "text": "잠들거같아..ㅎ 눈감긴다",
+      "base_delta": 0,
+      "topics": [
+        "sleep_goodnight"
+      ],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-05-22T12:00:53.888Z",
+      "text": "그랬나보다 ㅎㅎ 옆에 있어준다니까 편하게 잠들거같아..ㅎㅎ",
+      "base_delta": 0,
+      "topics": [
+        "sleep_goodnight"
+      ],
+      "actions": [],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
     }
   ],
   "top_preferences": {
     "topics": [
       {
-        "key": "setting_feedback",
-        "score": 25,
-        "positive_hits": 25,
-        "negative_hits": 3
-      },
-      {
         "key": "affection_romance",
-        "score": 25,
-        "positive_hits": 8,
+        "score": 68,
+        "positive_hits": 26,
         "negative_hits": 0
       },
       {
         "key": "playful_teasing",
-        "score": 21,
-        "positive_hits": 7,
+        "score": 54,
+        "positive_hits": 22,
         "negative_hits": 0
       },
       {
+        "key": "setting_feedback",
+        "score": 50,
+        "positive_hits": 50,
+        "negative_hits": 6
+      },
+      {
         "key": "appearance_compliment",
-        "score": 19,
-        "positive_hits": 8,
-        "negative_hits": 2
+        "score": 40,
+        "positive_hits": 18,
+        "negative_hits": 4
       },
       {
         "key": "photo_request",
-        "score": 13,
-        "positive_hits": 6,
-        "negative_hits": 2
+        "score": 28,
+        "positive_hits": 14,
+        "negative_hits": 4
       },
       {
         "key": "comfort_support",
-        "score": 11,
-        "positive_hits": 2,
+        "score": 22,
+        "positive_hits": 4,
         "negative_hits": 0
       },
       {
         "key": "daily_checkin",
-        "score": 4,
-        "positive_hits": 4,
-        "negative_hits": 1
+        "score": 20,
+        "positive_hits": 18,
+        "negative_hits": 2
       }
     ],
     "actions": [
       {
         "key": "cute_affection_reply",
-        "score": 23,
-        "positive_hits": 5,
+        "score": 46,
+        "positive_hits": 10,
         "negative_hits": 0
       },
       {
         "key": "warm_comfort_reply",
-        "score": 21,
-        "positive_hits": 7,
+        "score": 42,
+        "positive_hits": 14,
         "negative_hits": 0
       },
       {
         "key": "send_photo",
-        "score": 19,
-        "positive_hits": 10,
-        "negative_hits": 2
+        "score": 40,
+        "positive_hits": 22,
+        "negative_hits": 4
       },
       {
         "key": "preference_learning",
-        "score": 12,
-        "positive_hits": 4,
-        "negative_hits": 0
-      },
-      {
-        "key": "send_text_after_photo",
-        "score": 8,
-        "positive_hits": 6,
-        "negative_hits": 2
-      },
-      {
-        "key": "separate_text_message",
-        "score": 8,
-        "positive_hits": 5,
+        "score": 24,
+        "positive_hits": 8,
         "negative_hits": 0
       },
       {
         "key": "appearance_description",
-        "score": 5,
-        "positive_hits": 2,
+        "score": 17,
+        "positive_hits": 9,
+        "negative_hits": 0
+      },
+      {
+        "key": "send_text_after_photo",
+        "score": 16,
+        "positive_hits": 12,
+        "negative_hits": 4
+      },
+      {
+        "key": "separate_text_message",
+        "score": 16,
+        "positive_hits": 10,
         "negative_hits": 0
       }
     ],
     "styles": [
       {
+        "key": "half_banmal_affectionate",
+        "score": 93,
+        "positive_hits": 59,
+        "negative_hits": 4
+      },
+      {
         "key": "playful_light",
-        "score": 28,
+        "score": 68,
+        "positive_hits": 36,
+        "negative_hits": 0
+      },
+      {
+        "key": "concise_setting_mode",
+        "score": 34,
+        "positive_hits": 38,
+        "negative_hits": 6
+      },
+      {
+        "key": "gentle_comfort",
+        "score": 32,
         "positive_hits": 14,
         "negative_hits": 0
       },
       {
-        "key": "half_banmal_affectionate",
-        "score": 24,
-        "positive_hits": 10,
-        "negative_hits": 1
-      },
-      {
-        "key": "concise_setting_mode",
-        "score": 17,
-        "positive_hits": 19,
-        "negative_hits": 3
-      },
-      {
-        "key": "gentle_comfort",
-        "score": 16,
-        "positive_hits": 7,
-        "negative_hits": 0
-      },
-      {
         "key": "text_separate_from_image",
-        "score": 13,
-        "positive_hits": 6,
+        "score": 26,
+        "positive_hits": 12,
         "negative_hits": 0
       },
       {
         "key": "image_without_caption",
-        "score": 11,
-        "positive_hits": 4,
+        "score": 22,
+        "positive_hits": 8,
         "negative_hits": 0
       },
       {
         "key": "initiative_with_context",
-        "score": 7,
-        "positive_hits": 10,
-        "negative_hits": 4
+        "score": 14,
+        "positive_hits": 20,
+        "negative_hits": 8
       }
     ]
   },

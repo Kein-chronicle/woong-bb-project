@@ -79,8 +79,28 @@
       "scope": "situation_engine",
       "days": ["mon", "tue", "wed", "thu", "fri"],
       "time": "18:00",
-      "target_activity": "dinner_or_cooking",
-      "reason": "weekday_dinner"
+      "target_activity": "dinner_deciding",
+      "reason": "weekday_dinner_deciding"
+    },
+    {
+      "id": "weekday_dinner_prepare_or_order",
+      "enabled": true,
+      "type": "time_block_update",
+      "scope": "situation_engine",
+      "days": ["mon", "tue", "wed", "thu", "fri"],
+      "time": "18:10",
+      "target_activity": "dinner_preparing",
+      "reason": "weekday_dinner_prepare_or_order"
+    },
+    {
+      "id": "weekday_dinner_eating",
+      "enabled": true,
+      "type": "time_block_update",
+      "scope": "situation_engine",
+      "days": ["mon", "tue", "wed", "thu", "fri"],
+      "time": "18:35",
+      "target_activity": "dinner_eating",
+      "reason": "weekday_dinner_eating"
     },
     {
       "id": "weekday_exercise_or_cafe",
@@ -88,7 +108,7 @@
       "type": "time_block_update",
       "scope": "situation_engine",
       "days": ["mon", "tue", "wed", "thu", "fri"],
-      "time": "19:30",
+      "time": "19:05",
       "target_activity": "exercise_or_cafe",
       "reason": "weekday_evening_branch"
     },

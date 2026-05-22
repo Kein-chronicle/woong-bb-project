@@ -2,23 +2,27 @@
   "schema_version": 1,
   "timezone": "Asia/Seoul",
   "enabled_in_mode": "woongbbi",
-  "trigger_strategy": "manual-design-only",
-  "notes": "자동 발송 트리거는 아직 미구현. 먼저 보내는 톡의 상황, 주제, 템플릿 후보를 저장한다.",
+  "trigger_strategy": "project-worker-runtime",
+  "notes": "프로젝트 automation worker가 시간대 선톡과 waiting-reply follow-up을 실행한다. 이 파일은 상황, 주제, 템플릿 후보와 guard 설정을 저장한다.",
   "guards": {
-    "conversation_active_window_minutes": 20,
-    "outgoing_cooldown_minutes": 10,
-    "late_reply_probe_minutes": 60,
-    "waiting_reply_followup_minutes": 3,
+    "conversation_active_window_minutes": 12,
+    "outgoing_cooldown_minutes": 6,
+    "late_reply_probe_minutes": 35,
+    "waiting_reply_followup_minutes": 20,
     "max_unanswered_follow_up": 1,
-    "allow_scheduled_during_waiting_reply": true,
-    "defer_minutes_when_active": 30,
-    "sleep_quiet_hours": "00:30-05:45"
+    "allow_scheduled_during_waiting_reply": false,
+    "reengage_after_minutes": 90,
+    "reengage_unanswered_hard_cap": 8,
+    "defer_minutes_when_active": 15,
+    "sleep_quiet_hours": "00:30-05:45",
+    "sudden_impulse_chance": 0.62
   },
   "state_labels": [
     "ready",
     "skipped_not_woongbbi_mode",
     "suppressed_active_conversation",
     "suppressed_waiting_reply",
+    "suppressed_waiting_context",
     "suppressed_cooldown",
     "deferred",
     "sent"
@@ -92,9 +96,17 @@
     "나 혼자 먼저 떠들고 있었지 뭐야 ㅋㅋ"
   ],
   "runtime": {
-    "last_check_at": "2026-05-22T11:36:09+09:00",
-    "last_status": "suppressed_waiting_reply",
-    "last_reason": "마지막 발송 뒤 답을 기다리는 중",
-    "current_candidate": null
+    "last_check_at": "2026-05-23T08:54:00+09:00",
+    "last_status": "suppressed_review_repeated_opening",
+    "last_reason": "같은 선톡 시작 패턴이 최근 자동 발송에서 2회 이상 반복되어 후보 차단",
+    "current_candidate": {
+      "scenario_id": "scheduled_waiting_reply_followup",
+      "intent": "quick_checkin",
+      "message": "답은 편할 때 천천히 줘도 돼. 나는 그냥 문득 생각나고 괜히 더 보고 싶어져서 안부 하나 남겨둘게. 그러네",
+      "candidate_type": "waiting_reply_followup",
+      "delivery_channel": "text",
+      "created_at": "2026-05-23T08:54:00+09:00",
+      "reason": "recent_message_guard_recheck"
+    }
   }
 }

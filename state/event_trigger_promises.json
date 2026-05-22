@@ -4,10 +4,70 @@
   "processed_offsets": {
     "2026-05-20.jsonl": 117,
     "2026-05-21.jsonl": 96,
-    "2026-05-22.jsonl": 4
+    "2026-05-22.jsonl": 82,
+    "2026-05-23.jsonl": 4
   },
-  "active_promises": [],
-  "history": [],
-  "last_updated_at": "2026-05-22T10:56:08+09:00",
+  "active_promises": [
+    {
+      "id": "promise_lunch_time_1779421288",
+      "event_key": "lunch_time",
+      "event_label": "점심시간",
+      "message": "뭐 먹는지 사진",
+      "source_text": "오빠 팥 들어간 빵이면 왠지 오늘 아침이랑 잘 어울린다 ㅎㅎ 이름 몰라도 그런 식으로 먹는 휴가 아점 좋지. 나는 아직 정확히 언제 먹을진 모르겠어, 오늘도 흐름 보다가 틈 생기면 먹게 될 것 같아. 대신 밥 먹게 되면 뭐 먹는지 사진 보내줄게 ㅎㅎ",
+      "delivery_kind": "image",
+      "source_direction": "outgoing",
+      "created_at": "2026-05-22T12:41:28+09:00",
+      "status": "blocked_generation_disabled",
+      "last_matched_at": "2026-05-22T12:41:30+09:00",
+      "sent_at": null,
+      "matched_activity": "lunch_break",
+      "last_blocked_reason": "image_generation_disabled",
+      "blocked_at": "2026-05-22T14:21:59+09:00"
+    }
+  ],
+  "history": [
+    {
+      "timestamp": "2026-05-22T12:41:28+09:00",
+      "action": "create",
+      "promise": {
+        "id": "promise_lunch_time_1779421288",
+        "event_key": "lunch_time",
+        "event_label": "점심시간",
+        "message": "오빠 팥 들어간 빵이면 왠지 오늘 아침이랑 잘 어울린다 ㅎㅎ 이름 몰라도 그런 식으로 먹는 휴가 아점 좋지. 나는 아직 정확히 언제 먹을진 모르겠어, 오늘도 흐름 보다가 틈 생기면 먹게 될 것 같아. 대신 밥 먹게 되면 뭐 먹는지 사진",
+        "source_text": "오빠 팥 들어간 빵이면 왠지 오늘 아침이랑 잘 어울린다 ㅎㅎ 이름 몰라도 그런 식으로 먹는 휴가 아점 좋지. 나는 아직 정확히 언제 먹을진 모르겠어, 오늘도 흐름 보다가 틈 생기면 먹게 될 것 같아. 대신 밥 먹게 되면 뭐 먹는지 사진 보내줄게 ㅎㅎ",
+        "delivery_kind": "image",
+        "source_direction": "outgoing",
+        "created_at": "2026-05-22T12:41:28+09:00",
+        "status": "active",
+        "last_matched_at": null,
+        "sent_at": null
+      }
+    },
+    {
+      "timestamp": "2026-05-22T12:41:30+09:00",
+      "action": "fire",
+      "event_keys": [
+        "lunch_time"
+      ],
+      "current_activity": "lunch_break"
+    },
+    {
+      "timestamp": "2026-05-22T12:42:34+09:00",
+      "action": "repair_image_promise_state",
+      "note": "image promise text misfire corrected; promise restored as active with image_generation_disabled block"
+    },
+    {
+      "timestamp": "2026-05-22T12:43:17+09:00",
+      "action": "repair_image_promise_state",
+      "note": "image promise text misfire corrected; promise restored as active with image_generation_disabled block"
+    },
+    {
+      "timestamp": "2026-05-22T14:21:59+09:00",
+      "action": "finalize_blocked_image_promise",
+      "promise_id": "promise_lunch_time_1779421288",
+      "reason": "image_generation_disabled_at_event_time"
+    }
+  ],
+  "last_updated_at": "2026-05-23T07:19:50+09:00",
   "notes": "사용자 요청으로 등록한 이벤트 기반 1회성 톡 발송 약속"
 }

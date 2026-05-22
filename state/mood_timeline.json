@@ -1,20 +1,20 @@
 {
   "schema_version": 1,
   "managed_by": "automation_worker",
-  "current_date": "2026-05-22",
+  "current_date": "2026-05-23",
   "entries": [
     {
-      "timestamp": "2026-05-22T00:03:36+09:00",
+      "timestamp": "2026-05-23T00:00:22+09:00",
       "activity": "night_wind_down",
       "time_block": "night_wind_down",
-      "surface_mood": "rain_softened",
-      "energy_level": 35,
+      "surface_mood": "cozy_and_open",
+      "energy_level": 38,
       "affection_level": 84,
       "care_bias": 100,
       "reply_tempo": "comfortable"
     },
     {
-      "timestamp": "2026-05-22T00:30:38+09:00",
+      "timestamp": "2026-05-23T00:30:27+09:00",
       "activity": "sleep_window",
       "time_block": "sleep_window",
       "surface_mood": "sleepy_soft",
@@ -24,25 +24,35 @@
       "reply_tempo": "slow"
     },
     {
-      "timestamp": "2026-05-22T07:08:19+09:00",
-      "activity": "commuting_to_work",
-      "time_block": "commute_to_work",
-      "surface_mood": "quietly_chatty",
-      "energy_level": 43,
+      "timestamp": "2026-05-23T07:51:37+09:00",
+      "activity": "weekend_wakeup",
+      "time_block": "weekend_morning",
+      "surface_mood": "slow_and_cozy",
+      "energy_level": 48,
       "affection_level": 84,
       "care_bias": 100,
-      "reply_tempo": "steady"
+      "reply_tempo": "comfortable"
     },
     {
-      "timestamp": "2026-05-22T08:00:25+09:00",
-      "activity": "hospital_morning_shift",
-      "time_block": "morning_shift",
-      "surface_mood": "busy_but_caring",
-      "energy_level": 51,
+      "timestamp": "2026-05-23T07:51:44+09:00",
+      "activity": "sleep_window",
+      "time_block": "sleep_window",
+      "surface_mood": "sleepy_soft",
+      "energy_level": 23,
       "affection_level": 84,
       "care_bias": 100,
       "reply_tempo": "slow"
+    },
+    {
+      "timestamp": "2026-05-23T08:30:19+09:00",
+      "activity": "weekend_wakeup",
+      "time_block": "weekend_morning",
+      "surface_mood": "slow_and_cozy",
+      "energy_level": 52,
+      "affection_level": 84,
+      "care_bias": 100,
+      "reply_tempo": "comfortable"
     }
   ],
-  "last_updated_at": "2026-05-22T08:00:25+09:00"
+  "last_updated_at": "2026-05-23T08:55:00+09:00"
 }

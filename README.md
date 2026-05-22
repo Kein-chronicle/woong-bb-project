@@ -44,40 +44,43 @@ If you are an AI agent entering this project, read these first:
 7. [profile/woongbbi_activation_checklist.md](profile/woongbbi_activation_checklist.md)
 8. [profile/lifestyle_schedule_ko.md](profile/lifestyle_schedule_ko.md)
 9. [profile/proactive_message_rules_ko.md](profile/proactive_message_rules_ko.md)
-10. [profile/situation_engine_design_ko.md](profile/situation_engine_design_ko.md)
-11. [profile/appearance_continuity_design_ko.md](profile/appearance_continuity_design_ko.md)
-12. [profile/weather_context_design_ko.md](profile/weather_context_design_ko.md)
-13. [profile/media_preference_design_ko.md](profile/media_preference_design_ko.md)
-14. [profile/share_event_design_ko.md](profile/share_event_design_ko.md)
-15. [profile/share_priority_scoring_ko.md](profile/share_priority_scoring_ko.md)
-16. [profile/share_priority_recalc_design_ko.md](profile/share_priority_recalc_design_ko.md)
-17. [profile/share_event_flow_ko.md](profile/share_event_flow_ko.md)
-18. [profile/user_shared_photo_asset_memory_design_ko.md](profile/user_shared_photo_asset_memory_design_ko.md)
-19. [profile/automation_worker_design_ko.md](profile/automation_worker_design_ko.md)
-20. [profile/automation_supervision_design_ko.md](profile/automation_supervision_design_ko.md)
-21. [state/mode_state.json](state/mode_state.json)
-22. [state/eunbi_presence.json](state/eunbi_presence.json)
-23. [state/day_context.json](state/day_context.json)
-24. [state/eunbi_appearance_state.json](state/eunbi_appearance_state.json)
-25. [state/weather_context.json](state/weather_context.json)
-26. [state/eunbi_media_profile.json](state/eunbi_media_profile.json)
-27. [state/media_watch_context.json](state/media_watch_context.json)
-28. [state/share_event_context.json](state/share_event_context.json)
-29. [state/share_priority_state.json](state/share_priority_state.json)
-30. [state/share_priority_recalc_state.json](state/share_priority_recalc_state.json)
-31. [state/share_event_flow_state.json](state/share_event_flow_state.json)
-32. [state/user_shared_photo_asset_registry.json](state/user_shared_photo_asset_registry.json)
-33. [state/automation_worker_state.json](state/automation_worker_state.json)
-34. [state/automation_supervisor_state.json](state/automation_supervisor_state.json)
-35. [state/automation_control.json](state/automation_control.json)
-36. [state/automation_health.json](state/automation_health.json)
-37. [profile/telegram_eunbi_instagram_voice.md](profile/telegram_eunbi_instagram_voice.md)
-38. [messages/](messages/)
-39. [calendar/events.json](calendar/events.json)
-40. [characters/woongbbi/eunbi/README.md](characters/woongbbi/eunbi/README.md)
-41. [profile/azure_speech_setup_ko.md](profile/azure_speech_setup_ko.md)
-42. [profile/elevenlabs_setup_ko.md](profile/elevenlabs_setup_ko.md)
-43. [profile/voice_clone_collection_guide_ko.md](profile/voice_clone_collection_guide_ko.md)
+10. [profile/chat_length_adaptation_framework_ko.md](profile/chat_length_adaptation_framework_ko.md)
+11. [profile/situation_engine_design_ko.md](profile/situation_engine_design_ko.md)
+12. [profile/appearance_continuity_design_ko.md](profile/appearance_continuity_design_ko.md)
+13. [profile/weather_context_design_ko.md](profile/weather_context_design_ko.md)
+14. [profile/media_preference_design_ko.md](profile/media_preference_design_ko.md)
+15. [profile/counterpart_state_memory_design_ko.md](profile/counterpart_state_memory_design_ko.md)
+16. [profile/share_event_design_ko.md](profile/share_event_design_ko.md)
+17. [profile/share_priority_scoring_ko.md](profile/share_priority_scoring_ko.md)
+18. [profile/share_priority_recalc_design_ko.md](profile/share_priority_recalc_design_ko.md)
+19. [profile/share_event_flow_ko.md](profile/share_event_flow_ko.md)
+20. [profile/user_shared_photo_asset_memory_design_ko.md](profile/user_shared_photo_asset_memory_design_ko.md)
+21. [profile/automation_worker_design_ko.md](profile/automation_worker_design_ko.md)
+22. [profile/automation_supervision_design_ko.md](profile/automation_supervision_design_ko.md)
+23. [state/mode_state.json](state/mode_state.json)
+24. [state/eunbi_presence.json](state/eunbi_presence.json)
+25. [state/day_context.json](state/day_context.json)
+26. [state/eunbi_appearance_state.json](state/eunbi_appearance_state.json)
+27. [state/weather_context.json](state/weather_context.json)
+28. [state/eunbi_media_profile.json](state/eunbi_media_profile.json)
+29. [state/media_watch_context.json](state/media_watch_context.json)
+30. [state/share_event_context.json](state/share_event_context.json)
+31. [state/share_priority_state.json](state/share_priority_state.json)
+32. [state/share_priority_recalc_state.json](state/share_priority_recalc_state.json)
+33. [state/share_event_flow_state.json](state/share_event_flow_state.json)
+34. [state/counterpart_state_memory.json](state/counterpart_state_memory.json)
+35. [state/user_shared_photo_asset_registry.json](state/user_shared_photo_asset_registry.json)
+36. [state/automation_worker_state.json](state/automation_worker_state.json)
+37. [state/automation_supervisor_state.json](state/automation_supervisor_state.json)
+38. [state/automation_control.json](state/automation_control.json)
+39. [state/automation_health.json](state/automation_health.json)
+40. [profile/telegram_eunbi_instagram_voice.md](profile/telegram_eunbi_instagram_voice.md)
+41. [messages/](messages/)
+42. [calendar/events.json](calendar/events.json)
+43. [characters/woongbbi/eunbi/README.md](characters/woongbbi/eunbi/README.md)
+44. [profile/azure_speech_setup_ko.md](profile/azure_speech_setup_ko.md)
+45. [profile/elevenlabs_setup_ko.md](profile/elevenlabs_setup_ko.md)
+46. [profile/voice_clone_collection_guide_ko.md](profile/voice_clone_collection_guide_ko.md)
 
 Treat this repository as the canonical memory root. If similar or older files exist elsewhere, prefer the files in this repository unless the user explicitly says otherwise.
 
@@ -189,6 +192,7 @@ The project has:
 - a Korean-time lifestyle schedule for time-aware replies
 - proactive-message design rules and template state for future auto check-ins
 - a separate situation engine design for mood, continuity, and low-drama random events
+- a counterpart state memory layer that keeps user-declared states active until a resolution signal appears
 - detailed human-like update rules for fatigue, recovery, affection, and time-block transitions
 - a separate appearance continuity design for outfit, hair, makeup, sweat, and home/work/exercise visual state
 - a weather context design that affects mood, care, energy, and appearance continuity
@@ -198,8 +202,8 @@ The project has:
 - a recalc design that decides when the sharing score should be recomputed
 - a share event flow that binds trigger, scoring, candidate selection, delivery, and logging
 - a reinforcement preference system that accumulates what the user likes or dislikes by topic, action, and delivery style
-- a separate automation worker design for timers, recalculation, and auto-event execution
-- a supervision/control design for worker monitoring, singleton safety, heartbeat, and restart control
+- a project-owned automation worker design for timers, recalculation, growth, research, and auto-event execution
+- a supervision/control design for launchd-based worker monitoring, singleton safety, heartbeat, and restart control
 - active persona/profile files
 - initial message and calendar storage
 - a processed visual reference dataset for Woongbbi / Eunbi

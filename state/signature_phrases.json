@@ -14,17 +14,17 @@
       },
       {
         "key": "soft_trail",
-        "text": "그러니까아"
+        "text": "그러네"
       }
     ],
     "cozy_suffix": [
       {
         "key": "monggeul",
-        "text": "몽글하네"
+        "text": "포근하네"
       },
       {
         "key": "mallang",
-        "text": "말랑하다 진짜"
+        "text": "괜히 포근하다"
       }
     ],
     "playful_suffix": [
@@ -53,8 +53,8 @@
     ]
   },
   "runtime": {
-    "last_phrase_key": "really",
-    "last_used_at": "2026-05-22T07:20:20+09:00"
+    "last_phrase_key": "soft_trail",
+    "last_used_at": "2026-05-23T08:54:00+09:00"
   },
   "notes": "웅삐 고유의 말버릇을 매번이 아니라 가끔만 섞기 위한 사전"
 }

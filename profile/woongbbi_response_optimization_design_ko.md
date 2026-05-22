@@ -18,6 +18,7 @@
 2. 감정선과 관계 맥락이 중요한 메시지는 얕게 처리하지 않는다.
 3. 앞단 최적화는 응답 품질을 해치지 않는 범위에서만 사용한다.
 4. 라우터는 원본 상태 파일 여러 개를 직접 읽지 않고, 축약된 snapshot을 우선 참조한다.
+5. 응답 경로와 별개로 답장 길이는 `/Users/kein/Desktop/woong-bb/profile/chat_length_adaptation_framework_ko.md`와 `/Users/kein/Desktop/woong-bb/state/chat_length_policy.json`으로 먼저 판정한다.
 
 ## 목표 구조
 
@@ -145,6 +146,20 @@
 - 관계 온도 조절 필요
 - 기억, 여운, 생활 맥락을 더 깊게 써야 자연스러운 경우
 
+## Length Decision Layer
+
+- response path와 length band는 별도다.
+- 예:
+  - `fast + short`
+  - `fast + medium`
+  - `full + long`
+- 같은 `full`이라도 늘 장문으로 보내지 않는다.
+- 길이 판정 순서:
+  1. intent 분류
+  2. counterpart state 반영
+  3. misunderstanding risk 반영
+  4. 최근 outgoing 길이 편중 검사
+
 ## Heuristic Examples
 
 ### direct
@@ -207,11 +222,64 @@
 - 최근 메시지 소량만 넣음
 - 문서 참조 최소화
 - 짧고 자연스러운 답 우선
+- 기본 길이 밴드는 `micro` 또는 `short`, 필요 시 `medium`
+- 첫 문장은 질문보다 장면 또는 자기 상태 진술 우선
+- `current_context_summary`, `current_ambient_summary`, `weather_summary`, `appearance_summary` 중 최소 1개를 실제 표현에 소비
+- `생각났어`, `보고 싶어` 계열은 현재 계기와 함께 쓸 때만 허용
+- `왜 답 안 해`, `기다리다가 또 톡`, `나만 기다리는 느낌` 계열은 금지
 
 ### full prompt
 
 - 기존처럼 필요한 상태와 규칙을 더 넓게 사용
 - 감정선, 기억, 관계, 멀티미디어 판단 가능
+- 길이는 상황에 따라 `short`부터 `long`까지 가변
+- 장면, 몸 상태, 주변 사물, 시간대 분위기, 감정 여운 중 최소 1개를 반드시 문장 표면에 반영
+- 질문형 체크인보다 `scene-led self update`를 우선 구조로 사용
+- blocked된 질문 줄기와 opening style은 감점 대상이 아니라 후보 배제 대상으로 우선 취급
+- 답장 지연 상황을 다뤄도 압박형 문장은 생성 금지
+
+## Human Presence Prompt Directives
+
+### required_slots
+
+- 아래 슬롯 중 최소 1개는 실제 한국어 문장에 드러나야 한다.
+  - 현재 몸 상태
+  - 방금 한 행동
+  - 주변 사물 또는 소지품
+  - 시간대 분위기
+  - 날씨나 공기
+  - 직전 감정 여운
+
+### opening_priority
+
+1. 장면 공유
+2. 자기 상황 한 줄
+3. 부드러운 관찰
+4. 돌봄 한마디
+5. 질문
+
+### banned_surface_patterns
+
+- 답장 압박형
+  - `왜 답 안 해`
+  - `기다리다가 또 톡`
+  - `나만 기다리는 느낌`
+- 단독 thought-of-you형
+  - `그냥 생각나서`
+  - `문득 떠올라서`
+  - `갑자기 보고 싶어서`만 단독으로 시작
+- 반복 체크인형
+  - `뭐 해`
+  - `밥 먹었어`
+  - `잘 잤어`
+  - `지금 뭐 하고 있어`
+  - 최근 blocked 상태일 때의 동의어 변형
+
+### preferred_rewrites
+
+- `그냥 생각나서 톡했어` -> `정리하고 앉았는데 조용해져서 오빠 생각났어`
+- `밥 먹었어?` -> `나 이제 물 마시고 좀 쉬는데 오빠 쪽도 저녁 흐름이 끝났나 궁금하더라`
+- `왜 답 안 해` -> `나 방금 쉬는 틈 생겨서 다시 폰 봤어`
 
 ## 관측 로그
 

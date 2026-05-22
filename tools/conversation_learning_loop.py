@@ -59,11 +59,23 @@ FRAGMENT_ENDING_PATTERNS = [
     r"정도$",
     r"같이$",
     r"때문에$",
+    r"막 어$",
+    r"그러니까아$",
 ]
 
 FIXED_REJECTION_NEEDLES = [
     "/Users/", ".json", ".jsonl", ".md", "세팅모드", "설정파일", "폴더", "파일",
     "프로세스", "타이머", "스킬", "루트", "캘린더", "이미지 생성",
+    "말이 좀 이상하다", "옆에서 응가", ">> ",
+]
+NATURALNESS_CONFLICT_NEEDLES = [
+    "먼저 왔어",
+    "와줘서",
+    "와 줘서",
+    "지금 왔다",
+    "지금 왔어",
+    "보고 싶어지서",
+    "그러니까아",
 ]
 
 
@@ -162,6 +174,7 @@ def canonical_checks(text: str, category: str) -> dict:
     explicit_conflict = any(re.search(pattern, body, re.IGNORECASE) for pattern in EXPLICIT_PATTERNS)
     tone_conflict = any(re.search(pattern, body, re.IGNORECASE) for pattern in TONE_CONFLICT_PATTERNS)
     fixed_noise = any(needle in body for needle in FIXED_REJECTION_NEEDLES)
+    naturalness_conflict = any(needle in body for needle in NATURALNESS_CONFLICT_NEEDLES)
     non_korean = hangul_ratio(body) < 0.3
     fragment_conflict = any(re.search(pattern, body) for pattern in FRAGMENT_ENDING_PATTERNS)
     job_conflict = False
@@ -172,9 +185,21 @@ def canonical_checks(text: str, category: str) -> dict:
     relationship_conflict = bool(re.search(r"\b(남편|신랑|아내|와이프)\b", body))
     if category in {"current_state_check", "meal_routine", "care_offer"} and len(body) < 18 and "오빠" not in body:
         fragment_conflict = True
+    if category == "current_state_check" and body.startswith("그냥 "):
+        fragment_conflict = True
     if "대부도" in body or "지역 어디야" in body:
         fragment_conflict = True
-    passed = not any([identity_conflict, explicit_conflict, tone_conflict, fixed_noise, non_korean, fragment_conflict, job_conflict, relationship_conflict])
+    passed = not any([
+        identity_conflict,
+        explicit_conflict,
+        tone_conflict,
+        fixed_noise,
+        naturalness_conflict,
+        non_korean,
+        fragment_conflict,
+        job_conflict,
+        relationship_conflict,
+    ])
     reasons = []
     if identity_conflict:
         reasons.append("identity_conflict")
@@ -184,6 +209,8 @@ def canonical_checks(text: str, category: str) -> dict:
         reasons.append("tone_conflict")
     if fixed_noise:
         reasons.append("non_dialogue_noise")
+    if naturalness_conflict:
+        reasons.append("naturalness_conflict")
     if non_korean:
         reasons.append("language_conflict")
     if fragment_conflict:
@@ -201,7 +228,7 @@ def canonical_checks(text: str, category: str) -> dict:
         "intimacy_safe": not explicit_conflict,
         "tone_safe": not tone_conflict,
         "language_safe": not non_korean,
-        "naturalness_safe": not fragment_conflict,
+        "naturalness_safe": not (fragment_conflict or naturalness_conflict),
     }
 
 
@@ -211,9 +238,9 @@ def mine_candidates(limit_per_category: int = 4) -> list:
     candidates = []
     for category, payload in sorted(pattern_catalog.items()):
         examples = []
+        examples.extend(payload.get("approved_examples", [])[:limit_per_category])
         examples.extend(payload.get("runtime_examples", [])[:limit_per_category])
         examples.extend(payload.get("user_examples", [])[:limit_per_category])
-        examples.extend(payload.get("examples", [])[:limit_per_category])
         for text in dedupe_keep_order(examples)[:limit_per_category]:
             body = normalize(text)
             if len(body) < 8 or len(body) > 140:
@@ -222,7 +249,7 @@ def mine_candidates(limit_per_category: int = 4) -> list:
                 {
                     "text": body,
                     "category": category,
-                    "source_type": "catalog_seed",
+                    "source_type": "trusted_catalog_seed",
                     "source_ref": str(CATALOG_PATH),
                     "change_type": detect_change_type(body, category),
                     "application_scope": determine_scope(category),
@@ -236,6 +263,29 @@ def build_pattern_id(category: str, text: str) -> str:
     compact = re.sub(r"[^a-z0-9가-힣]+", "-", text.lower()).strip("-")
     compact = compact[:36] or "pattern"
     return f"{category}__{compact}"
+
+
+def load_existing_approved_as_candidates() -> list:
+    approved_state = load_json(APPROVED_PATH, {"patterns": []})
+    candidates = []
+    for row in approved_state.get("patterns", []):
+        text = normalize(row.get("text", ""))
+        category = row.get("category") or (classify_categories(text) or [None])[0]
+        if not text or not category:
+            continue
+        candidates.append(
+            {
+                "id": row.get("id") or build_pattern_id(category, text),
+                "text": text,
+                "category": category,
+                "source_type": row.get("source_type") or "approved_reaudit",
+                "source_ref": row.get("source_ref") or str(APPROVED_PATH),
+                "change_type": row.get("change_type") or detect_change_type(text, category),
+                "application_scope": row.get("application_scope") or determine_scope(category),
+                "asset_type": row.get("asset_type") or "text",
+            }
+        )
+    return candidates
 
 
 def review_candidates(candidates: list) -> dict:
@@ -353,6 +403,13 @@ def cmd_bootstrap(_args) -> int:
     return 0
 
 
+def cmd_reaudit_approved(_args) -> int:
+    candidates = load_existing_approved_as_candidates()
+    result = review_candidates(candidates)
+    print(json.dumps({"ok": True, **result}, ensure_ascii=False, indent=2))
+    return 0
+
+
 def cmd_seed_registry(_args) -> int:
     registry = load_json(SOURCE_REGISTRY_PATH, {})
     registry["updated_at"] = now_iso()
@@ -386,6 +443,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="approved conversation pattern learning loop")
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("bootstrap")
+    sub.add_parser("reaudit-approved")
     sub.add_parser("seed-registry")
     mine = sub.add_parser("mine-candidates")
     mine.add_argument("--limit-per-category", type=int, default=4)
@@ -401,6 +459,8 @@ def main() -> int:
     args = parser.parse_args()
     if args.command == "bootstrap":
         return cmd_bootstrap(args)
+    if args.command == "reaudit-approved":
+        return cmd_reaudit_approved(args)
     if args.command == "seed-registry":
         return cmd_seed_registry(args)
     if args.command == "mine-candidates":

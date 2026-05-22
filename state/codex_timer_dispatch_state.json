@@ -1,15 +1,91 @@
 {
   "schema_version": 1,
   "managed_by": "codex_timer_dispatcher",
-  "last_checked_at": "2026-05-22T11:41:28+09:00",
+  "last_checked_at": "2026-05-22T13:45:29+09:00",
   "last_fired_at": {
-    "reinforcement_learning_tick": "2026-05-22T11:41:28+09:00",
-    "memory_decay_tick": "2026-05-22T11:41:28+09:00"
+    "reinforcement_learning_tick": "2026-05-22T13:45:29+09:00",
+    "memory_decay_tick": "2026-05-22T13:45:29+09:00",
+    "share_priority_lunch_recalc": "2026-05-22T12:29:05+09:00",
+    "proactive_lunch_check": "2026-05-22T12:29:06+09:00",
+    "weekday_lunch_break_start": "2026-05-22T12:43:32+09:00",
+    "weekday_afternoon_shift_start": "2026-05-22T13:42:35+09:00"
   },
   "history": [
     {
       "checked_at": "2026-05-22T11:41:28+09:00",
       "lookback_minutes": 1,
+      "fired": [
+        {
+          "timer_id": "reinforcement_learning_tick",
+          "result": "tick:reinforcement_engine"
+        },
+        {
+          "timer_id": "memory_decay_tick",
+          "result": "tick:memory_decay"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "checked_at": "2026-05-22T12:29:06+09:00",
+      "lookback_minutes": 20,
+      "fired": [
+        {
+          "timer_id": "share_priority_lunch_recalc",
+          "result": "recalc:share_priority"
+        },
+        {
+          "timer_id": "proactive_lunch_check",
+          "result": "proactive_check"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "checked_at": "2026-05-22T12:43:32+09:00",
+      "lookback_minutes": 75,
+      "fired": [
+        {
+          "timer_id": "weekday_lunch_break_start",
+          "result": "time_block_update:lunch_break"
+        },
+        {
+          "timer_id": "reinforcement_learning_tick",
+          "result": "tick:reinforcement_engine"
+        },
+        {
+          "timer_id": "memory_decay_tick",
+          "result": "tick:memory_decay"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "checked_at": "2026-05-22T12:59:37+09:00",
+      "lookback_minutes": 20,
+      "fired": [],
+      "errors": []
+    },
+    {
+      "checked_at": "2026-05-22T13:19:33+09:00",
+      "lookback_minutes": 20,
+      "fired": [],
+      "errors": []
+    },
+    {
+      "checked_at": "2026-05-22T13:42:35+09:00",
+      "lookback_minutes": 20,
+      "fired": [
+        {
+          "timer_id": "weekday_afternoon_shift_start",
+          "result": "time_block_update:hospital_afternoon_shift"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "checked_at": "2026-05-22T13:45:29+09:00",
+      "lookback_minutes": 75,
       "fired": [
         {
           "timer_id": "reinforcement_learning_tick",
