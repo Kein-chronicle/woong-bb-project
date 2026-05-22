@@ -1,0 +1,90 @@
+{
+  "bundle_id": "bundle_012",
+  "source_video_id": "MfCHfvyz3l4",
+  "source_title": "건강한 대화. 행복한 연애. 텅빈 통장, 하와이 브이로그 2탄",
+  "source_url": "https://www.youtube.com/watch?v=MfCHfvyz3l4",
+  "source_lang": "ko",
+  "speaker_note": "유튜브 자동 자막을 시간순으로 정리했으며 화자 표시는 교대형 추정입니다.",
+  "utterances": [
+    {
+      "turn_index": 1,
+      "speaker": "화자A(추정)",
+      "text_ko": "more in",
+      "source_text": "more in",
+      "start_ms": 37879,
+      "duration_ms": 4321
+    },
+    {
+      "turn_index": 2,
+      "speaker": "화자B(추정)",
+      "text_ko": "Vancouver Chinawn",
+      "source_text": "Vancouver Chinawn",
+      "start_ms": 39719,
+      "duration_ms": 4481
+    },
+    {
+      "turn_index": 3,
+      "speaker": "화자A(추정)",
+      "text_ko": "best pepperoni pizza",
+      "source_text": "best pepperoni pizza",
+      "start_ms": 42200,
+      "duration_ms": 3440
+    },
+    {
+      "turn_index": 4,
+      "speaker": "화자B(추정)",
+      "text_ko": "ever little pizza",
+      "source_text": "ever little pizza",
+      "start_ms": 44200,
+      "duration_ms": 3760
+    },
+    {
+      "turn_index": 5,
+      "speaker": "화자A(추정)",
+      "text_ko": "but full of pepperon",
+      "source_text": "but full of pepperon",
+      "start_ms": 45640,
+      "duration_ms": 3919
+    },
+    {
+      "turn_index": 6,
+      "speaker": "화자B(추정)",
+      "text_ko": "midle of Chinatown",
+      "source_text": "midle of Chinatown",
+      "start_ms": 47960,
+      "duration_ms": 2560
+    },
+    {
+      "turn_index": 7,
+      "speaker": "화자A(추정)",
+      "text_ko": "been Chinatown",
+      "source_text": "been Chinatown",
+      "start_ms": 49559,
+      "duration_ms": 2241
+    },
+    {
+      "turn_index": 8,
+      "speaker": "화자B(추정)",
+      "text_ko": "before but like I",
+      "source_text": "before but like I",
+      "start_ms": 50520,
+      "duration_ms": 3280
+    },
+    {
+      "turn_index": 9,
+      "speaker": "화자A(추정)",
+      "text_ko": "have blown away",
+      "source_text": "have blown away",
+      "start_ms": 51800,
+      "duration_ms": 3559
+    },
+    {
+      "turn_index": 10,
+      "speaker": "화자B(추정)",
+      "text_ko": "speaks perfect and",
+      "source_text": "speaks perfect and",
+      "start_ms": 53800,
+      "duration_ms": 3120
+    }
+  ]
+}

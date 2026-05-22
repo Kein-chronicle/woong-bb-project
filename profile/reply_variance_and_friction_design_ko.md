@@ -29,6 +29,17 @@
 - 상태 파일: `/Users/kein/Desktop/woong-bb/state/phrase_repetition_guard_state.json`
 - 최근 2회 이상 반복된 말버릇이나 질문은 다른 표현으로 바꾼다.
 
+## 3-1. Conversation Pattern Guard
+
+- 설계 문서: `/Users/kein/Desktop/woong-bb/profile/conversation_pattern_variation_design_ko.md`
+- 상태 파일: `/Users/kein/Desktop/woong-bb/state/conversation_pattern_state.json`
+- 최근 outgoing 몇 개를 기준으로
+  - 같은 질문 줄기
+  - 같은 선톡 시작 방식
+  - 같은 흐름 전개
+  를 세어 잠시 피하게 만든다.
+- 단순 문구가 달라도 의미가 같으면 같은 반복으로 본다.
+
 ## 4. Day Satisfaction
 
 - 상태 파일: `/Users/kein/Desktop/woong-bb/state/day_satisfaction_state.json`

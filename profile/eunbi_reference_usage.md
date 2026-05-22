@@ -59,6 +59,19 @@
 - 스마트폰, 케이스, 침실, 협탁, 식탁, 거실처럼 잘 바뀌지 않는 물건/공간이 보이면 이 메타 자산을 먼저 참조한다.
 - 사람 중심 이미지가 아니더라도 집안 배경이나 손에 든 디바이스가 등장하면 persistent environment 자산을 같이 넣는다.
 
+## User Shared Photo Asset Reference
+- Design: `/Users/kein/Desktop/woong-bb/profile/user_shared_photo_asset_memory_design_ko.md`
+- Registry: `/Users/kein/Desktop/woong-bb/state/user_shared_photo_asset_registry.json`
+- Tool: `/Users/kein/Desktop/woong-bb/tools/user_shared_photo_asset_memory.py`
+- Asset folder: `/Users/kein/Desktop/woong-bb/images/user_shared_assets`
+- 오빠가 보내준 사진에서 컵, 악세사리, 커플티, 선물, 장소, 같이 찍은 맥락 같은 재사용 자산을 별도 registry로 관리한다.
+- "그 컵", "같은 거", "커플티", "악세사리", "같이 찍은 사진" 같은 요청이면 registry를 검색한 뒤 관련 `canonical_path`를 보조 참조로 사용한다.
+- 웅삐의 얼굴/몸/기본 외형은 기존 은비 reference dataset을 우선한다.
+- user-shared asset은 기본적으로 소품/착장/장소/분위기 참조로 사용한다.
+- 오빠가 "같이 있는 장면", "오빠랑 같이", "둘이 찍은 사진", "오빠 얼굴도 같이"처럼 명시하면 `person_context` 자산의 오빠 얼굴을 user identity reference로 사용한다.
+- 오빠 얼굴 참조는 오빠에게만 적용하고, 웅삐 얼굴/몸 참조를 대체하지 않는다.
+- 다른 사람 얼굴이 포함된 사진은 별도 명시 없이 얼굴 재현 참조로 쓰지 않는다.
+
 ## Reference Selection Rules
 - Face consistency: choose 2-4 files from `face_front_best`.
 - Side or three-quarter angle: add 1-2 files from `face_side_profile`.
@@ -67,6 +80,8 @@
 - Hands, phone, cup, food, hat: add `hands_props_gestures`.
 - Shoes, legs, swim fins: add `legs_feet_shoes`.
 - Background mood: use `places_travel_anchor` or the relevant seasonal/lifestyle folder.
+- User-shared object or couple item: search `user_shared_photo_asset_registry.json` and add the selected asset `canonical_path` as a supporting reference.
+- Together scene with the user: search `person_context` assets and add the selected `canonical_path` as the user's face identity reference, while keeping Eunbi face/body references from the core dataset.
 
 ## Situation Presets
 - Cafe or food: `face_front_best` + `cafe_food_lifestyle` + `hands_props_gestures`.

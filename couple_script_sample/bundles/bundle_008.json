@@ -1,0 +1,90 @@
+{
+  "bundle_id": "bundle_008",
+  "source_video_id": "n5CxDLSOwjg",
+  "source_title": "음식밸런스게임질문모음 이구동성게임문제 이심전심텔레파시게임 제시어 취향테스트",
+  "source_url": "https://www.youtube.com/watch?v=n5CxDLSOwjg",
+  "source_lang": "ko",
+  "speaker_note": "유튜브 자동 자막을 시간순으로 정리했으며 화자 표시는 교대형 추정입니다.",
+  "utterances": [
+    {
+      "turn_index": 1,
+      "speaker": "화자A(추정)",
+      "text_ko": "오늘은 가족 친구 연인과 함께 즐길",
+      "source_text": "오늘은 가족 친구 연인과 함께 즐길",
+      "start_ms": 680,
+      "duration_ms": 4920
+    },
+    {
+      "turn_index": 2,
+      "speaker": "화자B(추정)",
+      "text_ko": "수 있는 텔레파시 밸런스 게임을",
+      "source_text": "수 있는 텔레파시 밸런스 게임을",
+      "start_ms": 3399,
+      "duration_ms": 4360
+    },
+    {
+      "turn_index": 3,
+      "speaker": "화자A(추정)",
+      "text_ko": "준비했는데요 우리의 음식 궁합이",
+      "source_text": "준비했는데요 우리의 음식 궁합이",
+      "start_ms": 5600,
+      "duration_ms": 4480
+    },
+    {
+      "turn_index": 4,
+      "speaker": "화자B(추정)",
+      "text_ko": "얼마나 잘 맞는지 한번 테스트해",
+      "source_text": "얼마나 잘 맞는지 한번 테스트해",
+      "start_ms": 7759,
+      "duration_ms": 5161
+    },
+    {
+      "turn_index": 5,
+      "speaker": "화자A(추정)",
+      "text_ko": "보세요 먼저 게임 참여자들은 제시된",
+      "source_text": "보세요 먼저 게임 참여자들은 제시된",
+      "start_ms": 10080,
+      "duration_ms": 5400
+    },
+    {
+      "turn_index": 6,
+      "speaker": "화자B(추정)",
+      "text_ko": "질문을 함께 확인해 주세요 그리고",
+      "source_text": "질문을 함께 확인해 주세요 그리고",
+      "start_ms": 12920,
+      "duration_ms": 5480
+    },
+    {
+      "turn_index": 7,
+      "speaker": "화자A(추정)",
+      "text_ko": "하나 둘 셋 하면 더 좋아하는 음식을",
+      "source_text": "하나 둘 셋 하면 더 좋아하는 음식을",
+      "start_ms": 15480,
+      "duration_ms": 5559
+    },
+    {
+      "turn_index": 8,
+      "speaker": "화자B(추정)",
+      "text_ko": "동시에 외쳐 주세요 이때 같은 답을",
+      "source_text": "동시에 외쳐 주세요 이때 같은 답을",
+      "start_ms": 18400,
+      "duration_ms": 5440
+    },
+    {
+      "turn_index": 9,
+      "speaker": "화자A(추정)",
+      "text_ko": "말하면 한 문제당 1점을 획득합니다",
+      "source_text": "말하면 한 문제당 1점을 획득합니다",
+      "start_ms": 21039,
+      "duration_ms": 5921
+    },
+    {
+      "turn_index": 10,
+      "speaker": "화자B(추정)",
+      "text_ko": "총합계 점수를 카운트하고 마지막에",
+      "source_text": "총합계 점수를 카운트하고 마지막에",
+      "start_ms": 23840,
+      "duration_ms": 5519
+    }
+  ]
+}

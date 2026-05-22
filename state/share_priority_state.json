@@ -7,18 +7,25 @@
   "strong_image_threshold": 85,
   "strong_link_threshold": 80,
   "last_decision": "text_only",
-  "last_image_score": -999,
-  "last_link_score": -12,
-  "last_time_block_bias": "afternoon_shift",
+  "last_image_score": -1019,
+  "last_link_score": -32,
+  "last_time_block_bias": "morning_shift",
   "last_applied_penalties": [
     "link_no_real_url",
-    "image_generation_disabled"
+    "image_generation_disabled",
+    "waiting_reply_penalty"
   ],
-  "last_applied_bonuses": [
-    "rain_bias"
-  ],
-  "last_candidate_image_type": "lifestyle_photo",
+  "last_applied_bonuses": [],
+  "last_candidate_image_type": "workday_candid_selfie",
   "last_candidate_link_type": "youtube_recommendation",
   "last_decision_reason": "현재는 텍스트 우선 유지가 자연스러움",
-  "notes": "공유 이벤트의 우선순위를 상황 점수표로 계산하기 위한 상태 파일"
+  "notes": "공유 이벤트의 우선순위를 상황 점수표로 계산하기 위한 상태 파일",
+  "last_candidate_image_plan": {
+    "shot_type": "walking_candid",
+    "camera_angle": "three_quarter_arm_length",
+    "expression": "focused_soft",
+    "pose": "bag_strap_hold",
+    "framing": "station_or_hallway_context",
+    "crop_bias": "half_body_to_waist"
+  }
 }

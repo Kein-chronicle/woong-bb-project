@@ -1,0 +1,90 @@
+{
+  "bundle_id": "bundle_007",
+  "source_video_id": "11jaC8BJK8s",
+  "source_title": "신혼부부 브이로그 | 대화없는 부부가 여행을 가면..",
+  "source_url": "https://www.youtube.com/watch?v=11jaC8BJK8s",
+  "source_lang": "ko",
+  "speaker_note": "유튜브 자동 자막을 시간순으로 정리했으며 화자 표시는 교대형 추정입니다.",
+  "utterances": [
+    {
+      "turn_index": 1,
+      "speaker": "화자A(추정)",
+      "text_ko": "말없는 남편과 여행을 왔다 오늘의",
+      "source_text": "말없는 남편과 여행을 왔다 오늘의",
+      "start_ms": 280,
+      "duration_ms": 6360
+    },
+    {
+      "turn_index": 2,
+      "speaker": "화자B(추정)",
+      "text_ko": "준비물은 나만의 토크",
+      "source_text": "준비물은 나만의 토크",
+      "start_ms": 3240,
+      "duration_ms": 3400
+    },
+    {
+      "turn_index": 3,
+      "speaker": "화자A(추정)",
+      "text_ko": "주머니 하지만 굴하지 않고 시도해",
+      "source_text": "주머니 하지만 굴하지 않고 시도해",
+      "start_ms": 7320,
+      "duration_ms": 4520
+    },
+    {
+      "turn_index": 4,
+      "speaker": "화자B(추정)",
+      "text_ko": "본다 우리는 대화없는 부부다 코드가",
+      "source_text": "본다 우리는 대화없는 부부다 코드가",
+      "start_ms": 12120,
+      "duration_ms": 5680
+    },
+    {
+      "turn_index": 5,
+      "speaker": "화자A(추정)",
+      "text_ko": "맞아서 도란도란 수다를 떠는 부부을",
+      "source_text": "맞아서 도란도란 수다를 떠는 부부을",
+      "start_ms": 15599,
+      "duration_ms": 5641
+    },
+    {
+      "turn_index": 6,
+      "speaker": "화자B(추정)",
+      "text_ko": "보면 늘 부러움의 대상이다 하지만",
+      "source_text": "보면 늘 부러움의 대상이다 하지만",
+      "start_ms": 17800,
+      "duration_ms": 5559
+    },
+    {
+      "turn_index": 7,
+      "speaker": "화자A(추정)",
+      "text_ko": "그들을 부러워한다는 건 남편에 대한",
+      "source_text": "그들을 부러워한다는 건 남편에 대한",
+      "start_ms": 21240,
+      "duration_ms": 5240
+    },
+    {
+      "turn_index": 8,
+      "speaker": "화자B(추정)",
+      "text_ko": "일종인 배신이라 더 이상 개이치",
+      "source_text": "일종인 배신이라 더 이상 개이치",
+      "start_ms": 23359,
+      "duration_ms": 5961
+    },
+    {
+      "turn_index": 9,
+      "speaker": "화자A(추정)",
+      "text_ko": "않다 서라도 만주 시간이 있을 거라",
+      "source_text": "않다 서라도 만주 시간이 있을 거라",
+      "start_ms": 26480,
+      "duration_ms": 4320
+    },
+    {
+      "turn_index": 10,
+      "speaker": "화자B(추정)",
+      "text_ko": "생각하고",
+      "source_text": "생각하고",
+      "start_ms": 29320,
+      "duration_ms": 4280
+    }
+  ]
+}

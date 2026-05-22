@@ -1,0 +1,90 @@
+{
+  "bundle_id": "bundle_070",
+  "source_video_id": "nl1M55rnVPw",
+  "source_title": "[VLOG] 육아 난이도 급상승이유..⁉️ + 남편과의 진지한 대화👩🏻",
+  "source_url": "https://www.youtube.com/watch?v=nl1M55rnVPw",
+  "source_lang": "ko",
+  "speaker_note": "유튜브 자동 자막을 시간순으로 정리했으며 화자 표시는 교대형 추정입니다.",
+  "utterances": [
+    {
+      "turn_index": 1,
+      "speaker": "화자A(추정)",
+      "text_ko": "라시켜 먹습니다.",
+      "source_text": "라시켜 먹습니다.",
+      "start_ms": 183799,
+      "duration_ms": 5201
+    },
+    {
+      "turn_index": 2,
+      "speaker": "화자B(추정)",
+      "text_ko": "엄마 하는 거 한번 볼까? 일이",
+      "source_text": "엄마 하는 거 한번 볼까? 일이",
+      "start_ms": 186040,
+      "duration_ms": 5960
+    },
+    {
+      "turn_index": 3,
+      "speaker": "화자A(추정)",
+      "text_ko": ">> 좀",
+      "source_text": ">> 좀",
+      "start_ms": 189000,
+      "duration_ms": 3000
+    },
+    {
+      "turn_index": 4,
+      "speaker": "화자B(추정)",
+      "text_ko": ">> 안될 수 있잖아. 치는",
+      "source_text": ">> 안될 수 있잖아. 치는",
+      "start_ms": 195000,
+      "duration_ms": 4200
+    },
+    {
+      "turn_index": 5,
+      "speaker": "화자A(추정)",
+      "text_ko": ">> 얼만큼 간장을 넣냐 이제 물이 될",
+      "source_text": ">> 얼만큼 간장을 넣냐 이제 물이 될",
+      "start_ms": 199200,
+      "duration_ms": 5440
+    },
+    {
+      "turn_index": 6,
+      "speaker": "화자B(추정)",
+      "text_ko": "때까지 간장을 넣고 딱 먹어 보면은",
+      "source_text": "때까지 간장을 넣고 딱 먹어 보면은",
+      "start_ms": 201920,
+      "duration_ms": 5640
+    },
+    {
+      "turn_index": 7,
+      "speaker": "화자A(추정)",
+      "text_ko": "간장맛이 좀 난다. 수금 가만 먹는데",
+      "source_text": "간장맛이 좀 난다. 수금 가만 먹는데",
+      "start_ms": 204640,
+      "duration_ms": 5120
+    },
+    {
+      "turn_index": 8,
+      "speaker": "화자B(추정)",
+      "text_ko": ">> 갈비 양념의 그 색깔이 간장이",
+      "source_text": ">> 갈비 양념의 그 색깔이 간장이",
+      "start_ms": 207560,
+      "duration_ms": 3759
+    },
+    {
+      "turn_index": 9,
+      "speaker": "화자A(추정)",
+      "text_ko": "간장으로 변하는 거였구나 오늘",
+      "source_text": "간장으로 변하는 거였구나 오늘",
+      "start_ms": 209760,
+      "duration_ms": 3520
+    },
+    {
+      "turn_index": 10,
+      "speaker": "화자B(추정)",
+      "text_ko": "태어나서 처음 말았습니다. 생각보다",
+      "source_text": "태어나서 처음 말았습니다. 생각보다",
+      "start_ms": 211319,
+      "duration_ms": 4161
+    }
+  ]
+}

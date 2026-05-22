@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "managed_by": "codex_timer_dispatcher",
+  "last_checked_at": "2026-05-22T11:41:28+09:00",
+  "last_fired_at": {
+    "reinforcement_learning_tick": "2026-05-22T11:41:28+09:00",
+    "memory_decay_tick": "2026-05-22T11:41:28+09:00"
+  },
+  "history": [
+    {
+      "checked_at": "2026-05-22T11:41:28+09:00",
+      "lookback_minutes": 1,
+      "fired": [
+        {
+          "timer_id": "reinforcement_learning_tick",
+          "result": "tick:reinforcement_engine"
+        },
+        {
+          "timer_id": "memory_decay_tick",
+          "result": "tick:memory_decay"
+        }
+      ],
+      "errors": []
+    }
+  ],
+  "notes": "Codex cron dispatcher for fixed-time timers and low-frequency maintenance ticks."
+}

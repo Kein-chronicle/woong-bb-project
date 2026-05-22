@@ -1,0 +1,90 @@
+{
+  "bundle_id": "bundle_090",
+  "source_video_id": "NEW2idHvPKE",
+  "source_title": "부부 Q&A | 이렇게 솔직해도 되나? 부부생활부터 관리까지!",
+  "source_url": "https://www.youtube.com/watch?v=NEW2idHvPKE",
+  "source_lang": "ko",
+  "speaker_note": "유튜브 자동 자막을 시간순으로 정리했으며 화자 표시는 교대형 추정입니다.",
+  "utterances": [
+    {
+      "turn_index": 1,
+      "speaker": "화자A(추정)",
+      "text_ko": ">> 아니 [웃음]",
+      "source_text": ">> 아니 [웃음]",
+      "start_ms": 172720,
+      "duration_ms": 3760
+    },
+    {
+      "turn_index": 2,
+      "speaker": "화자B(추정)",
+      "text_ko": ">> 아 그또 상상했나 보다.",
+      "source_text": ">> 아 그또 상상했나 보다.",
+      "start_ms": 174680,
+      "duration_ms": 4320
+    },
+    {
+      "turn_index": 3,
+      "speaker": "화자A(추정)",
+      "text_ko": ">> 아 그러면 자기 말이 맞겠네.",
+      "source_text": ">> 아 그러면 자기 말이 맞겠네.",
+      "start_ms": 176480,
+      "duration_ms": 4960
+    },
+    {
+      "turn_index": 4,
+      "speaker": "화자B(추정)",
+      "text_ko": ">> 그 이제 아니 상상한 거 빼고 실제로",
+      "source_text": ">> 그 이제 아니 상상한 거 빼고 실제로",
+      "start_ms": 179000,
+      "duration_ms": 4720
+    },
+    {
+      "turn_index": 5,
+      "speaker": "화자A(추정)",
+      "text_ko": "한 걸 얘기하는 거지. 아 그러면",
+      "source_text": "한 걸 얘기하는 거지. 아 그러면",
+      "start_ms": 181440,
+      "duration_ms": 4582
+    },
+    {
+      "turn_index": 6,
+      "speaker": "화자B(추정)",
+      "text_ko": ">> 그 키스 이후의 단계는 좀 줄었겠다.",
+      "source_text": ">> 그 키스 이후의 단계는 좀 줄었겠다.",
+      "start_ms": 183720,
+      "duration_ms": 2560
+    },
+    {
+      "turn_index": 7,
+      "speaker": "화자A(추정)",
+      "text_ko": ">> 줄었어. 줄었어. 많이 줄었지.",
+      "source_text": ">> 줄었어. 줄었어. 많이 줄었지.",
+      "start_ms": 186280,
+      "duration_ms": 3360
+    },
+    {
+      "turn_index": 8,
+      "speaker": "화자B(추정)",
+      "text_ko": ">> 연애할 때는 근데 우리가 얼마나",
+      "source_text": ">> 연애할 때는 근데 우리가 얼마나",
+      "start_ms": 187959,
+      "duration_ms": 2681
+    },
+    {
+      "turn_index": 9,
+      "speaker": "화자A(추정)",
+      "text_ko": "얼마나 했지?",
+      "source_text": "얼마나 했지?",
+      "start_ms": 189640,
+      "duration_ms": 4640
+    },
+    {
+      "turn_index": 10,
+      "speaker": "화자B(추정)",
+      "text_ko": ">> 그냥 그때는 우리가 불 같았지.",
+      "source_text": ">> 그냥 그때는 우리가 불 같았지.",
+      "start_ms": 190640,
+      "duration_ms": 5879
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "schema_version": 1,
+  "managed_by": "user_shared_photo_asset_memory",
+  "asset_root": "/Users/kein/Desktop/woong-bb/images/user_shared_assets",
+  "last_updated_at": "2026-05-22T10:49:28+09:00",
+  "assets": [
+    {
+      "asset_id": "20260522_104928_person_context_asset_bf17d5a5d9",
+      "created_at": "2026-05-22T10:49:28+09:00",
+      "last_seen_at": "2026-05-22T10:49:28+09:00",
+      "source": "telegram_incoming",
+      "telegram_user": "K8832353",
+      "kind": "person_context",
+      "title": "휴가 아침 커피 셀피와 초록 포인트 머그컵",
+      "canonical_path": "/Users/kein/Desktop/woong-bb/images/user_shared_assets/20260522_104928_person_context_asset_bf17d5a5d9/source.jpg",
+      "asset_dir": "/Users/kein/Desktop/woong-bb/images/user_shared_assets/20260522_104928_person_context_asset_bf17d5a5d9",
+      "source_paths": [
+        "/Users/kein/Desktop/woong-bb/images/incoming/2026-05-22/103951_telegram_photo_AQAD8w1rG2F3gFR-.jpg"
+      ],
+      "source_sha256": "bf17d5a5d9eec5b35d123afc237f1457eddec3664921a29d27478c49b9603a56",
+      "captions": [
+        "이제 사진 볼 수 있어? 아까 커피마신거야"
+      ],
+      "tags": [
+        "black_tshirt",
+        "casual_morning",
+        "casual_selfie",
+        "coffee_cup",
+        "coffee_lifestyle_photo",
+        "coffee_memory",
+        "coffee_mug",
+        "cup_or_tableware",
+        "daily_life",
+        "eunbi_using_matching_item",
+        "explicit_user_face_reference",
+        "glasses",
+        "green_inside",
+        "green_logo",
+        "holiday_morning",
+        "holiday_morning_scene",
+        "home_cafe_mood",
+        "home_kitchen",
+        "kitchen",
+        "kitchen_coffee_context",
+        "morning_coffee",
+        "photo_sent_after_woongbbi_request",
+        "place_scene",
+        "same_cup_scene",
+        "together_scene",
+        "user_face_identity",
+        "user_shared_photo",
+        "white_cabinets",
+        "white_green_mug",
+        "white_mug",
+        "같은_거_쓰는_모습",
+        "같은_컵",
+        "그_컵",
+        "둘이_있는_장면",
+        "아까_커피_사진",
+        "오빠_얼굴도_같이",
+        "오빠랑_같이",
+        "같이_찍은_사진",
+        "커피_마시던_컵"
+      ],
+      "analysis": {
+        "asset_kind": "person_context",
+        "title": "휴가 아침 커피 셀피와 초록 포인트 머그컵",
+        "visible_summary_ko": "오빠가 집 부엌에서 흰색과 초록색 포인트의 머그컵을 들고 찍은 커피 셀피",
+        "description_ko": "편한 검은 티셔츠 차림, 집 부엌 배경, 아침 커피를 직접 마시는 일상적인 분위기",
+        "visible_elements": [
+          "검은 티셔츠",
+          "검은 뿔테 안경",
+          "흰색 머그컵",
+          "초록색 로고와 안쪽 색",
+          "집 부엌 수납장"
+        ],
+        "scene_tags": [
+          "home_kitchen",
+          "morning_coffee",
+          "holiday_morning",
+          "casual_selfie"
+        ],
+        "object_tags": [
+          "white_green_mug",
+          "coffee_mug",
+          "kitchen",
+          "black_tshirt",
+          "glasses"
+        ],
+        "relationship_tags": [
+          "user_shared_photo",
+          "user_face_reference",
+          "coffee_memory",
+          "daily_life",
+          "photo_sent_after_woongbbi_request",
+          "explicit_together_scene_reference"
+        ],
+        "reuse_triggers": [
+          "그 컵",
+          "같은 컵",
+          "커피 마시던 컵",
+          "아까 커피 사진",
+          "같은 거 쓰는 모습",
+          "같이 찍은 사진",
+          "오빠랑 같이 있는 장면",
+          "둘이 있는 장면",
+          "오빠 얼굴도 같이"
+        ],
+        "reusable_subjects": [
+          {
+            "kind": "user_face_identity",
+            "label_ko": "오빠 얼굴 참조",
+            "description_ko": "검은 뿔테 안경, 짧은 검은 머리, 편한 집 커피 셀피에서 보이는 오빠 얼굴 인상",
+            "visual_tags": [
+              "user_face",
+              "black_square_glasses",
+              "short_black_hair",
+              "casual_selfie"
+            ],
+            "reuse_when": [
+              "explicit_together_scene_request",
+              "couple_photo_generation",
+              "user_and_eunbi_together",
+              "explicit_user_face_reference"
+            ],
+            "confidence": 0.84
+          },
+          {
+            "kind": "cup_or_tableware",
+            "label_ko": "흰색과 초록색 포인트가 있는 커피 머그컵",
+            "description_ko": "손잡이가 있는 흰색 머그컵, 안쪽과 로고가 진한 초록색 계열",
+            "visual_tags": [
+              "white_mug",
+              "green_logo",
+              "green_inside",
+              "coffee_cup"
+            ],
+            "reuse_when": [
+              "same_cup_scene",
+              "eunbi_using_matching_item",
+              "coffee_lifestyle_photo",
+              "home_cafe_mood"
+            ],
+            "confidence": 0.86
+          },
+          {
+            "kind": "place_scene",
+            "label_ko": "집 부엌의 편한 커피 시간",
+            "description_ko": "흰 수납장과 생활 소품이 보이는 집 부엌 배경",
+            "visual_tags": [
+              "home_kitchen",
+              "white_cabinets",
+              "casual_morning"
+            ],
+            "reuse_when": [
+              "kitchen_coffee_context",
+              "holiday_morning_scene"
+            ],
+            "confidence": 0.72
+          }
+        ],
+        "generation_reuse": {
+          "allowed": true,
+          "default_strength": "supporting_reference",
+          "requires_user_intent": true,
+          "prompt_hints_ko": [
+            "흰색 머그컵과 진한 초록색 포인트를 손에 든 자연스러운 홈 카페 장면",
+            "휴가 아침에 집 부엌에서 커피를 마시는 편한 분위기"
+          ],
+          "face_reference": {
+            "allowed": true,
+            "requires_explicit_user_request": true,
+            "allowed_when": [
+              "같이 있는 장면",
+              "오빠랑 같이",
+              "둘이 찍은 사진",
+              "오빠 얼굴도 같이"
+            ],
+            "default_strength": "identity_reference_for_user_only",
+            "notes": "웅삐 얼굴/몸은 은비 reference dataset을 쓰고, 이 자산은 오빠 얼굴 참조에만 사용한다."
+          }
+        },
+        "privacy": {
+          "contains_user_face": true,
+          "contains_other_people": false,
+          "sensitive": false,
+          "reuse_face_without_explicit_request": false,
+          "reuse_user_face_with_explicit_request": true
+        }
+      },
+      "generation_reuse": {
+        "allowed": true,
+        "default_strength": "supporting_reference",
+        "requires_user_intent": true,
+        "prompt_hints_ko": [
+          "흰색 머그컵과 진한 초록색 포인트를 손에 든 자연스러운 홈 카페 장면",
+          "휴가 아침에 집 부엌에서 커피를 마시는 편한 분위기"
+        ],
+        "face_reference": {
+          "allowed": true,
+          "requires_explicit_user_request": true,
+          "allowed_when": [
+            "같이 있는 장면",
+            "오빠랑 같이",
+            "둘이 찍은 사진",
+            "오빠 얼굴도 같이"
+          ],
+          "default_strength": "identity_reference_for_user_only",
+          "notes": "웅삐 얼굴/몸은 은비 reference dataset을 쓰고, 이 자산은 오빠 얼굴 참조에만 사용한다."
+        }
+      }
+    }
+  ],
+  "notes": "User-shared Telegram photos promoted into reusable image-generation references."
+}

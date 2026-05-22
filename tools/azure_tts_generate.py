@@ -7,11 +7,10 @@ import sys
 import urllib.request
 import urllib.error
 from datetime import datetime
-from pathlib import Path
 from xml.sax.saxutils import escape
 
+from project_paths import ROOT
 
-ROOT = Path("/Users/kein/Desktop/woong-bb")
 SESSION_ENV = ROOT / "session" / "azure-speech.env"
 ROOT_ENV = ROOT / "azure-speech.env"
 VOICE_ROOT = ROOT / "voice-message"

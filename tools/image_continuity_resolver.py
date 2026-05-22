@@ -4,11 +4,10 @@ from datetime import datetime
 from pathlib import Path
 from typing import Optional
 
+from project_paths import MESSAGES, state_path
 
-ROOT = Path("/Users/kein/Desktop/woong-bb")
-MESSAGES = ROOT / "messages"
-APPEARANCE_PATH = ROOT / "state" / "eunbi_appearance_state.json"
-STATE_PATH = ROOT / "state" / "image_continuity_state.json"
+APPEARANCE_PATH = state_path("eunbi_appearance_state.json")
+STATE_PATH = state_path("image_continuity_state.json")
 
 
 def load_json(path: Path, default: dict) -> dict:

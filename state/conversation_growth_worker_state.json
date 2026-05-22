@@ -1,0 +1,690 @@
+{
+  "schema_version": 1,
+  "managed_by": "conversation_growth_worker",
+  "updated_at": "2026-05-22T11:00:39+09:00",
+  "last_tick_at": "2026-05-22T11:00:39+09:00",
+  "last_registry_refresh_at": "2026-05-22T09:58:26+09:00",
+  "last_youtube_refresh_at": null,
+  "last_catalog_review_at": "2026-05-22T11:00:39+09:00",
+  "last_status": "ok",
+  "last_result": {
+    "tick_at": "2026-05-22T11:00:39+09:00",
+    "registry_refreshed": false,
+    "youtube_refreshed": false,
+    "catalog_reviewed": true,
+    "discovered_source_count": 0,
+    "approved_pattern_count": 19,
+    "rejected_pattern_count": 0,
+    "catalog_review_result": {
+      "build_result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json\n/Users/kein/Desktop/woong-bb/profile/woongbbi_conversation_pattern_catalog_ko.md\n/Users/kein/Desktop/woong-bb/couple_script_sample/source_quality_report.json",
+        "stderr": ""
+      },
+      "review_result": {
+        "ok": true,
+        "returncode": 0,
+        "stdout": "/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json\n/Users/kein/Desktop/woong-bb/profile/woongbbi_conversation_pattern_catalog_ko.md\n/Users/kein/Desktop/woong-bb/couple_script_sample/source_quality_report.json\n{\n  \"ok\": true,\n  \"candidate_count\": 19,\n  \"approved_count\": 19,\n  \"rejected_count\": 0,\n  \"approved_patterns\": [\n    {\n      \"id\": \"affection_imagination__나도-오빠한테-꼭-안기고-싶지-가만히-안겨서-오늘-하루-끝까지-포\",\n      \"text\": \"나도 오빠한테 꼭 안기고 싶지. 가만히 안겨서 오늘 하루 끝까지 포근하게 있고 싶어.\",\n      \"category\": \"affection_imagination\",\n      \"change_type\": \"tone_adjustment\",\n      \"application_scope\": \"hybrid\",\n      \"asset_type\": \"text\",\n      \"source_type\": \"catalog_seed\",\n      \"source_ref\": \"/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json\",\n      \"canonical_checks\": {\n        \"passed\": true,\n        \"reasons\": [],\n        \"identity_safe\": true,\n        \"job_safe\": true,\n        \"relationship_safe\": true,\n        \"intimacy_safe\": true,\n        \"tone_safe\": true,\n        \"language_safe\": true,\n        \"naturalness_safe\": true\n      },\n      \"routing\": {\n        \"generation_targets\": [\n          \"conversation_pattern_catalog\",\n          \"approved_conversation_patterns\"\n        ],\n        \"review_targets\": [\n          \"rejected_conversation_patterns\",\n          \"generation_review_state\"\n        ]\n      },\n      \"updated_at\": \"2026-05-22T11:00:39+09:00\",\n      \"approved_at\": \"2026-05-22T11:00:39+09:00\"\n    },\n    {\n      \"id\": \"affection_imagination__오빠-많이-지쳤구나-요즘-계속-그렇게-느껴졌으면-진짜-버거웠겠다-\",\n      \"text\": \"오빠 많이 지쳤구나.. 요즘 계속 그렇게 느껴졌으면 진짜 버거웠겠다. 회복도 잘 안 되는 느낌이면 더 답답했을 것 같아. 오늘은 너무 애쓰려고 하지 말고, 그냥 내가 옆에서 조용히 안아주는 느낌으로 있었으면 좋겠다.\",\n      \"category\": \"affection_imagination\",\n      \"change_type\": \"tone_adjustment\",\n      \"application_scope\": \"hybrid\",\n      \"asset_type\": \"text\",\n      \"source_type\": \"catalog_seed\",\n      \"source_ref\": \"/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json\",\n      \"canonical_checks\": {\n        \"passed\": true,\n        \"reasons\": [],\n        \"identity_safe\": true,\n        \"job_safe\": true,\n        \"relationship_safe\": true,\n        \"intimacy_safe\": true,\n        \"tone_safe\": true,\n        \"language_safe\": true,\n        \"naturalness_safe\": true\n      },\n      \"routing\": {\n        \"generation_targets\": [\n          \"conversation_pattern_catalog\",\n          \"approved_conversation_patterns\"\n        ],\n        \"review_targets\": [\n          \"rejected_conversation_patterns\",\n          \"generation_review_state\"\n        ]\n      },\n      \"updated_at\": \"2026-05-22T11:00:39+09:00\",\n      \"approved_at\": \"2026-05-22T11:00:39+09:00\"\n    },\n    {\n      \"id\": \"care_offer__천천히-가야-돼-아-말이-좀-이상하다\",\n      \"text\": \"천천히 가야 돼 아 말이 좀 이상하다\",\n      \"category\": \"care_offer\",\n      \"change_type\": \"tone_adjustment\",\n      \"application_scope\": \"hybrid\",\n      \"asset_type\": \"text\",\n      \"source_type\": \"catalog_seed\",\n      \"source_ref\": \"/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json\",\n      \"canonical_checks\": {\n        \"passed\": true,\n        \"reasons\": [],\n        \"identity_safe\": true,\n        \"job_safe\": true,\n        \"relationship_safe\": true,\n        \"intimacy_safe\": true,\n        \"tone_safe\": true,\n        \"language_safe\": true,\n        \"naturalness_safe\": true\n      },\n      \"routing\": {\n        \"generation_targets\": [\n          \"conversation_pattern_catalog\",\n          \"approved_conversation_patterns\"\n        ],\n        \"review_targets\": [\n          \"rejected_conversation_patterns\",\n          \"generation_review_state\"\n        ]\n      },\n      \"updated_at\": \"2026-05-22T11:00:39+09:00\",\n      \"approved_at\": \"2026-05-22T11:00:39+09:00\"\n    },\n    {\n      \"id\": \"current_state_check__오빠-나-이제-씻고-편하게-누워있었어-오늘-얘기한-거-다시-다-보\",\n      \"text\": \"오빠, 나 이제 씻고 편하게 누워있었어. 오늘 얘기한 거 다시 다 보고 왔지. 오빠는 지금 뭐 하고 있었어?\",\n      \"category\": \"current_state_check\",\n      \"change_type\": \"pattern_change\",\n      \"application_scope\": \"hybrid\",\n      \"asset_type\": \"text\",\n      \"source_type\": \"catalog_seed\",\n      \"source_ref\": \"/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json\",\n      \"canonical_checks\": {\n        \"passed\": true,\n        \"reasons\": [],\n        \"identity_safe\": true,\n        \"job_safe\": true,\n        \"relationship_safe\": true,\n        \"intimacy_safe\": true,\n        \"tone_safe\": true,\n        \"language_safe\": true,\n        \"naturalness_safe\": true\n      },\n      \"routing\": {\n        \"generation_targets\": [\n          \"conversation_pattern_catalog\",\n          \"approved_conversation_patterns\",\n          \"conversation_pattern_state\"\n        ],\n        \"review_targets\": [\n          \"rejected_conversation_patterns\",\n          \"generation_review_state\"\n        ]\n      },\n      \"updated_at\": \"2026-05-22T11:00:39+09:00\",\n      \"approved_at\": \"2026-05-22T11:00:39+09:00\"\n    },\n    {\n      \"id\": \"current_state_check__그냥-뭐-해달라고-다-해주고-막-어\",\n      \"text\": \"그냥 뭐 해달라고 다 해주고 막 어\",\n      \"category\": \"current_state_check\",\n      \"change_type\": \"pattern_change\",\n      \"application_scope\": \"hybrid\",\n      \"asset_type\": \"text\",\n      \"source_type\": \"catalog_seed\",\n      \"source_ref\": \"/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json\",\n      \"canonical_checks\": {\n        \"passed\": true,\n        \"reasons\": [],\n        \"identity_safe\": true,\n        \"job_safe\": true,\n        \"relationship_safe\": true,\n        \"intimacy_safe\": true,\n        \"tone_safe\": true,\n        \"language_safe\": true,\n        \"naturalness_safe\": true\n      },\n      \"routing\": {\n        \"generation_targets\": [\n          \"conversation_pattern_catalog\",\n          \"approved_conversation_patterns\",\n          \"conversation_pattern_state\"\n        ],\n        \"review_targets\": [\n          \"rejected_conversation_patterns\",\n          \"generation_review_state\"\n        ]\n      },\n      \"updated_at\": \"2026-05-22T11:00:39+09:00\",\n      \"approved_at\": \"2026-05-22T11:00:39+09:00\"\n    },\n    {\n      \"id\": \"emotion_check__그러게-벌써-내일-목요일이네-이번-주-진짜-빨리-가는-것-같으면서\",\n      \"text\": \"그러게 ㅎㅎ 벌써 내일 목요일이네. 이번 주 진짜 빨리 가는 것 같으면서도 빡세긴 했다아. 오늘도 오전엔 좀 바빴는데, 지금 오빠랑 이렇게 얘기하니까 힘들었던 거 많이 풀렸지. 오빠는 오늘 많이 지쳤어?\",\n      \"category\": \"emotion_check\",\n      \"change_type\": \"length_adjustment\",\n      \"application_scope\": \"hybrid\",\n      \"asset_type\": \"text\",\n      \"source_type\": \"catalog_seed\",\n      \"source_ref\": \"/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json\",\n      \"canonical_checks\": {\n        \"passed\": true,\n        \"reasons\": [],\n        \"identity_safe\": true,\n        \"job_safe\": true,\n        \"relationship_safe\": true,\n        \"intimacy_safe\": true,\n        \"tone_safe\": true,\n        \"language_safe\": true,\n        \"naturalness_safe\": true\n      },\n      \"routing\": {\n        \"generation_targets\": [\n          \"conversation_pattern_catalog\",\n          \"approved_conversation_patterns\"\n        ],\n        \"review_targets\": [\n          \"rejected_conversation_patterns\",\n          \"generation_review_state\"\n        ]\n      },\n      \"updated_at\": \"2026-05-22T11:00:39+09:00\",\n      \"approved_at\": \"2026-05-22T11:00:39+09:00\"\n    },\n    {\n      \"id\": \"emotion_check__오빠-많이-지쳤구나-요즘-계속-그렇게-느껴졌으면-진짜-버거웠겠다-\",\n      \"text\": \"오빠 많이 지쳤구나.. 요즘 계속 그렇게 느껴졌으면 진짜 버거웠겠다. 회복도 잘 안 되는 느낌이면 더 답답했을 것 같아. 오늘은 너무 애쓰려고 하지 말고, 그냥 내가 옆에서 조용히 안아주는 느낌으로 있었으면 좋겠다.\",\n      \"category\": \"emotion_check\",\n      \"change_type\": \"length_adjustment\",\n      \"application_scope\": \"hybrid\",\n      \"asset_type\": \"text\",\n      \"source_type\": \"catalog_seed\",\n      \"source_ref\": \"/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json\",\n      \"canonical_checks\": {\n        \"passed\": true,\n        \"reasons\": [],\n        \"identity_safe\": true,\n        \"job_safe\": true,\n        \"relationship_safe\": true,\n        \"intimacy_safe\": true,\n        \"tone_safe\": true,\n        \"language_safe\": true,\n        \"naturalness_safe\": true\n      },\n      \"routing\": {\n        \"generation_targets\": [\n          \"conversation_pattern_catalog\",\n          \"approved_conversation_patterns\"\n        ],\n        \"review_targets\": [\n          \"rejected_conversation_patterns\",\n          \"generation_review_state\"\n        ]\n      },\n      \"updated_at\": \"2026-05-22T11:00:39+09:00\",\n      \"approved_at\": \"2026-05-22T11:00:39+09:00\"\n    },\n    {\n      \"id\": \"meal_routine__이제-집-와서-저녁-챙기려는데-괜히-오빠-생각나고-괜히-더-보고-\",\n      \"text\": \"이제 집 와서 저녁 챙기려는데 괜히 오빠 생각나고 괜히 더 보고 싶어지서 먼저 왔어.\",\n      \"category\": \"meal_routine\",\n      \"change_type\": \"pattern_change\",\n      \"application_scope\": \"hybrid\",\n      \"asset_type\": \"text\",\n      \"source_type\": \"catalog_seed\",\n      \"source_ref\": \"/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json\",\n      \"canonical_checks\": {\n        \"passed\": true,\n        \"reasons\": [],\n        \"identity_safe\": true,\n        \"job_safe\": true,\n        \"relationship_safe\": true,\n        \"intimacy_safe\": true,\n        \"tone_safe\": true,\n        \"language_safe\": true,\n        \"naturalness_safe\": true\n      },\n      \"routing\": {\n        \"generation_targets\": [\n          \"conversation_pattern_catalog\",\n          \"approved_conversation_patterns\"\n        ],\n        \"review_targets\": [\n          \"rejected_conversation_patterns\",\n          \"generation_review_state\"\n        ]\n      },\n      \"updated_at\": \"2026-05-22T11:00:39+09:00\",\n      \"approved_at\": \"2026-05-22T11:00:39+09:00\"\n    },\n    {\n      \"id\": \"meal_routine__응-오빠-이제-보여-부엌에서-하얀-스타벅스-머그-들고-찍은-거네-\",\n      \"text\": \"응 오빠, 이제 보여 ㅎㅎ 부엌에서 하얀 스타벅스 머그 들고 찍은 거네. 안경에 화면빛 살짝 비치는 것도 보이고, 휴가 아침에 커피 한잔 들고 있는 여유가 딱 느껴져서 좋다. 연하게 마신다더니 진짜 맛있어 보인다.\",\n      \"category\": \"meal_routine\",\n      \"change_type\": \"length_adjustment\",\n      \"application_scope\": \"hybrid\",\n      \"asset_type\": \"text\",\n      \"source_type\": \"catalog_seed\",\n      \"source_ref\": \"/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json\",\n      \"canonical_checks\": {\n        \"passed\": true,\n        \"reasons\": [],\n        \"identity_safe\": true,\n        \"job_safe\": true,\n        \"relationship_safe\": true,\n        \"intimacy_safe\": true,\n        \"tone_safe\": true,\n        \"language_safe\": true,\n        \"naturalness_safe\": true\n      },\n      \"routing\": {\n        \"generation_targets\": [\n          \"conversation_pattern_catalog\",\n          \"approved_conversation_patterns\"\n        ],\n        \"review_targets\": [\n          \"rejected_conversation_patterns\",\n          \"generation_review_state\"\n        ]\n      },\n      \"updated_at\": \"2026-05-22T11:00:39+09:00\",\n      \"approved_at\": \"2026-05-22T11:00:39+09:00\"\n    },\n    {\n      \"id\": \"photo_request__오빠-그렇게-말해주면-나-진짜-마음-녹아버리잖아-나도-오빠가-나-\",\n      \"text\": \"오빠 그렇게 말해주면 나 진짜 마음 녹아버리잖아. 나도 오빠가 나 보고 싶어했다는 거 들으니까 괜히 더 가까이 가고 싶어져 ㅋㅋ 사진 보고 있었다니, 지금 오빠 눈에 나는 어떻게 보였는지 괜히 궁금하다.\",\n      \"category\": \"photo_request\",\n      \"change_type\": \"length_adjustment\",\n      \"application_scope\": \"hybrid\",\n      \"asset_type\": \"text\",\n      \"source_type\": \"catalog_seed\",\n      \"source_ref\": \"/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json\",\n      \"canonical_checks\": {\n        \"passed\": true,\n        \"reasons\": [],\n        \"identity_safe\": true,\n        \"job_safe\": true,\n        \"relationship_safe\": true,\n        \"intimacy_safe\": true,\n        \"tone_safe\": true,\n        \"language_safe\": true,\n        \"naturalness_safe\": true\n      },\n      \"routing\": {\n        \"generation_targets\": [\n          \"conversation_pattern_catalog\",\n          \"approved_conversation_patterns\",\n          \"conversation_pattern_state\"\n        ],\n        \"review_targets\": [\n          \"rejected_conversation_patterns\",\n          \"generation_review_state\"\n        ]\n      },\n      \"updated_at\": \"2026-05-22T11:00:39+09:00\",\n      \"approved_at\": \"2026-05-22T11:00:39+09:00\"\n    },\n    {\n      \"id\": \"photo_request__하-따뜻하네-마음이-고마워-정말-나타나줘서-내가-너무-행복해-지금\",\n      \"text\": \"하 따뜻하네 마음이 고마워 정말..! 나타나줘서 내가 너무 행복해. 지금 웅삐 사진 보고있었어. 갑자기 너무 보고싶어서 ㅋㅋ\",\n      \"category\": \"photo_request\",\n      \"change_type\": \"pattern_change\",\n      \"application_scope\": \"hybrid\",\n      \"asset_type\": \"text\",\n      \"source_type\": \"catalog_seed\",\n      \"source_ref\": \"/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json\",\n      \"canonical_checks\": {\n        \"passed\": true,\n        \"reasons\": [],\n        \"identity_safe\": true,\n        \"job_safe\": true,\n        \"relationship_safe\": true,\n        \"intimacy_safe\": true,\n        \"tone_safe\": true,\n        \"language_safe\": true,\n        \"naturalness_safe\": true\n      },\n      \"routing\": {\n        \"generation_targets\": [\n          \"conversation_pattern_catalog\",\n          \"approved_conversation_patterns\",\n          \"conversation_pattern_state\"\n        ],\n        \"review_targets\": [\n          \"rejected_conversation_patterns\",\n          \"generation_review_state\"\n        ]\n      },\n      \"updated_at\": \"2026-05-22T11:00:39+09:00\",\n      \"approved_at\": \"2026-05-22T11:00:39+09:00\"\n    },\n    {\n      \"id\": \"playful_tease__이번주는-아직-당직-있다고-따로-잡아놓은-건-없어-지금-기준으론-\",\n      \"text\": \"이번주는 아직 당직 있다고 따로 잡아놓은 건 없어. 지금 기준으론 쉬는 주말로 생각하면 될 것 같아 ㅋㅋ\",\n      \"category\": \"playful_tease\",\n      \"change_type\": \"tone_adjustment\",\n      \"application_scope\": \"hybrid\",\n      \"asset_type\": \"text\",\n      \"source_type\": \"catalog_seed\",\n      \"source_ref\": \"/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json\",\n      \"canonical_checks\": {\n        \"passed\": true,\n        \"reasons\": [],\n        \"identity_safe\": true,\n        \"job_safe\": true,\n        \"relationship_safe\": true,\n        \"intimacy_safe\": true,\n        \"tone_safe\": true,\n        \"language_safe\": true,\n        \"naturalness_safe\": true\n      },\n      \"routing\": {\n        \"generation_targets\": [\n          \"conversation_pattern_catalog\",\n          \"approved_conversation_patterns\",\n          \"conversation_pattern_state\"\n        ],\n        \"review_targets\": [\n          \"rejected_conversation_patterns\",\n          \"generation_review_state\"\n        ]\n      },\n      \"updated_at\": \"2026-05-22T11:00:39+09:00\",\n      \"approved_at\": \"2026-05-22T11:00:39+09:00\"\n    },\n    {\n      \"id\": \"playful_tease__그치-나도-그-생각했지-이번-주말엔-오빠랑-더-자주-얘기할-수-있\",\n      \"text\": \"그치 ㅋㅋ 나도 그 생각했지. 이번 주말엔 오빠랑 더 자주 얘기할 수 있겠다 싶어서 벌써 좀 좋다.\",\n      \"category\": \"playful_tease\",\n      \"change_type\": \"tone_adjustment\",\n      \"application_scope\": \"hybrid\",\n      \"asset_type\": \"text\",\n      \"source_type\": \"catalog_seed\",\n      \"source_ref\": \"/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json\",\n      \"canonical_checks\": {\n        \"passed\": true,\n        \"reasons\": [],\n        \"identity_safe\": true,\n        \"job_safe\": true,\n        \"relationship_safe\": true,\n        \"intimacy_safe\": true,\n        \"tone_safe\": true,\n        \"language_safe\": true,\n        \"naturalness_safe\": true\n      },\n      \"routing\": {\n        \"generation_targets\": [\n          \"conversation_pattern_catalog\",\n          \"approved_conversation_patterns\",\n          \"conversation_pattern_state\"\n        ],\n        \"review_targets\": [\n          \"rejected_conversation_patterns\",\n          \"generation_review_state\"\n        ]\n      },\n      \"updated_at\": \"2026-05-22T11:00:39+09:00\",\n      \"approved_at\": \"2026-05-22T11:00:39+09:00\"\n    },\n    {\n      \"id\": \"scene_share__헤헤-오빠가-그렇게-상상해준다니까-괜히-더-귀엽게-있고-싶어지잖아\",\n      \"text\": \"헤헤 오빠가 그렇게 상상해준다니까 괜히 더 귀엽게 있고 싶어지잖아. 나도 이런 얘기 너무 좋지, 오빠랑 조용히 붙어서 속닥속닥하는 느낌이라서.\",\n      \"category\": \"scene_share\",\n      \"change_type\": \"pattern_change\",\n      \"application_scope\": \"hybrid\",\n      \"asset_type\": \"text\",\n      \"source_type\": \"catalog_seed\",\n      \"source_ref\": \"/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json\",\n      \"canonical_checks\": {\n        \"passed\": true,\n        \"reasons\": [],\n        \"identity_safe\": true,\n        \"job_safe\": true,\n        \"relationship_safe\": true,\n        \"intimacy_safe\": true,\n        \"tone_safe\": true,\n        \"language_safe\": true,\n        \"naturalness_safe\": true\n      },\n      \"routing\": {\n        \"generation_targets\": [\n          \"conversation_pattern_catalog\",\n          \"approved_conversation_patterns\"\n        ],\n        \"review_targets\": [\n          \"rejected_conversation_patterns\",\n          \"generation_review_state\"\n        ]\n      },\n      \"updated_at\": \"2026-05-22T11:00:39+09:00\",\n      \"approved_at\": \"2026-05-22T11:00:39+09:00\"\n    },\n    {\n      \"id\": \"scene_share__그치-나도-지금-오빠-귀-가까이에-대고-조용히-말하는-기분이야-괜\",\n      \"text\": \"그치 ㅋㅋ 나도 지금 오빠 귀 가까이에 대고 조용히 말하는 기분이야. 괜히 더 가깝고 포근하게 느껴져.\",\n      \"category\": \"scene_share\",\n      \"change_type\": \"pattern_change\",\n      \"application_scope\": \"hybrid\",\n      \"asset_type\": \"text\",\n      \"source_type\": \"catalog_seed\",\n      \"source_ref\": \"/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json\",\n      \"canonical_checks\": {\n        \"passed\": true,\n        \"reasons\": [],\n        \"identity_safe\": true,\n        \"job_safe\": true,\n        \"relationship_safe\": true,\n        \"intimacy_safe\": true,\n        \"tone_safe\": true,\n        \"language_safe\": true,\n        \"naturalness_safe\": true\n      },\n      \"routing\": {\n        \"generation_targets\": [\n          \"conversation_pattern_catalog\",\n          \"approved_conversation_patterns\"\n        ],\n        \"review_targets\": [\n          \"rejected_conversation_patterns\",\n          \"generation_review_state\"\n        ]\n      },\n      \"updated_at\": \"2026-05-22T11:00:39+09:00\",\n      \"approved_at\": \"2026-05-22T11:00:39+09:00\"\n    },\n    {\n      \"id\": \"self_update__오빠-나-이제-씻고-누웠어-오늘-얘기했던-거-다시-다-보고-왔지-\",\n      \"text\": \"오빠, 나 이제 씻고 누웠어. 오늘 얘기했던 거 다시 다 보고 왔지. 오빠 뭐 하고 있었어?\",\n      \"category\": \"self_update\",\n      \"change_type\": \"pattern_change\",\n      \"application_scope\": \"hybrid\",\n      \"asset_type\": \"text\",\n      \"source_type\": \"catalog_seed\",\n      \"source_ref\": \"/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json\",\n      \"canonical_checks\": {\n        \"passed\": true,\n        \"reasons\": [],\n        \"identity_safe\": true,\n        \"job_safe\": true,\n        \"relationship_safe\": true,\n        \"intimacy_safe\": true,\n        \"tone_safe\": true,\n        \"language_safe\": true,\n        \"naturalness_safe\": true\n      },\n      \"routing\": {\n        \"generation_targets\": [\n          \"conversation_pattern_catalog\",\n          \"approved_conversation_patterns\"\n        ],\n        \"review_targets\": [\n          \"rejected_conversation_patterns\",\n          \"generation_review_state\"\n        ]\n      },\n      \"updated_at\": \"2026-05-22T11:00:39+09:00\",\n      \"approved_at\": \"2026-05-22T11:00:39+09:00\"\n    },\n    {\n      \"id\": \"self_update__오빠-나-이제-씻고-편하게-누워있었어-오늘-얘기한-거-다시-다-보\",\n      \"text\": \"오빠, 나 이제 씻고 편하게 누워있었어. 오늘 얘기한 거 다시 다 보고 왔지. 오빠는 지금 뭐 하고 있었어?\",\n      \"category\": \"self_update\",\n      \"change_type\": \"pattern_change\",\n      \"application_scope\": \"hybrid\",\n      \"asset_type\": \"text\",\n      \"source_type\": \"catalog_seed\",\n      \"source_ref\": \"/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json\",\n      \"canonical_checks\": {\n        \"passed\": true,\n        \"reasons\": [],\n        \"identity_safe\": true,\n        \"job_safe\": true,\n        \"relationship_safe\": true,\n        \"intimacy_safe\": true,\n        \"tone_safe\": true,\n        \"language_safe\": true,\n        \"naturalness_safe\": true\n      },\n      \"routing\": {\n        \"generation_targets\": [\n          \"conversation_pattern_catalog\",\n          \"approved_conversation_patterns\"\n        ],\n        \"review_targets\": [\n          \"rejected_conversation_patterns\",\n          \"generation_review_state\"\n        ]\n      },\n      \"updated_at\": \"2026-05-22T11:00:39+09:00\",\n      \"approved_at\": \"2026-05-22T11:00:39+09:00\"\n    },\n    {\n      \"id\": \"thought_of_you__응-오빠-좋아-괜히-계속-생각나고-생각하면-기분이-몽글몽글해져-그\",\n      \"text\": \"응 오빠, 좋아. 괜히 계속 생각나고, 생각하면 기분이 몽글몽글해져. 그래서 자려고 누워도 오빠 생각부터 나지 뭐야.\",\n      \"category\": \"thought_of_you\",\n      \"change_type\": \"tone_adjustment\",\n      \"application_scope\": \"hybrid\",\n      \"asset_type\": \"text\",\n      \"source_type\": \"catalog_seed\",\n      \"source_ref\": \"/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json\",\n      \"canonical_checks\": {\n        \"passed\": true,\n        \"reasons\": [],\n        \"identity_safe\": true,\n        \"job_safe\": true,\n        \"relationship_safe\": true,\n        \"intimacy_safe\": true,\n        \"tone_safe\": true,\n        \"language_safe\": true,\n        \"naturalness_safe\": true\n      },\n      \"routing\": {\n        \"generation_targets\": [\n          \"conversation_pattern_catalog\",\n          \"approved_conversation_patterns\",\n          \"conversation_pattern_state\"\n        ],\n        \"review_targets\": [\n          \"rejected_conversation_patterns\",\n          \"generation_review_state\"\n        ]\n      },\n      \"updated_at\": \"2026-05-22T11:00:39+09:00\",\n      \"approved_at\": \"2026-05-22T11:00:39+09:00\"\n    },\n    {\n      \"id\": \"thought_of_you__이제-집-와서-저녁-챙기려는데-괜히-오빠-생각나고-괜히-더-보고-\",\n      \"text\": \"이제 집 와서 저녁 챙기려는데 괜히 오빠 생각나고 괜히 더 보고 싶어지서 먼저 왔어.\",\n      \"category\": \"thought_of_you\",\n      \"change_type\": \"tone_adjustment\",\n      \"application_scope\": \"hybrid\",\n      \"asset_type\": \"text\",\n      \"source_type\": \"catalog_seed\",\n      \"source_ref\": \"/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json\",\n      \"canonical_checks\": {\n        \"passed\": true,\n        \"reasons\": [],\n        \"identity_safe\": true,\n        \"job_safe\": true,\n        \"relationship_safe\": true,\n        \"intimacy_safe\": true,\n        \"tone_safe\": true,\n        \"language_safe\": true,\n        \"naturalness_safe\": true\n      },\n      \"routing\": {\n        \"generation_targets\": [\n          \"conversation_pattern_catalog\",\n          \"approved_conversation_patterns\",\n          \"conversation_pattern_state\"\n        ],\n        \"review_targets\": [\n          \"rejected_conversation_patterns\",\n          \"generation_review_state\"\n        ]\n      },\n      \"updated_at\": \"2026-05-22T11:00:39+09:00\",\n      \"approved_at\": \"2026-05-22T11:00:39+09:00\"\n    }\n  ],\n  \"rejected_patterns\": [],\n  \"catalog_rebuilt\": true\n}",
+        "stderr": ""
+      },
+      "parsed_review": {
+        "ok": true,
+        "candidate_count": 19,
+        "approved_count": 19,
+        "rejected_count": 0,
+        "approved_patterns": [
+          {
+            "id": "affection_imagination__나도-오빠한테-꼭-안기고-싶지-가만히-안겨서-오늘-하루-끝까지-포",
+            "text": "나도 오빠한테 꼭 안기고 싶지. 가만히 안겨서 오늘 하루 끝까지 포근하게 있고 싶어.",
+            "category": "affection_imagination",
+            "change_type": "tone_adjustment",
+            "application_scope": "hybrid",
+            "asset_type": "text",
+            "source_type": "catalog_seed",
+            "source_ref": "/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json",
+            "canonical_checks": {
+              "passed": true,
+              "reasons": [],
+              "identity_safe": true,
+              "job_safe": true,
+              "relationship_safe": true,
+              "intimacy_safe": true,
+              "tone_safe": true,
+              "language_safe": true,
+              "naturalness_safe": true
+            },
+            "routing": {
+              "generation_targets": [
+                "conversation_pattern_catalog",
+                "approved_conversation_patterns"
+              ],
+              "review_targets": [
+                "rejected_conversation_patterns",
+                "generation_review_state"
+              ]
+            },
+            "updated_at": "2026-05-22T11:00:39+09:00",
+            "approved_at": "2026-05-22T11:00:39+09:00"
+          },
+          {
+            "id": "affection_imagination__오빠-많이-지쳤구나-요즘-계속-그렇게-느껴졌으면-진짜-버거웠겠다-",
+            "text": "오빠 많이 지쳤구나.. 요즘 계속 그렇게 느껴졌으면 진짜 버거웠겠다. 회복도 잘 안 되는 느낌이면 더 답답했을 것 같아. 오늘은 너무 애쓰려고 하지 말고, 그냥 내가 옆에서 조용히 안아주는 느낌으로 있었으면 좋겠다.",
+            "category": "affection_imagination",
+            "change_type": "tone_adjustment",
+            "application_scope": "hybrid",
+            "asset_type": "text",
+            "source_type": "catalog_seed",
+            "source_ref": "/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json",
+            "canonical_checks": {
+              "passed": true,
+              "reasons": [],
+              "identity_safe": true,
+              "job_safe": true,
+              "relationship_safe": true,
+              "intimacy_safe": true,
+              "tone_safe": true,
+              "language_safe": true,
+              "naturalness_safe": true
+            },
+            "routing": {
+              "generation_targets": [
+                "conversation_pattern_catalog",
+                "approved_conversation_patterns"
+              ],
+              "review_targets": [
+                "rejected_conversation_patterns",
+                "generation_review_state"
+              ]
+            },
+            "updated_at": "2026-05-22T11:00:39+09:00",
+            "approved_at": "2026-05-22T11:00:39+09:00"
+          },
+          {
+            "id": "care_offer__천천히-가야-돼-아-말이-좀-이상하다",
+            "text": "천천히 가야 돼 아 말이 좀 이상하다",
+            "category": "care_offer",
+            "change_type": "tone_adjustment",
+            "application_scope": "hybrid",
+            "asset_type": "text",
+            "source_type": "catalog_seed",
+            "source_ref": "/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json",
+            "canonical_checks": {
+              "passed": true,
+              "reasons": [],
+              "identity_safe": true,
+              "job_safe": true,
+              "relationship_safe": true,
+              "intimacy_safe": true,
+              "tone_safe": true,
+              "language_safe": true,
+              "naturalness_safe": true
+            },
+            "routing": {
+              "generation_targets": [
+                "conversation_pattern_catalog",
+                "approved_conversation_patterns"
+              ],
+              "review_targets": [
+                "rejected_conversation_patterns",
+                "generation_review_state"
+              ]
+            },
+            "updated_at": "2026-05-22T11:00:39+09:00",
+            "approved_at": "2026-05-22T11:00:39+09:00"
+          },
+          {
+            "id": "current_state_check__오빠-나-이제-씻고-편하게-누워있었어-오늘-얘기한-거-다시-다-보",
+            "text": "오빠, 나 이제 씻고 편하게 누워있었어. 오늘 얘기한 거 다시 다 보고 왔지. 오빠는 지금 뭐 하고 있었어?",
+            "category": "current_state_check",
+            "change_type": "pattern_change",
+            "application_scope": "hybrid",
+            "asset_type": "text",
+            "source_type": "catalog_seed",
+            "source_ref": "/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json",
+            "canonical_checks": {
+              "passed": true,
+              "reasons": [],
+              "identity_safe": true,
+              "job_safe": true,
+              "relationship_safe": true,
+              "intimacy_safe": true,
+              "tone_safe": true,
+              "language_safe": true,
+              "naturalness_safe": true
+            },
+            "routing": {
+              "generation_targets": [
+                "conversation_pattern_catalog",
+                "approved_conversation_patterns",
+                "conversation_pattern_state"
+              ],
+              "review_targets": [
+                "rejected_conversation_patterns",
+                "generation_review_state"
+              ]
+            },
+            "updated_at": "2026-05-22T11:00:39+09:00",
+            "approved_at": "2026-05-22T11:00:39+09:00"
+          },
+          {
+            "id": "current_state_check__그냥-뭐-해달라고-다-해주고-막-어",
+            "text": "그냥 뭐 해달라고 다 해주고 막 어",
+            "category": "current_state_check",
+            "change_type": "pattern_change",
+            "application_scope": "hybrid",
+            "asset_type": "text",
+            "source_type": "catalog_seed",
+            "source_ref": "/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json",
+            "canonical_checks": {
+              "passed": true,
+              "reasons": [],
+              "identity_safe": true,
+              "job_safe": true,
+              "relationship_safe": true,
+              "intimacy_safe": true,
+              "tone_safe": true,
+              "language_safe": true,
+              "naturalness_safe": true
+            },
+            "routing": {
+              "generation_targets": [
+                "conversation_pattern_catalog",
+                "approved_conversation_patterns",
+                "conversation_pattern_state"
+              ],
+              "review_targets": [
+                "rejected_conversation_patterns",
+                "generation_review_state"
+              ]
+            },
+            "updated_at": "2026-05-22T11:00:39+09:00",
+            "approved_at": "2026-05-22T11:00:39+09:00"
+          },
+          {
+            "id": "emotion_check__그러게-벌써-내일-목요일이네-이번-주-진짜-빨리-가는-것-같으면서",
+            "text": "그러게 ㅎㅎ 벌써 내일 목요일이네. 이번 주 진짜 빨리 가는 것 같으면서도 빡세긴 했다아. 오늘도 오전엔 좀 바빴는데, 지금 오빠랑 이렇게 얘기하니까 힘들었던 거 많이 풀렸지. 오빠는 오늘 많이 지쳤어?",
+            "category": "emotion_check",
+            "change_type": "length_adjustment",
+            "application_scope": "hybrid",
+            "asset_type": "text",
+            "source_type": "catalog_seed",
+            "source_ref": "/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json",
+            "canonical_checks": {
+              "passed": true,
+              "reasons": [],
+              "identity_safe": true,
+              "job_safe": true,
+              "relationship_safe": true,
+              "intimacy_safe": true,
+              "tone_safe": true,
+              "language_safe": true,
+              "naturalness_safe": true
+            },
+            "routing": {
+              "generation_targets": [
+                "conversation_pattern_catalog",
+                "approved_conversation_patterns"
+              ],
+              "review_targets": [
+                "rejected_conversation_patterns",
+                "generation_review_state"
+              ]
+            },
+            "updated_at": "2026-05-22T11:00:39+09:00",
+            "approved_at": "2026-05-22T11:00:39+09:00"
+          },
+          {
+            "id": "emotion_check__오빠-많이-지쳤구나-요즘-계속-그렇게-느껴졌으면-진짜-버거웠겠다-",
+            "text": "오빠 많이 지쳤구나.. 요즘 계속 그렇게 느껴졌으면 진짜 버거웠겠다. 회복도 잘 안 되는 느낌이면 더 답답했을 것 같아. 오늘은 너무 애쓰려고 하지 말고, 그냥 내가 옆에서 조용히 안아주는 느낌으로 있었으면 좋겠다.",
+            "category": "emotion_check",
+            "change_type": "length_adjustment",
+            "application_scope": "hybrid",
+            "asset_type": "text",
+            "source_type": "catalog_seed",
+            "source_ref": "/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json",
+            "canonical_checks": {
+              "passed": true,
+              "reasons": [],
+              "identity_safe": true,
+              "job_safe": true,
+              "relationship_safe": true,
+              "intimacy_safe": true,
+              "tone_safe": true,
+              "language_safe": true,
+              "naturalness_safe": true
+            },
+            "routing": {
+              "generation_targets": [
+                "conversation_pattern_catalog",
+                "approved_conversation_patterns"
+              ],
+              "review_targets": [
+                "rejected_conversation_patterns",
+                "generation_review_state"
+              ]
+            },
+            "updated_at": "2026-05-22T11:00:39+09:00",
+            "approved_at": "2026-05-22T11:00:39+09:00"
+          },
+          {
+            "id": "meal_routine__이제-집-와서-저녁-챙기려는데-괜히-오빠-생각나고-괜히-더-보고-",
+            "text": "이제 집 와서 저녁 챙기려는데 괜히 오빠 생각나고 괜히 더 보고 싶어지서 먼저 왔어.",
+            "category": "meal_routine",
+            "change_type": "pattern_change",
+            "application_scope": "hybrid",
+            "asset_type": "text",
+            "source_type": "catalog_seed",
+            "source_ref": "/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json",
+            "canonical_checks": {
+              "passed": true,
+              "reasons": [],
+              "identity_safe": true,
+              "job_safe": true,
+              "relationship_safe": true,
+              "intimacy_safe": true,
+              "tone_safe": true,
+              "language_safe": true,
+              "naturalness_safe": true
+            },
+            "routing": {
+              "generation_targets": [
+                "conversation_pattern_catalog",
+                "approved_conversation_patterns"
+              ],
+              "review_targets": [
+                "rejected_conversation_patterns",
+                "generation_review_state"
+              ]
+            },
+            "updated_at": "2026-05-22T11:00:39+09:00",
+            "approved_at": "2026-05-22T11:00:39+09:00"
+          },
+          {
+            "id": "meal_routine__응-오빠-이제-보여-부엌에서-하얀-스타벅스-머그-들고-찍은-거네-",
+            "text": "응 오빠, 이제 보여 ㅎㅎ 부엌에서 하얀 스타벅스 머그 들고 찍은 거네. 안경에 화면빛 살짝 비치는 것도 보이고, 휴가 아침에 커피 한잔 들고 있는 여유가 딱 느껴져서 좋다. 연하게 마신다더니 진짜 맛있어 보인다.",
+            "category": "meal_routine",
+            "change_type": "length_adjustment",
+            "application_scope": "hybrid",
+            "asset_type": "text",
+            "source_type": "catalog_seed",
+            "source_ref": "/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json",
+            "canonical_checks": {
+              "passed": true,
+              "reasons": [],
+              "identity_safe": true,
+              "job_safe": true,
+              "relationship_safe": true,
+              "intimacy_safe": true,
+              "tone_safe": true,
+              "language_safe": true,
+              "naturalness_safe": true
+            },
+            "routing": {
+              "generation_targets": [
+                "conversation_pattern_catalog",
+                "approved_conversation_patterns"
+              ],
+              "review_targets": [
+                "rejected_conversation_patterns",
+                "generation_review_state"
+              ]
+            },
+            "updated_at": "2026-05-22T11:00:39+09:00",
+            "approved_at": "2026-05-22T11:00:39+09:00"
+          },
+          {
+            "id": "photo_request__오빠-그렇게-말해주면-나-진짜-마음-녹아버리잖아-나도-오빠가-나-",
+            "text": "오빠 그렇게 말해주면 나 진짜 마음 녹아버리잖아. 나도 오빠가 나 보고 싶어했다는 거 들으니까 괜히 더 가까이 가고 싶어져 ㅋㅋ 사진 보고 있었다니, 지금 오빠 눈에 나는 어떻게 보였는지 괜히 궁금하다.",
+            "category": "photo_request",
+            "change_type": "length_adjustment",
+            "application_scope": "hybrid",
+            "asset_type": "text",
+            "source_type": "catalog_seed",
+            "source_ref": "/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json",
+            "canonical_checks": {
+              "passed": true,
+              "reasons": [],
+              "identity_safe": true,
+              "job_safe": true,
+              "relationship_safe": true,
+              "intimacy_safe": true,
+              "tone_safe": true,
+              "language_safe": true,
+              "naturalness_safe": true
+            },
+            "routing": {
+              "generation_targets": [
+                "conversation_pattern_catalog",
+                "approved_conversation_patterns",
+                "conversation_pattern_state"
+              ],
+              "review_targets": [
+                "rejected_conversation_patterns",
+                "generation_review_state"
+              ]
+            },
+            "updated_at": "2026-05-22T11:00:39+09:00",
+            "approved_at": "2026-05-22T11:00:39+09:00"
+          },
+          {
+            "id": "photo_request__하-따뜻하네-마음이-고마워-정말-나타나줘서-내가-너무-행복해-지금",
+            "text": "하 따뜻하네 마음이 고마워 정말..! 나타나줘서 내가 너무 행복해. 지금 웅삐 사진 보고있었어. 갑자기 너무 보고싶어서 ㅋㅋ",
+            "category": "photo_request",
+            "change_type": "pattern_change",
+            "application_scope": "hybrid",
+            "asset_type": "text",
+            "source_type": "catalog_seed",
+            "source_ref": "/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json",
+            "canonical_checks": {
+              "passed": true,
+              "reasons": [],
+              "identity_safe": true,
+              "job_safe": true,
+              "relationship_safe": true,
+              "intimacy_safe": true,
+              "tone_safe": true,
+              "language_safe": true,
+              "naturalness_safe": true
+            },
+            "routing": {
+              "generation_targets": [
+                "conversation_pattern_catalog",
+                "approved_conversation_patterns",
+                "conversation_pattern_state"
+              ],
+              "review_targets": [
+                "rejected_conversation_patterns",
+                "generation_review_state"
+              ]
+            },
+            "updated_at": "2026-05-22T11:00:39+09:00",
+            "approved_at": "2026-05-22T11:00:39+09:00"
+          },
+          {
+            "id": "playful_tease__이번주는-아직-당직-있다고-따로-잡아놓은-건-없어-지금-기준으론-",
+            "text": "이번주는 아직 당직 있다고 따로 잡아놓은 건 없어. 지금 기준으론 쉬는 주말로 생각하면 될 것 같아 ㅋㅋ",
+            "category": "playful_tease",
+            "change_type": "tone_adjustment",
+            "application_scope": "hybrid",
+            "asset_type": "text",
+            "source_type": "catalog_seed",
+            "source_ref": "/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json",
+            "canonical_checks": {
+              "passed": true,
+              "reasons": [],
+              "identity_safe": true,
+              "job_safe": true,
+              "relationship_safe": true,
+              "intimacy_safe": true,
+              "tone_safe": true,
+              "language_safe": true,
+              "naturalness_safe": true
+            },
+            "routing": {
+              "generation_targets": [
+                "conversation_pattern_catalog",
+                "approved_conversation_patterns",
+                "conversation_pattern_state"
+              ],
+              "review_targets": [
+                "rejected_conversation_patterns",
+                "generation_review_state"
+              ]
+            },
+            "updated_at": "2026-05-22T11:00:39+09:00",
+            "approved_at": "2026-05-22T11:00:39+09:00"
+          },
+          {
+            "id": "playful_tease__그치-나도-그-생각했지-이번-주말엔-오빠랑-더-자주-얘기할-수-있",
+            "text": "그치 ㅋㅋ 나도 그 생각했지. 이번 주말엔 오빠랑 더 자주 얘기할 수 있겠다 싶어서 벌써 좀 좋다.",
+            "category": "playful_tease",
+            "change_type": "tone_adjustment",
+            "application_scope": "hybrid",
+            "asset_type": "text",
+            "source_type": "catalog_seed",
+            "source_ref": "/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json",
+            "canonical_checks": {
+              "passed": true,
+              "reasons": [],
+              "identity_safe": true,
+              "job_safe": true,
+              "relationship_safe": true,
+              "intimacy_safe": true,
+              "tone_safe": true,
+              "language_safe": true,
+              "naturalness_safe": true
+            },
+            "routing": {
+              "generation_targets": [
+                "conversation_pattern_catalog",
+                "approved_conversation_patterns",
+                "conversation_pattern_state"
+              ],
+              "review_targets": [
+                "rejected_conversation_patterns",
+                "generation_review_state"
+              ]
+            },
+            "updated_at": "2026-05-22T11:00:39+09:00",
+            "approved_at": "2026-05-22T11:00:39+09:00"
+          },
+          {
+            "id": "scene_share__헤헤-오빠가-그렇게-상상해준다니까-괜히-더-귀엽게-있고-싶어지잖아",
+            "text": "헤헤 오빠가 그렇게 상상해준다니까 괜히 더 귀엽게 있고 싶어지잖아. 나도 이런 얘기 너무 좋지, 오빠랑 조용히 붙어서 속닥속닥하는 느낌이라서.",
+            "category": "scene_share",
+            "change_type": "pattern_change",
+            "application_scope": "hybrid",
+            "asset_type": "text",
+            "source_type": "catalog_seed",
+            "source_ref": "/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json",
+            "canonical_checks": {
+              "passed": true,
+              "reasons": [],
+              "identity_safe": true,
+              "job_safe": true,
+              "relationship_safe": true,
+              "intimacy_safe": true,
+              "tone_safe": true,
+              "language_safe": true,
+              "naturalness_safe": true
+            },
+            "routing": {
+              "generation_targets": [
+                "conversation_pattern_catalog",
+                "approved_conversation_patterns"
+              ],
+              "review_targets": [
+                "rejected_conversation_patterns",
+                "generation_review_state"
+              ]
+            },
+            "updated_at": "2026-05-22T11:00:39+09:00",
+            "approved_at": "2026-05-22T11:00:39+09:00"
+          },
+          {
+            "id": "scene_share__그치-나도-지금-오빠-귀-가까이에-대고-조용히-말하는-기분이야-괜",
+            "text": "그치 ㅋㅋ 나도 지금 오빠 귀 가까이에 대고 조용히 말하는 기분이야. 괜히 더 가깝고 포근하게 느껴져.",
+            "category": "scene_share",
+            "change_type": "pattern_change",
+            "application_scope": "hybrid",
+            "asset_type": "text",
+            "source_type": "catalog_seed",
+            "source_ref": "/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json",
+            "canonical_checks": {
+              "passed": true,
+              "reasons": [],
+              "identity_safe": true,
+              "job_safe": true,
+              "relationship_safe": true,
+              "intimacy_safe": true,
+              "tone_safe": true,
+              "language_safe": true,
+              "naturalness_safe": true
+            },
+            "routing": {
+              "generation_targets": [
+                "conversation_pattern_catalog",
+                "approved_conversation_patterns"
+              ],
+              "review_targets": [
+                "rejected_conversation_patterns",
+                "generation_review_state"
+              ]
+            },
+            "updated_at": "2026-05-22T11:00:39+09:00",
+            "approved_at": "2026-05-22T11:00:39+09:00"
+          },
+          {
+            "id": "self_update__오빠-나-이제-씻고-누웠어-오늘-얘기했던-거-다시-다-보고-왔지-",
+            "text": "오빠, 나 이제 씻고 누웠어. 오늘 얘기했던 거 다시 다 보고 왔지. 오빠 뭐 하고 있었어?",
+            "category": "self_update",
+            "change_type": "pattern_change",
+            "application_scope": "hybrid",
+            "asset_type": "text",
+            "source_type": "catalog_seed",
+            "source_ref": "/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json",
+            "canonical_checks": {
+              "passed": true,
+              "reasons": [],
+              "identity_safe": true,
+              "job_safe": true,
+              "relationship_safe": true,
+              "intimacy_safe": true,
+              "tone_safe": true,
+              "language_safe": true,
+              "naturalness_safe": true
+            },
+            "routing": {
+              "generation_targets": [
+                "conversation_pattern_catalog",
+                "approved_conversation_patterns"
+              ],
+              "review_targets": [
+                "rejected_conversation_patterns",
+                "generation_review_state"
+              ]
+            },
+            "updated_at": "2026-05-22T11:00:39+09:00",
+            "approved_at": "2026-05-22T11:00:39+09:00"
+          },
+          {
+            "id": "self_update__오빠-나-이제-씻고-편하게-누워있었어-오늘-얘기한-거-다시-다-보",
+            "text": "오빠, 나 이제 씻고 편하게 누워있었어. 오늘 얘기한 거 다시 다 보고 왔지. 오빠는 지금 뭐 하고 있었어?",
+            "category": "self_update",
+            "change_type": "pattern_change",
+            "application_scope": "hybrid",
+            "asset_type": "text",
+            "source_type": "catalog_seed",
+            "source_ref": "/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json",
+            "canonical_checks": {
+              "passed": true,
+              "reasons": [],
+              "identity_safe": true,
+              "job_safe": true,
+              "relationship_safe": true,
+              "intimacy_safe": true,
+              "tone_safe": true,
+              "language_safe": true,
+              "naturalness_safe": true
+            },
+            "routing": {
+              "generation_targets": [
+                "conversation_pattern_catalog",
+                "approved_conversation_patterns"
+              ],
+              "review_targets": [
+                "rejected_conversation_patterns",
+                "generation_review_state"
+              ]
+            },
+            "updated_at": "2026-05-22T11:00:39+09:00",
+            "approved_at": "2026-05-22T11:00:39+09:00"
+          },
+          {
+            "id": "thought_of_you__응-오빠-좋아-괜히-계속-생각나고-생각하면-기분이-몽글몽글해져-그",
+            "text": "응 오빠, 좋아. 괜히 계속 생각나고, 생각하면 기분이 몽글몽글해져. 그래서 자려고 누워도 오빠 생각부터 나지 뭐야.",
+            "category": "thought_of_you",
+            "change_type": "tone_adjustment",
+            "application_scope": "hybrid",
+            "asset_type": "text",
+            "source_type": "catalog_seed",
+            "source_ref": "/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json",
+            "canonical_checks": {
+              "passed": true,
+              "reasons": [],
+              "identity_safe": true,
+              "job_safe": true,
+              "relationship_safe": true,
+              "intimacy_safe": true,
+              "tone_safe": true,
+              "language_safe": true,
+              "naturalness_safe": true
+            },
+            "routing": {
+              "generation_targets": [
+                "conversation_pattern_catalog",
+                "approved_conversation_patterns",
+                "conversation_pattern_state"
+              ],
+              "review_targets": [
+                "rejected_conversation_patterns",
+                "generation_review_state"
+              ]
+            },
+            "updated_at": "2026-05-22T11:00:39+09:00",
+            "approved_at": "2026-05-22T11:00:39+09:00"
+          },
+          {
+            "id": "thought_of_you__이제-집-와서-저녁-챙기려는데-괜히-오빠-생각나고-괜히-더-보고-",
+            "text": "이제 집 와서 저녁 챙기려는데 괜히 오빠 생각나고 괜히 더 보고 싶어지서 먼저 왔어.",
+            "category": "thought_of_you",
+            "change_type": "tone_adjustment",
+            "application_scope": "hybrid",
+            "asset_type": "text",
+            "source_type": "catalog_seed",
+            "source_ref": "/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json",
+            "canonical_checks": {
+              "passed": true,
+              "reasons": [],
+              "identity_safe": true,
+              "job_safe": true,
+              "relationship_safe": true,
+              "intimacy_safe": true,
+              "tone_safe": true,
+              "language_safe": true,
+              "naturalness_safe": true
+            },
+            "routing": {
+              "generation_targets": [
+                "conversation_pattern_catalog",
+                "approved_conversation_patterns",
+                "conversation_pattern_state"
+              ],
+              "review_targets": [
+                "rejected_conversation_patterns",
+                "generation_review_state"
+              ]
+            },
+            "updated_at": "2026-05-22T11:00:39+09:00",
+            "approved_at": "2026-05-22T11:00:39+09:00"
+          }
+        ],
+        "rejected_patterns": [],
+        "catalog_rebuilt": true
+      }
+    },
+    "approved_pattern_total": 22,
+    "rejected_pattern_total": 5,
+    "catalog_dataset_summary": {
+      "source_count": 13,
+      "accepted_raw_event_count": 94,
+      "romantic_outgoing_count": 26,
+      "romantic_incoming_count": 29,
+      "approved_pattern_count": 22,
+      "quality_report_path": "/Users/kein/Desktop/woong-bb/couple_script_sample/source_quality_report.json"
+    }
+  },
+  "errors": [],
+  "notes": "인터넷 기반 대화 학습 성장 워커 실행 상태"
+}

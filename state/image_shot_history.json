@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "managed_by": "share_priority_engine",
+  "updated_at": "2026-05-22T08:28:48+09:00",
+  "recent_plans": [
+    {
+      "generated_at": "2026-05-22T08:28:48+09:00",
+      "image_type": "workday_candid_selfie",
+      "shot_type": "waist_up",
+      "camera_angle": "slight_high_angle",
+      "framing": "torso_and_outfit_bias",
+      "pose": "coffee_in_hand",
+      "expression": "bright_smile",
+      "selfie_capture_method": "front_camera_handheld",
+      "camera_visibility": "front_camera_phone_not_visible",
+      "space_anchor": "quiet_hallway",
+      "activity": "hospital_morning_shift",
+      "time_block": "morning_shift"
+    },
+    {
+      "generated_at": "2026-05-22T08:28:22+09:00",
+      "image_type": "workday_candid_selfie",
+      "shot_type": "mirror_quick_check",
+      "camera_angle": "three_quarter_arm_length",
+      "framing": "window_reflection_mix",
+      "pose": "walking_glance",
+      "expression": "focused_soft",
+      "selfie_capture_method": "front_camera_handheld",
+      "camera_visibility": "front_camera_phone_not_visible",
+      "space_anchor": "staff_restroom_mirror",
+      "activity": "hospital_morning_shift",
+      "time_block": "morning_shift"
+    }
+  ],
+  "notes": "최근 이미지 샷 메타데이터를 기록해 반복 구도를 피한다"
+}

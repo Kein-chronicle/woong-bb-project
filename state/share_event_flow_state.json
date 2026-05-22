@@ -6,6 +6,15 @@
   "last_flow_result": "text_only",
   "last_flow_reason": "현재는 텍스트 우선 유지가 자연스러움",
   "last_downgrade_reason": "link_no_real_url",
-  "last_executed_at": "2026-05-21T13:31:22+09:00",
-  "notes": "공유 이벤트 호출 흐름의 마지막 실행 결과를 기록한다."
+  "last_executed_at": "2026-05-22T08:01:25+09:00",
+  "notes": "공유 이벤트 호출 흐름의 마지막 실행 결과를 기록한다.",
+  "last_candidate_image_type": "workday_candid_selfie",
+  "last_candidate_image_plan": {
+    "shot_type": "walking_candid",
+    "camera_angle": "three_quarter_arm_length",
+    "expression": "focused_soft",
+    "pose": "bag_strap_hold",
+    "framing": "station_or_hallway_context",
+    "crop_bias": "half_body_to_waist"
+  }
 }

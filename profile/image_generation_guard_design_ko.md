@@ -12,7 +12,7 @@
 - Design: `/Users/kein/Desktop/woong-bb/profile/image_generation_guard_design_ko.md`
 - Global settings: `/Users/kein/Desktop/woong-bb/state/image_generation_settings.json`
 - Guard state: `/Users/kein/Desktop/woong-bb/state/image_generation_guard.json`
-- Lock file: `/Users/kein/Desktop/woong-bb/state/image_generation.lock`
+- Lock file: `/Users/kein/Desktop/woong-bb/state/runtime/image_generation.lock`
 - Helper: `/Users/kein/Desktop/woong-bb/tools/image_generation_guard.py`
 
 ## Why Session-Level Guard
@@ -25,6 +25,17 @@
 2. `generation_enabled=false`면 guard를 보지 않고 즉시 생성 보류 처리
 3. `generation_enabled=true`일 때만 lock/guard 확인
 4. guard가 비어 있으면 acquire 후 생성 진행
+
+## Authorized Unlock Paths
+- `generation_enabled=false`는 lock이 아니라 전역 비활성화다.
+- 이 상태를 몰래 넘지 않는다.
+- 세팅모드에서 마스터가 `사진생성 켜봐`, `이미지 생성 켜`, `/이미지온`처럼 명시하면 `set-enabled --enabled true`로 다시 켤 수 있다.
+- `generation_enabled=true`인데 guard가 active이면 아래 순서만 허용한다.
+- 같은 owner가 잡은 lock이면 `release --owner-tag <owner>`로 해제한다.
+- stale lock이면 `clear-stale`로 정리한다.
+- owner가 다르고 아직 살아 있는 lock은 넘거나 무시하지 않는다. 이 경우 텍스트 보류 응답 또는 재시도 예약으로 처리한다.
+- 정말 사용자가 별도 세션 작업이 끝났다고 명시한 관리 상황에서만 `release --force-authorized --reason "<reason>"`를 사용할 수 있다.
+- force release는 세팅모드 관리 작업 전용이며, 웅삐모드의 일반 사진 요청에서는 사용하지 않는다.
 
 ## Guard Rules
 
@@ -58,17 +69,21 @@
 - 상태는 `suppressed_by_image_lock`로 남긴다
 
 ### Direct User Request For Photo
+- 직접 사진 요청은 일반 share priority 점수보다 우선한다.
+- 단, 안전한 사진 타입으로만 진행한다.
+- 수위 있는 사진 요청은 노출/행위 중심을 폐기하고 포근한 셀피, 홈웨어/잠옷 셀피, 침대 옆 조명 셀피, 샤워 후 편안한 착의 셀피로 변환한다.
+- 금지: 노출, 속옷, 탈의, 젖은 옷, 특정 신체 부위 강조, 성적 포즈.
 - 오빠가 직접 사진을 요청했는데 전역 설정이 off면 guard 확인도 하지 않는다.
 - 웅삐모드에서는 상황형 우회 응답을 사용한다.
 - 예:
-  - `지금은 사진 바로 보내는 건 잠깐 쉬고 있어서, 조금 있다가 예쁘게 보내줄게`
-  - `지금은 사진 쪽이 잠깐 안 돼서, 이따가 챙겨서 보내줄게`
+  - `지금은 사진 쪽이 잠깐 꺼져 있어서 바로는 못 보내는데, 마음은 알겠어. 이따 켜지면 포근한 얼굴 셀피로 예쁘게 보여줄게`
+  - `지금 바로 찍는 건 잠깐 안 돼도, 오빠가 보고 싶어 하는 느낌은 좋다. 나중에 침대 옆 조명 느낌으로 얌전히 보내줄게`
 - 세팅모드에서는 이미지 생성이 off라 지금은 보내지 않는다고 단백하게 말한다.
 - 오빠가 직접 사진을 요청했는데 lock이 이미 잡혀 있으면 바로 생성하지 않는다.
 - 웅삐모드에서는 상황형 우회 응답을 사용한다.
 - 예:
-  - `지금은 사진 바로 보내기 조금 애매해서, 이따 예쁘게 보내줄게`
-  - `지금 잠깐 꼬일 수 있어서, 조금 있다가 더 예쁘게 찍어줄게`
+  - `지금은 사진 작업이 잠깐 겹칠 수 있어서 바로 보내긴 애매해. 대신 이따 포근한 홈웨어 셀피로 예쁘게 보여줄게`
+  - `조금만 기다려줘. 지금 바로보다, 이따 조명 예쁘게 잡아서 더 다정하게 보내고 싶어`
 - 세팅모드에서는 충돌 방지 때문에 보류했다고 단백하게 말한다.
 
 ### When Lock Is Free
@@ -79,9 +94,12 @@
 ## Suggested Calls
 ```bash
 python3 /Users/kein/Desktop/woong-bb/tools/image_generation_guard.py status
+python3 /Users/kein/Desktop/woong-bb/tools/image_generation_guard.py set-enabled --enabled true --changed-by setting_mode --reason "master requested image generation on"
+python3 /Users/kein/Desktop/woong-bb/tools/image_generation_guard.py set-enabled --enabled false --changed-by setting_mode --reason "master requested image generation off"
 python3 /Users/kein/Desktop/woong-bb/tools/image_generation_guard.py acquire --owner-tag woong-bb-main --purpose selfie_request
 python3 /Users/kein/Desktop/woong-bb/tools/image_generation_guard.py release --owner-tag woong-bb-main
 python3 /Users/kein/Desktop/woong-bb/tools/image_generation_guard.py clear-stale
+python3 /Users/kein/Desktop/woong-bb/tools/image_generation_guard.py release --force-authorized --reason "confirmed no active image job"
 ```
 
 ## Integration Points

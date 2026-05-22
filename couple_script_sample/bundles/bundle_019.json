@@ -1,0 +1,90 @@
+{
+  "bundle_id": "bundle_019",
+  "source_video_id": "NEW2idHvPKE",
+  "source_title": "부부 Q&A | 이렇게 솔직해도 되나? 부부생활부터 관리까지!",
+  "source_url": "https://www.youtube.com/watch?v=NEW2idHvPKE",
+  "source_lang": "ko",
+  "speaker_note": "유튜브 자동 자막을 시간순으로 정리했으며 화자 표시는 교대형 추정입니다.",
+  "utterances": [
+    {
+      "turn_index": 1,
+      "speaker": "화자A(추정)",
+      "text_ko": "스킨십 빈도는 달라졌나요?",
+      "source_text": "스킨십 빈도는 달라졌나요?",
+      "start_ms": 31119,
+      "duration_ms": 5120
+    },
+    {
+      "turn_index": 2,
+      "speaker": "화자B(추정)",
+      "text_ko": ">> 전 확실히 스킨십 빈도가 늘었다고",
+      "source_text": ">> 전 확실히 스킨십 빈도가 늘었다고",
+      "start_ms": 33040,
+      "duration_ms": 4600
+    },
+    {
+      "turn_index": 3,
+      "speaker": "화자A(추정)",
+      "text_ko": "생각해요.",
+      "source_text": "생각해요.",
+      "start_ms": 36239,
+      "duration_ms": 3061
+    },
+    {
+      "turn_index": 4,
+      "speaker": "화자B(추정)",
+      "text_ko": ">> 어떻해요?",
+      "source_text": ">> 어떻해요?",
+      "start_ms": 37640,
+      "duration_ms": 2000
+    },
+    {
+      "turn_index": 5,
+      "speaker": "화자A(추정)",
+      "text_ko": ">> 연애할 때 솔직히 말하면 자기를 너무",
+      "source_text": ">> 연애할 때 솔직히 말하면 자기를 너무",
+      "start_ms": 39640,
+      "duration_ms": 4480
+    },
+    {
+      "turn_index": 6,
+      "speaker": "화자B(추정)",
+      "text_ko": "좋아했잖아. 너무 좋아하니까 나",
+      "source_text": "좋아했잖아. 너무 좋아하니까 나",
+      "start_ms": 42000,
+      "duration_ms": 3559
+    },
+    {
+      "turn_index": 7,
+      "speaker": "화자A(추정)",
+      "text_ko": "긴장을 너무 많이 했어. 계속 오랜",
+      "source_text": "긴장을 너무 많이 했어. 계속 오랜",
+      "start_ms": 44120,
+      "duration_ms": 3919
+    },
+    {
+      "turn_index": 8,
+      "speaker": "화자B(추정)",
+      "text_ko": "기간 동안 손자는 것들 눈치 보고이",
+      "source_text": "기간 동안 손자는 것들 눈치 보고이",
+      "start_ms": 45559,
+      "duration_ms": 4320
+    },
+    {
+      "turn_index": 9,
+      "speaker": "화자A(추정)",
+      "text_ko": "근데 이제 결혼하고 나니까 편안함이",
+      "source_text": "근데 이제 결혼하고 나니까 편안함이",
+      "start_ms": 48039,
+      "duration_ms": 3961
+    },
+    {
+      "turn_index": 10,
+      "speaker": "화자B(추정)",
+      "text_ko": "생기면서 스킨십이 자연스러워지다",
+      "source_text": "생기면서 스킨십이 자연스러워지다",
+      "start_ms": 49879,
+      "duration_ms": 5000
+    }
+  ]
+}

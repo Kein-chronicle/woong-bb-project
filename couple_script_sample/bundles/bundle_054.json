@@ -1,0 +1,90 @@
+{
+  "bundle_id": "bundle_054",
+  "source_video_id": "nl1M55rnVPw",
+  "source_title": "[VLOG] 육아 난이도 급상승이유..⁉️ + 남편과의 진지한 대화👩🏻",
+  "source_url": "https://www.youtube.com/watch?v=nl1M55rnVPw",
+  "source_lang": "ko",
+  "speaker_note": "유튜브 자동 자막을 시간순으로 정리했으며 화자 표시는 교대형 추정입니다.",
+  "utterances": [
+    {
+      "turn_index": 1,
+      "speaker": "화자A(추정)",
+      "text_ko": "거 같지 않나?",
+      "source_text": "거 같지 않나?",
+      "start_ms": 131599,
+      "duration_ms": 3761
+    },
+    {
+      "turn_index": 2,
+      "speaker": "화자B(추정)",
+      "text_ko": ">> 약간요 올라올 때 손을 깨끗하게 씻고",
+      "source_text": ">> 약간요 올라올 때 손을 깨끗하게 씻고",
+      "start_ms": 132640,
+      "duration_ms": 5800
+    },
+    {
+      "turn_index": 3,
+      "speaker": "화자A(추정)",
+      "text_ko": "요기를 손으로 요렇게 해보라고",
+      "source_text": "요기를 손으로 요렇게 해보라고",
+      "start_ms": 135360,
+      "duration_ms": 5879
+    },
+    {
+      "turn_index": 4,
+      "speaker": "화자B(추정)",
+      "text_ko": "나오려고 하. 어 까슬까슬하게 약간",
+      "source_text": "나오려고 하. 어 까슬까슬하게 약간",
+      "start_ms": 138440,
+      "duration_ms": 5720
+    },
+    {
+      "turn_index": 5,
+      "speaker": "화자A(추정)",
+      "text_ko": "또 있잖아.",
+      "source_text": "또 있잖아.",
+      "start_ms": 141239,
+      "duration_ms": 4441
+    },
+    {
+      "turn_index": 6,
+      "speaker": "화자B(추정)",
+      "text_ko": ">> 어 이야기 고만할까?",
+      "source_text": ">> 어 이야기 고만할까?",
+      "start_ms": 144160,
+      "duration_ms": 5400
+    },
+    {
+      "turn_index": 7,
+      "speaker": "화자A(추정)",
+      "text_ko": ">> 파탕이 아니라 약이만",
+      "source_text": ">> 파탕이 아니라 약이만",
+      "start_ms": 145680,
+      "duration_ms": 3880
+    },
+    {
+      "turn_index": 8,
+      "speaker": "화자B(추정)",
+      "text_ko": ">> 뭐라고? 한국어나 똑바로 하세요.",
+      "source_text": ">> 뭐라고? 한국어나 똑바로 하세요.",
+      "start_ms": 151080,
+      "duration_ms": 5280
+    },
+    {
+      "turn_index": 9,
+      "speaker": "화자A(추정)",
+      "text_ko": "영어 영어 책은 동화책은 못 읽어",
+      "source_text": "영어 영어 책은 동화책은 못 읽어",
+      "start_ms": 153760,
+      "duration_ms": 5600
+    },
+    {
+      "turn_index": 10,
+      "speaker": "화자B(추정)",
+      "text_ko": "주겠다.",
+      "source_text": "주겠다.",
+      "start_ms": 156360,
+      "duration_ms": 3000
+    }
+  ]
+}

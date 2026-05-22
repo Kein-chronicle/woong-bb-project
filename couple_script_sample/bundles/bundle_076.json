@@ -1,0 +1,90 @@
+{
+  "bundle_id": "bundle_076",
+  "source_video_id": "MfCHfvyz3l4",
+  "source_title": "건강한 대화. 행복한 연애. 텅빈 통장, 하와이 브이로그 2탄",
+  "source_url": "https://www.youtube.com/watch?v=MfCHfvyz3l4",
+  "source_lang": "ko",
+  "speaker_note": "유튜브 자동 자막을 시간순으로 정리했으며 화자 표시는 교대형 추정입니다.",
+  "utterances": [
+    {
+      "turn_index": 1,
+      "speaker": "화자A(추정)",
+      "text_ko": "좀 살짝 어색하다. 왜? 우리 아침",
+      "source_text": "좀 살짝 어색하다. 왜? 우리 아침",
+      "start_ms": 222200,
+      "duration_ms": 5239
+    },
+    {
+      "turn_index": 2,
+      "speaker": "화자B(추정)",
+      "text_ko": "맥달 돼 있었잖아. 나 이런 원피스",
+      "source_text": "맥달 돼 있었잖아. 나 이런 원피스",
+      "start_ms": 224760,
+      "duration_ms": 5240
+    },
+    {
+      "turn_index": 3,
+      "speaker": "화자A(추정)",
+      "text_ko": "너무 입고 싶었는데 거기서 입을 수가",
+      "source_text": "너무 입고 싶었는데 거기서 입을 수가",
+      "start_ms": 227439,
+      "duration_ms": 5561
+    },
+    {
+      "turn_index": 4,
+      "speaker": "화자B(추정)",
+      "text_ko": "없었어.",
+      "source_text": "없었어.",
+      "start_ms": 230000,
+      "duration_ms": 3000
+    },
+    {
+      "turn_index": 5,
+      "speaker": "화자A(추정)",
+      "text_ko": "애매해. 나한테 애매하니까.",
+      "source_text": "애매해. 나한테 애매하니까.",
+      "start_ms": 242159,
+      "duration_ms": 4640
+    },
+    {
+      "turn_index": 6,
+      "speaker": "화자B(추정)",
+      "text_ko": "앞대 진짜 말이 오빠 우리 이게",
+      "source_text": "앞대 진짜 말이 오빠 우리 이게",
+      "start_ms": 246799,
+      "duration_ms": 7800
+    },
+    {
+      "turn_index": 7,
+      "speaker": "화자A(추정)",
+      "text_ko": "휴가지 말도 안 돼요.",
+      "source_text": "휴가지 말도 안 돼요.",
+      "start_ms": 250000,
+      "duration_ms": 4599
+    },
+    {
+      "turn_index": 8,
+      "speaker": "화자B(추정)",
+      "text_ko": "두 번째 요리 그냥 견뎌.",
+      "source_text": "두 번째 요리 그냥 견뎌.",
+      "start_ms": 258799,
+      "duration_ms": 4960
+    },
+    {
+      "turn_index": 9,
+      "speaker": "화자A(추정)",
+      "text_ko": "캐비어가 올라간 오빠 뭐야 이거?",
+      "source_text": "캐비어가 올라간 오빠 뭐야 이거?",
+      "start_ms": 265240,
+      "duration_ms": 7760
+    },
+    {
+      "turn_index": 10,
+      "speaker": "화자B(추정)",
+      "text_ko": "토웨이 뭐라고요? 블루빈 토론 네",
+      "source_text": "토웨이 뭐라고요? 블루빈 토론 네",
+      "start_ms": 268320,
+      "duration_ms": 8640
+    }
+  ]
+}

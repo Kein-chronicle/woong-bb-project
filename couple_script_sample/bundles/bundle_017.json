@@ -1,0 +1,90 @@
+{
+  "bundle_id": "bundle_017",
+  "source_video_id": "52qCrBtrxkc",
+  "source_title": "[02커플] 🔥이어폰필수🔥 매운맛 커플 밸런스 게임 💕👈",
+  "source_url": "https://www.youtube.com/watch?v=52qCrBtrxkc",
+  "source_lang": "ko",
+  "speaker_note": "유튜브 자동 자막을 시간순으로 정리했으며 화자 표시는 교대형 추정입니다.",
+  "utterances": [
+    {
+      "turn_index": 1,
+      "speaker": "화자A(추정)",
+      "text_ko": "사랑 나는 다섯 번 하루 안에 사랑",
+      "source_text": "사랑 나는 다섯 번 하루 안에 사랑",
+      "start_ms": 56440,
+      "duration_ms": 4119
+    },
+    {
+      "turn_index": 2,
+      "speaker": "화자B(추정)",
+      "text_ko": "나는 다섯 번",
+      "source_text": "나는 다섯 번",
+      "start_ms": 58879,
+      "duration_ms": 2961
+    },
+    {
+      "turn_index": 3,
+      "speaker": "화자A(추정)",
+      "text_ko": "세 세으 안",
+      "source_text": "세 세으 안",
+      "start_ms": 60559,
+      "duration_ms": 5161
+    },
+    {
+      "turn_index": 4,
+      "speaker": "화자B(추정)",
+      "text_ko": "됐나 자기한테 좀 고민했을 3초",
+      "source_text": "됐나 자기한테 좀 고민했을 3초",
+      "start_ms": 61840,
+      "duration_ms": 6760
+    },
+    {
+      "turn_index": 5,
+      "speaker": "화자A(추정)",
+      "text_ko": "뒤에서",
+      "source_text": "뒤에서",
+      "start_ms": 65720,
+      "duration_ms": 2880
+    },
+    {
+      "turn_index": 6,
+      "speaker": "화자B(추정)",
+      "text_ko": "두시간 주어를 얘기해주세요 아니",
+      "source_text": "두시간 주어를 얘기해주세요 아니",
+      "start_ms": 68640,
+      "duration_ms": 5210
+    },
+    {
+      "turn_index": 7,
+      "speaker": "화자A(추정)",
+      "text_ko": "주어는 뭐 한",
+      "source_text": "주어는 뭐 한",
+      "start_ms": 71159,
+      "duration_ms": 6241
+    },
+    {
+      "turn_index": 8,
+      "speaker": "화자B(추정)",
+      "text_ko": "두시간 어튼",
+      "source_text": "두시간 어튼",
+      "start_ms": 77560,
+      "duration_ms": 5400
+    },
+    {
+      "turn_index": 9,
+      "speaker": "화자A(추정)",
+      "text_ko": "끝나는데 오케이",
+      "source_text": "끝나는데 오케이",
+      "start_ms": 80320,
+      "duration_ms": 6119
+    },
+    {
+      "turn_index": 10,
+      "speaker": "화자B(추정)",
+      "text_ko": "1스택가 만해야 돼로 하긴 두시간 아",
+      "source_text": "1스택가 만해야 돼로 하긴 두시간 아",
+      "start_ms": 82960,
+      "duration_ms": 6960
+    }
+  ]
+}

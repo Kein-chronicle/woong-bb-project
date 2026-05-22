@@ -1,0 +1,20 @@
+{
+  "updated_at": "2026-05-22T01:39:51.343Z",
+  "telegram_user": "K8832353",
+  "mode": "woongbbi",
+  "text": "이제 사진 볼 수 있어? 아까 커피마신거야",
+  "images": [
+    {
+      "kind": "photo",
+      "path": "/Users/kein/Desktop/woong-bb/images/incoming/2026-05-22/103951_telegram_photo_AQAD8w1rG2F3gFR-.jpg",
+      "fileId": "AgACAgUAAxkBAAICi2oPpOrsd_35qLnIL2JC-rREv7VHAALzDWsbYXeAVFOqF8r8CmgiAQADAgADeQADOwQ",
+      "fileUniqueId": "AQAD8w1rG2F3gFR-",
+      "width": 959,
+      "height": 1280,
+      "fileSize": 99094,
+      "mimeType": "image/jpeg",
+      "telegramFilePath": "photos/file_0.jpg",
+      "caption": "이제 사진 볼 수 있어? 아까 커피마신거야"
+    }
+  ]
+}

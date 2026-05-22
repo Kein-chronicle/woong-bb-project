@@ -9,8 +9,7 @@ import urllib.request
 from datetime import datetime
 from pathlib import Path
 
-
-ROOT = Path("/Users/kein/Desktop/woong-bb")
+from project_paths import ROOT
 SESSION_ENV = ROOT / "session" / "elevenlabs.env"
 ROOT_ENV = ROOT / "elevenlabs.env"
 VOICE_ROOT = ROOT / "voice-message"

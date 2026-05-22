@@ -1,0 +1,90 @@
+{
+  "bundle_id": "bundle_027",
+  "source_video_id": "NEW2idHvPKE",
+  "source_title": "부부 Q&A | 이렇게 솔직해도 되나? 부부생활부터 관리까지!",
+  "source_url": "https://www.youtube.com/watch?v=NEW2idHvPKE",
+  "source_lang": "ko",
+  "speaker_note": "유튜브 자동 자막을 시간순으로 정리했으며 화자 표시는 교대형 추정입니다.",
+  "utterances": [
+    {
+      "turn_index": 1,
+      "speaker": "화자A(추정)",
+      "text_ko": "생기면서 스킨십이 자연스러워지다",
+      "source_text": "생기면서 스킨십이 자연스러워지다",
+      "start_ms": 49879,
+      "duration_ms": 5000
+    },
+    {
+      "turn_index": 2,
+      "speaker": "화자B(추정)",
+      "text_ko": "보니까 나는 연애보다는 결혼하고 와서",
+      "source_text": "보니까 나는 연애보다는 결혼하고 와서",
+      "start_ms": 52000,
+      "duration_ms": 4559
+    },
+    {
+      "turn_index": 3,
+      "speaker": "화자A(추정)",
+      "text_ko": "스킨십이 더 늘었다.",
+      "source_text": "스킨십이 더 늘었다.",
+      "start_ms": 54879,
+      "duration_ms": 4801
+    },
+    {
+      "turn_index": 4,
+      "speaker": "화자B(추정)",
+      "text_ko": ">> 작은 스킨십이잖아.",
+      "source_text": ">> 작은 스킨십이잖아.",
+      "start_ms": 56559,
+      "duration_ms": 4800
+    },
+    {
+      "turn_index": 5,
+      "speaker": "화자A(추정)",
+      "text_ko": "손잡고",
+      "source_text": "손잡고",
+      "start_ms": 59680,
+      "duration_ms": 4080
+    },
+    {
+      "turn_index": 6,
+      "speaker": "화자B(추정)",
+      "text_ko": "이런 거는 나도",
+      "source_text": "이런 거는 나도",
+      "start_ms": 61359,
+      "duration_ms": 4961
+    },
+    {
+      "turn_index": 7,
+      "speaker": "화자A(추정)",
+      "text_ko": ">> 결혼 전보다는 지금이 훨씬 많아졌다고",
+      "source_text": ">> 결혼 전보다는 지금이 훨씬 많아졌다고",
+      "start_ms": 63760,
+      "duration_ms": 3240
+    },
+    {
+      "turn_index": 8,
+      "speaker": "화자B(추정)",
+      "text_ko": "생각을 해.",
+      "source_text": "생각을 해.",
+      "start_ms": 66320,
+      "duration_ms": 1200
+    },
+    {
+      "turn_index": 9,
+      "speaker": "화자A(추정)",
+      "text_ko": ">> 음.",
+      "source_text": ">> 음.",
+      "start_ms": 67000,
+      "duration_ms": 2520
+    },
+    {
+      "turn_index": 10,
+      "speaker": "화자B(추정)",
+      "text_ko": ">> 근데 이게 광범위하게가 버리잖아.",
+      "source_text": ">> 근데 이게 광범위하게가 버리잖아.",
+      "start_ms": 67520,
+      "duration_ms": 3959
+    }
+  ]
+}

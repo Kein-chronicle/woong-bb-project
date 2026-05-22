@@ -3,13 +3,17 @@
   "timezone": "Asia/Seoul",
   "managed_by": "automation_worker",
   "enabled": true,
-  "last_written_date": null,
-  "last_written_at": null,
-  "last_written_reason": null,
-  "last_entry_path": null,
-  "last_status": "idle",
-  "last_detected_mood": null,
-  "last_weather_summary": null,
-  "last_conversation_keywords": [],
+  "last_written_date": "2026-05-21",
+  "last_written_at": "2026-05-21T23:20:01+09:00",
+  "last_written_reason": "bedtime_diary_write",
+  "last_entry_path": "/Users/kein/Desktop/woong-bb/diary/2026-05-21.md",
+  "last_status": "written",
+  "last_detected_mood": "rain_softened",
+  "last_weather_summary": "비가 오거나 지나간 뒤 흐린 편",
+  "last_conversation_keywords": [
+    "사진",
+    "보고 싶은 마음",
+    "좋음"
+  ],
   "notes": "자기 전 일기 생성 결과와 마지막 작성 상태를 기록한다."
 }

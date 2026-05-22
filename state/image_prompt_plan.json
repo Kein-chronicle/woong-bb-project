@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "managed_by": "share_priority_engine",
+  "generated_at": "2026-05-22T08:28:48+09:00",
+  "reason": "manual_selfie_metadata_refresh_b",
+  "image_type": "workday_candid_selfie",
+  "shot_type": "waist_up",
+  "camera_angle": "slight_high_angle",
+  "selfie_capture_method": "front_camera_handheld",
+  "camera_visibility": "front_camera_phone_not_visible",
+  "expression": "bright_smile",
+  "pose": "coffee_in_hand",
+  "framing": "torso_and_outfit_bias",
+  "crop_bias": "half_body_to_waist",
+  "space_anchor": "quiet_hallway",
+  "scene_focus": "workday_transition",
+  "activity": "hospital_morning_shift",
+  "time_block": "morning_shift",
+  "surface_mood": "busy_but_caring",
+  "appearance_branch": "hospital_shift",
+  "outfit_context": "summer_hospital_uniform",
+  "weather_summary": "대체로 흐린 편",
+  "continuity_band": "same_outfit_window",
+  "composition_rules": [
+    "착장과 얼굴 상태는 유지하되 구도와 배경은 바꿔도 됨",
+    "최근 3~4장과 shot/angle/framing/method/space 조합이 겹치지 않게 할 것",
+    "날씨 기운: 대체로 흐린 편",
+    "복장 포인트: 라이트 블루 또는 민트 계열 여름 스크럽 상의",
+    "셀피 방식: front_camera_handheld",
+    "공간 앵커: quiet_hallway",
+    "전면 카메라로 직접 들고 찍은 셀카처럼 보여야 하고 남이 찍은 사진처럼 보이면 안 됨"
+  ],
+  "prompt_fragments": [
+    "이미지 타입: workday_candid_selfie",
+    "샷 타입: waist_up",
+    "카메라 각도: slight_high_angle",
+    "셀피 촬영 방식: front_camera_handheld",
+    "카메라 노출 방식: front_camera_phone_not_visible",
+    "표정: bright_smile",
+    "포즈: coffee_in_hand",
+    "프레이밍: torso_and_outfit_bias",
+    "공간 기준점: quiet_hallway",
+    "구도 우선: workday_transition",
+    "크롭 성향: half_body_to_waist"
+  ],
+  "recent_avoid_keys": [
+    "mirror_quick_check|mirror_half_body|station_or_hallway_context|mirror_selfie|locker_room_mirror",
+    "mirror_quick_check|three_quarter_arm_length|window_reflection_mix|front_camera_handheld|staff_restroom_mirror"
+  ],
+  "notes": "다음 이미지 생성 시 셀피/라이프스타일 샷 구도 반복을 줄이기 위한 샷 플랜"
+}

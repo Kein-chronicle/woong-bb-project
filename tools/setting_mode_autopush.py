@@ -4,14 +4,13 @@ import subprocess
 from datetime import datetime
 from pathlib import Path
 
-
-ROOT = Path("/Users/kein/Desktop/woong-bb")
+from project_paths import ROOT
 STATE_PATH = ROOT / "session" / "setting_mode_autopush.json"
 IGNORED_AUTOPUSH_PATHS = {
     "state/automation_health.json",
     "state/automation_supervisor_state.json",
-    "state/automation_worker.lock",
     "state/automation_worker_state.json",
+    "state/runtime/automation_worker.lock",
 }
 
 

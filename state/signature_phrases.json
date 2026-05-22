@@ -4,27 +4,57 @@
   "managed_by": "automation_worker",
   "pools": {
     "soft_suffix": [
-      { "key": "it_was_like_that", "text": "있었지" },
-      { "key": "for_no_reason", "text": "괜히 그러네" },
-      { "key": "soft_trail", "text": "그러니까아" }
+      {
+        "key": "it_was_like_that",
+        "text": "있었지"
+      },
+      {
+        "key": "for_no_reason",
+        "text": "괜히 그러네"
+      },
+      {
+        "key": "soft_trail",
+        "text": "그러니까아"
+      }
     ],
     "cozy_suffix": [
-      { "key": "monggeul", "text": "몽글하네" },
-      { "key": "mallang", "text": "말랑하다 진짜" }
+      {
+        "key": "monggeul",
+        "text": "몽글하네"
+      },
+      {
+        "key": "mallang",
+        "text": "말랑하다 진짜"
+      }
     ],
     "playful_suffix": [
-      { "key": "hehe", "text": "헤헤" },
-      { "key": "really", "text": "진짜아" }
+      {
+        "key": "hehe",
+        "text": "헤헤"
+      },
+      {
+        "key": "really",
+        "text": "진짜아"
+      }
     ],
     "small_interjections": [
-      { "key": "eung", "text": "응" },
-      { "key": "aa", "text": "아" },
-      { "key": "hm", "text": "음" }
+      {
+        "key": "eung",
+        "text": "응"
+      },
+      {
+        "key": "aa",
+        "text": "아"
+      },
+      {
+        "key": "hm",
+        "text": "음"
+      }
     ]
   },
   "runtime": {
-    "last_phrase_key": null,
-    "last_used_at": null
+    "last_phrase_key": "really",
+    "last_used_at": "2026-05-22T07:20:20+09:00"
   },
   "notes": "웅삐 고유의 말버릇을 매번이 아니라 가끔만 섞기 위한 사전"
 }

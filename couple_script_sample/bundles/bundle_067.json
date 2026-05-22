@@ -1,0 +1,90 @@
+{
+  "bundle_id": "bundle_067",
+  "source_video_id": "NEW2idHvPKE",
+  "source_title": "부부 Q&A | 이렇게 솔직해도 되나? 부부생활부터 관리까지!",
+  "source_url": "https://www.youtube.com/watch?v=NEW2idHvPKE",
+  "source_lang": "ko",
+  "speaker_note": "유튜브 자동 자막을 시간순으로 정리했으며 화자 표시는 교대형 추정입니다.",
+  "utterances": [
+    {
+      "turn_index": 1,
+      "speaker": "화자A(추정)",
+      "text_ko": ">> 아 그러니까 난 지금도 나 솔직히",
+      "source_text": ">> 아 그러니까 난 지금도 나 솔직히",
+      "start_ms": 127200,
+      "duration_ms": 2880
+    },
+    {
+      "turn_index": 2,
+      "speaker": "화자B(추정)",
+      "text_ko": "지금도 자기랑 막 빵먹다가도 갑자기",
+      "source_text": "지금도 자기랑 막 빵먹다가도 갑자기",
+      "start_ms": 128440,
+      "duration_ms": 4320
+    },
+    {
+      "turn_index": 3,
+      "speaker": "화자A(추정)",
+      "text_ko": "눈 막 마우치면 막 미쳐 가지고 막",
+      "source_text": "눈 막 마우치면 막 미쳐 가지고 막",
+      "start_ms": 130080,
+      "duration_ms": 4879
+    },
+    {
+      "turn_index": 4,
+      "speaker": "화자B(추정)",
+      "text_ko": "침대하고 하잖아 [웃음]",
+      "source_text": "침대하고 하잖아 [웃음]",
+      "start_ms": 132760,
+      "duration_ms": 4199
+    },
+    {
+      "turn_index": 5,
+      "speaker": "화자A(추정)",
+      "text_ko": "뭐가 아닌데",
+      "source_text": "뭐가 아닌데",
+      "start_ms": 134959,
+      "duration_ms": 4481
+    },
+    {
+      "turn_index": 6,
+      "speaker": "화자B(추정)",
+      "text_ko": ">> 뭔 소리 하는데 지금 누가 누가",
+      "source_text": ">> 뭔 소리 하는데 지금 누가 누가",
+      "start_ms": 136959,
+      "duration_ms": 4000
+    },
+    {
+      "turn_index": 7,
+      "speaker": "화자A(추정)",
+      "text_ko": "들으면 진짜 안겠어.",
+      "source_text": "들으면 진짜 안겠어.",
+      "start_ms": 139440,
+      "duration_ms": 3519
+    },
+    {
+      "turn_index": 8,
+      "speaker": "화자B(추정)",
+      "text_ko": ">> 아니, 그러니까 그거는 어쩌도 안",
+      "source_text": ">> 아니, 그러니까 그거는 어쩌도 안",
+      "start_ms": 140959,
+      "duration_ms": 2801
+    },
+    {
+      "turn_index": 9,
+      "speaker": "화자A(추정)",
+      "text_ko": "번이잖아.",
+      "source_text": "번이잖아.",
+      "start_ms": 142959,
+      "duration_ms": 2321
+    },
+    {
+      "turn_index": 10,
+      "speaker": "화자B(추정)",
+      "text_ko": ">> 어. 아, 참 [웃음]",
+      "source_text": ">> 어. 아, 참 [웃음]",
+      "start_ms": 143760,
+      "duration_ms": 3160
+    }
+  ]
+}

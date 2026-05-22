@@ -1,0 +1,90 @@
+{
+  "bundle_id": "bundle_073",
+  "source_video_id": "52qCrBtrxkc",
+  "source_title": "[02커플] 🔥이어폰필수🔥 매운맛 커플 밸런스 게임 💕👈",
+  "source_url": "https://www.youtube.com/watch?v=52qCrBtrxkc",
+  "source_lang": "ko",
+  "speaker_note": "유튜브 자동 자막을 시간순으로 정리했으며 화자 표시는 교대형 추정입니다.",
+  "utterances": [
+    {
+      "turn_index": 1,
+      "speaker": "화자A(추정)",
+      "text_ko": "이렇게 아 그냥 아 일주일 내내",
+      "source_text": "이렇게 아 그냥 아 일주일 내내",
+      "start_ms": 237480,
+      "duration_ms": 6280
+    },
+    {
+      "turn_index": 2,
+      "speaker": "화자B(추정)",
+      "text_ko": "만나기 세 달에 한번 한 번만 일주일",
+      "source_text": "만나기 세 달에 한번 한 번만 일주일",
+      "start_ms": 240879,
+      "duration_ms": 5881
+    },
+    {
+      "turn_index": 3,
+      "speaker": "화자A(추정)",
+      "text_ko": "내내 만나기",
+      "source_text": "내내 만나기",
+      "start_ms": 243760,
+      "duration_ms": 3000
+    },
+    {
+      "turn_index": 4,
+      "speaker": "화자B(추정)",
+      "text_ko": "자기는",
+      "source_text": "자기는",
+      "start_ms": 248519,
+      "duration_ms": 4440
+    },
+    {
+      "turn_index": 5,
+      "speaker": "화자A(추정)",
+      "text_ko": "생각해 일주 내네 내네 만나서",
+      "source_text": "생각해 일주 내네 내네 만나서",
+      "start_ms": 250280,
+      "duration_ms": 5319
+    },
+    {
+      "turn_index": 6,
+      "speaker": "화자B(추정)",
+      "text_ko": "데이트하는 거 만나서 데이트해 응 내",
+      "source_text": "데이트하는 거 만나서 데이트해 응 내",
+      "start_ms": 252959,
+      "duration_ms": 4601
+    },
+    {
+      "turn_index": 7,
+      "speaker": "화자A(추정)",
+      "text_ko": "이렇게 막 두 시간 동안 운전하고 일",
+      "source_text": "이렇게 막 두 시간 동안 운전하고 일",
+      "start_ms": 255599,
+      "duration_ms": 3521
+    },
+    {
+      "turn_index": 8,
+      "speaker": "화자B(추정)",
+      "text_ko": "매일 차대 한번 이제 진짜 재밌게",
+      "source_text": "매일 차대 한번 이제 진짜 재밌게",
+      "start_ms": 259120,
+      "duration_ms": 5160
+    },
+    {
+      "turn_index": 9,
+      "speaker": "화자A(추정)",
+      "text_ko": "걸 아니 뭐야 이거 이걸 이걸 봐",
+      "source_text": "걸 아니 뭐야 이거 이걸 이걸 봐",
+      "start_ms": 264280,
+      "duration_ms": 6520
+    },
+    {
+      "turn_index": 10,
+      "speaker": "화자B(추정)",
+      "text_ko": "나랑 제일 친한 친구랑 선절 애인이랑",
+      "source_text": "나랑 제일 친한 친구랑 선절 애인이랑",
+      "start_ms": 267759,
+      "duration_ms": 6041
+    }
+  ]
+}

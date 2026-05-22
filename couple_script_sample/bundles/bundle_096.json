@@ -1,0 +1,90 @@
+{
+  "bundle_id": "bundle_096",
+  "source_video_id": "91PIo9NG3X4",
+  "source_title": "동거 1년차 커플의 수위조절 실패한 매운맛 Q&A",
+  "source_url": "https://www.youtube.com/watch?v=91PIo9NG3X4",
+  "source_lang": "ko",
+  "speaker_note": "유튜브 자동 자막을 시간순으로 정리했으며 화자 표시는 교대형 추정입니다.",
+  "utterances": [
+    {
+      "turn_index": 1,
+      "speaker": "화자A(추정)",
+      "text_ko": "처음에 저희가 술에 취해서 저희 집에",
+      "source_text": "처음에 저희가 술에 취해서 저희 집에",
+      "start_ms": 403139,
+      "duration_ms": 5280
+    },
+    {
+      "turn_index": 2,
+      "speaker": "화자B(추정)",
+      "text_ko": "왔어요 제가 혼자 그때 이제",
+      "source_text": "왔어요 제가 혼자 그때 이제",
+      "start_ms": 406199,
+      "duration_ms": 5220
+    },
+    {
+      "turn_index": 3,
+      "speaker": "화자A(추정)",
+      "text_ko": "원룸에 대해서 살았었는데 저희가 술",
+      "source_text": "원룸에 대해서 살았었는데 저희가 술",
+      "start_ms": 408419,
+      "duration_ms": 4681
+    },
+    {
+      "turn_index": 4,
+      "speaker": "화자B(추정)",
+      "text_ko": "취해가지고 집에 안 가고 온 거예요",
+      "source_text": "취해가지고 집에 안 가고 온 거예요",
+      "start_ms": 411419,
+      "duration_ms": 5361
+    },
+    {
+      "turn_index": 5,
+      "speaker": "화자A(추정)",
+      "text_ko": "저희 집에 그래서 이제",
+      "source_text": "저희 집에 그래서 이제",
+      "start_ms": 413100,
+      "duration_ms": 3680
+    },
+    {
+      "turn_index": 6,
+      "speaker": "화자B(추정)",
+      "text_ko": "굽게 재워주지 않았다고 너 그걸 내가",
+      "source_text": "굽게 재워주지 않았다고 너 그걸 내가",
+      "start_ms": 418680,
+      "duration_ms": 5459
+    },
+    {
+      "turn_index": 7,
+      "speaker": "화자A(추정)",
+      "text_ko": "무슨 뭘 너를 덮쳤다는 프레임을",
+      "source_text": "무슨 뭘 너를 덮쳤다는 프레임을",
+      "start_ms": 422039,
+      "duration_ms": 4160
+    },
+    {
+      "turn_index": 8,
+      "speaker": "화자B(추정)",
+      "text_ko": "씌우려고",
+      "source_text": "씌우려고",
+      "start_ms": 424139,
+      "duration_ms": 4511
+    },
+    {
+      "turn_index": 9,
+      "speaker": "화자A(추정)",
+      "text_ko": "하는데이 아이도 각오하고 온 거고요",
+      "source_text": "하는데이 아이도 각오하고 온 거고요",
+      "start_ms": 426199,
+      "duration_ms": 5571
+    },
+    {
+      "turn_index": 10,
+      "speaker": "화자B(추정)",
+      "text_ko": "자기는 만약에 내가 그렇게 안 했잖아",
+      "source_text": "자기는 만약에 내가 그렇게 안 했잖아",
+      "start_ms": 432199,
+      "duration_ms": 5981
+    }
+  ]
+}

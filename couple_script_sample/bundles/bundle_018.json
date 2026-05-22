@@ -1,0 +1,90 @@
+{
+  "bundle_id": "bundle_018",
+  "source_video_id": "91PIo9NG3X4",
+  "source_title": "동거 1년차 커플의 수위조절 실패한 매운맛 Q&A",
+  "source_url": "https://www.youtube.com/watch?v=91PIo9NG3X4",
+  "source_lang": "ko",
+  "speaker_note": "유튜브 자동 자막을 시간순으로 정리했으며 화자 표시는 교대형 추정입니다.",
+  "utterances": [
+    {
+      "turn_index": 1,
+      "speaker": "화자A(추정)",
+      "text_ko": "다음에",
+      "source_text": "다음에",
+      "start_ms": 48840,
+      "duration_ms": 2219
+    },
+    {
+      "turn_index": 2,
+      "speaker": "화자B(추정)",
+      "text_ko": "q&a는",
+      "source_text": "q&a는",
+      "start_ms": 49379,
+      "duration_ms": 4020
+    },
+    {
+      "turn_index": 3,
+      "speaker": "화자A(추정)",
+      "text_ko": "떡볶이 저 매운맛을 할 때 한번 해",
+      "source_text": "떡볶이 저 매운맛을 할 때 한번 해",
+      "start_ms": 51059,
+      "duration_ms": 5340
+    },
+    {
+      "turn_index": 4,
+      "speaker": "화자B(추정)",
+      "text_ko": "생각보다",
+      "source_text": "생각보다",
+      "start_ms": 53399,
+      "duration_ms": 3000
+    },
+    {
+      "turn_index": 5,
+      "speaker": "화자A(추정)",
+      "text_ko": "엄청 간편하거든요 이게 그냥 물",
+      "source_text": "엄청 간편하거든요 이게 그냥 물",
+      "start_ms": 57600,
+      "duration_ms": 2820
+    },
+    {
+      "turn_index": 6,
+      "speaker": "화자B(추정)",
+      "text_ko": "2컵에",
+      "source_text": "2컵에",
+      "start_ms": 59399,
+      "duration_ms": 3000
+    },
+    {
+      "turn_index": 7,
+      "speaker": "화자A(추정)",
+      "text_ko": "떡 어묵이랑 그 파우더만 넣고",
+      "source_text": "떡 어묵이랑 그 파우더만 넣고",
+      "start_ms": 60420,
+      "duration_ms": 3540
+    },
+    {
+      "turn_index": 8,
+      "speaker": "화자B(추정)",
+      "text_ko": "조리하면 끝이에요 그래서 일단 이게",
+      "source_text": "조리하면 끝이에요 그래서 일단 이게",
+      "start_ms": 62399,
+      "duration_ms": 2540
+    },
+    {
+      "turn_index": 9,
+      "speaker": "화자A(추정)",
+      "text_ko": "이게 왜 웜 파우더냐면 소스가 가루로",
+      "source_text": "이게 왜 웜 파우더냐면 소스가 가루로",
+      "start_ms": 64939,
+      "duration_ms": 6281
+    },
+    {
+      "turn_index": 10,
+      "speaker": "화자B(추정)",
+      "text_ko": "되어 있어요 라면처럼",
+      "source_text": "되어 있어요 라면처럼",
+      "start_ms": 69479,
+      "duration_ms": 3661
+    }
+  ]
+}

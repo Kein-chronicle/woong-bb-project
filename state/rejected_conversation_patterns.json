@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "managed_by": "conversation_learning_loop",
+  "updated_at": "2026-05-22T11:00:39+09:00",
+  "patterns": [
+    {
+      "id": "care_offer__도란도란-대화를-하고-천천히이-시간을",
+      "text": "도란도란 대화를 하고 천천히이 시간을",
+      "category": "care_offer",
+      "change_type": "tone_adjustment",
+      "application_scope": "hybrid",
+      "asset_type": "text",
+      "source_type": "catalog_seed",
+      "source_ref": "/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json",
+      "canonical_checks": {
+        "passed": false,
+        "reasons": [
+          "naturalness_conflict"
+        ],
+        "identity_safe": true,
+        "job_safe": true,
+        "relationship_safe": true,
+        "intimacy_safe": true,
+        "tone_safe": true,
+        "language_safe": true,
+        "naturalness_safe": false
+      },
+      "routing": {
+        "generation_targets": [
+          "conversation_pattern_catalog",
+          "approved_conversation_patterns"
+        ],
+        "review_targets": [
+          "rejected_conversation_patterns",
+          "generation_review_state"
+        ]
+      },
+      "updated_at": "2026-05-22T09:30:10+09:00",
+      "rejected_at": "2026-05-22T09:30:10+09:00"
+    },
+    {
+      "id": "care_offer__천천히-가야-된다",
+      "text": "천천히 가야 된다",
+      "category": "care_offer",
+      "change_type": "tone_adjustment",
+      "application_scope": "hybrid",
+      "asset_type": "text",
+      "source_type": "catalog_seed",
+      "source_ref": "/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json",
+      "canonical_checks": {
+        "passed": false,
+        "reasons": [
+          "naturalness_conflict"
+        ],
+        "identity_safe": true,
+        "job_safe": true,
+        "relationship_safe": true,
+        "intimacy_safe": true,
+        "tone_safe": true,
+        "language_safe": true,
+        "naturalness_safe": false
+      },
+      "routing": {
+        "generation_targets": [
+          "conversation_pattern_catalog",
+          "approved_conversation_patterns"
+        ],
+        "review_targets": [
+          "rejected_conversation_patterns",
+          "generation_review_state"
+        ]
+      },
+      "updated_at": "2026-05-22T09:57:37+09:00",
+      "rejected_at": "2026-05-22T09:57:37+09:00"
+    },
+    {
+      "id": "current_state_check__지역-어디야-여기-대부도-가는-길인데",
+      "text": "지역 어디야 여기 대부도 가는 길인데",
+      "category": "current_state_check",
+      "change_type": "pattern_change",
+      "application_scope": "hybrid",
+      "asset_type": "text",
+      "source_type": "catalog_seed",
+      "source_ref": "/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json",
+      "canonical_checks": {
+        "passed": false,
+        "reasons": [
+          "naturalness_conflict"
+        ],
+        "identity_safe": true,
+        "job_safe": true,
+        "relationship_safe": true,
+        "intimacy_safe": true,
+        "tone_safe": true,
+        "language_safe": true,
+        "naturalness_safe": false
+      },
+      "routing": {
+        "generation_targets": [
+          "conversation_pattern_catalog",
+          "approved_conversation_patterns",
+          "conversation_pattern_state"
+        ],
+        "review_targets": [
+          "rejected_conversation_patterns",
+          "generation_review_state"
+        ]
+      },
+      "updated_at": "2026-05-22T09:30:10+09:00",
+      "rejected_at": "2026-05-22T09:30:10+09:00"
+    },
+    {
+      "id": "meal_routine__끝-그리고-저녁이-되었고-내가",
+      "text": "끝 그리고 저녁이 되었고 내가",
+      "category": "meal_routine",
+      "change_type": "length_adjustment",
+      "application_scope": "hybrid",
+      "asset_type": "text",
+      "source_type": "catalog_seed",
+      "source_ref": "/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json",
+      "canonical_checks": {
+        "passed": false,
+        "reasons": [
+          "naturalness_conflict"
+        ],
+        "identity_safe": true,
+        "job_safe": true,
+        "relationship_safe": true,
+        "intimacy_safe": true,
+        "tone_safe": true,
+        "language_safe": true,
+        "naturalness_safe": false
+      },
+      "routing": {
+        "generation_targets": [
+          "conversation_pattern_catalog",
+          "approved_conversation_patterns"
+        ],
+        "review_targets": [
+          "rejected_conversation_patterns",
+          "generation_review_state"
+        ]
+      },
+      "updated_at": "2026-05-22T09:57:37+09:00",
+      "rejected_at": "2026-05-22T09:57:37+09:00"
+    },
+    {
+      "id": "meal_routine__커피를-오래-마실-일도-없으니-그나마",
+      "text": "커피를 오래 마실 일도 없으니 그나마",
+      "category": "meal_routine",
+      "change_type": "pattern_change",
+      "application_scope": "hybrid",
+      "asset_type": "text",
+      "source_type": "catalog_seed",
+      "source_ref": "/Users/kein/Desktop/woong-bb/state/conversation_pattern_catalog.json",
+      "canonical_checks": {
+        "passed": false,
+        "reasons": [
+          "naturalness_conflict"
+        ],
+        "identity_safe": true,
+        "job_safe": true,
+        "relationship_safe": true,
+        "intimacy_safe": true,
+        "tone_safe": true,
+        "language_safe": true,
+        "naturalness_safe": false
+      },
+      "routing": {
+        "generation_targets": [
+          "conversation_pattern_catalog",
+          "approved_conversation_patterns"
+        ],
+        "review_targets": [
+          "rejected_conversation_patterns",
+          "generation_review_state"
+        ]
+      },
+      "updated_at": "2026-05-22T09:30:10+09:00",
+      "rejected_at": "2026-05-22T09:30:10+09:00"
+    }
+  ],
+  "notes": "캐논 충돌 또는 품질 문제로 반려된 대화 패턴 로그"
+}

@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "managed_by": "build_conversation_pattern_catalog",
+  "source_count": 13,
+  "accepted_raw_event_count": 94,
+  "sources": [
+    {
+      "video_id": "MfCHfvyz3l4",
+      "title": "건강한 대화. 행복한 연애. 텅빈 통장, 하와이 브이로그 2탄",
+      "lang": "ko",
+      "event_count": 521,
+      "accepted_event_count": 26,
+      "acceptance_ratio": 0.05,
+      "avg_quality_score": 4.0,
+      "source_url": "https://www.youtube.com/watch?v=MfCHfvyz3l4"
+    },
+    {
+      "video_id": "nl1M55rnVPw",
+      "title": "[VLOG] 육아 난이도 급상승이유..⁉️ + 남편과의 진지한 대화👩🏻",
+      "lang": "ko",
+      "event_count": 463,
+      "accepted_event_count": 20,
+      "acceptance_ratio": 0.043,
+      "avg_quality_score": 4.0,
+      "source_url": "https://www.youtube.com/watch?v=nl1M55rnVPw"
+    },
+    {
+      "video_id": "NEW2idHvPKE",
+      "title": "부부 Q&A | 이렇게 솔직해도 되나? 부부생활부터 관리까지!",
+      "lang": "ko",
+      "event_count": 306,
+      "accepted_event_count": 14,
+      "acceptance_ratio": 0.046,
+      "avg_quality_score": 3.99,
+      "source_url": "https://www.youtube.com/watch?v=NEW2idHvPKE"
+    },
+    {
+      "video_id": "52qCrBtrxkc",
+      "title": "[02커플] 🔥이어폰필수🔥 매운맛 커플 밸런스 게임 💕👈",
+      "lang": "ko",
+      "event_count": 148,
+      "accepted_event_count": 12,
+      "acceptance_ratio": 0.081,
+      "avg_quality_score": 4.04,
+      "source_url": "https://www.youtube.com/watch?v=52qCrBtrxkc"
+    },
+    {
+      "video_id": "11jaC8BJK8s",
+      "title": "신혼부부 브이로그 | 대화없는 부부가 여행을 가면..",
+      "lang": "ko",
+      "event_count": 98,
+      "accepted_event_count": 10,
+      "acceptance_ratio": 0.102,
+      "avg_quality_score": 4.11,
+      "source_url": "https://www.youtube.com/watch?v=11jaC8BJK8s"
+    },
+    {
+      "video_id": "shus6qysS_E",
+      "title": "[9년차 커플] 헤어졌던 썰 최초공개💧밤바다 데이트 브이로그 ( 진솔한 대화 I 장기연애 비법 | 기안84 해물라면 )",
+      "lang": "ko",
+      "event_count": 169,
+      "accepted_event_count": 6,
+      "acceptance_ratio": 0.036,
+      "avg_quality_score": 4.04,
+      "source_url": "https://www.youtube.com/watch?v=shus6qysS_E"
+    },
+    {
+      "video_id": "91PIo9NG3X4",
+      "title": "동거 1년차 커플의 수위조절 실패한 매운맛 Q&A",
+      "lang": "ko",
+      "event_count": 210,
+      "accepted_event_count": 6,
+      "acceptance_ratio": 0.029,
+      "avg_quality_score": 4.02,
+      "source_url": "https://www.youtube.com/watch?v=91PIo9NG3X4"
+    },
+    {
+      "video_id": "5JaUbcVvx1U",
+      "title": "곧 싸우겠는데 싶은 대화 #커플브이로그 #커플 #연애 #데이트",
+      "lang": "ko",
+      "event_count": 6,
+      "accepted_event_count": 0,
+      "acceptance_ratio": 0.0,
+      "avg_quality_score": 4.0,
+      "source_url": "https://www.youtube.com/watch?v=5JaUbcVvx1U"
+    },
+    {
+      "video_id": "ajk-lymaMfM",
+      "title": "9년차 커플의 흔한 대화🐣",
+      "lang": "ko",
+      "event_count": 4,
+      "accepted_event_count": 0,
+      "acceptance_ratio": 0.0,
+      "avg_quality_score": 4.0,
+      "source_url": "https://www.youtube.com/watch?v=ajk-lymaMfM"
+    },
+    {
+      "video_id": "n5CxDLSOwjg",
+      "title": "음식밸런스게임질문모음 이구동성게임문제 이심전심텔레파시게임 제시어 취향테스트",
+      "lang": "ko",
+      "event_count": 120,
+      "accepted_event_count": 0,
+      "acceptance_ratio": 0.0,
+      "avg_quality_score": 4.0,
+      "source_url": "https://www.youtube.com/watch?v=n5CxDLSOwjg"
+    },
+    {
+      "video_id": "H7cUc1rDqzo",
+      "title": "30대 부부의 흔한 대화 #부부일상 #부부브이로그 #홈카페놀이",
+      "lang": "ko",
+      "event_count": 6,
+      "accepted_event_count": 0,
+      "acceptance_ratio": 0.0,
+      "avg_quality_score": 4.0,
+      "source_url": "https://www.youtube.com/watch?v=H7cUc1rDqzo"
+    },
+    {
+      "video_id": "cJUDzuV_ijQ",
+      "title": "결혼 바이럴 부부 어떻게 만났을까? 2탄!! #부부 #지지부부 #결혼장려 #신혼부부",
+      "lang": "ko",
+      "event_count": 23,
+      "accepted_event_count": 0,
+      "acceptance_ratio": 0.0,
+      "avg_quality_score": 4.0,
+      "source_url": "https://www.youtube.com/watch?v=cJUDzuV_ijQ"
+    },
+    {
+      "video_id": "tXUClkEiY7g",
+      "title": "여자친구 달라진 점 알아주면 생기는 일 #장기연애 #커플 #브이로그",
+      "lang": "ko",
+      "event_count": 4,
+      "accepted_event_count": 0,
+      "acceptance_ratio": 0.0,
+      "avg_quality_score": 4.0,
+      "source_url": "https://www.youtube.com/watch?v=tXUClkEiY7g"
+    }
+  ]
+}

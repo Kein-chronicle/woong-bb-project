@@ -1,16 +1,21 @@
 # Automation Worker Design
 
 ## Recommendation
-현재 구조에서는 `별도 Python 워커 프로세스 1개`가 가장 안정적이다.
+현재 기본 구조에서는 `Codex cron dispatcher`가 가장 안정적이다.
+
+별도 Python sidecar worker는 계속 떠 있어야 하는 고빈도/실시간 감지가 필요할 때만 보조로 켠다.
 
 ## Why This Is Best
 - 이미 운영 도구가 Python 기반이다.
 - 상태 파일이 전부 JSON/JSONL이라 Python이 다루기 쉽다.
-- Telegram 브리지와 분리하면 대화 응답과 자동 이벤트가 서로 덜 꼬인다.
-- 재시작, 로그, 상태 확인을 `botctl.py`와 비슷한 방식으로 관리하기 쉽다.
+- Codex 자동화가 주기 실행과 실패 보고를 맡으면 long-running worker lock/heartbeat 꼬임이 줄어든다.
+- 고정 시각 타이머는 한 번 실행하고 끝나는 원샷 작업이라 cron dispatcher와 잘 맞는다.
+- Telegram 브리지와 자동 타이머 처리를 분리하면 대화 응답과 자동 이벤트가 서로 덜 꼬인다.
 
 ## Recommended Shape
 - 이름: `woong-bb-automation-worker`
+- 기본 실행기: `/Users/kein/Desktop/woong-bb/tools/run_due_codex_timers.py`
+- 원샷 타이머 실행기: `/Users/kein/Desktop/woong-bb/tools/run_timer_once.py`
 - 역할:
   - 시간대 전환 감지
   - 날씨/미디어 조회 갱신
@@ -20,7 +25,8 @@
   - 실제 발송 가능 여부 판정
 
 ## Supervision Dependency
-- worker는 단독으로만 두지 않고 supervisor/control layer와 함께 운영한다.
+- 기본 타이머는 Codex automation `woong-bb-codex-timer-dispatcher`가 처리한다.
+- sidecar worker를 켜는 경우에는 단독으로만 두지 않고 supervisor/control layer와 함께 운영한다.
 - 관련 문서: `/Users/kein/Desktop/woong-bb/profile/automation_supervision_design_ko.md`
 - 관련 상태 파일:
   - `/Users/kein/Desktop/woong-bb/state/automation_supervisor_state.json`
@@ -29,21 +35,17 @@
 
 ## Activation Gate
 - 연결과 구현은 먼저 끝내도 된다.
-- 실제 worker 시작은 마스터의 명시적 지시 전까지 금지한다.
+- 실제 sidecar worker 시작은 마스터의 명시적 지시 전까지 금지한다.
 - 준비가 끝나면 자동으로 시작하지 않고, `실행 가능 상태`와 확인 항목을 보고한 뒤 시작 여부를 묻는다.
 - 기본 상태는 `disabled/stopped`로 유지한다.
 
 ## Process Model
-- Telegram 브리지와 별도 프로세스
-- 짧은 주기 poll + 이벤트 기반 재계산 혼합
-- 권장 주기:
-  - 일반 상태 점검: 60초
-  - 시간대 전환 직전/직후: 즉시
-  - 실제 링크 확보/이미지 전송 후: 즉시
+- 기본: Codex cron이 1시간마다 dispatcher를 실행하고, 그 사이 due 된 고정 시각 타이머를 idempotent하게 처리한다.
+- 보조: sidecar worker는 실시간 미답장 감지, 5분 단위 대화 guard, 즉시성 높은 이벤트 약속 처리에만 사용한다.
 
 ## Avoid
-- cron만으로 구성
-  - 대화 중 상태, 미답장, 쿨다운 반영이 거칠다
+- 모든 작업을 sidecar worker 하나에 몰아넣기
+  - long-running process, lock, heartbeat, 로그 경로가 꼬이기 쉽다
 - 브리지 내부에 직접 섞기
   - 대화 처리와 자동화가 강하게 결합돼 장애 추적이 어려워진다
 
@@ -72,5 +74,6 @@
 
 ## Final Recommendation
 - 구현 언어: Python
-- 실행 형태: Telegram 브리지와 분리된 단일 워커
-- 프로세스 관리: macOS면 `launchd`, 현재 운영 일관성을 중시하면 초기엔 `screen + botctl`로 시작 후 `launchd`로 옮기는 방식
+- 기본 실행 형태: Codex cron dispatcher
+- sidecar 실행 형태: Telegram 브리지와 분리된 단일 워커, 명시적 요청 시에만 사용
+- 프로세스 관리: 기본은 Codex automation, sidecar가 필요하면 `launchd` 또는 `screen + control/state files`

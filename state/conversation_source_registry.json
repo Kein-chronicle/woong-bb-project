@@ -1,0 +1,228 @@
+{
+  "schema_version": 1,
+  "managed_by": "conversation_learning_loop",
+  "updated_at": "2026-05-22T09:58:26+09:00",
+  "sources": [
+    {
+      "source_id": "reddit_relationship_advice",
+      "site_name": "Reddit r/relationship_advice",
+      "base_url": "https://www.reddit.com/r/relationship_advice/",
+      "content_type": "relationship_advice",
+      "language": "en",
+      "status": "active",
+      "collection_interval_minutes": 30,
+      "priority_score": 0.94,
+      "notes": "삭제/변동이 빨라 짧은 간격 수집 권장"
+    },
+    {
+      "source_id": "reddit_relationships",
+      "site_name": "Reddit r/relationships",
+      "base_url": "https://www.reddit.com/r/relationships/",
+      "content_type": "relationship_advice",
+      "language": "en",
+      "status": "active",
+      "collection_interval_minutes": 30,
+      "priority_score": 0.91,
+      "notes": "실제 커플 맥락이 비교적 많음"
+    },
+    {
+      "source_id": "pann",
+      "site_name": "Nate Pann",
+      "base_url": "https://pann.nate.com/",
+      "content_type": "community_relationship",
+      "language": "ko",
+      "status": "active",
+      "collection_interval_minutes": 60,
+      "priority_score": 0.88,
+      "notes": "한국어 연애/결혼 글 보강"
+    },
+    {
+      "source_id": "dcinside_romance",
+      "site_name": "DCInside romance/advice boards",
+      "base_url": "https://www.dcinside.com/",
+      "content_type": "community_relationship",
+      "language": "ko",
+      "status": "watch",
+      "collection_interval_minutes": 60,
+      "priority_score": 0.77,
+      "notes": "노이즈 관리 필요"
+    },
+    {
+      "source_id": "ao3_romance",
+      "site_name": "AO3 romance",
+      "base_url": "https://archiveofourown.org/",
+      "content_type": "fiction_dialogue",
+      "language": "en",
+      "status": "watch",
+      "collection_interval_minutes": 720,
+      "priority_score": 0.74,
+      "notes": "대사 밀도 보강용"
+    },
+    {
+      "source_id": "youtube_search_candidate_1889492",
+      "site_name": "www.youtube.com",
+      "base_url": "https://www.youtube.com/watch",
+      "content_type": "couple_dialogue_video",
+      "language": "multi",
+      "status": "watch",
+      "collection_interval_minutes": 720,
+      "priority_score": 0.65,
+      "notes": "discovered_by_query:커플 브이로그 대화"
+    },
+    {
+      "source_id": "web_candidate_6559789",
+      "site_name": "blog.naver.com",
+      "base_url": "https://blog.naver.com/reserdve13760/223842788167",
+      "content_type": "unknown",
+      "language": "unknown",
+      "status": "watch",
+      "collection_interval_minutes": 720,
+      "priority_score": 0.2,
+      "notes": "discovered_by_query:커플 브이로그 대화"
+    },
+    {
+      "source_id": "web_candidate_7611790",
+      "site_name": "pallabi.tistory.com",
+      "base_url": "https://pallabi.tistory.com/entry/신혼여행에서-커플-브이로그-촬영하는-법",
+      "content_type": "unknown",
+      "language": "unknown",
+      "status": "watch",
+      "collection_interval_minutes": 720,
+      "priority_score": 0.2,
+      "notes": "discovered_by_query:커플 브이로그 대화"
+    },
+    {
+      "source_id": "web_candidate_47250",
+      "site_name": "www.tiktok.com",
+      "base_url": "https://www.tiktok.com/@rhema9634/video/7640006675080039687",
+      "content_type": "unknown",
+      "language": "unknown",
+      "status": "watch",
+      "collection_interval_minutes": 720,
+      "priority_score": 0.2,
+      "notes": "discovered_by_query:커플 브이로그 대화"
+    },
+    {
+      "source_id": "web_candidate_5838071",
+      "site_name": "blog.teomok.kr",
+      "base_url": "https://blog.teomok.kr/191",
+      "content_type": "unknown",
+      "language": "unknown",
+      "status": "watch",
+      "collection_interval_minutes": 720,
+      "priority_score": 0.2,
+      "notes": "discovered_by_query:커플 브이로그 대화"
+    },
+    {
+      "source_id": "web_candidate_8983905",
+      "site_name": "playboard.co",
+      "base_url": "https://playboard.co/search",
+      "content_type": "unknown",
+      "language": "unknown",
+      "status": "watch",
+      "collection_interval_minutes": 720,
+      "priority_score": 0.2,
+      "notes": "discovered_by_query:커플 브이로그 대화"
+    },
+    {
+      "source_id": "web_candidate_7162704",
+      "site_name": "javrank.com",
+      "base_url": "https://javrank.com/ja/leobeu-seutoli-keopeul-beu-ilogeu-korean-porn-vip",
+      "content_type": "unknown",
+      "language": "unknown",
+      "status": "watch",
+      "collection_interval_minutes": 720,
+      "priority_score": 0.2,
+      "notes": "discovered_by_query:커플 브이로그 대화"
+    },
+    {
+      "source_id": "web_candidate_9131111",
+      "site_name": "topclass.chosun.com",
+      "base_url": "https://topclass.chosun.com/news/articleView.html",
+      "content_type": "unknown",
+      "language": "unknown",
+      "status": "watch",
+      "collection_interval_minutes": 720,
+      "priority_score": 0.2,
+      "notes": "discovered_by_query:커플 브이로그 대화"
+    },
+    {
+      "source_id": "web_candidate_3770897",
+      "site_name": "www.wikitree.co.kr",
+      "base_url": "https://www.wikitree.co.kr/articles/446821",
+      "content_type": "unknown",
+      "language": "unknown",
+      "status": "watch",
+      "collection_interval_minutes": 720,
+      "priority_score": 0.2,
+      "notes": "discovered_by_query:커플 브이로그 대화"
+    },
+    {
+      "source_id": "web_candidate_8426101",
+      "site_name": "zdnet.co.kr",
+      "base_url": "https://zdnet.co.kr/view/",
+      "content_type": "unknown",
+      "language": "unknown",
+      "status": "watch",
+      "collection_interval_minutes": 720,
+      "priority_score": 0.2,
+      "notes": "discovered_by_query:커플 브이로그 대화"
+    },
+    {
+      "source_id": "web_candidate_6354619",
+      "site_name": "ibabynews.com",
+      "base_url": "https://ibabynews.com/news/articleView.html",
+      "content_type": "unknown",
+      "language": "unknown",
+      "status": "watch",
+      "collection_interval_minutes": 720,
+      "priority_score": 0.2,
+      "notes": "discovered_by_query:신혼부부 Q&A 유튜브"
+    },
+    {
+      "source_id": "web_candidate_8887731",
+      "site_name": "playboard.co",
+      "base_url": "https://playboard.co/channel/UC4fwJK_3NsQcGH44eGymaWA",
+      "content_type": "unknown",
+      "language": "unknown",
+      "status": "watch",
+      "collection_interval_minutes": 720,
+      "priority_score": 0.2,
+      "notes": "discovered_by_query:신혼부부 Q&A 유튜브"
+    },
+    {
+      "source_id": "web_candidate_7900799",
+      "site_name": "m.blog.naver.com",
+      "base_url": "https://m.blog.naver.com/likelastday/223942780564",
+      "content_type": "unknown",
+      "language": "unknown",
+      "status": "watch",
+      "collection_interval_minutes": 720,
+      "priority_score": 0.2,
+      "notes": "discovered_by_query:신혼부부 Q&A 유튜브"
+    },
+    {
+      "source_id": "web_candidate_941861",
+      "site_name": "www.tiktok.com",
+      "base_url": "https://www.tiktok.com/@news_shaman/video/7641899151554399508",
+      "content_type": "unknown",
+      "language": "unknown",
+      "status": "watch",
+      "collection_interval_minutes": 720,
+      "priority_score": 0.2,
+      "notes": "discovered_by_query:신혼부부 Q&A 유튜브"
+    },
+    {
+      "source_id": "web_candidate_371275",
+      "site_name": "infoloop.co.kr",
+      "base_url": "https://infoloop.co.kr/issue/article/66934/",
+      "content_type": "unknown",
+      "language": "unknown",
+      "status": "watch",
+      "collection_interval_minutes": 720,
+      "priority_score": 0.2,
+      "notes": "discovered_by_query:신혼부부 Q&A 유튜브"
+    }
+  ],
+  "notes": "active는 우선 수집, watch는 후보 감시, disabled는 보류"
+}

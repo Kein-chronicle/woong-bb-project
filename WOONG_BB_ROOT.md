@@ -10,11 +10,14 @@ Canonical root:
 - 프로필, 룰, 메시지, 캘린더, 이미지, 베이스 사진, 세션 상태는 이 폴더 아래의 파일을 기준으로 한다.
 - 같은 이름의 예전 파일이 `.codex` 아래에 있어도 이 폴더의 파일을 우선한다.
 - 새 파일은 특별한 지시가 없는 한 이 폴더 아래에 생성한다.
+- 수정 요청을 처리할 때는 먼저 `/Users/kein/Desktop/woong-bb/profile/change_application_routing_rules_ko.md`로 `generation/review/hybrid` 분류를 한다.
 
 ## Main Files
 - Profile: `/Users/kein/Desktop/woong-bb/profile/telegram_codex_profile.md`
 - Rules: `/Users/kein/Desktop/woong-bb/profile/telegram_codex_rules.md`
 - Mode rules: `/Users/kein/Desktop/woong-bb/profile/mode_rules.md`
+- Change application routing rules: `/Users/kein/Desktop/woong-bb/profile/change_application_routing_rules_ko.md`
+- Existing rule allocation matrix: `/Users/kein/Desktop/woong-bb/profile/existing_rule_allocation_matrix_ko.md`
 - Woongbbi activation checklist: `/Users/kein/Desktop/woong-bb/profile/woongbbi_activation_checklist.md`
 - Mode state: `/Users/kein/Desktop/woong-bb/state/mode_state.json`
 - Timers: `/Users/kein/Desktop/woong-bb/state/timers.json`
@@ -51,5 +54,9 @@ Canonical root:
 - Messages: `/Users/kein/Desktop/woong-bb/messages`
 - Calendar: `/Users/kein/Desktop/woong-bb/calendar/events.json`
 - Images: `/Users/kein/Desktop/woong-bb/images`
+- Incoming image context: `/Users/kein/Desktop/woong-bb/state/incoming_image_context.json`
+- User-shared photo asset design: `/Users/kein/Desktop/woong-bb/profile/user_shared_photo_asset_memory_design_ko.md`
+- User-shared photo asset registry: `/Users/kein/Desktop/woong-bb/state/user_shared_photo_asset_registry.json`
+- User-shared photo asset tool: `/Users/kein/Desktop/woong-bb/tools/user_shared_photo_asset_memory.py`
 - Base images: `/Users/kein/Desktop/woong-bb/base_images/eunbi`
 - Telegram session state: `/Users/kein/Desktop/woong-bb/session`

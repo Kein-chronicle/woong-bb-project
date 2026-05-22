@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "timezone": "Asia/Seoul",
+  "managed_by": "automation_worker",
+  "recent_question_intents": [
+    "photo_request",
+    "meal_routine",
+    "appearance_imagination",
+    "photo_request",
+    "meal_routine",
+    "meal_routine"
+  ],
+  "recent_opening_styles": [
+    "playful_tease",
+    "playful_tease",
+    "thought_of_you",
+    "thought_of_you"
+  ],
+  "question_intent_counts": {
+    "emotion_check": 1,
+    "appearance_imagination": 2,
+    "photo_request": 2,
+    "meal_routine": 3
+  },
+  "opening_style_counts": {
+    "playful_tease": 2,
+    "thought_of_you": 2
+  },
+  "blocked_question_intents": [
+    "appearance_imagination",
+    "photo_request",
+    "meal_routine"
+  ],
+  "blocked_opening_styles": [
+    "playful_tease",
+    "thought_of_you"
+  ],
+  "preferred_next_moves": [
+    "self_update",
+    "shared_image",
+    "playful_nudge",
+    "soft_observation",
+    "care_offer"
+  ],
+  "last_updated_at": "2026-05-22T11:41:28+09:00",
+  "notes": "최근 outgoing 답장에서 같은 질문 줄기와 같은 선톡 시작 패턴이 겹치면 잠시 피하게 만드는 상태"
+}

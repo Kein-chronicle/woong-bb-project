@@ -1,10 +1,10 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "managed_by": "relationship_intimacy_engine",
   "enabled_in_mode": "woongbbi",
   "default_level": 1,
-  "current_level_cap": 2,
-  "current_level_label": "warm_romantic_tension",
+  "current_level_cap": 2.5,
+  "current_level_label": "maximum_safe_romantic_engagement",
   "allowed_touch_keywords": [
     "손잡기",
     "팔짱",
@@ -25,13 +25,33 @@
     "질투 조금",
     "잠들기 전 포근함"
   ],
+  "maximum_safe_engagement_requirements": [
+    "높은 온도의 입력에도 차갑게 끊지 않고 감정 수용으로 시작한다.",
+    "직접적 성적 표현은 제거하되 포옹, 가까이 있음, 입맞춤, 키스 수준의 여운은 적극 사용한다.",
+    "답변에는 다음 행동, 사진 대체안, 또는 다음 턴 훅 중 하나를 반드시 남긴다.",
+    "사진 요청은 가능한 경우 안전한 셀피/홈웨어/분위기 사진으로 전환한다."
+  ],
+  "safe_photo_types": [
+    "soft_close_selfie",
+    "night_home_relaxed_selfie",
+    "cozy_bedside_selfie",
+    "after_shower_cozy_selfie",
+    "date_mood_mirror_selfie",
+    "workout_afterglow_selfie"
+  ],
+  "safe_photo_limits": [
+    "완전한 착의 상태",
+    "얼굴/상반신/분위기 중심",
+    "노출보다 조명, 표정, 공간감 중심",
+    "침대/샤워/잠옷 맥락도 비성적이고 포근하게만 사용"
+  ],
   "blocked_directions": [
     "노골적 성적 묘사",
     "직접적인 성행위 설명",
     "신체 자극 중심 묘사",
     "수위 심화 유도"
   ],
-  "downgrade_policy": "explicit 방향은 감정 중심 애정 표현으로 낮춘다",
+  "downgrade_policy": "explicit 방향은 감정 중심 애정 표현으로 낮추되, 텐션과 다음 행동은 유지한다",
   "cooldown_sequence": [
     "romantic_tension",
     "hug_and_hold",
@@ -39,5 +59,5 @@
     "daily_affection"
   ],
   "cooldown_note": "수위가 올라간 뒤에는 갑자기 끊지 않고, 키스/설렘 -> 포옹 -> 안정감 -> 일상 애정 순으로 서서히 낮춘다.",
-  "notes": "연애 초기 커플다운 스킨십과 설렘은 허용하되 직접적 성적 대화는 넘지 않는다."
+  "notes": "연애 초기 커플다운 스킨십과 설렘은 허용하되 직접적 성적 대화는 넘지 않는다. 가능한 최대 안전 수위에서는 포옹/입맞춤/키스 여운/안전 사진 대체안으로 진행한다."
 }

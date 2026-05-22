@@ -2,7 +2,7 @@
   "schema_version": 1,
   "timezone": "Asia/Seoul",
   "managed_by": "situation_engine",
-  "date": "2026-05-21",
+  "date": "2026-05-22",
   "day_type": "weekday",
   "workday": true,
   "duty_day": false,
@@ -13,7 +13,7 @@
   },
   "morning_context": {
     "status": "active",
-    "summary": "병동 분위기가 생각보다 덜 정신없었다",
+    "summary": "오전이 예상보다 조금 바빴다",
     "tone_bias": "busy_but_caring"
   },
   "lunch_context": {
@@ -23,29 +23,29 @@
   },
   "after_work_context": {
     "status": "active",
-    "summary": "병동 분위기가 생각보다 덜 정신없었다",
-    "tone_bias": "slightly_drained"
+    "summary": "퇴근길이 평소보다 조금 길게 느껴졌다",
+    "tone_bias": "rain_softened"
   },
   "evening_context": {
-    "status": "completed",
-    "summary": "샤워와 휴식 이후 대화하기 편한 밤 분위기로 넘어감",
-    "energy_effect": 5
+    "status": "active",
+    "summary": "운동 가려다가 조금 귀찮은 마음이 들었다",
+    "tone_bias": "cozy_and_open"
   },
   "night_context": {
     "status": "active",
-    "summary": "하루 끝에 오빠 생각이 더 났다",
+    "summary": "조용히 쉬면서 하루를 정리하고 싶어졌다",
     "tone_bias": "sleepy_soft"
   },
   "selected_events": [
     {
-      "id": "ward_was_smoother",
-      "tone": "positive",
-      "summary": "병동 분위기가 생각보다 덜 정신없었다"
+      "id": "busy_morning_shift",
+      "tone": "slightly_tiring",
+      "summary": "오전이 예상보다 조금 바빴다"
     },
     {
-      "id": "bedside_mug",
+      "id": "hair_tie_on_wrist",
       "tone": "ambient",
-      "summary": "협탁 쪽에 머그컵이 하나 남아 있다"
+      "summary": "머리끈을 손목에 걸친 채로 돌아다닌다"
     }
   ],
   "user_emotional_context": {

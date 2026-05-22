@@ -1,0 +1,124 @@
+from __future__ import annotations
+
+import re
+from typing import Optional
+
+
+EVENT_TRIGGER_RULES = [
+    {"event_key": "after_work", "label": "일 끝남", "patterns": [r"일 끝나", r"일 끝나면", r"퇴근하", r"퇴근하면"]},
+    {"event_key": "arrive_home", "label": "집 도착", "patterns": [r"집에 도착", r"집 도착", r"집 들어가", r"귀가하"]},
+    {"event_key": "arrive_work", "label": "직장 도착", "patterns": [r"회사 도착", r"직장 도착", r"병원 도착", r"출근해서 도착"]},
+    {"event_key": "arrive_somewhere", "label": "어디 도착", "patterns": [r"도착하", r"도착하면", r"막 도착"]},
+    {"event_key": "changed_clothes", "label": "옷 갈아입음", "patterns": [r"옷 갈아입", r"갈아입으면", r"근무복 입", r"잠옷 갈아입"]},
+    {"event_key": "lunch_time", "label": "점심시간", "patterns": [r"점심시간", r"점심때", r"점심 먹", r"점심 전후"]},
+    {"event_key": "wake_up", "label": "기상", "patterns": [r"일어나면", r"일어나고", r"깼을 때", r"아침에 깨면", r"아침에 일어나면"]},
+    {"event_key": "lying_in_bed", "label": "침대에 누움", "patterns": [r"침대에 누우", r"누우면", r"누웠을 때", r"씻고 누우", r"침대에 눕"]},
+]
+
+PROMISE_CREATE_HINTS = ["보내줘", "보내주라", "보내주면", "톡해줘", "카톡해줘", "말해줘", "전해줘"]
+PROMISE_CANCEL_HINTS = ["취소", "해주지말자", "해주지 말자", "보내지말자", "보내지 말자", "하지말자", "하지 말자", "없던걸로", "없던 걸로"]
+
+
+def has_any_phrase(text: str, phrases: list[str]) -> bool:
+    return any(phrase in text for phrase in phrases)
+
+
+def match_event_trigger_rule(text: str) -> Optional[dict]:
+    for rule in EVENT_TRIGGER_RULES:
+        if any(re.search(pattern, text) for pattern in rule.get("patterns", [])):
+            return rule
+    return None
+
+
+def extract_promise_payload(text: str) -> str:
+    if "<<" in text:
+        before, after = text.split("<<", 1)
+        candidate = after.strip() or before.strip()
+    else:
+        candidate = text
+    candidate = re.sub(r"(보내줘|보내주라|보내주면|톡해줘|카톡해줘|말해줘|전해줘)[^.?!]*$", "", candidate).strip()
+    candidate = re.sub(r"^(그때|그럼|그러면|언제|이따|나중에)\s+", "", candidate).strip()
+    return candidate.strip(" \"'“”‘’")
+
+
+def parse_event_trigger_command(text: str) -> Optional[dict]:
+    normalized = re.sub(r"\s+", " ", (text or "").strip())
+    if not normalized:
+        return None
+    if has_any_phrase(normalized, PROMISE_CANCEL_HINTS):
+        rule = match_event_trigger_rule(normalized)
+        return {
+            "action": "cancel",
+            "event_key": rule.get("event_key") if rule else None,
+            "label": rule.get("label") if rule else None,
+            "source_text": normalized,
+        }
+    if not has_any_phrase(normalized, PROMISE_CREATE_HINTS):
+        return None
+    rule = match_event_trigger_rule(normalized)
+    if not rule:
+        return None
+    payload = extract_promise_payload(normalized)
+    if not payload:
+        return None
+    return {
+        "action": "create",
+        "event_key": rule["event_key"],
+        "label": rule["label"],
+        "message": payload,
+        "source_text": normalized,
+    }
+
+
+def derive_event_keys_for_transition(previous_activity: Optional[str], current_activity: Optional[str]) -> list[str]:
+    prev = previous_activity or ""
+    curr = current_activity or ""
+    event_keys = []
+    if curr == "waking_up":
+        event_keys.append("wake_up")
+    if curr == "lunch_break":
+        event_keys.append("lunch_time")
+    if prev in {"hospital_morning_shift", "hospital_afternoon_shift"} and curr == "commuting_home":
+        event_keys.append("after_work")
+    if curr == "hospital_morning_shift" and prev in {"getting_ready", "commuting_to_work"}:
+        event_keys.extend(["arrive_work", "changed_clothes"])
+    if curr == "dinner_or_cooking" and prev == "commuting_home":
+        event_keys.extend(["arrive_home", "arrive_somewhere"])
+    if curr == "exercise_or_cafe" and prev in {"commuting_home", "dinner_or_cooking", "weekend_brunch_or_coffee"}:
+        event_keys.append("arrive_somewhere")
+    if curr == "night_wind_down" and prev in {"dinner_or_cooking", "exercise_or_cafe", "weekend_evening"}:
+        event_keys.extend(["lying_in_bed", "changed_clothes"])
+    return list(dict.fromkeys(event_keys))
+
+
+def normalize_fact_expression(text: str) -> str:
+    normalized = (text or "").strip()
+    replacements = [
+        (r"(막 |방금 |이제 )?도착한 (느낌|기분)이야", lambda m: "%s도착했어" % (m.group(1) or "")),
+        (r"(막 |방금 |이제 )?일어난 (느낌|기분)이야", lambda m: "%s일어났어" % (m.group(1) or "")),
+        (r"(막 |방금 |이제 )?누운 (느낌|기분)이야", lambda m: "%s누웠어" % (m.group(1) or "")),
+        (r"(막 |방금 |이제 )?옷 갈아입은 (느낌|기분)이야", lambda m: "%s옷 갈아입었어" % (m.group(1) or "")),
+        (r"점심시간인 (느낌|기분)이야", "점심시간이야"),
+        (r"일 끝난 (느낌|기분)이야", "일 끝났어"),
+    ]
+    for pattern, replacement in replacements:
+        normalized = re.sub(pattern, replacement, normalized)
+    normalized = re.sub(r"(도착했어|일어났어|누웠어|옷 갈아입었어|점심시간이야|일 끝났어)\s+같아", r"\1", normalized)
+    return normalized.strip()
+
+
+def factual_status_for_activity(activity: Optional[str]) -> Optional[str]:
+    mapping = {
+        "waking_up": "방금 일어났어",
+        "getting_ready": "출근 준비 중이야",
+        "commuting_to_work": "출근하러 가는 중이야",
+        "hospital_morning_shift": "병원 도착해서 일 시작했어",
+        "lunch_break": "점심시간이야",
+        "hospital_afternoon_shift": "오후 근무 중이야",
+        "commuting_home": "퇴근해서 집 가는 중이야",
+        "dinner_or_cooking": "집 도착해서 저녁 챙기고 있어",
+        "exercise_or_cafe": "밖에 나와서 운동하거나 카페에 있어",
+        "night_wind_down": "이제 씻고 누웠어",
+        "sleep_window": "자고 있어야 하는 시간이야",
+    }
+    return mapping.get(activity or "")

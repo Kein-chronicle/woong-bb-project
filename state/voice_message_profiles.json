@@ -29,12 +29,12 @@
       "max_chars": 95,
       "sentence_limit": 3,
       "cadence_style": "night_melt",
-      "vowel_stretch_level": "medium",
-      "prosody_smoothing": "high",
+      "vowel_stretch_level": "low",
+      "prosody_smoothing": "medium",
       "voice_settings": {
-        "stability": 0.8,
+        "stability": 0.68,
         "similarity_boost": 0.88,
-        "style": 0.03,
+        "style": 0.1,
         "use_speaker_boost": false
       },
       "text_rules": [
@@ -70,11 +70,11 @@
       "sentence_limit": 2,
       "cadence_style": "quiet_hushed",
       "vowel_stretch_level": "none",
-      "prosody_smoothing": "high",
+      "prosody_smoothing": "low",
       "voice_settings": {
-        "stability": 0.86,
+        "stability": 0.7,
         "similarity_boost": 0.86,
-        "style": 0.02,
+        "style": 0.12,
         "use_speaker_boost": false
       },
       "text_rules": [

@@ -1,0 +1,90 @@
+{
+  "bundle_id": "bundle_100",
+  "source_video_id": "nl1M55rnVPw",
+  "source_title": "[VLOG] 육아 난이도 급상승이유..⁉️ + 남편과의 진지한 대화👩🏻",
+  "source_url": "https://www.youtube.com/watch?v=nl1M55rnVPw",
+  "source_lang": "ko",
+  "speaker_note": "유튜브 자동 자막을 시간순으로 정리했으며 화자 표시는 교대형 추정입니다.",
+  "utterances": [
+    {
+      "turn_index": 1,
+      "speaker": "화자A(추정)",
+      "text_ko": "아니거든요. 그래도 으니까 요렇게",
+      "source_text": "아니거든요. 그래도 으니까 요렇게",
+      "start_ms": 277840,
+      "duration_ms": 7760
+    },
+    {
+      "turn_index": 2,
+      "speaker": "화자B(추정)",
+      "text_ko": "요런 식으로 색이 펴지면 완성이 된",
+      "source_text": "요런 식으로 색이 펴지면 완성이 된",
+      "start_ms": 281880,
+      "duration_ms": 5240
+    },
+    {
+      "turn_index": 3,
+      "speaker": "화자A(추정)",
+      "text_ko": "겁니다.",
+      "source_text": "겁니다.",
+      "start_ms": 285600,
+      "duration_ms": 4800
+    },
+    {
+      "turn_index": 4,
+      "speaker": "화자B(추정)",
+      "text_ko": "저희는 이렇게 설거지를 모아놔요.",
+      "source_text": "저희는 이렇게 설거지를 모아놔요.",
+      "start_ms": 287120,
+      "duration_ms": 6480
+    },
+    {
+      "turn_index": 5,
+      "speaker": "화자A(추정)",
+      "text_ko": "모아 놓고 저녁에 돌립니다. 저희가",
+      "source_text": "모아 놓고 저녁에 돌립니다. 저희가",
+      "start_ms": 290400,
+      "duration_ms": 6120
+    },
+    {
+      "turn_index": 6,
+      "speaker": "화자B(추정)",
+      "text_ko": "친대 이미 가장 과구를 다 구매를 해",
+      "source_text": "친대 이미 가장 과구를 다 구매를 해",
+      "start_ms": 293600,
+      "duration_ms": 5720
+    },
+    {
+      "turn_index": 7,
+      "speaker": "화자A(추정)",
+      "text_ko": "가지고 여기 올 때 딱 식세기 하나",
+      "source_text": "가지고 여기 올 때 딱 식세기 하나",
+      "start_ms": 296520,
+      "duration_ms": 5560
+    },
+    {
+      "turn_index": 8,
+      "speaker": "화자B(추정)",
+      "text_ko": "샀거든요. 그 2년째 사용 중인데",
+      "source_text": "샀거든요. 그 2년째 사용 중인데",
+      "start_ms": 299320,
+      "duration_ms": 6400
+    },
+    {
+      "turn_index": 9,
+      "speaker": "화자A(추정)",
+      "text_ko": "진짜 너무 안좋어요. 눌러 같은 것들",
+      "source_text": "진짜 너무 안좋어요. 눌러 같은 것들",
+      "start_ms": 302080,
+      "duration_ms": 6800
+    },
+    {
+      "turn_index": 10,
+      "speaker": "화자B(추정)",
+      "text_ko": "꽝이하는 여기 막 사이사이에 막 기름",
+      "source_text": "꽝이하는 여기 막 사이사이에 막 기름",
+      "start_ms": 305720,
+      "duration_ms": 5600
+    }
+  ]
+}

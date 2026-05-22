@@ -1,0 +1,90 @@
+{
+  "bundle_id": "bundle_097",
+  "source_video_id": "NEW2idHvPKE",
+  "source_title": "부부 Q&A | 이렇게 솔직해도 되나? 부부생활부터 관리까지!",
+  "source_url": "https://www.youtube.com/watch?v=NEW2idHvPKE",
+  "source_lang": "ko",
+  "speaker_note": "유튜브 자동 자막을 시간순으로 정리했으며 화자 표시는 교대형 추정입니다.",
+  "utterances": [
+    {
+      "turn_index": 1,
+      "speaker": "화자A(추정)",
+      "text_ko": ">> 그냥 그때는 우리가 불 같았지.",
+      "source_text": ">> 그냥 그때는 우리가 불 같았지.",
+      "start_ms": 190640,
+      "duration_ms": 5879
+    },
+    {
+      "turn_index": 2,
+      "speaker": "화자B(추정)",
+      "text_ko": ">> 뭐 어떡해? 아 그런 걸 궁금해하는",
+      "source_text": ">> 뭐 어떡해? 아 그런 걸 궁금해하는",
+      "start_ms": 194280,
+      "duration_ms": 5120
+    },
+    {
+      "turn_index": 3,
+      "speaker": "화자A(추정)",
+      "text_ko": "거 아니야? 그냥 다른 연인분들은 뭐",
+      "source_text": "거 아니야? 그냥 다른 연인분들은 뭐",
+      "start_ms": 196519,
+      "duration_ms": 5000
+    },
+    {
+      "turn_index": 4,
+      "speaker": "화자B(추정)",
+      "text_ko": "공감하시는 분들도 계실 거고 오늘",
+      "source_text": "공감하시는 분들도 계실 거고 오늘",
+      "start_ms": 199400,
+      "duration_ms": 4399
+    },
+    {
+      "turn_index": 5,
+      "speaker": "화자A(추정)",
+      "text_ko": "저렇게까지 하시는 분도 계실 텐데",
+      "source_text": "저렇게까지 하시는 분도 계실 텐데",
+      "start_ms": 201519,
+      "duration_ms": 5161
+    },
+    {
+      "turn_index": 6,
+      "speaker": "화자B(추정)",
+      "text_ko": "그냥 눈 뜨면",
+      "source_text": "그냥 눈 뜨면",
+      "start_ms": 203799,
+      "duration_ms": 3601
+    },
+    {
+      "turn_index": 7,
+      "speaker": "화자A(추정)",
+      "text_ko": ">> 음",
+      "source_text": ">> 음",
+      "start_ms": 206680,
+      "duration_ms": 2639
+    },
+    {
+      "turn_index": 8,
+      "speaker": "화자B(추정)",
+      "text_ko": ">> 아무튼 2번으로 넘어갈까요?",
+      "source_text": ">> 아무튼 2번으로 넘어갈까요?",
+      "start_ms": 207400,
+      "duration_ms": 2440
+    },
+    {
+      "turn_index": 9,
+      "speaker": "화자A(추정)",
+      "text_ko": ">> 네.",
+      "source_text": ">> 네.",
+      "start_ms": 209319,
+      "duration_ms": 3200
+    },
+    {
+      "turn_index": 10,
+      "speaker": "화자B(추정)",
+      "text_ko": ">> 아 이거는 이제 연결되는 질문입니다.",
+      "source_text": ">> 아 이거는 이제 연결되는 질문입니다.",
+      "start_ms": 209840,
+      "duration_ms": 5002
+    }
+  ]
+}

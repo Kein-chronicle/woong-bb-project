@@ -1,0 +1,90 @@
+{
+  "bundle_id": "bundle_089",
+  "source_video_id": "91PIo9NG3X4",
+  "source_title": "동거 1년차 커플의 수위조절 실패한 매운맛 Q&A",
+  "source_url": "https://www.youtube.com/watch?v=91PIo9NG3X4",
+  "source_lang": "ko",
+  "speaker_note": "유튜브 자동 자막을 시간순으로 정리했으며 화자 표시는 교대형 추정입니다.",
+  "utterances": [
+    {
+      "turn_index": 1,
+      "speaker": "화자A(추정)",
+      "text_ko": "앞서서 일단 부모님 봐도 돼 안 돼",
+      "source_text": "앞서서 일단 부모님 봐도 돼 안 돼",
+      "start_ms": 375780,
+      "duration_ms": 6199
+    },
+    {
+      "turn_index": 2,
+      "speaker": "화자B(추정)",
+      "text_ko": "우리 부모님 안 봤으면 좋겠지",
+      "source_text": "우리 부모님 안 봤으면 좋겠지",
+      "start_ms": 377699,
+      "duration_ms": 4280
+    },
+    {
+      "turn_index": 3,
+      "speaker": "화자A(추정)",
+      "text_ko": "당연히 안 봤으면 좋겠지 일단",
+      "source_text": "당연히 안 봤으면 좋겠지 일단",
+      "start_ms": 382020,
+      "duration_ms": 3119
+    },
+    {
+      "turn_index": 4,
+      "speaker": "화자B(추정)",
+      "text_ko": "나가시고요",
+      "source_text": "나가시고요",
+      "start_ms": 383580,
+      "duration_ms": 3420
+    },
+    {
+      "turn_index": 5,
+      "speaker": "화자A(추정)",
+      "text_ko": "절대 안 나가지",
+      "source_text": "절대 안 나가지",
+      "start_ms": 385139,
+      "duration_ms": 2761
+    },
+    {
+      "turn_index": 6,
+      "speaker": "화자B(추정)",
+      "text_ko": "장모님",
+      "source_text": "장모님",
+      "start_ms": 387000,
+      "duration_ms": 3800
+    },
+    {
+      "turn_index": 7,
+      "speaker": "화자A(추정)",
+      "text_ko": "눈에 불을 켜고 볼 때",
+      "source_text": "눈에 불을 켜고 볼 때",
+      "start_ms": 387900,
+      "duration_ms": 2900
+    },
+    {
+      "turn_index": 8,
+      "speaker": "화자B(추정)",
+      "text_ko": "는 나가 줘",
+      "source_text": "는 나가 줘",
+      "start_ms": 392360,
+      "duration_ms": 5520
+    },
+    {
+      "turn_index": 9,
+      "speaker": "화자A(추정)",
+      "text_ko": "오늘만큼만 나가지고",
+      "source_text": "오늘만큼만 나가지고",
+      "start_ms": 394460,
+      "duration_ms": 3420
+    },
+    {
+      "turn_index": 10,
+      "speaker": "화자B(추정)",
+      "text_ko": "처음에 저희가 술에 취해서 저희 집에",
+      "source_text": "처음에 저희가 술에 취해서 저희 집에",
+      "start_ms": 403139,
+      "duration_ms": 5280
+    }
+  ]
+}

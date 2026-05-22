@@ -1,0 +1,90 @@
+{
+  "bundle_id": "bundle_020",
+  "source_video_id": "MfCHfvyz3l4",
+  "source_title": "건강한 대화. 행복한 연애. 텅빈 통장, 하와이 브이로그 2탄",
+  "source_url": "https://www.youtube.com/watch?v=MfCHfvyz3l4",
+  "source_lang": "ko",
+  "speaker_note": "유튜브 자동 자막을 시간순으로 정리했으며 화자 표시는 교대형 추정입니다.",
+  "utterances": [
+    {
+      "turn_index": 1,
+      "speaker": "화자A(추정)",
+      "text_ko": "speaks perfect and",
+      "source_text": "speaks perfect and",
+      "start_ms": 53800,
+      "duration_ms": 3120
+    },
+    {
+      "turn_index": 2,
+      "speaker": "화자B(추정)",
+      "text_ko": "from country",
+      "source_text": "from country",
+      "start_ms": 55359,
+      "duration_ms": 2840
+    },
+    {
+      "turn_index": 3,
+      "speaker": "화자A(추정)",
+      "text_ko": "unbelevable any",
+      "source_text": "unbelevable any",
+      "start_ms": 56920,
+      "duration_ms": 3000
+    },
+    {
+      "turn_index": 4,
+      "speaker": "화자B(추정)",
+      "text_ko": "questions",
+      "source_text": "questions",
+      "start_ms": 58199,
+      "duration_ms": 4840
+    },
+    {
+      "turn_index": 5,
+      "speaker": "화자A(추정)",
+      "text_ko": "나 너무 행복해 나 그까 아침까지",
+      "source_text": "나 너무 행복해 나 그까 아침까지",
+      "start_ms": 59920,
+      "duration_ms": 4840
+    },
+    {
+      "turn_index": 6,
+      "speaker": "화자B(추정)",
+      "text_ko": "도마 안",
+      "source_text": "도마 안",
+      "start_ms": 63039,
+      "duration_ms": 5521
+    },
+    {
+      "turn_index": 7,
+      "speaker": "화자A(추정)",
+      "text_ko": "나온다. 나 어제 불 죽는수고 맞아",
+      "source_text": "나온다. 나 어제 불 죽는수고 맞아",
+      "start_ms": 64760,
+      "duration_ms": 5220
+    },
+    {
+      "turn_index": 8,
+      "speaker": "화자B(추정)",
+      "text_ko": "좋다.",
+      "source_text": "좋다.",
+      "start_ms": 68560,
+      "duration_ms": 3080
+    },
+    {
+      "turn_index": 9,
+      "speaker": "화자A(추정)",
+      "text_ko": "솔직히 우리는 사이즈 이런 것보다",
+      "source_text": "솔직히 우리는 사이즈 이런 것보다",
+      "start_ms": 71640,
+      "duration_ms": 3799
+    },
+    {
+      "turn_index": 10,
+      "speaker": "화자B(추정)",
+      "text_ko": "그냥 도마뱀이 없어야 돼. 급한",
+      "source_text": "그냥 도마뱀이 없어야 돼. 급한",
+      "start_ms": 73439,
+      "duration_ms": 4121
+    }
+  ]
+}

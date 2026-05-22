@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 import json
-from pathlib import Path
 from typing import Dict, List, Tuple
 
+from project_paths import MESSAGES, state_path
 
-ROOT = Path("/Users/kein/Desktop/woong-bb")
-MESSAGES = ROOT / "messages"
-STATE_PATH = ROOT / "state" / "user_preference_reinforcement.json"
+
+STATE_PATH = state_path("user_preference_reinforcement.json")
 
 POSITIVE_KEYWORDS = {
     "좋아": 2,

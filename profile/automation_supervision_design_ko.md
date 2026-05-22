@@ -1,28 +1,32 @@
 # Automation Supervision Design
 
 ## Purpose
-이 문서는 `woong-bb automation worker`를 안정적으로 감시, 제어, 재시작하기 위한 운영 설계다.
+이 문서는 `woong-bb Codex timer dispatcher`와 선택적 `automation worker`를 안정적으로 감시, 제어하기 위한 운영 설계다.
 
 핵심 목표:
 - 이중 실행 방지
-- heartbeat 기반 상태 감시
+- dispatcher 실행 이력 기반 상태 감시
+- sidecar worker를 켤 경우 heartbeat 기반 상태 감시
 - 세팅모드에서 즉시 관제 가능
 - 꼬였을 때 안전한 stop/start/restart
 
 ## Recommended Architecture
-- `telegram bridge`와 분리된 `python automation worker`
-- 그 위에 `supervision/control layer`를 둔다
+- 기본: Codex cron automation이 `/Users/kein/Desktop/woong-bb/tools/run_due_codex_timers.py`를 주기 실행한다.
+- 보조: 실시간 감지가 필요할 때만 `telegram bridge`와 분리된 `python automation worker`를 켠다.
+- 그 위에 `supervision/control layer`를 둔다.
 
 구성:
-1. worker process
-2. singleton lock
-3. heartbeat/status writer
-4. supervisor command layer
-5. setting mode dashboard/state reader
+1. Codex cron dispatcher
+2. dispatcher state/history
+3. optional worker process
+4. optional singleton lock + heartbeat/status writer
+5. supervisor command layer
+6. setting mode dashboard/state reader
 
 ## Main Files
 - Design: `/Users/kein/Desktop/woong-bb/profile/automation_supervision_design_ko.md`
 - Worker state: `/Users/kein/Desktop/woong-bb/state/automation_worker_state.json`
+- Codex dispatcher state: `/Users/kein/Desktop/woong-bb/state/codex_timer_dispatch_state.json`
 - Supervisor state: `/Users/kein/Desktop/woong-bb/state/automation_supervisor_state.json`
 - Control commands: `/Users/kein/Desktop/woong-bb/state/automation_control.json`
 - Health snapshots: `/Users/kein/Desktop/woong-bb/state/automation_health.json`
@@ -30,6 +34,9 @@
 ## Core Rules
 
 ### 1. Singleton Guarantee
+기본 dispatcher는 long-running process가 아니므로 singleton lock이 필요 없다.
+
+sidecar worker를 켤 경우:
 - worker 시작 전 lock 파일 확보
 - 이미 살아 있는 pid + 최근 heartbeat가 유효하면 새 worker 시작 금지
 - lock은 아래 기준으로 stale 여부 판정
@@ -38,6 +45,9 @@
   - generation token 일치 여부
 
 ### 2. Heartbeat
+Codex dispatcher는 heartbeat 대신 `codex_timer_dispatch_state.json`의 `last_checked_at`, `history`, `errors`를 본다.
+
+sidecar worker를 켤 경우:
 - worker는 매 loop마다 heartbeat 기록
 - 필드:
   - `pid`
@@ -88,8 +98,8 @@
   - `force_recalc`
 
 ### Launch Authorization
-- 기본 원칙은 `explicit_user_command_only`다.
-- 구현 완료만으로는 worker를 시작하지 않는다.
+- 기본 원칙은 `explicit_user_command_only_for_sidecar`다.
+- 구현 완료만으로는 sidecar worker를 시작하지 않는다.
 - 세팅모드에서 준비 상태를 점검한 뒤, 마스터가 시작 지시를 했을 때만 `start` 또는 `enable`을 적용한다.
 - 그 전까지는 control/state 파일만 갱신하고 health는 `stopped`를 유지한다.
 
@@ -103,6 +113,8 @@
 
 ## Monitoring Requirements For Setting Mode
 - 세팅모드에서는 아래를 바로 읽고 보고할 수 있어야 한다.
+  - dispatcher 마지막 실행 시각
+  - dispatcher 최근 fired/error 이력
   - worker on/off
   - 시작 승인 정책
   - pid
@@ -140,8 +152,9 @@
 
 ## Final Recommendation
 가장 관리하기 쉬운 구조는:
-- `Python worker`
-- `single lock + heartbeat`
+- `Codex cron dispatcher`
+- optional `Python worker`
+- sidecar 사용 시 `single lock + heartbeat`
 - `JSON control/state plane`
 - `setting mode 관제`
-- `launchd or screen supervisor`
+- 기본은 Codex automation, sidecar가 필요할 때만 `launchd or screen supervisor`

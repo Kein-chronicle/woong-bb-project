@@ -1,0 +1,90 @@
+{
+  "bundle_id": "bundle_004",
+  "source_video_id": "MfCHfvyz3l4",
+  "source_title": "건강한 대화. 행복한 연애. 텅빈 통장, 하와이 브이로그 2탄",
+  "source_url": "https://www.youtube.com/watch?v=MfCHfvyz3l4",
+  "source_lang": "ko",
+  "speaker_note": "유튜브 자동 자막을 시간순으로 정리했으며 화자 표시는 교대형 추정입니다.",
+  "utterances": [
+    {
+      "turn_index": 1,
+      "speaker": "화자A(추정)",
+      "text_ko": "시즌에 왔어요.",
+      "source_text": "시즌에 왔어요.",
+      "start_ms": 4040,
+      "duration_ms": 3680
+    },
+    {
+      "turn_index": 2,
+      "speaker": "화자B(추정)",
+      "text_ko": "아니 진짜 여기 걸 그랬어.",
+      "source_text": "아니 진짜 여기 걸 그랬어.",
+      "start_ms": 9200,
+      "duration_ms": 4399
+    },
+    {
+      "turn_index": 3,
+      "speaker": "화자A(추정)",
+      "text_ko": "이거 호텔에 계속 이게 아쉬워 가지고",
+      "source_text": "이거 호텔에 계속 이게 아쉬워 가지고",
+      "start_ms": 13839,
+      "duration_ms": 4921
+    },
+    {
+      "turn_index": 4,
+      "speaker": "화자B(추정)",
+      "text_ko": "에어들이 일부를 했던 건데",
+      "source_text": "에어들이 일부를 했던 건데",
+      "start_ms": 16039,
+      "duration_ms": 5561
+    },
+    {
+      "turn_index": 5,
+      "speaker": "화자A(추정)",
+      "text_ko": "이게 훨씬 낫다. 에어",
+      "source_text": "이게 훨씬 낫다. 에어",
+      "start_ms": 18760,
+      "duration_ms": 5960
+    },
+    {
+      "turn_index": 6,
+      "speaker": "화자B(추정)",
+      "text_ko": "너무 좋다. 테라스도",
+      "source_text": "너무 좋다. 테라스도",
+      "start_ms": 21600,
+      "duration_ms": 8120
+    },
+    {
+      "turn_index": 7,
+      "speaker": "화자A(추정)",
+      "text_ko": "있고 오 편지도 있네요.",
+      "source_text": "있고 오 편지도 있네요.",
+      "start_ms": 24720,
+      "duration_ms": 5000
+    },
+    {
+      "turn_index": 8,
+      "speaker": "화자B(추정)",
+      "text_ko": "오빠 어디 살았지?",
+      "source_text": "오빠 어디 살았지?",
+      "start_ms": 31679,
+      "duration_ms": 3281
+    },
+    {
+      "turn_index": 9,
+      "speaker": "화자A(추정)",
+      "text_ko": "Vanc",
+      "source_text": "Vanc",
+      "start_ms": 36280,
+      "duration_ms": 3439
+    },
+    {
+      "turn_index": 10,
+      "speaker": "화자B(추정)",
+      "text_ko": "more in",
+      "source_text": "more in",
+      "start_ms": 37879,
+      "duration_ms": 4321
+    }
+  ]
+}
