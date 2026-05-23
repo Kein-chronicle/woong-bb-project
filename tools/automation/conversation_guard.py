@@ -14,6 +14,7 @@ from .io import load_json, now_local
 PROACTIVE_PATH = STATE / "proactive_messages.json"
 AUTOMATED_OUTGOING_TYPES = {"proactive_text", "event_trigger_text", "voice_message", "voice"}
 ANY_OUTGOING_TYPES = AUTOMATED_OUTGOING_TYPES | {"text"}
+COUNTERPART_MEMORY_EVENT_TYPES = {"text", "image", "photo", "voice", "voice_message"}
 
 SLEEP_PATTERNS = ["잠들", "잘자", "잘 자", "눈감긴", "자야", "자러", "졸려", "졸리", "푹 자", "잘게", "이제 잘래"]
 WAKE_PATTERNS = ["일어났", "깼어", "잠 깼", "기상", "눈 떴", "방금 일어"]
@@ -232,6 +233,12 @@ def is_direct_fact_statement(text: str) -> bool:
     if any(token in normalized for token in SELF_STATE_MARKERS):
         return True
     return any(token in normalized for token in FUTURE_INTENT_PATTERNS)
+
+
+def should_track_counterpart_event(event: Optional[dict]) -> bool:
+    if not event or event.get("direction") != "incoming":
+        return False
+    return event.get("type") in COUNTERPART_MEMORY_EVENT_TYPES
 
 
 def _trim_excerpt(text: str, limit: int = 120) -> Optional[str]:
@@ -462,7 +469,7 @@ def _upsert_fact(facts: dict, fact_key: str, value: str, event: dict, attributes
 
 def build_counterpart_state_memory(events: Optional[list] = None) -> dict:
     events = events or load_message_events(limit_files=30)
-    incoming_events = [event for event in events if event.get("direction") == "incoming"]
+    incoming_events = [event for event in events if should_track_counterpart_event(event)]
     active_states = {}
     resolved_states = []
     facts = {}
@@ -471,14 +478,16 @@ def build_counterpart_state_memory(events: Optional[list] = None) -> dict:
         text = event_text(event)
         if not is_human_state_signal(text):
             continue
+        direct_state_statement = is_direct_state_statement(text)
+        direct_fact_statement = is_direct_fact_statement(text)
 
         for state_key, entry in list(active_states.items()):
             spec = STATE_SPEC_BY_KEY.get(state_key)
-            if spec and contains_any(text, spec["end_patterns"]):
+            if spec and (direct_state_statement or direct_fact_statement) and contains_any(text, spec["end_patterns"]):
                 resolved_states.append(_mark_resolved(entry, event, "explicit_or_implied_resolution"))
                 active_states.pop(state_key, None)
 
-        weekend_plan = _extract_weekend_plan_fact(text) if is_direct_fact_statement(text) else None
+        weekend_plan = _extract_weekend_plan_fact(text) if direct_fact_statement else None
         if weekend_plan:
             _upsert_fact(
                 facts,
@@ -488,7 +497,7 @@ def build_counterpart_state_memory(events: Optional[list] = None) -> dict:
                 attributes=_extract_weekend_plan_attributes(text),
             )
 
-        location_fact = _extract_location_fact(text) if is_direct_state_statement(text) else None
+        location_fact = _extract_location_fact(text) if direct_state_statement else None
         if location_fact:
             _upsert_fact(
                 facts,
@@ -502,7 +511,7 @@ def build_counterpart_state_memory(events: Optional[list] = None) -> dict:
                 },
             )
 
-        if is_direct_fact_statement(text) and contains_any(text, ["어제", "오늘", "방금"]) and contains_any(text, ["갔", "다녀왔", "왔", "들렀", "들러"]):
+        if direct_fact_statement and contains_any(text, ["어제", "오늘", "방금"]) and contains_any(text, ["갔", "다녀왔", "왔", "들렀", "들러"]):
             recent_place = _extract_recent_place_fact(text)
             if recent_place:
                 _upsert_fact(
@@ -519,7 +528,7 @@ def build_counterpart_state_memory(events: Optional[list] = None) -> dict:
                 )
 
         for spec in STATE_SPECS:
-            if not contains_any(text, spec["start_patterns"]) or not is_direct_state_statement(text):
+            if not contains_any(text, spec["start_patterns"]) or not direct_state_statement:
                 continue
             if contains_any(text, spec["end_patterns"]):
                 continue
@@ -630,7 +639,7 @@ def infer_counterpart_state(events: Optional[list] = None, memory: Optional[dict
 def compute_conversation_guard() -> dict:
     proactive = load_json(PROACTIVE_PATH, {})
     guards = proactive.get("guards", {})
-    events = load_message_events()
+    events = load_message_events(limit_files=30)
     last_incoming = None
     last_outgoing = None
     recent_pairs = []
