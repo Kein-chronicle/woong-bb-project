@@ -1,0 +1,112 @@
+{
+  "asset_id": "20260525_112945_user_shared_photo_asset_e7937b1782",
+  "created_at": "2026-05-25T11:29:45+09:00",
+  "last_seen_at": "2026-05-25T11:29:45+09:00",
+  "source": "telegram",
+  "telegram_user": "K8832353",
+  "kind": "user_shared_photo",
+  "title": "오빠 실내 자연광 셀카",
+  "canonical_path": "/Users/kein/Projects/woong-bb/images/user_shared_assets/20260525_112945_user_shared_photo_asset_e7937b1782/source.jpg",
+  "asset_dir": "/Users/kein/Projects/woong-bb/images/user_shared_assets/20260525_112945_user_shared_photo_asset_e7937b1782",
+  "source_paths": [
+    "/Users/kein/Projects/woong-bb/images/incoming/2026-05-25/112922_telegram_photo_AQADyg5rG-v3oFR-.jpg"
+  ],
+  "source_sha256": "e7937b17829f56b06cf7a90332ce9fb1d0b4cb24e6c1b7127a20ea516e39b005",
+  "captions": [
+    "어때?"
+  ],
+  "tags": [
+    "calm",
+    "chair",
+    "curtain",
+    "daily_affection",
+    "daytime",
+    "face_visible",
+    "indoor",
+    "natural_light",
+    "selfie",
+    "tshirt",
+    "user_shared_photo",
+    "실내_셀카",
+    "오늘_모습",
+    "오빠_셀카",
+    "턱_괸_포즈",
+    "회색_티셔츠"
+  ],
+  "analysis": {
+    "asset_kind": "user_face_selfie",
+    "title": "오빠 실내 자연광 셀카",
+    "visible_summary_ko": "베이지 커튼 앞 실내 자연광에서 오빠가 진회색 티셔츠를 입고 턱을 손에 살짝 괸 채 정면으로 찍은 편한 셀카야.",
+    "visible_elements": [
+      "베이지색 커튼 배경",
+      "진회색 티셔츠",
+      "손으로 턱을 살짝 괸 포즈",
+      "정면에 가까운 차분한 표정",
+      "실내 자연광"
+    ],
+    "scene_tags": [
+      "indoor",
+      "daytime",
+      "selfie",
+      "natural_light",
+      "calm"
+    ],
+    "object_tags": [
+      "curtain",
+      "tshirt",
+      "chair"
+    ],
+    "relationship_tags": [
+      "user_shared_photo",
+      "face_visible",
+      "daily_affection"
+    ],
+    "reuse_triggers": [
+      "오빠 셀카",
+      "오늘 모습",
+      "회색 티셔츠",
+      "실내 셀카",
+      "턱 괸 포즈"
+    ],
+    "reusable_subjects": [
+      {
+        "type": "outfit",
+        "value": "진회색 티셔츠의 편한 실내 차림"
+      },
+      {
+        "type": "pose",
+        "value": "손으로 턱을 살짝 괸 정면 셀카 포즈"
+      },
+      {
+        "type": "scene",
+        "value": "베이지 커튼 앞 부드러운 자연광 실내"
+      }
+    ],
+    "generation_reuse": {
+      "allowed": true,
+      "notes": "커플 대화 맥락에서 오빠의 오늘 셀카 분위기 회상용으로만 사용",
+      "face_reference": {
+        "allowed": true,
+        "requires_explicit_user_request": true
+      }
+    },
+    "person_context": {
+      "role": "user",
+      "face_visible": true,
+      "face_visibility": "full"
+    },
+    "privacy": {
+      "reuse_face_without_explicit_request": false,
+      "reuse_user_face_with_explicit_request": true,
+      "share_externally": false
+    }
+  },
+  "generation_reuse": {
+    "allowed": true,
+    "notes": "커플 대화 맥락에서 오빠의 오늘 셀카 분위기 회상용으로만 사용",
+    "face_reference": {
+      "allowed": true,
+      "requires_explicit_user_request": true
+    }
+  }
+}

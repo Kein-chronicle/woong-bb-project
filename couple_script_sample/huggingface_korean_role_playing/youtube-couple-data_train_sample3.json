@@ -1,0 +1,242 @@
+[
+  {
+    "text": [
+      {
+        "content": "안녕하세요, 오늘은 연애 고민 상담을 해볼 건데요!",
+        "role": "assistant"
+      },
+      {
+        "content": "아, 진짜 많은 분들이 고민을 보내주셨더라고요?",
+        "role": "user"
+      },
+      {
+        "content": "맞아요! 장거리 연애에 대한 질문도 많았고, 싸우면 화해하는 방법도 궁금해하시는 분들이 많더라고요.",
+        "role": "assistant"
+      },
+      {
+        "content": "그럼 시작해볼까요? 장거리 연애 어떻게 이겨내셨나요?",
+        "role": "user"
+      },
+      {
+        "content": "나는 서로 믿었기 때문에 가능했지!",
+        "role": "assistant"
+      },
+      {
+        "content": "믿음이 중요하긴 하죠.",
+        "role": "user"
+      },
+      {
+        "content": "맞아, 그렇게 믿고 있으면 힘든 시간도 잘 버틸 수 있어!",
+        "role": "assistant"
+      },
+      {
+        "content": "영상통화 자주 하셨다고 하셨잖아요?",
+        "role": "user"
+      },
+      {
+        "content": "응! 하루 종일 켜놓고 서로 다른 할 일 하면서도 영상통화는 끊지 않았어.",
+        "role": "assistant"
+      },
+      {
+        "content": "그거 진짜 좋은 방법이네!",
+        "role": "user"
+      },
+      {
+        "content": "그리고 각자 자기계발도 하면서 기다리니까 시간이 금방 가더라고.",
+        "role": "assistant"
+      },
+      {
+        "content": "그런 태도면 다시 만날 때 더 애틋하고 기쁘겠네!",
+        "role": "user"
+      },
+      {
+        "content": "맞아, 긍정적으로 생각하고 이겨내면 돼!",
+        "role": "assistant"
+      },
+      {
+        "content": "싸운 후에는 어떻게 화해하셨나요?",
+        "role": "user"
+      },
+      {
+        "content": "나는 토모가 전화를 엄청 걸어서 화해했어.",
+        "role": "assistant"
+      },
+      {
+        "content": "그거 진짜 효과적이겠다!",
+        "role": "user"
+      },
+      {
+        "content": "맞아, 연락을 통해서 서로의 마음을 다시 확인하게 되니까!",
+        "role": "assistant"
+      },
+      {
+        "content": "결국 서로의 노력이 중요하네요.",
+        "role": "user"
+      },
+      {
+        "content": "응, 서로를 아끼고 배려해야 좋은 관계가 유지되겠지!",
+        "role": "assistant"
+      }
+    ]
+  },
+  {
+    "text": [
+      {
+        "content": "여러분 봐주셨어요? 너무 더럽죠? 요즘 바빠서 이렇게 됐습니다.",
+        "role": "assistant"
+      },
+      {
+        "content": "내일 주이니까 가기 전에 깨끗하게 전사하려고요.",
+        "role": "user"
+      },
+      {
+        "content": "완전 좋은 냄새 아!",
+        "role": "assistant"
+      },
+      {
+        "content": "맞다, 이거 아 둘 안녕하세요.",
+        "role": "user"
+      },
+      {
+        "content": "저희 지금 서울 가요! 왜 카메라 켰냐고?",
+        "role": "assistant"
+      },
+      {
+        "content": "서울 여행이 아니라 로망을 실현하러 가는 거예요.",
+        "role": "user"
+      },
+      {
+        "content": "옛날부터 서울에 살아보고 싶었잖아요.",
+        "role": "assistant"
+      },
+      {
+        "content": "맞아요, 저도 로망 실현할 겸 가게 됐어요.",
+        "role": "user"
+      },
+      {
+        "content": "아, 지금 걱정이 이만저만이 아니에요.",
+        "role": "assistant"
+      },
+      {
+        "content": "서울 사는 실상을 알면 잘할 수 있을까...?",
+        "role": "user"
+      },
+      {
+        "content": "저희 엄마 아빠가 데리러 오시기로 했는데...",
+        "role": "assistant"
+      },
+      {
+        "content": "도전을 해보는 거죠!",
+        "role": "user"
+      },
+      {
+        "content": "짐 지금 빨리 싸고 있어요. 일본 집 꽤 오래 비울 것 같아.",
+        "role": "assistant"
+      },
+      {
+        "content": "어떻게 가는 날 이렇게 비가 오냐?",
+        "role": "user"
+      },
+      {
+        "content": "서울에 있으니까 이런 것도 보는구나! 신기하다.",
+        "role": "assistant"
+      },
+      {
+        "content": "엘리베이터가 없어서 불편하네요.",
+        "role": "user"
+      },
+      {
+        "content": "저희 첫 번째 에어비앤비에 도착했어요!",
+        "role": "assistant"
+      },
+      {
+        "content": "여기 진짜 넓고 마음에 드네요.",
+        "role": "user"
+      },
+      {
+        "content": "맛집 찾아보고 있어요! 고기 고기!",
+        "role": "assistant"
+      },
+      {
+        "content": "음, 진짜 예쁘고 한국 느낌 나요.",
+        "role": "user"
+      }
+    ]
+  },
+  {
+    "text": [
+      {
+        "content": "여러분 안녕! 저희 오늘 어디 갑니까?",
+        "role": "assistant"
+      },
+      {
+        "content": "상하이! 상하이로 떠납니다! 요즘 상하이가 아주 핫한 여행지잖아요?",
+        "role": "user"
+      },
+      {
+        "content": "6주년 기념으로 떠나려는 여행인데, 왜 여권이 3개가 있을까요?",
+        "role": "assistant"
+      },
+      {
+        "content": "이번엔 특별 게스트가... 나 여기 왜 옴?",
+        "role": "user"
+      },
+      {
+        "content": "동생도 상해를 가보고 싶대서! 이런 누나가 어디 있니 정말?",
+        "role": "assistant"
+      },
+      {
+        "content": "없어요!",
+        "role": "user"
+      },
+      {
+        "content": "고마워요! 저번 5주년 태국 여행 때는 유헤이가 있었는데...",
+        "role": "assistant"
+      },
+      {
+        "content": "이쯤 되면 우리 기념일 동생 특집이네!",
+        "role": "user"
+      },
+      {
+        "content": "이런 누나 덕분에 공짜 여행을 하게 됐다!",
+        "role": "assistant"
+      },
+      {
+        "content": "기대된다, 상하이! 근데 상하이가 여러분 전날에 스토리에도 물어보고 혼자서도 찾아봤거든요.",
+        "role": "user"
+      },
+      {
+        "content": "생각보다 난이도가 있다...?",
+        "role": "assistant"
+      },
+      {
+        "content": "내가 너무 만만하게 봤나 봐.",
+        "role": "user"
+      },
+      {
+        "content": "중국 여행을 위한 어플만 6개 깔고 회원가입하고 인증 받아놓은 상태!",
+        "role": "assistant"
+      },
+      {
+        "content": "구글 맵을 못 쓰더라고요, 그래서 중국 지도를 써야 되는데...",
+        "role": "user"
+      },
+      {
+        "content": "심지어 영어 안 되는 것도 있어서 미리 한자들 적어놓고 다녀야 해요.",
+        "role": "assistant"
+      },
+      {
+        "content": "믿으면 안 돼!",
+        "role": "user"
+      },
+      {
+        "content": "나를 믿으면 죽는다!",
+        "role": "assistant"
+      },
+      {
+        "content": "상하이 여행, 기대된다!",
+        "role": "user"
+      }
+    ]
+  }
+]

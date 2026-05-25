@@ -1,0 +1,116 @@
+{
+  "asset_id": "20260525_111052_user_shared_photo_asset_de2bf6d2f7",
+  "created_at": "2026-05-25T11:10:52+09:00",
+  "last_seen_at": "2026-05-25T11:10:52+09:00",
+  "source": "telegram",
+  "telegram_user": "K8832353",
+  "kind": "user_shared_photo",
+  "title": "오빠 산책 중 편한 여름옷 셀카",
+  "canonical_path": "/Users/kein/Projects/woong-bb/images/user_shared_assets/20260525_111052_user_shared_photo_asset_de2bf6d2f7/source.jpg",
+  "asset_dir": "/Users/kein/Projects/woong-bb/images/user_shared_assets/20260525_111052_user_shared_photo_asset_de2bf6d2f7",
+  "source_paths": [
+    "/Users/kein/Projects/woong-bb/images/incoming/2026-05-25/110940_telegram_photo_AQADuA5rG-v3oFR-.jpg"
+  ],
+  "source_sha256": "de2bf6d2f764f075b3ec0276d6397b700e3ff9c340fdbe252c24312d9639471c",
+  "captions": [
+    "보여줄게 ㅎㅎ"
+  ],
+  "tags": [
+    "daily_affection",
+    "daytime",
+    "outdoor",
+    "road",
+    "shorts",
+    "sidewalk",
+    "slides",
+    "street",
+    "summer",
+    "today_look",
+    "tshirt",
+    "user_shared_photo",
+    "walk",
+    "반바지",
+    "산책",
+    "여름옷",
+    "오빠_오늘_뭐_입었어",
+    "편한_남친룩"
+  ],
+  "analysis": {
+    "asset_kind": "user_selfie_or_outfit_photo",
+    "title": "오빠 산책 중 편한 여름옷 셀카",
+    "visible_summary_ko": "밝은 낮 야외에서 오빠가 진회색 티셔츠와 어두운 반바지, 슬리퍼 차림으로 찍은 편한 산책 셀카야.",
+    "visible_elements": [
+      "진회색 반팔 티셔츠",
+      "어두운 반바지",
+      "검은 슬리퍼",
+      "햇빛 비치는 보도와 차도",
+      "약간 위에서 아래로 찍은 셀카 구도"
+    ],
+    "scene_tags": [
+      "outdoor",
+      "daytime",
+      "walk",
+      "summer",
+      "street"
+    ],
+    "object_tags": [
+      "tshirt",
+      "shorts",
+      "slides",
+      "sidewalk",
+      "road"
+    ],
+    "relationship_tags": [
+      "user_shared_photo",
+      "today_look",
+      "daily_affection"
+    ],
+    "reuse_triggers": [
+      "오빠 오늘 뭐 입었어",
+      "산책",
+      "반바지",
+      "편한 남친룩",
+      "여름옷"
+    ],
+    "reusable_subjects": [
+      {
+        "type": "outfit",
+        "value": "진회색 티셔츠 + 어두운 반바지 + 검은 슬리퍼"
+      },
+      {
+        "type": "scene",
+        "value": "햇빛 강한 낮 야외 산책 길"
+      },
+      {
+        "type": "pose",
+        "value": "약간 위에서 아래로 내려다보는 캐주얼 셀카"
+      }
+    ],
+    "generation_reuse": {
+      "allowed": true,
+      "notes": "커플 대화 맥락에서 오빠의 오늘 착장/분위기 회상용으로만 사용",
+      "face_reference": {
+        "allowed": true,
+        "requires_explicit_user_request": true
+      }
+    },
+    "person_context": {
+      "role": "user",
+      "face_visible": true,
+      "face_visibility": "partial_lower_face"
+    },
+    "privacy": {
+      "reuse_face_without_explicit_request": false,
+      "reuse_user_face_with_explicit_request": true,
+      "share_externally": false
+    }
+  },
+  "generation_reuse": {
+    "allowed": true,
+    "notes": "커플 대화 맥락에서 오빠의 오늘 착장/분위기 회상용으로만 사용",
+    "face_reference": {
+      "allowed": true,
+      "requires_explicit_user_request": true
+    }
+  }
+}

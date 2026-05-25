@@ -1,14 +1,26 @@
 {
   "schema_version": 1,
   "managed_by": "image_generation_settings",
-  "generation_enabled": false,
-  "changed_at": "2026-05-21T18:23:30+09:00",
+  "generation_enabled": true,
+  "content_level_mode": "auto",
+  "content_level_override": null,
+  "changed_at": "2026-05-26T23:00:00+09:00",
   "changed_by": "master_request",
-  "change_reason": "master requested image generation off",
+  "change_reason": "근무 중 레벨1. 출퇴근 레벨2(단추있는 옷 상단 4개 풀기). 그 외 레벨3.",
+  "auto_level_rules": {
+    "hospital_work_hours": 1,
+    "commuting_to_work_and_home": 2,
+    "everything_else": 3
+  },
+  "content_level_description": {
+    "1": "conservative: 병원 근무 중 (hospital_morning_shift / hospital_afternoon_shift / lunch_break)",
+    "2": "semi-expressive: 출퇴근 (commuting_to_work / commuting_home). 단추있는 상의 착용 시 상단 4개 풀기 기준 적용.",
+    "3": "expressive: 집·귀가 후·샤워 후·저녁·주말 등 그 외 모든 상황. 복장 샘플 --image 금지, 텍스트 프롬프트만"
+  },
   "when_disabled": {
     "proactive_image_send": "disabled",
     "direct_photo_request_woongbbi": "defer_without_guard_check",
     "direct_photo_request_setting": "report_disabled_without_guard_check"
   },
-  "notes": "전역 이미지 생성 on/off 스위치. off면 guard 확인 전에 즉시 생성 불가 처리한다"
+  "notes": "content_level_override가 null이면 activity+시간 기반 자동 레벨 사용. 수동 고정하려면 1/2/3으로 설정"
 }

@@ -1,0 +1,134 @@
+{
+  "asset_id": "20260525_124410_food_drink_asset_5b09180271",
+  "created_at": "2026-05-25T12:44:10+09:00",
+  "last_seen_at": "2026-05-25T12:44:10+09:00",
+  "source": "telegram",
+  "telegram_user": "K8832353",
+  "kind": "food_drink",
+  "title": "오빠가 완성한 베이컨 크림파스타 한 그릇",
+  "canonical_path": "/Users/kein/Projects/woong-bb/images/user_shared_assets/20260525_124410_food_drink_asset_5b09180271/source.jpg",
+  "asset_dir": "/Users/kein/Projects/woong-bb/images/user_shared_assets/20260525_124410_food_drink_asset_5b09180271",
+  "source_paths": [
+    "/Users/kein/Projects/woong-bb/images/incoming/2026-05-25/124324_telegram_photo_AQADMw9rG-v3oFR-.jpg"
+  ],
+  "source_sha256": "5b09180271cd8b802b914652994ccddc7801cde498174d67ee806ca8f08d4b90",
+  "captions": [
+    "다 만들었다! 웅삐는 다 먹었겠네? 맛있었어?"
+  ],
+  "tags": [
+    "finished_dish",
+    "serving_moment",
+    "그릇",
+    "베이컨",
+    "베이컨_크림파스타",
+    "베이컨크림파스타",
+    "서빙직후",
+    "오빠_요리_얘기",
+    "오빠_정성",
+    "오빠가_직접_완성한_요리",
+    "완성요리",
+    "요리완성_기억",
+    "요리자랑",
+    "인덕션",
+    "점심식사",
+    "주방",
+    "집게",
+    "집밥",
+    "집밥_자랑",
+    "크림파스타",
+    "파스타_플로우",
+    "파스타완성",
+    "팬",
+    "프라이팬",
+    "한그릇",
+    "홈쿠킹"
+  ],
+  "analysis": {
+    "asset_kind": "food_drink",
+    "title": "오빠가 완성한 베이컨 크림파스타 한 그릇",
+    "visible_summary_ko": "손에 든 하얀 그릇에 베이컨 크림파스타가 한 그릇 담겨 있고, 뒤쪽 팬에는 남은 파스타와 집게가 보이는 완성 직후 장면.",
+    "visible_elements": [
+      "손에 든 파스타 그릇",
+      "크림 소스가 코팅된 면",
+      "베이컨 조각",
+      "뒤쪽 사각 팬",
+      "집게"
+    ],
+    "scene_tags": [
+      "홈쿠킹",
+      "주방",
+      "완성요리",
+      "점심식사"
+    ],
+    "object_tags": [
+      "베이컨 크림파스타",
+      "그릇",
+      "프라이팬",
+      "집게",
+      "인덕션"
+    ],
+    "relationship_tags": [
+      "오빠가_직접_완성한_요리"
+    ],
+    "reuse_triggers": [
+      "파스타완성",
+      "베이컨크림파스타",
+      "집밥",
+      "요리자랑"
+    ],
+    "reusable_subjects": [
+      {
+        "kind": "finished_dish",
+        "label_ko": "완성된 베이컨 크림파스타 한 그릇",
+        "description_ko": "크림 소스가 면에 잘 배고 베이컨 조각이 고르게 올라간 집밥 파스타 완성 상태",
+        "visual_tags": [
+          "크림파스타",
+          "베이컨",
+          "한그릇",
+          "완성요리"
+        ],
+        "reuse_when": [
+          "오빠_요리_얘기",
+          "집밥_자랑",
+          "파스타_플로우"
+        ]
+      },
+      {
+        "kind": "serving_moment",
+        "label_ko": "팬 앞에서 막 덜어낸 순간",
+        "description_ko": "뒤쪽 팬과 집게가 같이 보여서 막 완성해 덜어낸 직후 분위기",
+        "visual_tags": [
+          "팬",
+          "집게",
+          "서빙직후"
+        ],
+        "reuse_when": [
+          "요리완성_기억",
+          "오빠_정성"
+        ]
+      }
+    ],
+    "generation_reuse": {
+      "allowed": true,
+      "default_strength": "supporting_reference",
+      "requires_user_intent": true,
+      "face_reference": {
+        "allowed": false,
+        "requires_explicit_user_request": true
+      }
+    },
+    "privacy": {
+      "reuse_face_without_explicit_request": false,
+      "reuse_user_face_with_explicit_request": true
+    }
+  },
+  "generation_reuse": {
+    "allowed": true,
+    "default_strength": "supporting_reference",
+    "requires_user_intent": true,
+    "face_reference": {
+      "allowed": false,
+      "requires_explicit_user_request": true
+    }
+  }
+}

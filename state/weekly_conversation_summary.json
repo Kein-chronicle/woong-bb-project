@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "managed_by": "weekly_summary_engine",
+  "purpose": "주간 대화 요약. 직접 메시지 검색 대신 가벼운 요약을 들고 다녀 장기 일관성 유지. RAG 식 reference 인젝션용.",
+  "last_generated_at": null,
+  "current_week_iso": null,
+  "weekly_summaries": [],
+  "schema_per_summary": {
+    "week_start_iso": "ISO 날짜",
+    "week_end_iso": "ISO 날짜",
+    "key_events": ["1-2문장씩, 그 주 두드러진 일"],
+    "user_mood_arc": "그 주 오빠 분위기 한 줄 요약",
+    "woongbbi_main_topics": ["반복 화제 3-5개"],
+    "shared_jokes_or_moments": ["그 주 둘만의 농담/순간"],
+    "user_disclosed_facts": ["오빠가 새로 알려준 정보"],
+    "promises_or_plans": ["약속/계획 - 다음 주에 chase할 것"],
+    "outstanding_unresolved": ["답 못한 질문 / 미뤄둔 얘기"]
+  },
+  "generation_rule": "매주 일요일 23시 자동 생성. messages/*.jsonl을 7일치 모아 codex가 요약 → 이 파일에 append. 직전 4주만 유지 (월간으로 압축은 추후).",
+  "usage_rule": "최근 1-2주 요약은 매 답변마다 인젝션. 그 이전 요약은 trigger 시에만 참조."
+}

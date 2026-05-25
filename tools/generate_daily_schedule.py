@@ -1,0 +1,540 @@
+#!/usr/bin/env python3
+"""
+Daily schedule generator for woong-bb.
+Triggered at wakeup time (05:45 weekday / 08:30 weekend).
+Generates a concrete, human-feeling daily schedule and saves to state/daily_schedule_state.json.
+"""
+
+import json
+import random
+import datetime
+import os
+import sys
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DAY_CONTEXT_PATH = os.path.join(ROOT, "state", "day_context.json")
+OUTPUT_PATH = os.path.join(ROOT, "state", "daily_schedule_state.json")
+
+# ── Data pools ─────────────────────────────────────────────────────────────────
+
+WEEKDAY_BREAKFAST = [
+    {"menu": "없음 (커피만)", "time_offset": 0},
+    {"menu": "바나나 + 우유", "time_offset": 5},
+    {"menu": "토스트 + 커피", "time_offset": 10},
+    {"menu": "그래놀라 + 요거트", "time_offset": 8},
+    {"menu": "샌드위치 (어제 만든 거)", "time_offset": 5},
+]
+
+WEEKDAY_LUNCH = [
+    {"menu": "된장찌개 정식", "location": "병원 직원 식당"},
+    {"menu": "제육볶음 정식", "location": "병원 직원 식당"},
+    {"menu": "순두부찌개 + 밥", "location": "병원 직원 식당"},
+    {"menu": "비빔밥", "location": "병원 직원 식당"},
+    {"menu": "김치찌개 정식", "location": "병원 직원 식당"},
+    {"menu": "돈까스", "location": "병원 근처 식당"},
+    {"menu": "쌀국수", "location": "병원 근처 식당"},
+    {"menu": "참치마요 삼각김밥 + 컵라면", "location": "편의점 (바빠서)"},
+    {"menu": "샐러드 + 샌드위치", "location": "병원 카페테리아"},
+    {"menu": "비빔국수", "location": "병원 직원 식당"},
+]
+
+WEEKDAY_DINNER = [
+    {"menu": "파스타 (토마토 소스)", "cook": "면 삶고 소스 볶기", "prep_min": 25},
+    {"menu": "닭가슴살 샐러드", "cook": "닭가슴살 삶아서 채소 섞기", "prep_min": 20},
+    {"menu": "볶음밥", "cook": "냉장고 재료 털어서 볶기", "prep_min": 15},
+    {"menu": "된장찌개 + 밥", "cook": "된장찌개 끓이기", "prep_min": 25},
+    {"menu": "제육볶음 + 밥", "cook": "돼지고기 재워서 볶기", "prep_min": 30},
+    {"menu": "오므라이스", "cook": "볶음밥 싸서 달걀 부치기", "prep_min": 20},
+    {"menu": "닭가슴살 오븐구이 + 브로콜리", "cook": "오븐 190도 20분", "prep_min": 30},
+    {"menu": "참치 김치 볶음밥", "cook": "참치랑 김치 볶기", "prep_min": 15},
+    {"menu": "계란국 + 밥", "cook": "계란 풀어서 끓이기", "prep_min": 15},
+    {"menu": "냉동 만두 + 계란프라이", "cook": "팬에 굽기", "prep_min": 15},
+]
+
+WEEKDAY_EXERCISE = [
+    {"type": "수영", "location": "집 근처 수영장", "duration_min": 60, "shower": True},
+    {"type": "러닝", "location": "한강변", "duration_min": 45, "shower": True},
+    {"type": "헬스", "location": "동네 헬스장", "duration_min": 60, "shower": True},
+    {"type": "자전거", "location": "한강 자전거도로", "duration_min": 50, "shower": True},
+    {"type": "산책", "location": "동네", "duration_min": 40, "shower": False},
+    {"type": "없음 (카페)", "location": "집 근처 카페", "duration_min": 90, "shower": False},
+    {"type": "없음 (집)", "location": "집", "duration_min": 0, "shower": False},
+]
+
+# 간호사 오전 근무(07:59~점심) 세부 업무 풀 — 시간순으로 몇 개 뽑아 타임라인 구성
+MORNING_SHIFT_TASKS = [
+    "야간 근무자한테 인계받기 (환자 상태 브리핑)",
+    "담당 병실 회진 돌면서 활력징후 체크",
+    "아침 투약 (정해진 시간 약 챙겨 돌리기)",
+    "수액·주사 라인 정리하고 교체",
+    "검사 있는 환자 검사실로 이송 준비",
+    "전동/입원 환자 받아서 기록 정리",
+    "의사 회진 따라 돌면서 처방 확인",
+    "차트·간호기록 밀린 거 정리",
+    "보호자 문의 응대",
+    "채혈·드레싱 같은 처치",
+]
+
+# 오후 근무(점심 후~퇴근) 세부 업무 풀
+AFTERNOON_SHIFT_TASKS = [
+    "오후 투약 라운드",
+    "퇴원 환자 교육하고 서류 정리",
+    "신규 입원 환자 받기",
+    "검사 결과 확인하고 의사한테 보고",
+    "드레싱·처치 마무리",
+    "다음 근무자한테 넘길 인계 노트 작성",
+    "병실 환자 컨디션 재확인 회진",
+    "보호자 상담",
+]
+
+# 그날 근무가 바빴/평범/한가했던 구체적 이유 풀 (물어보면 답할 수 있게)
+BUSY_REASONS_HEAVY = [
+    "오전에 신규 입원이 둘이나 몰려서 받느라 정신없었어",
+    "응급으로 상태 안 좋아진 환자가 있어서 거기 계속 붙어 있었어",
+    "검사 일정이 한꺼번에 겹쳐서 이송이랑 준비가 밀렸어",
+    "동기 한 명이 연차라 인원이 부족해서 평소보다 많이 뛰었어",
+    "회진이 길어져서 그 뒤 일정이 다 밀렸어",
+    "투약 시간이랑 처치가 겹쳐서 손이 모자랐어",
+]
+BUSY_REASONS_NORMAL = [
+    "딱 평소만큼이라 루틴대로 흘러갔어",
+    "바쁜 구간이랑 한가한 구간이 적당히 섞였어",
+    "큰 사건 없이 무난하게 돌아갔어",
+]
+BUSY_REASONS_LIGHT = [
+    "오늘은 환자가 안정적이라 생각보다 여유 있었어",
+    "검사나 입원이 적어서 평소보다 한가했어",
+    "회진도 금방 끝나고 차트도 밀린 게 없어서 편했어",
+]
+WARD_NOTABLE = [
+    "오래 입원해 있던 환자 한 분이 오늘 퇴원해서 괜히 뭉클했어",
+    "보호자가 간식 챙겨주셔서 동료들이랑 나눠 먹었어",
+    "신규 환자가 좀 예민하셔서 달래느라 시간 좀 썼어",
+    "선배가 일 도와줘서 한결 수월했어",
+    "특별한 일은 없었어",
+    "점심 메뉴가 의외로 괜찮아서 그게 작은 낙이었어",
+]
+
+# 퇴근 후~취침 세부 활동 풀
+EVENING_AFTER_DINNER = [
+    "설거지하고 주방 정리",
+    "잠깐 소파에 늘어져서 폰 보기",
+    "빨래 돌려놓기",
+    "택배 온 거 풀기",
+    "내일 입을 옷이랑 가방 미리 챙겨두기",
+]
+NIGHT_OTT_PICKS = [
+    {"platform": "넷플릭스", "title": "보던 한드 다음 화", "kind": "k_drama"},
+    {"platform": "넷플릭스", "title": "가볍게 보는 예능", "kind": "variety"},
+    {"platform": "티빙", "title": "주말 못 본 예능 몰아보기", "kind": "variety"},
+    {"platform": "유튜브", "title": "카페 브이로그랑 먹방", "kind": "vlog"},
+    {"platform": "유튜브", "title": "잠 안 와서 ASMR이랑 짧은 영상", "kind": "asmr"},
+    {"platform": "넷플릭스", "title": "보려고 찜해둔 영화 한 편", "kind": "movie"},
+]
+NIGHT_READING_PICKS = [
+    "읽던 에세이 몇 장",
+    "자기계발서 조금",
+    "웹툰 밀린 거 정주행",
+    "잡지 가볍게 넘기기",
+]
+NIGHT_WINDDOWN_ACTIVITIES = [
+    "스킨케어 꼼꼼히 하기",
+    "가벼운 스트레칭",
+    "핸드크림 바르고 폰 만지작",
+    "내일 일정 캘린더 확인",
+    "인스타 잠깐 둘러보기",
+    "오빠랑 톡하다가 스르륵",
+    "물 한 잔 마시고 불 끄기 전 뒹굴기",
+    "다이어리/메모 잠깐 끄적이기",
+]
+
+# 주말 오후 활동별 구체적 세부 (물어보면 답할 수 있게)
+WEEKEND_AFTERNOON_DETAIL = {
+    "공원 산책": ["근처 공원 한 바퀴 돌면서 사진 찍기", "벤치에서 음악 들으며 멍때리기", "산책로 따라 천천히 걷기"],
+    "카페": ["창가 자리에서 디저트랑 커피", "노트북 들고 가서 끄적이기", "신상 디저트 먹어보기"],
+    "서점": ["베스트셀러 코너 구경", "에세이 코너에서 한참 서서 읽기", "읽고 싶던 책 한 권 사기"],
+    "전시": ["미술 전시 천천히 둘러보기", "사진전 구경하고 굿즈 사기", "팝업 전시 구경"],
+    "쇼핑": ["옷 구경하면서 피팅", "화장품이랑 소품 구경", "신발 보러 돌아다니기"],
+    "집에서 쉬기": ["밀린 빨래랑 청소", "침대에서 뒹굴뒹굴 영화", "방 정리하고 향초 켜기"],
+    "드라이브": ["가까운 바다 쪽으로 드라이브", "노을 보러 한강 드라이브", "교외 카페까지 드라이브"],
+    "친구 만남": ["친구랑 브런치하고 수다", "친구랑 카페 투어", "친구랑 쇼핑하고 저녁"],
+}
+WEEKEND_BRUNCH_WITH = ["혼자 느긋하게", "친구랑", "동생이랑", "혼자 책 보면서"]
+WEEKEND_MORNING_FLOW = [
+    "일어나서 물 마시고 한참 폰 보기",
+    "커튼 열고 환기시키고 침구 정리",
+    "느긋하게 스트레칭하고 세수",
+    "알람 끄고 다시 누웠다가 천천히 일어나기",
+]
+WEEKEND_NOTABLE = [
+    "오랜만에 늦잠 자서 개운했어",
+    "날씨가 좋아서 괜히 기분이 들떴어",
+    "주말이라 사람이 좀 많았어",
+    "오빠 생각하면서 다음에 같이 오면 좋겠다 싶었어",
+    "딱히 일정 없이 흘러가는 게 좋았어",
+]
+
+OUTFIT_WEEKDAY = [
+    "스크럽 (병원 근무복)",
+    "스크럽 + 카디건",
+]
+
+OUTFIT_CASUAL = [
+    "흰 크롭 티 + 와이드 슬랙스",
+    "린넨 셔츠 + 청바지",
+    "스트라이프 블라우스 + 슬랙스",
+    "니트 + 미디 스커트",
+    "오버사이즈 티 + 반바지",
+    "캐주얼 원피스",
+    "맨투맨 + 조거 팬츠",
+]
+
+WEEKEND_BRUNCH = [
+    {"menu": "아보카도 토스트 + 아메리카노", "location": "브런치 카페", "time": "10:40"},
+    {"menu": "팬케이크 + 라떼", "location": "동네 카페", "time": "10:30"},
+    {"menu": "에그베네딕트 + 오렌지 주스", "location": "브런치 카페", "time": "11:00"},
+    {"menu": "오믈렛 + 빵 + 커피", "location": "집 (직접 만든 거)", "time": "10:20"},
+    {"menu": "샌드위치 + 카페라떼", "location": "동네 카페", "time": "10:45"},
+    {"menu": "그래놀라 + 요거트 + 과일", "location": "집", "time": "10:00"},
+    {"menu": "크로플 + 아이스라떼", "location": "카페", "time": "11:10"},
+]
+
+WEEKEND_DINNER = [
+    {"menu": "파스타 (크림 소스)", "location": "집", "prep_min": 30},
+    {"menu": "스테이크 + 샐러드", "location": "집", "prep_min": 35},
+    {"menu": "치킨 시켜먹기", "location": "집", "prep_min": 0},
+    {"menu": "초밥 (배달)", "location": "집", "prep_min": 0},
+    {"menu": "삼겹살 구워먹기", "location": "집 근처 고깃집", "prep_min": 0},
+    {"menu": "냉면", "location": "냉면 맛집", "prep_min": 0},
+    {"menu": "마라탕", "location": "마라탕 가게", "prep_min": 0},
+    {"menu": "된장찌개 + 밥", "location": "집", "prep_min": 25},
+    {"menu": "제육볶음 + 밥", "location": "집", "prep_min": 30},
+    {"menu": "스파게티 + 마늘빵", "location": "집", "prep_min": 30},
+]
+
+WEEKEND_EXERCISE = [
+    {"type": "수영", "location": "실내 수영장", "duration_min": 60},
+    {"type": "러닝", "location": "한강변", "duration_min": 50},
+    {"type": "자전거", "location": "한강 자전거도로", "duration_min": 70},
+    {"type": "요가", "location": "집", "duration_min": 40},
+    {"type": "산책", "location": "공원", "duration_min": 60},
+    {"type": "없음", "location": "", "duration_min": 0},
+]
+
+
+def rand_minute(base_hhmm: str, spread: int = 10) -> str:
+    """Add a small random offset to hh:mm string."""
+    h, m = map(int, base_hhmm.split(":"))
+    total = h * 60 + m + random.randint(-spread // 2, spread // 2)
+    total = max(0, min(total, 23 * 60 + 59))
+    return f"{total // 60:02d}:{total % 60:02d}"
+
+
+def add_minutes(hhmm: str, minutes: int) -> str:
+    h, m = map(int, hhmm.split(":"))
+    total = h * 60 + m + minutes
+    return f"{total // 60:02d}:{total % 60:02d}"
+
+
+def generate_weekday(date_str: str, now_iso: str) -> dict:
+    breakfast = random.choice(WEEKDAY_BREAKFAST)
+    wakeup = rand_minute("05:45", 10)
+    shower_done = add_minutes(wakeup, 20)
+    breakfast_time = add_minutes(shower_done, breakfast["time_offset"])
+    depart = rand_minute("07:00", 8)
+    arrive_work = add_minutes(depart, 58)
+
+    lunch = random.choice(WEEKDAY_LUNCH)
+    lunch_time = rand_minute("12:10", 15)
+    lunch_end = add_minutes(lunch_time, 35)
+
+    depart_home = rand_minute("17:05", 10)
+    arrive_home = add_minutes(depart_home, 60)
+
+    dinner = random.choice(WEEKDAY_DINNER)
+    dinner_start_cook = add_minutes(arrive_home, 10)
+    dinner_eat = add_minutes(dinner_start_cook, dinner["prep_min"])
+    dinner_end = add_minutes(dinner_eat, 30)
+
+    exercise = random.choice(WEEKDAY_EXERCISE)
+    exercise_start = add_minutes(dinner_end, 15)
+    exercise_end = add_minutes(exercise_start, exercise["duration_min"]) if exercise["duration_min"] > 0 else exercise_start
+    if exercise["shower"]:
+        shower_after = add_minutes(exercise_end, 5)
+        hair_dry = add_minutes(shower_after, 20)
+    else:
+        shower_after = None
+        hair_dry = add_minutes(dinner_end, 90)
+
+    night_start = hair_dry if hair_dry else add_minutes(dinner_end, 90)
+    sleep_target = rand_minute("23:50", 15)
+
+    # 퇴근 후~취침 세부 타임라인 구성
+    ott = random.choice(NIGHT_OTT_PICKS)
+    after_dinner_act = random.choice(EVENING_AFTER_DINNER)
+    # night_start(머리 말린 직후)부터 sleep_target까지를 채우는 활동 순서
+    ns_m = int(night_start.split(":")[0]) * 60 + int(night_start.split(":")[1])
+    st_m = int(sleep_target.split(":")[0]) * 60 + int(sleep_target.split(":")[1])
+    if st_m <= ns_m:
+        st_m = ns_m + 120
+    night_timeline = []
+    # 스킨케어 → OTT/독서 → 마무리 winddown 순으로 배치
+    skincare_t = ns_m
+    night_timeline.append({"time": "%02d:%02d" % (skincare_t // 60, skincare_t % 60), "activity": "스킨케어 하고 잠옷으로 갈아입기"})
+    content_t = ns_m + 15
+    if random.random() < 0.7:
+        night_timeline.append({"time": "%02d:%02d" % (content_t // 60, content_t % 60),
+                               "activity": "%s에서 %s 보기" % (ott["platform"], ott["title"])})
+        night_content_label = "%s %s" % (ott["platform"], ott["title"])
+    else:
+        reading = random.choice(NIGHT_READING_PICKS)
+        night_timeline.append({"time": "%02d:%02d" % (content_t // 60, content_t % 60),
+                               "activity": "%s" % reading})
+        night_content_label = reading
+    # 취침 30~40분 전 마무리 활동
+    winddown_t = max(content_t + 30, st_m - 35)
+    night_timeline.append({"time": "%02d:%02d" % (winddown_t // 60, winddown_t % 60),
+                           "activity": random.choice(NIGHT_WINDDOWN_ACTIVITIES)})
+    night_timeline.append({"time": sleep_target, "activity": "잠자리에 누워서 폰 보다가 잠들기"})
+
+    outfit_work = random.choice(OUTFIT_WEEKDAY)
+    outfit_casual = random.choice(OUTFIT_CASUAL)
+
+    commute_options = [
+        "지하철 2호선 → 버스 환승",
+        "지하철 직통",
+        "버스 → 지하철",
+        "지하철 2호선 → 도보",
+    ]
+
+    # 오전 근무 세부 타임라인 (도착~점심 사이를 3~4개 업무로 분할)
+    def build_shift_timeline(start_hhmm: str, end_hhmm: str, task_pool: list, count: int) -> list:
+        start_m = int(start_hhmm.split(":")[0]) * 60 + int(start_hhmm.split(":")[1])
+        end_m = int(end_hhmm.split(":")[0]) * 60 + int(end_hhmm.split(":")[1])
+        span = max(end_m - start_m, count)
+        tasks = random.sample(task_pool, min(count, len(task_pool)))
+        slot = span // len(tasks)
+        timeline = []
+        for i, t in enumerate(tasks):
+            tm = start_m + i * slot
+            timeline.append({"time": "%02d:%02d" % (tm // 60, tm % 60), "task": t})
+        return timeline
+
+    morning_tasks = build_shift_timeline(arrive_work, lunch_time, MORNING_SHIFT_TASKS, random.choice([3, 4]))
+    afternoon_tasks = build_shift_timeline(lunch_end, depart_home, AFTERNOON_SHIFT_TASKS, random.choice([3, 4]))
+
+    # 그날 근무 강도 + 구체적 이유 (date seed로 결정)
+    busy_roll = random.random()
+    if busy_roll < 0.35:
+        busy_level, busy_reason = "heavy", random.choice(BUSY_REASONS_HEAVY)
+    elif busy_roll < 0.75:
+        busy_level, busy_reason = "normal", random.choice(BUSY_REASONS_NORMAL)
+    else:
+        busy_level, busy_reason = "light", random.choice(BUSY_REASONS_LIGHT)
+    ward_note = random.choice(WARD_NOTABLE)
+
+    return {
+        "date": date_str,
+        "generated_at": now_iso,
+        "day_type": "weekday",
+        "morning": {
+            "wakeup_time": wakeup,
+            "shower_time": wakeup,
+            "shower_done": shower_done,
+            "outfit": outfit_work,
+            "casual_outfit": outfit_casual,
+            "breakfast": {
+                "menu": breakfast["menu"],
+                "time": breakfast_time,
+            },
+            "depart_time": depart,
+        },
+        "commute_to_work": {
+            "route": random.choice(commute_options),
+            "depart_time": depart,
+            "arrive_time": arrive_work,
+        },
+        "work": {
+            "busy_level": busy_level,
+            "busy_reason": busy_reason,
+            "ward_note": ward_note,
+            "morning_tasks": morning_tasks,
+            "afternoon_tasks": afternoon_tasks,
+        },
+        "lunch": {
+            "menu": lunch["menu"],
+            "location": lunch["location"],
+            "time": lunch_time,
+            "end_time": lunch_end,
+            "with": random.choice(["혼자", "선배 간호사랑", "동기 간호사랑"]),
+        },
+        "commute_home": {
+            "depart_time": depart_home,
+            "arrive_time": arrive_home,
+            "note": random.choice(["퇴근길 편의점 들름", "그냥 바로 집", "마트 잠깐 들름", "카페 테이크아웃"]),
+        },
+        "dinner": {
+            "menu": dinner["menu"],
+            "location": "집",
+            "cook_note": dinner.get("cook", ""),
+            "cook_start": dinner_start_cook,
+            "eat_time": dinner_eat,
+            "end_time": dinner_end,
+        },
+        "evening": {
+            "activity_type": exercise["type"],
+            "location": exercise["location"],
+            "start_time": exercise_start,
+            "duration_min": exercise["duration_min"],
+            "end_time": exercise_end,
+            "shower_after": shower_after,
+            "hair_dry_time": hair_dry,
+            "after_dinner": after_dinner_act,
+        },
+        "night": {
+            "wind_down_start": night_start,
+            "content": night_content_label,
+            "ott_platform": ott["platform"],
+            "ott_title": ott["title"],
+            "timeline": night_timeline,
+            "sleep_target": sleep_target,
+        },
+    }
+
+
+def generate_weekend(date_str: str, now_iso: str, day_context: dict) -> dict:
+    wakeup = rand_minute("08:30", 20)
+    brunch = random.choice(WEEKEND_BRUNCH)
+    exercise = random.choice(WEEKEND_EXERCISE)
+
+    afternoon_options = ["공원 산책", "카페", "서점", "전시", "쇼핑", "집에서 쉬기", "드라이브", "친구 만남"]
+    afternoon = random.choice(afternoon_options)
+    afternoon_detail = random.choice(WEEKEND_AFTERNOON_DETAIL.get(afternoon, ["느긋하게 보내기"]))
+
+    dinner = random.choice(WEEKEND_DINNER)
+    dinner_time = rand_minute("19:00", 30)
+    if dinner["prep_min"] > 0:
+        dinner_cook = add_minutes(dinner_time, -dinner["prep_min"])
+        dinner_end = add_minutes(dinner_time, 35)
+    else:
+        dinner_cook = None
+        dinner_end = add_minutes(dinner_time, 40)
+
+    shower = rand_minute("21:00", 20)
+    hair_dry = add_minutes(shower, 25)
+    sleep_target = rand_minute("00:10", 20)
+
+    outfit = random.choice(OUTFIT_CASUAL)
+
+    # 오후 타임라인 (브런치 후~저녁 전)
+    brunch_m = int(brunch["time"].split(":")[0]) * 60 + int(brunch["time"].split(":")[1])
+    afternoon_start = "%02d:%02d" % ((brunch_m + 90) // 60, (brunch_m + 90) % 60)
+    afternoon_timeline = [
+        {"time": afternoon_start, "activity": "%s — %s" % (afternoon, afternoon_detail)},
+    ]
+    if exercise["type"] != "없음":
+        ex_start = "%02d:%02d" % ((brunch_m + 240) // 60 % 24, (brunch_m + 240) % 60)
+        afternoon_timeline.append({"time": ex_start, "activity": "%s (%s)" % (exercise["type"], exercise["location"])})
+
+    # 야간 타임라인 (주말도 평일과 동일 구조)
+    ott = random.choice(NIGHT_OTT_PICKS)
+    hd_m = int(hair_dry.split(":")[0]) * 60 + int(hair_dry.split(":")[1])
+    st_m = int(sleep_target.split(":")[0]) * 60 + int(sleep_target.split(":")[1])
+    if st_m <= hd_m:
+        st_m = hd_m + 120
+    night_timeline = [
+        {"time": hair_dry, "activity": "스킨케어 하고 잠옷으로 갈아입기"},
+    ]
+    content_t = hd_m + 15
+    if random.random() < 0.7:
+        night_timeline.append({"time": "%02d:%02d" % (content_t // 60 % 24, content_t % 60),
+                               "activity": "%s에서 %s 보기" % (ott["platform"], ott["title"])})
+        night_content_label = "%s %s" % (ott["platform"], ott["title"])
+    else:
+        reading = random.choice(NIGHT_READING_PICKS)
+        night_timeline.append({"time": "%02d:%02d" % (content_t // 60 % 24, content_t % 60), "activity": reading})
+        night_content_label = reading
+    winddown_t = max(content_t + 30, st_m - 35)
+    night_timeline.append({"time": "%02d:%02d" % (winddown_t // 60 % 24, winddown_t % 60),
+                           "activity": random.choice(NIGHT_WINDDOWN_ACTIVITIES)})
+    night_timeline.append({"time": sleep_target, "activity": "잠자리에 누워서 폰 보다가 잠들기"})
+
+    weekend_note = random.choice(WEEKEND_NOTABLE)
+
+    return {
+        "date": date_str,
+        "generated_at": now_iso,
+        "day_type": "weekend",
+        "morning": {
+            "wakeup_time": wakeup,
+            "stretch_or_lazy": random.choice(["스트레칭 좀 하고 일어남", "한참 누워 있다가 일어남", "알람 끄고 좀 더 있다가"]),
+            "morning_flow": random.choice(WEEKEND_MORNING_FLOW),
+            "outfit": outfit,
+        },
+        "brunch": {
+            "menu": brunch["menu"],
+            "location": brunch["location"],
+            "time": brunch["time"],
+            "with": random.choice(WEEKEND_BRUNCH_WITH),
+        },
+        "afternoon": {
+            "plan": afternoon,
+            "detail": afternoon_detail,
+            "timeline": afternoon_timeline,
+            "note": random.choice(["혼자", "느긋하게", "가볍게"]),
+            "weekend_note": weekend_note,
+        },
+        "exercise": {
+            "type": exercise["type"],
+            "location": exercise["location"],
+            "duration_min": exercise["duration_min"],
+        } if exercise["type"] != "없음" else None,
+        "dinner": {
+            "menu": dinner["menu"],
+            "location": dinner["location"],
+            "cook_start": dinner_cook,
+            "eat_time": dinner_time,
+            "end_time": dinner_end,
+        },
+        "night": {
+            "shower_time": shower,
+            "hair_dry_time": hair_dry,
+            "content": night_content_label,
+            "ott_platform": ott["platform"],
+            "ott_title": ott["title"],
+            "timeline": night_timeline,
+            "sleep_target": sleep_target,
+        },
+    }
+
+
+def main():
+    now_kst = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=9)))
+    date_str = now_kst.strftime("%Y-%m-%d")
+    now_iso = now_kst.isoformat()
+
+    # Load day context
+    day_type = "weekday"
+    day_context = {}
+    if os.path.exists(DAY_CONTEXT_PATH):
+        with open(DAY_CONTEXT_PATH, "r", encoding="utf-8") as f:
+            day_context = json.load(f)
+        day_type = day_context.get("day_type", "weekday")
+
+    # Use date seed for reproducibility within same day
+    seed = int(date_str.replace("-", ""))
+    random.seed(seed)
+
+    if day_type == "weekend":
+        schedule = generate_weekend(date_str, now_iso, day_context)
+    else:
+        schedule = generate_weekday(date_str, now_iso)
+
+    with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
+        json.dump(schedule, f, ensure_ascii=False, indent=2)
+
+    print(f"[daily_schedule] {date_str} ({day_type}) 일정 생성 완료 → {OUTPUT_PATH}")
+
+
+if __name__ == "__main__":
+    main()

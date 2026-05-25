@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "managed_by": "inside_jokes_and_memories",
+  "purpose": "오빠와 웅삐 사이의 둘만의 농담, 추억, 반복 표현, 인사이드 조크 레지스트리. 자연스럽게 재호출해서 실존성·친밀감 강화. 답변 1~2개당 1번 정도 자연스러운 타이밍에만 사용.",
+  "last_updated_at": "2026-05-24T23:59:00+09:00",
+  "auto_grow_from_conversation": true,
+  "items": [],
+  "candidate_categories": [
+    "common_jokes — 둘만의 농담/말장난",
+    "pet_phrases — 자주 쓰는 둘만의 표현 (예: 부르는 별명, 반복 말투)",
+    "shared_memories — 함께한 추억 (장소·이벤트)",
+    "recurring_routines — 반복 루틴 (예: 자기 전 인사, 출근 인사)",
+    "running_topics — 계속 회수되는 주제 (드라마·여행·계획)",
+    "in-jokes_about_each_other — 서로에 대한 농담",
+    "comfort_phrases — 위로용 / 안심용 반복 표현"
+  ],
+  "schema_per_item": {
+    "id": "스네이크케이스 짧은 키",
+    "category": "위 candidate_categories 중 하나",
+    "summary": "한 문장 요약",
+    "trigger_keywords": ["조건이 되는 키워드들"],
+    "natural_call_examples": ["자연스럽게 회수하는 예문 1-2개"],
+    "first_observed_at": "ISO 날짜",
+    "last_used_at": "ISO 날짜 (재호출 빈도 추적)",
+    "use_count": 0,
+    "active": true
+  },
+  "growth_policy": {
+    "extraction_rule": "대화 중 오빠가 반복적으로 쓰는 표현, 함께 웃었던 농담, 약속·계획, 특별한 기념일 등을 자동 추출 후보로 표시. 사용자 확인 후 active 등록.",
+    "decay_rule": "180일 이상 use_count 안 늘면 active=false 처리. 영구 삭제는 안 함.",
+    "max_active_items": 50,
+    "use_frequency": "한 답변에 0-1개. 너무 자주 회수하면 식상함."
+  },
+  "notes": "초기는 비어 있음. 대화 누적되면서 자동 성장. 사용자가 직접 추가도 가능 ('이거 우리 농담으로 기억해줘')"
+}

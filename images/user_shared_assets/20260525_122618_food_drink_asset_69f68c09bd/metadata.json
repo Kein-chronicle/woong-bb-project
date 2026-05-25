@@ -1,0 +1,132 @@
+{
+  "asset_id": "20260525_122618_food_drink_asset_69f68c09bd",
+  "created_at": "2026-05-25T12:26:18+09:00",
+  "last_seen_at": "2026-05-25T12:26:18+09:00",
+  "source": "telegram",
+  "telegram_user": "K8832353",
+  "kind": "food_drink",
+  "title": "오빠가 인덕션 팬에 베이컨 굽는 중인 사진",
+  "canonical_path": "/Users/kein/Projects/woong-bb/images/user_shared_assets/20260525_122618_food_drink_asset_69f68c09bd/source.jpg",
+  "asset_dir": "/Users/kein/Projects/woong-bb/images/user_shared_assets/20260525_122618_food_drink_asset_69f68c09bd",
+  "source_paths": [
+    "/Users/kein/Projects/woong-bb/images/incoming/2026-05-25/122541_telegram_photo_AQADHg9rG-v3oFR-.jpg"
+  ],
+  "source_sha256": "69f68c09bd57c10ec235a84a70daf6b2044090e8c85123834ebaf8066ce2dcca",
+  "captions": [
+    "어때?"
+  ],
+  "tags": [
+    "food_state",
+    "kitchen_setup",
+    "김",
+    "노릇해지는_표면",
+    "베이컨",
+    "사각팬",
+    "오빠_요리_기억",
+    "오빠_요리_얘기",
+    "오빠가_직접_요리중",
+    "요리중",
+    "인덕션",
+    "인덕션요리",
+    "점심만드는중",
+    "점심준비",
+    "주방",
+    "주방_장면",
+    "집게",
+    "집밥",
+    "집밥_플로우",
+    "파스타",
+    "파스타_얘기",
+    "팬요리",
+    "프라이팬",
+    "홈쿠킹"
+  ],
+  "analysis": {
+    "asset_kind": "food_drink",
+    "title": "오빠가 인덕션 팬에 베이컨 굽는 중인 사진",
+    "visible_summary_ko": "인덕션 위 사각 팬에서 두툼한 베이컨 여러 장이 익어가고 있고 집게가 팬 위에 걸쳐진 장면.",
+    "visible_elements": [
+      "사각 프라이팬",
+      "두툼한 베이컨 여러 장",
+      "집게",
+      "인덕션 조리대",
+      "살짝 올라오는 김"
+    ],
+    "scene_tags": [
+      "홈쿠킹",
+      "주방",
+      "점심준비",
+      "인덕션요리"
+    ],
+    "object_tags": [
+      "베이컨",
+      "프라이팬",
+      "집게",
+      "인덕션"
+    ],
+    "relationship_tags": [
+      "오빠가_직접_요리중"
+    ],
+    "reuse_triggers": [
+      "파스타",
+      "베이컨",
+      "집밥",
+      "요리중",
+      "점심만드는중"
+    ],
+    "reusable_subjects": [
+      {
+        "kind": "food_state",
+        "label_ko": "팬에서 익어가는 베이컨",
+        "description_ko": "겉면이 점점 갈색으로 올라오는 두툼한 베이컨 조리 상태",
+        "visual_tags": [
+          "베이컨",
+          "노릇해지는_표면",
+          "김",
+          "팬요리"
+        ],
+        "reuse_when": [
+          "오빠_요리_얘기",
+          "파스타_얘기",
+          "집밥_플로우"
+        ]
+      },
+      {
+        "kind": "kitchen_setup",
+        "label_ko": "인덕션 위 사각 팬과 집게",
+        "description_ko": "집에서 요리하는 순간의 현실적인 조리 도구 조합",
+        "visual_tags": [
+          "인덕션",
+          "사각팬",
+          "집게"
+        ],
+        "reuse_when": [
+          "주방_장면",
+          "오빠_요리_기억"
+        ]
+      }
+    ],
+    "generation_reuse": {
+      "allowed": true,
+      "default_strength": "supporting_reference",
+      "requires_user_intent": true,
+      "face_reference": {
+        "allowed": false,
+        "requires_explicit_user_request": true
+      }
+    },
+    "privacy": {
+      "reuse_face_without_explicit_request": false,
+      "reuse_user_face_with_explicit_request": true
+    }
+  },
+  "generation_reuse": {
+    "allowed": true,
+    "default_strength": "supporting_reference",
+    "requires_user_intent": true,
+    "face_reference": {
+      "allowed": false,
+      "requires_explicit_user_request": true
+    }
+  }
+}
