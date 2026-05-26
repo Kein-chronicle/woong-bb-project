@@ -85,7 +85,7 @@ COUNTERPART_STATE_MEMORY_PATH = STATE / "counterpart_state_memory.json"
 CONVERSATION_PATTERN_STATE_PATH = STATE / "conversation_pattern_state.json"
 CONVERSATION_PATTERN_CATALOG_PATH = STATE / "conversation_pattern_catalog.json"
 EVENT_TRIGGER_PROMISES_PATH = STATE / "event_trigger_promises.json"
-COUNTERPART_SCHEDULE_PATH = STATE / "counterpart_schedule_state.json"
+SELF_BUSY_STATE_PATH = STATE / "self_busy_state.json"
 PENDING_INCOMING_PATH = STATE / "pending_incoming_messages.jsonl"
 
 RUNNING = True
@@ -4526,30 +4526,36 @@ def update_voice_share_runtime(status: str, reason: str, text: Optional[str] = N
     save_json(VOICE_SHARE_CONTEXT_PATH, voice_ctx)
 
 
-def check_counterpart_block_expiry(triggered_activity: str = "") -> bool:
-    """Clears expired busy block and fires a post-block proactive if pending messages exist.
+def _self_busy_is_hard(block_type: str) -> bool:
+    """swim/exercise = hard busy (완전 차단). work/sleep = soft busy (peek 가능)."""
+    return block_type in {"swim", "exercise"}
 
-    Supports two expiry modes:
-    - Time-based: block has `until` HH:MM that has passed
-    - Activity-based: a lifecycle event (lunch_break, commuting_home, waking_up, etc.)
-      naturally ends a block type
+
+def check_self_busy_expiry(triggered_activity: str = "") -> bool:
+    """웅삐 자체 비지 블록 만료 체크. 만료 시 해제 + flush 선톡 발신.
+
+    Expiry modes:
+    - Time-based: `until` HH:MM 경과
+    - Activity-based: 라이프사이클 이벤트가 블록 타입을 해제
     """
-    # activity → set of block types it clears
+    # activity → 해제 대상 block type 집합
     ACTIVITY_UNBLOCK: dict = {
         "lunch_break": {"work"},
-        "commuting_home": {"work"},
+        "commuting_home": {"work", "exercise", "swim"},
+        "dinner_or_cooking": {"exercise", "swim"},
+        "night_wind_down": {"exercise", "swim"},
         "waking_up": {"sleep"},
         "getting_ready": {"sleep"},
         "weekend_wakeup": {"sleep"},
     }
 
-    schedule = load_json(COUNTERPART_SCHEDULE_PATH, {})
-    block = schedule.get("current_block")
+    state = load_json(SELF_BUSY_STATE_PATH, {})
+    block = state.get("current_block")
     if not block or not block.get("type") or block.get("type") == "free":
         return False
 
     block_type = block.get("type", "")
-    label = block.get("label", "바쁜 일")
+    label = block.get("label", "바쁜 시간")
     expired = False
     expiry_reason = ""
 
@@ -4558,7 +4564,7 @@ def check_counterpart_block_expiry(triggered_activity: str = "") -> bool:
         expired = True
         expiry_reason = "activity:%s" % triggered_activity
 
-    # Time-based expiry (only when no activity trigger)
+    # Time-based expiry
     if not expired:
         until_str = block.get("until")
         if until_str:
@@ -4576,29 +4582,122 @@ def check_counterpart_block_expiry(triggered_activity: str = "") -> bool:
     if not expired:
         return False
 
-    # Clear block
-    schedule["current_block"] = None
-    schedule["updated_at"] = now_iso()
-    schedule["updated_by"] = "auto_expired"
-    from automation.io import save_json as _save
-    _save(COUNTERPART_SCHEDULE_PATH, schedule)
-    append_worker_note("counterpart_block_expired: %s reason=%s" % (label, expiry_reason))
+    # 블록 해제
+    state["current_block"] = None
+    state["updated_at"] = now_iso()
+    state["updated_by"] = "auto_expired"
+    save_json(SELF_BUSY_STATE_PATH, state)
+    append_worker_note("self_busy_expired: %s reason=%s" % (label, expiry_reason))
 
-    # If pending messages exist, send a soft check-in → bridge will flush queue on next reply
+    # 해제 알림 선톡 + pending 큐 flush 유도
     pending_exists = PENDING_INCOMING_PATH.exists() and PENDING_INCOMING_PATH.stat().st_size > 0
-    if pending_exists:
-        import random
-        if block_type == "sleep":
-            checkins = ["오빠 일어났어?", "오빠 깼어?", "오빠 일어났나?"]
+    if pending_exists or True:  # 블록 해제 시 항상 알림
+        if block_type in {"swim", "exercise"}:
+            msgs = ["%s 끝났어~" % label, "운동 끝났어~", "%s 끝나고 왔어" % label]
+        elif block_type == "sleep":
+            msgs = ["일어났어~", "방금 깼어", "일어났어 오빠~"]
         elif triggered_activity == "lunch_break":
-            checkins = ["오빠 점심시간이야?", "오빠 밥 먹어?", "오빠 점심 먹었어?"]
+            msgs = ["점심이야~", "점심 시간 됐어~", "나 지금 점심이야"]
+        elif triggered_activity == "commuting_home":
+            msgs = ["퇴근했어~", "퇴근했어 오빠", "나 이제 퇴근~"]
         else:
-            checkins = ["%s 끝났어?" % label, "오빠 지금 괜찮아?", "오빠 끝났어?"]
-        msg = checkins[random.randrange(len(checkins))]
+            msgs = ["%s 끝났어~" % label, "이제 끝났어~"]
+        msg = msgs[int(now_local().timestamp()) % len(msgs)]
         if send_telegram_text(msg):
-            append_message_log("outgoing", "proactive_block_expiry", msg)
-            append_worker_note("block_expiry_checkin_sent: %s" % msg)
+            append_message_log("outgoing", "proactive_self_busy_end", msg)
+            append_worker_note("self_busy_end_sent: %s" % msg)
     return True
+
+
+def auto_set_self_busy_from_activity(new_activity: str) -> None:
+    """액티비티 전환 시 self-busy 자동 세팅 (근무 시작, 수면 등)."""
+    WORK_ACTIVITIES = {"hospital_morning_shift", "hospital_afternoon_shift"}
+    SLEEP_ACTIVITIES = {"sleep_window"}
+
+    state = load_json(SELF_BUSY_STATE_PATH, {})
+    block = state.get("current_block")
+
+    if new_activity in WORK_ACTIVITIES:
+        if block and block.get("type") == "work":
+            return  # 이미 work 블록
+        state["current_block"] = {
+            "type": "work",
+            "label": "근무",
+            "until": None,
+            "started_at": now_iso(),
+            "last_peek_at": None,
+        }
+        state["updated_at"] = now_iso()
+        state["updated_by"] = "auto_activity:%s" % new_activity
+        save_json(SELF_BUSY_STATE_PATH, state)
+        append_worker_note("self_busy_set: work via %s" % new_activity)
+
+    elif new_activity in SLEEP_ACTIVITIES:
+        if block and block.get("type") in {"sleep", "swim", "exercise"}:
+            return  # 이미 sleep/exercise 블록
+        state["current_block"] = {
+            "type": "sleep",
+            "label": "수면",
+            "until": "07:00",
+            "started_at": now_iso(),
+            "last_peek_at": None,
+        }
+        state["updated_at"] = now_iso()
+        state["updated_by"] = "auto_activity:%s" % new_activity
+        save_json(SELF_BUSY_STATE_PATH, state)
+        append_worker_note("self_busy_set: sleep via %s" % new_activity)
+
+
+PEEK_INTERVAL_WORK_SECONDS = 45 * 60  # 45분마다 잠깐 확인 가능
+PEEK_INTERVAL_SLEEP_SECONDS = 2 * 60 * 60  # 수면 중 2시간마다 한 번
+
+
+def maybe_peek_self_busy() -> bool:
+    """Soft busy(근무/수면) 중 가끔 '잠깐 봤어' 이벤트 발생."""
+    state = load_json(SELF_BUSY_STATE_PATH, {})
+    block = state.get("current_block")
+    if not block or not block.get("type") or block.get("type") == "free":
+        return False
+    block_type = block.get("type", "")
+    if _self_busy_is_hard(block_type):
+        return False  # swim/exercise은 peek 없음
+
+    now_dt = now_local()
+    last_peek_str = block.get("last_peek_at")
+    interval = PEEK_INTERVAL_WORK_SECONDS if block_type == "work" else PEEK_INTERVAL_SLEEP_SECONDS
+    if last_peek_str:
+        try:
+            last_peek = datetime.fromisoformat(last_peek_str)
+            if (now_dt - last_peek).total_seconds() < interval:
+                return False
+        except Exception:
+            pass
+
+    # 수면 peek: 새벽 1~5시 사이에만
+    if block_type == "sleep" and not (1 <= now_dt.hour <= 5):
+        return False
+
+    # pending 있어야 peek 발동 (없으면 굳이 선톡 안 함)
+    pending_exists = PENDING_INCOMING_PATH.exists() and PENDING_INCOMING_PATH.stat().st_size > 0
+    if not pending_exists:
+        return False
+
+    # peek 선톡 발송
+    if block_type == "work":
+        msgs = ["일하다 잠깐 봤어~", "잠깐 틈났어", "잠깐 핸드폰 봤는데", "일하다 잠깐 보게 됐어"]
+    else:
+        msgs = ["잠깐 깼어~", "자다 깼어", "화장실 가려고 깼어", "자다 잠깐 깼는데"]
+    msg = msgs[int(now_dt.timestamp()) % len(msgs)]
+
+    if send_telegram_text(msg):
+        append_message_log("outgoing", "proactive_self_busy_peek", msg)
+        append_worker_note("self_busy_peek_sent: %s" % msg)
+        block["last_peek_at"] = now_iso()
+        state["current_block"] = block
+        state["updated_at"] = now_iso()
+        save_json(SELF_BUSY_STATE_PATH, state)
+        return True
+    return False
 
 
 def proactive_check(reason: str) -> None:
@@ -4637,16 +4736,33 @@ def proactive_check(reason: str) -> None:
     status = "ready"
     detail = None
     waiting_reply_followup = None
-    if mode != "woongbbi":
+    # 웅삐 자체 비지 블록 체크 (수영/근무/수면 중 선톡 전면 억제)
+    self_busy_state = load_json(SELF_BUSY_STATE_PATH, {})
+    self_block = self_busy_state.get("current_block")
+    if self_block and self_block.get("type") not in {None, "free"}:
+        _until_str = self_block.get("until")
+        _still_busy = True
+        if _until_str:
+            _now_check = now_local()
+            try:
+                _h, _m = (int(x) for x in _until_str.split(":"))
+                if _now_check.hour * 60 + _now_check.minute >= _h * 60 + _m:
+                    _still_busy = False
+            except (ValueError, TypeError):
+                pass
+        if _still_busy:
+            status = "suppressed_self_busy"
+            detail = "웅삐 자체 비지 블록 중 선톡 억제 (%s)" % self_block.get("label", "바쁜 시간")
+    if status == "ready" and mode != "woongbbi":
         status = "skipped_not_woongbbi_mode"
         detail = "현재 모드가 setting이라 선톡 후보를 만들지 않음"
-    elif in_quiet_hours:
+    elif status == "ready" and in_quiet_hours:
         status = "suppressed_sleep_quiet_hours"
         detail = "수면 시간대라 후보 생성 억제"
-    elif guard["conversation_active"]:
+    elif status == "ready" and guard["conversation_active"]:
         status = "suppressed_active_conversation"
         detail = "최근 대화가 진행 중이라 선톡 억제"
-    elif guard["waiting_reply"]:
+    elif status == "ready" and guard["waiting_reply"]:
         minutes_since_last_outgoing = float(guard.get("minutes_since_last_outgoing") or 0.0)
         unanswered_outgoing_count = int(guard.get("unanswered_outgoing_count") or 0)
         can_guard_follow_up = (
@@ -4690,7 +4806,7 @@ def proactive_check(reason: str) -> None:
         else:
             status = "suppressed_waiting_reply"
             detail = "마지막 발송 뒤 답을 기다리는 중"
-    elif guard["outgoing_cooldown"]:
+    elif status == "ready" and guard["outgoing_cooldown"]:
         status = "suppressed_cooldown"
         detail = "직전 발송 쿨다운 중"
 
@@ -4867,7 +4983,8 @@ def handle_timer(timer: dict) -> str:
     if timer_type == "time_block_update":
         target_activity = timer.get("target_activity")
         apply_time_block(target_activity, reason)
-        check_counterpart_block_expiry(triggered_activity=target_activity or "")
+        check_self_busy_expiry(triggered_activity=target_activity or "")
+        auto_set_self_busy_from_activity(target_activity or "")
         return "time_block_update:%s" % target_activity
     if timer_type == "state_refresh":
         if scope == "weather_context":
@@ -4889,7 +5006,8 @@ def handle_timer(timer: dict) -> str:
             # no-op: heartbeat already handled
             return "tick:worker"
         if scope == "conversation_guard":
-            check_counterpart_block_expiry()
+            check_self_busy_expiry()
+            maybe_peek_self_busy()
             proactive_check(reason)
             return "tick:conversation_guard"
         if scope == "reinforcement_engine":
