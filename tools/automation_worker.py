@@ -85,6 +85,8 @@ COUNTERPART_STATE_MEMORY_PATH = STATE / "counterpart_state_memory.json"
 CONVERSATION_PATTERN_STATE_PATH = STATE / "conversation_pattern_state.json"
 CONVERSATION_PATTERN_CATALOG_PATH = STATE / "conversation_pattern_catalog.json"
 EVENT_TRIGGER_PROMISES_PATH = STATE / "event_trigger_promises.json"
+COUNTERPART_SCHEDULE_PATH = STATE / "counterpart_schedule_state.json"
+PENDING_INCOMING_PATH = STATE / "pending_incoming_messages.jsonl"
 
 RUNNING = True
 DAY_NAMES = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]
@@ -4524,6 +4526,81 @@ def update_voice_share_runtime(status: str, reason: str, text: Optional[str] = N
     save_json(VOICE_SHARE_CONTEXT_PATH, voice_ctx)
 
 
+def check_counterpart_block_expiry(triggered_activity: str = "") -> bool:
+    """Clears expired busy block and fires a post-block proactive if pending messages exist.
+
+    Supports two expiry modes:
+    - Time-based: block has `until` HH:MM that has passed
+    - Activity-based: a lifecycle event (lunch_break, commuting_home, waking_up, etc.)
+      naturally ends a block type
+    """
+    # activity → set of block types it clears
+    ACTIVITY_UNBLOCK: dict = {
+        "lunch_break": {"work"},
+        "commuting_home": {"work"},
+        "waking_up": {"sleep"},
+        "getting_ready": {"sleep"},
+        "weekend_wakeup": {"sleep"},
+    }
+
+    schedule = load_json(COUNTERPART_SCHEDULE_PATH, {})
+    block = schedule.get("current_block")
+    if not block or not block.get("type") or block.get("type") == "free":
+        return False
+
+    block_type = block.get("type", "")
+    label = block.get("label", "바쁜 일")
+    expired = False
+    expiry_reason = ""
+
+    # Activity-based expiry
+    if triggered_activity and block_type in ACTIVITY_UNBLOCK.get(triggered_activity, set()):
+        expired = True
+        expiry_reason = "activity:%s" % triggered_activity
+
+    # Time-based expiry (only when no activity trigger)
+    if not expired:
+        until_str = block.get("until")
+        if until_str:
+            now_dt = now_local()
+            try:
+                h, m = (int(x) for x in until_str.split(":"))
+                now_minutes = now_dt.hour * 60 + now_dt.minute
+                until_minutes = h * 60 + m
+                if now_minutes >= until_minutes:
+                    expired = True
+                    expiry_reason = "time:%s" % until_str
+            except (ValueError, TypeError):
+                pass
+
+    if not expired:
+        return False
+
+    # Clear block
+    schedule["current_block"] = None
+    schedule["updated_at"] = now_iso()
+    schedule["updated_by"] = "auto_expired"
+    from automation.io import save_json as _save
+    _save(COUNTERPART_SCHEDULE_PATH, schedule)
+    append_worker_note("counterpart_block_expired: %s reason=%s" % (label, expiry_reason))
+
+    # If pending messages exist, send a soft check-in → bridge will flush queue on next reply
+    pending_exists = PENDING_INCOMING_PATH.exists() and PENDING_INCOMING_PATH.stat().st_size > 0
+    if pending_exists:
+        import random
+        if block_type == "sleep":
+            checkins = ["오빠 일어났어?", "오빠 깼어?", "오빠 일어났나?"]
+        elif triggered_activity == "lunch_break":
+            checkins = ["오빠 점심시간이야?", "오빠 밥 먹어?", "오빠 점심 먹었어?"]
+        else:
+            checkins = ["%s 끝났어?" % label, "오빠 지금 괜찮아?", "오빠 끝났어?"]
+        msg = checkins[random.randrange(len(checkins))]
+        if send_telegram_text(msg):
+            append_message_log("outgoing", "proactive_block_expiry", msg)
+            append_worker_note("block_expiry_checkin_sent: %s" % msg)
+    return True
+
+
 def proactive_check(reason: str) -> None:
     mode = load_json(MODE_PATH, {}).get("current_mode", "setting")
     proactive = load_json(PROACTIVE_PATH, {})
@@ -4788,8 +4865,10 @@ def handle_timer(timer: dict) -> str:
     reason = timer.get("reason", timer.get("id"))
     scope = timer.get("scope")
     if timer_type == "time_block_update":
-        apply_time_block(timer.get("target_activity"), reason)
-        return "time_block_update:%s" % timer.get("target_activity")
+        target_activity = timer.get("target_activity")
+        apply_time_block(target_activity, reason)
+        check_counterpart_block_expiry(triggered_activity=target_activity or "")
+        return "time_block_update:%s" % target_activity
     if timer_type == "state_refresh":
         if scope == "weather_context":
             weather_refresh()
@@ -4810,6 +4889,7 @@ def handle_timer(timer: dict) -> str:
             # no-op: heartbeat already handled
             return "tick:worker"
         if scope == "conversation_guard":
+            check_counterpart_block_expiry()
             proactive_check(reason)
             return "tick:conversation_guard"
         if scope == "reinforcement_engine":
