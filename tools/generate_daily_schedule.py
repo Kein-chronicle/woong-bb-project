@@ -241,7 +241,11 @@ def generate_weekday(date_str: str, now_iso: str) -> dict:
     wakeup = rand_minute("05:45", 10)
     shower_done = add_minutes(wakeup, 20)
     breakfast_time = add_minutes(shower_done, breakfast["time_offset"])
-    depart = rand_minute("07:00", 8)
+    # 화장·헤어·옷 입기 prep 시간
+    skincare_done = add_minutes(shower_done, random.randint(10, 15))
+    makeup_done = add_minutes(skincare_done, random.randint(20, 30))
+    dress_done = add_minutes(makeup_done, random.randint(10, 15))
+    depart = add_minutes(dress_done, random.randint(3, 8))  # 집에서 나가는 시간
     arrive_work = add_minutes(depart, 58)
 
     lunch = random.choice(WEEKDAY_LUNCH)
@@ -262,11 +266,12 @@ def generate_weekday(date_str: str, now_iso: str) -> dict:
     if exercise["shower"]:
         shower_after = add_minutes(exercise_end, 5)
         hair_dry = add_minutes(shower_after, 20)
+        night_start = hair_dry
     else:
         shower_after = None
-        hair_dry = add_minutes(dinner_end, 90)
-
-    night_start = hair_dry if hair_dry else add_minutes(dinner_end, 90)
+        hair_dry = None
+        # 카페/산책 등 비운동 활동은 끝나고 바로 야간 루틴 시작
+        night_start = exercise_end if exercise["duration_min"] > 0 else add_minutes(dinner_end, 30)
     sleep_target = rand_minute("23:50", 15)
 
     # 퇴근 후~취침 세부 타임라인 구성
@@ -320,8 +325,8 @@ def generate_weekday(date_str: str, now_iso: str) -> dict:
             timeline.append({"time": "%02d:%02d" % (tm // 60, tm % 60), "task": t})
         return timeline
 
-    morning_tasks = build_shift_timeline(arrive_work, lunch_time, MORNING_SHIFT_TASKS, random.choice([3, 4]))
-    afternoon_tasks = build_shift_timeline(lunch_end, depart_home, AFTERNOON_SHIFT_TASKS, random.choice([3, 4]))
+    morning_tasks = build_shift_timeline(arrive_work, lunch_time, MORNING_SHIFT_TASKS, random.choice([4, 4, 4, 3]))
+    afternoon_tasks = build_shift_timeline(lunch_end, depart_home, AFTERNOON_SHIFT_TASKS, random.choice([4, 4, 3]))
 
     # 그날 근무 강도 + 구체적 이유 (date seed로 결정)
     busy_roll = random.random()
@@ -341,6 +346,12 @@ def generate_weekday(date_str: str, now_iso: str) -> dict:
             "wakeup_time": wakeup,
             "shower_time": wakeup,
             "shower_done": shower_done,
+            "morning_prep": {
+                "skincare_done": skincare_done,
+                "makeup_done": makeup_done,
+                "dress_done": dress_done,
+                "note": "스킨케어 → 메이크업 → 스크럽 갈아입기 순서",
+            },
             "outfit": outfit_work,
             "casual_outfit": outfit_casual,
             "breakfast": {

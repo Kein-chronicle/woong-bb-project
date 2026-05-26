@@ -87,6 +87,10 @@ CONVERSATION_PATTERN_CATALOG_PATH = STATE / "conversation_pattern_catalog.json"
 EVENT_TRIGGER_PROMISES_PATH = STATE / "event_trigger_promises.json"
 SELF_BUSY_STATE_PATH = STATE / "self_busy_state.json"
 PENDING_INCOMING_PATH = STATE / "pending_incoming_messages.jsonl"
+PENDING_PHOTO_PROMISE_PATH = STATE / "pending_photo_promise.json"
+PENDING_ARRIVAL_PROMISE_PATH = STATE / "pending_arrival_promise.json"
+PENDING_PROACTIVE_PHOTO_PATH = STATE / "pending_proactive_photo.json"
+PROACTIVE_PHOTO_STATE_PATH = STATE / "proactive_photo_state.json"
 
 RUNNING = True
 DAY_NAMES = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]
@@ -4700,6 +4704,219 @@ def maybe_peek_self_busy() -> bool:
     return False
 
 
+def run_photo_promise_worker(trigger_text: str) -> bool:
+    import os as _os
+    from pathlib import Path as _Path
+    worker_script = _Path.home() / ".codex" / "bin" / "codex-telegram-woongbbi-worker"
+    if not worker_script.exists():
+        append_worker_note("photo_promise_worker_missing")
+        return False
+    payload = json.dumps({
+        "proactive": True,
+        "photoHint": True,
+        "intent": "promised_photo",
+        "situation": f"아까 오빠한테 '{trigger_text}'라고 말했어. 지금 실제로 사진 한 장 찍어서 보내주는 상황이야. imagegen 실행해서 사진을 보내줘.",
+        "userName": "오빠",
+    }, ensure_ascii=False)
+    bun = str(_Path.home() / ".bun" / "bin" / "bun")
+    try:
+        result = subprocess.run(
+            [bun, str(worker_script)],
+            input=payload,
+            capture_output=True,
+            text=True,
+            timeout=300,
+            env={**_os.environ, "CODEX_TELEGRAM_STATE_DIR": str(SESSION), "CODEX_TELEGRAM_CWD": str(ROOT)},
+        )
+        if result.returncode == 0:
+            try:
+                data = json.loads(result.stdout or "{}")
+                answer = data.get("answer", "")
+                if answer and len(answer.strip()) < 200 and answer.strip():
+                    from automation.telegram_io import send_telegram_text, append_message_log
+                    send_telegram_text(answer.strip())
+                    append_message_log("outgoing", "photo_promise_text", answer.strip())
+            except Exception:
+                pass
+            append_worker_note("photo_promise_sent ok")
+            return True
+        else:
+            append_worker_note(f"photo_promise_worker_failed code={result.returncode} err={result.stderr.strip()[:200]}")
+            return False
+    except Exception as exc:
+        append_worker_note(f"photo_promise_worker_error {exc}")
+        return False
+
+
+def check_pending_photo_promise() -> None:
+    if not PENDING_PHOTO_PROMISE_PATH.exists():
+        return
+    try:
+        promise = load_json(PENDING_PHOTO_PROMISE_PATH, {})
+    except Exception:
+        return
+
+    if promise.get("status") != "pending":
+        return
+
+    send_after_str = promise.get("send_after", "")
+    if not send_after_str:
+        return
+
+    try:
+        from datetime import timezone as _tz
+        send_after_dt = datetime.fromisoformat(send_after_str.replace("Z", "+00:00"))
+        now_utc = datetime.now(tz=_tz.utc)
+        if now_utc < send_after_dt:
+            return
+    except Exception:
+        return
+
+    # 하드 비지(수영/운동) 중엔 사진 못 보냄
+    self_busy = load_json(SELF_BUSY_STATE_PATH, {})
+    block = self_busy.get("current_block") or {}
+    if block.get("type") in ("swim", "exercise"):
+        return
+
+    # 새벽 시간대 억제 (00:30~06:30)
+    now_hm = now_local().strftime("%H:%M")
+    if "00:30" <= now_hm or now_hm <= "06:30":
+        return
+
+    promise["status"] = "sending"
+    save_json(PENDING_PHOTO_PROMISE_PATH, promise)
+
+    trigger_text = promise.get("trigger_text", "사진 보내줄게")
+    append_worker_note(f"photo_promise_firing: {trigger_text}")
+
+    ok = run_photo_promise_worker(trigger_text)
+
+    promise["status"] = "sent" if ok else "failed"
+    promise["resolved_at"] = now_iso()
+    save_json(PENDING_PHOTO_PROMISE_PATH, promise)
+
+
+def check_pending_arrival_promise() -> None:
+    if not PENDING_ARRIVAL_PROMISE_PATH.exists():
+        return
+    try:
+        promise = load_json(PENDING_ARRIVAL_PROMISE_PATH, {})
+    except Exception:
+        return
+    if promise.get("status") != "pending":
+        return
+    send_after_str = promise.get("send_after", "")
+    if not send_after_str:
+        return
+    try:
+        from datetime import timezone as _tz
+        send_after_dt = datetime.fromisoformat(send_after_str.replace("Z", "+00:00"))
+        if datetime.now(tz=_tz.utc) < send_after_dt:
+            return
+    except Exception:
+        return
+    # 새벽 억제
+    now_hm = now_local().strftime("%H:%M")
+    if now_hm < "06:30":
+        return
+    promise["status"] = "sending"
+    save_json(PENDING_ARRIVAL_PROMISE_PATH, promise)
+    ctx = promise.get("followup_ctx", "아까 연락한다고 했어. 자연스럽게 짧게 말 걸어줘.")
+    trigger = promise.get("trigger_text", "연락할게")
+    append_worker_note(f"arrival_promise_firing: {trigger}")
+    payload = json.dumps({
+        "proactive": True,
+        "text": ctx,
+        "userName": "오빠",
+    }, ensure_ascii=False)
+    import os as _os
+    bun = str(Path.home() / ".bun" / "bin" / "bun")
+    worker_script = str(Path.home() / ".codex" / "bin" / "codex-telegram-woongbbi-worker")
+    try:
+        result = subprocess.run(
+            [bun, worker_script],
+            input=payload,
+            capture_output=True,
+            text=True,
+            timeout=120,
+            env={**_os.environ, "CODEX_TELEGRAM_STATE_DIR": str(SESSION), "CODEX_TELEGRAM_CWD": str(ROOT), "TELEGRAM_STATE_DIR": str(SESSION), "CODEX_TELEGRAM_STATE_DIR": str(SESSION)},
+        )
+        if result.returncode == 0:
+            data = json.loads(result.stdout or "{}")
+            answer = (data.get("answer") or "").strip()
+            if answer:
+                from automation.telegram_io import send_telegram_text, append_message_log
+                for msg in answer.split("\n")[:2]:
+                    msg = msg.strip()
+                    if msg:
+                        send_telegram_text(msg)
+                        append_message_log("outgoing", "arrival_promise", msg)
+                promise["status"] = "sent"
+            else:
+                promise["status"] = "failed"
+        else:
+            promise["status"] = "failed"
+    except Exception as exc:
+        promise["status"] = "failed"
+        append_worker_note(f"arrival_promise_error: {exc}")
+    promise["resolved_at"] = now_iso()
+    save_json(PENDING_ARRIVAL_PROMISE_PATH, promise)
+
+
+PHOTO_WINDOWS_WB = [
+    {"id": "lunch",        "start_h": 12, "end_h": 14, "ctx": "점심 먹고 있어. 오늘 뭐 먹는지 음식 사진이랑 같이 자연스럽게 짧게 오빠한테 말 걸어줘."},
+    {"id": "commute",      "start_h": 18, "end_h": 21, "ctx": "퇴근하고 집에 오는 길이야. 셀카 찍어서 자연스럽게 짧게 오빠한테 보내줘."},
+    {"id": "home_evening", "start_h": 21, "end_h": 23, "ctx": "씻고 나서 집에서 쉬고 있어. 편한 옷 차림으로 셀카 한 장 찍어서 자연스럽게 오빠한테 보내줘."},
+]
+
+
+def check_proactive_photo() -> None:
+    mode = load_json(MODE_PATH, {}).get("current_mode", "setting")
+    if mode != "woongbbi":
+        return
+    if PENDING_PROACTIVE_PHOTO_PATH.exists():
+        try:
+            p = load_json(PENDING_PROACTIVE_PHOTO_PATH, {})
+            if p.get("status") == "pending":
+                return
+        except Exception:
+            pass
+    photo_state = load_json(PROACTIVE_PHOTO_STATE_PATH, {})
+    today = now_local().strftime("%Y-%m-%d")
+    sent_windows = photo_state.get("sent_windows", []) if photo_state.get("date") == today else []
+    count_today = photo_state.get("count_today", 0) if photo_state.get("date") == today else 0
+    if count_today >= 2:
+        return
+    current_h = now_local().hour
+    win = next((w for w in PHOTO_WINDOWS_WB if w["start_h"] <= current_h < w["end_h"] and w["id"] not in sent_windows), None)
+    if not win:
+        return
+    # 대화 중이면 스킵
+    guard = compute_conversation_guard()
+    if guard.get("conversation_active"):
+        return
+    save_json(PENDING_PROACTIVE_PHOTO_PATH, {
+        "created_at": now_iso(),
+        "window": win["id"],
+        "ctx": win["ctx"],
+        "status": "pending",
+    })
+    save_json(PROACTIVE_PHOTO_STATE_PATH, {
+        "date": today,
+        "count_today": count_today + 1,
+        "sent_windows": sent_windows + [win["id"]],
+    })
+    append_worker_note(f"proactive_photo_trigger: window={win['id']}")
+
+    # 바로 실행
+    ok = run_photo_promise_worker(win["ctx"])
+    result_status = "sent" if ok else "failed"
+    p = load_json(PENDING_PROACTIVE_PHOTO_PATH, {})
+    p["status"] = result_status
+    p["resolved_at"] = now_iso()
+    save_json(PENDING_PROACTIVE_PHOTO_PATH, p)
+
+
 def proactive_check(reason: str) -> None:
     mode = load_json(MODE_PATH, {}).get("current_mode", "setting")
     proactive = load_json(PROACTIVE_PATH, {})
@@ -5008,6 +5225,9 @@ def handle_timer(timer: dict) -> str:
         if scope == "conversation_guard":
             check_self_busy_expiry()
             maybe_peek_self_busy()
+            check_pending_photo_promise()
+            check_pending_arrival_promise()
+            check_proactive_photo()
             proactive_check(reason)
             return "tick:conversation_guard"
         if scope == "reinforcement_engine":
