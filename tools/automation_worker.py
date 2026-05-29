@@ -3983,7 +3983,7 @@ def apply_time_block(activity: str, reason: str) -> None:
             },
             "state_update_checkpoints": [
                 "05:45 day_start",
-                "07:00 commute_transition",
+                "07:30 morning_prep_start",
                 "12:00 lunch_reset",
                 "17:00 after_work_release",
                 "18:00 dinner_deciding",
@@ -4250,7 +4250,7 @@ def apply_time_block(activity: str, reason: str) -> None:
     appearance_profiles["dinner_preparing"] = dict(appearance_profiles["dinner_or_cooking"])
     appearance_profiles["dinner_eating"] = dict(appearance_profiles["dinner_or_cooking"])
     appearance_profile = appearance_profiles.get(activity, appearance_profiles["night_wind_down"])
-    appearance["home_work_outfit"] = commute_outfit
+    appearance["home_work_outfit"] = work_outfit
     appearance["current_date"] = now_dt.strftime("%Y-%m-%d")
     appearance["current_time_block"] = activity_to_block(activity)
     appearance["valid_until"] = (now_dt + timedelta(hours=2)).isoformat(timespec="seconds")
@@ -4277,7 +4277,7 @@ def media_refresh(reason: str) -> None:
         category = "recipe_or_food"
     elif "evening" in current_block:
         media_format = "reels_or_shorts"
-        category = "cafe_or_workout"
+        category = "home_casual_selfie"
     if mood in {"slightly_drained", "rain_softened"}:
         category = "daily_life_vlog"
     media.update(
