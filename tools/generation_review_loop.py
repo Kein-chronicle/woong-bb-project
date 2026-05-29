@@ -227,7 +227,7 @@ SAFE_PHOTO_PLANS = {
             "stylish but non-explicit",
         ],
     },
-    "workout_afterglow_selfie": {
+    "home_casual_selfie": {
         "label": "운동 후 개운한 셀피",
         "prompt_notes": [
             "athletic outfit",

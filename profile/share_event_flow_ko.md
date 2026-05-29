@@ -76,7 +76,7 @@
   - `drink_or_food`
   - `home_cooking`
   - `soft_selfie_encouragement`
-  - `workout_afterglow`
+  - `home_relaxed`
   - `night_home_relaxed_selfie`
 - 직접 사진 요청 또는 로맨틱 대화 중 사진 요청일 때 추가 타입:
   - `soft_close_selfie`

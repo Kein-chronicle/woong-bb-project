@@ -1682,7 +1682,7 @@ def weekend_day_templates() -> list:
         },
         {
             "id": "park_cafe_walk",
-            "title": "공원 산책 + 카페",
+            "title": "집에서 그림 + 드라마",
             "tags": ["park", "cafe", "walk"],
             "blocks": {
                 "weekend_wakeup": "늦잠까진 아니고 적당히 일어나서 가볍게 준비하고 바깥 공기 쐬러 나갈 생각하는 중",
@@ -1690,7 +1690,7 @@ def weekend_day_templates() -> list:
                 "weekend_outing_or_rest": "오후에는 그림 그리거나 드라마 보면서 편하게 쉬는 흐름",
                 "weekend_evening": "해 질 때쯤 집 쪽으로 돌아와서 카페 여운 남은 채로 저녁 고민하는 편한 분위기",
             },
-            "preview": "브런치 먹고 공원이나 한강 쪽 산책하다가 카페 들르는 날",
+            "preview": "늦은 브런치 먹고 그림 그리거나 드라마 보면서 집에서 쉬는 날",
         },
         {
             "id": "draw_and_evening_rest",
@@ -1711,7 +1711,7 @@ def weekend_day_templates() -> list:
             "blocks": {
                 "weekend_wakeup": "조용히 늦잠 자고 일어나서 오늘은 사람 많은 데보다 잔잔하게 돌아다니고 싶은 기분",
                 "weekend_brunch_or_coffee": "브런치 먹고 책 보러 가기 전에 커피 한잔 들고 천천히 나설 준비를 하는 중",
-                "weekend_outing_or_rest": "오후엔 서점이나 소품샵 둘러보고 동네 골목이나 시내를 느긋하게 걷는 흐름",
+                "weekend_outing_or_rest": "오후엔 드라마 보면서 방 구석구석 정리하거나 새 플레이리스트 만드는 흐름",
                 "weekend_evening": "저녁엔 산책 여운이 남아서 조용한 카페나 집에서 책 펼치고 쉬고 싶은 무드",
             },
             "preview": "브런치 후 서점이랑 동네 산책 위주로 조용하게 보내는 날",
@@ -1723,7 +1723,7 @@ def weekend_day_templates() -> list:
             "blocks": {
                 "weekend_wakeup": "조금 늦게 일어났는데 오후에 가볍게 나갈 일이 있어서 느슨하지만 완전 퍼져 있진 않은 상태",
                 "weekend_brunch_or_coffee": "천천히 준비하면서 브런치 먹고 약속 전까지 카페에 잠깐 들를까 생각하는 흐름",
-                "weekend_outing_or_rest": "오후엔 시내 쪽 나가서 구경하거나 가벼운 약속 잡혀 있는 편",
+                "weekend_outing_or_rest": "오후엔 집에서 가볍게 쉬거나 오빠랑 같이 뭔가 보는 흐름",
                 "weekend_evening": "저녁은 밖에서 맛있는 거 먹고 들어오거나 돌아오는 길에 기분이 조금 들뜬 상태",
             },
             "preview": "오후에 가볍게 나가서 구경하거나 약속 보고 저녁까지 밖에서 해결하는 날",
@@ -1735,7 +1735,7 @@ def weekend_day_templates() -> list:
             "blocks": {
                 "weekend_wakeup": "밀린 잠 조금 자고 일어나서 집안 정리나 장 볼 생각을 천천히 하는 중",
                 "weekend_brunch_or_coffee": "브런치 먹고 장 보러 나가기 전에 체크리스트 대충 정리하는 상태",
-                "weekend_outing_or_rest": "오후에는 장 보고 생활용품 챙기고 들어와서 집밥 준비까지 이어지는 흐름",
+                "weekend_outing_or_rest": "오후에는 드라마 보고 저녁엔 요리해서 집밥으로 마무리하는 흐름",
                 "weekend_evening": "저녁엔 직접 챙긴 집밥 먹고 주말 마무리답게 집에서 안정감 있게 쉬는 분위기",
             },
             "preview": "늦잠 후 장 보거나 정리하고 저녁은 집밥으로 마무리하는 날",

@@ -71,10 +71,10 @@
   - 저녁 집
   - 밤 홈웨어
   - 자기 전
-- `exercise_block`
+- `home_evening_block`
   - 러닝
   - 샤워 전후
-  - 헬스/자전거
+  - 그림 그리기/드라마
 - `cafe_outing`
   - 카페
   - 외출

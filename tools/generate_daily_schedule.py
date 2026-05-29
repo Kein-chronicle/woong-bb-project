@@ -469,7 +469,7 @@ def generate_weekend(date_str: str, now_iso: str, day_context: dict) -> dict:
     brunch = random.choice(WEEKEND_BRUNCH)
     exercise = random.choice(WEEKEND_EXERCISE)
 
-    afternoon_options = ["공원 산책", "카페", "서점", "전시", "쇼핑", "집에서 쉬기", "드라이브", "친구 만남"]
+    afternoon_options = ["그림 그리기", "드라마 보기", "요리", "집에서 쉬기", "음악 감상", "새 프로젝트 탐색"]
     afternoon = random.choice(afternoon_options)
     afternoon_detail = random.choice(WEEKEND_AFTERNOON_DETAIL.get(afternoon, ["느긋하게 보내기"]))
 

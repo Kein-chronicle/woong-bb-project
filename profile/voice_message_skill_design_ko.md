@@ -71,7 +71,7 @@
   - `energetic_light`
   - `work_quiet`
   - `cafe_hushed`
-  - `post_workout_breathing`
+  - `energetic_light`
 - 스킬은 현재 `eunbi_presence.current_activity`, `surface_mood`, 문맥 힌트를 기준으로 적절한 프로필을 고른다.
 - 각 프로필은
   - `breath_preset`
@@ -92,7 +92,7 @@
   - `cafe_hushed`
   - 상황 공유 한 줄 + 안부 한 줄
 - 운동 직후:
-  - `post_workout_breathing`
+  - `energetic_light`
   - 짧고 호흡이 조금 더 자주 들어가는 문장
 - 기분이 가볍고 밝을 때:
   - `energetic_light`

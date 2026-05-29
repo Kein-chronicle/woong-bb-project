@@ -34,7 +34,7 @@
 | lunch.time | "12:10" |
 | lunch.with | "혼자" |
 | afternoon_work.end_time | "18:05" |
-| evening_free.note | "마트 잠깐 들름" |
+| evening_free.note | "작업 마무리" |
 | dinner.menu | "파스타 (토마토 소스)" |
 | dinner.eat_time | "18:40" |
 | evening.activity_type: "draw_or_drama" |
@@ -52,9 +52,9 @@
 | brunch.menu | "아보카도 토스트 + 아메리카노" |
 | brunch.location | "브런치 카페" |
 | brunch.time | "10:40" |
-| afternoon.plan | "공원 산책" |
-| exercise.type | "자전거" |
-| exercise.location | "한강 자전거도로" |
+| afternoon.plan | "그림 그리기" |
+| evening.type | "드라마 보기" |
+| evening.location | "집 침대" |
 | dinner.menu | "파스타 (크림 소스)" |
 | dinner.eat_time | "19:10" |
 | night.shower_time | "21:15" |

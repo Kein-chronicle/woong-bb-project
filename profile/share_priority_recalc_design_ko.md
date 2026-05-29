@@ -17,8 +17,8 @@
 - `morning_shift -> lunch_break`
 - `afternoon_work -> evening_free`
 - `evening_free -> dinner_or_cooking`
-- `dinner_or_cooking -> exercise_or_cafe`
-- `exercise_or_cafe -> night_wind_down`
+- `dinner_or_cooking -> evening_free`
+- `evening_free -> night_wind_down`
 
 이런 전환은 공유 성향이 크게 바뀌므로 재계산한다.
 

@@ -7,7 +7,7 @@ from typing import Optional
 EVENT_TRIGGER_RULES = [
     {"event_key": "after_work", "label": "일 끝남", "patterns": [r"일 끝나", r"일 끝나면", r"퇴근하", r"퇴근하면"]},
     {"event_key": "arrive_home", "label": "집 도착", "patterns": [r"집에 도착", r"집 도착", r"집 들어가", r"귀가하"]},
-    {"event_key": "arrive_work", "label": "직장 도착", "patterns": [r"회사 도착", r"직장 도착", r"병원 도착", r"출근해서 도착"]},
+    {"event_key": "arrive_work", "label": "직장 도착", "patterns": [r"작업 시작", r"컴퓨터 켰어", r"오늘 시작"]},
     {"event_key": "arrive_somewhere", "label": "어디 도착", "patterns": [r"도착하", r"도착하면", r"막 도착"]},
     {"event_key": "changed_clothes", "label": "옷 갈아입음", "patterns": [r"옷 갈아입", r"갈아입으면", r"근무복 입", r"잠옷 갈아입"]},
     {"event_key": "lunch_time", "label": "점심시간", "patterns": [r"점심시간", r"점심때", r"점심 먹", r"점심 전후", r"밥 먹으면", r"밥 먹게 되면", r"식사하면"]},
@@ -128,9 +128,9 @@ def derive_event_keys_for_transition(previous_activity: Optional[str], current_a
         event_keys.extend(["arrive_work", "changed_clothes"])
     if curr == "dinner_or_cooking" and prev == "evening_free":
         event_keys.extend(["arrive_home", "arrive_somewhere"])
-    if curr == "exercise_or_cafe" and prev in {"commuting_home", "dinner_or_cooking", "weekend_brunch_or_coffee"}:
+    if curr == "evening_free" and prev in {"evening_free", "dinner_or_cooking", "weekend_brunch_or_coffee"}:
         event_keys.append("arrive_somewhere")
-    if curr == "night_wind_down" and prev in {"dinner_or_cooking", "exercise_or_cafe", "weekend_evening"}:
+    if curr == "night_wind_down" and prev in {"dinner_or_cooking", "evening_free", "weekend_evening"}:
         event_keys.extend(["lying_in_bed", "changed_clothes"])
     return list(dict.fromkeys(event_keys))
 

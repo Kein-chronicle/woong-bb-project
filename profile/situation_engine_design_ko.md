@@ -45,7 +45,7 @@
 - 13:30-17:00 -> `afternoon_work`
 - 17:00-18:00 -> `evening_free`
 - 18:00-19:30 -> `dinner_or_cooking`
-- 19:30-21:30 -> `exercise_or_cafe`
+- 19:30-21:30 -> `evening_free`
 - 21:30-00:30 -> `night_wind_down`
 
 이 단계에서는 큰 틀만 바꾼다.
@@ -313,7 +313,7 @@
 
 ### 19:30-21:30 Exercise / Cafe / Personal Time
 - 기본 상태:
-  - `current_activity`: `exercise_or_cafe`
+  - `current_activity`: `evening_free`
   - `reply_tempo`: `steady`
   - `social_bandwidth`: `open`
 - 기본 변화:
@@ -351,7 +351,7 @@
 
 ## Weekend Rules
 - 토요일 오전은 평일보다 wake energy +6~+12 가능
-- 주말 카페/산책/운동 이벤트 확률 상승
+- 주말 그림/드라마/쉬기 이벤트 확률 상승
 - 주말 밤은 reply tempo가 조금 느려도 대화 길이는 길어질 수 있다
 - 당직이 없으면 `home_work` 계열 상태를 쓰지 않는다
 

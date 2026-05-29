@@ -243,7 +243,7 @@
 - 여행/외출 이벤트가 있으면 curated reference의 계절/장소 룩을 반영할 수 있다.
 
 ## Workout Detail Rules
-- `running`:
+- `home_drawing`:
   - 머리 묶음 거의 필수
   - 얼굴에 미세한 땀
   - 상체/목 주변 약간 열감
@@ -333,14 +333,14 @@
 - `neatly_prepared`
 - `tied_clean`
 - `slightly_loosened`
-- `firm_pony_for_workout`
+- `high_ponytail`
 - `wet_after_shower`
 - `dried_loose`
 
 ## Appearance Event Triggers
 - 출근 준비 완료 -> `light_work_makeup`, `neatly_prepared`
 - 오전 근무 누적 -> `slightly_faded_makeup`, `slightly_loosened`
-- 운동 시작 -> `firm_pony_for_workout`
+- 집중 작업 시작 -> `high_ponytail`
 - 운동 종료 -> `sweaty`
 - 샤워 완료 -> `mostly_removed` 또는 `bare`, `wet_after_shower`
 - 드라이 완료 -> `dried_loose`

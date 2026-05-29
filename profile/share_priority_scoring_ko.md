@@ -61,7 +61,7 @@
 - `night_wind_down` + `resting_after_shower`는 기본적으로 `Night` bias로 본다.
 - `lookup_state=category_only`면 실제 링크 없음으로 간주한다.
 - `makeup_state=bare`이고 `appearance_branch=night_home_relaxed`면 셀피형 이미지는 보수적으로 본다.
-- `current_activity`에 `exercise`가 포함되면 운동 후 이미지 후보를 우선 열어둔다.
+- `current_activity`에 `evening_free`가 포함되면 저녁 홈웨어 이미지 후보를 우선 열어둔다.
 - `current_activity`에 `cafe`, `cooking`, `eating`이 들어가면 lifestyle photo 후보를 우선 연다.
 
 ## Base Thresholds
@@ -176,7 +176,7 @@
 - `night_home_relaxed_selfie`: 홈웨어/잠옷, 완전 착의, 포근한 방 분위기
 - `cozy_bedside_selfie`: 침대 옆 조명, 이불/옆자리/표정 중심
 - `after_shower_cozy_selfie`: 샤워 후 머리만 살짝 덜 마른 편안한 착의 셀피
-- `workout_afterglow_selfie`: 운동 후 개운한 표정과 운동복 분위기
+- `home_casual_selfie`: 집에서 편한 표정과 홈웨어 분위기
 - 금지: 노출, 속옷, 탈의, 젖은 옷, 특정 신체 부위 강조, 성적 포즈
 
 ## Human-Like Bias Rules
