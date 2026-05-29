@@ -5044,6 +5044,23 @@ def check_proactive_photo() -> None:
     save_json(PENDING_PROACTIVE_PHOTO_PATH, p)
 
 
+def run_dev_review_check(reason: str) -> None:
+    """PC 최근 변경 사항 스캔 후 dev_review_state.json 저장.
+    proactive_check에서 이 상태를 읽어 선톡 생성."""
+    import subprocess as _sp
+    scan_script = TOOLS / "scan_recent_changes.py"
+    if not scan_script.exists():
+        return
+    try:
+        _sp.run(["python3", str(scan_script)], timeout=30, capture_output=True)
+    except Exception:
+        return
+    # 변경 있으면 proactive_check를 dev_review 이유로 즉시 호출
+    review = load_json(STATE / "dev_review_state.json", {})
+    if review.get("has_changes"):
+        proactive_check("dev_review_window")
+
+
 def proactive_check(reason: str) -> None:
     mode = load_json(MODE_PATH, {}).get("current_mode", "setting")
     proactive = load_json(PROACTIVE_PATH, {})
@@ -5080,7 +5097,10 @@ def proactive_check(reason: str) -> None:
     status = "ready"
     detail = None
     waiting_reply_followup = None
-    # 웅삐 자체 비지 블록 체크 (수영/근무/수면 중 선톡 전면 억제)
+    # dev_review_window: 최근 변경 사항 요약을 컨텍스트에 주입
+    dev_review = load_json(STATE / "dev_review_state.json", {}) if reason == "dev_review_window" else {}
+    dev_review_summary = dev_review.get("summary_for_proactive") if dev_review.get("has_changes") else None
+    # 웅삐 자체 비지 블록 체크 (작업/수면 중 선톡 전면 억제)
     self_busy_state = load_json(SELF_BUSY_STATE_PATH, {})
     self_block = self_busy_state.get("current_block")
     if self_block and self_block.get("type") not in {None, "free"}:
@@ -5343,6 +5363,9 @@ def handle_timer(timer: dict) -> str:
     if timer_type == "proactive_check":
         proactive_check(reason)
         return "proactive_check"
+    if timer_type == "dev_review_check":
+        run_dev_review_check(reason)
+        return "dev_review_check"
     if timer_type == "daily_diary":
         return write_daily_diary(reason)
     if timer_type == "periodic_tick":
