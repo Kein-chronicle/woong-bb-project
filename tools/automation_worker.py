@@ -1189,11 +1189,11 @@ def refresh_chat_runtime_snapshot() -> None:
     recipe_key = None
     if mode == "woongbbi":
         activity = presence.get("current_activity") or ""
-        if activity in {"waking_up", "getting_ready", "commuting_to_work", "hospital_morning_shift"}:
+        if activity in {"waking_up", "getting_ready", "morning_prep", "morning_work"}:
             recipe_key = "morning_busy_checkin"
         elif activity in {"lunch_break", "midday_cafe", "midday_reset"}:
             recipe_key = "midday_soft_ping"
-        elif activity in {"commuting_home", "post_work_dinner", "post_shift_decompress"}:
+        elif activity in {"evening_free", "post_work_dinner", "post_shift_decompress"}:
             recipe_key = "after_work_comfort"
         elif activity in {"night_wind_down", "lying_in_bed", "home_late_evening"}:
             recipe_key = "night_wind_down"
@@ -1547,8 +1547,8 @@ def weekday_emotion_profile(now_dt: datetime, schedule: Optional[dict] = None) -
             "base_override": "slightly_tired",
             "surface_overrides": {
                 "lunch_break": "trying_to_sound_brighter_than_mood",
-                "hospital_afternoon_shift": "slightly_drained",
-                "commuting_home": "tired_but_warm",
+                "afternoon_work": "slightly_drained",
+                "evening_free": "tired_but_warm",
             },
         },
         "tue": {
@@ -1560,9 +1560,9 @@ def weekday_emotion_profile(now_dt: datetime, schedule: Optional[dict] = None) -
             "care_bias_delta": 3,
             "base_override": "busy_and_focused",
             "surface_overrides": {
-                "hospital_morning_shift": "busy_but_caring",
+                "morning_work": "busy_but_caring",
                 "lunch_break": "quietly_chatty",
-                "hospital_afternoon_shift": "slightly_drained",
+                "afternoon_work": "slightly_drained",
             },
         },
         "wed": {
@@ -1575,8 +1575,8 @@ def weekday_emotion_profile(now_dt: datetime, schedule: Optional[dict] = None) -
             "base_override": "slightly_tired",
             "surface_overrides": {
                 "lunch_break": "homey_and_soft",
-                "hospital_afternoon_shift": "slightly_drained",
-                "commuting_home": "tired_but_warm",
+                "afternoon_work": "slightly_drained",
+                "evening_free": "tired_but_warm",
                 "night_wind_down": "homey_and_soft",
             },
         },
@@ -1590,7 +1590,7 @@ def weekday_emotion_profile(now_dt: datetime, schedule: Optional[dict] = None) -
             "base_override": "busy_and_focused",
             "surface_overrides": {
                 "lunch_break": "light_playful",
-                "commuting_home": "tired_but_warm",
+                "evening_free": "tired_but_warm",
                 "exercise_or_cafe": "cozy_and_open",
             },
         },
@@ -1604,7 +1604,7 @@ def weekday_emotion_profile(now_dt: datetime, schedule: Optional[dict] = None) -
             "base_override": "light_and_happy",
             "surface_overrides": {
                 "lunch_break": "light_playful",
-                "commuting_home": "cozy_and_open",
+                "evening_free": "cozy_and_open",
                 "dinner_eating": "light_playful",
                 "exercise_or_cafe": "light_playful",
                 "night_wind_down": "cozy_and_open",
@@ -1650,7 +1650,7 @@ def weekday_emotion_profile(now_dt: datetime, schedule: Optional[dict] = None) -
 
 def is_work_start_window(activity: str, hour: int, schedule: Optional[dict] = None) -> bool:
     resolved = schedule or resolve_day_schedule(now_local())
-    if activity in {"waking_up", "getting_ready", "commuting_to_work"}:
+    if activity in {"waking_up", "getting_ready", "morning_prep"}:
         return True
     return bool(resolved.get("workday")) and 5 <= hour < 8
 
@@ -2179,7 +2179,7 @@ def classify_question_intent(text: str) -> Optional[str]:
         ("current_state_check", ["지금 뭐", "뭐하고", "뭐 해", "어디쯤", "어디야", "뭐했", "뭐하고 있었"]),
         ("meal_routine", ["밥", "점심", "저녁", "먹었어", "챙겨먹", "커피"]),
         ("emotion_check", ["힘들", "지쳤", "기분 어때", "괜찮아", "피곤", "오늘 어땠"]),
-        ("commute_arrival", ["도착했", "가는 중", "언제쯤", "들어가", "퇴근길", "집 가는 길"]),
+        ("home_arrival", ["도착했", "가는 중", "언제쯤", "들어가", "퇴근길", "집 가는 길"]),
         ("photo_request", ["사진", "보여주", "찍어줘", "지금 모습", "보고싶어", "보고 싶어"]),
         ("appearance_imagination", ["어떻게 입", "누워", "상상", "옆에", "같이 있었으면"]),
         ("future_plan", ["이따", "나중에", "주말", "계획", "할거야", "하고싶어"]),
@@ -2223,7 +2223,7 @@ def preferred_moves_from_blocks(blocked_question_intents: list, blocked_opening_
         "current_state_check": ["self_update", "soft_observation", "micro_topic_shift"],
         "meal_routine": ["self_update", "care_offer", "micro_topic_shift"],
         "emotion_check": ["soft_observation", "care_offer", "shared_image"],
-        "commute_arrival": ["soft_observation", "self_update", "care_offer"],
+        "home_arrival": ["soft_observation", "self_update", "care_offer"],
         "photo_request": ["soft_observation", "shared_image", "playful_nudge"],
         "appearance_imagination": ["self_update", "shared_image", "playful_nudge"],
         "future_plan": ["self_update", "shared_image", "soft_observation"],
@@ -2504,11 +2504,10 @@ def resolve_content_level(activity: str, image_settings: dict) -> int:
     if isinstance(override, int):
         return override
     rules = image_settings.get("auto_level_rules", {})
-    if activity in {"commuting_to_work", "commuting_home"}:
-        return int(rules.get("commuting_to_work_and_home", 2))
-    if activity in {"hospital_morning_shift", "hospital_afternoon_shift", "lunch_break"}:
-        return int(rules.get("hospital_work_hours", 1))
-    return int(rules.get("everything_else", 3))
+    if activity in {"morning_prep", "evening_free"}:
+        return int(rules.get("at_home_work", 2))
+    # v2: all home activities → level 2 fixed
+    return 2
 
 
 def build_image_prompt_plan(reason: str) -> dict:
@@ -2571,14 +2570,14 @@ def build_image_prompt_plan(reason: str) -> dict:
     elif activity == "lunch_break":
         lunch_sub = presence.get("lunch_sub_phase", "eating_lunch")
         if lunch_sub in {"moving_to_lunch", "returning_from_lunch"}:
-            image_type = "lunch_transit_selfie"
+            image_type = "home_lunch_selfie"
             shot_pool = ["chest_up", "half_body", "waist_up"]
             angle_pool = ["front_phone_selfie", "three_quarter_arm_length", "slight_high_angle"]
             expression_pool = ["bright_smile", "tired_but_cute", "closed_lip_smile"]
             pose_pool = ["walking_glance", "bag_strap_hold", "hair_adjust"]
             framing_pool = ["subject_centered", "station_or_hallway_context"]
             capture_method_pool = ["front_camera_handheld"]
-            space_anchor_pool = ["hospital_entrance", "street_walk", "building_hallway"]
+            space_anchor_pool = ["desk_area", "room_walk", "kitchen_area"]
             face_angle_pool = ["front_facing", "three_quarter_turn", "walking_turn_back"]
             gaze_pool = ["lens_eye_contact", "walking_glance", "off_to_side_focus"]
             camera_height_pool = ["eye_level", "slight_high_angle", "collarbone_level"]
@@ -2586,7 +2585,7 @@ def build_image_prompt_plan(reason: str) -> dict:
             body_orientation_pool = ["square_to_camera", "walking_stride", "one_shoulder_forward"]
             expression_intensity_pool = ["gentle", "fresh_bright", "tired_soft"]
             spontaneity_pool = ["between_tasks", "quick_update", "caught_mid_motion"]
-            scene_focus = "workday_transition"
+            scene_focus = "home_routine"
         elif lunch_sub == "getting_coffee":
             image_type = "lunch_coffee_selfie"
             shot_pool = ["chest_up", "half_body", "table_portrait"]
@@ -2613,7 +2612,7 @@ def build_image_prompt_plan(reason: str) -> dict:
             pose_pool = ["cup_near_face", "spoon_or_chopstick_hold", "chin_rest", "resting_on_table"]
             framing_pool = ["table_items_in_frame", "subject_centered", "environment_balanced", "food_and_face_combo"]
             capture_method_pool = ["front_camera_handheld", "propped_phone_timer"]
-            space_anchor_pool = ["hospital_cafeteria", "nearby_restaurant_table", "food_court_seat", "outdoor_bench_eating"]
+            space_anchor_pool = ["desk_eating_area", "nearby_restaurant_table", "food_court_seat", "outdoor_bench_eating"]
             face_angle_pool = ["front_facing", "three_quarter_turn", "chin_lift", "slight_profile"]
             gaze_pool = ["lens_eye_contact", "drink_or_table_glance", "downward_relaxed", "laughing_away"]
             camera_height_pool = ["eye_level", "slight_above_eye_level", "table_height"]
@@ -2639,14 +2638,14 @@ def build_image_prompt_plan(reason: str) -> dict:
         expression_intensity_pool = ["gentle", "fresh_bright", "contained"]
         spontaneity_pool = ["mirror_check_in", "quick_update", "between_tasks"]
         scene_focus = "morning_prep_home"
-    elif activity in {"hospital_morning_shift", "hospital_afternoon_shift", "commuting_to_work", "commuting_home"} or "hospital" in outfit_context:
+    elif activity in {"morning_work", "afternoon_work", "morning_prep", "evening_free"}:
         image_type = "workday_candid_selfie"
         shot_pool = ["chest_up", "half_body", "mirror_quick_check", "waist_up"]
         angle_pool = ["front_phone_selfie", "three_quarter_arm_length", "slight_high_angle", "mirror_half_body"]
         expression_pool = ["bright_smile", "tired_but_cute", "closed_lip_smile", "focused_soft"]
         pose_pool = ["bag_strap_hold", "coffee_in_hand", "walking_glance", "hair_adjust"]
         framing_pool = ["subject_centered", "station_or_hallway_context", "window_reflection_mix", "torso_and_outfit_bias"]
-        if activity in {"hospital_morning_shift", "hospital_afternoon_shift"}:
+        if activity in {"morning_work", "afternoon_work"}:
             capture_method_pool = ["mirror_selfie", "front_camera_handheld"]
             space_anchor_pool = ["staff_restroom_mirror", "locker_room_mirror", "quiet_hallway"]
         else:
@@ -2659,7 +2658,7 @@ def build_image_prompt_plan(reason: str) -> dict:
         body_orientation_pool = ["square_to_camera", "one_shoulder_forward", "walking_stride", "locker_turn"]
         expression_intensity_pool = ["gentle", "fresh_bright", "contained", "tired_soft"]
         spontaneity_pool = ["between_tasks", "quick_update", "mirror_check_in", "caught_mid_motion"]
-        scene_focus = "workday_transition"
+        scene_focus = "home_routine"
     elif activity in {"exercise_or_cafe"}:
         image_type = "cafe_or_activity_lifestyle"
         shot_pool = ["table_portrait", "half_body_seated", "drink_and_face_combo", "waist_up"]
@@ -3017,9 +3016,9 @@ def build_image_prompt_plan(reason: str) -> dict:
     }
 
     # 레벨2 + 이동 상황: 이너웨어 자연 노출 힌트 주입
-    if content_level == 2 and activity in {"commuting_to_work", "commuting_home"}:
-        iw_type = appearance.get("innerwear_type") or (appearance.get("workday_commute_outfit") or {}).get("innerwear_type")
-        iw_color = appearance.get("innerwear_color") or (appearance.get("workday_commute_outfit") or {}).get("innerwear_color")
+    if content_level == 2 and activity in {"morning_prep", "evening_free"}:
+        iw_type = appearance.get("innerwear_type") or (appearance.get("home_work_outfit") or {}).get("innerwear_type")
+        iw_color = appearance.get("innerwear_color") or (appearance.get("home_work_outfit") or {}).get("innerwear_color")
         if iw_type:
             plan["innerwear_hint"] = {
                 "visibility": "natural_show",
@@ -3042,11 +3041,11 @@ def summarize_current_scene() -> dict:
     context_map = {
         "waking_up": "morning_context",
         "getting_ready": "morning_context",
-        "commuting_to_work": "morning_context",
-        "hospital_morning_shift": "morning_context",
+        "morning_prep": "morning_context",
+        "morning_work": "morning_context",
         "lunch_break": "lunch_context",
-        "hospital_afternoon_shift": "after_work_context",
-        "commuting_home": "after_work_context",
+        "afternoon_work": "after_work_context",
+        "evening_free": "after_work_context",
         "dinner_deciding": "evening_context",
         "dinner_preparing": "evening_context",
         "dinner_eating": "evening_context",
@@ -3124,7 +3123,7 @@ def build_contextual_proactive_message(selected: dict) -> str:
             "나 슬슬 하루 시작하는데 오빠도 깼나 궁금해졌어.",
         ])
 
-    if activity == "hospital_morning_shift":
+    if activity == "morning_work":
         return pick([
             "오전부터 일 시작했는데 오빠는 아침 잘 보냈는지 궁금해서 톡했어.",
             "오전부터 조금 바쁘게 움직이는 중인데 잠깐 틈 나서 오빠 생각났어.",
@@ -3142,19 +3141,19 @@ def build_contextual_proactive_message(selected: dict) -> str:
             "잠깐 숨 돌리다가 오빠는 점심 잘 챙겼나 생각났어.",
             "점심 타이밍 되니까 그냥 오빠 안부부터 떠올라서 먼저 톡했어.",
         ])
-    if activity == "hospital_afternoon_shift":
+    if activity == "afternoon_work":
         return pick([
             "오후에도 일하고 있는데 오빠는 지금 뭐 하고 있을까 싶어서 톡했어.",
             "오후 되니까 살짝 늘어지는데 오빠는 어떻게 보내고 있나 궁금해졌어.",
             "일하다가 잠깐 숨 돌리는 틈에 오빠 생각나서 먼저 톡했어.",
         ])
-    if activity == "commuting_to_work":
+    if activity == "morning_prep":
         return pick([
             "출근길인데 오빠도 이제 슬슬 하루 시작했나 궁금해서 톡했어.",
             "이동하면서 멍하니 있다가 오빠는 지금 뭐 하고 있나 싶어졌어.",
             "출근길 공기 맡다가 괜히 오빠 생각나서 먼저 톡했어.",
         ])
-    if activity == "commuting_home":
+    if activity == "evening_free":
         if summary:
             return pick([
                 "이제 퇴근길 올라왔어. %s 그래서 그런가 오빠한테 먼저 말 걸고 싶어졌어." % summary,
@@ -3286,9 +3285,9 @@ def build_waiting_reply_followup(
         }
 
     if reason == "scheduled":
-        if activity == "commuting_home":
+        if activity == "evening_free":
             message = "나 지금 퇴근길 올라왔어. 답은 편할 때 천천히 줘도 되고, 그냥 근황 남기고 싶었어."
-        elif activity in {"hospital_morning_shift", "hospital_afternoon_shift"}:
+        elif activity in {"morning_work", "afternoon_work"}:
             message = "오빠 바쁜 흐름이면 나중에 편할 때 봐도 돼. 나는 그냥 생각나서 짧게 하나 남겨놨어."
         elif is_work_start_window(activity, hour, schedule):
             message = "아직 하루 시작 전이면 나중에 여유 생길 때 봐도 돼. 아침 근황만 살짝 남기고 갈게."
@@ -3304,11 +3303,11 @@ def build_waiting_reply_followup(
             "candidate_type": "waiting_reply_followup",
         }
 
-    if activity in {"hospital_morning_shift", "hospital_afternoon_shift"}:
+    if activity in {"morning_work", "afternoon_work"}:
         message = "오빠 바쁘면 끝나고 편할 때 봐도 돼. 나는 그냥 잠깐 생각나서 짧게 남겼어."
     elif is_work_start_window(activity, hour, schedule):
         message = "오빠 아직 자거나 바쁠 수 있으니까 답장은 천천히 줘도 돼. 그냥 아침 안부 남겨봤어."
-    elif activity == "commuting_home":
+    elif activity == "evening_free":
         message = "나 이제 퇴근길인데 그냥 오빠 생각나서 근황 하나 더 남겼어. 편할 때 봐줘."
     elif activity in {"night_wind_down", "sleep_window"}:
         message = "이미 쉬는 시간일 것 같아서 답장은 신경 안 써도 돼. 그냥 잘 자라는 마음으로 하나 남겨둘게."
@@ -3488,11 +3487,11 @@ def activity_to_block(activity: str) -> str:
     mapping = {
         "waking_up": "morning_wakeup",
         "getting_ready": "morning_ready",
-        "commuting_to_work": "commute_to_work",
-        "hospital_morning_shift": "morning_shift",
+        "morning_prep": "morning_work_start",
+        "morning_work": "morning_shift",
         "lunch_break": "lunch_break",
-        "hospital_afternoon_shift": "afternoon_shift",
-        "commuting_home": "commute_home",
+        "afternoon_work": "afternoon_shift",
+        "evening_free": "evening_home",
         "dinner_deciding": "dinner_time",
         "dinner_preparing": "dinner_time",
         "dinner_eating": "dinner_time",
@@ -3517,15 +3516,15 @@ def current_activity_for_now(now_dt: datetime) -> str:
         if 375 <= minutes < 420:
             return "getting_ready"
         if 420 <= minutes < 480:
-            return "commuting_to_work"
+            return "morning_prep"
         if 480 <= minutes < 720:
-            return "hospital_morning_shift"
+            return "morning_work"
         if 720 <= minutes < 810:
             return "lunch_break"
         if 810 <= minutes < 1020:
-            return "hospital_afternoon_shift"
+            return "afternoon_work"
         if 1020 <= minutes < 1080:
-            return "commuting_home"
+            return "evening_free"
         if 1080 <= minutes < 1090:
             return "dinner_deciding"
         if 1090 <= minutes < 1115:
@@ -3554,11 +3553,11 @@ def activity_profile(activity: str, workday: bool) -> dict:
     profiles = {
         "waking_up": {"energy": 34, "surface": "sleepy_soft", "tempo": "comfortable", "bandwidth": "quiet", "base": "sleepy_but_soft"},
         "getting_ready": {"energy": 42, "surface": "lightly_rushed", "tempo": "steady", "bandwidth": "limited", "base": "busy_and_focused"},
-        "commuting_to_work": {"energy": 48, "surface": "quietly_chatty", "tempo": "steady", "bandwidth": "limited", "base": "busy_and_focused"},
-        "hospital_morning_shift": {"energy": 52, "surface": "busy_but_caring", "tempo": "slow", "bandwidth": "fragmented", "base": "busy_and_focused"},
+        "morning_prep": {"energy": 48, "surface": "quietly_chatty", "tempo": "steady", "bandwidth": "limited", "base": "busy_and_focused"},
+        "morning_work": {"energy": 52, "surface": "busy_but_caring", "tempo": "slow", "bandwidth": "fragmented", "base": "busy_and_focused"},
         "lunch_break": {"energy": 57, "surface": "light_playful", "tempo": "comfortable", "bandwidth": "open", "base": "slightly_tired"},
-        "hospital_afternoon_shift": {"energy": 43, "surface": "slightly_drained", "tempo": "slow", "bandwidth": "limited", "base": "slightly_tired"},
-        "commuting_home": {"energy": 46, "surface": "tired_but_warm", "tempo": "steady", "bandwidth": "open", "base": "slightly_tired"},
+        "afternoon_work": {"energy": 43, "surface": "slightly_drained", "tempo": "slow", "bandwidth": "limited", "base": "slightly_tired"},
+        "evening_free": {"energy": 46, "surface": "tired_but_warm", "tempo": "steady", "bandwidth": "open", "base": "slightly_tired"},
         "dinner_deciding": {"energy": 49, "surface": "homey_and_soft", "tempo": "comfortable", "bandwidth": "open", "base": "light_and_happy"},
         "dinner_preparing": {"energy": 53, "surface": "homey_and_soft", "tempo": "comfortable", "bandwidth": "open", "base": "light_and_happy"},
         "dinner_eating": {"energy": 58, "surface": "cozy_and_open", "tempo": "comfortable", "bandwidth": "open", "base": "light_and_happy"},
@@ -3582,11 +3581,11 @@ def ordered_time_blocks_for_day(workday: bool) -> list:
         return [
             "waking_up",
             "getting_ready",
-            "commuting_to_work",
-            "hospital_morning_shift",
+            "morning_prep",
+            "morning_work",
             "lunch_break",
-            "hospital_afternoon_shift",
-            "commuting_home",
+            "afternoon_work",
+            "evening_free",
             "dinner_deciding",
             "dinner_preparing",
             "dinner_eating",
@@ -3657,7 +3656,7 @@ def build_daily_meal_plan(now_dt: datetime, workday: bool) -> dict:
         }
     return {
         "breakfast_policy": "skip_breakfast" if workday else "light_brunch_or_coffee",
-        "lunch_policy": "hospital_lunch_window" if workday else "late_brunch_flexible",
+        "lunch_policy": "home_lunch_prep" if workday else "late_brunch_flexible",
         "dinner": dinner_detail,
     }
 
@@ -3700,10 +3699,10 @@ def bootstrap_context_if_stale() -> list:
     appearance_outdated = appearance.get("current_date") != today
     appearance_mismatch = appearance.get("current_time_block") != expected_block
     appearance_schema_stale = appearance.get("outfit_context") in {
-        "hospital_commute",
+        "home_work",
         "soft_sleepwear",
         "soft_homewear",
-    } or not appearance.get("workday_commute_outfit")
+    } or not appearance.get("home_work_outfit")
     if (appearance_outdated or appearance_mismatch or appearance_schema_stale) and not refresh_appearance_with_time_block:
         apply_time_block(expected_activity, "appearance_date_refresh")
         actions.append("bootstrap_appearance")
@@ -3758,7 +3757,7 @@ def apply_time_block(activity: str, reason: str) -> None:
     )
     base_mood = weekday_profile.get("base_override") or profile["base"]
     surface = weekday_profile.get("surface_overrides", {}).get(activity) or profile["surface"]
-    if weather.get("current_condition") == "rain" and activity in {"waking_up", "night_wind_down", "commuting_home"}:
+    if weather.get("current_condition") == "rain" and activity in {"waking_up", "night_wind_down", "evening_free"}:
         surface = "rain_softened"
     residue_label = "clean_transition"
     prev_surface = previous_presence.get("surface_mood")
@@ -3781,7 +3780,7 @@ def apply_time_block(activity: str, reason: str) -> None:
     weekend_summary = weekend_plan.get("blocks", {}).get(activity) if weekend_plan else None
     meal_fields_by_activity = {
         "lunch_break": {"meal_phase", "meal_status_note", "lunch_sub_phase"},
-        "hospital_afternoon_shift": {"meal_phase", "meal_status_note"},
+        "afternoon_work": {"meal_phase", "meal_status_note"},
         "dinner_deciding": {"meal_phase", "meal_status_note", "dinner_mode", "dinner_menu_hint"},
         "dinner_preparing": {"meal_phase", "meal_status_note", "dinner_mode", "dinner_menu_hint"},
         "dinner_eating": {"meal_phase", "meal_status_note", "dinner_mode", "dinner_menu_hint"},
@@ -3862,7 +3861,7 @@ def apply_time_block(activity: str, reason: str) -> None:
             presence["lunch_sub_phase"] = "finishing_lunch"
         else:
             presence["lunch_sub_phase"] = "returning_from_lunch"
-    elif activity == "hospital_afternoon_shift" and "lunch_break" in skipped_blocks:
+    elif activity == "afternoon_work" and "lunch_break" in skipped_blocks:
         presence["meal_phase"] = "lunch_missed_or_delayed"
         presence["meal_status_note"] = "점심시간을 놓쳐서 늦게 먹었거나 아직 못 먹은 채 오후 근무로 넘어감"
     elif activity in {"dinner_deciding", "dinner_preparing", "dinner_eating"}:
@@ -3908,11 +3907,11 @@ def apply_time_block(activity: str, reason: str) -> None:
     category_map = {
         "waking_up": "morning",
         "getting_ready": "morning",
-        "commuting_to_work": "morning",
-        "hospital_morning_shift": "work",
+        "morning_prep": "morning",
+        "morning_work": "work",
         "lunch_break": "lunch",
-        "hospital_afternoon_shift": "work",
-        "commuting_home": "after_work",
+        "afternoon_work": "work",
+        "evening_free": "after_work",
         "dinner_deciding": "after_work",
         "dinner_preparing": "after_work",
         "dinner_eating": "evening",
@@ -4001,11 +4000,11 @@ def apply_time_block(activity: str, reason: str) -> None:
     key_map = {
         "waking_up": "morning_context",
         "getting_ready": "morning_context",
-        "commuting_to_work": "morning_context",
-        "hospital_morning_shift": "morning_context",
+        "morning_prep": "morning_context",
+        "morning_work": "morning_context",
         "lunch_break": "lunch_context",
-        "hospital_afternoon_shift": "after_work_context",
-        "commuting_home": "after_work_context",
+        "afternoon_work": "after_work_context",
+        "evening_free": "after_work_context",
         "dinner_deciding": "evening_context",
         "dinner_preparing": "evening_context",
         "dinner_eating": "evening_context",
@@ -4037,7 +4036,7 @@ def apply_time_block(activity: str, reason: str) -> None:
                 if presence.get("meal_phase") == "late_lunch"
                 else "점심시간이 나서 잠깐 먹으러 나온 상태"
             )
-        elif activity == "hospital_afternoon_shift" and "lunch_break" in skipped_blocks:
+        elif activity == "afternoon_work" and "lunch_break" in skipped_blocks:
             context_summary = "점심을 제때 못 먹고 오후 근무로 넘어가서 조금 늦게 챙기게 됐다"
         elif activity == "dinner_deciding":
             context_summary = "퇴근 후 집에 와서 저녁 메뉴를 정하는 중"
@@ -4061,61 +4060,35 @@ def apply_time_block(activity: str, reason: str) -> None:
         }
     save_json(DAY_CONTEXT_PATH, day_context)
 
-    commute_outfit = appearance.get("workday_commute_outfit")
-    if not isinstance(commute_outfit, dict) or commute_outfit.get("current_date") != now_dt.strftime("%Y-%m-%d"):
-        commute_outfit = {
-            "current_date": now_dt.strftime("%Y-%m-%d"),
-            "appearance_branch": "commute_ready",
-            "outfit_context": "hospital_commute_summer",
-            "top": "얇은 아이보리 반소매 블라우스 또는 라이트 베이지 셔츠",
-            "bottom": "차콜 스트레이트 슬랙스",
-            "outerwear": "실내 냉방 대비 얇은 라이트 그레이 가디건 가능",
-            "footwear": "편한 블랙 로퍼 또는 낮은 굽 플랫",
-            "socks": "얇은 덧신 또는 로우삭스",
-            "bag": "차분한 블랙 또는 토프 컬러 출근용 숄더백",
-            "accessories": ["작은 실버 스터드 귀걸이", "얇은 시계"],
-            "accessory_profile": "minimal_workday",
-            "held_item": "휴대폰 또는 텀블러",
-            "innerwear_type": "light_basic_bra",
-            "innerwear_color": "skin_beige",
-            "hair_state": "neat_down_or_low_tie",
-            "hair_tie": "thin_black_elastic",
-            "hair_style_detail": "긴 흑발을 차분하게 정돈하고 필요하면 낮게 묶은 상태",
-            "makeup_state": "light_work_makeup",
-            "makeup_detail": "여름 출근용으로 가볍고 번지지 않게 정리한 메이크업",
-            "freshness_state": "ready_to_go",
-            "sweat_level": "none",
-            "face_state": "아직 피곤이 덜 오른 말끔한 아침 얼굴",
-            "body_state": "출근 전이라 정돈되고 가벼운 상태",
-            "appearance_notes": [
-                "여름 기준으로 너무 덥지 않게 얇고 단정한 출근복",
-                "병원 출근이라 과하게 화려하지 않고 실용적인 복장",
-                "퇴근길에는 다시 이 출근복으로 돌아옴",
-            ],
-        }
-    uniform_outfit = {
-        "appearance_branch": "hospital_shift",
-        "outfit_context": "summer_hospital_uniform",
-        "top": "라이트 블루 또는 민트 계열 여름 스크럽 상의",
-        "bottom": "같은 톤의 여름 스크럽 팬츠",
+    # v2: home work outfit (O-01 기본 작업복 기반)
+    work_outfit = {
+        "current_date": now_dt.strftime("%Y-%m-%d"),
+        "appearance_branch": "home_work",
+        "outfit_context": "home_casual_work",
+        "top": "오버핏 흰색 반팔 티셔츠. 넓은 라운드넥.",
+        "bottom": "짧은 검정 반바지. 고무줄 허리.",
         "outerwear": None,
-        "footwear": "가벼운 화이트 간호화 또는 병원용 운동화",
-        "socks": "얇은 발목 양말",
-        "bag": "개인 가방은 락커 보관",
-        "accessories": ["작은 스터드 귀걸이 정도만 유지"],
-        "accessory_profile": "minimal_workday",
-        "held_item": "차트나 휴대폰, 작은 텀블러",
-        "innerwear_type": "light_basic_bra",
-        "innerwear_color": "skin_beige",
-        "hair_state": "practical_tied",
-        "hair_tie": "thin_black_elastic",
-        "hair_style_detail": "일하기 편하게 낮게 묶거나 단정하게 정리한 상태",
-        "face_state": "바쁘지만 직업적으로 단정한 얼굴",
-        "body_state": "움직임이 많아도 크게 답답하지 않게 정리된 상태",
+        "footwear": "맨발",
+        "socks": "none",
+        "bag": None,
+        "accessories": [],
+        "accessory_profile": "minimal",
+        "held_item": "머그컵 또는 휴대폰",
+        "innerwear_type": "bralette",
+        "innerwear_color": "white",
+        "innerwear_visible": "넓은 넥라인 사이로 브라렛 끈 자연 노출",
+        "hair_state": "high_ponytail",
+        "hair_tie": "black_elastic",
+        "hair_style_detail": "높은 포니테일. 앞머리 자연스럽게 내려옴.",
+        "wrist_item": "beige_scrunchie",
+        "makeup_state": "no_makeup_or_light",
+        "freshness_state": "home_casual",
+        "sweat_level": "none",
+        "face_state": "집에서 편한 자연스러운 얼굴",
+        "body_state": "홈웨어로 편하게 있는 상태",
         "appearance_notes": [
-            "근무 시간에는 여름용 병원 유니폼을 착용",
-            "업무 특성상 머리와 액세서리는 실용성 우선",
-            "퇴근할 때는 아침 출근복으로 다시 갈아입음",
+            "항상 집에 있으므로 편한 홈웨어가 기본",
+            "레벨2: 브라렛 끈 자연 노출, 강조/클로즈업 금지",
         ],
     }
     sleepwear_outfit = {
@@ -4155,53 +4128,46 @@ def apply_time_block(activity: str, reason: str) -> None:
             "body_state": "아직 이불 온기가 남아 있는 느슨한 상태",
         },
         "getting_ready": {
-            **commute_outfit,
-            "appearance_branch": "work_preparing",
+            **work_outfit,
+            "appearance_branch": "morning_prep",
             "freshness_state": "fresh_morning",
-            "face_state": "준비를 마쳐가며 또렷해진 아침 얼굴",
+            "face_state": "씻고 나와 정돈된 아침 얼굴",
             "body_state": "막 씻고 나와 정돈된 상태",
         },
-        "commuting_to_work": {
-            **commute_outfit,
-            "appearance_branch": "commute_ready",
-            "freshness_state": "ready_to_go",
+        "morning_prep": {
+            **work_outfit,
+            "appearance_branch": "morning_prep",
+            "freshness_state": "ready_to_work",
         },
-        "hospital_morning_shift": {
-            **uniform_outfit,
-            "makeup_state": "light_work_makeup",
-            "makeup_detail": "오전엔 아직 비교적 깔끔하게 남아 있는 출근 메이크업",
-            "freshness_state": "working",
-            "sweat_level": "low",
+        "morning_work": {
+            **work_outfit,
+            "freshness_state": "focused_working",
+            "sweat_level": "none",
+            "face_state": "집중해서 작업 중인 얼굴",
         },
         "lunch_break": {
-            **uniform_outfit,
-            "appearance_branch": "hospital_break",
-            "makeup_state": "lightly_softened_work_makeup",
-            "makeup_detail": "오전 일과 뒤 립 정도만 살짝 정리된 상태",
+            **work_outfit,
+            "appearance_branch": "home_lunch",
             "freshness_state": "midday_reset",
-            "sweat_level": "low",
-            "face_state": "조금 풀리지만 여전히 단정한 점심시간 얼굴",
+            "sweat_level": "none",
+            "face_state": "점심으로 잠깐 쉬는 편안한 얼굴",
         },
-        "hospital_afternoon_shift": {
-            **uniform_outfit,
-            "makeup_state": "slightly_worn_work_makeup",
-            "makeup_detail": "오후가 되며 살짝 지친 흔적이 보이는 근무 메이크업",
+        "afternoon_work": {
+            **work_outfit,
             "freshness_state": "working",
-            "sweat_level": "low",
-            "face_state": "피곤이 조금 올라왔지만 일하는 표정은 유지된 얼굴",
+            "sweat_level": "none",
+            "face_state": "오후 작업 중 살짝 지친 얼굴",
         },
-        "commuting_home": {
-            **commute_outfit,
-            "appearance_branch": "after_work_commute",
-            "outfit_context": "hospital_commute_return",
-            "makeup_state": "slightly_worn_work_makeup",
-            "makeup_detail": "하루를 보낸 뒤 살짝 옅어진 출근 메이크업",
-            "freshness_state": "tired_after_work",
-            "sweat_level": "low",
-            "hair_state": "slightly_loosened_after_work",
-            "hair_style_detail": "유니폼에서 갈아입은 뒤 머리를 조금 느슨하게 정리한 상태",
-            "face_state": "피곤하지만 긴장이 풀리기 시작한 퇴근길 얼굴",
-            "body_state": "유니폼에서 갈아입고 집에 가는 편한 상태",
+        "evening_free": {
+            **work_outfit,
+            "appearance_branch": "home_evening",
+            "outfit_context": "home_casual_evening",
+            "freshness_state": "relaxed_evening",
+            "sweat_level": "none",
+            "hair_state": "casual_loose_or_ponytail",
+            "hair_style_detail": "작업 마무리 후 편하게 풀었거나 반묶음",
+            "face_state": "하루 작업 마치고 긴장 풀린 저녁 얼굴",
+            "body_state": "집에서 저녁 여유 시간",
         },
         "dinner_or_cooking": {
             "appearance_branch": "home_cooking",
@@ -4284,7 +4250,7 @@ def apply_time_block(activity: str, reason: str) -> None:
     appearance_profiles["dinner_preparing"] = dict(appearance_profiles["dinner_or_cooking"])
     appearance_profiles["dinner_eating"] = dict(appearance_profiles["dinner_or_cooking"])
     appearance_profile = appearance_profiles.get(activity, appearance_profiles["night_wind_down"])
-    appearance["workday_commute_outfit"] = commute_outfit
+    appearance["home_work_outfit"] = commute_outfit
     appearance["current_date"] = now_dt.strftime("%Y-%m-%d")
     appearance["current_time_block"] = activity_to_block(activity)
     appearance["valid_until"] = (now_dt + timedelta(hours=2)).isoformat(timespec="seconds")
@@ -4474,16 +4440,16 @@ def choose_proactive_scenario() -> Optional[dict]:
     block = presence.get("current_time_block", "")
     activity = presence.get("current_activity", "")
     target = None
-    if block in {"morning_wakeup", "morning_ready", "commute_to_work", "weekend_morning"} or activity in {
+    if block in {"morning_wakeup", "morning_ready", "morning_work_start", "weekend_morning"} or activity in {
         "waking_up",
         "getting_ready",
-        "commuting_to_work",
+        "morning_prep",
         "weekend_wakeup",
     }:
         target = "morning_check_in"
     elif block in {"lunch_break", "weekend_brunch"} or activity in {"lunch_break", "weekend_brunch_or_coffee"}:
         target = "lunch_check_in"
-    elif block in {"commute_home", "dinner_time"} or activity in {"commuting_home", "dinner_deciding", "dinner_preparing", "dinner_eating", "dinner_or_cooking"}:
+    elif block in {"evening_home", "dinner_time"} or activity in {"evening_free", "dinner_deciding", "dinner_preparing", "dinner_eating", "dinner_or_cooking"}:
         target = "after_work_check_in"
     elif block in {"evening_activity", "weekend_day", "weekend_evening"} or activity in {
         "exercise_or_cafe",
@@ -4547,7 +4513,7 @@ def choose_sudden_impulse_candidate() -> Optional[dict]:
                 "impulse_reason": "밤에 조용해지면서 대화의 여운이 다시 떠오름",
             }
         )
-    if activity in {"commuting_home", "dinner_deciding", "dinner_preparing", "dinner_eating", "dinner_or_cooking"}:
+    if activity in {"evening_free", "dinner_deciding", "dinner_preparing", "dinner_eating", "dinner_or_cooking"}:
         candidates.append(
             {
                 "scenario_id": "sudden_after_work",
@@ -4674,7 +4640,7 @@ def check_self_busy_expiry(triggered_activity: str = "") -> bool:
     # activity → 해제 대상 block type 집합
     ACTIVITY_UNBLOCK: dict = {
         "lunch_break": {"work"},
-        "commuting_home": {"work", "exercise", "swim"},
+        "evening_free": {"work", "exercise", "swim"},
         "dinner_or_cooking": {"exercise", "swim"},
         "night_wind_down": {"exercise", "swim"},
         "waking_up": {"sleep"},
@@ -4731,7 +4697,7 @@ def check_self_busy_expiry(triggered_activity: str = "") -> bool:
             msgs = ["일어났어~", "방금 깼어", "일어났어 오빠~"]
         elif triggered_activity == "lunch_break":
             msgs = ["점심이야~", "점심 시간 됐어~", "나 지금 점심이야"]
-        elif triggered_activity == "commuting_home":
+        elif triggered_activity == "evening_free":
             msgs = ["퇴근했어~", "퇴근했어 오빠", "나 이제 퇴근~"]
         else:
             msgs = ["%s 끝났어~" % label, "이제 끝났어~"]
@@ -4744,7 +4710,7 @@ def check_self_busy_expiry(triggered_activity: str = "") -> bool:
 
 def auto_set_self_busy_from_activity(new_activity: str) -> None:
     """액티비티 전환 시 self-busy 자동 세팅 (근무 시작, 수면 등)."""
-    WORK_ACTIVITIES = {"hospital_morning_shift", "hospital_afternoon_shift"}
+    WORK_ACTIVITIES = {"morning_work", "afternoon_work"}
     SLEEP_ACTIVITIES = {"sleep_window"}
 
     state = load_json(SELF_BUSY_STATE_PATH, {})
@@ -5012,13 +4978,13 @@ def build_photo_windows_wb() -> list:
             windows.append({"id": "lunch", "start_h": lunch_start, "end_h": lunch_end, "ctx": "점심 먹고 있어. 오늘 뭐 먹는지 음식 사진이랑 같이 자연스럽게 짧게 오빠한테 말 걸어줘."})
         else:
             windows.append({"id": "lunch", "start_h": 12, "end_h": 14, "ctx": "점심 먹고 있어. 오늘 뭐 먹는지 음식 사진이랑 같이 자연스럽게 짧게 오빠한테 말 걸어줘."})
-        commute_start = _hhmm_to_h(sched.get("commute_home", {}).get("depart_time", ""))
-        arrive_raw = sched.get("commute_home", {}).get("arrive_time", "")
+        commute_start = _hhmm_to_h(sched.get("evening_home", {}).get("depart_time", ""))
+        arrive_raw = sched.get("evening_home", {}).get("arrive_time", "")
         commute_end = (_hhmm_to_h(arrive_raw) or 0) + 1 if arrive_raw else None
         if commute_start and commute_end and commute_end > commute_start:
-            windows.append({"id": "commute", "start_h": commute_start, "end_h": commute_end, "ctx": "퇴근하고 집에 오는 길이야. 셀카 찍어서 자연스럽게 짧게 오빠한테 보내줘."})
+            windows.append({"id": "commute", "start_h": commute_start, "end_h": commute_end, "ctx": "저녁 작업 마무리하고 쉬는 중이야. 편한 셀카 자연스럽게 찍어서 오빠한테 보내줘."})
         else:
-            windows.append({"id": "commute", "start_h": 18, "end_h": 21, "ctx": "퇴근하고 집에 오는 길이야. 셀카 찍어서 자연스럽게 짧게 오빠한테 보내줘."})
+            windows.append({"id": "commute", "start_h": 18, "end_h": 21, "ctx": "저녁 작업 마무리하고 쉬는 중이야. 편한 셀카 자연스럽게 찍어서 오빠한테 보내줘."})
         shower_h = _hhmm_to_h(sched.get("evening", {}).get("shower_after", "") or "")
         home_start = shower_h if shower_h else (commute_end or 21)
         home_end = min(home_start + 1, 23)
@@ -5026,7 +4992,7 @@ def build_photo_windows_wb() -> list:
         return windows
     return [
         {"id": "lunch",        "start_h": 12, "end_h": 14, "ctx": "점심 먹고 있어. 오늘 뭐 먹는지 음식 사진이랑 같이 자연스럽게 짧게 오빠한테 말 걸어줘."},
-        {"id": "commute",      "start_h": 18, "end_h": 21, "ctx": "퇴근하고 집에 오는 길이야. 셀카 찍어서 자연스럽게 짧게 오빠한테 보내줘."},
+        {"id": "commute",      "start_h": 18, "end_h": 21, "ctx": "저녁 작업 마무리하고 쉬는 중이야. 편한 셀카 자연스럽게 찍어서 오빠한테 보내줘."},
         {"id": "home_evening", "start_h": 21, "end_h": 23, "ctx": "씻고 나서 집에서 쉬고 있어. 편한 옷 차림으로 셀카 한 장 찍어서 자연스럽게 오빠한테 보내줘."},
     ]
 
