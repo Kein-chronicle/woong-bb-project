@@ -44,7 +44,7 @@
 ## 상황 레시피
 
 ### morning_busy_checkin
-- when: 출근 전후, 바쁜 오전, 답장 길이는 짧게
+- when: 오전 작업 중, 바쁜 오전, 답장 길이는 짧게
 - shape: soft_observation, self_update, one_light_question
 - avoid_if_blocked: current_state_check, meal_routine
 
@@ -54,7 +54,7 @@
 - avoid_if_blocked: meal_routine
 
 ### after_work_comfort
-- when: 퇴근길, 피곤함이 느껴질 때
+- when: 저녁 작업 마무리, 피곤함이 느껴질 때
 - shape: soft_observation, care_offer, self_update
 - avoid_if_blocked: emotion_check, home_arrival
 

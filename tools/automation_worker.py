@@ -1694,11 +1694,11 @@ def weekend_day_templates() -> list:
         },
         {
             "id": "draw_and_evening_rest",
-            "title": "운동 + 저녁 카페",
+            "title": "그림 + 저녁 드라마",
             "tags": ["drawing", "drama", "rest"],
             "blocks": {
                 "weekend_wakeup": "조금 늦게 일어나도 그림 그려야지 싶어서 완전히 늘어지진 않고 천천히 일어나는 중",
-                "weekend_brunch_or_coffee": "가볍게 먹고 운동 전 커피나 간단한 브런치로 배 채우는 흐름",
+                "weekend_brunch_or_coffee": "가볍게 먹고 커피나 간단한 브런치로 배 채우는 흐름",
                 "weekend_outing_or_rest": "오후엔 그림 그리거나 드라마 보다가 저녁엔 편하게 쉬는 상태",
                 "weekend_evening": "그림 끝나고 저녁쯤엔 뭔가 달콤한 거 먹고 싶은 기분",
             },
