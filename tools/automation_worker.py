@@ -1734,7 +1734,7 @@ def weekend_day_templates() -> list:
             "tags": ["errands", "home", "reset"],
             "blocks": {
                 "weekend_wakeup": "밀린 잠 조금 자고 일어나서 집안 정리나 장 볼 생각을 천천히 하는 중",
-                "weekend_brunch_or_coffee": "브런치 먹고 장 보러 나가기 전에 체크리스트 대충 정리하는 상태",
+                "weekend_brunch_or_coffee": "브런치 먹고 작업 시작 전에 체크리스트 대충 정리하는 상태",
                 "weekend_outing_or_rest": "오후에는 드라마 보고 저녁엔 요리해서 집밥으로 마무리하는 흐름",
                 "weekend_evening": "저녁엔 직접 챙긴 집밥 먹고 주말 마무리답게 집에서 안정감 있게 쉬는 분위기",
             },

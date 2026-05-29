@@ -63,7 +63,7 @@ WEEKDAY_LUNCH = [
     {"menu": "김치찌개", "location": "집 부엌"},
     {"menu": "돈까스", "location": "집 부엌"},
     {"menu": "쌀국수", "location": "집 부엌"},
-    {"menu": "참치마요 삼각김밥 + 컵라면", "location": "편의점 (바빠서)"},
+    {"menu": "컵라면 + 냉장고 있던 거", "location": "집 부엌 (바빠서)"},
     {"menu": "샌드위치", "location": "집 부엌"},
     {"menu": "비빔국수", "location": "집 부엌"},
 ]
@@ -87,7 +87,7 @@ WEEKDAY_EXERCISE = [
     {"type": "그림 그리기", "location": "집 데스크", "duration_min": 60},
     {"type": "자전거", "location": "한강 자전거도로", "duration_min": 50, "shower": True},
     {"type": "그림 그리기", "location": "집 데스크", "duration_min": 40},
-    {"type": "없음 (카페)", "location": "집 근처 카페", "duration_min": 90, "shower": False},
+    {"type": "드라마 보기", "location": "집 침대", "duration_min": 90},
     {"type": "없음 (집)", "location": "집", "duration_min": 0, "shower": False},
 ]
 
@@ -167,10 +167,10 @@ NIGHT_OTT_PICKS = [
     {"platform": "유튜브", "title": "올리브영 신상 하울 영상", "kind": "beauty", "detail": "스킨케어 하울 리뷰"},
     {"platform": "유튜브", "title": "개발자 일상 브이로그", "kind": "vlog", "detail": "코딩 일상 vlog"},
     {"platform": "유튜브", "title": "자취방 인테리어 영상 구경", "kind": "vlog", "detail": "원룸 꾸미기 브이로그"},
-    {"platform": "유튜브", "title": "주말 카페 브이로그", "kind": "vlog", "detail": "서울 감성 카페 vlog"},
+    {"platform": "유튜브", "title": "개발자 일상 브이로그", "kind": "vlog", "detail": "코딩하는 일상 vlog"},
     {"platform": "유튜브", "title": "데일리 메이크업 튜토리얼", "kind": "beauty", "detail": "출근 메이크업 영상"},
     # 먹방/음식
-    {"platform": "유튜브", "title": "편의점 신상 후기 영상", "kind": "food", "detail": "GS25 CU 신상 리뷰"},
+    {"platform": "유튜브", "title": "집밥 레시피 영상", "kind": "food", "detail": "간단 요리 레시피 모음"},
     {"platform": "유튜브", "title": "혼자 먹는 분식 먹방", "kind": "food", "detail": "떡볶이 순대 먹방"},
     {"platform": "유튜브", "title": "간단 자취 요리 레시피", "kind": "food", "detail": "간단 자취 밥 레시피"},
     # 아이돌/음악
@@ -207,8 +207,8 @@ WEEKEND_AFTERNOON_DETAIL = {
     "전시": ["미술 전시 천천히 둘러보기", "사진전 구경하고 굿즈 사기", "팝업 전시 구경"],
     "쇼핑": ["옷 구경하면서 피팅", "화장품이랑 소품 구경", "신발 보러 돌아다니기"],
     "집에서 쉬기": ["밀린 빨래랑 청소", "침대에서 뒹굴뒹굴 영화", "방 정리하고 향초 켜기"],
-    "드라이브": ["가까운 바다 쪽으로 드라이브", "노을 보러 한강 드라이브", "교외 카페까지 드라이브"],
-    "친구 만남": ["친구랑 브런치하고 수다", "친구랑 카페 투어", "친구랑 쇼핑하고 저녁"],
+    "그림 그리기": ["디지털 드로잉 집중", "스케치 연습", "오빠한테 보여줄 그림 구상"],
+    "영상 보기": ["새 드라마 보기 시작", "오빠한테 추천받은 영화", "좋아하는 브이로그 몰아보기"],
 }
 WEEKEND_BRUNCH_WITH = ["혼자 느긋하게", "친구랑", "동생이랑", "혼자 책 보면서"]
 WEEKEND_MORNING_FLOW = [
@@ -241,13 +241,13 @@ OUTFIT_CASUAL = [
 ]
 
 WEEKEND_BRUNCH = [
-    {"menu": "아보카도 토스트 + 아메리카노", "location": "브런치 카페", "time": "10:40"},
-    {"menu": "팬케이크 + 라떼", "location": "동네 카페", "time": "10:30"},
-    {"menu": "에그베네딕트 + 오렌지 주스", "location": "브런치 카페", "time": "11:00"},
+    {"menu": "아보카도 토스트 + 아메리카노", "location": "집 식탁", "time": "10:40"},
+    {"menu": "팬케이크 + 라떼", "location": "집 식탁", "time": "10:30"},
+    {"menu": "에그베네딕트 + 오렌지 주스", "location": "집 식탁", "time": "11:00"},
     {"menu": "오믈렛 + 빵 + 커피", "location": "집 (직접 만든 거)", "time": "10:20"},
-    {"menu": "샌드위치 + 카페라떼", "location": "동네 카페", "time": "10:45"},
+    {"menu": "샌드위치 + 라떼", "location": "집 식탁", "time": "10:45"},
     {"menu": "그래놀라 + 요거트 + 과일", "location": "집", "time": "10:00"},
-    {"menu": "크로플 + 아이스라떼", "location": "카페", "time": "11:10"},
+    {"menu": "크로플 + 아이스라떼", "location": "집 식탁", "time": "11:10"},
 ]
 
 WEEKEND_DINNER = [
@@ -296,7 +296,7 @@ def generate_weekday(date_str: str, now_iso: str) -> dict:
     skincare_done = add_minutes(shower_done, random.randint(8, 10))
     makeup_done = add_minutes(skincare_done, random.randint(18, 22))
     dress_done = add_minutes(makeup_done, random.randint(8, 10))
-    depart = add_minutes(dress_done, random.randint(2, 5))  # 집에서 나가는 시간 (~07:00)
+    depart = add_minutes(dress_done, random.randint(2, 5))  # 작업 시작 시간 (~08:00)
     arrive_work = add_minutes(depart, 58)
 
     lunch = random.choice(WEEKDAY_LUNCH)
@@ -321,7 +321,7 @@ def generate_weekday(date_str: str, now_iso: str) -> dict:
     else:
         shower_after = None
         hair_dry = None
-        # 카페/산책 등 비운동 활동은 끝나고 바로 야간 루틴 시작
+        # 저녁 자유 활동은 끝나고 바로 야간 루틴 시작
         night_start = exercise_end if exercise["duration_min"] > 0 else add_minutes(dinner_end, 30)
     sleep_target = rand_minute("23:50", 15)
 
