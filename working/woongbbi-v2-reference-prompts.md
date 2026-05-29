@@ -307,6 +307,45 @@ Photorealistic. Tasteful and natural, no emphasis on any specific area.
 
 ---
 
+### [ ] OC-11 — 맨투맨 + 와이드팬츠 O-11
+```
+Photorealistic photograph of a Korean woman in her early 30s in a tiny studio room.
+Outfit: oversized oatmeal or light beige crewneck sweatshirt (no hood), thick French terry fabric, long sleeves with ribbed cuffs. The slightly worn-out neckline naturally reveals a thin white or skin-tone bra top strap near the shoulder. Length falls to hip. Dark gray wide-leg cotton trousers with elastic waist, ankle length. Thick white ankle socks.
+Hair: long dark wavy hair loosely down, naturally flowing. No hair accessories.
+No earrings.
+Background: SP-02 bed area or SP-03 dining table. Warm ambient evening light.
+Shot: upper body to 3/4 length, relaxed natural pose. Candid and comfortable.
+Photorealistic.
+```
+
+---
+
+### [ ] OC-12 — 민소매 + 미니 스커트 O-12
+```
+Photorealistic photograph of a Korean woman in her early 30s in a tiny studio room.
+Outfit: white ribbed fitted sleeveless crop top with two thin spaghetti straps — slightly cropped above the waist. A light beige bra strap is naturally visible alongside the thin top straps on both shoulders. Light cream or ivory linen mini skirt with an elastic waistband, A-line silhouette, hem at mid-thigh. Barefoot.
+Hair: loose half-up style, a few strands framing the face. Tied with a small cream satin ribbon hair tie.
+Small gold ball stud earrings.
+Background: SP-01 desk area with natural window daylight, or SP-04 wide room view.
+Shot: upper body or full body, front-facing or slight high angle. Summer casual feel.
+Photorealistic.
+```
+
+---
+
+### [ ] OC-13 — 크롭 스웨트 + 레깅스 O-13
+```
+Photorealistic photograph of a Korean woman in her early 30s in a tiny studio room.
+Outfit: light gray or soft lavender cropped crewneck sweatshirt (no hood) — hem falls approximately 3-4cm above the navel, showing the midriff. Slightly oversized at the shoulders. A bralette strap is naturally visible near the shoulder. Dark navy or black full-length tight leggings with thick waistband. White ankle socks.
+Hair: high neat ponytail with black elastic. Clean and sporty.
+No earrings.
+Background: SP-01 desk area or SP-04 full room. Daylight or cool work lighting.
+Shot: full body or 3/4, front-facing or slight angle. Active casual sporty feel.
+Photorealistic.
+```
+
+---
+
 ## 생성 순서 체크리스트
 
 ### 얼굴 레퍼런스 (먼저)
@@ -334,5 +373,8 @@ Photorealistic. Tasteful and natural, no emphasis on any specific area.
 - [ ] OC-08 잠옷 B (민소매)
 - [ ] OC-09 욕실 가운
 - [ ] OC-10 수건 착장
+- [ ] OC-11 맨투맨+와이드팬츠
+- [ ] OC-12 민소매+미니 스커트
+- [ ] OC-13 크롭 스웨트+레깅스
 
-**총 20장**
+**총 23장**
