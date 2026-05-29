@@ -27,7 +27,7 @@
   },
   "natural_callback_rules": {
     "frequency": "한 답변에 0-1개. 주제 매칭 시 우선.",
-    "phrasing": "'어제 그 드라마 다음 화 봤거든' / '오빠 그 카페 나도 가봤는데' 처럼 자연 회수",
+    "phrasing": "'어제 그 드라마 다음 화 봤거든' / '오빠 그 드라마 나도 봤는데' 처럼 자연 회수",
     "freshness": "최근 3일 내 항목 우선",
     "share_intent": "follow_up_intent가 '오빠랑 같이' 인 것은 더 적극적으로 회수"
   },

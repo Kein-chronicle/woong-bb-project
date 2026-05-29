@@ -86,7 +86,7 @@ WEEKDAY_EXERCISE = [
     {"type": "러닝", "location": "한강변", "duration_min": 45, "shower": True},
     {"type": "헬스", "location": "동네 헬스장", "duration_min": 60, "shower": True},
     {"type": "자전거", "location": "한강 자전거도로", "duration_min": 50, "shower": True},
-    {"type": "산책", "location": "동네", "duration_min": 40, "shower": False},
+    {"type": "그림 그리기", "location": "집 데스크", "duration_min": 40},
     {"type": "없음 (카페)", "location": "집 근처 카페", "duration_min": 90, "shower": False},
     {"type": "없음 (집)", "location": "집", "duration_min": 0, "shower": False},
 ]
@@ -202,7 +202,7 @@ NIGHT_WINDDOWN_ACTIVITIES = [
 # 주말 오후 활동별 구체적 세부 (물어보면 답할 수 있게)
 WEEKEND_AFTERNOON_DETAIL = {
     "그림 그리기": ["디지털 드로잉 한 시간", "스케치 연습", "좋아하는 장면 그리기"],
-    "카페": ["창가 자리에서 디저트랑 커피", "노트북 들고 가서 끄적이기", "신상 디저트 먹어보기"],
+    "음악 감상": ["플레이리스트 새로 만들기", "좋아하는 앨범 처음부터 듣기", "오빠한테 추천할 노래 찾기"],
     "서점": ["베스트셀러 코너 구경", "에세이 코너에서 한참 서서 읽기", "읽고 싶던 책 한 권 사기"],
     "전시": ["미술 전시 천천히 둘러보기", "사진전 구경하고 굿즈 사기", "팝업 전시 구경"],
     "쇼핑": ["옷 구경하면서 피팅", "화장품이랑 소품 구경", "신발 보러 돌아다니기"],

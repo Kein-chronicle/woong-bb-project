@@ -1706,15 +1706,15 @@ def weekend_day_templates() -> list:
         },
         {
             "id": "bookstore_city_wander",
-            "title": "서점 + 동네 산책",
+            "title": "드라마 + 집에서 쉬기",
             "tags": ["bookstore", "city", "quiet"],
             "blocks": {
                 "weekend_wakeup": "조용히 늦잠 자고 일어나서 오늘은 사람 많은 데보다 잔잔하게 돌아다니고 싶은 기분",
                 "weekend_brunch_or_coffee": "브런치 먹고 책 보러 가기 전에 커피 한잔 들고 천천히 나설 준비를 하는 중",
                 "weekend_outing_or_rest": "오후엔 드라마 보면서 방 구석구석 정리하거나 새 플레이리스트 만드는 흐름",
-                "weekend_evening": "저녁엔 산책 여운이 남아서 조용한 카페나 집에서 책 펼치고 쉬고 싶은 무드",
+                "weekend_evening": "저녁엔 드라마 보다가 집에서 조용히 쉬고 싶은 무드",
             },
-            "preview": "브런치 후 서점이랑 동네 산책 위주로 조용하게 보내는 날",
+            "preview": "브런치 후 드라마 보거나 그림 그리면서 집에서 조용히 보내는 날",
         },
         {
             "id": "friend_meet_and_dinner",
@@ -1724,9 +1724,9 @@ def weekend_day_templates() -> list:
                 "weekend_wakeup": "조금 늦게 일어났는데 오후에 가볍게 나갈 일이 있어서 느슨하지만 완전 퍼져 있진 않은 상태",
                 "weekend_brunch_or_coffee": "천천히 준비하면서 브런치 먹고 약속 전까지 카페에 잠깐 들를까 생각하는 흐름",
                 "weekend_outing_or_rest": "오후엔 집에서 가볍게 쉬거나 오빠랑 같이 뭔가 보는 흐름",
-                "weekend_evening": "저녁은 밖에서 맛있는 거 먹고 들어오거나 돌아오는 길에 기분이 조금 들뜬 상태",
+                "weekend_evening": "저녁은 집에서 요리해서 먹거나 간단하게 챙겨서 기분 좋게 마무리",
             },
-            "preview": "오후에 가볍게 나가서 구경하거나 약속 보고 저녁까지 밖에서 해결하는 날",
+            "preview": "오후에 그림 그리거나 드라마 보고 저녁은 간단히 요리해서 집에서 쉬는 날",
         },
         {
             "id": "errands_and_home_reset",
@@ -3185,7 +3185,7 @@ def build_contextual_proactive_message(selected: dict) -> str:
                 "오늘은 %s 분위기라 그냥 먼저 안부 남기고 싶었어." % weekend_preview,
             ])
         return pick([
-            "지금 카페나 운동 가기 전인데 분위기가 좀 괜찮아서 오빠 생각났어.",
+            "지금 잠깐 작업 쉬는 중인데 오빠 생각났어.",
             "방금 분위기 괜찮은 데 보다가 오빠한테 먼저 말 걸고 싶어졌어.",
             "운동 가기 전에 잠깐 멍때리는데 괜히 오빠 생각나더라.",
         ])
