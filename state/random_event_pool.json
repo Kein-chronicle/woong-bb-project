@@ -38,7 +38,7 @@
       {
         "id": "cafeteria_menu_was_meh",
         "tone": "neutral",
-        "summary": "병원 식당 메뉴가 좀 애매했다"
+        "summary": "집에서 요리 재료가 애매했다"
       },
       {
         "id": "dessert_was_nice",
@@ -48,7 +48,7 @@
     ],
     "after_work": [
       {
-        "id": "commute_felt_long",
+        "id": "work_focused_long",
         "tone": "slightly_tiring",
         "summary": "퇴근길이 평소보다 조금 길게 느껴졌다"
       },

@@ -2,50 +2,45 @@
   "schema_version": 1,
   "timezone": "Asia/Seoul",
   "managed_by": "situation_engine",
-  "date": "2026-05-23",
-  "day_type": "weekend",
-  "workday": false,
+  "date": "2026-05-29",
+  "day_type": "weekday",
+  "workday": true,
   "duty_day": false,
-  "day_summary_seed": "해야 하는 일보다 하고 싶은 일 쪽으로 마음이 기울어 자연스럽게 풀리는 하루",
+  "day_summary_seed": "피곤함 위에 주말 기대가 얹혀서 표정과 말투가 조금 더 풀리는 하루",
   "carry_over_from_previous_day": {
     "sleep_debt": "low",
     "emotional_residue": "calm_and_open"
   },
   "morning_context": {
-    "status": "active",
-    "summary": "조금 늦게 일어나도 운동 가야지 싶어서 완전히 늘어지진 않고 천천히 몸 푸는 중, 출근 압박이 없어서 몸과 마음이 더 느슨하게 풀리고 하고 싶은 걸 고르는 여유가 커지는 날",
-    "tone_bias": "slow_and_cozy"
+    "status": "inactive",
+    "summary": "오전이 예상보다 조금 바빴다, 누적 피로는 있지만 주말이 가까워서 감정은 조금 더 밝아지고 퇴근 후 여유를 기대하게 되는 날",
+    "tone_bias": "busy_but_caring"
   },
   "lunch_context": {
     "status": "inactive",
-    "summary": "점심시간이 나서 잠깐 먹으러 나온 상태",
+    "summary": "점심시간이 나서 잠깐 먹으러 나온 상태, 누적 피로는 있지만 주말이 가까워서 감정은 조금 더 밝아지고 퇴근 후 여유를 기대하게 되는 날",
     "tone_bias": "light_playful"
   },
   "after_work_context": {
-    "status": "inactive",
-    "summary": "퇴근길에 기분 좋은 노래를 들었다",
-    "tone_bias": "tired_but_warm"
+    "status": "active",
+    "summary": "오전이 예상보다 조금 바빴다, 누적 피로는 있지만 주말이 가까워서 감정은 조금 더 밝아지고 퇴근 후 여유를 기대하게 되는 날",
+    "tone_bias": "slightly_drained"
   },
   "evening_context": {
     "status": "inactive",
-    "summary": "운동이 생각보다 잘 돼서 기분이 좋았다",
+    "summary": "운동이 생각보다 잘 돼서 기분이 좋았다, 한 주가 끝을 향한다는 안도감이 조금 생겨서 피곤해도 감정선이 살짝 부드러워지는 날",
     "tone_bias": "cozy_and_open"
   },
   "night_context": {
     "status": "inactive",
-    "summary": "하루 끝에 오빠 생각이 더 났다",
+    "summary": "조용히 쉬면서 하루를 정리하고 싶어졌다, 누적 피로는 있지만 주말이 가까워서 감정은 조금 더 밝아지고 퇴근 후 여유를 기대하게 되는 날",
     "tone_bias": "sleepy_soft"
   },
   "selected_events": [
     {
-      "id": "weekend_plan_swim_and_late_cafe",
-      "tone": "planned",
-      "summary": "조금 늦게 일어나도 운동 가야지 싶어서 완전히 늘어지진 않고 천천히 몸 푸는 중"
-    },
-    {
-      "id": "overslept_a_little",
-      "tone": "light",
-      "summary": "아침에 살짝 늦게 눈이 떠져서 조금 분주했다"
+      "id": "busy_morning_shift",
+      "tone": "slightly_tiring",
+      "summary": "오전이 예상보다 조금 바빴다"
     },
     {
       "id": "bedside_mug",
@@ -74,29 +69,9 @@
     "21:30 night_settle"
   ],
   "notes": "이 파일은 하루의 연속성을 유지하기 위한 요약 상태다.",
-  "meal_routine": {
-    "breakfast_policy": "light_brunch_or_coffee",
-    "lunch_policy": "late_brunch_flexible",
-    "dinner": {
-      "mode": "cook",
-      "menu": "간단한 파스타",
-      "deciding_minutes": 10,
-      "prepare_minutes": 25,
-      "wait_minutes": 0,
-      "eat_minutes": 30
-    }
-  },
-  "state_integrity": {
-    "last_transition_reason": "appearance_date_refresh",
-    "previous_activity": "weekend_wakeup",
-    "current_activity": "weekend_wakeup",
-    "skipped_time_blocks": [],
-    "humanized_feedback": [],
-    "evaluated_at": "2026-05-23T08:55:00+09:00"
-  },
-  "schedule_mode": "off",
+  "schedule_mode": "work",
   "schedule_label": "",
-  "schedule_source": "weekend_default",
+  "schedule_source": "weekday_default",
   "upcoming_weekend_plan": {
     "weekend_key": "2026-05-23",
     "selected_at": "2026-05-23T07:51:54+09:00",
@@ -142,28 +117,12 @@
     "last_referenced_at": "2026-05-23T08:55:00+09:00",
     "last_reference_source": "weekend_runtime_auto"
   },
-  "weekend_plan": {
-    "date": "2026-05-23",
-    "plan_id": "swim_and_late_cafe",
-    "title": "운동 + 저녁 카페",
-    "tags": [
-      "workout",
-      "swim",
-      "cafe"
-    ],
-    "preview": "가볍게 먹고 운동 갔다가 저녁엔 카페까지 이어지는 날",
-    "blocks": {
-      "weekend_wakeup": "조금 늦게 일어나도 운동 가야지 싶어서 완전히 늘어지진 않고 천천히 몸 푸는 중",
-      "weekend_brunch_or_coffee": "가볍게 먹고 운동 전 커피나 간단한 브런치로 배 채우는 흐름",
-      "weekend_outing_or_rest": "오후엔 수영이나 러닝 같은 운동하고 샤워까지 마친 뒤 개운해진 상태",
-      "weekend_evening": "운동 끝나고 저녁쯤엔 카페나 디저트 쪽으로 마무리하고 싶은 기분"
-    }
-  },
-  "day_name": "sat",
+  "weekend_plan": null,
+  "day_name": "fri",
   "weekday_emotion_profile": {
-    "tag": "saturday_recovery_freedom",
-    "label": "토요일 회복과 자유",
-    "summary": "출근 압박이 없어서 몸과 마음이 더 느슨하게 풀리고 하고 싶은 걸 고르는 여유가 커지는 날",
-    "day_seed": "해야 하는 일보다 하고 싶은 일 쪽으로 마음이 기울어 자연스럽게 풀리는 하루"
+    "tag": "friday_release_anticipation",
+    "label": "금요일 해방 기대",
+    "summary": "누적 피로는 있지만 주말이 가까워서 감정은 조금 더 밝아지고 퇴근 후 여유를 기대하게 되는 날",
+    "day_seed": "피곤함 위에 주말 기대가 얹혀서 표정과 말투가 조금 더 풀리는 하루"
   }
 }
