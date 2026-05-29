@@ -190,7 +190,7 @@
 #### Exercise Branch
 - 착장:
   - 운동복, 레깅스/반바지, 스포츠탑 또는 기능성 상의
-  - 이너는 스포츠브라 또는 캡내장 운동 이너 우선
+  - 이너는 브라렛 또는 기본 브라 우선
 - 머리:
   - 포니테일이나 단단한 묶음
   - 머리끈은 실용적인 블랙/다크톤
@@ -257,7 +257,7 @@
   - 편한 스포츠 캐주얼
   - 묶은 머리 확률 높음
 - `exercise_at_home`:
-  - 운동복 + 묶은 머리 + 땀 소량~중간
+  - 크롭 스웨트 + 높은 포니테일 + 집중 표정
   - 실용적인 이너 우선
 
 ## Accessory Rules
@@ -301,7 +301,7 @@
 
 기본:
 - 출근: `basic_bra` 또는 `built_in_cup_inner`
-- 운동: `sports_bra` 또는 `built_in_cup_inner`
+- 집중 작업: `bralette` 또는 `basic_bra`
 - 집/밤: `soft_bralette` 또는 `wireless_home_inner`
 
 ## Color Direction

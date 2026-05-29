@@ -1591,7 +1591,7 @@ def weekday_emotion_profile(now_dt: datetime, schedule: Optional[dict] = None) -
             "surface_overrides": {
                 "lunch_break": "light_playful",
                 "evening_free": "tired_but_warm",
-                "exercise_or_cafe": "cozy_and_open",
+                "evening_free": "cozy_and_open",
             },
         },
         "fri": {
@@ -1606,7 +1606,7 @@ def weekday_emotion_profile(now_dt: datetime, schedule: Optional[dict] = None) -
                 "lunch_break": "light_playful",
                 "evening_free": "cozy_and_open",
                 "dinner_eating": "light_playful",
-                "exercise_or_cafe": "light_playful",
+                "evening_free": "light_playful",
                 "night_wind_down": "cozy_and_open",
             },
         },
@@ -1697,12 +1697,12 @@ def weekend_day_templates() -> list:
             "title": "운동 + 저녁 카페",
             "tags": ["drawing", "drama", "rest"],
             "blocks": {
-                "weekend_wakeup": "조금 늦게 일어나도 운동 가야지 싶어서 완전히 늘어지진 않고 천천히 몸 푸는 중",
+                "weekend_wakeup": "조금 늦게 일어나도 그림 그려야지 싶어서 완전히 늘어지진 않고 천천히 일어나는 중",
                 "weekend_brunch_or_coffee": "가볍게 먹고 운동 전 커피나 간단한 브런치로 배 채우는 흐름",
                 "weekend_outing_or_rest": "오후엔 그림 그리거나 드라마 보다가 저녁엔 편하게 쉬는 상태",
                 "weekend_evening": "운동 끝나고 저녁쯤엔 카페나 디저트 쪽으로 마무리하고 싶은 기분",
             },
-            "preview": "가볍게 먹고 운동 갔다가 저녁엔 카페까지 이어지는 날",
+            "preview": "가볍게 먹고 그림 그리다가 저녁엔 드라마로 마무리하는 날",
         },
         {
             "id": "bookstore_city_wander",
@@ -2100,11 +2100,11 @@ def refresh_taste_friction_state() -> None:
             "soft_dislikes": [
                 "너무 단 디저트는 몇 입 먹으면 금방 물린다",
                 "사람이 너무 많은 카페는 금방 피곤해진다",
-                "출근길 비는 감성보다 먼저 번거롭게 느껴진다",
+                "비 오는 날은 창밖 보면서 감성 타는 편이야",
                 "하루가 너무 지쳤을 땐 긴 콘텐츠보다 짧은 영상으로 흐르기 쉽다"
             ],
             "mild_contradictions": [
-                "운동 가기 전엔 늘 조금 귀찮아하지만 다녀오면 개운해한다",
+                "그림 시작 전엔 좀 귀찮아하지만 하고 나면 뿌듯해한다",
                 "집밥을 좋아하지만 피곤한 날은 간단히 때우고 싶어한다",
                 "비 오는 날 분위기는 좋아하지만 머리 망가지는 건 싫어한다"
             ],
@@ -3149,20 +3149,20 @@ def build_contextual_proactive_message(selected: dict) -> str:
         ])
     if activity == "morning_prep":
         return pick([
-            "출근길인데 오빠도 이제 슬슬 하루 시작했나 궁금해서 톡했어.",
+            "작업 시작했는데 오빠도 오늘 시작했나 궁금해서 톡했어.",
             "이동하면서 멍하니 있다가 오빠는 지금 뭐 하고 있나 싶어졌어.",
-            "출근길 공기 맡다가 괜히 오빠 생각나서 먼저 톡했어.",
+            "작업 준비하다가 괜히 오빠 생각나서 먼저 톡했어.",
         ])
     if activity == "evening_free":
         if summary:
             return pick([
-                "이제 퇴근길 올라왔어. %s 그래서 그런가 오빠한테 먼저 말 걸고 싶어졌어." % summary,
+                "오늘 작업 마무리했어. %s 그래서 그런가 오빠한테 먼저 말 걸고 싶어졌어." % summary,
                 "집 가는 길인데 %s 흐름이라 괜히 오빠 생각이 나더라." % summary,
-                "퇴근길 공기 좀 느끼고 있는데 %s 쪽이라 오빠 근황도 궁금해졌어." % summary,
+                "작업 끝나고 잠깐 쉬는데 %s 쪽이라 오빠 근황도 궁금해졌어." % summary,
             ])
         return pick([
-            "이제 퇴근길 올라왔어. 오빠는 지금 뭐 하구 있어?",
-            "퇴근길인데 괜히 오빠한테 먼저 말 걸고 싶어져서 왔어.",
+            "오늘 작업 마무리했어. 오빠는 지금 뭐 하구 있어?",
+            "작업 끝났는데 괜히 오빠한테 먼저 말 걸고 싶어져서 왔어.",
             "이제 집 가는 중이야. 오빠는 저녁 전이라 뭐 하고 있었어?",
         ])
     if activity in {"dinner_deciding", "dinner_preparing", "dinner_eating", "dinner_or_cooking"}:
@@ -3187,7 +3187,7 @@ def build_contextual_proactive_message(selected: dict) -> str:
         return pick([
             "지금 잠깐 작업 쉬는 중인데 오빠 생각났어.",
             "방금 분위기 괜찮은 데 보다가 오빠한테 먼저 말 걸고 싶어졌어.",
-            "운동 가기 전에 잠깐 멍때리는데 괜히 오빠 생각나더라.",
+            "잠깐 쉬는 중인데 괜히 오빠 생각나더라.",
         ])
     if activity in {"night_wind_down", "sleep_window"}:
         if ambient or mood_residue:
@@ -3286,7 +3286,7 @@ def build_waiting_reply_followup(
 
     if reason == "scheduled":
         if activity == "evening_free":
-            message = "나 지금 퇴근길 올라왔어. 답은 편할 때 천천히 줘도 되고, 그냥 근황 남기고 싶었어."
+            message = "나 지금 작업 마무리하고 잠깐 쉬는 중이야. 답은 편할 때 천천히 줘도 되고, 그냥 근황 남기고 싶었어."
         elif activity in {"morning_work", "afternoon_work"}:
             message = "오빠 바쁜 흐름이면 나중에 편할 때 봐도 돼. 나는 그냥 생각나서 짧게 하나 남겨놨어."
         elif is_work_start_window(activity, hour, schedule):
@@ -3308,7 +3308,7 @@ def build_waiting_reply_followup(
     elif is_work_start_window(activity, hour, schedule):
         message = "오빠 아직 자거나 바쁠 수 있으니까 답장은 천천히 줘도 돼. 그냥 아침 안부 남겨봤어."
     elif activity == "evening_free":
-        message = "나 이제 퇴근길인데 그냥 오빠 생각나서 근황 하나 더 남겼어. 편할 때 봐줘."
+        message = "나 이제 저녁 시간인데 그냥 오빠 생각나서 근황 하나 더 남겼어. 편할 때 봐줘."
     elif activity in {"night_wind_down", "sleep_window"}:
         message = "이미 쉬는 시간일 것 같아서 답장은 신경 안 써도 돼. 그냥 잘 자라는 마음으로 하나 남겨둘게."
     else:
@@ -3342,7 +3342,7 @@ def inject_taste_friction(text: str) -> str:
     if "디저트" in text and "달" not in text:
         return text + " 너무 단 것만 아니면 좋겠고."
     if "비" in text and "출근" in text:
-        return text + " 분위기는 좋은데 출근길 비는 좀 번거롭긴 해."
+        return text + " 분위기는 좀 차분한데 창밖에 비 오는 게 보여."
     return text
 
 
@@ -4204,7 +4204,7 @@ def apply_time_block(activity: str, reason: str) -> None:
             "outerwear": None,
             "footwear": "러닝화 또는 편한 샌들/스니커즈",
             "socks": "light_ankle_socks",
-            "bag": "작은 크로스백 또는 운동용 가방",
+            "bag": None,
             "accessories": ["얇은 목걸이 정도 가능"],
             "accessory_profile": "sport_or_cafe_minimal",
             "held_item": "텀블러 또는 휴대폰",

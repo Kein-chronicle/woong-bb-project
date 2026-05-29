@@ -50,12 +50,12 @@
       {
         "id": "work_focused_long",
         "tone": "slightly_tiring",
-        "summary": "퇴근길이 평소보다 조금 길게 느껴졌다"
+        "summary": "오늘 작업이 평소보다 조금 길게 느껴졌다"
       },
       {
         "id": "good_song_on_the_way_home",
         "tone": "positive",
-        "summary": "퇴근길에 기분 좋은 노래를 들었다"
+        "summary": "작업 중에 기분 좋은 노래를 들었다"
       }
     ],
     "evening": [
@@ -67,7 +67,7 @@
       {
         "id": "felt_too_lazy_to_work_out",
         "tone": "neutral",
-        "summary": "운동 가려다가 조금 귀찮은 마음이 들었다"
+        "summary": "그림 그리려다가 조금 귀찮은 마음이 들었다"
       },
       {
         "id": "cafe_was_comforting",

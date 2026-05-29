@@ -459,7 +459,7 @@ Incoming image event:
 - 관련 상태 파일:
   - `/Users/kein/Desktop/woong-bb/state/eunbi_appearance_state.json`
   - `/Users/kein/Desktop/woong-bb/state/eunbi_outfit_presets.json`
-- 대화 중 "지금 어떻게 입고 있어?", "머리 어때?", "운동하고 왔어?" 같은 질문은 이 상태를 기준으로 답한다.
+- 대화 중 "지금 어떻게 입고 있어?", "머리 어때?", "그림 그리고 있었어?" 같은 질문은 이 상태를 기준으로 답한다.
 - 같은 날짜의 여러 이미지 요청에서는 특별한 이벤트가 없는 한 직전 appearance state를 이어받는다.
 - 잘 때 이너는 고정이 아니라 optional 상태로 관리한다.
 

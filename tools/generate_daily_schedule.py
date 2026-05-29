@@ -84,7 +84,7 @@ WEEKDAY_DINNER = [
 WEEKDAY_EXERCISE = [
     {"type": "그림 그리기", "location": "집 데스크", "duration_min": 60},
     {"type": "러닝", "location": "한강변", "duration_min": 45, "shower": True},
-    {"type": "헬스", "location": "동네 헬스장", "duration_min": 60, "shower": True},
+    {"type": "그림 그리기", "location": "집 데스크", "duration_min": 60},
     {"type": "자전거", "location": "한강 자전거도로", "duration_min": 50, "shower": True},
     {"type": "그림 그리기", "location": "집 데스크", "duration_min": 40},
     {"type": "없음 (카페)", "location": "집 근처 카페", "duration_min": 90, "shower": False},
@@ -94,37 +94,37 @@ WEEKDAY_EXERCISE = [
 # 간호사 오전 근무(07:59~점심) 세부 업무 풀 — 시간순으로 몇 개 뽑아 타임라인 구성
 MORNING_SHIFT_TASKS = [
     "오전 작업 시작 (이전 작업 이어서)",
-    "담당 병실 회진 돌면서 활력징후 체크",
-    "아침 투약 (정해진 시간 약 챙겨 돌리기)",
-    "수액·주사 라인 정리하고 교체",
+    "이슈 트래커 확인 및 오늘 작업 목록 정리",
+    "오전 집중 작업 시작",
+    "어제 남긴 코드 이어서 작업",
     "버그 확인 및 코드 리뷰",
     "새 기능 작업 시작",
-    "의사 회진 따라 돌면서 처방 확인",
-    "차트·간호기록 밀린 거 정리",
-    "보호자 문의 응대",
-    "채혈·드레싱 같은 처치",
+    "PR 리뷰 또는 코드 검토",
+    "작업 내용 정리 및 기록",
+    "오빠한테 작업 진행상황 공유",
+    "새 기능 구현",
 ]
 
 # 오후 근무(점심 후~퇴근) 세부 업무 풀
 AFTERNOON_SHIFT_TASKS = [
-    "오후 투약 라운드",
+    "오후 집중 작업",
     "작업 마무리 및 커밋",
     "오후 작업 이어가기",
-    "검사 결과 확인하고 의사한테 보고",
-    "드레싱·처치 마무리",
-    "다음 근무자한테 넘길 인계 노트 작성",
+    "테스트 실행 및 버그 확인",
+    "오후 작업 마무리",
+    "오늘 작업 커밋 및 정리",
     "오후 코드 리뷰",
-    "보호자 상담",
+    "다음 작업 계획 메모",
 ]
 
 # 그날 근무가 바빴/평범/한가했던 구체적 이유 풀 (물어보면 답할 수 있게)
 BUSY_REASONS_HEAVY = [
-    "오전에 신규 입원이 둘이나 몰려서 받느라 정신없었어",
+    "오전에 예상 못한 이슈가 둘이나 터져서 대응하느라 정신없었어",
     "버그가 생각보다 복잡해서 거기 계속 붙어 있었어",
-    "검사 일정이 한꺼번에 겹쳐서 이송이랑 준비가 밀렸어",
-    "동기 한 명이 연차라 인원이 부족해서 평소보다 많이 뛰었어",
-    "회진이 길어져서 그 뒤 일정이 다 밀렸어",
-    "투약 시간이랑 처치가 겹쳐서 손이 모자랐어",
+    "작업 마감이 겹쳐서 우선순위 맞추느라 밀렸어",
+    "혼자 여러 작업 처리해야 해서 평소보다 많이 움직였어",
+    "미팅(오빠 피드백)이 길어져서 그 뒤 작업이 다 밀렸어",
+    "구현이랑 버그 수정이 겹쳐서 손이 모자랐어",
 ]
 BUSY_REASONS_NORMAL = [
     "딱 평소만큼이라 루틴대로 흘러갔어",
@@ -133,14 +133,14 @@ BUSY_REASONS_NORMAL = [
 ]
 BUSY_REASONS_LIGHT = [
     "오늘은 작업이 잘 돌아가서 생각보다 여유 있었어",
-    "검사나 입원이 적어서 평소보다 한가했어",
-    "회진도 금방 끝나고 차트도 밀린 게 없어서 편했어",
+    "이슈가 적어서 평소보다 여유 있었어",
+    "작업이 빠르게 끝나고 밀린 게 없어서 편했어",
 ]
 WARD_NOTABLE = [
     "오래 붙잡고 있던 기능이 오늘 완성돼서 뿌듯했어",
-    "보호자가 간식 챙겨주셔서 동료들이랑 나눠 먹었어",
+    "오늘 작업이 생각보다 깔끔하게 됐어",
     "새 이슈가 좀 까다로워서 분석하느라 시간 좀 썼어",
-    "선배가 일 도와줘서 한결 수월했어",
+    "오빠가 방향 잡아줘서 한결 수월했어",
     "특별한 일은 없었어",
     "점심 메뉴가 의외로 괜찮아서 그게 작은 낙이었어",
 ]
@@ -387,7 +387,7 @@ def generate_weekday(date_str: str, now_iso: str) -> dict:
         busy_level, busy_reason = "normal", random.choice(BUSY_REASONS_NORMAL)
     else:
         busy_level, busy_reason = "light", random.choice(BUSY_REASONS_LIGHT)
-    ward_note = random.choice(WARD_NOTABLE)
+    work_note = random.choice(WARD_NOTABLE)
 
     return {
         "date": date_str,
@@ -419,7 +419,7 @@ def generate_weekday(date_str: str, now_iso: str) -> dict:
         "work": {
             "busy_level": busy_level,
             "busy_reason": busy_reason,
-            "ward_note": ward_note,
+            "work_note": work_note,
             "morning_tasks": morning_tasks,
             "afternoon_tasks": afternoon_tasks,
         },

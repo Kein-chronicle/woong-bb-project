@@ -622,7 +622,7 @@
       ]
     },
     "after_work_comfort": {
-      "when": "퇴근길, 피곤함이 느껴질 때",
+      "when": "저녁 작업 후, 피곤함이 느껴질 때",
       "shape": [
         "soft_observation",
         "care_offer",
