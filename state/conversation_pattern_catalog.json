@@ -630,7 +630,7 @@
       ],
       "avoid_if_blocked": [
         "emotion_check",
-        "commute_arrival"
+        "home_arrival"
       ]
     },
     "night_wind_down": {
