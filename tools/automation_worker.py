@@ -4698,7 +4698,7 @@ def check_self_busy_expiry(triggered_activity: str = "") -> bool:
         elif triggered_activity == "lunch_break":
             msgs = ["점심이야~", "점심 시간 됐어~", "나 지금 점심이야"]
         elif triggered_activity == "evening_free":
-            msgs = ["퇴근했어~", "퇴근했어 오빠", "나 이제 퇴근~"]
+            msgs = ["작업 마무리했어~", "오늘 작업 끝났어 오빠", "나 이제 저녁이야~"]
         else:
             msgs = ["%s 끝났어~" % label, "이제 끝났어~"]
         msg = msgs[int(now_local().timestamp()) % len(msgs)]
