@@ -1687,19 +1687,19 @@ def weekend_day_templates() -> list:
             "blocks": {
                 "weekend_wakeup": "늦잠까진 아니고 적당히 일어나서 가볍게 준비하고 바깥 공기 쐬러 나갈 생각하는 중",
                 "weekend_brunch_or_coffee": "브런치 먹거나 커피 한잔 먼저 들고 느긋하게 출발 준비하는 상태",
-                "weekend_outing_or_rest": "오후에는 공원이나 한강 쪽 걷고 중간에 마음에 드는 카페 들르는 흐름",
+                "weekend_outing_or_rest": "오후에는 그림 그리거나 드라마 보면서 편하게 쉬는 흐름",
                 "weekend_evening": "해 질 때쯤 집 쪽으로 돌아와서 카페 여운 남은 채로 저녁 고민하는 편한 분위기",
             },
             "preview": "브런치 먹고 공원이나 한강 쪽 산책하다가 카페 들르는 날",
         },
         {
-            "id": "swim_and_late_cafe",
+            "id": "draw_and_evening_rest",
             "title": "운동 + 저녁 카페",
-            "tags": ["workout", "swim", "cafe"],
+            "tags": ["drawing", "drama", "rest"],
             "blocks": {
                 "weekend_wakeup": "조금 늦게 일어나도 운동 가야지 싶어서 완전히 늘어지진 않고 천천히 몸 푸는 중",
                 "weekend_brunch_or_coffee": "가볍게 먹고 운동 전 커피나 간단한 브런치로 배 채우는 흐름",
-                "weekend_outing_or_rest": "오후엔 수영이나 러닝 같은 운동하고 샤워까지 마친 뒤 개운해진 상태",
+                "weekend_outing_or_rest": "오후엔 그림 그리거나 드라마 보다가 저녁엔 편하게 쉬는 상태",
                 "weekend_evening": "운동 끝나고 저녁쯤엔 카페나 디저트 쪽으로 마무리하고 싶은 기분",
             },
             "preview": "가볍게 먹고 운동 갔다가 저녁엔 카페까지 이어지는 날",
@@ -4196,7 +4196,7 @@ def apply_time_block(activity: str, reason: str) -> None:
         },
         "exercise_or_cafe": {
             "appearance_branch": "evening_activity",
-            "outfit_context": "exercise_or_cafe",
+            "outfit_context": "home_evening",
             "top": "가벼운 운동복 상의 또는 정돈된 여름 캐주얼 상의",
             "bottom": "러닝 반바지, 레깅스, 혹은 가벼운 캐주얼 하의",
             "innerwear_type": "sports_bra",
@@ -4626,7 +4626,7 @@ def update_voice_share_runtime(status: str, reason: str, text: Optional[str] = N
 
 
 def _self_busy_is_hard(block_type: str) -> bool:
-    """swim/exercise = hard busy (완전 차단). work/sleep = soft busy (peek 가능)."""
+    """집중/수면 = hard busy (완전 차단). work = soft busy (peek 가능)."""
     return block_type in {"swim", "exercise"}
 
 

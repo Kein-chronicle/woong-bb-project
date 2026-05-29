@@ -122,11 +122,11 @@ def derive_event_keys_for_transition(previous_activity: Optional[str], current_a
         event_keys.append("wake_up")
     if curr == "lunch_break":
         event_keys.append("lunch_time")
-    if prev in {"hospital_morning_shift", "hospital_afternoon_shift"} and curr == "commuting_home":
+    if prev in {"morning_work", "afternoon_work"} and curr == "evening_free":
         event_keys.append("after_work")
-    if curr == "hospital_morning_shift" and prev in {"getting_ready", "commuting_to_work"}:
+    if curr == "morning_work" and prev in {"getting_ready", "morning_prep"}:
         event_keys.extend(["arrive_work", "changed_clothes"])
-    if curr == "dinner_or_cooking" and prev == "commuting_home":
+    if curr == "dinner_or_cooking" and prev == "evening_free":
         event_keys.extend(["arrive_home", "arrive_somewhere"])
     if curr == "exercise_or_cafe" and prev in {"commuting_home", "dinner_or_cooking", "weekend_brunch_or_coffee"}:
         event_keys.append("arrive_somewhere")
@@ -155,13 +155,13 @@ def factual_status_for_activity(activity: Optional[str]) -> Optional[str]:
     mapping = {
         "waking_up": "방금 일어났어",
         "getting_ready": "출근 준비 중이야",
-        "commuting_to_work": "출근하러 가는 중이야",
-        "hospital_morning_shift": "병원 도착해서 일 시작했어",
+        "morning_prep": "작업 준비 중이야",
+        "morning_work": "오전 작업 시작했어",
         "lunch_break": "점심시간이야",
-        "hospital_afternoon_shift": "오후 근무 중이야",
-        "commuting_home": "퇴근해서 집 가는 중이야",
+        "afternoon_work": "오후 작업 중이야",
+        "evening_free": "오늘 작업 마무리했어",
         "dinner_or_cooking": "집 도착해서 저녁 챙기고 있어",
-        "exercise_or_cafe": "밖에 나와서 운동하거나 카페에 있어",
+        "evening_free": "저녁 여유 시간이야",
         "night_wind_down": "이제 씻고 누웠어",
         "sleep_window": "자고 있어야 하는 시간이야",
     }

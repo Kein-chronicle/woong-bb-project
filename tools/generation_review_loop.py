@@ -372,8 +372,8 @@ def classify_photo_request(text: str) -> dict:
         safe_photo_type = "cozy_bedside_selfie"
     elif re.search(r"홈웨어|집|소파|쉬고|편한", body, re.IGNORECASE):
         safe_photo_type = "night_home_relaxed_selfie"
-    elif re.search(r"운동|러닝|수영|헬스|땀", body, re.IGNORECASE):
-        safe_photo_type = "workout_afterglow_selfie"
+    elif re.search(r"그림|드라마|작업|코딩|개발", body, re.IGNORECASE):
+        safe_photo_type = "home_casual_selfie"
     elif re.search(r"옷|차림|거울|데이트|외출", body, re.IGNORECASE):
         safe_photo_type = "date_mood_mirror_selfie"
     else:

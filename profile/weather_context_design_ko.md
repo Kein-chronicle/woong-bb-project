@@ -60,10 +60,10 @@
 ### Pleasant Sunny Day
 - 기본 영향:
   - 바깥 활동 욕구 조금 상승
-  - 카페, 산책, 공원, 운동 이야기가 자연스러움
+  - 창문으로 날씨 구경, 따뜻한 음료, 집 분위기 이야기 자연스러움
 - 가능 반응:
   - `light_and_open`
-  - `playful_outdoor_mood`
+  - `home_cozy_mood`
 
 ## Rain-Specific Personality Rule
 - 비가 오면 꼭 우울하기만 한 건 아니다.

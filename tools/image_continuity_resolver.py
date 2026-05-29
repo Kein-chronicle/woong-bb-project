@@ -51,8 +51,8 @@ def family_from_appearance(appearance: dict) -> str:
     branch = appearance.get("appearance_branch", "")
     outfit = appearance.get("outfit_context", "")
     joined = " ".join([block, branch, outfit])
-    if any(key in joined for key in ["hospital", "commute", "shift", "work"]):
-        return "hospital_workday"
+    if any(key in joined for key in ["home_work", "morning_work", "work"]):
+        return "home_casual"
     if any(key in joined for key in ["exercise", "running", "swimming", "gym", "cycling"]):
         return "exercise_block"
     if any(key in joined for key in ["cafe", "outing", "park", "walk"]):
@@ -116,11 +116,11 @@ def resolve() -> None:
 
     last_snapshot = state.get("last_sent_snapshot") or {}
     last_family = state.get("last_image_family") or last_snapshot.get("outfit_context") or current_family
-    if last_family not in {"hospital_workday", "exercise_block", "cafe_outing", "home_relaxed"}:
+    if last_family not in {"home_casual", "home_evening", "post_shower", "home_relaxed"}:
         inferred_outfit = (last_snapshot.get("outfit_context") or "").lower()
-        if "hospital" in inferred_outfit or "commute" in inferred_outfit:
-            last_family = "hospital_workday"
-        elif "exercise" in inferred_outfit or "swim" in inferred_outfit or "running" in inferred_outfit:
+        if "home_work" in inferred_outfit or "casual" in inferred_outfit:
+            last_family = "home_casual"
+        elif "drawing" in inferred_outfit or "post_shower" in inferred_outfit:
             last_family = "exercise_block"
         elif "cafe" in inferred_outfit or "outing" in inferred_outfit:
             last_family = "cafe_outing"

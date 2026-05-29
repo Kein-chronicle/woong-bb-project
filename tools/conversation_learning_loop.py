@@ -44,7 +44,7 @@ JOB_CONFLICT_PATTERNS = [
 ]
 
 ALLOWED_JOB_CONTEXT_PATTERNS = [
-    r"병원", r"병동", r"인수인계", r"차팅", r"환자", r"퇴근", r"출근길",
+    r"에러", r"디버그", r"커밋", r"빌드", r"배포",
 ]
 
 TONE_CONFLICT_PATTERNS = [

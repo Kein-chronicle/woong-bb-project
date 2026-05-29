@@ -30,7 +30,7 @@
 ### 1. Lifestyle Photo
 - 카페 왔다고 카페 내부 사진
 - 음료/디저트/음식 사진
-- 산책/공원/날씨 사진
+- 집 창문 밖 하늘, 방 분위기 사진
 - 집밥/베이킹 사진
 
 ### 2. Selfie-Like Encouragement Image

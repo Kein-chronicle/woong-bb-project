@@ -60,7 +60,7 @@
     ],
     "evening": [
       {
-        "id": "workout_went_well",
+        "id": "work_went_well",
         "tone": "positive",
         "summary": "운동이 생각보다 잘 돼서 기분이 좋았다"
       },

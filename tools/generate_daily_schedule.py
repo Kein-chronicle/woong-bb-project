@@ -56,16 +56,16 @@ WEEKDAY_BREAKFAST = [
 ]
 
 WEEKDAY_LUNCH = [
-    {"menu": "된장찌개 정식", "location": "병원 직원 식당"},
-    {"menu": "제육볶음 정식", "location": "병원 직원 식당"},
-    {"menu": "순두부찌개 + 밥", "location": "병원 직원 식당"},
-    {"menu": "비빔밥", "location": "병원 직원 식당"},
-    {"menu": "김치찌개 정식", "location": "병원 직원 식당"},
-    {"menu": "돈까스", "location": "병원 근처 식당"},
-    {"menu": "쌀국수", "location": "병원 근처 식당"},
+    {"menu": "된장찌개", "location": "집 부엌"},
+    {"menu": "제육볶음", "location": "집 부엌"},
+    {"menu": "순두부찌개", "location": "집 부엌"},
+    {"menu": "비빔밥", "location": "집 부엌"},
+    {"menu": "김치찌개", "location": "집 부엌"},
+    {"menu": "돈까스", "location": "집 부엌"},
+    {"menu": "쌀국수", "location": "집 부엌"},
     {"menu": "참치마요 삼각김밥 + 컵라면", "location": "편의점 (바빠서)"},
-    {"menu": "샐러드 + 샌드위치", "location": "병원 카페테리아"},
-    {"menu": "비빔국수", "location": "병원 직원 식당"},
+    {"menu": "샌드위치", "location": "집 부엌"},
+    {"menu": "비빔국수", "location": "집 부엌"},
 ]
 
 WEEKDAY_DINNER = [
@@ -82,7 +82,7 @@ WEEKDAY_DINNER = [
 ]
 
 WEEKDAY_EXERCISE = [
-    {"type": "수영", "location": "집 근처 수영장", "duration_min": 60, "shower": True},
+    {"type": "그림 그리기", "location": "집 데스크", "duration_min": 60},
     {"type": "러닝", "location": "한강변", "duration_min": 45, "shower": True},
     {"type": "헬스", "location": "동네 헬스장", "duration_min": 60, "shower": True},
     {"type": "자전거", "location": "한강 자전거도로", "duration_min": 50, "shower": True},
@@ -93,12 +93,12 @@ WEEKDAY_EXERCISE = [
 
 # 간호사 오전 근무(07:59~점심) 세부 업무 풀 — 시간순으로 몇 개 뽑아 타임라인 구성
 MORNING_SHIFT_TASKS = [
-    "야간 근무자한테 인계받기 (환자 상태 브리핑)",
+    "오전 작업 시작 (이전 작업 이어서)",
     "담당 병실 회진 돌면서 활력징후 체크",
     "아침 투약 (정해진 시간 약 챙겨 돌리기)",
     "수액·주사 라인 정리하고 교체",
-    "검사 있는 환자 검사실로 이송 준비",
-    "전동/입원 환자 받아서 기록 정리",
+    "버그 확인 및 코드 리뷰",
+    "새 기능 작업 시작",
     "의사 회진 따라 돌면서 처방 확인",
     "차트·간호기록 밀린 거 정리",
     "보호자 문의 응대",
@@ -108,19 +108,19 @@ MORNING_SHIFT_TASKS = [
 # 오후 근무(점심 후~퇴근) 세부 업무 풀
 AFTERNOON_SHIFT_TASKS = [
     "오후 투약 라운드",
-    "퇴원 환자 교육하고 서류 정리",
-    "신규 입원 환자 받기",
+    "작업 마무리 및 커밋",
+    "오후 작업 이어가기",
     "검사 결과 확인하고 의사한테 보고",
     "드레싱·처치 마무리",
     "다음 근무자한테 넘길 인계 노트 작성",
-    "병실 환자 컨디션 재확인 회진",
+    "오후 코드 리뷰",
     "보호자 상담",
 ]
 
 # 그날 근무가 바빴/평범/한가했던 구체적 이유 풀 (물어보면 답할 수 있게)
 BUSY_REASONS_HEAVY = [
     "오전에 신규 입원이 둘이나 몰려서 받느라 정신없었어",
-    "응급으로 상태 안 좋아진 환자가 있어서 거기 계속 붙어 있었어",
+    "버그가 생각보다 복잡해서 거기 계속 붙어 있었어",
     "검사 일정이 한꺼번에 겹쳐서 이송이랑 준비가 밀렸어",
     "동기 한 명이 연차라 인원이 부족해서 평소보다 많이 뛰었어",
     "회진이 길어져서 그 뒤 일정이 다 밀렸어",
@@ -132,14 +132,14 @@ BUSY_REASONS_NORMAL = [
     "큰 사건 없이 무난하게 돌아갔어",
 ]
 BUSY_REASONS_LIGHT = [
-    "오늘은 환자가 안정적이라 생각보다 여유 있었어",
+    "오늘은 작업이 잘 돌아가서 생각보다 여유 있었어",
     "검사나 입원이 적어서 평소보다 한가했어",
     "회진도 금방 끝나고 차트도 밀린 게 없어서 편했어",
 ]
 WARD_NOTABLE = [
-    "오래 입원해 있던 환자 한 분이 오늘 퇴원해서 괜히 뭉클했어",
+    "오래 붙잡고 있던 기능이 오늘 완성돼서 뿌듯했어",
     "보호자가 간식 챙겨주셔서 동료들이랑 나눠 먹었어",
-    "신규 환자가 좀 예민하셔서 달래느라 시간 좀 썼어",
+    "새 이슈가 좀 까다로워서 분석하느라 시간 좀 썼어",
     "선배가 일 도와줘서 한결 수월했어",
     "특별한 일은 없었어",
     "점심 메뉴가 의외로 괜찮아서 그게 작은 낙이었어",
@@ -165,7 +165,7 @@ NIGHT_OTT_PICKS = [
     {"platform": "유튜브", "title": "나는 솔로 클립 정주행", "kind": "variety", "detail": "나는솔로 명장면"},
     # 뷰티/라이프스타일
     {"platform": "유튜브", "title": "올리브영 신상 하울 영상", "kind": "beauty", "detail": "스킨케어 하울 리뷰"},
-    {"platform": "유튜브", "title": "간호사 일상 브이로그", "kind": "vlog", "detail": "병원 일상 vlog"},
+    {"platform": "유튜브", "title": "개발자 일상 브이로그", "kind": "vlog", "detail": "코딩 일상 vlog"},
     {"platform": "유튜브", "title": "자취방 인테리어 영상 구경", "kind": "vlog", "detail": "원룸 꾸미기 브이로그"},
     {"platform": "유튜브", "title": "주말 카페 브이로그", "kind": "vlog", "detail": "서울 감성 카페 vlog"},
     {"platform": "유튜브", "title": "데일리 메이크업 튜토리얼", "kind": "beauty", "detail": "출근 메이크업 영상"},
@@ -201,7 +201,7 @@ NIGHT_WINDDOWN_ACTIVITIES = [
 
 # 주말 오후 활동별 구체적 세부 (물어보면 답할 수 있게)
 WEEKEND_AFTERNOON_DETAIL = {
-    "공원 산책": ["근처 공원 한 바퀴 돌면서 사진 찍기", "벤치에서 음악 들으며 멍때리기", "산책로 따라 천천히 걷기"],
+    "그림 그리기": ["디지털 드로잉 한 시간", "스케치 연습", "좋아하는 장면 그리기"],
     "카페": ["창가 자리에서 디저트랑 커피", "노트북 들고 가서 끄적이기", "신상 디저트 먹어보기"],
     "서점": ["베스트셀러 코너 구경", "에세이 코너에서 한참 서서 읽기", "읽고 싶던 책 한 권 사기"],
     "전시": ["미술 전시 천천히 둘러보기", "사진전 구경하고 굿즈 사기", "팝업 전시 구경"],
@@ -226,8 +226,8 @@ WEEKEND_NOTABLE = [
 ]
 
 OUTFIT_WEEKDAY = [
-    "스크럽 (병원 근무복)",
-    "스크럽 + 카디건",
+    "기본 작업복 (흰 티셔츠 + 반바지)",
+    "후디 + 반바지",
 ]
 
 OUTFIT_CASUAL = [
@@ -264,11 +264,11 @@ WEEKEND_DINNER = [
 ]
 
 WEEKEND_EXERCISE = [
-    {"type": "수영", "location": "실내 수영장", "duration_min": 60},
+    {"type": "그림 그리기", "location": "집 데스크", "duration_min": 60},
     {"type": "러닝", "location": "한강변", "duration_min": 50},
     {"type": "자전거", "location": "한강 자전거도로", "duration_min": 70},
     {"type": "요가", "location": "집", "duration_min": 40},
-    {"type": "산책", "location": "공원", "duration_min": 60},
+    {"type": "드라마 보기", "location": "집 침대", "duration_min": 60},
     {"type": "없음", "location": "", "duration_min": 0},
 ]
 
@@ -401,7 +401,7 @@ def generate_weekday(date_str: str, now_iso: str) -> dict:
                 "skincare_done": skincare_done,
                 "makeup_done": makeup_done,
                 "dress_done": dress_done,
-                "note": "스킨케어 → 메이크업 → 스크럽 갈아입기 순서",
+                "note": "세수 → 커피 → 컴퓨터 켜기 순서",
             },
             "outfit": outfit_work,
             "casual_outfit": outfit_casual,
@@ -411,8 +411,8 @@ def generate_weekday(date_str: str, now_iso: str) -> dict:
             },
             "depart_time": depart,
         },
-        "commute_to_work": {
-            "route": random.choice(commute_options),
+        "morning_prep": {
+            "route": "집 컴퓨터 앞",
             "depart_time": depart,
             "arrive_time": arrive_work,
         },
@@ -428,12 +428,12 @@ def generate_weekday(date_str: str, now_iso: str) -> dict:
             "location": lunch["location"],
             "time": lunch_time,
             "end_time": lunch_end,
-            "with": random.choice(["혼자", "선배 간호사랑", "동기 간호사랑"]),
+            "with": "혼자",
         },
-        "commute_home": {
+        "evening_free": {
             "depart_time": depart_home,
             "arrive_time": arrive_home,
-            "note": random.choice(["퇴근길 편의점 들름", "그냥 바로 집", "마트 잠깐 들름", "카페 테이크아웃"]),
+            "note": random.choice(["작업 마무리", "컴퓨터 끄고 쉬기", "저녁 준비 시작"]),
         },
         "dinner": {
             "menu": dinner["menu"],

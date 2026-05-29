@@ -78,7 +78,7 @@
 - `cafe_outing`
   - 카페
   - 외출
-  - 가벼운 산책/공원
+  - 집에서 그림 그리기/쉬기
 
 같은 family 안에서는 시간 차가 좀 있어도 `outfit_face_reference`를 우선 검토한다.
 

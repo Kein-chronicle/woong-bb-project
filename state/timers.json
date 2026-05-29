@@ -99,7 +99,7 @@
       "reason": "weekday_dinner_eating"
     },
     {
-      "id": "weekday_exercise_or_cafe",
+      "id": "weekday_evening_free",
       "enabled": true,
       "type": "time_block_update",
       "scope": "situation_engine",
@@ -111,7 +111,7 @@
         "fri"
       ],
       "time": "19:05",
-      "target_activity": "exercise_or_cafe",
+      "target_activity": "evening_free",
       "reason": "weekday_evening_branch"
     },
     {
