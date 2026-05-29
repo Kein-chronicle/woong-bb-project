@@ -2499,12 +2499,25 @@ def save_recent_image_plan(plan: dict) -> None:
     save_json(IMAGE_SHOT_HISTORY_PATH, history)
 
 
+def resolve_content_level(activity: str, image_settings: dict) -> int:
+    override = image_settings.get("content_level_override")
+    if isinstance(override, int):
+        return override
+    rules = image_settings.get("auto_level_rules", {})
+    if activity in {"commuting_to_work", "commuting_home"}:
+        return int(rules.get("commuting_to_work_and_home", 2))
+    if activity in {"hospital_morning_shift", "hospital_afternoon_shift", "lunch_break"}:
+        return int(rules.get("hospital_work_hours", 1))
+    return int(rules.get("everything_else", 3))
+
+
 def build_image_prompt_plan(reason: str) -> dict:
     presence = load_json(PRESENCE_PATH, {})
     appearance = load_json(APPEARANCE_PATH, {})
     weather = load_json(WEATHER_PATH, {})
     continuity = load_json(STATE / "image_continuity_state.json", {})
     recent_plans = load_recent_image_plans()
+    image_settings = load_json(IMAGE_SETTINGS_PATH, {})
 
     activity = presence.get("current_activity", "")
     block = presence.get("current_time_block", "")
@@ -2519,6 +2532,7 @@ def build_image_prompt_plan(reason: str) -> dict:
     weather_mood = str(weather.get("mood_bias", "") or "")
     continuity_band = continuity.get("continuity_band", "none")
     context_summary = summarize_current_scene().get("context_summary", "")
+    content_level = resolve_content_level(activity, image_settings)
 
     image_type = "soft_selfie_encouragement"
     shot_pool = ["chest_up"]
@@ -2554,6 +2568,77 @@ def build_image_prompt_plan(reason: str) -> dict:
         expression_intensity_pool = ["very_soft", "gentle", "mellow", "sleepy_playful"]
         spontaneity_pool = ["private_candid", "half_prepared", "woke_up_and_sent", "soft_timer_setup"]
         scene_focus = "home_relaxed_mood"
+    elif activity == "lunch_break":
+        lunch_sub = presence.get("lunch_sub_phase", "eating_lunch")
+        if lunch_sub in {"moving_to_lunch", "returning_from_lunch"}:
+            image_type = "lunch_transit_selfie"
+            shot_pool = ["chest_up", "half_body", "waist_up"]
+            angle_pool = ["front_phone_selfie", "three_quarter_arm_length", "slight_high_angle"]
+            expression_pool = ["bright_smile", "tired_but_cute", "closed_lip_smile"]
+            pose_pool = ["walking_glance", "bag_strap_hold", "hair_adjust"]
+            framing_pool = ["subject_centered", "station_or_hallway_context"]
+            capture_method_pool = ["front_camera_handheld"]
+            space_anchor_pool = ["hospital_entrance", "street_walk", "building_hallway"]
+            face_angle_pool = ["front_facing", "three_quarter_turn", "walking_turn_back"]
+            gaze_pool = ["lens_eye_contact", "walking_glance", "off_to_side_focus"]
+            camera_height_pool = ["eye_level", "slight_high_angle", "collarbone_level"]
+            lens_distance_pool = ["arm_length_standard", "quick_step_distance"]
+            body_orientation_pool = ["square_to_camera", "walking_stride", "one_shoulder_forward"]
+            expression_intensity_pool = ["gentle", "fresh_bright", "tired_soft"]
+            spontaneity_pool = ["between_tasks", "quick_update", "caught_mid_motion"]
+            scene_focus = "workday_transition"
+        elif lunch_sub == "getting_coffee":
+            image_type = "lunch_coffee_selfie"
+            shot_pool = ["chest_up", "half_body", "table_portrait"]
+            angle_pool = ["front_phone_selfie", "seated_three_quarter", "slight_high_angle"]
+            expression_pool = ["warm_smile", "playful_grin", "closed_lip_smile"]
+            pose_pool = ["cup_near_face", "waiting_at_counter", "coffee_in_hand"]
+            framing_pool = ["table_items_in_frame", "subject_centered", "environment_balanced"]
+            capture_method_pool = ["front_camera_handheld"]
+            space_anchor_pool = ["cafe_counter", "cafe_table", "window_seat"]
+            face_angle_pool = ["front_facing", "three_quarter_turn", "chin_lift"]
+            gaze_pool = ["lens_eye_contact", "drink_or_table_glance", "off_to_side_focus"]
+            camera_height_pool = ["eye_level", "slight_above_eye_level", "table_height"]
+            lens_distance_pool = ["arm_length_standard", "table_distance"]
+            body_orientation_pool = ["square_to_camera", "leaning_to_table", "one_shoulder_forward"]
+            expression_intensity_pool = ["gentle", "warm", "playful"]
+            spontaneity_pool = ["casual_update", "table_pause", "between_tasks"]
+            scene_focus = "lifestyle_space"
+        else:
+            # waiting_for_food / eating_lunch / finishing_lunch / default
+            image_type = "lunch_eating_selfie"
+            shot_pool = ["chest_up", "half_body", "table_portrait", "waist_up"]
+            angle_pool = ["seated_three_quarter", "front_phone_selfie", "low_table_angle"]
+            expression_pool = ["warm_smile", "tired_but_cute", "content_relaxed", "playful_grin"]
+            pose_pool = ["cup_near_face", "spoon_or_chopstick_hold", "chin_rest", "resting_on_table"]
+            framing_pool = ["table_items_in_frame", "subject_centered", "environment_balanced", "food_and_face_combo"]
+            capture_method_pool = ["front_camera_handheld", "propped_phone_timer"]
+            space_anchor_pool = ["hospital_cafeteria", "nearby_restaurant_table", "food_court_seat", "outdoor_bench_eating"]
+            face_angle_pool = ["front_facing", "three_quarter_turn", "chin_lift", "slight_profile"]
+            gaze_pool = ["lens_eye_contact", "drink_or_table_glance", "downward_relaxed", "laughing_away"]
+            camera_height_pool = ["eye_level", "slight_above_eye_level", "table_height"]
+            lens_distance_pool = ["arm_length_standard", "table_distance", "half_body_distance"]
+            body_orientation_pool = ["seated_open", "leaning_to_table", "one_shoulder_forward"]
+            expression_intensity_pool = ["gentle", "warm", "tired_soft", "playful"]
+            spontaneity_pool = ["casual_update", "table_pause", "mid_conversation_candid", "caught_mid_motion"]
+            scene_focus = "lunch_break_mood"
+    elif activity in {"waking_up", "getting_ready"}:
+        image_type = "morning_ready_selfie"
+        shot_pool = ["chest_up", "half_body", "mirror_quick_check", "waist_up"]
+        angle_pool = ["mirror_half_body", "front_phone_selfie", "slight_high_angle", "three_quarter_arm_length"]
+        expression_pool = ["bright_smile", "closed_lip_smile", "focused_soft", "tired_but_cute"]
+        pose_pool = ["hair_adjust", "bag_strap_hold", "outfit_check", "phone_in_hand_relaxed"]
+        framing_pool = ["subject_centered", "torso_and_outfit_bias", "mirror_with_door_context"]
+        capture_method_pool = ["mirror_selfie", "front_camera_handheld"]
+        space_anchor_pool = ["home_entrance_mirror", "bedroom_mirror", "vanity_corner", "hallway_door"]
+        face_angle_pool = ["front_facing", "three_quarter_turn", "mirror_check_angle"]
+        gaze_pool = ["lens_eye_contact", "quick_mirror_check", "downward_relaxed"]
+        camera_height_pool = ["eye_level", "slight_above_eye_level", "mirror_mid_height"]
+        lens_distance_pool = ["arm_length_standard", "mirror_mid_distance", "half_body_distance"]
+        body_orientation_pool = ["square_to_camera", "one_shoulder_forward", "angled_shoulders_inward"]
+        expression_intensity_pool = ["gentle", "fresh_bright", "contained"]
+        spontaneity_pool = ["mirror_check_in", "quick_update", "between_tasks"]
+        scene_focus = "morning_prep_home"
     elif activity in {"hospital_morning_shift", "hospital_afternoon_shift", "commuting_to_work", "commuting_home"} or "hospital" in outfit_context:
         image_type = "workday_candid_selfie"
         shot_pool = ["chest_up", "half_body", "mirror_quick_check", "waist_up"]
@@ -2600,7 +2685,11 @@ def build_image_prompt_plan(reason: str) -> dict:
         pose_pool = ["holding_mug", "resting_on_table", "looking_back_over_shoulder", "phone_in_mirror"]
         framing_pool = ["table_or_mug_in_frame", "soft_room_context", "subject_centered", "home_detail_balance"]
         capture_method_pool = ["front_camera_handheld", "mirror_selfie", "propped_phone_timer"]
-        space_anchor_pool = ["kitchen_counter", "dining_table", "vanity_mirror"]
+        if activity == "dinner_eating":
+            # 식사 중 = 식탁/주방 고정. 욕실/화장대 금지.
+            space_anchor_pool = ["dining_table", "kitchen_counter", "living_room_sofa"]
+        else:
+            space_anchor_pool = ["kitchen_counter", "dining_table", "living_room_corner"]
         face_angle_pool = ["front_facing", "three_quarter_turn", "over_shoulder_turn", "side_profile_soft"]
         gaze_pool = ["lens_eye_contact", "table_item_glance", "over_shoulder_glance", "downward_relaxed"]
         camera_height_pool = ["eye_level", "counter_height", "slight_above_eye_level", "mirror_mid_height"]
@@ -2924,7 +3013,21 @@ def build_image_prompt_plan(reason: str) -> dict:
             for item in recent_plans[:4]
         ],
         "notes": "다음 이미지 생성 시 셀피/라이프스타일 샷 구도 반복을 줄이기 위한 샷 플랜",
+        "content_level": content_level,
     }
+
+    # 레벨2 + 이동 상황: 이너웨어 자연 노출 힌트 주입
+    if content_level == 2 and activity in {"commuting_to_work", "commuting_home"}:
+        iw_type = appearance.get("innerwear_type") or (appearance.get("workday_commute_outfit") or {}).get("innerwear_type")
+        iw_color = appearance.get("innerwear_color") or (appearance.get("workday_commute_outfit") or {}).get("innerwear_color")
+        if iw_type:
+            plan["innerwear_hint"] = {
+                "visibility": "natural_show",
+                "type": iw_type,
+                "color": iw_color or "skin_beige",
+                "instruction": "상의 네크라인이나 옷 사이로 이너웨어가 자연스럽게 살짝 보이는 구도. 강조 금지, 자연스럽게."
+            }
+
     save_json(IMAGE_PROMPT_PLAN_PATH, plan)
     save_recent_image_plan(plan)
     return plan
@@ -2959,7 +3062,7 @@ def summarize_current_scene() -> dict:
     ctx_key = context_map.get(activity)
     context_summary = day_context.get(ctx_key, {}).get("summary") if ctx_key else None
     meal_status_note = presence.get("meal_status_note")
-    weekend_plan_preview = presence.get("weekend_plan_preview") or day_context.get("weekend_plan", {}).get("preview")
+    weekend_plan_preview = presence.get("weekend_plan_preview") or (day_context.get("weekend_plan") or {}).get("preview")
     ambient_summary = None
     for event in day_context.get("selected_events", []):
         if event.get("tone") == "ambient" and event.get("summary"):
@@ -3677,7 +3780,7 @@ def apply_time_block(activity: str, reason: str) -> None:
     weekend_plan = current_weekend_day_plan(now_dt)
     weekend_summary = weekend_plan.get("blocks", {}).get(activity) if weekend_plan else None
     meal_fields_by_activity = {
-        "lunch_break": {"meal_phase", "meal_status_note"},
+        "lunch_break": {"meal_phase", "meal_status_note", "lunch_sub_phase"},
         "hospital_afternoon_shift": {"meal_phase", "meal_status_note"},
         "dinner_deciding": {"meal_phase", "meal_status_note", "dinner_mode", "dinner_menu_hint"},
         "dinner_preparing": {"meal_phase", "meal_status_note", "dinner_mode", "dinner_menu_hint"},
@@ -3688,7 +3791,7 @@ def apply_time_block(activity: str, reason: str) -> None:
         if activity == supported_activity:
             active_meal_fields = fields
             break
-    for stale_field in {"meal_phase", "meal_status_note", "dinner_mode", "dinner_menu_hint"} - active_meal_fields:
+    for stale_field in {"meal_phase", "meal_status_note", "dinner_mode", "dinner_menu_hint", "lunch_sub_phase"} - active_meal_fields:
         presence.pop(stale_field, None)
 
     presence.update(
@@ -3733,6 +3836,32 @@ def apply_time_block(activity: str, reason: str) -> None:
         else:
             presence["meal_phase"] = "lunch_now"
             presence["meal_status_note"] = "점심시간이라 잠깐 먹으러 나온 상태"
+        # lunch_sub_phase: time-based heuristic within lunch_break (total ~60min)
+        prev_sub = presence.get("lunch_sub_phase", "")
+        lunch_start_min = meal_plan.get("lunch", {}).get("time")  # e.g. "12:00"
+        elapsed_min: Optional[int] = None
+        if lunch_start_min and isinstance(lunch_start_min, str) and ":" in lunch_start_min:
+            try:
+                lh, lm = [int(x) for x in lunch_start_min.split(":")]
+                elapsed_min = (now_dt.hour * 60 + now_dt.minute) - (lh * 60 + lm)
+            except Exception:
+                pass
+        if elapsed_min is None:
+            elapsed_min = 0
+        if prev_sub in {"getting_coffee", "returning_from_lunch"}:
+            pass  # keep context set by chat clues; don't override by time
+        elif elapsed_min < 0:
+            presence["lunch_sub_phase"] = "moving_to_lunch"
+        elif elapsed_min < 8:
+            presence["lunch_sub_phase"] = "moving_to_lunch"
+        elif elapsed_min < 15:
+            presence["lunch_sub_phase"] = "waiting_for_food"
+        elif elapsed_min < 40:
+            presence["lunch_sub_phase"] = "eating_lunch"
+        elif elapsed_min < 55:
+            presence["lunch_sub_phase"] = "finishing_lunch"
+        else:
+            presence["lunch_sub_phase"] = "returning_from_lunch"
     elif activity == "hospital_afternoon_shift" and "lunch_break" in skipped_blocks:
         presence["meal_phase"] = "lunch_missed_or_delayed"
         presence["meal_status_note"] = "점심시간을 놓쳐서 늦게 먹었거나 아직 못 먹은 채 오후 근무로 넘어감"
@@ -4863,7 +4992,7 @@ def check_pending_arrival_promise() -> None:
     save_json(PENDING_ARRIVAL_PROMISE_PATH, promise)
 
 
-def _hhmm_to_h(hhmm: str) -> int | None:
+def _hhmm_to_h(hhmm: str):
     try:
         parts = hhmm.split(":")
         return int(parts[0])

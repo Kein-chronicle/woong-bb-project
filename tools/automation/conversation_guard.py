@@ -24,7 +24,7 @@ DRIVE_PATTERNS = ["운전", "이동 중", "가는 중", "도착할", "휴게소"
 ARRIVAL_PATTERNS = ["도착했", "도착했어", "도착함", "집 왔", "집에 왔", "돌아왔", "내렸", "내려서", "왔어", "와서"]
 REST_PATTERNS = ["쉬는 중", "누워있", "누워 있어", "누워서", "침대", "쉬고 있어", "뻗었"]
 REST_END_PATTERNS = ["일어났", "나왔", "나가는 중", "준비했", "준비 중"]
-MEAL_PATTERNS = ["밥 먹", "저녁 먹", "점심 먹", "식사", "먹는 중", "밥준비", "밥 준비", "식사 중", "브런치"]
+MEAL_PATTERNS = ["밥 먹", "밥먹", "저녁 먹", "저녁먹", "점심 먹", "점심먹", "식사", "먹는 중", "먹는중", "먹고 있", "먹고있", "밥준비", "밥 준비", "식사 중", "식사중", "브런치", "먹고 있어", "먹고있어"]
 MEAL_END_PATTERNS = ["다 먹", "먹었", "식사 끝", "밥 다", "배불", "치웠"]
 SICK_PATTERNS = ["아프", "몸살", "감기", "열나", "열 나", "두통", "컨디션 안", "속 안 좋", "병원 다녀", "약 먹"]
 RECOVERY_PATTERNS = ["괜찮아졌", "이제 괜찮", "나았", "회복", "멀쩡", "좀 나아", "다 나았"]
@@ -86,7 +86,9 @@ STATE_SPECS = [
     {
         "key": "driving_or_in_transit",
         "start_patterns": DRIVE_PATTERNS,
-        "end_patterns": ARRIVAL_PATTERNS,
+        "end_patterns": ARRIVAL_PATTERNS + MEAL_PATTERNS + REST_PATTERNS,
+        "max_age_minutes": 90,
+        "stale_after_hours": 3,
         "summary": "운전 중이거나 이동 중",
         "availability": "limited",
         "followup_policy": "soft_only",
@@ -446,10 +448,10 @@ def _new_state_entry(spec: dict, event: dict, text: str) -> dict:
     }
 
 
-def _mark_resolved(entry: dict, event: dict, reason: str) -> dict:
+def _mark_resolved(entry: dict, event: Optional[dict], reason: str) -> dict:
     resolved = dict(entry)
     resolved["status"] = "resolved"
-    resolved["resolved_at"] = event.get("timestamp")
+    resolved["resolved_at"] = event.get("timestamp") if event else None
     resolved["resolution_reason"] = reason
     return resolved
 
@@ -474,6 +476,7 @@ def build_counterpart_state_memory(events: Optional[list] = None) -> dict:
     resolved_states = []
     facts = {}
 
+    now_dt = now_local()
     for event in incoming_events:
         text = event_text(event)
         if not is_human_state_signal(text):
@@ -483,7 +486,17 @@ def build_counterpart_state_memory(events: Optional[list] = None) -> dict:
 
         for state_key, entry in list(active_states.items()):
             spec = STATE_SPEC_BY_KEY.get(state_key)
-            if spec and (direct_state_statement or direct_fact_statement) and contains_any(text, spec["end_patterns"]):
+            if not spec:
+                continue
+            # TTL 만료 체크
+            max_age = spec.get("max_age_minutes")
+            if max_age:
+                started_at = parse_event_timestamp(entry.get("started_at"))
+                if started_at and (now_dt - started_at).total_seconds() > max_age * 60:
+                    resolved_states.append(_mark_resolved(entry, event, "ttl_expired"))
+                    active_states.pop(state_key, None)
+                    continue
+            if (direct_state_statement or direct_fact_statement) and contains_any(text, spec["end_patterns"]):
                 resolved_states.append(_mark_resolved(entry, event, "explicit_or_implied_resolution"))
                 active_states.pop(state_key, None)
 
@@ -538,6 +551,26 @@ def build_counterpart_state_memory(events: Optional[list] = None) -> dict:
                 existing["source_excerpt"] = _trim_excerpt(text)
             else:
                 active_states[spec["key"]] = _new_state_entry(spec, event, text)
+
+    # 이벤트 루프 후 TTL 만료 + staleness 재체크 — 새 메시지 없을 때도 만료된 상태 정리
+    for state_key, entry in list(active_states.items()):
+        spec = STATE_SPEC_BY_KEY.get(state_key)
+        if not spec:
+            continue
+        max_age = spec.get("max_age_minutes")
+        if max_age:
+            started_at = parse_event_timestamp(entry.get("started_at"))
+            if started_at and (now_dt - started_at).total_seconds() > max_age * 60:
+                resolved_states.append(_mark_resolved(entry, None, "ttl_expired_post_loop"))
+                active_states.pop(state_key, None)
+                continue
+        # staleness 체크: last_mentioned_at 기준으로 오래됐으면 상태 모름으로 리셋
+        stale_hours = spec.get("stale_after_hours")
+        if stale_hours:
+            last_mentioned = parse_event_timestamp(entry.get("last_mentioned_at") or entry.get("started_at"))
+            if last_mentioned and (now_dt - last_mentioned).total_seconds() > stale_hours * 3600:
+                resolved_states.append(_mark_resolved(entry, None, "stale_unknown"))
+                active_states.pop(state_key, None)
 
     active_state_list = sorted(
         active_states.values(),

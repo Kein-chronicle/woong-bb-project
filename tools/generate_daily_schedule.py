@@ -14,6 +14,36 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DAY_CONTEXT_PATH = os.path.join(ROOT, "state", "day_context.json")
 OUTPUT_PATH = os.path.join(ROOT, "state", "daily_schedule_state.json")
+MEDIA_HISTORY_PATH = os.path.join(ROOT, "state", "media_pick_history.json")
+
+
+def pick_without_repeat(pool: list, history_key: str, days_avoid: int = 7) -> dict:
+    """날짜 시드 + 최근 사용 이력 기반으로 반복 없이 항목 선택."""
+    try:
+        with open(MEDIA_HISTORY_PATH) as f:
+            history = json.load(f)
+    except Exception:
+        history = {}
+    today = datetime.date.today().isoformat()
+    recent = history.get(history_key, [])
+    # days_avoid일 이내 사용된 title 제외
+    cutoff = (datetime.date.today() - datetime.timedelta(days=days_avoid)).isoformat()
+    recent_titles = {r["title"] for r in recent if r.get("date", "") >= cutoff}
+    candidates = [p for p in pool if p.get("title", "") not in recent_titles]
+    if not candidates:
+        candidates = pool  # 모두 최근 사용이면 전체에서 선택
+    # 날짜 기반 시드로 결정론적 선택
+    seed = int(today.replace("-", "")) % len(candidates)
+    chosen = candidates[seed]
+    # 이력 저장
+    recent.append({"date": today, "title": chosen.get("title", "")})
+    history[history_key] = recent[-30:]  # 최근 30개 보관
+    try:
+        with open(MEDIA_HISTORY_PATH, "w") as f:
+            json.dump(history, f, ensure_ascii=False, indent=2)
+    except Exception:
+        pass
+    return chosen
 
 # ── Data pools ─────────────────────────────────────────────────────────────────
 
@@ -124,12 +154,33 @@ EVENING_AFTER_DINNER = [
     "내일 입을 옷이랑 가방 미리 챙겨두기",
 ]
 NIGHT_OTT_PICKS = [
-    {"platform": "넷플릭스", "title": "보던 한드 다음 화", "kind": "k_drama"},
-    {"platform": "넷플릭스", "title": "가볍게 보는 예능", "kind": "variety"},
-    {"platform": "티빙", "title": "주말 못 본 예능 몰아보기", "kind": "variety"},
-    {"platform": "유튜브", "title": "카페 브이로그랑 먹방", "kind": "vlog"},
-    {"platform": "유튜브", "title": "잠 안 와서 ASMR이랑 짧은 영상", "kind": "asmr"},
-    {"platform": "넷플릭스", "title": "보려고 찜해둔 영화 한 편", "kind": "movie"},
+    # 드라마/영화
+    {"platform": "넷플릭스", "title": "보던 한드 다음 화", "kind": "k_drama", "detail": ""},
+    {"platform": "넷플릭스", "title": "찜해둔 로맨스 영화 한 편", "kind": "movie", "detail": ""},
+    {"platform": "웨이브", "title": "못 본 한드 1화부터", "kind": "k_drama", "detail": ""},
+    # 예능/버라이어티
+    {"platform": "유튜브", "title": "유 퀴즈 클립 몰아보기", "kind": "variety", "detail": "유퀴즈온더블럭 하이라이트 클립"},
+    {"platform": "유튜브", "title": "런닝맨 명장면 쇼츠", "kind": "variety", "detail": "런닝맨 웃긴 장면 모음"},
+    {"platform": "티빙", "title": "주말 못 본 예능 몰아보기", "kind": "variety", "detail": ""},
+    {"platform": "유튜브", "title": "나는 솔로 클립 정주행", "kind": "variety", "detail": "나는솔로 명장면"},
+    # 뷰티/라이프스타일
+    {"platform": "유튜브", "title": "올리브영 신상 하울 영상", "kind": "beauty", "detail": "스킨케어 하울 리뷰"},
+    {"platform": "유튜브", "title": "간호사 일상 브이로그", "kind": "vlog", "detail": "병원 일상 vlog"},
+    {"platform": "유튜브", "title": "자취방 인테리어 영상 구경", "kind": "vlog", "detail": "원룸 꾸미기 브이로그"},
+    {"platform": "유튜브", "title": "주말 카페 브이로그", "kind": "vlog", "detail": "서울 감성 카페 vlog"},
+    {"platform": "유튜브", "title": "데일리 메이크업 튜토리얼", "kind": "beauty", "detail": "출근 메이크업 영상"},
+    # 먹방/음식
+    {"platform": "유튜브", "title": "편의점 신상 후기 영상", "kind": "food", "detail": "GS25 CU 신상 리뷰"},
+    {"platform": "유튜브", "title": "혼자 먹는 분식 먹방", "kind": "food", "detail": "떡볶이 순대 먹방"},
+    {"platform": "유튜브", "title": "간단 자취 요리 레시피", "kind": "food", "detail": "간단 자취 밥 레시피"},
+    # 아이돌/음악
+    {"platform": "유튜브", "title": "최애 아이돌 신곡 뮤비", "kind": "kpop", "detail": "케이팝 신곡 뮤직비디오"},
+    {"platform": "유튜브", "title": "아이돌 쇼츠 모음 보기", "kind": "kpop", "detail": "직캠 쇼츠 모음"},
+    {"platform": "유튜브", "title": "플레이리스트 틀어놓고 폰 보기", "kind": "music", "detail": "감성 팝 플레이리스트"},
+    # ASMR/힐링
+    {"platform": "유튜브", "title": "카페 빗소리 ASMR", "kind": "asmr", "detail": "카페 소음 ASMR 집중"},
+    {"platform": "유튜브", "title": "잠 오는 ASMR 틀어놓기", "kind": "asmr", "detail": "수면 유도 ASMR"},
+    {"platform": "유튜브", "title": "자연 소리 배경음 영상", "kind": "asmr", "detail": "빗소리 파도소리 힐링"},
 ]
 NIGHT_READING_PICKS = [
     "읽던 에세이 몇 장",
@@ -238,14 +289,14 @@ def add_minutes(hhmm: str, minutes: int) -> str:
 
 def generate_weekday(date_str: str, now_iso: str) -> dict:
     breakfast = random.choice(WEEKDAY_BREAKFAST)
-    wakeup = rand_minute("05:45", 10)
-    shower_done = add_minutes(wakeup, 20)
+    wakeup = rand_minute("06:00", 5)
+    shower_done = add_minutes(wakeup, 15)
     breakfast_time = add_minutes(shower_done, breakfast["time_offset"])
     # 화장·헤어·옷 입기 prep 시간
-    skincare_done = add_minutes(shower_done, random.randint(10, 15))
-    makeup_done = add_minutes(skincare_done, random.randint(20, 30))
-    dress_done = add_minutes(makeup_done, random.randint(10, 15))
-    depart = add_minutes(dress_done, random.randint(3, 8))  # 집에서 나가는 시간
+    skincare_done = add_minutes(shower_done, random.randint(8, 10))
+    makeup_done = add_minutes(skincare_done, random.randint(18, 22))
+    dress_done = add_minutes(makeup_done, random.randint(8, 10))
+    depart = add_minutes(dress_done, random.randint(2, 5))  # 집에서 나가는 시간 (~07:00)
     arrive_work = add_minutes(depart, 58)
 
     lunch = random.choice(WEEKDAY_LUNCH)
@@ -275,7 +326,7 @@ def generate_weekday(date_str: str, now_iso: str) -> dict:
     sleep_target = rand_minute("23:50", 15)
 
     # 퇴근 후~취침 세부 타임라인 구성
-    ott = random.choice(NIGHT_OTT_PICKS)
+    ott = pick_without_repeat(NIGHT_OTT_PICKS, "night_ott")
     after_dinner_act = random.choice(EVENING_AFTER_DINNER)
     # night_start(머리 말린 직후)부터 sleep_target까지를 채우는 활동 순서
     ns_m = int(night_start.split(":")[0]) * 60 + int(night_start.split(":")[1])
@@ -448,7 +499,7 @@ def generate_weekend(date_str: str, now_iso: str, day_context: dict) -> dict:
         afternoon_timeline.append({"time": ex_start, "activity": "%s (%s)" % (exercise["type"], exercise["location"])})
 
     # 야간 타임라인 (주말도 평일과 동일 구조)
-    ott = random.choice(NIGHT_OTT_PICKS)
+    ott = pick_without_repeat(NIGHT_OTT_PICKS, "night_ott")
     hd_m = int(hair_dry.split(":")[0]) * 60 + int(hair_dry.split(":")[1])
     st_m = int(sleep_target.split(":")[0]) * 60 + int(sleep_target.split(":")[1])
     if st_m <= hd_m:
@@ -545,6 +596,18 @@ def main():
         json.dump(schedule, f, ensure_ascii=False, indent=2)
 
     print(f"[daily_schedule] {date_str} ({day_type}) 일정 생성 완료 → {OUTPUT_PATH}")
+
+    # 오늘의 YouTube picks 실제 검색
+    try:
+        import subprocess as _sp
+        _sp.Popen(
+            [sys.executable, os.path.join(os.path.dirname(__file__), "fetch_youtube_picks.py")],
+            stdout=open(os.path.join(ROOT, "state", "youtube_fetch.log"), "a"),
+            stderr=subprocess.STDOUT,
+        )
+        print("[daily_schedule] YouTube picks 검색 시작 (백그라운드)")
+    except Exception as e:
+        print(f"[daily_schedule] YouTube picks 검색 실패: {e}")
 
 
 if __name__ == "__main__":

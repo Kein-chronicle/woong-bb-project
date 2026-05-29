@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
   "managed_by": "image_generation_settings",
-  "generation_enabled": true,
+  "generation_enabled": false,
   "content_level_mode": "auto",
   "content_level_override": null,
   "changed_at": "2026-05-26T23:00:00+09:00",
   "changed_by": "master_request",
-  "change_reason": "근무 중 레벨1. 출퇴근 레벨2(단추있는 옷 상단 4개 풀기). 그 외 레벨3.",
+  "change_reason": "근무 중 레벨1. 출퇴근 레벨2(이너웨어 자연 노출). 그 외 레벨3.",
   "auto_level_rules": {
     "hospital_work_hours": 1,
     "commuting_to_work_and_home": 2,
@@ -14,7 +14,7 @@
   },
   "content_level_description": {
     "1": "conservative: 병원 근무 중 (hospital_morning_shift / hospital_afternoon_shift / lunch_break)",
-    "2": "semi-expressive: 출퇴근 (commuting_to_work / commuting_home). 단추있는 상의 착용 시 상단 4개 풀기 기준 적용.",
+    "2": "semi-expressive: 출퇴근 (commuting_to_work / commuting_home). 이너웨어(브라탑/브라렛/기본 브라)가 상의 네크라인이나 틈 사이로 자연스럽게 살짝 보이는 구도. 강조·클로즈업 금지, 일상 셀피 수준.",
     "3": "expressive: 집·귀가 후·샤워 후·저녁·주말 등 그 외 모든 상황. 복장 샘플 --image 금지, 텍스트 프롬프트만"
   },
   "when_disabled": {
