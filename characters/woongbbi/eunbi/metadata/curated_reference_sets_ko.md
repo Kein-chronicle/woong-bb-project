@@ -9,13 +9,13 @@
 
 ## 몸과 실루엣
 - `full_body_silhouette`: 전체 비율, 키감, 어깨-허리-하체 흐름, 서 있는 포즈 참고용.
-- `legs_feet_shoes`: 다리 라인, 양말/스니커즈/부츠/수영 핀 참고용.
+- `legs_feet_shoes`: 다리 라인, 양말/슬리퍼/홈슈즈 참고용.
 - `hands_props_gestures`: 손 위치, 휴대폰, 컵, 음식, 모자, 얼굴 근처 제스처 참고용.
 
 ## 패션과 계절
-- `summer_water_sport`: 수영복, 프리다이빙, 리조트, 해변, 보트, 물속 장면.
+- `summer_water_sport`: 현재 미사용 (v2 홈 기반).
 - `cafe_food_lifestyle`: 카페, 식사, 디저트, 커피, 실내 자연광.
-- `autumn_city_casual`: 후디, 레더 재킷, 캠퍼스/공원/도시 산책.
+- `autumn_city_casual`: 후디, 맨투맨, 홈웨어 가을 버전.
 - `winter_travel_cozy`: 패딩, 플리스, 비니, 눈 덮인 산과 호수, 따뜻한 실내.
 - `sporty_preppy_city`: 스포티 탱크, 바이커 쇼츠, 체크 스커트, 블랙 블레이저, 도시 워킹.
 
