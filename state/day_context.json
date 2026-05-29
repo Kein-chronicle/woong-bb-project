@@ -77,15 +77,15 @@
     "selected_at": "2026-05-23T07:51:54+09:00",
     "selected_by": "setting_update",
     "source_text": "",
-    "preview": "토요일은 가볍게 먹고 운동 갔다가 저녁엔 카페까지 이어지는 날, 일요일은 늦잠 후 장 보거나 정리하고 저녁은 집밥으로 마무리하는 날",
+    "preview": "토요일은 가볍게 먹고 그림 그리거나 드라마 보다가 저녁엔 편하게 쉬는 날, 일요일은 늦잠 후 장 보거나 정리하고 저녁은 집밥으로 마무리하는 날",
     "days": {
       "sat": {
         "date": "2026-05-23",
-        "plan_id": "swim_and_late_cafe",
+        "plan_id": "draw_and_late_evening",
         "title": "운동 + 저녁 카페",
         "tags": [
           "workout",
-          "swim",
+          "draw",
           "cafe"
         ],
         "preview": "가볍게 먹고 운동 갔다가 저녁엔 카페까지 이어지는 날",

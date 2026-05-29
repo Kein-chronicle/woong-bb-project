@@ -60,7 +60,7 @@
   - `no_direct_image_reference`
 
 ## Outfit Continuity Families
-- `hospital_workday`
+- `home_casual`
   - 출근 준비
   - 출근길
   - 오전 근무
@@ -73,7 +73,7 @@
   - 자기 전
 - `exercise_block`
   - 러닝
-  - 수영 전후
+  - 샤워 전후
   - 헬스/자전거
 - `cafe_outing`
   - 카페

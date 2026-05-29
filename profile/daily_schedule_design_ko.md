@@ -27,18 +27,18 @@
 | breakfast.menu | "바나나 + 우유" |
 | breakfast.time | "06:15" |
 | depart_time | "06:58" |
-| commute_to_work.route | "집 컴퓨터 앞" |
-| commute_to_work.arrive_time | "07:56" |
+| morning_work.location | "집 컴퓨터 앞" |
+| morning_work.start_time | "07:56" |
 | lunch.menu | "된장찌개 정식" |
 | lunch.location | "집 부엌/식탁" |
 | lunch.time | "12:10" |
 | lunch.with | "혼자" |
-| commute_home.arrive_time | "18:05" |
-| commute_home.note | "마트 잠깐 들름" |
+| afternoon_work.end_time | "18:05" |
+| evening_free.note | "마트 잠깐 들름" |
 | dinner.menu | "파스타 (토마토 소스)" |
 | dinner.eat_time | "18:40" |
-| evening.activity_type | "수영" |
-| evening.location | "집 근처 수영장" |
+| evening.activity_type: "draw_or_drama" |
+| evening.location: "집" |
 | evening.start_time | "19:20" |
 | evening.shower_after | "20:25" |
 | night.content | "OTT" |
@@ -168,4 +168,4 @@ python3 /Users/kein/projects/woong-bb/tools/update_daily_schedule.py --patch '{"
 
 - "냉장고 재료로 만들었는데 그냥 그랬어 ㅎㅎ 그래도 다 먹었지"
 - "파스타 만들려고 면이랑 소스 꺼내놨어 ㅎㅎ 금방 될 것 같아"
-- "수영 다녀왔더니 개운해. 머리 지금 말리고 있는 중"
+- "그림 다 그렸어. 오늘 뭔가 만들어낸 느낌 좋다"

@@ -13,10 +13,10 @@
 
 ### 1. Time Block Transition
 - `waking_up -> getting_ready`
-- `getting_ready -> commuting_to_work`
+- `morning_prep -> morning_work`
 - `morning_shift -> lunch_break`
-- `afternoon_shift -> commuting_home`
-- `commuting_home -> dinner_or_cooking`
+- `afternoon_work -> evening_free`
+- `evening_free -> dinner_or_cooking`
 - `dinner_or_cooking -> exercise_or_cafe`
 - `exercise_or_cafe -> night_wind_down`
 

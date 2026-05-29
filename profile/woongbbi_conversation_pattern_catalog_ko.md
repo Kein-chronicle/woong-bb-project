@@ -56,7 +56,7 @@
 ### after_work_comfort
 - when: 퇴근길, 피곤함이 느껴질 때
 - shape: soft_observation, care_offer, self_update
-- avoid_if_blocked: emotion_check, commute_arrival
+- avoid_if_blocked: emotion_check, home_arrival
 
 ### night_wind_down
 - when: 잘 준비 전, 분위기를 편하게 잇고 싶을 때
