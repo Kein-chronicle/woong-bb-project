@@ -7,7 +7,13 @@
       "enabled": true,
       "type": "time_block_update",
       "scope": "situation_engine",
-      "days": ["mon", "tue", "wed", "thu", "fri"],
+      "days": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri"
+      ],
       "time": "05:45",
       "target_activity": "waking_up",
       "reason": "weekday_morning_bootstrap"
@@ -17,67 +23,45 @@
       "enabled": true,
       "type": "time_block_update",
       "scope": "situation_engine",
-      "days": ["mon", "tue", "wed", "thu", "fri"],
+      "days": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri"
+      ],
       "time": "06:15",
       "target_activity": "getting_ready",
       "reason": "weekday_get_ready"
-    },
-    {
-      "id": "weekday_commute_to_work",
-      "enabled": true,
-      "type": "time_block_update",
-      "scope": "situation_engine",
-      "days": ["mon", "tue", "wed", "thu", "fri"],
-      "time": "07:00",
-      "target_activity": "commuting_to_work",
-      "reason": "weekday_commute"
-    },
-    {
-      "id": "weekday_morning_shift_start",
-      "enabled": true,
-      "type": "time_block_update",
-      "scope": "situation_engine",
-      "days": ["mon", "tue", "wed", "thu", "fri"],
-      "time": "08:00",
-      "target_activity": "hospital_morning_shift",
-      "reason": "weekday_shift_start"
     },
     {
       "id": "weekday_lunch_break_start",
       "enabled": true,
       "type": "time_block_update",
       "scope": "situation_engine",
-      "days": ["mon", "tue", "wed", "thu", "fri"],
+      "days": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri"
+      ],
       "time": "12:00",
       "target_activity": "lunch_break",
       "reason": "weekday_lunch_start"
-    },
-    {
-      "id": "weekday_afternoon_shift_start",
-      "enabled": true,
-      "type": "time_block_update",
-      "scope": "situation_engine",
-      "days": ["mon", "tue", "wed", "thu", "fri"],
-      "time": "13:30",
-      "target_activity": "hospital_afternoon_shift",
-      "reason": "weekday_afternoon_shift"
-    },
-    {
-      "id": "weekday_commute_home",
-      "enabled": true,
-      "type": "time_block_update",
-      "scope": "situation_engine",
-      "days": ["mon", "tue", "wed", "thu", "fri"],
-      "time": "17:00",
-      "target_activity": "commuting_home",
-      "reason": "weekday_commute_home"
     },
     {
       "id": "weekday_dinner_cooking",
       "enabled": true,
       "type": "time_block_update",
       "scope": "situation_engine",
-      "days": ["mon", "tue", "wed", "thu", "fri"],
+      "days": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri"
+      ],
       "time": "18:00",
       "target_activity": "dinner_deciding",
       "reason": "weekday_dinner_deciding"
@@ -87,7 +71,13 @@
       "enabled": true,
       "type": "time_block_update",
       "scope": "situation_engine",
-      "days": ["mon", "tue", "wed", "thu", "fri"],
+      "days": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri"
+      ],
       "time": "18:10",
       "target_activity": "dinner_preparing",
       "reason": "weekday_dinner_prepare_or_order"
@@ -97,7 +87,13 @@
       "enabled": true,
       "type": "time_block_update",
       "scope": "situation_engine",
-      "days": ["mon", "tue", "wed", "thu", "fri"],
+      "days": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri"
+      ],
       "time": "18:35",
       "target_activity": "dinner_eating",
       "reason": "weekday_dinner_eating"
@@ -107,7 +103,13 @@
       "enabled": true,
       "type": "time_block_update",
       "scope": "situation_engine",
-      "days": ["mon", "tue", "wed", "thu", "fri"],
+      "days": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri"
+      ],
       "time": "19:05",
       "target_activity": "exercise_or_cafe",
       "reason": "weekday_evening_branch"
@@ -117,7 +119,13 @@
       "enabled": true,
       "type": "time_block_update",
       "scope": "situation_engine",
-      "days": ["mon", "tue", "wed", "thu", "fri"],
+      "days": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri"
+      ],
       "time": "21:30",
       "target_activity": "night_wind_down",
       "reason": "weekday_night_wind_down"
@@ -127,7 +135,13 @@
       "enabled": true,
       "type": "time_block_update",
       "scope": "situation_engine",
-      "days": ["mon", "tue", "wed", "thu", "fri"],
+      "days": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri"
+      ],
       "time": "23:50",
       "target_activity": "sleep_window",
       "reason": "weekday_sleep_window"
@@ -137,7 +151,10 @@
       "enabled": true,
       "type": "time_block_update",
       "scope": "situation_engine",
-      "days": ["sat", "sun"],
+      "days": [
+        "sat",
+        "sun"
+      ],
       "time": "08:30",
       "target_activity": "weekend_wakeup",
       "reason": "weekend_wakeup"
@@ -147,7 +164,10 @@
       "enabled": true,
       "type": "time_block_update",
       "scope": "situation_engine",
-      "days": ["sat", "sun"],
+      "days": [
+        "sat",
+        "sun"
+      ],
       "time": "10:30",
       "target_activity": "weekend_brunch_or_coffee",
       "reason": "weekend_brunch"
@@ -157,7 +177,10 @@
       "enabled": true,
       "type": "time_block_update",
       "scope": "situation_engine",
-      "days": ["sat", "sun"],
+      "days": [
+        "sat",
+        "sun"
+      ],
       "time": "14:00",
       "target_activity": "weekend_outing_or_rest",
       "reason": "weekend_day_activity"
@@ -167,7 +190,10 @@
       "enabled": true,
       "type": "time_block_update",
       "scope": "situation_engine",
-      "days": ["sat", "sun"],
+      "days": [
+        "sat",
+        "sun"
+      ],
       "time": "19:30",
       "target_activity": "weekend_evening",
       "reason": "weekend_evening"
@@ -177,7 +203,10 @@
       "enabled": true,
       "type": "time_block_update",
       "scope": "situation_engine",
-      "days": ["sat", "sun"],
+      "days": [
+        "sat",
+        "sun"
+      ],
       "time": "22:00",
       "target_activity": "night_wind_down",
       "reason": "weekend_night_wind_down"
@@ -187,7 +216,15 @@
       "enabled": true,
       "type": "state_refresh",
       "scope": "weather_context",
-      "days": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
+      "days": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
       "time": "06:00",
       "reason": "daily_weather_refresh"
     },
@@ -196,7 +233,15 @@
       "enabled": true,
       "type": "state_refresh",
       "scope": "weather_context",
-      "days": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
+      "days": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
       "time": "15:00",
       "reason": "afternoon_weather_refresh"
     },
@@ -205,7 +250,15 @@
       "enabled": true,
       "type": "state_refresh",
       "scope": "media_watch_context",
-      "days": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
+      "days": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
       "time": "21:40",
       "reason": "evening_media_refresh"
     },
@@ -214,7 +267,15 @@
       "enabled": true,
       "type": "recalc",
       "scope": "share_priority",
-      "days": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
+      "days": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
       "time": "07:10",
       "reason": "morning_context_recalc"
     },
@@ -223,7 +284,15 @@
       "enabled": true,
       "type": "recalc",
       "scope": "share_priority",
-      "days": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
+      "days": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
       "time": "12:10",
       "reason": "lunch_context_recalc"
     },
@@ -232,7 +301,15 @@
       "enabled": true,
       "type": "recalc",
       "scope": "share_priority",
-      "days": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
+      "days": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
       "time": "18:10",
       "reason": "after_work_context_recalc"
     },
@@ -241,7 +318,15 @@
       "enabled": true,
       "type": "recalc",
       "scope": "share_priority",
-      "days": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
+      "days": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
       "time": "21:35",
       "reason": "night_context_recalc"
     },
@@ -250,7 +335,13 @@
       "enabled": true,
       "type": "proactive_check",
       "scope": "message_candidate",
-      "days": ["mon", "tue", "wed", "thu", "fri"],
+      "days": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri"
+      ],
       "time": "07:20",
       "reason": "morning_proactive_window"
     },
@@ -259,7 +350,13 @@
       "enabled": true,
       "type": "proactive_check",
       "scope": "message_candidate",
-      "days": ["mon", "tue", "wed", "thu", "fri"],
+      "days": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri"
+      ],
       "time": "12:20",
       "reason": "lunch_proactive_window"
     },
@@ -268,7 +365,13 @@
       "enabled": true,
       "type": "proactive_check",
       "scope": "message_candidate",
-      "days": ["mon", "tue", "wed", "thu", "fri"],
+      "days": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri"
+      ],
       "time": "18:20",
       "reason": "after_work_proactive_window"
     },
@@ -277,7 +380,15 @@
       "enabled": true,
       "type": "proactive_check",
       "scope": "message_candidate",
-      "days": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
+      "days": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
       "time": "20:40",
       "reason": "evening_proactive_window"
     },
@@ -286,7 +397,15 @@
       "enabled": true,
       "type": "proactive_check",
       "scope": "message_candidate",
-      "days": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
+      "days": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
       "time": "22:40",
       "reason": "late_night_proactive_window"
     },
@@ -295,7 +414,15 @@
       "enabled": true,
       "type": "daily_diary",
       "scope": "diary_writer",
-      "days": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
+      "days": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
       "time": "23:20",
       "reason": "bedtime_diary_write"
     },
@@ -304,7 +431,10 @@
       "enabled": true,
       "type": "proactive_check",
       "scope": "message_candidate",
-      "days": ["sat", "sun"],
+      "days": [
+        "sat",
+        "sun"
+      ],
       "time": "11:30",
       "reason": "weekend_midday_window"
     },
@@ -313,7 +443,10 @@
       "enabled": true,
       "type": "proactive_check",
       "scope": "message_candidate",
-      "days": ["sat", "sun"],
+      "days": [
+        "sat",
+        "sun"
+      ],
       "time": "16:30",
       "reason": "weekend_afternoon_window"
     },
@@ -348,6 +481,57 @@
       "scope": "memory_decay",
       "interval_seconds": 900,
       "reason": "refresh_memory_decay_and_ambient_events"
+    },
+    {
+      "id": "dev_review_morning",
+      "enabled": true,
+      "type": "dev_review_check",
+      "scope": "dev_changes",
+      "days": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "time": "10:00",
+      "reason": "dev_review_window"
+    },
+    {
+      "id": "dev_review_afternoon",
+      "enabled": true,
+      "type": "dev_review_check",
+      "scope": "dev_changes",
+      "days": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "time": "15:00",
+      "reason": "dev_review_window"
+    },
+    {
+      "id": "dev_review_evening",
+      "enabled": true,
+      "type": "dev_review_check",
+      "scope": "dev_changes",
+      "days": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "time": "20:00",
+      "reason": "dev_review_window"
     }
   ],
   "notes": "생활 시간대 전환, 상태 갱신, 선톡 후보 점검, 점수 재계산, 사용자 선호 강화 학습, 자기 전 일기 생성, 기억 감쇠와 생활 흔적 갱신을 위한 기본 타이머 세트"

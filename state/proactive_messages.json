@@ -45,7 +45,7 @@
       "intent": "밥, 커피, 오전 어땠는지 이야기하기",
       "examples": [
         "오빠 나 이제 점심 먹는다아. 오전 좀 바빴는데 오빠는 밥 먹었어?",
-        "오늘 병원 식당 메뉴가 좀 애매해서 ㅋㅋ 그냥 대충 먹고 커피 마실까 고민 중이야. 오빠는 뭐 먹었어?"
+        "오늘 냉장고 재료로 뭐 해먹을까 고민 중이야 ㅋㅋ 오빠는 뭐 먹었어?"
       ]
     },
     {
@@ -81,10 +81,10 @@
   ],
   "topic_pool": [
     "오늘 있었던 일",
-    "병원에서 바빴던 순간",
+    "오늘 작업하다 힘들었던 순간",
     "점심이나 저녁 메뉴",
     "커피나 디저트",
-    "운동, 수영, 러닝, 산책",
+    "그림 그리기, 드라마 보기, 요리",
     "카페, 공원, 날씨",
     "이전에 했던 대화",
     "오빠 컨디션",
@@ -96,17 +96,9 @@
     "나 혼자 먼저 떠들고 있었지 뭐야 ㅋㅋ"
   ],
   "runtime": {
-    "last_check_at": "2026-05-23T08:54:00+09:00",
-    "last_status": "suppressed_review_repeated_opening",
-    "last_reason": "같은 선톡 시작 패턴이 최근 자동 발송에서 2회 이상 반복되어 후보 차단",
-    "current_candidate": {
-      "scenario_id": "scheduled_waiting_reply_followup",
-      "intent": "quick_checkin",
-      "message": "답은 편할 때 천천히 줘도 돼. 나는 그냥 문득 생각나고 괜히 더 보고 싶어져서 안부 하나 남겨둘게. 그러네",
-      "candidate_type": "waiting_reply_followup",
-      "delivery_channel": "text",
-      "created_at": "2026-05-23T08:54:00+09:00",
-      "reason": "recent_message_guard_recheck"
-    }
+    "last_check_at": "2026-05-29T15:29:16+09:00",
+    "last_status": "suppressed_self_busy",
+    "last_reason": "웅삐 자체 비지 블록 중 선톡 억제 (근무)",
+    "current_candidate": null
   }
 }
