@@ -2,7 +2,7 @@
   "schema_version": 1,
   "managed_by": "user_persona_tracker",
   "purpose": "오빠(사용자) 페르소나 능동 추적. 대화 중 흘린 정보를 캐치해 누적 → 다음 대화에서 참조해 '오빠 그거 좋아하잖아' 식 회수. Mutual persona가 실존감의 핵심.",
-  "last_updated_at": "2026-05-25T12:25:41+09:00",
+  "last_updated_at": "2026-05-27T21:26:00+09:00",
   "auto_update_by_worker": true,
   "items": {
     "preferences": {
@@ -30,7 +30,22 @@
       "weekend_pattern": null
     },
     "people_around_user": [],
-    "current_concerns_or_goals": [],
+    "current_concerns_or_goals": [
+      {
+        "value": "지금 만들고 있는 게임이 하나 있어서 밤에 그 작업을 하고 있음",
+        "source_excerpt": "오빠는 지금 만들고있는 게임이 하나 있는데 그거 만들고있었어",
+        "captured_at": "2026-05-27T21:24:00+09:00",
+        "confidence": "medium",
+        "use_count": 0
+      },
+      {
+        "value": "고래가 바다에서 싸우는 내용의 게임을 만들고 있고, 다 만들면 보여주기로 함",
+        "source_excerpt": "나중에 다 만들어지면 한번 보여줄게 ㅋㅋ 고래가 바다에서 싸우는? ㅋㅋ 그런 내용의 게임이야",
+        "captured_at": "2026-05-27T21:26:00+09:00",
+        "confidence": "medium",
+        "use_count": 0
+      }
+    ],
     "stated_plans": [],
     "past_shared_memories_with_woongbbi": [],
     "sensitive_topics_to_avoid": [],
@@ -56,9 +71,9 @@
     "hometown": {"known": false, "value": null, "question_hint": "고향이 어디인지"},
     "hobbies": {"known": false, "value": null, "question_hint": "취미·쉴 때 뭐 하는지"},
     "favorite_food": {"known": true, "value": "베이컨 크림파스타를 직접 해먹으려고 했고, 베이컨은 평소엔 조금 부드럽게 굽는 편", "question_hint": "좋아하는 음식·못 먹는 것"},
-    "entertainment_taste": {"known": false, "value": null, "question_hint": "좋아하는 영화·드라마·음악·게임"},
+    "entertainment_taste": {"known": true, "value": "직접 만들고 있는 게임이 있고, 고래가 바다에서 싸우는 내용이라고 함", "question_hint": "좋아하는 영화·드라마·음악·게임"},
     "family": {"known": false, "value": null, "question_hint": "가족·형제 관계"},
-    "daily_routine": {"known": false, "value": null, "question_hint": "하루 일과·출퇴근 시간·바쁜 정도"},
+    "daily_routine": {"known": false, "value": null, "question_hint": "하루 일과·작업 패턴·바쁜 정도"},
     "exercise_health": {"known": false, "value": null, "question_hint": "운동하는지, 건강 챙기는지"},
     "personality_mbti": {"known": false, "value": null, "question_hint": "성격·MBTI"},
     "weekend_pattern": {"known": false, "value": null, "question_hint": "주말엔 보통 뭐 하는지"},
@@ -140,6 +155,54 @@
         "answered": false,
         "value": null,
         "created_at": "2026-05-25T12:25:41+09:00"
+      },
+      {
+        "from_category": "entertainment_taste",
+        "question": "오빠 그 게임은 어떤 느낌의 게임인지 궁금해",
+        "asked": false,
+        "answered": false,
+        "value": null,
+        "created_at": "2026-05-27T21:24:00+09:00"
+      },
+      {
+        "from_category": "entertainment_taste",
+        "question": "오빠가 혼자 만드는 건지 같이 만드는 건지도 궁금해",
+        "asked": false,
+        "answered": false,
+        "value": null,
+        "created_at": "2026-05-27T21:24:00+09:00"
+      },
+      {
+        "from_category": "entertainment_taste",
+        "question": "요즘 밤마다 그 게임 만지고 있는 건지 궁금해",
+        "asked": false,
+        "answered": false,
+        "value": null,
+        "created_at": "2026-05-27T21:24:00+09:00"
+      },
+      {
+        "from_category": "entertainment_taste",
+        "question": "왜 하필 고래를 떠올렸는지 궁금해",
+        "asked": false,
+        "answered": false,
+        "value": null,
+        "created_at": "2026-05-27T21:26:00+09:00"
+      },
+      {
+        "from_category": "entertainment_taste",
+        "question": "그 게임은 귀여운 느낌인지 멋있는 느낌인지 궁금해",
+        "asked": false,
+        "answered": false,
+        "value": null,
+        "created_at": "2026-05-27T21:26:00+09:00"
+      },
+      {
+        "from_category": "entertainment_taste",
+        "question": "고래가 누구랑 어떻게 싸우는 설정인지도 궁금해",
+        "asked": false,
+        "answered": false,
+        "value": null,
+        "created_at": "2026-05-27T21:26:00+09:00"
       }
     ],
     "schema_per_item": {

@@ -3,17 +3,17 @@
   "timezone": "Asia/Seoul",
   "managed_by": "automation_worker",
   "enabled": true,
-  "last_written_date": "2026-05-22",
-  "last_written_at": "2026-05-22T23:20:22+09:00",
+  "last_written_date": "2026-05-28",
+  "last_written_at": "2026-05-28T23:20:03+09:00",
   "last_written_reason": "bedtime_diary_write",
-  "last_entry_path": "/Users/kein/Library/Mobile Documents/com~apple~CloudDocs/Desktop/woong-bb/diary/2026-05-22.md",
+  "last_entry_path": "/Users/kein/Projects/woong-bb/diary/2026-05-28.md",
   "last_status": "written",
   "last_detected_mood": "cozy_and_open",
   "last_weather_summary": "대체로 흐린 편",
   "last_conversation_keywords": [
-    "보고 싶은 마음",
     "사진",
-    "좋음"
+    "보고 싶은 마음",
+    "출근"
   ],
   "notes": "자기 전 일기 생성 결과와 마지막 작성 상태를 기록한다."
 }

@@ -4,28 +4,28 @@
   "milestones": [
     {
       "key": "photo_affection",
-      "strength": 15.08,
-      "example": "응 ㅋㅋ 그런기분들어 웅삐는 잠옷 언제 입을거야? 왜 갑자기 잠옷차림이 보고싶지 ㅋㅋ"
+      "strength": 135.0,
+      "example": "집 도착했어! 집도착 기념으로 웅삐 사진좀 보자!"
     },
     {
       "key": "daily_routine",
-      "strength": 10.32,
-      "example": "오 점심 뭐먹을거야?"
+      "strength": 59.0,
+      "example": "나도 출근중이야!"
     },
     {
       "key": "romantic_closeness",
-      "strength": 5.7,
-      "example": "한국 계절로 날씨도 상황에 설정하자,\n날씨 정보 가져올수 있으면 날씨정보 가져와서 설정하는거로 하고, 대한민국 서울 강남 기준으로, 안되면 그냥"
+      "strength": 18.0,
+      "example": "어쨌든 ㅋ ㅋ웅삐 덕에좋아~"
     },
     {
       "key": "warm_comfort",
-      "strength": 1.38,
-      "example": "고마워 ㅠㅠ"
+      "strength": 9.0,
+      "example": "고마워~ 퇴근길 힐링하게 웅삐 사진한장 부탁해~"
     },
     {
       "key": "user_fatigue",
-      "strength": 0.92,
-      "example": "응.. 요즘 좀 지치긴 해.. 최근에 좀 지치네 회복도 잘 안되는거같구.."
+      "strength": 1.0,
+      "example": "응응 오빠는 오늘 쉬어 ㅎㅎ 아침이라 피곤하겠다..ㅠ"
     }
   ],
   "effective_patterns": [],
@@ -35,5 +35,5 @@
   "affection_patterns": [
     "affection_romance"
   ],
-  "last_updated_at": "2026-05-23T08:43:04+09:00"
+  "last_updated_at": "2026-05-29T15:16:14+09:00"
 }

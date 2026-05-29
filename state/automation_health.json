@@ -2,13 +2,13 @@
   "schema_version": 1,
   "managed_by": "automation_health_monitor",
   "status": "running",
-  "pid": 78929,
-  "generation": 9,
+  "pid": 57707,
+  "generation": 1,
   "started_at": "2026-05-21T00:22:59+09:00",
-  "last_heartbeat_at": "2026-05-23T08:55:00+09:00",
+  "last_heartbeat_at": "2026-05-29T15:30:17+09:00",
   "current_phase": "active_woongbbi_mode_timers_37",
-  "last_success_at": "2026-05-23T08:55:00+09:00",
-  "last_error_at": null,
+  "last_success_at": "2026-05-29T15:30:17+09:00",
+  "last_error_at": "2026-05-27T19:37:23+09:00",
   "last_error_summary": null,
   "notes": "worker heartbeat와 health snapshot을 기록한다"
 }

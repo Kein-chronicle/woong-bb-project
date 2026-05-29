@@ -3,36 +3,36 @@
   "timezone": "Asia/Seoul",
   "managed_by": "automation_worker",
   "recent_question_intents": [
-    "photo_request",
-    "photo_request",
-    "appearance_imagination",
-    "emotion_check",
-    "appearance_imagination",
-    "appearance_imagination"
+    "meal_routine",
+    "meal_routine"
   ],
   "recent_opening_styles": [
+    "playful_tease",
+    "time_checkin",
+    "playful_tease",
+    "playful_tease",
+    "playful_tease",
     "playful_tease"
   ],
   "question_intent_counts": {
-    "meal_routine": 1,
-    "photo_request": 4,
-    "appearance_imagination": 3,
-    "emotion_check": 1
+    "meal_routine": 2
   },
   "opening_style_counts": {
-    "playful_tease": 1
+    "playful_tease": 7,
+    "time_checkin": 2
   },
   "blocked_question_intents": [
-    "photo_request",
-    "appearance_imagination"
+    "meal_routine"
   ],
-  "blocked_opening_styles": [],
+  "blocked_opening_styles": [
+    "playful_tease"
+  ],
   "preferred_next_moves": [
-    "soft_observation",
-    "shared_image",
-    "playful_nudge",
-    "self_update"
+    "self_update",
+    "care_offer",
+    "micro_topic_shift",
+    "soft_observation"
   ],
-  "last_updated_at": "2026-05-23T08:55:00+09:00",
+  "last_updated_at": "2026-05-29T15:16:14+09:00",
   "notes": "최근 outgoing 답장에서 같은 질문 줄기와 같은 선톡 시작 패턴이 겹치면 잠시 피하게 만드는 상태"
 }

@@ -2,7 +2,7 @@
   "schema_version": 1,
   "timezone": "Asia/Seoul",
   "managed_by": "automation_worker",
-  "current_date": "2026-05-23",
+  "current_date": "2026-05-29",
   "selected_persistent_details": [
     {
       "category": "room",
@@ -11,8 +11,8 @@
     },
     {
       "category": "table",
-      "id": "water_bottle_near_bag",
-      "summary": "가방 옆에 물병을 둔 채로 움직인다"
+      "id": "baking_trace",
+      "summary": "주방 쪽에 베이킹이나 요리 흔적이 조금 남아 있다"
     },
     {
       "category": "carry",
@@ -20,6 +20,6 @@
       "summary": "이어폰을 대충 감아 가방에 넣어둔다"
     }
   ],
-  "last_refreshed_at": "2026-05-23T00:00:22+09:00",
+  "last_refreshed_at": "2026-05-29T00:00:16+09:00",
   "notes": "하루 단위로 유지되는 작은 생활 흔적"
 }

@@ -4,19 +4,19 @@
   "enabled": true,
   "health": "running",
   "singleton_lock": {
-    "path": "/Users/kein/Library/Mobile Documents/com~apple~CloudDocs/Desktop/woong-bb/state/runtime/automation_worker.lock",
+    "path": "/Users/kein/Projects/woong-bb/state/runtime/automation_worker.lock",
     "active": true,
-    "generation": 9
+    "generation": 1
   },
-  "active_pid": 78929,
-  "last_heartbeat_at": "2026-05-23T08:55:00+09:00",
-  "last_success_at": "2026-05-23T08:55:00+09:00",
-  "last_error_at": null,
+  "active_pid": 57707,
+  "last_heartbeat_at": "2026-05-29T15:30:17+09:00",
+  "last_success_at": "2026-05-29T15:30:17+09:00",
+  "last_error_at": "2026-05-27T19:37:23+09:00",
   "last_error_summary": null,
   "duplicate_suspected": false,
   "pending_control_action": null,
   "last_applied_action": "start",
-  "last_applied_at": "2026-05-23T08:47:59+09:00",
+  "last_applied_at": "2026-05-27T19:37:38+09:00",
   "last_action_result": "started",
   "notes": "worker 감시와 제어를 위한 supervisor 상태"
 }

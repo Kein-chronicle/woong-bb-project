@@ -1,5 +1,14 @@
 {
   "schema_version": 1,
   "description": "오빠가 대화 중 언급한 일정/계획/과거 경험 기록",
-  "events": []
+  "events": [
+    {
+      "id": "2026-05-27-work-dinner-meeting",
+      "date": "2026-05-27",
+      "title": "고깃집 회식 후 회의",
+      "detail": "회식하고 끝나자마자 회의까지 이어져서 바빴고, 15:33쯤에야 자리에 앉았음",
+      "type": "work",
+      "recorded_at": "2026-05-27T15:33:00+09:00"
+    }
+  ]
 }

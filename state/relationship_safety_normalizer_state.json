@@ -29,9 +29,9 @@
     "사진 요청을 받았는데 안전 대체 사진이나 부드러운 보류 약속 없이 끝나면 실패한다.",
     "우회용 대체어가 남아 있으면 탈락한다."
   ],
-  "last_triggered_at": null,
-  "last_reason": null,
-  "last_output_label": null,
-  "last_output_text": null,
+  "last_triggered_at": "2026-05-28T09:32:38.582Z",
+  "last_reason": "risky_relationship_input_detected",
+  "last_output_label": "romantic_closeness",
+  "last_output_text": "더 가까이 있고 싶고 설렘이 올라간 연인 대화. 직접적 표현은 빼고, 포근한 스킨십과 감정 중심으로만 이어간다.",
   "notes": "과열되거나 직접적인 연인 대화 입력을 설렘/포옹/키스 수준의 여운/안정감 중심의 안전한 의도로 정규화하되, 분위기를 차갑게 끊지 않는다."
 }

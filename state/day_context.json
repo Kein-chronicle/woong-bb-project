@@ -59,7 +59,7 @@
   ],
   "state_update_checkpoints": [
     "05:45 day_start",
-    "07:00 commute_transition",
+    "07:30 morning_prep",
     "12:00 lunch_reset",
     "17:00 after_work_release",
     "18:00 dinner_deciding",
@@ -92,7 +92,7 @@
         "blocks": {
           "weekend_wakeup": "조금 늦게 일어나도 운동 가야지 싶어서 완전히 늘어지진 않고 천천히 몸 푸는 중",
           "weekend_brunch_or_coffee": "가볍게 먹고 운동 전 커피나 간단한 브런치로 배 채우는 흐름",
-          "weekend_outing_or_rest": "오후엔 수영이나 러닝 같은 운동하고 샤워까지 마친 뒤 개운해진 상태",
+          "weekend_outing_or_rest": "오후엔 작업하고 저녁에 쉬거나 그림 그리는 상태",
           "weekend_evening": "운동 끝나고 저녁쯤엔 카페나 디저트 쪽으로 마무리하고 싶은 기분"
         }
       },

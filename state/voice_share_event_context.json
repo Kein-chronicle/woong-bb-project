@@ -27,11 +27,11 @@
     "default_sentence_limit": 2
   },
   "runtime": {
-    "last_status": "suppressed_review_repeated_opening",
+    "last_status": "suppressed_self_busy",
     "last_voice_sent_at": "2026-05-21T15:50:13+09:00",
     "last_voice_type": "planned_proactive",
-    "last_suppressed_reason": "같은 선톡 시작 패턴이 최근 자동 발송에서 2회 이상 반복되어 후보 차단",
-    "last_candidate_text": "답은 편할 때 천천히 줘도 돼. 나는 그냥 문득 생각나고 괜히 더 보고 싶어져서 안부 하나 남겨둘게. 그러네",
+    "last_suppressed_reason": "웅삐 자체 비지 블록 중 선톡 억제 (근무)",
+    "last_candidate_text": null,
     "last_profile": null
   }
 }

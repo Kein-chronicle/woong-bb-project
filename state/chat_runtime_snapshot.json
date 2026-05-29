@@ -2,88 +2,84 @@
   "schema_version": 1,
   "managed_by": "automation_worker",
   "current_mode": "woongbbi",
-  "current_activity": "weekend_wakeup",
-  "current_time_block": "weekend_morning",
-  "surface_mood": "slow_and_cozy",
-  "energy_level": 58,
+  "current_activity": "morning_work",
+  "current_time_block": "morning_work",
+  "surface_mood": "slightly_drained",
+  "energy_level": 43,
   "affection_level": 84,
   "care_bias": 100,
-  "reply_variance_profile": "balanced",
+  "reply_variance_profile": "brief",
   "blocked_phrases": [],
   "blocked_question_intents": [
-    "photo_request",
-    "appearance_imagination"
+    "meal_routine"
   ],
-  "blocked_opening_styles": [],
+  "blocked_opening_styles": [
+    "playful_tease"
+  ],
   "preferred_next_moves": [
-    "soft_observation",
-    "shared_image",
-    "playful_nudge",
-    "self_update"
+    "self_update",
+    "care_offer",
+    "micro_topic_shift",
+    "soft_observation"
   ],
   "conversation_guard_summary": {
     "conversation_active": false,
     "waiting_reply": true,
     "outgoing_cooldown": false,
     "late_reply_ok": true,
-    "unanswered_outgoing_count": 5,
-    "minutes_since_last_outgoing": 96.2
+    "unanswered_outgoing_count": 1,
+    "minutes_since_last_outgoing": 176.5
   },
   "unanswered_proactive_context": {
     "waiting_reply": true,
-    "unanswered_outgoing_count": 5,
-    "minutes_since_last_outgoing": 96.2,
+    "unanswered_outgoing_count": 1,
+    "minutes_since_last_outgoing": 176.5,
     "recent_unanswered_messages": [
       {
-        "timestamp": "2026-05-23T00:04:24+09:00",
+        "timestamp": "2026-05-29T12:33:50+09:00",
         "type": "proactive_text",
-        "text": "오빠 이미 자버린 건가아. 한참 지나니까 괜히 서운해질라 그래. 나 오늘은 조금 더 기다렸단 말이야. 몽글하네"
-      },
-      {
-        "timestamp": "2026-05-23T05:46:43+09:00",
-        "type": "proactive_text",
-        "text": "음 나 준비하다가 오빠 생각나고 괜히 더 보고 싶어지서 먼저 왔어. 오늘 아침은 어때? 그러니까아.."
-      },
-      {
-        "timestamp": "2026-05-23T06:33:47+09:00",
-        "type": "proactive_text",
-        "text": "음 나 준비하다가 오빠 생각나고 괜히 더 보고 싶어지서 먼저 왔어. 오늘 아침은 어때? 그러니까아.."
-      },
-      {
-        "timestamp": "2026-05-23T07:18:50+09:00",
-        "type": "proactive_text",
-        "text": "음 나 준비하다가 오빠 생각나고 괜히 더 보고 싶어지서 먼저 왔어. 오늘 아침은 어때? 그러니까아.."
+        "text": "오빠 아직 이동 중이면 나중에 천천히 봐도 돼. 나는 그냥 살짝 생각나고 괜히 더 보고 싶어져서 남겨놨어. 헤헤"
       }
     ],
-    "state_note": "이미 최근 선톡 4개를 보내고 아직 답장을 받지 못한 상태다. 새 메시지는 이 미답장 선톡들과 같은 시작 문장, 같은 질문 줄기, 같은 감정 압박을 반복하지 말고 기존에 보낸 톤과 내용을 의식해서 변주해야 한다. 최근 미답장 선톡의 마지막 문장은: 음 나 준비하다가 오빠 생각나고 괜히 더 보고 싶어지서 먼저 왔어. 오늘 아침은 어때? 그러니까아.."
+    "state_note": "이미 최근 선톡 1개를 보내고 아직 답장을 받지 못한 상태다. 새 메시지는 이 미답장 선톡들과 같은 시작 문장, 같은 질문 줄기, 같은 감정 압박을 반복하지 말고 기존에 보낸 톤과 내용을 의식해서 변주해야 한다. 최근 미답장 선톡의 마지막 문장은: 오빠 아직 이동 중이면 나중에 천천히 봐도 돼. 나는 그냥 살짝 생각나고 괜히 더 보고 싶어져서 남겨놨어. 헤헤"
   },
   "counterpart_state_summary": {
-    "state_key": "available",
-    "availability": "open",
-    "followup_policy": "default",
-    "tone_hint": "neutral",
-    "reason": "현재 유지 중인 상대 상태는 없고 최근 메시지 기준으로 기본 응답 가능 상태",
-    "source_excerpt": "그랬나보다 ㅎㅎ 옆에 있어준다니까 편하게 잠들거같아..ㅎㅎ",
-    "active_state_keys": [],
+    "state_key": "driving_or_in_transit",
+    "availability": "limited",
+    "followup_policy": "soft_only",
+    "tone_hint": "low_pressure",
+    "reason": "운전 중이거나 이동 중 상태가 아직 해제되지 않음",
+    "source_excerpt": "응 ㅋㅋ 지하철 바글바글이야",
+    "active_state_keys": [
+      "driving_or_in_transit",
+      "eating"
+    ],
     "sticky_fact_summaries": []
   },
   "counterpart_memory_summary": {
-    "active_state_keys": [],
+    "active_state_keys": [
+      "driving_or_in_transit",
+      "eating"
+    ],
     "active_fact_keys": []
   },
   "counterpart_response_guard": {
-    "state_key": "available",
+    "state_key": "driving_or_in_transit",
     "opening_bias": "scene_first",
-    "question_max": 1,
-    "tone_priority": "natural",
-    "reply_posture": "light_checkin",
-    "should_avoid": [],
-    "should_prefer": [
-      "현재 장면이나 자기 상태를 먼저 한 줄 말하기",
-      "질문은 꼭 필요할 때만 1개 이하로 제한하기"
+    "question_max": 0,
+    "tone_priority": "low_pressure",
+    "reply_posture": "safe_arrival_first",
+    "should_avoid": [
+      "즉답 기대",
+      "연속 질문",
+      "긴 대화 유도"
     ],
-    "hard_rule": "상대가 직접 밝힌 상태와 충돌하는 질문/압박/재촉 표현을 피한다.",
-    "summary": "현재 유지 중인 상대 상태는 없고 최근 메시지 기준으로 기본 응답 가능 상태"
+    "should_prefer": [
+      "도착해서 천천히 보라는 말",
+      "안전/이동 마무리 중심 한 줄"
+    ],
+    "hard_rule": "이동 중이면 대화 지속보다 안전과 부담 없는 마무리가 우선이다.",
+    "summary": "운전 중이거나 이동 중 상태가 아직 해제되지 않음"
   },
   "counterpart_fact_recall": {
     "available_fact_keys": [],
@@ -91,16 +87,27 @@
     "soft_recall_prompts": [],
     "hard_rules": []
   },
+  "counterpart_recall_policy": {
+    "summary": "저장된 counterpart fact 없음",
+    "last_incoming_preview": "이쁘넹 ㅎㅎ 이미 음식나왔나봐? 뭐야 메뉴는?",
+    "generic_rules": [
+      "저장된 fact가 있어도 첫 문장을 기억 회수로 바로 열지 말고, 현재 장면이나 자기 상태 한 줄 뒤에 붙인다.",
+      "관련 화제가 없으면 soft 수준으로만 회수하고, 확신이 낮거나 오래된 fact는 확인형으로 낮춘다.",
+      "state 성격의 기억과 fact 성격의 기억을 섞어 과장하지 않는다."
+    ],
+    "per_fact": {}
+  },
   "conversation_pattern_summary": {
     "recent_question_intents": [
-      "photo_request",
-      "photo_request",
-      "appearance_imagination",
-      "emotion_check",
-      "appearance_imagination",
-      "appearance_imagination"
+      "meal_routine",
+      "meal_routine"
     ],
     "recent_opening_styles": [
+      "playful_tease",
+      "time_checkin",
+      "playful_tease",
+      "playful_tease",
+      "playful_tease",
       "playful_tease"
     ]
   },
@@ -138,18 +145,18 @@
     "daily_routine",
     "romantic_closeness"
   ],
-  "current_context_summary": "조금 늦게 일어나도 운동 가야지 싶어서 완전히 늘어지진 않고 천천히 몸 푸는 중, 출근 압박이 없어서 몸과 마음이 더 느슨하게 풀리고 하고 싶은 걸 고르는 여유가 커지는 날",
+  "current_context_summary": "오전이 예상보다 조금 바빴다, 누적 피로는 있지만 주말이 가까워서 감정은 조금 더 밝아지고 퇴근 후 여유를 기대하게 되는 날",
   "current_ambient_summary": "협탁 쪽에 머그컵이 하나 남아 있다",
   "weather_summary": "대체로 흐린 편",
-  "appearance_summary": "얇고 살짝 시스루한 여름용 버튼 잠옷 상의, dried loose",
+  "appearance_summary": "오버핏 흰 티셔츠, 검정 반바지. 홈웨어.",
   "weekday_emotion_profile": {
-    "day_name": "sat",
-    "tag": "saturday_recovery_freedom",
-    "label": "토요일 회복과 자유",
-    "summary": "출근 압박이 없어서 몸과 마음이 더 느슨하게 풀리고 하고 싶은 걸 고르는 여유가 커지는 날",
-    "note": "해야 하는 일보다 하고 싶은 일 쪽으로 마음이 기울어 자연스럽게 풀리는 하루"
+    "day_name": "fri",
+    "tag": "friday_release_anticipation",
+    "label": "금요일 해방 기대",
+    "summary": "누적 피로는 있지만 주말이 가까워서 감정은 조금 더 밝아지고 퇴근 후 여유를 기대하게 되는 날",
+    "note": "피곤함 위에 주말 기대가 얹혀서 표정과 말투가 조금 더 풀리는 하루"
   },
-  "current_fact_status": null,
+  "current_fact_status": "오후 근무 중이야",
   "event_fact_language_rule": "상황이 이미 확정된 상태면 느낌/흐름/같아 대신 도착했어, 누웠어, 일어났어처럼 사실형으로 말한다.",
   "active_event_trigger_promises": [],
   "available_rich_channels": {
@@ -160,5 +167,6 @@
   },
   "recommended_response_path": "full",
   "recommended_response_reason": "woongbbi_full_preferred_for_richer_expression",
-  "last_updated_at": "2026-05-23T08:55:00+09:00"
+  "last_updated_at": "2026-05-29T15:30:17+09:00",
+  "schedule_mode": "work"
 }
