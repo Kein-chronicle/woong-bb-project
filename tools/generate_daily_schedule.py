@@ -82,16 +82,15 @@ WEEKDAY_DINNER = [
 ]
 
 WEEKDAY_EXERCISE = [
-    {"type": "그림 그리기", "location": "집 데스크", "duration_min": 60},
-    {"type": "러닝", "location": "한강변", "duration_min": 45, "shower": True},
-    {"type": "그림 그리기", "location": "집 데스크", "duration_min": 60},
-    {"type": "자전거", "location": "한강 자전거도로", "duration_min": 50, "shower": True},
-    {"type": "그림 그리기", "location": "집 데스크", "duration_min": 40},
-    {"type": "드라마 보기", "location": "집 침대", "duration_min": 90},
+    {"type": "그림 그리기", "location": "집 데스크", "duration_min": 60, "shower": False},
+    {"type": "드라마 보기", "location": "집 침대", "duration_min": 90, "shower": False},
+    {"type": "그림 그리기", "location": "집 데스크", "duration_min": 40, "shower": False},
+    {"type": "새 프로젝트 탐색", "location": "집 데스크", "duration_min": 60, "shower": False},
+    {"type": "음악 감상", "location": "집", "duration_min": 45, "shower": False},
     {"type": "없음 (집)", "location": "집", "duration_min": 0, "shower": False},
 ]
 
-# 간호사 오전 근무(07:59~점심) 세부 업무 풀 — 시간순으로 몇 개 뽑아 타임라인 구성
+# 오전 작업(08:00~점심) 세부 업무 풀 — 시간순으로 몇 개 뽑아 타임라인 구성
 MORNING_SHIFT_TASKS = [
     "오전 작업 시작 (이전 작업 이어서)",
     "이슈 트래커 확인 및 오늘 작업 목록 정리",
@@ -265,9 +264,9 @@ WEEKEND_DINNER = [
 
 WEEKEND_EXERCISE = [
     {"type": "그림 그리기", "location": "집 데스크", "duration_min": 60},
-    {"type": "러닝", "location": "한강변", "duration_min": 50},
-    {"type": "자전거", "location": "한강 자전거도로", "duration_min": 70},
-    {"type": "요가", "location": "집", "duration_min": 40},
+    {"type": "새 프로젝트 탐색", "location": "집 데스크", "duration_min": 50},
+    {"type": "음악 감상", "location": "집", "duration_min": 70},
+    {"type": "스트레칭", "location": "집", "duration_min": 40},
     {"type": "드라마 보기", "location": "집 침대", "duration_min": 60},
     {"type": "없음", "location": "", "duration_min": 0},
 ]
