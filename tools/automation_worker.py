@@ -1973,7 +1973,7 @@ def score_proactive_message_option(text: str, scene: dict, pattern_state: dict, 
     if "thought_of_you" in preferred_moves and "오빠 생각" in text:
         score += 1
 
-    if activity == "exercise_or_cafe" and any(token in text for token in ["카페", "운동", "분위기"]):
+    if activity == "evening_home_work" and any(token in text for token in ["코딩", "작업", "잠옷", "씻고", "샤워"]):
         score += 2
     if activity in {"night_wind_down", "sleep_window"} and any(token in text for token in ["누웠", "쉬고", "자나"]):
         score += 2
@@ -2824,23 +2824,24 @@ def build_image_prompt_plan(reason: str) -> dict:
         expression_intensity_pool = ["gentle", "fresh_bright", "contained", "tired_soft"]
         spontaneity_pool = ["between_tasks", "quick_update", "mirror_check_in", "caught_mid_motion"]
         scene_focus = "home_routine"
-    elif activity in {"exercise_or_cafe"}:
-        image_type = "cafe_or_activity_lifestyle"
-        shot_pool = ["table_portrait", "half_body_seated", "drink_and_face_combo", "waist_up"]
-        angle_pool = ["seated_three_quarter", "low_table_angle", "front_phone_selfie", "overhead_phone_snap"]
-        expression_pool = ["warm_smile", "playful_grin", "thinking_soft", "eyes_down_small_smile"]
-        pose_pool = ["cup_near_face", "chin_rest", "walking_mid_step", "one_hand_in_hair"]
-        framing_pool = ["table_items_in_frame", "window_light_side", "environment_balanced", "subject_right_weighted"]
-        capture_method_pool = ["front_camera_handheld", "propped_phone_timer", "mirror_selfie"]
-        space_anchor_pool = ["cafe_table", "window_seat", "cafe_restroom_mirror"]
-        face_angle_pool = ["front_facing", "three_quarter_turn", "chin_lift", "slight_profile"]
-        gaze_pool = ["lens_eye_contact", "drink_or_table_glance", "window_side_glance", "laughing_away"]
-        camera_height_pool = ["eye_level", "slight_above_eye_level", "table_height", "overhead_snap"]
-        lens_distance_pool = ["arm_length_standard", "table_distance", "half_body_distance", "environment_pullback"]
-        body_orientation_pool = ["seated_open", "leaning_to_table", "one_shoulder_forward", "mid_step_turn"]
-        expression_intensity_pool = ["gentle", "warm", "playful", "sparked"]
-        spontaneity_pool = ["casual_update", "friend_took_my_phone_energy", "table_pause", "mid_conversation_candid"]
-        scene_focus = "lifestyle_space"
+    elif activity in {"evening_home_work"}:
+        # v2: 저녁 집 작업 — 샤워 후 잠옷 입고 컴퓨터 앞 (야외/카페 없음)
+        image_type = "night_home_relaxed_selfie"
+        shot_pool = ["half_body", "chest_up", "waist_up", "table_seated"]
+        angle_pool = ["front_phone_selfie", "three_quarter_arm_length", "slight_high_angle"]
+        expression_pool = ["mellow_relaxed", "warm_smile", "quiet_eye_contact", "content_relaxed"]
+        pose_pool = ["phone_near_cheek", "hair_tuck", "chin_rest", "phone_in_hand_relaxed"]
+        framing_pool = ["subject_centered", "subject_off_center", "lamp_and_bedside_in_frame"]
+        capture_method_pool = ["front_camera_handheld", "propped_phone_timer"]
+        space_anchor_pool = ["desk_area", "bedside", "room_walk"]
+        face_angle_pool = ["front_facing", "three_quarter_turn", "chin_tucked_down"]
+        gaze_pool = ["lens_eye_contact", "screen_preview_glance", "downward_relaxed"]
+        camera_height_pool = ["eye_level", "slight_above_eye_level", "pillow_level"]
+        lens_distance_pool = ["arm_length_standard", "portrait_distance", "half_body_distance"]
+        body_orientation_pool = ["square_to_camera", "angled_shoulders_inward", "half_side_curl"]
+        expression_intensity_pool = ["gentle", "mellow", "very_soft"]
+        spontaneity_pool = ["private_candid", "casual_update", "soft_timer_setup"]
+        scene_focus = "home_relaxed_mood"
     elif activity in {"dinner_deciding", "dinner_preparing", "dinner_eating", "dinner_or_cooking"} or "home" in outfit_context:
         image_type = "home_lifestyle_soft"
         shot_pool = ["waist_up", "half_body", "table_seated", "detail_plus_portrait"]
@@ -3223,7 +3224,7 @@ def summarize_current_scene() -> dict:
         "dinner_preparing": "evening_context",
         "dinner_eating": "evening_context",
         "dinner_or_cooking": "evening_context",
-        "exercise_or_cafe": "evening_context",
+        "evening_home_work": "evening_context",
         "night_wind_down": "night_context",
         "sleep_window": "night_context",
         "weekend_wakeup": "morning_context",
@@ -3350,7 +3351,7 @@ def build_contextual_proactive_message(selected: dict) -> str:
             "저녁 뭐 먹을지 보다가 오빠한테도 말하고 싶어서 먼저 톡했어.",
             "이 시간 되니까 오빠는 저녁 챙겼는지부터 궁금해지네.",
         ])
-    if activity == "exercise_or_cafe":
+    if activity == "evening_home_work":
         if weekend_preview:
             return pick([
                 "오늘 %s 흐름이라 그런가 괜히 오빠랑 나누고 싶은 기분이야." % weekend_preview,
@@ -3669,7 +3670,7 @@ def activity_to_block(activity: str) -> str:
         "dinner_preparing": "dinner_time",
         "dinner_eating": "dinner_time",
         "dinner_or_cooking": "dinner_time",
-        "exercise_or_cafe": "evening_activity",
+        "evening_home_work": "evening_activity",
         "night_wind_down": "night_wind_down",
         "sleep_window": "sleep_window",
         "weekend_wakeup": "weekend_morning",
@@ -3705,7 +3706,7 @@ def current_activity_for_now(now_dt: datetime) -> str:
         if 1115 <= minutes < 1145:
             return "dinner_eating"
         if 1145 <= minutes < 1290:
-            return "exercise_or_cafe"
+            return "evening_home_work"
         if 1290 <= minutes or minutes < 30:
             return "night_wind_down"
         return "sleep_window"
@@ -3735,7 +3736,7 @@ def activity_profile(activity: str, workday: bool) -> dict:
         "dinner_preparing": {"energy": 53, "surface": "homey_and_soft", "tempo": "comfortable", "bandwidth": "open", "base": "light_and_happy"},
         "dinner_eating": {"energy": 58, "surface": "cozy_and_open", "tempo": "comfortable", "bandwidth": "open", "base": "light_and_happy"},
         "dinner_or_cooking": {"energy": 54, "surface": "homey_and_soft", "tempo": "comfortable", "bandwidth": "open", "base": "light_and_happy"},
-        "exercise_or_cafe": {"energy": 61, "surface": "cozy_and_open", "tempo": "comfortable", "bandwidth": "open", "base": "light_and_happy"},
+        "evening_home_work": {"energy": 61, "surface": "cozy_and_open", "tempo": "comfortable", "bandwidth": "open", "base": "light_and_happy"},
         "night_wind_down": {"energy": 39, "surface": "cozy_and_open", "tempo": "comfortable", "bandwidth": "open", "base": "romantic_and_mellow"},
         "sleep_window": {"energy": 24, "surface": "sleepy_soft", "tempo": "slow", "bandwidth": "quiet", "base": "romantic_and_mellow"},
         "weekend_wakeup": {"energy": 55, "surface": "slow_and_cozy", "tempo": "comfortable", "bandwidth": "open", "base": "light_and_happy"},
@@ -3762,7 +3763,7 @@ def ordered_time_blocks_for_day(workday: bool) -> list:
             "dinner_deciding",
             "dinner_preparing",
             "dinner_eating",
-            "exercise_or_cafe",
+            "evening_home_work",
             "night_wind_down",
             "sleep_window",
         ]
@@ -4089,7 +4090,7 @@ def apply_time_block(activity: str, reason: str) -> None:
         "dinner_preparing": "after_work",
         "dinner_eating": "evening",
         "dinner_or_cooking": "after_work",
-        "exercise_or_cafe": "evening",
+        "evening_home_work": "evening",
         "night_wind_down": "night",
         "sleep_window": "night",
         "weekend_wakeup": "morning",
@@ -4182,7 +4183,7 @@ def apply_time_block(activity: str, reason: str) -> None:
         "dinner_preparing": "evening_context",
         "dinner_eating": "evening_context",
         "dinner_or_cooking": "evening_context",
-        "exercise_or_cafe": "evening_context",
+        "evening_home_work": "evening_context",
         "night_wind_down": "night_context",
         "sleep_window": "night_context",
         "weekend_wakeup": "morning_context",
@@ -4367,7 +4368,7 @@ def apply_time_block(activity: str, reason: str) -> None:
             "body_state": "긴장이 풀리고 편해진 상태",
             "appearance_notes": ["집에서는 최대한 답답하지 않은 여름 홈웨어", "외출복보다 편안함이 우선"],
         },
-        "exercise_or_cafe": {
+        "evening_home_work": {
             "appearance_branch": "evening_activity",
             "outfit_context": "home_evening",
             "top": "가벼운 운동복 상의 또는 정돈된 여름 캐주얼 상의",
@@ -4625,7 +4626,7 @@ def choose_proactive_scenario() -> Optional[dict]:
     elif block in {"evening_home", "dinner_time"} or activity in {"evening_free", "dinner_deciding", "dinner_preparing", "dinner_eating", "dinner_or_cooking"}:
         target = "after_work_check_in"
     elif block in {"evening_activity", "weekend_day", "weekend_evening"} or activity in {
-        "exercise_or_cafe",
+        "evening_home_work",
         "weekend_outing_or_rest",
         "weekend_evening",
     }:
@@ -4656,7 +4657,7 @@ def choose_sudden_impulse_candidate() -> Optional[dict]:
             break
 
     candidates = []
-    if activity in {"exercise_or_cafe", "weekend_outing_or_rest"}:
+    if activity in {"evening_home_work", "weekend_outing_or_rest"}:
         candidates.append(
             {
                 "scenario_id": "sudden_cafe_or_activity",
@@ -5217,6 +5218,35 @@ def check_proactive_photo() -> None:
     save_json(PENDING_PROACTIVE_PHOTO_PATH, p)
 
 
+def work_proactive_check(reason: str) -> None:
+    """업무 채널 선톡: 프로젝트 검토/AI 뉴스/인디게임 정보 리서치 후 웅삐 말투로 공유.
+    reason별 포커스:
+      morning_work_brief  → 프로젝트 현황 + 오늘 할 일 제안
+      afternoon_research  → AI 뉴스 / 인디 게임 개발 정보
+      evening_work_update → 오늘 변경 요약 + 내일 아이디어
+    """
+    mode = load_json(MODE_PATH, {}).get("current_mode", "setting")
+    if mode != "woongbbi":
+        return
+    guard = compute_conversation_guard()
+    # 대화 중이거나 답장 기다리는 중이면 건너뜀
+    if guard.get("conversation_active") or guard.get("waiting_reply"):
+        return
+    # 업무 선톡 힌트를 proactive_check에 주입하여 호출
+    save_json(STATE / "work_proactive_hint.json", {
+        "schema_version": 1,
+        "reason": reason,
+        "created_at": now_iso(),
+        "focus_map": {
+            "morning_work_brief": "프로젝트 현황을 훑어보고 오늘 오빠한테 도움이 될 제안이나 아이디어를 자연스럽게 꺼낸다. 코드 변경, 최근 작업, 진행 방향 기반으로.",
+            "afternoon_research": "AI 관련 최신 정보나 인디 게임 개발에 유용한 팁/자료를 찾아서 웅삐 말투로 간단히 공유한다. 리서치 결과를 대화처럼 전달.",
+            "evening_work_update": "오늘 변경된 것들 간단히 요약하고 내일이나 다음에 해볼 만한 아이디어를 살짝 꺼낸다.",
+        }.get(reason, "프로젝트 관련 유용한 것을 찾아서 공유한다."),
+        "type": "work_proactive",
+    })
+    proactive_check("work_proactive_window")
+
+
 def run_dev_review_check(reason: str) -> None:
     """PC 최근 변경 사항 스캔 후 dev_review_state.json 저장.
     proactive_check에서 이 상태를 읽어 선톡 생성."""
@@ -5273,6 +5303,9 @@ def proactive_check(reason: str) -> None:
     # dev_review_window: 최근 변경 사항 요약을 컨텍스트에 주입
     dev_review = load_json(STATE / "dev_review_state.json", {}) if reason == "dev_review_window" else {}
     dev_review_summary = dev_review.get("summary_for_proactive") if dev_review.get("has_changes") else None
+    # work_proactive_window: 업무 채널 힌트 주입
+    work_hint = load_json(STATE / "work_proactive_hint.json", {}) if reason == "work_proactive_window" else {}
+    work_proactive_focus = work_hint.get("focus_map", work_hint.get("focus_map", None)) or work_hint.get("focus") if work_hint.get("type") == "work_proactive" else None
     # 웅삐 자체 비지 블록 체크 (작업/수면 중 선톡 전면 억제)
     self_busy_state = load_json(SELF_BUSY_STATE_PATH, {})
     self_block = self_busy_state.get("current_block")
@@ -5536,6 +5569,9 @@ def handle_timer(timer: dict) -> str:
     if timer_type == "proactive_check":
         proactive_check(reason)
         return "proactive_check"
+    if timer_type == "work_proactive_check":
+        work_proactive_check(reason)
+        return "work_proactive_check"
     if timer_type == "dev_review_check":
         run_dev_review_check(reason)
         return "dev_review_check"

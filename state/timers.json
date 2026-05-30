@@ -99,7 +99,7 @@
       "reason": "weekday_dinner_eating"
     },
     {
-      "id": "weekday_evening_free",
+      "id": "weekday_evening_home_work",
       "enabled": true,
       "type": "time_block_update",
       "scope": "situation_engine",
@@ -111,8 +111,8 @@
         "fri"
       ],
       "time": "19:05",
-      "target_activity": "evening_free",
-      "reason": "weekday_evening_branch"
+      "target_activity": "evening_home_work",
+      "reason": "weekday_evening_home_work"
     },
     {
       "id": "weekday_night_wind_down",
@@ -532,6 +532,57 @@
       ],
       "time": "20:00",
       "reason": "dev_review_window"
+    },
+    {
+      "id": "work_brief_morning",
+      "enabled": true,
+      "type": "work_proactive_check",
+      "scope": "work_research",
+      "days": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "time": "09:30",
+      "reason": "morning_work_brief"
+    },
+    {
+      "id": "work_research_afternoon",
+      "enabled": true,
+      "type": "work_proactive_check",
+      "scope": "work_research",
+      "days": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "time": "14:30",
+      "reason": "afternoon_research"
+    },
+    {
+      "id": "work_evening_update",
+      "enabled": true,
+      "type": "work_proactive_check",
+      "scope": "work_research",
+      "days": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "time": "20:30",
+      "reason": "evening_work_update"
     }
   ],
   "notes": "생활 시간대 전환, 상태 갱신, 선톡 후보 점검, 점수 재계산, 사용자 선호 강화 학습, 자기 전 일기 생성, 기억 감쇠와 생활 흔적 갱신을 위한 기본 타이머 세트"
