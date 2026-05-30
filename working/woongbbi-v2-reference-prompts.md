@@ -1,380 +1,415 @@
-# 웅삐 v2 레퍼런스 이미지 목록 & 프롬프트
-
-> 생성 순서: F (얼굴) → SP (공간) → OC (착장)
-> 스타일: 실사 사진풍 (photorealistic)
-> 공통 인물 설정: 한국 여성, 31세, 긴 흑갈색 웨이브 머리, 작은 타원형 얼굴, 부드러운 턱선, 크고 표현력 있는 검은 눈, 슬림 & 소형~보통 체형
-> 공통 배경 (OC): 초소형 원룸 — 오프화이트 벽, 연한 우드 바닥, 창문에 하늘만 보임
+# 웅삐 v2 레퍼런스 이미지 요구서
 
 ---
 
-## 얼굴 레퍼런스 (F)
+## 생성 구조
 
-### [ ] F-01 — 정면 중립 (안경 없음)
 ```
-Photorealistic portrait photograph of a Korean woman in her early 30s.
-Facial features: small oval face, soft jawline, clear smooth skin, large dark expressive eyes with natural lashes, small straight nose, soft closed lips in a natural neutral expression.
-Hair: long dark black hair with soft natural waves, slightly parted in the middle, falling naturally over shoulders. A few delicate face-framing strands near the temples.
-No glasses. No heavy makeup — natural bare skin with slight glow.
+1단계: F (얼굴) → SP (공간) → OC (착장+공간 세트)
+2단계: OC 1장 + F 1장 + 행동/표정/촬영 텍스트 프롬프트 → 실제 장면 이미지
+```
+
+---
+
+## 고정 인물 설정 (전 이미지 공통)
+
+```
+Korean woman, mid-20s to early 30s appearance
+Hair: long straight dark black hair, natural and clean
+Face: small oval face, soft jawline, clear smooth skin, large dark expressive eyes
+Body: slim, petite-to-average build
+Style: photorealistic, no heavy makeup, natural skin texture
+```
+
+---
+
+## 고정 공간 설정 (OC 전 이미지 공통)
+
+```
+Extremely small minimalist studio apartment (one-room)
+Walls: warm off-white. Floor: light wood-grain laminate.
+Window: small horizontal window showing only sky (no ground, no buildings)
+Furniture: compact computer desk + monitor, single low bed, small dining table, mini kitchen
+No outdoor scenes. No cafe. No park. No gym. Home only.
+```
+
+---
+
+## F — 얼굴 레퍼런스 (6장)
+
+> 목적: 얼굴 구조/피부/눈 고정. OC 생성과 실제 장면 생성 시 reference input으로 사용.
+> 배경: 아웃포커스 오프화이트. 인물 단독.
+
+### F-01 — 정면 중립 (안경 없음)
+```
+Photorealistic portrait photograph of a Korean woman in her mid-20s to early 30s.
+Face: small oval face, soft jawline, clear smooth skin, large dark expressive eyes with natural lashes, small straight nose, soft closed lips in a neutral expression.
+Hair: long straight dark black hair, slightly parted in the middle, falling naturally over shoulders. A few delicate face-framing strands near the temples.
+No glasses. No makeup — natural bare skin with slight glow.
 Shot: front-facing, eye-level, shallow depth of field.
 Background: soft out-of-focus warm off-white.
 Lighting: soft diffused natural light from slightly left.
 Camera: 85mm portrait lens equivalent, f/2.0 bokeh.
-Real photograph quality, natural skin texture, no airbrushing, candid selfie feel.
+Photorealistic, natural skin texture, no airbrushing.
 ```
 
----
-
-### [ ] F-02 — 정면 미소 (안경 없음)
+### F-02 — 정면 미소 (안경 없음)
 ```
-Photorealistic portrait photograph of a Korean woman in her early 30s.
-Same facial structure as reference F-01: small oval face, soft jawline, large dark eyes.
-Hair: long dark black softly wavy hair, naturally down.
-Expression: warm natural smile, slight cheek lift, eyes slightly squinted with genuine warmth. Teeth barely visible or lips softly parted in a gentle smile.
+Same subject and facial structure as F-01.
+Hair: long straight dark black hair, naturally down.
+Expression: warm natural smile, slight cheek lift, eyes slightly squinted with genuine warmth. Lips softly parted in a gentle smile.
 No glasses. Light natural glow on skin.
 Shot: front-facing, eye-level, shallow depth of field.
 Background: soft out-of-focus warm off-white.
 Lighting: soft natural window light from left.
 Camera: 85mm, f/2.0.
-Real photograph quality, candid and warm feel.
+Photorealistic, warm and candid feel.
 ```
 
----
-
-### [ ] F-03 — 3/4 측면 (안경 없음)
+### F-03 — 3/4 측면 (안경 없음)
 ```
-Photorealistic portrait photograph of a Korean woman in her early 30s.
-Same facial structure: small oval face, prominent dark eyes, soft jawline.
-Hair: long dark black wavy hair falling naturally, slightly swept behind one ear on the near side.
-Expression: soft neutral gaze directed slightly off-camera to the far side. Thoughtful or calm expression.
+Same subject and facial structure as F-01.
+Hair: long straight dark black hair falling naturally, slightly swept behind one ear on the near side.
+Expression: soft neutral gaze directed slightly off-camera to the far side. Calm expression.
 No glasses.
 Shot: 3/4 angle (face turned ~45 degrees), eye-level, shallow depth of field.
 Background: soft out-of-focus off-white.
-Lighting: side lighting from the far side — one side of face slightly lit, other slightly shadowed, natural and flattering.
+Lighting: side lighting from the far side — natural and flattering.
 Camera: 85mm, f/2.0.
-Real photograph quality.
+Photorealistic.
 ```
 
----
-
-### [ ] F-04 — 옆 프로필 (안경 없음)
+### F-04 — 옆 프로필 (안경 없음)
 ```
-Photorealistic portrait photograph of a Korean woman in her early 30s.
-Same facial structure. Profile view showing: soft nose, gentle lips, defined jawline, visible dark eyelashes.
-Hair: long dark black wavy hair, falling behind shoulder in profile view.
+Same subject and facial structure as F-01.
+Hair: long straight dark black hair, falling behind shoulder in profile view.
 Expression: calm, slight upward gaze.
 No glasses.
 Shot: pure side profile, face pointing left, eye-level.
 Background: soft out-of-focus off-white.
 Lighting: light from front, illuminating the visible cheek and jaw.
 Camera: 85mm, f/2.0.
-Real photograph quality.
+Photorealistic.
 ```
 
----
-
-### [ ] F-05 — 정면 중립 (안경 착용)
+### F-05 — 정면 중립 (안경 착용)
 ```
-Photorealistic portrait photograph of a Korean woman in her early 30s.
-Same facial structure as F-01.
-Hair: long dark black softly wavy hair, naturally down.
-Glasses: thin transparent clear-frame or thin silver metal frame glasses. Rectangular lenses, slim bridge, slightly wide enough to suit the face. No tinted lenses.
+Same subject and facial structure as F-01.
+Hair: long straight dark black hair, naturally down.
+Glasses: thin transparent clear-frame or thin silver metal frame. Rectangular lenses, slim bridge, slightly wide to suit the face. No tinted lenses.
 Expression: neutral, calm. Eyes visible and expressive through clear lenses.
 Shot: front-facing, eye-level.
 Background: soft out-of-focus off-white.
 Lighting: soft natural light from left. Minimal lens glare.
 Camera: 85mm, f/2.0.
-Real photograph quality.
+Photorealistic.
 ```
 
----
-
-### [ ] F-06 — 정면 미소 (안경 착용)
+### F-06 — 정면 미소 (안경 착용)
 ```
-Photorealistic portrait photograph of a Korean woman in her early 30s.
-Same facial structure as F-01.
-Hair: long dark black softly wavy hair, naturally down.
+Same subject and facial structure as F-01.
+Hair: long straight dark black hair, naturally down.
 Glasses: same thin clear or silver metal frame as F-05.
 Expression: warm genuine smile, same warmth as F-02. Eyes lit up behind glasses.
 Shot: front-facing, eye-level.
 Background: soft out-of-focus off-white.
 Lighting: soft natural light from left.
 Camera: 85mm, f/2.0.
-Real photograph quality, warm and candid feel.
+Photorealistic, warm and candid feel.
 ```
 
 ---
 
-## 공간 레퍼런스 (SP) — 인물 없음
+## SP — 공간 레퍼런스 (4장)
 
-### [ ] SP-01 — 컴퓨터 데스크 구역 (인물 없음)
+> 목적: 배경/조명/가구 배치 고정. OC 생성 시 배경 기준으로 사용.
+> 인물 없음.
+
+### SP-01 — 컴퓨터 데스크 구역
 ```
 Photorealistic interior photograph of an extremely small minimalist studio apartment. No people.
 Focus: computer desk area.
-Desk: narrow long desk with light natural oak wood top surface, white or black thin metal legs. Matte black 27-inch monitor with thin bezels on a slim silver metal stand showing a dark-background code editor. Full-size mechanical keyboard with gray/white keycaps and black body, cool white backlighting, on a large thin black mouse pad that covers most of the desk surface. One simple ceramic white or dark navy mug.
-Chair: compact black mesh ergonomic chair with armrests, black wheeled metal legs, thin firm seat cushion.
-Window: small horizontal rectangular window above the desk at upper wall level — visible through the window is only overcast sky or blue sky, no buildings or ground. White frame with thin semi-transparent white curtain.
+Desk: narrow long desk, light natural oak wood top, white or black thin metal legs.
+Monitor: matte black 27-inch, thin bezels, slim silver stand, showing dark-background code editor.
+Keyboard: full-size mechanical, gray/white keycaps, black body, cool white backlight, on large black mouse pad.
+One simple ceramic white or dark navy mug on the desk.
+Chair: compact black mesh ergonomic chair.
+Window: small horizontal window above desk at upper wall level — only sky visible through it (overcast or blue). White frame, thin semi-transparent curtain.
 Walls: warm off-white. Floor: light wood-grain laminate.
-Lighting: cool white desk lamp casting subtle blue-tinted work light.
-Shot: straight-on frontal view of the desk. Realistic interior photography, slightly wide angle, natural perspective.
+Lighting: cool white desk lamp, subtle blue-tinted work light.
+Shot: straight-on frontal view of desk. Realistic interior photography, slightly wide angle.
 ```
 
----
-
-### [ ] SP-02 — 침대 구역 (인물 없음)
+### SP-02 — 침대 구역
 ```
 Photorealistic interior photograph of an extremely small minimalist studio apartment. No people.
 Focus: bed area.
-Bed: single-size low platform bed with a flat rectangular headboard, natural light beige or off-white oak wood. Very low profile — almost touching the floor. White mattress cover.
-Bedding: light soft comforter/duvet in pale mint green or white, naturally folded or draped on bed. Two standard-size pillows with white or light gray slightly rumpled cotton pillowcases.
-Beside the bed: a small round warm-yellow mood light on the floor or a small surface, emitting soft warm amber glow.
+Bed: single-size low platform bed, flat rectangular headboard, light beige or off-white oak wood, very low profile. White mattress cover.
+Bedding: light soft comforter in pale mint green or white, naturally folded. Two pillows with white or light gray slightly rumpled cotton pillowcases.
+Beside the bed: small round warm-yellow mood lamp on the floor or small surface, emitting soft warm amber glow.
 Walls: warm off-white. Floor: light wood-grain.
-Lighting: warm amber light from the mood lamp, soft and cozy.
+Lighting: warm amber from the mood lamp, soft and cozy.
 Shot: straight-on view of the bed. Realistic interior photography.
 ```
 
----
-
-### [ ] SP-03 — 식탁 / 미니 주방 구역 (인물 없음)
+### SP-03 — 식탁 / 미니 주방 구역
 ```
 Photorealistic interior photograph of an extremely small minimalist studio apartment. No people.
 Focus: small dining table and compact kitchen.
-Dining table: small round or square table (roughly 60cm), light oak wood top, thin black metal legs. One small folding stool beside it.
-Kitchen: compact — small 2-burner gas or induction cooktop, small white refrigerator (waist height, ~80-90cm tall), single-basin white sink, 1-2 small open shelves above with a few plates/cups. Clean and minimal. White tile or white wall.
+Table: small round or square (~60cm), light oak wood top, thin black metal legs. One small folding stool beside it.
+Kitchen: compact — 2-burner induction cooktop, small white refrigerator (waist height ~80-90cm), single-basin white sink, 1-2 small open shelves with a few plates/cups. Clean and minimal.
 Walls: warm off-white. Floor: light wood-grain.
 Lighting: warm natural overhead light.
-Shot: angled view showing both the table and kitchen corner. Realistic interior photography.
+Shot: angled view showing both table and kitchen corner. Realistic interior photography.
 ```
 
----
-
-### [ ] SP-04 — 원룸 전체 광각 (인물 없음)
+### SP-04 — 원룸 전체 광각
 ```
 Photorealistic interior photograph of an extremely small minimalist studio apartment. No people. Wide angle.
-Show the entire room layout in one shot:
-Left side or far wall: computer desk with monitor, keyboard, mug, and window above showing only sky.
-Center or adjacent wall: single low platform bed with pale mint or white bedding.
-Right side or near corner: small dining table and compact white kitchen.
-Bathroom door visible (closed) near the kitchen corner.
-Walls: warm off-white throughout. Floor: continuous light wood-grain laminate.
-Ceiling: low, white.
-The room is extremely small — everything is compact and close together. Minimal decoration, very clean.
-Natural light from the window above the desk.
-Shot: wide-angle from near the entrance looking into the room, slightly elevated eye level.
+Show entire room in one shot:
+- Far wall: computer desk with monitor, keyboard, mug. Small window above showing only sky.
+- Adjacent: single low platform bed with pale mint or white bedding.
+- Near corner: small dining table and compact white kitchen. Bathroom door (closed) near kitchen.
+Walls: warm off-white throughout. Floor: continuous light wood-grain laminate. Ceiling: low, white.
+The room is extremely small — everything compact and close together. Minimal decoration, very clean.
+Shot: wide-angle from near entrance looking into room, slightly elevated eye level.
 Realistic interior photography, architectural quality.
 ```
 
 ---
 
-## 착장 레퍼런스 (OC)
+## OC — 착장 레퍼런스 (13장)
 
-> 공통 설정:
-> 인물: F-01/F-02 기준 얼굴, 한국 여성 31세, 긴 흑갈색 웨이브 머리
-> 배경: SP-01~04 기준 초소형 원룸
-> 사진 품질: 실사, 자연스러운 셀카/일상 사진 느낌
+> 목적: 착장+공간 조합 고정. 실제 장면 생성 시 F 이미지와 함께 reference input으로 사용.
+> 공통: 인물 설정 = F-01/F-02 기준 얼굴. 배경 = SP 기준 초소형 원룸.
+> 공통 네거티브: outdoor, beach, cafe exterior, park, street, gym, swimming pool, sports field.
 
----
-
-### [ ] OC-01 — 기본 작업복 O-01
+### OC-01 — 기본 작업복 (O-01)
 ```
-Photorealistic photograph of a Korean woman in her early 30s, standing or sitting at a compact computer desk in an extremely small minimalist studio room.
-Outfit: oversized white short-sleeve t-shirt with wide round neckline — neckline is loose enough that a white bralette strap is naturally visible near the shoulder without any emphasis. Hem falls to mid-thigh. Short black cotton shorts with elastic waist, smooth fabric.
-Hair: long dark black hair in a high ponytail, a few natural face-framing strands falling forward. One beige fabric scrunchie visible on the wrist.
-No earrings. Barefoot.
-No makeup or very light natural skin.
-Background: SP-01 desk area. Cool white monitor glow and desk lamp light.
-Shot: half-body, slight high angle, selfie feel from arm's length. Front or 3/4 angle.
-Natural, casual, candid photo quality. Photorealistic.
+Photorealistic photograph. Korean woman at a compact computer desk in an extremely small minimalist studio room.
+Outfit: oversized white short-sleeve t-shirt, wide round neckline — loose enough that a white bralette strap is naturally visible near the shoulder (not emphasized). Hem to mid-thigh. Short black cotton shorts, elastic waist.
+Hair: long dark black hair in high ponytail. A few face-framing strands. One beige scrunchie on the wrist. Barefoot. No earrings. Natural skin.
+Background: SP-01 desk area. Cool white monitor glow and desk lamp.
+Shot: half-body, slight high angle, arm's-length selfie feel. Front or 3/4 angle.
+Photorealistic, candid, natural.
 ```
 
----
-
-### [ ] OC-02 — 후디 작업복 O-02
+### OC-02 — 후디 작업복 (O-02)
 ```
-Photorealistic photograph of a Korean woman in her early 30s at a compact computer desk in a tiny studio room.
-Outfit: oversized light gray hoodie sweatshirt, no zipper (pullover), kangaroo front pocket, thumb holes at sleeve ends. The slightly stretched neckline reveals the edge of a thin white bra top strap near the shoulder naturally. Light gray matching loose training shorts with drawstring waist.
-Hair: loose half-up style — top half gathered loosely with a clear elastic, some strands framing the face softly.
-No earrings. Barefoot.
+Photorealistic photograph. Korean woman at a compact computer desk in a tiny studio room.
+Outfit: oversized light gray hoodie sweatshirt, no zipper (pullover), kangaroo pocket, thumb holes. Slightly stretched neckline reveals edge of thin white bra top strap near shoulder naturally. Light gray matching loose training shorts, drawstring waist. Barefoot. No earrings.
+Hair: loose half-up style, top half gathered loosely, some strands framing face.
 Background: SP-01 desk area. Cool white work lighting.
-Shot: half-body, 3/4 angle or front. Casual and natural.
-Photorealistic, candid quality.
-```
-
----
-
-### [ ] OC-03 — 크롭 + 레깅스 O-03
-```
-Photorealistic photograph of a Korean woman in her early 30s in a tiny studio room.
-Outfit: mint green ribbed crop short-sleeve top — short enough to show midriff (approx 3cm above waist). The shoulder area shows a thin bralette strap in matching or neutral color naturally alongside the top's straps. Black 7/8 length tight leggings with thick elastic waistband. White ankle socks.
-Hair: high neat bun secured with a black cushion hair clip. No bangs visible.
-Small round silver stud earrings.
-Background: SP-02 bed area or open floor space. Daylight from the window.
-Shot: full body or 3/4 length, front-facing. Active casual pose.
+Shot: half-body, 3/4 or front. Casual and natural.
 Photorealistic.
 ```
 
----
-
-### [ ] OC-04 — 니트 + 와이드팬츠 O-04
+### OC-03 — 크롭 + 레깅스 (O-03)
 ```
-Photorealistic photograph of a Korean woman in her early 30s in a tiny studio room.
-Outfit: oversized ivory/cream chunky knit sweater with a wide boat neckline — the loose boat neck naturally slips slightly off one shoulder, revealing a bralette or bra strap. Long sleeves past wrists. Beige wide-leg cotton trousers with elastic waist, ankle-length. Thick white ankle socks.
-Hair: long dark wavy hair down naturally, soft waves. No accessories.
-No earrings.
+Photorealistic photograph. Korean woman in a tiny studio room.
+Outfit: mint green ribbed crop short-sleeve top — shows midriff (~3cm above waist). Thin bralette strap in matching or neutral color visible at shoulder naturally. Black 7/8 tight leggings, thick elastic waistband. White ankle socks.
+Hair: high neat bun secured with black cushion hair clip. No bangs. Small round silver stud earrings.
+Background: SP-02 bed area or open floor space. Daylight from window.
+Shot: full body or 3/4 length, front-facing.
+Photorealistic.
+```
+
+### OC-04 — 니트 + 와이드팬츠 (O-04)
+```
+Photorealistic photograph. Korean woman in a tiny studio room.
+Outfit: oversized ivory/cream chunky knit sweater, wide boat neckline — loose boat neck naturally slips slightly off one shoulder revealing a bralette strap (not emphasized). Long sleeves past wrists. Beige wide-leg cotton trousers, elastic waist, ankle-length. Thick white ankle socks. No earrings.
+Hair: long dark black hair down naturally, soft waves. No accessories.
 Background: SP-02 bed area or SP-03 dining table. Warm ambient light.
 Shot: upper body to full body, relaxed natural pose.
 Photorealistic, cozy and warm feel.
 ```
 
----
-
-### [ ] OC-05 — 민소매 + 숏팬츠 O-05
+### OC-05 — 민소매 + 숏팬츠 (O-05)
 ```
-Photorealistic photograph of a Korean woman in her early 30s in a tiny studio room.
-Outfit: white slim-fit sleeveless tank top with two thin spaghetti straps — a white or nude bra strap is naturally visible alongside the tank straps on both shoulders. Light sky blue cotton short shorts with elastic waist and slightly frayed hem. Barefoot.
-Hair: low side ponytail tied loosely with a beige fabric hair tie.
-One delicate thin white thread bracelet on the wrist. No earrings.
+Photorealistic photograph. Korean woman in a tiny studio room.
+Outfit: white slim-fit sleeveless tank top, two thin spaghetti straps — white or nude bra strap naturally visible alongside tank straps on both shoulders. Light sky blue cotton short shorts, elastic waist, slightly frayed hem. Barefoot. No earrings. One delicate thin white thread bracelet on wrist.
+Hair: low side ponytail, beige fabric hair tie.
 Background: SP-01 desk area with natural window light (daytime).
-Shot: upper body or 3/4, natural light, slight high angle.
+Shot: upper body or 3/4, slight high angle.
 Photorealistic, summer casual feel.
 ```
 
----
-
-### [ ] OC-06 — 오버핏 셔츠 O-06
+### OC-06 — 오버핏 셔츠 (O-06)
 ```
-Photorealistic photograph of a Korean woman in her early 30s in a tiny studio room.
-Outfit: oversized pastel lavender button-up shirt — only top 2 buttons fastened, open below showing black mini shorts underneath. The open V neckline naturally reveals the top edge of a white or lavender bralette. Shirt hem falls to mid-thigh. Black mini shorts with elastic waist, just visible below the shirt hem. Barefoot.
-Hair: half-up style with two small silver clips pinning the front sections back.
-Small crescent moon silver earrings.
+Photorealistic photograph. Korean woman in a tiny studio room.
+Outfit: oversized pastel lavender button-up shirt — only top 2 buttons fastened, open below. Open V neckline naturally reveals top edge of white or lavender bralette (not emphasized). Shirt hem to mid-thigh. Black mini shorts with elastic waist, just visible below hem. Barefoot. Small crescent moon silver earrings.
+Hair: half-up style with two small silver clips pinning front sections back.
 Background: SP-03 kitchen/dining or SP-04 full room. Warm afternoon light.
 Shot: full body or 3/4, relaxed and natural.
 Photorealistic.
 ```
 
----
-
-### [ ] OC-07 — 잠옷 A (긴소매) O-07
+### OC-07 — 잠옷 A — 긴소매 세트 (O-07)
 ```
-Photorealistic photograph of a Korean woman in her early 30s in a tiny studio bedroom setting.
-Outfit: light lavender/lilac long-sleeve pajama set — pullover top with a shallow V-neck that naturally reveals the upper chest skin and faint top edge of a soft bralette, no emphasis. Loose silhouette. Matching lavender long pajama pants, ankle length. Barefoot.
-Hair: long dark wavy hair loosely down, slightly disheveled and natural as if just woken up or relaxed at night.
-No earrings. No accessories.
+Photorealistic photograph. Korean woman in a tiny studio bedroom.
+Outfit: light lavender/lilac long-sleeve pajama set — pullover top with shallow V-neck that naturally reveals upper chest skin and faint top edge of soft bralette (no emphasis). Loose silhouette. Matching lavender long pajama pants, ankle length. Barefoot. No earrings.
+Hair: long dark black hair loosely down, slightly disheveled and natural, as if relaxed at night or just woken up.
 Background: SP-02 bed area. Warm amber mood lamp glow.
 Shot: sitting on bed edge or standing near bed. Upper body or 3/4 length.
 Photorealistic, soft and cozy feel.
 ```
 
----
-
-### [ ] OC-08 — 잠옷 B (민소매) O-08
+### OC-08 — 잠옷 B — 민소매 숏 세트 (O-08)
 ```
-Photorealistic photograph of a Korean woman in her early 30s in a tiny studio bedroom.
-Outfit: white pajama camisole top with thin spaghetti straps and subtle small cherry print in light pink — shallow square neckline. A bra strap is naturally visible beside the camisole strap on the shoulder without any intentional exposure. Matching white with cherry print loose pajama shorts, mid-thigh length. Barefoot.
-Hair: long dark wavy hair loosely down or in a messy half-up style. One pink fabric scrunchie visible on the wrist as if just taken off hair.
-No earrings.
+Photorealistic photograph. Korean woman in a tiny studio bedroom.
+Outfit: white pajama camisole top, thin spaghetti straps, subtle small cherry print in light pink, shallow square neckline. Bra strap naturally visible beside camisole strap on shoulder (no intentional emphasis). Matching white cherry-print loose pajama shorts, mid-thigh length. Barefoot. No earrings. Pink fabric scrunchie on wrist.
+Hair: long dark black hair loosely down or messy half-up style.
 Background: SP-02 bed area. Warm amber mood lamp.
 Shot: sitting on bed, upper body, natural morning or night feel.
 Photorealistic, soft and casual.
 ```
 
----
-
-### [ ] OC-09 — 욕실 가운 O-09
+### OC-09 — 욕실 가운 (O-09)
 ```
-Photorealistic photograph of a Korean woman in her early 30s in a tiny studio room, near the bathroom door or at the desk edge.
-Outfit: white terry cotton bathrobe, knee-length (just above knee), short 3/4 sleeves. Loosely tied with the same fabric belt at waist. The V-opening at the chest naturally shows the collarbone, upper chest skin, and faint upper edge of chest line — no intentional exposure, just natural robe opening. Bare legs below knee. Barefoot or white slip-on slippers.
-Hair: white towel wrapped as a turban on head (towel twisted and tucked) OR damp dark hair naturally falling loose with slight wet texture and darker color.
-No earrings.
-Skin: slightly flushed cheeks and warm skin tone as if just after shower. Slight natural dewy texture.
+Photorealistic photograph. Korean woman in a tiny studio room, near bathroom door or desk edge.
+Outfit: white terry cotton bathrobe, knee-length (just above knee), short 3/4 sleeves, loosely tied with fabric belt at waist. V-opening at chest naturally shows collarbone, upper chest skin — no intentional exposure, just natural robe opening. Bare legs below knee. Barefoot or white slip-on slippers. No earrings.
+Hair: white towel wrapped as turban on head OR damp dark hair falling loose with slight wet texture.
+Skin: slightly flushed cheeks, warm skin tone as if just after shower. Natural dewy texture.
 Background: SP-04 or near SP-03 kitchen area. Warm lighting.
-Shot: upper body to 3/4, standing. Natural candid quality.
-Photorealistic. No emphasis on chest area.
+Shot: upper body to 3/4, standing. No close-up of any specific area.
+Photorealistic. Tasteful, no emphasis on chest.
 ```
 
----
-
-### [ ] OC-10 — 수건 착장 O-10
+### OC-10 — 수건 착장 (O-10)
 ```
-Photorealistic photograph of a Korean woman in her early 30s in a tiny studio room, near bed or bathroom doorway.
-Outfit: one large white bath towel wrapped from under the arms to mid-thigh. The towel is secured by tucking at the chest — towel upper edge is above the chest line, not below. Shoulders, collarbones, neck, and upper arms are fully visible and exposed. Bare legs from mid-thigh down. Barefoot.
-Hair: long dark hair wet and naturally falling loose — darker and sleeker than usual due to water, slightly separated strands. No hair accessories.
-No earrings. No accessories.
-Skin: slightly flushed and dewy from shower. Natural warm skin tone.
-Background: SP-02 bed area or near the bathroom, warm ambient light.
-Shot: upper body, 3/4 angle or front, natural and candid quality. No close-up of any body part. Subject-centered composition.
+Photorealistic photograph. Korean woman in a tiny studio room, near bed or bathroom doorway.
+Outfit: one large white bath towel wrapped from under the arms to mid-thigh. Towel upper edge is above the chest line. Shoulders, collarbones, neck, and upper arms fully visible. Bare legs from mid-thigh down. Barefoot. No earrings. No accessories.
+Hair: long dark black hair wet and naturally falling loose — darker and sleeker than usual due to water, slightly separated strands.
+Skin: slightly flushed and dewy from shower.
+Background: SP-02 bed area or near bathroom doorway. Warm ambient light.
+Shot: upper body, 3/4 angle or front, natural and candid. No close-up of any body part. Subject-centered composition.
 Photorealistic. Tasteful and natural, no emphasis on any specific area.
 ```
 
----
-
-### [ ] OC-11 — 맨투맨 + 와이드팬츠 O-11
+### OC-11 — 맨투맨 + 와이드팬츠 (O-11)
 ```
-Photorealistic photograph of a Korean woman in her early 30s in a tiny studio room.
-Outfit: oversized oatmeal or light beige crewneck sweatshirt (no hood), thick French terry fabric, long sleeves with ribbed cuffs. The slightly worn-out neckline naturally reveals a thin white or skin-tone bra top strap near the shoulder. Length falls to hip. Dark gray wide-leg cotton trousers with elastic waist, ankle length. Thick white ankle socks.
-Hair: long dark wavy hair loosely down, naturally flowing. No hair accessories.
-No earrings.
+Photorealistic photograph. Korean woman in a tiny studio room.
+Outfit: oversized oatmeal or light beige crewneck sweatshirt (no hood), thick French terry fabric, long sleeves with ribbed cuffs. Slightly worn-out neckline naturally reveals thin white or skin-tone bra top strap near shoulder. Length falls to hip. Dark gray wide-leg cotton trousers, elastic waist, ankle length. Thick white ankle socks. No earrings.
+Hair: long dark black hair loosely down, naturally flowing.
 Background: SP-02 bed area or SP-03 dining table. Warm ambient evening light.
-Shot: upper body to 3/4 length, relaxed natural pose. Candid and comfortable.
+Shot: upper body to 3/4 length, relaxed natural pose.
 Photorealistic.
 ```
 
----
-
-### [ ] OC-12 — 민소매 + 미니 스커트 O-12
+### OC-12 — 민소매 + 미니 스커트 (O-12)
 ```
-Photorealistic photograph of a Korean woman in her early 30s in a tiny studio room.
-Outfit: white ribbed fitted sleeveless crop top with two thin spaghetti straps — slightly cropped above the waist. A light beige bra strap is naturally visible alongside the thin top straps on both shoulders. Light cream or ivory linen mini skirt with an elastic waistband, A-line silhouette, hem at mid-thigh. Barefoot.
-Hair: loose half-up style, a few strands framing the face. Tied with a small cream satin ribbon hair tie.
-Small gold ball stud earrings.
+Photorealistic photograph. Korean woman in a tiny studio room.
+Outfit: white ribbed fitted sleeveless crop top, two thin spaghetti straps — slightly cropped above waist. Light beige bra strap naturally visible alongside thin top straps on both shoulders. Light cream or ivory linen mini skirt, elastic waistband, A-line, hem at mid-thigh. Barefoot. Small gold ball stud earrings.
+Hair: loose half-up style, a few strands framing the face. Small cream satin ribbon hair tie.
 Background: SP-01 desk area with natural window daylight, or SP-04 wide room view.
 Shot: upper body or full body, front-facing or slight high angle. Summer casual feel.
 Photorealistic.
 ```
 
+### OC-13 — 크롭 스웨트 + 레깅스 (O-13)
+```
+Photorealistic photograph. Korean woman in a tiny studio room.
+Outfit: light gray or soft lavender cropped crewneck sweatshirt (no hood) — hem ~3-4cm above navel, showing midriff. Slightly oversized at shoulders. Bralette strap naturally visible near shoulder. Dark navy or black full-length tight leggings, thick waistband. White ankle socks. No earrings.
+Hair: high neat ponytail, black elastic.
+Background: SP-01 desk area or SP-04 full room. Daylight or cool work lighting.
+Shot: full body or 3/4, front-facing or slight angle.
+Photorealistic.
+```
+
 ---
 
-### [ ] OC-13 — 크롭 스웨트 + 레깅스 O-13
+## 실제 장면 생성 방식 (2단계)
+
+OC 이미지 1장 + F 이미지 1장을 reference input으로 넣고 아래 텍스트 프롬프트 추가.
+
 ```
-Photorealistic photograph of a Korean woman in her early 30s in a tiny studio room.
-Outfit: light gray or soft lavender cropped crewneck sweatshirt (no hood) — hem falls approximately 3-4cm above the navel, showing the midriff. Slightly oversized at the shoulders. A bralette strap is naturally visible near the shoulder. Dark navy or black full-length tight leggings with thick waistband. White ankle socks.
-Hair: high neat ponytail with black elastic. Clean and sporty.
-No earrings.
-Background: SP-01 desk area or SP-04 full room. Daylight or cool work lighting.
-Shot: full body or 3/4, front-facing or slight angle. Active casual sporty feel.
-Photorealistic.
+[행동] 중에서 1개 선택:
+코딩 중 / 기지개 켜기 / 턱 괴기 / 밥 먹는 중 / 커피 들기 /
+누워있기 / 폰 보기 / 요리 중 / 엎드려 있음
+
+[표정] 중에서 1개:
+중립 / 미소 / 집중 / 피곤함 / 귀여운 무표정 / 살짝 웃음 / 졸린 표정
+
+[촬영 방식] 중에서 1개:
+셀카 느낌 (handheld front camera) / 정면 / 반 측면 / 위에서 / 약간 아래에서
+
+[안경]:
+안경 없음 / 안경 착용 (작업 집중 중 빈도 높음, 취침/욕실 착장은 없음)
+
+[조명] (공간별 고정):
+작업 중 → cool white monitor glow + desk lamp
+수면/취침 전 → warm amber mood lamp
+새벽 야작 → only monitor light, dark room
+낮 → natural window light
 ```
 
 ---
 
 ## 생성 순서 체크리스트
 
-### 얼굴 레퍼런스 (먼저)
-- [ ] F-01 정면 중립 (안경 없음)
-- [ ] F-02 정면 미소 (안경 없음)
-- [ ] F-03 3/4 측면 (안경 없음)
-- [ ] F-04 옆 프로필 (안경 없음)
-- [ ] F-05 정면 중립 (안경 착용)
-- [ ] F-06 정면 미소 (안경 착용)
+### 1단계 — 얼굴 레퍼런스
+- [x] F-01 정면 중립 (안경 없음)
+- [x] F-02 정면 미소 (안경 없음)
+- [x] F-03 3/4 측면 (안경 없음)
+- [x] F-04 옆 프로필 (안경 없음)
+- [x] F-05 정면 중립 (안경 착용)
+- [x] F-06 정면 미소 (안경 착용)
 
-### 공간 레퍼런스 (인물 없음)
-- [ ] SP-01 컴퓨터 데스크
-- [ ] SP-02 침대
-- [ ] SP-03 식탁/주방
-- [ ] SP-04 전체 광각
+### 1단계 — 공간 레퍼런스 (인물 없음)
+- [x] SP-01 컴퓨터 데스크
+- [x] SP-02 침대
+- [x] SP-03 식탁/주방
+- [x] SP-04 전체 광각
 
-### 착장 레퍼런스 (얼굴+공간 완료 후)
-- [ ] OC-01 기본 작업복
-- [ ] OC-02 후디 작업복
-- [ ] OC-03 크롭+레깅스
-- [ ] OC-04 니트+와이드팬츠
-- [ ] OC-05 민소매+숏팬츠
-- [ ] OC-06 오버핏 셔츠
-- [ ] OC-07 잠옷 A (긴소매)
-- [ ] OC-08 잠옷 B (민소매)
-- [ ] OC-09 욕실 가운
-- [ ] OC-10 수건 착장
-- [ ] OC-11 맨투맨+와이드팬츠
-- [ ] OC-12 민소매+미니 스커트
-- [ ] OC-13 크롭 스웨트+레깅스
+### 2단계 — 착장 레퍼런스 (F 완료 후)
+- [x] OC-01 기본 작업복
+- [x] OC-02 후디 작업복
+- [x] OC-03 크롭+레깅스
+- [x] OC-04 니트+와이드팬츠
+- [x] OC-05 민소매+숏팬츠
+- [x] OC-06 오버핏 셔츠
+- [x] OC-07 잠옷 A (긴소매)
+- [x] OC-08 잠옷 B (민소매)
+- [x] OC-09 욕실 가운
+- [x] OC-10 수건 착장
+- [x] OC-11 맨투맨+와이드팬츠
+- [x] OC-12 민소매+미니 스커트
+- [x] OC-13 크롭 스웨트+레깅스
 
-**총 23장**
+**총 23장 (기본 세트) + OC 세트당 3종 변주 = 39장**
+
+---
+
+## 생성 완료 리소스 경로
+
+**기본 경로**: `/Users/kein/Projects/woong-bb/working/eunbi/meta_references/generated/v2/`
+
+### 얼굴 레퍼런스 (faces/)
+```
+F-01_front_neutral_no_glasses.png
+F-02_front_smile_no_glasses.png
+F-03_three_quarter_no_glasses.png
+F-04_side_profile_no_glasses.png
+F-05_front_neutral_glasses.png
+F-06_front_smile_glasses.png
+```
+
+### 공간 레퍼런스 (spaces/)
+```
+SP-01_desk_area.png
+SP-02_bed_area.png
+SP-03_dining_kitchen.png
+SP-04_room_wide.png
+```
+
+### 착장 레퍼런스 (outfits/) — 세트당 3종 변주
+각 OC 세트는 `OC-XX-01`, `OC-XX-02`, `OC-XX-03` 3종으로 구성. 실제 장면 생성 시 1장 선택해서 사용.
+
+| 세트 | 01 | 02 | 03 |
+|---|---|---|---|
+| OC-01 기본 작업복 | 흰 티 | 회색 티(연) | 회색 티(진) |
+| OC-02 후디 작업복 | 회색 후디 | 변주 | 변주 |
+| OC-03 크롭+레깅스 | 변주1 | 변주2 | 변주3 |
+| OC-04~13 | 변주1 | 변주2 | 변주3 |
+
+**파일명 패턴**: `OC-{번호}-{01~03}_{영문이름}.png`

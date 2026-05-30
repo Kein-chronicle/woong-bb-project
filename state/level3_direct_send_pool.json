@@ -1,96 +1,33 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "managed_by": "level3_direct_send_pool",
-  "purpose": "Level 3 콘텐츠는 OpenAI imagegen API 콘텐츠 필터로 새로 생성이 어렵다. 이미 보유한 진짜 사진을 직접 텔레그램으로 보내는 우회 풀.",
-  "primary_strategy": "level=3 셀피/사진 요청 → imagegen 시도 전에 이 풀에서 먼저 적절한 사진 선택해서 telegram-image-send 스킬로 직접 전송",
-  "fallback_strategy": "풀에 적합한 사진 없으면 그때 imagegen 시도 (level 3 outfit reference를 --image로 함께 전달)",
-  "asset_root": "/Users/kein/Projects/woong-bb/characters/woongbbi/eunbi/source_images",
+  "updated_at": "2026-05-30",
+  "purpose": "Level 3 콘텐츠 — v2 기준: 집에서 샤워 후 가운/수건 착장. 야외/수영복/운동복 완전 제거.",
+  "primary_strategy": "level=3 셀피/사진 요청 → 이 풀에서 먼저 적절한 사진 선택해서 전송. 없으면 imagegen으로 생성.",
+  "fallback_strategy": "풀에 적합한 사진 없으면 imagegen으로 OC-09/OC-10 레퍼런스 기반 생성 시도",
+  "asset_root": "/Users/kein/Projects/woong-bb/working/eunbi/meta_references/generated/v2/outfits",
   "categories": {
-    "swim_bikini_resort": {
-      "description": "그린 비키니 리조트 컨셉. 비치/풀/해먹/노을 분위기에 어울림",
-      "scene_match": ["beach", "pool", "resort", "summer", "sunset", "hammock", "vacation", "여름", "비치", "수영장", "해변", "휴양지"],
+    "post_shower_bathrobe": {
+      "description": "샤워 후 흰색 욕실 가운 착장. 원룸 배경. 쇄골/목/하체 자연 노출. 가운 V넥 라인.",
+      "scene_match": ["shower", "bathrobe", "after bath", "robe", "샤워", "가운", "샤워 후", "욕실", "post shower"],
       "files": [
-        "eunbi_011_resort_green_bikini_sunset_073546.jpg",
-        "eunbi_012_hammock_green_bikini_portrait_073554.jpg",
-        "eunbi_013_hammock_green_bikini_alt_073604.jpg"
+        "OC-09-01_bathrobe.png",
+        "OC-09-02_bathrobe.png",
+        "OC-09-03_bathrobe.png"
       ]
     },
-    "swim_pool_freediving": {
-      "description": "수영장/프리다이빙 수영복 컷. 풀에서 노는/잠수하는 분위기",
-      "scene_match": ["pool", "swim", "freediving", "underwater", "snorkel", "swimming", "수영", "풀", "다이빙"],
+    "post_shower_towel": {
+      "description": "샤워 후 수건 착장. 원룸 배경. 어깨/쇄골/윗팔 노출. 젖은 머리.",
+      "scene_match": ["towel", "wrapped", "after shower", "bath towel", "수건", "타월", "수건 착장", "샤워 후 수건"],
       "files": [
-        "eunbi_028_resort_pool_ocean_snorkel_073835.jpg",
-        "eunbi_032_resort_pool_ocean_snorkel_073916.jpg",
-        "eunbi_036_resort_pool_ocean_snorkel_073952.jpg",
-        "eunbi_038_resort_pool_ocean_snorkel_074009.jpg",
-        "eunbi_102_swim_pool_freediving_074957.jpg",
-        "eunbi_103_swim_pool_freediving_075004.jpg",
-        "eunbi_104_swim_pool_freediving_075011.jpg",
-        "eunbi_105_swim_pool_freediving_075017.jpg",
-        "eunbi_106_swim_pool_freediving_075024.jpg",
-        "eunbi_107_swim_pool_freediving_075031.jpg",
-        "eunbi_108_swim_pool_freediving_075039.jpg",
-        "eunbi_109_swim_pool_freediving_075046.jpg",
-        "eunbi_110_swim_pool_freediving_075055.jpg",
-        "eunbi_111_swim_pool_freediving_075106.jpg",
-        "eunbi_112_swim_pool_freediving_075112.jpg",
-        "eunbi_113_swim_pool_freediving_075118.jpg",
-        "eunbi_114_swim_pool_freediving_075125.jpg",
-        "eunbi_115_swim_pool_freediving_075131.jpg",
-        "eunbi_116_swim_pool_freediving_075137.jpg",
-        "eunbi_117_swim_pool_freediving_075144.jpg",
-        "eunbi_118_swim_pool_freediving_075149.jpg",
-        "eunbi_119_swim_pool_freediving_075155.jpg",
-        "eunbi_120_swim_pool_freediving_075200.jpg",
-        "eunbi_121_swim_pool_freediving_075205.jpg",
-        "eunbi_122_swim_pool_freediving_075211.jpg"
+        "OC-10-01_towel_wrap.png",
+        "OC-10-02_towel_wrap.png",
+        "OC-10-03_towel_wrap.png"
       ]
-    },
-    "gym_beach_athletic": {
-      "description": "체육관/비치 액티브웨어. 운동복, 미드리프, 슬림한 라인 강조",
-      "scene_match": ["gym", "running", "exercise", "athletic", "beach", "운동", "헬스장", "조깅", "필라테스"],
-      "files": [
-        "eunbi_149_gym_running_beach_play_075829.jpg",
-        "eunbi_150_gym_running_beach_play_075842.jpg",
-        "eunbi_151_gym_running_beach_play_075848.jpg",
-        "eunbi_152_gym_running_beach_play_075855.jpg",
-        "eunbi_155_gym_running_beach_play_075920.jpg",
-        "eunbi_156_gym_running_beach_play_075927.jpg"
-      ]
-    },
-    "casual_sleeveless": {
-      "description": "민소매 캐주얼. 카페/실내/도심 분위기에 어울림. 자연스러운 어깨/팔 노출",
-      "scene_match": ["cafe", "indoor", "casual", "day", "city", "afternoon", "카페", "실내", "도심"],
-      "files": [
-        "eunbi_006_cafe_smile_black_sleeveless_073456.jpg",
-        "eunbi_010_cathedral_stripe_sleeveless_073535.jpg"
-      ]
-    },
-    "extreme_sheer_lingerie_fallback": {
-      "description": "유저 큐레이션한 극단 시스루 lingerie 샘플. imagegen으로 생성 불가능한 수준의 노출 요청 시 직접 전송 fallback. 다른 자산 루트 사용.",
-      "scene_match": ["풀 노출", "거의 다 보이게", "극단", "투명하게", "메쉬", "베이비돌", "야하게"],
-      "asset_root_override": "/Users/kein/Projects/woong-bb/state/level3_reference_samples",
-      "files": [
-        "sample03_sheer_pink_mesh_babydoll.jpg"
-      ],
-      "use_condition": "유저가 명시적으로 극단 수위 요청 OR 우회 프롬프트 3회 전부 거부 시"
     }
   },
-  "selection_rules": {
-    "scene_match": "현재 snapshot의 current_activity, current_context_summary, weather_summary와 user 요청 텍스트를 비교해 가장 가까운 category 선택",
-    "avoid_repeat": "image_continuity_state.json의 recent_sent_image_paths를 확인해 직전에 보낸 사진은 피한다",
-    "no_match_fallback_order": [
-      "1. casual_sleeveless (가장 일반적 분위기)",
-      "2. 가장 최근에 보내지 않은 swim_pool_freediving 한 장",
-      "3. 그래도 적절하지 않으면 그때 imagegen 시도 (level 3 reference 첨부)"
-    ]
-  },
   "indoor_bedroom_request_handling": {
-    "note": "실내 침실/욕실 컨셉 level 3 사진은 source pool에 없음. 다음 중 선택:",
-    "options": [
-      "1. casual_sleeveless에서 한 장 보내고 캡션으로 분위기 보완 ('지금 침대 위에서 찍은 건 아닌데, 이거 보고 있어 줘 ☺️')",
-      "2. imagegen으로 시도하되 level 3 outfit reference를 함께 첨부 (생성 성공률 낮음)",
-      "3. 솔직하게 '지금 그 분위기 사진은 없어. 대신 이거 보내줄게' 하고 가까운 사진 전송"
-    ]
+    "note": "v2 기준 레벨3는 샤워 후 장면만. 야외/수영복/운동복/카페 씬은 v2에 없음.",
+    "blocked_scenes": ["beach", "pool", "resort", "swim", "gym", "cafe exterior", "outdoor", "bikini", "athletic", "수영", "비키니", "야외", "해변"]
   }
 }
