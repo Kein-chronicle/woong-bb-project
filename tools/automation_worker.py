@@ -2679,7 +2679,7 @@ def build_image_prompt_plan(reason: str) -> dict:
     weather_summary = weather.get("summary")
     weather_mood = str(weather.get("mood_bias", "") or "")
     continuity_band = continuity.get("continuity_band", "none")
-    context_summary = summarize_current_scene().get("context_summary", "")
+    context_summary = summarize_current_scene().get("context_summary") or ""
     content_level = resolve_content_level(activity, image_settings)
 
     image_type = "soft_selfie_encouragement"
