@@ -38,7 +38,7 @@ from automation.runtime_state import (
     update_runtime_state,
 )
 from automation.telegram_io import append_message_log, append_worker_note, send_telegram_text, send_telegram_voice_message
-from project_paths import MESSAGES, ROOT, STATE, ensure_operational_dirs, log_path
+from project_paths import MESSAGES, ROOT, STATE, TOOLS, ensure_operational_dirs, log_path
 
 
 MODE_PATH = STATE / "mode_state.json"
