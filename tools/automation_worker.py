@@ -2606,17 +2606,26 @@ def _build_text_prompt(plan: dict) -> str:
 
 def _pick_reference_images(face_angle: str, shot_type: str, pose: str) -> dict:
     curated = ROOT / "characters" / "woongbbi" / "eunbi" / "references" / "curated"
+    v2_outfits = ROOT / "working" / "eunbi" / "meta_references" / "generated" / "v2" / "outfits"
+    v2_spaces = ROOT / "working" / "eunbi" / "meta_references" / "generated" / "v2" / "spaces"
+    v2_faces = ROOT / "working" / "eunbi" / "meta_references" / "generated" / "v2" / "faces"
     result = {}
 
-    face_dir = curated / "face_front_best"
-    if face_dir.exists():
-        img_exts = {".jpg", ".jpeg", ".png"}
-        preferred = [f for f in face_dir.iterdir() if "__preferred_face" in f.name and f.suffix in img_exts]
-        others = [f for f in face_dir.iterdir() if "__preferred_face" not in f.name and f.suffix in img_exts]
-        random.shuffle(preferred)
-        random.shuffle(others)
-        result["face_front"] = [str(f) for f in (preferred + others)[:4]]
+    # 얼굴: v2 생성 이미지 우선, 없으면 v1 curated fallback
+    if v2_faces.exists():
+        face_imgs = [f for f in v2_faces.iterdir() if f.suffix in {".png", ".jpg"}]
+        random.shuffle(face_imgs)
+        result["face_front"] = [str(f) for f in face_imgs[:3]]
+    else:
+        face_dir = curated / "face_front_best"
+        if face_dir.exists():
+            img_exts = {".jpg", ".jpeg", ".png"}
+            preferred = [f for f in face_dir.iterdir() if "__preferred_face" in f.name and f.suffix in img_exts]
+            others = [f for f in face_dir.iterdir() if "__preferred_face" not in f.name and f.suffix in img_exts]
+            random.shuffle(preferred); random.shuffle(others)
+            result["face_front"] = [str(f) for f in (preferred + others)[:3]]
 
+    # 옆 각도 얼굴: v1 side profile
     if face_angle in {"three_quarter_turn", "slight_profile", "chin_tucked_down", "walking_turn_back"}:
         side_dir = curated / "face_side_profile"
         if side_dir.exists():
@@ -2624,13 +2633,19 @@ def _pick_reference_images(face_angle: str, shot_type: str, pose: str) -> dict:
             random.shuffle(side_imgs)
             result["face_side"] = [str(f) for f in side_imgs[:2]]
 
-    if shot_type in {"full_body_candid", "full_body_umbrella_candid", "mirror_half_body"}:
-        body_dir = curated / "full_body_silhouette"
-        if body_dir.exists():
-            body_imgs = [f for f in body_dir.iterdir() if f.suffix in {".jpg", ".jpeg", ".png"}]
-            random.shuffle(body_imgs)
-            result["body"] = [str(f) for f in body_imgs[:2]]
+    # 착장/전신: v2 OC 이미지 (v2에서 v1 야외 실루엣 대체)
+    if shot_type in {"full_body_candid", "full_body_umbrella_candid", "mirror_half_body"} and v2_outfits.exists():
+        oc_imgs = [f for f in v2_outfits.iterdir() if f.suffix == ".png"]
+        random.shuffle(oc_imgs)
+        result["outfit"] = [str(f) for f in oc_imgs[:2]]
 
+    # 공간: v2 SP 이미지
+    if v2_spaces.exists():
+        sp_imgs = [f for f in v2_spaces.iterdir() if f.suffix == ".png"]
+        random.shuffle(sp_imgs)
+        result["space"] = [str(f) for f in sp_imgs[:2]]
+
+    # 손/소품: v1 curated (손 참조는 야외 컨텍스트 영향 낮음)
     if any(kw in pose for kw in ("cup", "phone", "hold", "prop", "spoon", "chopstick", "hair")):
         hands_dir = curated / "hands_props_gestures"
         if hands_dir.exists():
@@ -2638,6 +2653,7 @@ def _pick_reference_images(face_angle: str, shot_type: str, pose: str) -> dict:
             random.shuffle(hands_imgs)
             result["hands"] = [str(f) for f in hands_imgs[:2]]
 
+    # 헤어: v1 curated
     if face_angle in {"three_quarter_turn", "slight_profile", "walking_turn_back"} or shot_type in {"mirror_half_body", "full_body_candid"}:
         hair_dir = curated / "hair_reference"
         if hair_dir.exists():
