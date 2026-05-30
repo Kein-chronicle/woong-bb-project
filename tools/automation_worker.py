@@ -2499,6 +2499,155 @@ def save_recent_image_plan(plan: dict) -> None:
     save_json(IMAGE_SHOT_HISTORY_PATH, history)
 
 
+def _build_text_prompt(plan: dict) -> str:
+    base = "young Korean woman, long straight black hair, soft facial features, natural complexion, slim silhouette"
+
+    shot_map = {
+        "face_closeup": "extreme close-up face",
+        "chest_up": "chest-up portrait",
+        "half_body": "half-body shot",
+        "waist_up": "waist-up framing",
+        "mirror_half_body": "half-body mirror selfie",
+        "table_portrait": "seated portrait at table",
+        "full_body_candid": "full body candid",
+        "window_side_portrait": "side portrait by window",
+        "half_body_seated": "seated half-body",
+    }
+    angle_map = {
+        "front_phone_selfie": "straight-on front camera selfie",
+        "three_quarter_arm_length": "three-quarter angle arm-length selfie",
+        "slight_high_angle": "slightly elevated angle",
+        "top_down_phone_selfie": "top-down phone selfie",
+        "pillow_level_three_quarter": "pillow-level three-quarter angle",
+        "seated_three_quarter": "seated three-quarter angle",
+        "low_table_angle": "low table angle",
+    }
+    method_map = {
+        "front_camera_handheld": "handheld front camera",
+        "mirror_selfie": "mirror selfie phone visible",
+        "propped_phone_timer": "timer selfie phone propped",
+    }
+    expr_map = {
+        "soft_smile": "soft gentle smile",
+        "warm_smile": "warm natural smile",
+        "bright_smile": "bright cheerful smile",
+        "quiet_eye_contact": "calm direct eye contact",
+        "mellow_relaxed": "mellow relaxed expression",
+        "sleepy_soft_smile": "sleepy soft smile",
+        "playful_grin": "playful grin",
+        "content_relaxed": "content relaxed face",
+        "tired_but_cute": "tired but cute expression",
+        "small_pout": "slight pout",
+        "closed_lip_smile": "closed-lip smile",
+        "fond_look": "fond warm look",
+        "reflective_gaze": "reflective thoughtful gaze",
+    }
+    face_map = {
+        "front_facing": "facing directly at camera",
+        "three_quarter_turn": "three-quarter face turn",
+        "slight_profile": "slight profile view",
+        "chin_tucked_down": "chin slightly lowered",
+        "walking_turn_back": "turning back glance",
+    }
+    gaze_map = {
+        "lens_eye_contact": "direct lens eye contact",
+        "screen_preview_glance": "glancing at phone screen",
+        "downward_relaxed": "gaze downward relaxed",
+        "off_to_side_focus": "gaze off to the side",
+        "laughing_away": "laughing gaze away",
+    }
+    space_map = {
+        "bedside": "beside bed",
+        "bedroom_mirror": "bedroom mirror",
+        "desk_area": "computer desk, cool monitor glow",
+        "kitchen_area": "home kitchen",
+        "neutral_personal_space": "cozy home interior",
+        "quiet_hallway": "home hallway",
+        "room_walk": "home room interior",
+        "vanity_corner": "vanity corner",
+        "cafe_table": "home interior table",
+        "cafe_counter": "home kitchen counter",
+    }
+    outfit_map = {
+        "home_casual_work": "oversized white t-shirt or hoodie",
+        "pajamas": "cozy pajamas or sleepwear",
+        "post_shower": "white bathrobe or towel wrap",
+        "home_relaxed": "comfortable home clothing",
+        "night_home_casual": "comfortable home nightwear",
+        "home_work": "casual home work outfit",
+    }
+
+    block = plan.get("time_block", "")
+    if "night" in block or "sleep" in block:
+        lighting = "warm amber mood lighting"
+    elif "morning" in block:
+        lighting = "soft morning indoor light"
+    elif "lunch" in block:
+        lighting = "natural indoor midday light"
+    else:
+        lighting = "natural indoor lighting"
+
+    shot = shot_map.get(plan.get("shot_type", ""), "")
+    angle = angle_map.get(plan.get("camera_angle", ""), "")
+    method = method_map.get(plan.get("selfie_capture_method", ""), "")
+    intensity = plan.get("expression_intensity", "").replace("_", " ")
+    expr = expr_map.get(plan.get("expression", ""), plan.get("expression", "").replace("_", " "))
+    expr_full = ("%s %s" % (intensity, expr)).strip() if intensity else expr
+    face = face_map.get(plan.get("face_angle", ""), "")
+    gaze = gaze_map.get(plan.get("gaze_direction", ""), "")
+    outfit_ctx = plan.get("outfit_context", "") or plan.get("appearance_branch", "")
+    outfit = outfit_map.get(outfit_ctx, "casual home clothing")
+    space = space_map.get(plan.get("space_anchor", ""), "cozy home interior")
+
+    components = [base, shot, angle, method, expr_full, face, gaze, outfit, space, lighting,
+                  "photorealistic, indoor home setting, natural skin texture, candid selfie"]
+    return ", ".join(c for c in components if c)
+
+
+def _pick_reference_images(face_angle: str, shot_type: str, pose: str) -> dict:
+    curated = ROOT / "characters" / "woongbbi" / "eunbi" / "references" / "curated"
+    result = {}
+
+    face_dir = curated / "face_front_best"
+    if face_dir.exists():
+        img_exts = {".jpg", ".jpeg", ".png"}
+        preferred = [f for f in face_dir.iterdir() if "__preferred_face" in f.name and f.suffix in img_exts]
+        others = [f for f in face_dir.iterdir() if "__preferred_face" not in f.name and f.suffix in img_exts]
+        random.shuffle(preferred)
+        random.shuffle(others)
+        result["face_front"] = [str(f) for f in (preferred + others)[:4]]
+
+    if face_angle in {"three_quarter_turn", "slight_profile", "chin_tucked_down", "walking_turn_back"}:
+        side_dir = curated / "face_side_profile"
+        if side_dir.exists():
+            side_imgs = [f for f in side_dir.iterdir() if f.suffix in {".jpg", ".jpeg", ".png"}]
+            random.shuffle(side_imgs)
+            result["face_side"] = [str(f) for f in side_imgs[:2]]
+
+    if shot_type in {"full_body_candid", "full_body_umbrella_candid", "mirror_half_body"}:
+        body_dir = curated / "full_body_silhouette"
+        if body_dir.exists():
+            body_imgs = [f for f in body_dir.iterdir() if f.suffix in {".jpg", ".jpeg", ".png"}]
+            random.shuffle(body_imgs)
+            result["body"] = [str(f) for f in body_imgs[:2]]
+
+    if any(kw in pose for kw in ("cup", "phone", "hold", "prop", "spoon", "chopstick", "hair")):
+        hands_dir = curated / "hands_props_gestures"
+        if hands_dir.exists():
+            hands_imgs = [f for f in hands_dir.iterdir() if f.suffix in {".jpg", ".jpeg", ".png"}]
+            random.shuffle(hands_imgs)
+            result["hands"] = [str(f) for f in hands_imgs[:2]]
+
+    if face_angle in {"three_quarter_turn", "slight_profile", "walking_turn_back"} or shot_type in {"mirror_half_body", "full_body_candid"}:
+        hair_dir = curated / "hair_reference"
+        if hair_dir.exists():
+            hair_imgs = [f for f in hair_dir.iterdir() if f.suffix in {".jpg", ".jpeg", ".png"}]
+            random.shuffle(hair_imgs)
+            result["hair"] = [str(f) for f in hair_imgs[:2]]
+
+    return result
+
+
 def resolve_content_level(activity: str, image_settings: dict) -> int:
     override = image_settings.get("content_level_override")
     if isinstance(override, int):
@@ -3013,7 +3162,15 @@ def build_image_prompt_plan(reason: str) -> dict:
         ],
         "notes": "다음 이미지 생성 시 셀피/라이프스타일 샷 구도 반복을 줄이기 위한 샷 플랜",
         "content_level": content_level,
+        "reference_images": _pick_reference_images(face_angle, shot_type, pose),
     }
+
+    plan["text_prompt"] = _build_text_prompt(plan)
+    plan["negative_prompt"] = (
+        "outdoor, beach, cafe exterior, park, street, gym, swimming pool, "
+        "sports uniform, overexposed, blurry face, heavy filter, distorted features, "
+        "extra limbs, cartoon, anime, illustration"
+    )
 
     # 레벨2 + 이동 상황: 이너웨어 자연 노출 힌트 주입
     if content_level == 2 and activity in {"morning_prep", "evening_free"}:
