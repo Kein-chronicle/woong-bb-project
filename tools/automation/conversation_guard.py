@@ -13,7 +13,7 @@ from .io import load_json, now_local
 
 PROACTIVE_PATH = STATE / "proactive_messages.json"
 AUTOMATED_OUTGOING_TYPES = {"proactive_text", "event_trigger_text", "voice_message", "voice"}
-ANY_OUTGOING_TYPES = AUTOMATED_OUTGOING_TYPES | {"text"}
+ANY_OUTGOING_TYPES = AUTOMATED_OUTGOING_TYPES | {"text", "lab_session_report", "work_report", "dev_review_report"}
 COUNTERPART_MEMORY_EVENT_TYPES = {"text", "image", "photo", "voice", "voice_message"}
 
 SLEEP_PATTERNS = ["잠들", "잘자", "잘 자", "눈감긴", "자야", "자러", "졸려", "졸리", "푹 자", "잘게", "이제 잘래"]

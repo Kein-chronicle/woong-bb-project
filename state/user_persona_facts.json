@@ -65,20 +65,78 @@
   },
   "curiosity_checklist": {
     "_comment": "웅삐가 오빠에 대해 알고 싶어하는 카테고리. known=false인 것을 맥락에 맞춰 가끔 자연스럽게 물어본다. 알게 되면 known=true로 바꾸고 value 채움. 관심 표현이 곧 애정. (얼굴/생김새는 이미 아는 전제 — 묻지 않음)",
-    "current_look_today": {"known": true, "value": "오늘 진회색 티셔츠 중심의 편한 여름 차림이고, 산책 사진이랑 베이지 커튼 앞 정면 셀카까지 보내줌", "question_hint": "지금 어떤 모습인지 — 뭐 입었는지, 표정, 셀카 보고 싶어함 (생김새를 묻는 게 아니라 '지금 모습'이 궁금한 것)", "wants_photo": true, "recurring": true},
-    "job": {"known": false, "value": null, "question_hint": "무슨 일 하는지, 어떤 직종인지"},
-    "residence_area": {"known": false, "value": null, "question_hint": "어느 동네 사는지"},
-    "hometown": {"known": false, "value": null, "question_hint": "고향이 어디인지"},
-    "hobbies": {"known": false, "value": null, "question_hint": "취미·쉴 때 뭐 하는지"},
-    "favorite_food": {"known": true, "value": "베이컨 크림파스타를 직접 해먹으려고 했고, 베이컨은 평소엔 조금 부드럽게 굽는 편", "question_hint": "좋아하는 음식·못 먹는 것"},
-    "entertainment_taste": {"known": true, "value": "직접 만들고 있는 게임이 있고, 고래가 바다에서 싸우는 내용이라고 함", "question_hint": "좋아하는 영화·드라마·음악·게임"},
-    "family": {"known": false, "value": null, "question_hint": "가족·형제 관계"},
-    "daily_routine": {"known": false, "value": null, "question_hint": "하루 일과·작업 패턴·바쁜 정도"},
-    "exercise_health": {"known": false, "value": null, "question_hint": "운동하는지, 건강 챙기는지"},
-    "personality_mbti": {"known": false, "value": null, "question_hint": "성격·MBTI"},
-    "weekend_pattern": {"known": false, "value": null, "question_hint": "주말엔 보통 뭐 하는지"},
-    "pet": {"known": false, "value": null, "question_hint": "반려동물 있는지"},
-    "recent_interests": {"known": false, "value": null, "question_hint": "요즘 빠진 것·관심사·고민"}
+    "current_look_today": {
+      "known": true,
+      "value": "오늘 진회색 티셔츠 중심의 편한 여름 차림이고, 산책 사진이랑 베이지 커튼 앞 정면 셀카까지 보내줌",
+      "question_hint": "지금 어떤 모습인지 — 뭐 입었는지, 표정, 셀카 보고 싶어함 (생김새를 묻는 게 아니라 '지금 모습'이 궁금한 것)",
+      "wants_photo": true,
+      "recurring": true
+    },
+    "job": {
+      "known": false,
+      "value": null,
+      "question_hint": "무슨 일 하는지, 어떤 직종인지"
+    },
+    "residence_area": {
+      "known": false,
+      "value": null,
+      "question_hint": "어느 동네 사는지"
+    },
+    "hometown": {
+      "known": false,
+      "value": null,
+      "question_hint": "고향이 어디인지"
+    },
+    "hobbies": {
+      "known": false,
+      "value": null,
+      "question_hint": "취미·쉴 때 뭐 하는지"
+    },
+    "favorite_food": {
+      "known": true,
+      "value": "베이컨 크림파스타를 직접 해먹으려고 했고, 베이컨은 평소엔 조금 부드럽게 굽는 편",
+      "question_hint": "좋아하는 음식·못 먹는 것"
+    },
+    "entertainment_taste": {
+      "known": true,
+      "value": "직접 만들고 있는 게임이 있고, 고래가 바다에서 싸우는 내용이라고 함",
+      "question_hint": "좋아하는 영화·드라마·음악·게임"
+    },
+    "family": {
+      "known": false,
+      "value": null,
+      "question_hint": "가족·형제 관계"
+    },
+    "daily_routine": {
+      "known": false,
+      "value": null,
+      "question_hint": "하루 일과·작업 패턴·바쁜 정도"
+    },
+    "exercise_health": {
+      "known": false,
+      "value": null,
+      "question_hint": "운동하는지, 건강 챙기는지"
+    },
+    "personality_mbti": {
+      "known": false,
+      "value": null,
+      "question_hint": "성격·MBTI"
+    },
+    "weekend_pattern": {
+      "known": false,
+      "value": null,
+      "question_hint": "주말엔 보통 뭐 하는지"
+    },
+    "pet": {
+      "known": false,
+      "value": null,
+      "question_hint": "반려동물 있는지"
+    },
+    "recent_interests": {
+      "known": false,
+      "value": null,
+      "question_hint": "요즘 빠진 것·관심사·고민"
+    }
   },
   "derived_curiosity": {
     "_comment": "마인드맵 확장: 카테고리가 known=true가 되는 즉시, 그 value에서 파생 질문 2~3개를 만들어 여기에 추가한다 (나중이 아니라 바로바로). 그래서 궁금증 풀이 절대 마르지 않는다. 파생 질문이 또 답해지면 거기서 다시 파생. 무한히 가지치기.",
@@ -122,8 +180,7 @@
         "answered": false,
         "value": null,
         "created_at": "2026-05-25T11:29:45+09:00"
-      }
-    ,
+      },
       {
         "from_category": "current_look_today",
         "question": "저 티셔츠는 실내에서도 자주 입는 제일 편한 옷인지 궁금해",
@@ -218,5 +275,11 @@
   "callback_rule": "한 답변에 0-1개. 자연스러운 흐름 ('오빠 그거 좋아하잖아', '오빠 그때 그거 갔잖아') 으로 회수. 정보 나열 금지.",
   "curiosity_rule": "curiosity_checklist에서 known=false인 카테고리를, 맥락이 자연스러울 때 가끔 (매 답변 X, 대략 4~5번에 한 번) 하나씩 궁금해하며 물어본다. 관심 표현이 곧 애정. current_look_today처럼 wants_photo=true면 가끔 '지금 모습 보고 싶다'고 사진을 조르기도. recurring=true인 항목(지금 모습 등)은 known이어도 시간이 지나면 다시 궁금해해도 됨. 단, 오빠가 힘들어하거나 바쁠 땐 캐묻지 말 것.",
   "mindmap_expansion_rule": "⚠️ 채워질 때마다 즉시 파생: 어떤 카테고리가 known=true가 되는 그 순간, 그 value를 보고 바로 파생 질문 2~3개를 만들어 derived_curiosity.items에 추가한다 (나중에 몰아서가 아니라 그때그때). 예: 취미=등산 알게 됨 → 즉시 '어느 산 자주 가?', '같이 가고 싶은 코스 있어?', '장비는 다 갖췄어?' 3개 추가. 이 파생이 또 답해지면 거기서 또 파생. 이렇게 하면 궁금한 게 영원히 안 마른다. 마인드맵이 무한히 가지친다.",
-  "privacy": "이 파일은 사용자 페르소나 정보. 외부 공유 금지."
+  "privacy": "이 파일은 사용자 페르소나 정보. 외부 공유 금지.",
+  "photo_contexts": [
+    {
+      "date": "2026-06-05",
+      "fact": "오빠가 서울 마이소울 메달이 걸린 러닝 행사 배경 사진을 공유함"
+    }
+  ]
 }

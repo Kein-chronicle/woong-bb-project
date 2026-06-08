@@ -147,6 +147,68 @@ soft natural lighting, candid photo feel
 
 ---
 
+## v2 레퍼런스 이미지 현황 (2026-05-31 완료)
+
+| 구분 | 경로 | 현황 |
+|------|------|------|
+| OC 착장 | `working/eunbi/meta_references/generated/v2/outfits/OC-{id}-{variant}_{name}.png` | OC-01~13, 각 3장 = 39장 |
+| SP 공간 | `working/eunbi/meta_references/generated/v2/spaces/SP-{id}_{name}.png` | SP-01~04 = 4장 |
+
+> 명명 규칙: OC-{번호2자리}-{변형01~03}_{영문이름}.png
+> 원본 10세트에서 OC-11(스웻+와이드), OC-12(슬리브리스+미니), OC-13(크롭스웻+레깅스) 추가됨
+
+### 계절별 잠옷 권장
+| 계절 | 권장 OC |
+|------|---------|
+| 봄/여름 (5~8월) | OC-08 (캐미솔+숏팬츠) |
+| 가을/겨울 (10~2월) | OC-07 (롱슬리브+롱팬츠) |
+
+---
+
+## 영상 생성 워크플로우 (2026-05-31 검증 완료)
+
+### 확정 파이프라인
+
+```
+Step 1. 이미지 생성 (nano_banana_2)
+  입력: 얼굴 참조(curated/face_front_best/) + OC 착장 + SP 공간
+  파라미터: aspect_ratio=9:16, resolution=2k
+  프롬프트: "half-body portrait, face matches reference exactly, outfit from OC reference, room from SP reference"
+
+Step 2. 영상 생성 (seedance_2_0, 오디오 없이)
+  입력: Step 1 이미지 job_id → start_image
+  파라미터: aspect_ratio=9:16, duration=5, mode=std, genre=drama
+  프롬프트: idle 자연스러운 움직임만 (말하는 거 NO)
+  예시: "Natural idle animation: soft blink, gentle breathing, slight hair movement, small head sway. Not speaking."
+
+Step 3. 전송
+  python3 ~/.codex/skills/telegram-image-send/scripts/send_telegram_video.py
+  --state-dir /Users/kein/Projects/woong-bb/session --video <path>
+```
+
+### 실패 패턴 (사용 금지)
+| 조합 | 결과 |
+|------|------|
+| seedance_2_0 + audio role | 즉시 failed (서버 버그) |
+| wan2_7 + audio role | 무한 in_progress stuck |
+| veo3_1 start_image | 얼굴 변형 심함 |
+| AI 생성 이미지 + 노출 있는 착장 | NSFW 차단 |
+
+### 핵심 규칙
+- **오디오 없이** seedance_2_0 → identity 보존되고 안정적
+- **얼굴 참조는 반드시 실사 curated 사진** 사용 (AI 생성 얼굴 쓰면 변형)
+- **말하는 프롬프트 금지** — idle 움직임만 지정할 것
+- 립싱크 필요시: Hedra API 등 외부 연동 필요 (현재 미구현)
+
+### 복구 참조
+- 영상 저장: `videos/generated/{date}/`
+- 음성 저장: `voice-message/{date}/vid_*.mp3`
+- 얼굴 참조: `characters/woongbbi/eunbi/references/curated/face_front_best/`
+- OC 착장: `working/eunbi/meta_references/generated/v2/outfits/`
+- SP 공간: `working/eunbi/meta_references/generated/v2/spaces/`
+
+---
+
 ## 고려해야 할 추가 항목
 
 | 항목 | 내용 |

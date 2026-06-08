@@ -4,35 +4,32 @@
   "managed_by": "automation_worker",
   "recent_question_intents": [
     "meal_routine",
-    "meal_routine"
+    "home_arrival"
   ],
   "recent_opening_styles": [
-    "playful_tease",
     "time_checkin",
     "playful_tease",
-    "playful_tease",
-    "playful_tease",
-    "playful_tease"
+    "time_checkin",
+    "thought_of_you"
   ],
   "question_intent_counts": {
-    "meal_routine": 2
+    "meal_routine": 1,
+    "home_arrival": 1
   },
   "opening_style_counts": {
-    "playful_tease": 7,
-    "time_checkin": 2
+    "time_checkin": 2,
+    "playful_tease": 1,
+    "thought_of_you": 1
   },
-  "blocked_question_intents": [
-    "meal_routine"
-  ],
+  "blocked_question_intents": [],
   "blocked_opening_styles": [
-    "playful_tease"
+    "time_checkin"
   ],
   "preferred_next_moves": [
     "self_update",
-    "care_offer",
-    "micro_topic_shift",
-    "soft_observation"
+    "thought_of_you",
+    "weather_or_scene"
   ],
-  "last_updated_at": "2026-05-29T15:16:14+09:00",
+  "last_updated_at": "2026-06-09T08:00:45+09:00",
   "notes": "최근 outgoing 답장에서 같은 질문 줄기와 같은 선톡 시작 패턴이 겹치면 잠시 피하게 만드는 상태"
 }

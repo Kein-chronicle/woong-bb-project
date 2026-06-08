@@ -9,7 +9,7 @@ Canonical root:
 - Telegram으로 들어온 강은비/웅삐 관련 요청은 항상 이 폴더를 먼저 확인한다.
 - 프로필, 룰, 메시지, 캘린더, 이미지, 베이스 사진, 세션 상태는 이 폴더 아래의 파일을 기준으로 한다.
 - 같은 이름의 예전 파일이 `.codex` 아래에 있어도 이 폴더의 파일을 우선한다.
-- 새 파일은 특별한 지시가 없는 한 이 폴더 아래에 생성한다.
+- 새 파일은 사용자가 다른 위치를 명시하지 않는 한 웅삐랩(`/Users/kein/Projects/woongbbi-lab`)에 생성한다. 이 폴더에는 생성하지 않는다.
 - 수정 요청을 처리할 때는 먼저 `/Users/kein/Desktop/woong-bb/profile/change_application_routing_rules_ko.md`로 `generation/review/hybrid` 분류를 한다.
 
 ## Main Files

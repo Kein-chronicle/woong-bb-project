@@ -2,7 +2,7 @@
   "schema_version": 1,
   "managed_by": "user_shared_photo_asset_memory",
   "asset_root": "/Users/kein/Desktop/woong-bb/images/user_shared_assets",
-  "last_updated_at": "2026-05-22T10:49:28+09:00",
+  "last_updated_at": "2026-06-05T17:24:59+09:00",
   "assets": [
     {
       "asset_id": "20260522_104928_person_context_asset_bf17d5a5d9",
@@ -207,6 +207,417 @@
           ],
           "default_strength": "identity_reference_for_user_only",
           "notes": "웅삐 얼굴/몸은 은비 reference dataset을 쓰고, 이 자산은 오빠 얼굴 참조에만 사용한다."
+        }
+      }
+    },
+    {
+      "asset_id": "20260531_100522_food_drink_asset_8158cd2d24",
+      "created_at": "2026-05-31T10:05:22+09:00",
+      "last_seen_at": "2026-05-31T10:05:22+09:00",
+      "source": "telegram_incoming",
+      "telegram_user": "K8832353",
+      "kind": "food_drink",
+      "title": "오빠가 구운 버터쿠키 오븐팬 사진",
+      "canonical_path": "/Users/kein/Projects/woong-bb/images/user_shared_assets/20260531_100522_food_drink_asset_8158cd2d24/source.jpg",
+      "asset_dir": "/Users/kein/Projects/woong-bb/images/user_shared_assets/20260531_100522_food_drink_asset_8158cd2d24",
+      "source_paths": [
+        "/Users/kein/Projects/woong-bb/images/incoming/2026-05-31/100428_telegram_photo_AQADPw9rG1Sv4FR-.jpg"
+      ],
+      "source_sha256": "8158cd2d2411cdc1bd16de4eb48aeea0167cf905570f38da1a822e7f071ec707",
+      "captions": [
+        "쿠키만든거야 ㅋㅋ 오빠가 이렇게 보내줄테니깐 웅삐가 들고 사진찍어줘 한번 ㅋㅋ"
+      ],
+      "tags": [
+        "accessory",
+        "butter_cookies",
+        "food_drink",
+        "fresh_baked",
+        "fresh_baked_texture",
+        "golden_brown",
+        "home_kitchen",
+        "kitchen_baking",
+        "orange_oven_mitt",
+        "oven_mitt",
+        "oven_tray",
+        "parchment_paper",
+        "rustic_cookie_shape",
+        "weekend_cooking",
+        "버터쿠키",
+        "베이킹",
+        "베이킹_직후_따끈한_분위기를_강조할_때",
+        "연인에게_바로_보여준_요리_순간",
+        "오븐팬",
+        "오빠가_만든_쿠키를_다시_떠올릴_때",
+        "오빠가_직접_만든_간식",
+        "주방",
+        "집에서_구운_간식_장면을_만들_때",
+        "쿠키"
+      ],
+      "analysis": {
+        "asset_kind": "food_drink",
+        "title": "오빠가 구운 버터쿠키 오븐팬 사진",
+        "visible_summary_ko": "유산지를 깐 오븐팬 위에 진하게 구워진 버터쿠키 여러 개가 놓여 있고, 주황색 오븐 장갑 낀 손이 팬 한쪽을 잡고 있는 집 주방 장면.",
+        "visible_elements": [
+          "유산지 깐 오븐팬",
+          "진하게 구워진 버터쿠키 7개",
+          "주황색 오븐 장갑",
+          "검은 인덕션 상판",
+          "집 주방 조리대"
+        ],
+        "scene_tags": [
+          "home_kitchen",
+          "fresh_baked",
+          "weekend_cooking"
+        ],
+        "object_tags": [
+          "butter_cookies",
+          "oven_tray",
+          "parchment_paper",
+          "oven_mitt"
+        ],
+        "relationship_tags": [
+          "오빠가 직접 만든 간식",
+          "연인에게 바로 보여준 요리 순간"
+        ],
+        "reuse_triggers": [
+          "쿠키",
+          "버터쿠키",
+          "베이킹",
+          "오븐팬",
+          "주방"
+        ],
+        "reusable_subjects": [
+          {
+            "kind": "food_drink",
+            "label_ko": "버터쿠키 한 판",
+            "description_ko": "가장자리가 진하게 바삭해진 러스틱한 홈메이드 버터쿠키 여러 개",
+            "visual_tags": [
+              "golden_brown",
+              "rustic_cookie_shape",
+              "fresh_baked_texture"
+            ],
+            "reuse_when": [
+              "오빠가 만든 쿠키를 다시 떠올릴 때",
+              "집에서 구운 간식 장면을 만들 때"
+            ]
+          },
+          {
+            "kind": "accessory",
+            "label_ko": "주황색 오븐 장갑",
+            "description_ko": "오븐팬을 잡고 있는 두툼한 주황색 장갑",
+            "visual_tags": [
+              "orange_oven_mitt",
+              "kitchen_baking"
+            ],
+            "reuse_when": [
+              "베이킹 직후 따끈한 분위기를 강조할 때"
+            ]
+          }
+        ],
+        "generation_reuse": {
+          "allowed": true,
+          "default_strength": "supporting_reference",
+          "requires_user_intent": true
+        },
+        "privacy": {
+          "reuse_face_without_explicit_request": false,
+          "reuse_user_face_with_explicit_request": true
+        }
+      },
+      "generation_reuse": {
+        "allowed": true,
+        "default_strength": "supporting_reference",
+        "requires_user_intent": true
+      }
+    },
+    {
+      "asset_id": "20260531_101846_user_shared_photo_asset_58b831f683",
+      "created_at": "2026-05-31T10:18:46+09:00",
+      "last_seen_at": "2026-05-31T10:18:46+09:00",
+      "source": "telegram_incoming",
+      "telegram_user": "",
+      "kind": "user_shared_photo",
+      "title": "머핀틀에 구운 머핀 사진",
+      "canonical_path": "/Users/kein/Projects/woong-bb/images/user_shared_assets/20260531_101846_user_shared_photo_asset_58b831f683/source.jpg",
+      "asset_dir": "/Users/kein/Projects/woong-bb/images/user_shared_assets/20260531_101846_user_shared_photo_asset_58b831f683",
+      "source_paths": [
+        "/Users/kein/Projects/woong-bb/images/incoming/2026-05-31/101802_telegram_photo_AQADQw9rG1Sv4FR-.jpg"
+      ],
+      "source_sha256": "58b831f6834231ed5b385f0b8ceac1e30e5ecec5adbc272d83069dbecd1010c4",
+      "captions": [
+        "머핀틀에도 구었어 ㅋㅋ 이것도 줄테니깐 ㅋㅋ 이대로 들고 사진한장 찍어줘 ㅋㅋ"
+      ],
+      "tags": [
+        "갓구운간식",
+        "나눠주겠다는_장난스러운_순간",
+        "디저트",
+        "머핀",
+        "머핀틀",
+        "베이킹",
+        "식탁",
+        "오븐",
+        "오븐장갑",
+        "오빠가_직접_구운_간식",
+        "주방",
+        "홈베이킹"
+      ],
+      "analysis": {
+        "asset_kind": "photo",
+        "title": "머핀틀에 구운 머핀 사진",
+        "visible_summary_ko": "오빠가 오븐 장갑 낀 손으로 6구 머핀틀을 들고 있고, 파란 머핀컵에 담긴 노릇한 머핀 다섯 개가 막 구워진 듯 보이는 사진",
+        "visible_elements": [
+          "6구 머핀틀",
+          "파란 머핀컵",
+          "노릇하게 구워진 머핀 5개",
+          "주황색 오븐 장갑",
+          "식탁 매트와 식탁 배경"
+        ],
+        "scene_tags": [
+          "홈베이킹",
+          "주방",
+          "갓구운간식"
+        ],
+        "object_tags": [
+          "머핀틀",
+          "머핀",
+          "오븐장갑",
+          "식탁"
+        ],
+        "relationship_tags": [
+          "오빠가 직접 구운 간식",
+          "나눠주겠다는 장난스러운 순간"
+        ],
+        "reuse_triggers": [
+          "머핀",
+          "베이킹",
+          "오븐",
+          "디저트"
+        ],
+        "reusable_subjects": [
+          {
+            "type": "food",
+            "value": "머핀틀에 구운 노릇한 머핀"
+          },
+          {
+            "type": "prop",
+            "value": "주황색 오븐 장갑 낀 손"
+          },
+          {
+            "type": "table_setting",
+            "value": "초록 식탁 매트가 놓인 밝은 식탁"
+          }
+        ],
+        "generation_reuse": {
+          "allowed": true,
+          "face_reference": {
+            "allowed": false,
+            "requires_explicit_user_request": true
+          }
+        },
+        "privacy": {
+          "reuse_face_without_explicit_request": false,
+          "reuse_user_face_with_explicit_request": true
+        }
+      },
+      "generation_reuse": {
+        "allowed": true,
+        "face_reference": {
+          "allowed": false,
+          "requires_explicit_user_request": true
+        }
+      }
+    },
+    {
+      "asset_id": "20260605_132602_user_shared_photo_asset_edbab62302",
+      "created_at": "2026-06-05T13:26:02+09:00",
+      "last_seen_at": "2026-06-05T13:26:02+09:00",
+      "source": "telegram",
+      "telegram_user": "K8832353",
+      "kind": "user_shared_photo",
+      "title": "서울 트라이애슬론 메달 클로즈업",
+      "canonical_path": "/Users/kein/Projects/woong-bb/images/user_shared_assets/20260605_132602_user_shared_photo_asset_edbab62302/source.jpg",
+      "asset_dir": "/Users/kein/Projects/woong-bb/images/user_shared_assets/20260605_132602_user_shared_photo_asset_edbab62302",
+      "source_paths": [
+        "/Users/kein/Projects/woong-bb/images/incoming/2026-06-05/132457_telegram_photo_AQADrg5rG-TSEFV-.jpg"
+      ],
+      "source_sha256": "edbab62302dfc416d544703459fc51770d6955b5e86e1eb0f783c9ac4ef8103d",
+      "captions": [
+        "웅삐도 같이한 기분 느끼고 싶은데 런닝복으로 이것 메달 메고 찍은 사진 한장 보내줘볼래? ㅎㅎ 화장도 하고 썬글라스도 쓰고 ㅎㅎ"
+      ],
+      "tags": [
+        "accessory",
+        "event_context",
+        "공유한_순간",
+        "구름",
+        "달리기",
+        "메달",
+        "수영",
+        "스트랩",
+        "야외",
+        "오빠의_완주_기록",
+        "완주",
+        "운동",
+        "운동_성취",
+        "자전거",
+        "트라이애슬론",
+        "하늘",
+        "한강",
+        "행사장"
+      ],
+      "analysis": {
+        "asset_kind": "event_medal_photo",
+        "title": "서울 트라이애슬론 메달 클로즈업",
+        "visible_summary_ko": "초록 스트랩에 매달린 트라이애슬론 메달을 하늘 배경 앞에서 가까이 든 사진. 메달 아래에 수영, 자전거, 러닝 아이콘이 보인다.",
+        "visible_elements": [
+          "초록색 메달 스트랩",
+          "원형 겹침 디자인 메달",
+          "수영 아이콘",
+          "자전거 아이콘",
+          "러닝 아이콘",
+          "파란 하늘과 흰 구름",
+          "행사장처럼 보이는 배경"
+        ],
+        "scene_tags": [
+          "야외",
+          "행사장",
+          "완주",
+          "운동"
+        ],
+        "object_tags": [
+          "메달",
+          "스트랩",
+          "트라이애슬론",
+          "하늘",
+          "구름"
+        ],
+        "relationship_tags": [
+          "오빠의 완주 기록",
+          "운동 성취",
+          "공유한 순간"
+        ],
+        "reuse_triggers": [
+          "메달",
+          "수영",
+          "자전거",
+          "달리기",
+          "트라이애슬론",
+          "한강"
+        ],
+        "reusable_subjects": [
+          {
+            "kind": "accessory",
+            "summary": "초록 스트랩의 트라이애슬론 메달"
+          },
+          {
+            "kind": "event_context",
+            "summary": "야외 스포츠 행사 완주 분위기"
+          }
+        ],
+        "generation_reuse": {
+          "allowed": true,
+          "notes": "메달 디자인과 완주 분위기 참조 가능",
+          "face_reference": {
+            "allowed": false,
+            "requires_explicit_user_request": true
+          }
+        },
+        "privacy": {
+          "reuse_face_without_explicit_request": false,
+          "reuse_user_face_with_explicit_request": true
+        }
+      },
+      "generation_reuse": {
+        "allowed": true,
+        "notes": "메달 디자인과 완주 분위기 참조 가능",
+        "face_reference": {
+          "allowed": false,
+          "requires_explicit_user_request": true
+        }
+      }
+    },
+    {
+      "asset_id": "20260605_172459_user_shared_photo_asset_e177a2ca54",
+      "created_at": "2026-06-05T17:24:59+09:00",
+      "last_seen_at": "2026-06-05T17:24:59+09:00",
+      "source": "telegram",
+      "telegram_user": "K8832353",
+      "kind": "user_shared_photo",
+      "title": "서울 마이소울 메달 행사장 배경 사진",
+      "canonical_path": "/Users/kein/Projects/woong-bb/images/user_shared_assets/20260605_172459_user_shared_photo_asset_e177a2ca54/source.jpg",
+      "asset_dir": "/Users/kein/Projects/woong-bb/images/user_shared_assets/20260605_172459_user_shared_photo_asset_e177a2ca54",
+      "source_paths": [
+        "/Users/kein/Projects/woong-bb/images/incoming/2026-06-05/172053_telegram_photo_AQADLA9rG-TSEFV-.jpg"
+      ],
+      "source_sha256": "e177a2ca54445f55a00d2dcd55decc8853d58889e2c1ea9547a2e61e98075f8c",
+      "captions": [
+        "웅삐야 여기 배경에서 이거 메달걸고 사진한번 찍어줄래? ㅎㅎ 런닝복으로! 누가 찍어준것처럼~"
+      ],
+      "tags": [
+        "event_signage",
+        "medal",
+        "medal_background",
+        "outdoor_event",
+        "race_event",
+        "ribbon",
+        "sky",
+        "user_shared_reference_background",
+        "러닝",
+        "메달",
+        "서울_마이소울",
+        "행사장_배경"
+      ],
+      "analysis": {
+        "asset_kind": "photo",
+        "title": "서울 마이소울 메달 행사장 배경 사진",
+        "visible_summary_ko": "초록색 서울 마이소울 메달이 전경에 또렷하게 걸려 있고, 뒤로 행사장 구조물과 파란 하늘 구름이 흐릿하게 보이는 야외 사진",
+        "visible_elements": [
+          "초록 메달 리본",
+          "원형 메달",
+          "행사장 사인 구조물",
+          "파란 하늘과 흰 구름"
+        ],
+        "scene_tags": [
+          "outdoor_event",
+          "race_event",
+          "medal_background"
+        ],
+        "object_tags": [
+          "medal",
+          "ribbon",
+          "event_signage",
+          "sky"
+        ],
+        "relationship_tags": [
+          "user_shared_reference_background"
+        ],
+        "reuse_triggers": [
+          "메달",
+          "러닝",
+          "행사장 배경",
+          "서울 마이소울"
+        ],
+        "reusable_subjects": [
+          "서울 마이소울 메달 디자인",
+          "러닝 행사장 배경 분위기",
+          "맑은 하늘 아래 이벤트 현장 톤"
+        ],
+        "generation_reuse": {
+          "allowed": true,
+          "face_reference": {
+            "allowed": false,
+            "requires_explicit_user_request": true
+          }
+        },
+        "privacy": {
+          "reuse_face_without_explicit_request": false,
+          "reuse_user_face_with_explicit_request": true
+        }
+      },
+      "generation_reuse": {
+        "allowed": true,
+        "face_reference": {
+          "allowed": false,
+          "requires_explicit_user_request": true
         }
       }
     }

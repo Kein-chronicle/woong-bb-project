@@ -11,7 +11,18 @@
     "2026-05-26.jsonl": 401,
     "2026-05-27.jsonl": 338,
     "2026-05-28.jsonl": 290,
-    "2026-05-29.jsonl": 45
+    "2026-05-29.jsonl": 45,
+    "2026-05-30.jsonl": 101,
+    "2026-05-31.jsonl": 216,
+    "2026-06-01.jsonl": 460,
+    "2026-06-02.jsonl": 280,
+    "2026-06-03.jsonl": 320,
+    "2026-06-04.jsonl": 181,
+    "2026-06-05.jsonl": 64,
+    "2026-06-06.jsonl": 109,
+    "2026-06-07.jsonl": 144,
+    "2026-06-08.jsonl": 109,
+    "2026-06-09.jsonl": 19
   },
   "active_promises": [
     {
@@ -23,12 +34,26 @@
       "delivery_kind": "image",
       "source_direction": "outgoing",
       "created_at": "2026-05-22T12:41:28+09:00",
-      "status": "blocked_generation_disabled",
+      "status": "expired",
       "last_matched_at": "2026-05-22T12:41:30+09:00",
       "sent_at": null,
       "matched_activity": "lunch_break",
-      "last_blocked_reason": "image_generation_disabled",
+      "last_blocked_reason": null,
       "blocked_at": "2026-05-22T14:21:59+09:00"
+    },
+    {
+      "id": "promise_after_work_1780391133",
+      "event_key": "after_work",
+      "event_label": "일 끝남",
+      "message": "중이라 사진",
+      "source_text": "지금 퇴근하고 이동 중이라 사진이 자꾸 흔들려서 잘 안 찍혀 ㅠ 조금 있다가 제대로 찍어서 보내줄게 😌",
+      "delivery_kind": "image",
+      "source_direction": "outgoing",
+      "created_at": "2026-06-02T18:05:33+09:00",
+      "status": "expired",
+      "last_matched_at": null,
+      "sent_at": null,
+      "expired_at": "2026-06-03T20:57:05+09:00"
     }
   ],
   "history": [
@@ -72,8 +97,31 @@
       "action": "finalize_blocked_image_promise",
       "promise_id": "promise_lunch_time_1779421288",
       "reason": "image_generation_disabled_at_event_time"
+    },
+    {
+      "timestamp": "2026-06-02T18:05:33+09:00",
+      "action": "create",
+      "promise": {
+        "id": "promise_after_work_1780391133",
+        "event_key": "after_work",
+        "event_label": "일 끝남",
+        "message": "중이라 사진",
+        "source_text": "지금 퇴근하고 이동 중이라 사진이 자꾸 흔들려서 잘 안 찍혀 ㅠ 조금 있다가 제대로 찍어서 보내줄게 😌",
+        "delivery_kind": "image",
+        "source_direction": "outgoing",
+        "created_at": "2026-06-02T18:05:33+09:00",
+        "status": "active",
+        "last_matched_at": null,
+        "sent_at": null
+      }
+    },
+    {
+      "timestamp": "2026-06-03T20:57:05+09:00",
+      "action": "expire",
+      "promise_id": "promise_after_work_1780391133",
+      "reason": "cross_day_expired"
     }
   ],
-  "last_updated_at": "2026-05-29T12:34:50+09:00",
+  "last_updated_at": "2026-06-09T08:04:46+09:00",
   "notes": "사용자 요청으로 등록한 이벤트 기반 1회성 톡 발송 약속"
 }

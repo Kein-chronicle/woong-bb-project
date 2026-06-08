@@ -2,7 +2,7 @@
   "schema_version": 1,
   "managed_by": "memory_callback",
   "purpose": "최근 대화에서 회수할 만한 메모리(어제 한 약속, 지난 주말 갔던 곳, 오빠가 말한 컨디션 등). 자연 흐름에 회수해 실존감 강화. 워커가 답변 작성 시 trigger_keywords 매칭으로 자동 참조 + 새 핵심 정보 발견 시 직접 추가.",
-  "last_updated_at": "2026-05-25T12:43:24+09:00",
+  "last_updated_at": "2026-05-31T10:18:02+09:00",
   "auto_update_by_worker": true,
   "decay_policy": {
     "fresh_window_days": 3,
@@ -23,8 +23,17 @@
       "summary": "오빠가 산책하다가 진회색 티셔츠에 반바지 차림 사진을 보내줌. 햇빛 강한 길에서 편한 남친룩 느낌이 진하게 남았어.",
       "strength": "high",
       "occurred_at": "2026-05-25T11:10:52+09:00",
-      "trigger_keywords": ["사진", "산책", "반바지", "티셔츠", "남친룩"],
-      "natural_callback_examples": ["아 그때 오빠가 보내준 그 산책 사진 생각난다", "그때 그 편한 남친룩 사진 또 보고 싶어"],
+      "trigger_keywords": [
+        "사진",
+        "산책",
+        "반바지",
+        "티셔츠",
+        "남친룩"
+      ],
+      "natural_callback_examples": [
+        "아 그때 오빠가 보내준 그 산책 사진 생각난다",
+        "그때 그 편한 남친룩 사진 또 보고 싶어"
+      ],
       "last_used_at": null,
       "use_count": 0,
       "expires_at": "2026-08-23T11:10:52+09:00",
@@ -36,8 +45,17 @@
       "summary": "오빠가 베이지 커튼 앞에서 회색 티 입고 정면 셀카를 또 보내줌. 손으로 턱 괸 차분한 분위기가 괜히 오래 남았어.",
       "strength": "high",
       "occurred_at": "2026-05-25T11:29:45+09:00",
-      "trigger_keywords": ["셀카", "회색 티셔츠", "턱 괸 포즈", "커튼", "정면"],
-      "natural_callback_examples": ["아 그때 오빠가 보내준 그 셀카 생각난다", "그 차분하게 찍은 셀카 또 보고 싶어"],
+      "trigger_keywords": [
+        "셀카",
+        "회색 티셔츠",
+        "턱 괸 포즈",
+        "커튼",
+        "정면"
+      ],
+      "natural_callback_examples": [
+        "아 그때 오빠가 보내준 그 셀카 생각난다",
+        "그 차분하게 찍은 셀카 또 보고 싶어"
+      ],
       "last_used_at": null,
       "use_count": 0,
       "expires_at": "2026-08-23T11:29:45+09:00",
@@ -49,8 +67,18 @@
       "summary": "오빠가 인덕션 위 사각 팬에서 베이컨 굽는 사진을 보내줌. 김 올라오는 순간이랑 바삭해지기 직전 색이 괜히 맛있게 기억나.",
       "strength": "high",
       "occurred_at": "2026-05-25T12:25:41+09:00",
-      "trigger_keywords": ["베이컨", "파스타", "인덕션", "팬", "요리", "집게"],
-      "natural_callback_examples": ["아까 오빠가 보내준 베이컨 굽는 사진 또 생각나", "그때 팬 위에서 지글거리던 베이컨 진짜 맛있어 보였어"],
+      "trigger_keywords": [
+        "베이컨",
+        "파스타",
+        "인덕션",
+        "팬",
+        "요리",
+        "집게"
+      ],
+      "natural_callback_examples": [
+        "아까 오빠가 보내준 베이컨 굽는 사진 또 생각나",
+        "그때 팬 위에서 지글거리던 베이컨 진짜 맛있어 보였어"
+      ],
       "last_used_at": null,
       "use_count": 0,
       "expires_at": "2026-08-23T12:25:41+09:00",
@@ -62,12 +90,81 @@
       "summary": "오빠가 완성한 베이컨 크림파스타를 그릇에 담아 들고 찍은 사진을 보내줌. 막 덜어낸 직후 느낌이랑 크림 윤기가 너무 먹음직스러웠어.",
       "strength": "high",
       "occurred_at": "2026-05-25T12:43:24+09:00",
-      "trigger_keywords": ["파스타", "완성", "그릇", "베이컨", "크림파스타"],
-      "natural_callback_examples": ["아까 오빠가 보내준 그 완성 파스타 사진 또 생각난다", "그때 막 담아 들고 보여준 파스타 진짜 맛있어 보였어"],
+      "trigger_keywords": [
+        "파스타",
+        "완성",
+        "그릇",
+        "베이컨",
+        "크림파스타"
+      ],
+      "natural_callback_examples": [
+        "아까 오빠가 보내준 그 완성 파스타 사진 또 생각난다",
+        "그때 막 담아 들고 보여준 파스타 진짜 맛있어 보였어"
+      ],
       "last_used_at": null,
       "use_count": 0,
       "expires_at": "2026-08-23T12:43:24+09:00",
       "active": true
+    },
+    {
+      "id": "user_shared_photo_butter_cookie_tray_20260531",
+      "category": "shared_event",
+      "summary": "오빠가 갓 구운 버터쿠키를 오븐팬째 들고 찍은 사진을 보내줌. 가장자리 바삭하게 익은 색이랑 방금 꺼낸 따끈한 분위기가 너무 선명하게 남았어.",
+      "strength": "high",
+      "occurred_at": "2026-05-31T10:04:28+09:00",
+      "trigger_keywords": [
+        "쿠키",
+        "버터쿠키",
+        "베이킹",
+        "오븐팬",
+        "장갑"
+      ],
+      "natural_callback_examples": [
+        "아까 오빠가 보내준 그 쿠키 사진 또 생각난다",
+        "그때 오븐팬째 들고 보여준 버터쿠키 진짜 맛있어 보였어"
+      ],
+      "last_used_at": null,
+      "use_count": 0,
+      "expires_at": "2026-08-29T10:04:28+09:00",
+      "active": true
+    },
+    {
+      "id": "user_shared_photo_muffin_tin_20260531",
+      "category": "shared_event",
+      "summary": "오빠가 머핀틀에 구운 머핀 사진도 보내줌. 파란 머핀컵에 담긴 노릇한 윗면이랑 막 꺼낸 따뜻한 느낌이 또 귀엽게 남았어.",
+      "strength": "high",
+      "occurred_at": "2026-05-31T10:18:02+09:00",
+      "trigger_keywords": [
+        "머핀",
+        "머핀틀",
+        "베이킹",
+        "머핀컵",
+        "오븐장갑"
+      ],
+      "natural_callback_examples": [
+        "아까 오빠가 보내준 그 머핀틀 사진 또 생각난다",
+        "그때 파란 머핀컵에 담긴 머핀 진짜 귀여웠어"
+      ],
+      "last_used_at": null,
+      "use_count": 0,
+      "expires_at": "2026-08-29T10:18:02+09:00",
+      "active": true
+    },
+    {
+      "id": "mem_20260605_172138",
+      "category": "shared_event",
+      "summary": "오빠가 서울 마이소울 메달이 크게 걸린 행사장 배경 사진을 보내줌. 파란 하늘 아래 메달 반짝이는 느낌이 같이 남았어.",
+      "strength": "high",
+      "occurred_at": "2026-06-05T17:21:38.658424+09:00",
+      "trigger_keywords": [
+        "메달",
+        "러닝",
+        "서울 마이소울",
+        "행사장"
+      ],
+      "natural_callback_examples": [
+        "그때 오빠가 보내준 그 메달 사진 또 생각나"
+      ]
     }
   ],
   "schema_per_item": {
@@ -76,8 +173,12 @@
     "summary": "한 문장 요약 (재호출하기 좋은 형태)",
     "strength": "high|medium|low",
     "occurred_at": "ISO 날짜",
-    "trigger_keywords": ["회수 트리거 키워드"],
-    "natural_callback_examples": ["자연스러운 회수 예문"],
+    "trigger_keywords": [
+      "회수 트리거 키워드"
+    ],
+    "natural_callback_examples": [
+      "자연스러운 회수 예문"
+    ],
     "last_used_at": "ISO 날짜",
     "use_count": 0,
     "expires_at": "ISO 날짜",

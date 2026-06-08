@@ -583,6 +583,54 @@
       ],
       "time": "20:30",
       "reason": "evening_work_update"
+    },
+    {
+      "id": "lab_session_morning",
+      "enabled": true,
+      "type": "lab_session",
+      "time": "11:00",
+      "days": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "reason": "lab_morning"
+    },
+    {
+      "id": "lab_session_afternoon",
+      "enabled": true,
+      "type": "lab_session",
+      "time": "17:00",
+      "days": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "reason": "lab_afternoon"
+    },
+    {
+      "id": "lab_session_evening",
+      "enabled": true,
+      "type": "lab_session",
+      "time": "20:50",
+      "days": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "reason": "lab_evening"
     }
   ],
   "notes": "생활 시간대 전환, 상태 갱신, 선톡 후보 점검, 점수 재계산, 사용자 선호 강화 학습, 자기 전 일기 생성, 기억 감쇠와 생활 흔적 갱신을 위한 기본 타이머 세트"

@@ -1,12 +1,13 @@
 {
   "schema_version": 1,
   "managed_by": "image_generation_settings",
-  "generation_enabled": false,
-  "content_level_mode": "fixed",
-  "content_level_override": 2,
-  "changed_at": "2026-05-26T23:00:00+09:00",
-  "changed_by": "master_request",
-  "change_reason": "v2 항상 집. 레벨2 고정.",
+  "generation_enabled": true,
+  "content_level_mode": "auto",
+  "content_level_override": null,
+  "level3_on_demand": true,
+  "changed_at": "2026-05-31T07:00:00+09:00",
+  "changed_by": "setting_mode",
+  "change_reason": "정상화: auto 모드 복원",
   "auto_level_rules": {
     "everything": 2
   },
@@ -18,5 +19,6 @@
     "direct_photo_request_woongbbi": "defer_without_guard_check",
     "direct_photo_request_setting": "report_disabled_without_guard_check"
   },
-  "notes": "content_level_override가 null이면 activity+시간 기반 자동 레벨 사용. 수동 고정하려면 1/2/3으로 설정"
+  "notes": "content_level_override가 null이면 activity+시간 기반 자동 레벨 사용. 수동 고정하려면 1/2/3으로 설정",
+  "last_result": "enabled"
 }

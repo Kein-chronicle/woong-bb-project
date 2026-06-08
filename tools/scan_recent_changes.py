@@ -21,13 +21,13 @@ DEV_REVIEW_PATH = STATE / "dev_review_state.json"
 KST = timezone(timedelta(hours=9))
 
 PROJECT_ROOTS = [
+    # 오빠 앱/게임 프로젝트만 — 웅삐 자신 코드나 인프라는 제외
     Path.home() / "Projects" / "steam-game-project" / "whale-survivors",
     Path.home() / "Desktop" / "app-projects",
     Path.home() / "Desktop" / "product-api",
     Path.home() / "Desktop" / "web-project",
     Path.home() / "Desktop" / "unityproject",
-    Path.home() / "Projects" / "woong-bb",
-    Path.home() / "Projects" / "bots",
+    # 제외: woong-bb/ (웅삐 자신 프로젝트), bots/ (인프라) — 세션 오염 방지
 ]
 
 HOURS_LOOKBACK = 2

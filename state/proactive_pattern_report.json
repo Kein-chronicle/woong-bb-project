@@ -1,20 +1,16 @@
 {
   "schema_version": 1,
   "managed_by": "automation_worker",
-  "current_date": "2026-05-29",
+  "current_date": "2026-06-09",
   "planned_attempts": 0,
   "sudden_attempts": 0,
-  "sent_text_count": 4,
+  "sent_text_count": 0,
   "sent_voice_count": 0,
   "suppressed_reasons": {
-    "suppressed_review_exact_repeat": 14,
-    "suppressed_waiting_reply": 27,
-    "suppressed_sleep_quiet_hours": 62,
-    "suppressed_active_conversation": 8,
-    "suppressed_self_busy": 72
+    "suppressed_sleep_quiet_hours": 85,
+    "suppressed_active_conversation": 6,
+    "suppressed_waiting_reply": 8
   },
-  "time_window_counts": {
-    "context_soft_followup": 18
-  },
-  "last_updated_at": "2026-05-29T15:29:16+09:00"
+  "time_window_counts": {},
+  "last_updated_at": "2026-06-09T08:09:47+09:00"
 }

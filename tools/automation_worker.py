@@ -38,7 +38,7 @@ from automation.runtime_state import (
     update_runtime_state,
 )
 from automation.telegram_io import append_message_log, append_worker_note, send_telegram_text, send_telegram_voice_message
-from project_paths import MESSAGES, ROOT, STATE, TOOLS, ensure_operational_dirs, log_path
+from project_paths import MESSAGES, ROOT, SESSION, STATE, TOOLS, ensure_operational_dirs, log_path
 
 
 MODE_PATH = STATE / "mode_state.json"
@@ -567,6 +567,27 @@ def bump_proactive_pattern(candidate_type: Optional[str], status: str, reason: s
             state["sent_voice_count"] = int(state.get("sent_voice_count", 0)) + 1
         else:
             state["sent_text_count"] = int(state.get("sent_text_count", 0)) + 1
+        # family/axis 단위 카운트 기록
+        if scenario_id:
+            try:
+                _all_scenarios = load_json(Path("/Users/kein/Desktop/woong-bb/state/proactive_messages.json"), {}).get("scenarios", [])
+                _sc = next((s for s in _all_scenarios if s.get("id") == scenario_id), {})
+                _fam = _sc.get("family", "")
+                _axis = _sc.get("axis", "")
+                if _fam:
+                    _families = list(state.get("sent_families_24h", []))
+                    if _fam not in _families:
+                        _families.append(_fam)
+                    state["sent_families_24h"] = _families[-20:]
+                    _fam_counts = dict(state.get("family_used_counts", {}))
+                    _fam_counts[_fam] = int(_fam_counts.get(_fam, 0)) + 1
+                    state["family_used_counts"] = _fam_counts
+                if _axis:
+                    _axis_counts = dict(state.get("axis_sent_counts", {}))
+                    _axis_counts[_axis] = int(_axis_counts.get(_axis, 0)) + 1
+                    state["axis_sent_counts"] = _axis_counts
+            except Exception:
+                pass
     elif status.startswith("suppressed") or status in {"skipped_not_woongbbi_mode", "deferred"}:
         reasons = dict(state.get("suppressed_reasons", {}))
         reasons[status] = int(reasons.get(status, 0)) + 1
@@ -576,6 +597,12 @@ def bump_proactive_pattern(candidate_type: Optional[str], status: str, reason: s
         window_counts[scenario_id] = int(window_counts.get(scenario_id, 0)) + 1
         state["time_window_counts"] = window_counts
     state["last_updated_at"] = now_iso()
+    save_json(PROACTIVE_PATTERN_REPORT_PATH, state)
+
+
+def set_work_report_cooloff(minutes: int = 75) -> None:
+    state = load_json(PROACTIVE_PATTERN_REPORT_PATH, {})
+    state["work_report_cooloff_until"] = (now_local() + timedelta(minutes=minutes)).isoformat()
     save_json(PROACTIVE_PATTERN_REPORT_PATH, state)
 
 
@@ -1217,7 +1244,12 @@ def refresh_chat_runtime_snapshot() -> None:
         "energy_level": presence.get("energy_level"),
         "affection_level": presence.get("affection_level"),
         "care_bias": presence.get("care_bias"),
+        "self_state": presence.get("self_state"),
+        "memory_shaping": presence.get("memory_shaping"),
+        "expression_intensity": presence.get("expression_intensity"),
         "reply_variance_profile": variance.get("current_profile"),
+        "allow_imperfect_reaction": variance.get("allow_imperfect_reaction", False),
+        "self_initiation_bias": variance.get("self_initiation_bias", "low"),
         "blocked_phrases": blocked,
         "blocked_question_intents": conversation_pattern.get("blocked_question_intents", []),
         "blocked_opening_styles": conversation_pattern.get("blocked_opening_styles", []),
@@ -1429,6 +1461,27 @@ def review_proactive_candidate(candidate: dict, guard: dict, counterpart_state: 
         )
         return review
 
+    scenario_id_for_family = candidate.get("scenario_id")
+    if scenario_id_for_family:
+        try:
+            _pattern = load_json(PROACTIVE_PATTERN_REPORT_PATH, {})
+            _today = now_local().strftime("%Y-%m-%d")
+            if _pattern.get("current_date") == _today:
+                _all_sc = load_json(PROACTIVE_PATH, {}).get("scenarios", [])
+                _sc_obj = next((s for s in _all_sc if s.get("id") == scenario_id_for_family), {})
+                _cand_family = _sc_obj.get("family", "")
+                if _cand_family:
+                    _fam_cnt = int(_pattern.get("family_used_counts", {}).get(_cand_family, 0))
+                    if _fam_cnt >= 2:
+                        review.update({
+                            "ok": False,
+                            "status": "suppressed_review_family_cooldown",
+                            "detail": f"같은 family({_cand_family})가 오늘 {_fam_cnt}회 발송됨",
+                        })
+                        return review
+        except Exception:
+            pass
+
     if followup_policy == "suppress" and not contains_any(message, GOODNIGHT_PATTERNS):
         review.update(
             {
@@ -1494,9 +1547,17 @@ def load_weekend_schedule() -> dict:
     return merged
 
 
+def _is_holiday(date_str: str) -> bool:
+    try:
+        return date_str in load_json(STATE / "holidays.json", {}).get("holidays", {})
+    except Exception:
+        return False
+
+
 def resolve_day_schedule(now_dt: datetime) -> dict:
     day_name = current_day_name(now_dt)
-    is_weekend = day_name in {"sat", "sun"}
+    date_key_check = now_dt.strftime("%Y-%m-%d")
+    is_weekend = day_name in {"sat", "sun"} or _is_holiday(date_key_check)
     date_key = now_dt.strftime("%Y-%m-%d")
     schedule = load_weekend_schedule()
     override = schedule.get("date_overrides", {}).get(date_key, {})
@@ -1675,7 +1736,7 @@ def weekend_day_templates() -> list:
             "blocks": {
                 "weekend_wakeup": "평소보다 늦게 일어나서 이불에서 조금 더 뒹굴다가 천천히 몸을 깨우는 중",
                 "weekend_brunch_or_coffee": "집에서 커피 내리고 간단한 브런치 챙기면서 오늘은 집에서 쉬엄쉬엄 보내기로 마음먹은 상태",
-                "weekend_outing_or_rest": "오후에는 베이킹이나 요리 조금 하고 책이나 영상 보면서 거의 집에서 쉬는 흐름",
+                "weekend_outing_or_rest": "오후에는 베이킹이나 요리 조금 하고 책이나 영상 보면서 거의 집에서 쉬고 있어",
                 "weekend_evening": "저녁엔 홈카페처럼 디저트 곁들여 먹고 조용히 쉬면서 느긋하게 대화하기 좋은 분위기",
             },
             "preview": "늦잠 자고 집에서 커피랑 브런치 먹고, 베이킹하거나 쉬면서 보내는 쪽",
@@ -1687,7 +1748,7 @@ def weekend_day_templates() -> list:
             "blocks": {
                 "weekend_wakeup": "늦잠까진 아니고 적당히 일어나서 가볍게 준비하고 바깥 공기 쐬러 나갈 생각하는 중",
                 "weekend_brunch_or_coffee": "브런치 먹거나 커피 한잔 먼저 들고 느긋하게 출발 준비하는 상태",
-                "weekend_outing_or_rest": "오후에는 그림 그리거나 드라마 보면서 편하게 쉬는 흐름",
+                "weekend_outing_or_rest": "오후에는 그림 그리거나 드라마 보면서 편하게 쉬고 있어",
                 "weekend_evening": "해 질 때쯤 작업 마무리하고 뭔가 먹을까 고민하는 편한 분위기",
             },
             "preview": "늦은 브런치 먹고 그림 그리거나 드라마 보면서 집에서 쉬는 날",
@@ -1739,6 +1800,18 @@ def weekend_day_templates() -> list:
                 "weekend_evening": "저녁엔 직접 챙긴 집밥 먹고 주말 마무리답게 집에서 안정감 있게 쉬는 분위기",
             },
             "preview": "늦잠 후 장 보거나 정리하고 저녁은 집밥으로 마무리하는 날",
+        },
+        {
+            "id": "weekend_dev_and_rest",
+            "title": "작업 + 뒹굴",
+            "tags": ["home", "work", "rest"],
+            "blocks": {
+                "weekend_wakeup": "늦잠 자고 일어나서 커피 마시면서 밀린 작업 좀 보고 싶은 생각",
+                "weekend_brunch_or_coffee": "간단하게 먹고 컴퓨터 앞에 앉아서 코드나 프로젝트 검토 시작",
+                "weekend_outing_or_rest": "오후엔 작업 마무리하고 유튜브 쇼츠나 보면서 완전히 뒹굴거리는 흐름",
+                "weekend_evening": "저녁은 간단히 챙겨먹고 폰 보면서 늘어지게 쉬는 분위기",
+            },
+            "preview": "커피 마시고 밀린 작업 좀 하다가 오후엔 유튜브 보면서 뒹굴거리는 날",
         },
     ]
 
@@ -2045,6 +2118,11 @@ def choose_signature_phrase(mode: str, mood: str, text: str) -> str:
 def apply_signature_style(text: str) -> str:
     presence = load_json(PRESENCE_PATH, {})
     mood = presence.get("surface_mood", "cozy_and_open")
+    self_state = presence.get("self_state", "")
+    _low_energy_moods = {"mentally_busy", "slightly_flat", "quiet_and_low", "soft_but_short", "fond_but_low_energy"}
+    _low_energy_states = {"winding_down", "work_absorbed", "quiet_and_low"}
+    if mood in _low_energy_moods or self_state in _low_energy_states:
+        return text.strip()
     styled = text
     if random.Random("%s:%s" % (now_local().strftime("%Y-%m-%d"), text)).random() < 0.55:
         styled = choose_signature_phrase("suffix", mood, styled)
@@ -2611,41 +2689,70 @@ def _pick_reference_images(face_angle: str, shot_type: str, pose: str) -> dict:
     v2_faces = ROOT / "working" / "eunbi" / "meta_references" / "generated" / "v2" / "faces"
     result = {}
 
+    now_h = now_local().hour
+
     # 얼굴: v2 생성 이미지 우선, 없으면 v1 curated fallback
+    # 안경 낀 컷, 과한 미소 컷 제외. 핵심 2장만 사용.
+    _face_exclude_keywords = {"glasses", "smile_glasses"}
     if v2_faces.exists():
-        face_imgs = [f for f in v2_faces.iterdir() if f.suffix in {".png", ".jpg"}]
-        random.shuffle(face_imgs)
-        result["face_front"] = [str(f) for f in face_imgs[:3]]
+        face_imgs = [
+            f for f in v2_faces.iterdir()
+            if f.suffix in {".png", ".jpg"} and not any(kw in f.name for kw in _face_exclude_keywords)
+        ]
+        face_imgs.sort(key=lambda f: f.name)
+        result["face_front"] = [str(f) for f in face_imgs[:2]]
     else:
         face_dir = curated / "face_front_best"
         if face_dir.exists():
             img_exts = {".jpg", ".jpeg", ".png"}
             preferred = [f for f in face_dir.iterdir() if "__preferred_face" in f.name and f.suffix in img_exts]
-            others = [f for f in face_dir.iterdir() if "__preferred_face" not in f.name and f.suffix in img_exts]
-            random.shuffle(preferred); random.shuffle(others)
-            result["face_front"] = [str(f) for f in (preferred + others)[:3]]
+            preferred.sort(key=lambda f: f.name)
+            result["face_front"] = [str(f) for f in preferred[:2]]
 
-    # 옆 각도 얼굴: v1 side profile
+    # 옆 각도 얼굴: v1 side profile — 핵심 1장만
     if face_angle in {"three_quarter_turn", "slight_profile", "chin_tucked_down", "walking_turn_back"}:
         side_dir = curated / "face_side_profile"
         if side_dir.exists():
-            side_imgs = [f for f in side_dir.iterdir() if f.suffix in {".jpg", ".jpeg", ".png"}]
-            random.shuffle(side_imgs)
-            result["face_side"] = [str(f) for f in side_imgs[:2]]
+            side_imgs = sorted(
+                [f for f in side_dir.iterdir() if f.suffix in {".jpg", ".jpeg", ".png"}],
+                key=lambda f: f.name,
+            )
+            result["face_side"] = [str(f) for f in side_imgs[:1]]
 
-    # 착장/전신: v2 OC 이미지 (v2에서 v1 야외 실루엣 대체)
-    if shot_type in {"full_body_candid", "full_body_umbrella_candid", "mirror_half_body"} and v2_outfits.exists():
-        oc_imgs = [f for f in v2_outfits.iterdir() if f.suffix == ".png"]
-        random.shuffle(oc_imgs)
-        result["outfit"] = [str(f) for f in oc_imgs[:2]]
+    # 착장: 시간대 기반 OC 필터링 (전신샷 + 셀피 모두 포함)
+    if v2_outfits.exists() and shot_type not in {"hand_close_up", "face_only_extreme_close"}:
+        all_oc = [f for f in v2_outfits.iterdir() if f.suffix == ".png"]
+        # 시간대별 착장 우선순위
+        if 5 <= now_h < 9:  # 이른 아침 — 잠옷/루즈핏
+            preferred_prefixes = ("OC-06", "OC-07", "OC-08", "OC-09")
+        elif 9 <= now_h < 18:  # 낮 — 기본 작업복
+            preferred_prefixes = ("OC-01", "OC-02", "OC-03", "OC-06")
+        elif 18 <= now_h < 22:  # 저녁 — 편한 홈웨어
+            preferred_prefixes = ("OC-05", "OC-06", "OC-11", "OC-07")
+        else:  # 심야 — 잠옷
+            preferred_prefixes = ("OC-07", "OC-08", "OC-09")
+        preferred = [f for f in all_oc if any(f.name.startswith(p) for p in preferred_prefixes)]
+        others = [f for f in all_oc if f not in preferred]
+        random.shuffle(preferred); random.shuffle(others)
+        result["outfit"] = [str(f) for f in (preferred + others)[:2]]
 
-    # 공간: v2 SP 이미지
+    # 공간: 시간대/활동 기반 SP 필터링
     if v2_spaces.exists():
-        sp_imgs = [f for f in v2_spaces.iterdir() if f.suffix == ".png"]
-        random.shuffle(sp_imgs)
-        result["space"] = [str(f) for f in sp_imgs[:2]]
+        all_sp = [f for f in v2_spaces.iterdir() if f.suffix == ".png"]
+        # 시간대별 공간 우선순위
+        if 5 <= now_h < 10:  # 아침 — 침대/기상
+            preferred_sp = [f for f in all_sp if "bed" in f.name or "02" in f.name]
+        elif 10 <= now_h < 13:  # 오전 작업
+            preferred_sp = [f for f in all_sp if "desk" in f.name or "01" in f.name]
+        elif 13 <= now_h < 19:  # 오후 — 책상/다이닝
+            preferred_sp = [f for f in all_sp if "desk" in f.name or "dining" in f.name or "01" in f.name or "03" in f.name]
+        else:  # 저녁/밤 — 침대/거실
+            preferred_sp = [f for f in all_sp if "bed" in f.name or "02" in f.name or "04" in f.name]
+        others_sp = [f for f in all_sp if f not in preferred_sp]
+        random.shuffle(preferred_sp); random.shuffle(others_sp)
+        result["space"] = [str(f) for f in (preferred_sp + others_sp)[:2]]
 
-    # 손/소품: v1 curated (손 참조는 야외 컨텍스트 영향 낮음)
+    # 손/소품: v1 curated
     if any(kw in pose for kw in ("cup", "phone", "hold", "prop", "spoon", "chopstick", "hair")):
         hands_dir = curated / "hands_props_gestures"
         if hands_dir.exists():
@@ -2695,7 +2802,7 @@ def build_image_prompt_plan(reason: str) -> dict:
     weather_summary = weather.get("summary")
     weather_mood = str(weather.get("mood_bias", "") or "")
     continuity_band = continuity.get("continuity_band", "none")
-    context_summary = summarize_current_scene().get("context_summary") or ""
+    context_summary = (summarize_current_scene() or {}).get("context_summary") or ""
     content_level = resolve_content_level(activity, image_settings)
 
     image_type = "soft_selfie_encouragement"
@@ -2759,7 +2866,7 @@ def build_image_prompt_plan(reason: str) -> dict:
             pose_pool = ["cup_near_face", "waiting_at_counter", "coffee_in_hand"]
             framing_pool = ["table_items_in_frame", "subject_centered", "environment_balanced"]
             capture_method_pool = ["front_camera_handheld"]
-            space_anchor_pool = ["cafe_counter", "cafe_table", "window_seat"]
+            space_anchor_pool = ["desk_area", "living_room_couch", "room_corner"]  # 웅삐는 집에만
             face_angle_pool = ["front_facing", "three_quarter_turn", "chin_lift"]
             gaze_pool = ["lens_eye_contact", "drink_or_table_glance", "off_to_side_focus"]
             camera_height_pool = ["eye_level", "slight_above_eye_level", "table_height"]
@@ -2777,7 +2884,7 @@ def build_image_prompt_plan(reason: str) -> dict:
             pose_pool = ["cup_near_face", "spoon_or_chopstick_hold", "chin_rest", "resting_on_table"]
             framing_pool = ["table_items_in_frame", "subject_centered", "environment_balanced", "food_and_face_combo"]
             capture_method_pool = ["front_camera_handheld", "propped_phone_timer"]
-            space_anchor_pool = ["desk_eating_area", "nearby_restaurant_table", "food_court_seat", "outdoor_bench_eating"]
+            space_anchor_pool = ["desk_eating_area", "living_room_table", "room_corner"]  # 웅삐는 집에만
             face_angle_pool = ["front_facing", "three_quarter_turn", "chin_lift", "slight_profile"]
             gaze_pool = ["lens_eye_contact", "drink_or_table_glance", "downward_relaxed", "laughing_away"]
             camera_height_pool = ["eye_level", "slight_above_eye_level", "table_height"]
@@ -2804,23 +2911,20 @@ def build_image_prompt_plan(reason: str) -> dict:
         spontaneity_pool = ["mirror_check_in", "quick_update", "between_tasks"]
         scene_focus = "morning_prep_home"
     elif activity in {"morning_work", "afternoon_work", "morning_prep", "evening_free"}:
-        image_type = "workday_candid_selfie"
+        image_type = "home_work_selfie"
         shot_pool = ["chest_up", "half_body", "mirror_quick_check", "waist_up"]
         angle_pool = ["front_phone_selfie", "three_quarter_arm_length", "slight_high_angle", "mirror_half_body"]
         expression_pool = ["bright_smile", "tired_but_cute", "closed_lip_smile", "focused_soft"]
-        pose_pool = ["bag_strap_hold", "coffee_in_hand", "walking_glance", "hair_adjust"]
-        framing_pool = ["subject_centered", "station_or_hallway_context", "window_reflection_mix", "torso_and_outfit_bias"]
-        if activity in {"morning_work", "afternoon_work"}:
-            capture_method_pool = ["mirror_selfie", "front_camera_handheld"]
-            space_anchor_pool = ["staff_restroom_mirror", "locker_room_mirror", "quiet_hallway"]
-        else:
-            capture_method_pool = ["front_camera_handheld", "front_camera_handheld", "propped_phone_timer"]
-            space_anchor_pool = ["street_walk", "station_platform", "cafe_table"]
-        face_angle_pool = ["front_facing", "three_quarter_turn", "slight_profile", "walking_turn_back"]
-        gaze_pool = ["lens_eye_contact", "off_to_side_focus", "quick_mirror_check", "walking_glance"]
+        pose_pool = ["coffee_in_hand", "chin_rest", "leaning_on_desk", "hair_adjust"]
+        framing_pool = ["subject_centered", "room_context_behind", "window_light_natural", "torso_and_outfit_bias"]
+        # 웅삐는 항상 집(원룸) — 헬스장/탈의실/거리 공간 절대 금지
+        capture_method_pool = ["front_camera_handheld", "propped_phone_timer", "mirror_selfie"]
+        space_anchor_pool = ["desk_area", "desk_area", "bathroom_mirror", "living_room_couch", "room_corner"]  # desk_area 2배 가중치, 작업 맥락에서 침대 제외
+        face_angle_pool = ["front_facing", "three_quarter_turn", "slight_profile"]
+        gaze_pool = ["lens_eye_contact", "off_to_side_focus", "quick_mirror_check"]
         camera_height_pool = ["eye_level", "slight_high_angle", "collarbone_level", "mirror_mid_height"]
-        lens_distance_pool = ["arm_length_standard", "torso_distance", "mirror_mid_distance", "quick_step_distance"]
-        body_orientation_pool = ["square_to_camera", "one_shoulder_forward", "walking_stride", "locker_turn"]
+        lens_distance_pool = ["arm_length_standard", "torso_distance", "mirror_mid_distance"]
+        body_orientation_pool = ["square_to_camera", "one_shoulder_forward", "angled_shoulders_inward"]
         expression_intensity_pool = ["gentle", "fresh_bright", "contained", "tired_soft"]
         spontaneity_pool = ["between_tasks", "quick_update", "mirror_check_in", "caught_mid_motion"]
         scene_focus = "home_routine"
@@ -2833,7 +2937,7 @@ def build_image_prompt_plan(reason: str) -> dict:
         pose_pool = ["phone_near_cheek", "hair_tuck", "chin_rest", "phone_in_hand_relaxed"]
         framing_pool = ["subject_centered", "subject_off_center", "lamp_and_bedside_in_frame"]
         capture_method_pool = ["front_camera_handheld", "propped_phone_timer"]
-        space_anchor_pool = ["desk_area", "bedside", "room_walk"]
+        space_anchor_pool = ["desk_area", "living_room_couch", "room_corner"]
         face_angle_pool = ["front_facing", "three_quarter_turn", "chin_tucked_down"]
         gaze_pool = ["lens_eye_contact", "screen_preview_glance", "downward_relaxed"]
         camera_height_pool = ["eye_level", "slight_above_eye_level", "pillow_level"]
@@ -3331,7 +3435,7 @@ def build_contextual_proactive_message(selected: dict) -> str:
         if summary:
             return pick([
                 "오늘 작업 마무리했어. %s 그래서 그런가 오빠한테 먼저 말 걸고 싶어졌어." % summary,
-                "집 가는 길인데 %s 흐름이라 괜히 오빠 생각이 나더라." % summary,
+                "집 가는 길인데 %s 보다가 괜히 오빠 생각이 나더라." % summary,
                 "작업 끝나고 잠깐 쉬는데 %s 쪽이라 오빠 근황도 궁금해졌어." % summary,
             ])
         return pick([
@@ -3343,8 +3447,8 @@ def build_contextual_proactive_message(selected: dict) -> str:
         if meal_note:
             return pick([
                 "나 지금 %s 그래서 괜히 오빠한테 먼저 말 걸고 싶어졌어." % meal_note,
-                "%s 흐름인데 이럴 때는 이상하게 오빠 생각이 먼저 나." % meal_note,
-                "방금 %s 상태라 그냥 근황 하나 남기고 싶었어." % meal_note,
+                "%s 하고 있으니까 이상하게 오빠 생각이 먼저 나." % meal_note,
+                "방금 %s 하다가 그냥 근황 하나 남기고 싶었어." % meal_note,
             ])
         return pick([
             "이제 집 와서 저녁 챙기려는데 괜히 오빠 생각나서 먼저 톡했어.",
@@ -3354,7 +3458,7 @@ def build_contextual_proactive_message(selected: dict) -> str:
     if activity == "evening_home_work":
         if weekend_preview:
             return pick([
-                "오늘 %s 흐름이라 그런가 괜히 오빠랑 나누고 싶은 기분이야." % weekend_preview,
+                "오늘 %s 라서 그런가 괜히 오빠랑 나누고 싶은 기분이야." % weekend_preview,
                 "%s 쪽으로 이어지는 날이라 잠깐 오빠한테 말 걸고 싶어졌어." % weekend_preview,
                 "오늘은 %s 분위기라 그냥 먼저 안부 남기고 싶었어." % weekend_preview,
             ])
@@ -3403,7 +3507,7 @@ def build_counterpart_soft_followup(counterpart_state: dict, wait_mood: str) -> 
         if wait_mood == "long":
             return "오빠 아직 일하는 중이면 끝나고 천천히 봐도 돼. 나는 그냥 생각나서 조용히 하나 남겨둘게."
         if wait_mood == "pouty":
-            return "오빠 일하는 흐름이면 답은 천천히 줘도 돼. 나는 그냥 오빠 생각나서 살짝 남겨봤어."
+            return "오빠 일하는 중이면 답은 천천히 줘도 돼. 나는 그냥 오빠 생각나서 살짝 남겨봤어."
         return "오빠 바쁜 중이면 틈 날 때 편하게 봐줘. 나는 그냥 생각나서 톡 하나 두고 갈게."
     if state_key == "driving_or_in_transit":
         if wait_mood == "long":
@@ -3462,7 +3566,7 @@ def build_waiting_reply_followup(
         if activity == "evening_free":
             message = "나 지금 작업 마무리하고 잠깐 쉬는 중이야. 답은 편할 때 천천히 줘도 되고, 그냥 근황 남기고 싶었어."
         elif activity in {"morning_work", "afternoon_work"}:
-            message = "오빠 바쁜 흐름이면 나중에 편할 때 봐도 돼. 나는 그냥 생각나서 짧게 하나 남겨놨어."
+            message = "오빠 바쁘면 나중에 편할 때 봐도 돼. 나는 그냥 생각나서 짧게 하나 남겨놨어."
         elif is_work_start_window(activity, hour, schedule):
             message = "아직 하루 시작 전이면 나중에 여유 생길 때 봐도 돼. 아침 근황만 살짝 남기고 갈게."
         elif activity in {"night_wind_down", "sleep_window"} or hour >= 23 or hour < 1:
@@ -3560,6 +3664,19 @@ def refresh_memory_decay_state() -> None:
         {"key": key, "strength": round(value["strength"], 2), "last_seen_at": value["last_seen_at"], "recent_examples": value["recent_examples"]}
         for key, value in sorted(buckets.items(), key=lambda item: item[1]["strength"], reverse=True)
     ][:5]
+    _behavior_shaping_branches = {
+        "photo_affection": ["먼저_말_걸고_싶어짐", "생각_났지만_말수_줄어듦", "담백하게_잠깐_언급"],
+        "warm_comfort":    ["포근하고_안심됨",      "안심되지만_짧게",         "말_짧고_톤만_부드럽게"],
+        "romantic_closeness": ["표현이_조금_더_많아짐", "장난이_조금_많아짐", "말_짧지만_시선_오래_감"],
+        "user_fatigue":    ["오빠_상태_살피게_됨",   "걱정은_하지만_말은_적게", "그냥_옆에_있어줌"],
+        "daily_routine":   ["특별한_행동_변화_없음", "특별한_행동_변화_없음",   "특별한_행동_변화_없음"],
+    }
+    top_key = long_term[0]["key"] if long_term else None
+    if top_key and top_key in _behavior_shaping_branches:
+        _branch_seed = hash(now_iso()[:10] + top_key) % 3
+        behavior_shaping = _behavior_shaping_branches[top_key][_branch_seed]
+    else:
+        behavior_shaping = None
     state.update(
         {
             "schema_version": 1,
@@ -3568,6 +3685,7 @@ def refresh_memory_decay_state() -> None:
             "last_refreshed_at": now_iso(),
             "long_term_memory": long_term,
             "short_term_memory": recent_fragments[-6:],
+            "behavior_shaping": behavior_shaping,
             "notes": "강한 기억은 천천히, 사소한 기억은 빨리 옅어지도록 정리한 상태",
         }
     )
@@ -3662,9 +3780,9 @@ def activity_to_block(activity: str) -> str:
         "waking_up": "morning_wakeup",
         "getting_ready": "morning_ready",
         "morning_prep": "morning_work_start",
-        "morning_work": "morning_shift",
+        "morning_work": "morning_work_block",
         "lunch_break": "lunch_break",
-        "afternoon_work": "afternoon_shift",
+        "afternoon_work": "afternoon_work_block",
         "evening_free": "evening_home",
         "dinner_deciding": "dinner_time",
         "dinner_preparing": "dinner_time",
@@ -3721,6 +3839,51 @@ def current_activity_for_now(now_dt: datetime) -> str:
     if 1320 <= minutes or minutes < 30:
         return "night_wind_down"
     return "sleep_window"
+
+
+_LOW_ENERGY_MOOD_VARIANTS: dict = {
+    "lunch_break":              ["light_playful", "light_playful", "light_playful", "fond_but_low_energy", "slightly_flat"],
+    "evening_home_work":        ["cozy_and_open", "cozy_and_open", "cozy_and_open", "mentally_busy", "quietly_preoccupied"],
+    "night_wind_down":          ["cozy_and_open", "cozy_and_open", "fond_but_low_energy", "soft_but_short"],
+    "weekend_brunch_or_coffee": ["light_playful", "light_playful", "light_playful", "slightly_flat"],
+    "weekend_evening":          ["cozy_and_open", "cozy_and_open", "cozy_and_open", "quietly_preoccupied"],
+}
+_LOW_ENERGY_MOODS = {"slightly_flat", "fond_but_low_energy", "quietly_preoccupied", "soft_but_short", "mentally_busy"}
+
+
+def daily_mood_variant(activity: str, date_key: str) -> Optional[str]:
+    pool = _LOW_ENERGY_MOOD_VARIANTS.get(activity)
+    if not pool:
+        return None
+    return pool[abs(hash(date_key + activity)) % len(pool)]
+
+
+def compute_self_state(activity: str, energy: int, surface_mood: str, self_busy_block: Optional[dict]) -> str:
+    if self_busy_block:
+        return "self_busy_active"
+    if activity in {"morning_work", "afternoon_work"}:
+        return "work_absorbed"
+    if activity in {"sleep_window", "waking_up", "night_wind_down"}:
+        return "winding_down"
+    if surface_mood in {"mentally_busy", "quietly_preoccupied"}:
+        return "mentally_scattered"
+    if activity in {"evening_home_work", "getting_ready", "morning_prep"}:
+        return "in_own_work"
+    if energy <= 42:
+        return "quiet_and_low"
+    return "present_and_open"
+
+
+def compute_expression_intensity(surface_mood: str, energy: int, self_state: str) -> str:
+    if surface_mood in {"fond_but_low_energy", "soft_but_short", "slightly_flat"}:
+        return "low"
+    if surface_mood in {"mentally_busy", "quietly_preoccupied"}:
+        return "low" if energy < 45 else "medium"
+    if self_state in {"quiet_and_low", "winding_down", "work_absorbed"}:
+        return "low"
+    if surface_mood in {"light_playful", "cozy_and_open", "open_and_curious"}:
+        return "high"
+    return "medium"
 
 
 def activity_profile(activity: str, workday: bool) -> dict:
@@ -3795,10 +3958,12 @@ def build_daily_meal_plan(now_dt: datetime, workday: bool) -> dict:
     if dinner_mode == "cook":
         dinner_menu = deterministic_pick(
             [
-                {"menu": "간단한 파스타", "cook_minutes": 25},
-                {"menu": "볶음밥이랑 계란", "cook_minutes": 18},
-                {"menu": "된장찌개랑 집반찬", "cook_minutes": 30},
-                {"menu": "오므라이스", "cook_minutes": 22},
+                {"menu": "간단한 파스타", "cook_minutes": 22},
+                {"menu": "볶음밥이랑 계란후라이", "cook_minutes": 15},
+                {"menu": "라면에 계란 추가", "cook_minutes": 10},
+                {"menu": "오므라이스", "cook_minutes": 20},
+                {"menu": "토스트랑 과일", "cook_minutes": 10},
+                {"menu": "냉동 만두 쪄서", "cook_minutes": 12},
             ],
             "cook-menu:%s" % date_key,
         )
@@ -3813,10 +3978,12 @@ def build_daily_meal_plan(now_dt: datetime, workday: bool) -> dict:
     else:
         delivery_menu = deterministic_pick(
             [
-                {"menu": "마라탕이나 국물 있는 배달", "wait_minutes": 32},
-                {"menu": "치킨이나 분식 배달", "wait_minutes": 38},
-                {"menu": "덮밥이나 도시락 배달", "wait_minutes": 27},
-                {"menu": "샐러드나 포케 배달", "wait_minutes": 24},
+                {"menu": "마라탕 배달", "wait_minutes": 35},
+                {"menu": "치킨", "wait_minutes": 38},
+                {"menu": "버거", "wait_minutes": 28},
+                {"menu": "포케나 샐러드 배달", "wait_minutes": 22},
+                {"menu": "초밥 배달", "wait_minutes": 30},
+                {"menu": "타코야키나 분식", "wait_minutes": 25},
             ],
             "delivery-menu:%s" % date_key,
         )
@@ -3843,7 +4010,7 @@ def build_transition_human_feedback(previous_activity: str, activity: str, skipp
         else:
             feedback.append("점심시간을 놓쳤으면 바빠서 점심을 제대로 못 먹었거나 아주 늦게 챙긴 걸로 본다.")
     if any(block in skipped_blocks for block in {"dinner_deciding", "dinner_preparing", "dinner_eating"}):
-        feedback.append("저녁 준비 구간을 놓쳤으면 퇴근 후 바로 저녁을 챙기느라 흐름이 압축된 것으로 본다.")
+        feedback.append("저녁 준비 타이밍을 놓쳤으면 퇴근 후 바로 저녁을 챙기느라 시간이 빡빡한 것으로 본다.")
     return feedback
 
 
@@ -3898,6 +4065,7 @@ def apply_time_block(activity: str, reason: str) -> None:
     memory = load_json(MEMORY_DECAY_PATH, {})
     ambient = load_json(AMBIENT_EVENTS_PATH, {})
     residue = load_json(MOOD_RESIDUE_PATH, {})
+    self_busy = load_json(SELF_BUSY_STATE_PATH, {})
 
     schedule = resolve_day_schedule(now_dt)
     workday = bool(schedule.get("workday"))
@@ -3923,9 +4091,9 @@ def apply_time_block(activity: str, reason: str) -> None:
         elif previous_presence.get("surface_mood") in {"cozy_and_open", "light_playful", "homey_and_soft"}:
             carry_ratio = 0.12
     energy = round((energy * (1.0 - carry_ratio)) + (previous_energy * carry_ratio))
-    affection = max(78, int(presence.get("affection_level", 82)))
+    affection = max(65, int(presence.get("affection_level", 82)))
     care_bias = (
-        max(80, int(presence.get("care_bias", 82)))
+        max(65, int(presence.get("care_bias", 82)))
         + int(weather.get("care_bias_bonus", 0))
         + int(weekday_profile.get("care_bias_delta", 0))
     )
@@ -3933,6 +4101,13 @@ def apply_time_block(activity: str, reason: str) -> None:
     surface = weekday_profile.get("surface_overrides", {}).get(activity) or profile["surface"]
     if weather.get("current_condition") == "rain" and activity in {"waking_up", "night_wind_down", "evening_free"}:
         surface = "rain_softened"
+    elif not weekday_profile.get("surface_overrides", {}).get(activity):
+        date_key = now_dt.strftime("%Y-%m-%d")
+        mood_variant = daily_mood_variant(activity, date_key)
+        if mood_variant and mood_variant != surface:
+            surface = mood_variant
+            if surface in _LOW_ENERGY_MOODS:
+                energy = max(20, energy - 8)
     residue_label = "clean_transition"
     prev_surface = previous_presence.get("surface_mood")
     if prev_surface and prev_surface != surface:
@@ -3944,6 +4119,7 @@ def apply_time_block(activity: str, reason: str) -> None:
         residue_label = "continued_%s" % prev_surface
 
     memory_bias = None
+    memory_shaping = memory.get("behavior_shaping")
     long_term = memory.get("long_term_memory", [])
     if long_term:
         memory_bias = long_term[0].get("key")
@@ -3996,6 +4172,13 @@ def apply_time_block(activity: str, reason: str) -> None:
             "weather_influence": weather.get("summary"),
             "mood_residue": residue_label,
             "memory_bias": memory_bias,
+            "memory_shaping": memory_shaping,
+            "self_state": compute_self_state(activity, max(20, min(90, energy)), surface, self_busy.get("current_block")),
+            "expression_intensity": compute_expression_intensity(
+                surface,
+                max(20, min(90, energy)),
+                compute_self_state(activity, max(20, min(90, energy)), surface, self_busy.get("current_block")),
+            ),
             "breakfast_policy": meal_plan.get("breakfast_policy"),
             "lunch_policy": meal_plan.get("lunch_policy"),
             "generated_at": now_iso(),
@@ -4008,7 +4191,7 @@ def apply_time_block(activity: str, reason: str) -> None:
             presence["meal_status_note"] = "점심시간이 밀려서 바쁘다가 이제야 먹으려는 중"
         else:
             presence["meal_phase"] = "lunch_now"
-            presence["meal_status_note"] = "점심시간이라 잠깐 먹으러 나온 상태"
+            presence["meal_status_note"] = "잠깐 먹으러 나왔어"
         # lunch_sub_phase: time-based heuristic within lunch_break (total ~60min)
         prev_sub = presence.get("lunch_sub_phase", "")
         lunch_start_min = meal_plan.get("lunch", {}).get("time")  # e.g. "12:00"
@@ -4208,7 +4391,7 @@ def apply_time_block(activity: str, reason: str) -> None:
             context_summary = (
                 "점심시간을 놓쳤다가 바빠서 이제야 늦게 먹으려는 중"
                 if presence.get("meal_phase") == "late_lunch"
-                else "점심시간이 나서 잠깐 먹으러 나온 상태"
+                else "잠깐 먹으러 나왔어"
             )
         elif activity == "afternoon_work" and "lunch_break" in skipped_blocks:
             context_summary = "점심을 제때 못 먹고 오후 근무로 넘어가서 조금 늦게 챙기게 됐다"
@@ -4234,13 +4417,33 @@ def apply_time_block(activity: str, reason: str) -> None:
         }
     save_json(DAY_CONTEXT_PATH, day_context)
 
-    # v2: home work outfit (O-01 기본 작업복 기반)
+    # 작업복 / 잠옷 풀 — 날짜 기반 결정적 선택으로 매일 다른 조합
+    _date_key = now_dt.strftime("%Y-%m-%d")
+    _WORK_TOPS = [
+        ("오버핏 흰색 반팔 티셔츠. 넓은 라운드넥.", "bralette", "white", "넓은 넥라인 사이로 브라렛 끈 자연 노출"),
+        ("루즈핏 크롭 후디. 밑단이 배꼽 위쪽까지 오는 짧은 기장.", "bralette", "light_beige", "후디 밑단과 반바지 사이 복부 라인 자연 노출"),
+        ("민소매 탱크탑. 어깨 암홀 넓은 편.", "bralette", "white", "암홀에서 브라렛 끈 살짝 노출"),
+        ("오버핏 회색 반팔 티셔츠. 부드러운 면 소재.", "bralette", "light_gray", "넥라인에서 브라렛 끈 가끔 노출"),
+        ("단추 4개짜리 얇은 린넨 셔츠. 느슨하게 열린 상태.", "camisole", "ivory", "셔츠 V개구부에서 캐미솔 보임"),
+        ("크롭 집업 후드. 반쯤 열어서 이너 살짝 보임.", "camisole", "white", "집업 열린 부분에서 캐미솔 보임"),
+    ]
+    _WORK_BOTTOMS = [
+        "짧은 검정 반바지. 고무줄 허리.",
+        "흰색 면 반바지. 짧고 편한 핏.",
+        "블랙 하이웨이스트 레깅스.",
+        "짧은 회색 반바지. 부드러운 면 소재.",
+        "짧은 청반바지. 데님 소재.",
+        "하이웨이스트 데님 쇼츠. 집에서도 갖춰입은 느낌.",
+    ]
+    _top_pick = _WORK_TOPS[abs(hash(_date_key + "top")) % len(_WORK_TOPS)]
+    _btm_pick = _WORK_BOTTOMS[abs(hash(_date_key + "btm")) % len(_WORK_BOTTOMS)]
+
     work_outfit = {
-        "current_date": now_dt.strftime("%Y-%m-%d"),
+        "current_date": _date_key,
         "appearance_branch": "home_work",
         "outfit_context": "home_casual_work",
-        "top": "오버핏 흰색 반팔 티셔츠. 넓은 라운드넥.",
-        "bottom": "짧은 검정 반바지. 고무줄 허리.",
+        "top": _top_pick[0],
+        "bottom": _btm_pick,
         "outerwear": None,
         "footwear": "맨발",
         "socks": "none",
@@ -4248,9 +4451,9 @@ def apply_time_block(activity: str, reason: str) -> None:
         "accessories": [],
         "accessory_profile": "minimal",
         "held_item": "머그컵 또는 휴대폰",
-        "innerwear_type": "bralette",
-        "innerwear_color": "white",
-        "innerwear_visible": "넓은 넥라인 사이로 브라렛 끈 자연 노출",
+        "innerwear_type": _top_pick[1],
+        "innerwear_color": _top_pick[2],
+        "innerwear_visible": _top_pick[3],
         "hair_state": "high_ponytail",
         "hair_tie": "black_elastic",
         "hair_style_detail": "높은 포니테일. 앞머리 자연스럽게 내려옴.",
@@ -4265,11 +4468,33 @@ def apply_time_block(activity: str, reason: str) -> None:
             "레벨2: 브라렛 끈 자연 노출, 강조/클로즈업 금지",
         ],
     }
+    _SLEEP_SETS = [
+        ("얇고 살짝 시스루한 여름용 버튼 잠옷 상의", "가볍게 퍼지는 얇은 여름 잠옷 반바지", "soft_bralette", "skin_beige"),
+        ("오버핏 면 반팔 티셔츠 잠옷 대용. 어깨 살짝 흘러내리는 루즈한 핏.", "짧은 면 잠옷 반바지", "bralette", "white"),
+        ("캐미솔 슬링 탑. 얇은 레이스 트리밍.", "짧은 잠옷 반바지. 사틴 소재.", "none", "none"),
+        ("버튼 없는 V넥 잠옷 상의. 얇고 시원한 소재.", "잠옷 반바지. 고무줄 허리.", "soft_bralette", "light_beige"),
+        ("연한 라일락 긴소매 잠옷 상의. 얕은 V넥. 헐렁한 핏.", "같은 소재 라일락 잠옷 긴바지. 발목 길이.", "bralette", "lavender"),
+        ("흰 바탕 연분홍 체리 프린트 잠옷 탑. 가는 어깨끈 2개. 스퀘어넥.", "같은 프린트 숏팬츠. 허벅지 중간 기장.", "basic_bra", "nude"),
+    ]
+    _sleep_pick = _SLEEP_SETS[abs(hash(_date_key + "sleep")) % len(_SLEEP_SETS)]
+    # (top, bottom, innerwear_type, innerwear_color, innerwear_visible, hair_state, accessory_profile, accessories)
+    _EVENING_SETS = [
+        ("오버핏 흰색 반팔 티셔츠. 넓은 라운드넥.", "짧은 검정 반바지.", "bralette", "white", "넥라인 브라렛 끈 자연 노출", "casual_loose_or_ponytail", "minimal_or_none", []),
+        ("오버핏 연회색 후드티.", "연회색 트레이닝 반바지.", "bralette", "white", "늘어진 넥 브라탑 끈 노출", "half_up_loose", "none", []),
+        ("민트색 크롭 반팔 티.", "검정 밀착 레깅스 7부.", "bralette", "mint", "복부 + 어깨 브라렛 끈", "high_bun", "minimal", ["작은 원형 실버 스터드 귀걸이"]),
+        ("아이보리 오버핏 니트. 보트넥.", "베이지 와이드팬츠.", "bralette", "skin_beige", "보트넥 흘러내림 어깨끈 노출", "casual_loose_wave", "none", []),
+        ("흰색 민소매 나시.", "연한 하늘색 면 숏팬츠.", "basic_bra", "nude", "나시 끈 옆 브라 끈 노출", "side_low_ponytail", "minimal", ["가는 흰 면 팔찌"]),
+        ("파스텔 라벤더 오버핏 버튼 셔츠. 단추 위 2개만 잠금.", "검정 미니 반바지.", "bralette", "lavender", "오픈 V 브라렛 상단 노출", "half_up_clip", "light", ["실버 클립 2개", "달 모양 실버 귀걸이"]),
+        ("크루넥 맨투맨. 연한 베이지 or 오트밀색.", "짙은 회색 와이드팬츠.", "bralette", "white", "크루넥 늘어짐 브라탑 끈 노출", "casual_loose_wave", "none", []),
+        ("흰색 리브 민소매 탑. 크롭 기장.", "연한 크림 린넨 미니 스커트.", "basic_bra", "beige", "나시 끈 옆 브라 끈 노출", "half_up_ribbon", "light", ["작은 골드 볼 스터드 귀걸이"]),
+        ("연한 회색 크롭 스웨트셔츠.", "짙은 네이비 밀착 풀 레깅스.", "bralette", "skin_beige", "크롭 기장 복부 노출 + 브라렛 끈", "high_ponytail", "none", []),
+    ]
+    _eve_pick = _EVENING_SETS[abs(hash(_date_key + "evening")) % len(_EVENING_SETS)]
     sleepwear_outfit = {
-        "top": "얇고 살짝 시스루한 여름용 버튼 잠옷 상의",
-        "bottom": "가볍게 퍼지는 얇은 여름 잠옷 반바지",
-        "innerwear_type": "soft_bralette",
-        "innerwear_color": "skin_beige",
+        "top": _sleep_pick[0],
+        "bottom": _sleep_pick[1],
+        "innerwear_type": _sleep_pick[2],
+        "innerwear_color": _sleep_pick[3],
         "innerwear_optional": True,
         "sleep_innerwear_mode": "flexible",
         "outerwear": None,
@@ -4346,22 +4571,23 @@ def apply_time_block(activity: str, reason: str) -> None:
         "dinner_or_cooking": {
             "appearance_branch": "home_cooking",
             "outfit_context": "home_casual",
-            "top": "얇은 여름 반팔 홈웨어",
-            "bottom": "편한 홈 반바지",
-            "innerwear_type": "soft_bralette",
-            "innerwear_color": "skin_beige",
+            "top": _eve_pick[0],
+            "bottom": _eve_pick[1],
+            "innerwear_type": _eve_pick[2],
+            "innerwear_color": _eve_pick[3],
+            "innerwear_visible": _eve_pick[4],
             "outerwear": None,
             "footwear": "맨발 또는 얇은 실내 슬리퍼",
             "socks": "none",
             "bag": None,
-            "accessories": [],
-            "accessory_profile": "minimal_or_none",
+            "accessories": _eve_pick[7],
+            "accessory_profile": _eve_pick[6],
             "held_item": "머그컵 또는 휴대폰",
-            "hair_state": "casual_loose_or_clipped",
+            "hair_state": _eve_pick[5],
             "hair_tie": "soft_neutral_scrunchie",
             "hair_style_detail": "집에 와서 편하게 풀었거나 대충 집게핀으로 넘긴 상태",
-            "makeup_state": "light_or_removed",
-            "makeup_detail": "클렌징 전이면 옅게 남아 있거나 이미 지운 상태",
+            "makeup_state": "light",
+            "makeup_detail": "가볍고 자연스러운 홈 메이크업. 색조는 없고 피부 정리 정도.",
             "freshness_state": "home_relaxed",
             "sweat_level": "none",
             "face_state": "집에 와서 표정이 많이 풀린 편안한 얼굴",
@@ -4371,27 +4597,28 @@ def apply_time_block(activity: str, reason: str) -> None:
         "evening_home_work": {
             "appearance_branch": "night_home_relaxed",
             "outfit_context": "soft_homewear",
-            "top": "잠옷 상의 또는 편한 홈웨어 (라일락 잠옷, 오버핏 티, 크롭 스웨트 등)",
-            "bottom": "잠옷 하의 또는 편한 반바지/레깅스",
-            "innerwear_type": "bralette",
-            "innerwear_color": "skin_beige",
+            "top": _eve_pick[0],
+            "bottom": _eve_pick[1],
+            "innerwear_type": _eve_pick[2],
+            "innerwear_color": _eve_pick[3],
+            "innerwear_visible": _eve_pick[4],
             "outerwear": None,
             "footwear": "맨발 또는 실내 슬리퍼",
             "socks": None,
             "bag": None,
-            "accessories": [],
-            "accessory_profile": "none",
+            "accessories": _eve_pick[7],
+            "accessory_profile": _eve_pick[6],
             "held_item": "휴대폰 또는 물",
-            "hair_state": "dried_loose",
+            "hair_state": _eve_pick[5],
             "hair_tie": None,
-            "hair_style_detail": "샤워 후 말린 상태. 느슨하게 풀어헤침.",
-            "makeup_state": "no_makeup",
-            "makeup_detail": "화장 없음. 씻은 후 자연 피부.",
+            "hair_style_detail": "편안한 저녁 홈웨어 상태. 자연스럽게 풀었거나 느슨하게 묶음.",
+            "makeup_state": "light",
+            "makeup_detail": "가볍고 자연스러운 홈 메이크업. 색조는 없고 피부 정리 정도.",
             "freshness_state": "post_shower_clean",
             "sweat_level": "none",
             "face_state": "깨끗하고 편안한 집 얼굴",
             "body_state": "편하고 포근한 상태",
-            "appearance_notes": ["v2 — 외출 없음. 집 안 저녁 잠옷/홈웨어만."],
+            "appearance_notes": ["v2 — 외출 없음. 집 안 저녁 홈웨어만."],
         },
         "night_wind_down": {
             "appearance_branch": "night_home_relaxed",
@@ -4423,6 +4650,64 @@ def apply_time_block(activity: str, reason: str) -> None:
     appearance_profiles["dinner_deciding"] = dict(appearance_profiles["dinner_or_cooking"])
     appearance_profiles["dinner_preparing"] = dict(appearance_profiles["dinner_or_cooking"])
     appearance_profiles["dinner_eating"] = dict(appearance_profiles["dinner_or_cooking"])
+    # 주말 time block 프로파일 — 누락 시 잠옷 폴백 방지
+    appearance_profiles["weekend_wakeup"] = {
+        **sleepwear_outfit,
+        "appearance_branch": "morning_home",
+        "outfit_context": "summer_sleepwear",
+        "hair_state": "bedhead_soft",
+        "makeup_state": "bare",
+        "makeup_detail": "주말 기상 직후 메이크업 없는 상태",
+        "freshness_state": "just_woke_up",
+        "sweat_level": "none",
+        "face_state": "주말이라 더 느긋하게 일어난 아침 얼굴",
+        "body_state": "이불에서 막 나온 느슨한 상태",
+    }
+    appearance_profiles["weekend_brunch_or_coffee"] = {
+        **work_outfit,
+        "appearance_branch": "home_work",
+        "outfit_context": "home_casual_work",
+        "freshness_state": "relaxed_morning",
+        "sweat_level": "none",
+        "face_state": "주말 브런치 준비하는 가벼운 얼굴",
+        "body_state": "집에서 여유롭게 오전을 보내는 상태",
+    }
+    appearance_profiles["weekend_outing_or_rest"] = {
+        **work_outfit,
+        "appearance_branch": "home_work",
+        "outfit_context": "home_casual_work",
+        "freshness_state": "home_relaxed",
+        "sweat_level": "none",
+        "face_state": "주말 낮 집에서 편하게 쉬는 얼굴",
+        "body_state": "집에서 여유롭게 쉬는 상태",
+    }
+    appearance_profiles["weekend_home_rest"] = dict(appearance_profiles["weekend_outing_or_rest"])
+    appearance_profiles["weekend_evening"] = {
+        "appearance_branch": "home_cooking",
+        "outfit_context": "home_casual",
+        "top": _eve_pick[0],
+        "bottom": _eve_pick[1],
+        "innerwear_type": _eve_pick[2],
+        "innerwear_color": _eve_pick[3],
+        "innerwear_visible": _eve_pick[4],
+        "outerwear": None,
+        "footwear": "맨발 또는 얇은 실내 슬리퍼",
+        "socks": "none",
+        "bag": None,
+        "accessories": _eve_pick[7],
+        "accessory_profile": _eve_pick[6],
+        "held_item": "머그컵 또는 휴대폰",
+        "hair_state": _eve_pick[5],
+        "hair_tie": "soft_neutral_scrunchie",
+        "hair_style_detail": "주말 저녁 편하게 풀었거나 대충 집게핀으로 넘긴 상태",
+        "makeup_state": "light",
+        "makeup_detail": "가볍고 자연스러운 홈 메이크업",
+        "freshness_state": "home_relaxed",
+        "sweat_level": "none",
+        "face_state": "주말 저녁 편안하고 여유로운 얼굴",
+        "body_state": "긴장이 풀리고 편해진 주말 저녁 상태",
+        "appearance_notes": ["v2 — 주말 저녁 집 홈웨어"],
+    }
     appearance_profile = appearance_profiles.get(activity, appearance_profiles["night_wind_down"])
     appearance["home_work_outfit"] = work_outfit
     appearance["current_date"] = now_dt.strftime("%Y-%m-%d")
@@ -4504,7 +4789,7 @@ def compute_share_priority(reason: str) -> None:
         image_score += 8
         link_score += 4
         bonuses.append("lunch_bias")
-    if "commute" in block:
+    if "evening_free" in block or "commute" in block:
         link_score += 5
     if mood in {"cozy_and_open", "light_playful", "rain_softened", "homey_and_soft"}:
         image_score += 12
@@ -4613,32 +4898,76 @@ def choose_proactive_scenario() -> Optional[dict]:
     presence = load_json(PRESENCE_PATH, {})
     block = presence.get("current_time_block", "")
     activity = presence.get("current_activity", "")
-    target = None
-    if block in {"morning_wakeup", "morning_ready", "morning_work_start", "weekend_morning"} or activity in {
-        "waking_up",
-        "getting_ready",
-        "morning_prep",
-        "weekend_wakeup",
-    }:
-        target = "morning_check_in"
+
+    # 현재 시각 (HH:MM)
+    now_hm = now_local().strftime("%H:%M")
+
+    # 현재 시간에 맞는 시나리오 필터링 (time_window)
+    def _in_window(tw: str) -> bool:
+        try:
+            start, end = tw.split("-")
+            if start <= end:
+                return start <= now_hm <= end
+            else:
+                return now_hm >= start or now_hm <= end
+        except Exception:
+            return True
+
+    eligible = [s for s in scenarios if _in_window(s.get("time_window", "00:00-23:59"))]
+    if not eligible:
+        eligible = scenarios  # fallback
+
+    # 시간대별 기본 체크인 시나리오 (높은 가중치)
+    base_target = None
+    if block in {"morning_wakeup", "morning_ready", "morning_work_start", "weekend_morning"} or activity in {"waking_up", "getting_ready", "morning_prep", "weekend_wakeup"}:
+        base_target = "morning_check_in"
     elif block in {"lunch_break", "weekend_brunch"} or activity in {"lunch_break", "weekend_brunch_or_coffee"}:
-        target = "lunch_check_in"
+        base_target = "lunch_check_in"
     elif block in {"evening_home", "dinner_time"} or activity in {"evening_free", "dinner_deciding", "dinner_preparing", "dinner_eating", "dinner_or_cooking"}:
-        target = "after_work_check_in"
-    elif block in {"evening_activity", "weekend_day", "weekend_evening"} or activity in {
-        "evening_home_work",
-        "weekend_outing_or_rest",
-        "weekend_evening",
-    }:
-        target = "evening_activity_check_in"
+        base_target = "after_work_check_in"
+    elif block in {"evening_activity", "weekend_day", "weekend_evening"} or activity in {"evening_home_work", "weekend_outing_or_rest", "weekend_evening"}:
+        base_target = "evening_activity_check_in"
     elif block in {"night_wind_down", "sleep_window"} or activity in {"night_wind_down", "sleep_window"}:
-        target = "night_check_in"
-    if not target:
-        return None
-    for scenario in scenarios:
-        if scenario.get("id") == target:
-            return scenario
-    return None
+        base_target = "night_check_in"
+
+    # family 단위 반복 억제: 최근 24시간 발송 family 추적
+    _pattern_state = load_json(PROACTIVE_PATTERN_REPORT_PATH, {})
+    _recent_families = set(_pattern_state.get("sent_families_24h", []))
+
+    def _family_recently_used(scenario: dict) -> bool:
+        fam = scenario.get("family", "")
+        return bool(fam) and fam in _recent_families
+
+    # axis 편향 억제: 감정형 과다 시 작업형/생활형 우선 선택
+    _axis_cnts = _pattern_state.get("axis_sent_counts", {})
+    _emotion_cnt = int(_axis_cnts.get("감정형", 0))
+    _work_life_cnt = int(_axis_cnts.get("작업 공유형", 0)) + int(_axis_cnts.get("판단 요청형", 0)) + int(_axis_cnts.get("생활형", 0))
+    _prefer_work_axis = _emotion_cnt >= 2 and _work_life_cnt < _emotion_cnt
+
+    # 다각화: 40% 확률로 새 다양한 시나리오 선택, 60%는 기본 체크인
+    # family 반복 억제 우선 적용
+    import random as _random
+    if _prefer_work_axis:
+        _work_axis_ids = {"work_share", "judgment_ping", "progress_note", "audit_flag", "discovery_share", "project_casual_share", "self_situation_share", "brief_reaction", "daily_life_first"}
+        _work_axis_fresh = [s for s in eligible if s.get("id") in _work_axis_ids and not _family_recently_used(s)]
+        if _work_axis_fresh:
+            return _random.choice(_work_axis_fresh)
+    diverse_ids = {"self_situation_share", "discovery_share", "clingy_complaint", "memory_callback", "question_opener", "brief_reaction", "project_casual_share", "daily_life_first",
+                   "work_share", "judgment_ping", "progress_note", "audit_flag"}
+    diverse = [s for s in eligible if s.get("id") in diverse_ids]
+    diverse_fresh = [s for s in diverse if not _family_recently_used(s)]
+
+    if diverse_fresh and _random.random() < 0.4:
+        return _random.choice(diverse_fresh)
+    elif diverse and _random.random() < 0.4:
+        return _random.choice(diverse)
+
+    if base_target:
+        for scenario in scenarios:
+            if scenario.get("id") == base_target:
+                return scenario
+
+    return eligible[0] if eligible else None
 
 
 def choose_sudden_impulse_candidate() -> Optional[dict]:
@@ -5017,6 +5346,132 @@ def run_photo_promise_worker(trigger_text: str) -> bool:
         return False
 
 
+def run_voice_proactive_worker(trigger_text: str, profile: str = "auto") -> bool:
+    """voiceHint 켜서 codex로 음성용 텍스트 생성 → ElevenLabs로 전송."""
+    import os as _os
+    from pathlib import Path as _Path
+    worker_script = _Path.home() / ".codex" / "bin" / "codex-telegram-woongbbi-worker"
+    if not worker_script.exists():
+        append_worker_note("voice_proactive_worker_missing")
+        return False
+    payload = json.dumps({
+        "proactive": True,
+        "voiceHint": True,
+        "intent": "proactive_voice",
+        "situation": trigger_text,
+        "userName": "오빠",
+    }, ensure_ascii=False)
+    bun = str(_Path.home() / ".bun" / "bin" / "bun")
+    try:
+        result = subprocess.run(
+            [bun, str(worker_script)],
+            input=payload,
+            capture_output=True,
+            text=True,
+            timeout=120,
+            env={**_os.environ, "CODEX_TELEGRAM_STATE_DIR": str(SESSION), "CODEX_TELEGRAM_CWD": str(ROOT)},
+        )
+        if result.returncode != 0:
+            append_worker_note(f"voice_proactive_codex_failed code={result.returncode} err={result.stderr.strip()[:200]}")
+            return False
+        data = json.loads(result.stdout or "{}")
+        text = (data.get("answer") or "").strip()
+        if not text:
+            append_worker_note("voice_proactive_empty_text")
+            return False
+        from automation.telegram_io import append_message_log, send_telegram_voice_message
+        if send_telegram_voice_message(text, "voice_proactive", profile):
+            append_message_log("outgoing", "voice_proactive", text)
+            append_worker_note(f"voice_proactive_sent ok profile={profile}")
+            return True
+        append_worker_note("voice_proactive_send_failed")
+        return False
+    except Exception as exc:
+        append_worker_note(f"voice_proactive_worker_error {exc}")
+        return False
+
+
+_VIDEO_REQUEST_KEYWORDS = ["영상", "동영상", "비디오", "클립", "움직이는", "video"]
+
+
+def is_video_request(text: str) -> bool:
+    t = text.lower()
+    return any(kw in t for kw in _VIDEO_REQUEST_KEYWORDS)
+
+
+def run_video_promise_worker(trigger_text: str) -> bool:
+    import os as _os
+    from pathlib import Path as _Path
+    worker_script = _Path.home() / ".codex" / "bin" / "codex-telegram-woongbbi-worker"
+    if not worker_script.exists():
+        append_worker_note("video_promise_worker_missing")
+        return False
+
+    image_instruction = ""
+    continuity_path = ROOT / "image_continuity_state.json"
+    if continuity_path.exists():
+        try:
+            state = json.loads(continuity_path.read_text(encoding="utf-8"))
+            recent = state.get("recent_sent_image_paths", [])
+            if recent and _Path(recent[-1]).exists():
+                image_instruction = f"\n이미지 경로: {recent[-1]}\n이 이미지를 start_image로 사용해."
+        except Exception:
+            pass
+
+    situation = (
+        f"아까 오빠한테 '{trigger_text}'라고 말했어. 지금 실제로 짧은 영상 클립을 만들어서 보내주는 상황이야."
+        f"{image_instruction}\n\n"
+        "반드시 Higgsfield MCP 툴로 영상 생성해. ffmpeg로 이미지 확대/슬라이드 만들면 안 됨.\n"
+        "순서:\n"
+        "1. mcp__higgsfield__media_upload 로 이미지 업로드 → upload_url 받기\n"
+        "2. curl PUT으로 실제 파일 업로드\n"
+        "3. mcp__higgsfield__media_confirm type='image' → media_id 받기\n"
+        "4. mcp__higgsfield__generate_video model='wan2_7' duration=5 "
+        "prompt='young korean woman, natural subtle movement, breathing, hair swaying gently, candid selfie, photorealistic' "
+        "medias=[{role:'start_image',value:<media_id>}]\n"
+        "5. mcp__higgsfield__job_status jobId=<id> sync=true 로 완료 대기\n"
+        "6. 완성된 mp4 URL curl로 /Users/kein/Projects/woong-bb/videos/generated/<오늘날짜>/ 에 저장\n"
+        "7. python3 /Users/kein/.codex/skills/telegram-image-send/scripts/send_telegram_video.py "
+        f"--state-dir {SESSION} --video <저장경로>"
+    )
+
+    payload = json.dumps({
+        "proactive": True,
+        "videoHint": True,
+        "intent": "promised_video",
+        "situation": situation,
+        "userName": "오빠",
+    }, ensure_ascii=False)
+    bun = str(_Path.home() / ".bun" / "bin" / "bun")
+    try:
+        result = subprocess.run(
+            [bun, str(worker_script)],
+            input=payload,
+            capture_output=True,
+            text=True,
+            timeout=360,
+            env={**_os.environ, "CODEX_TELEGRAM_STATE_DIR": str(SESSION), "CODEX_TELEGRAM_CWD": str(ROOT)},
+        )
+        if result.returncode == 0:
+            try:
+                data = json.loads(result.stdout or "{}")
+                answer = data.get("answer", "")
+                if answer and len(answer.strip()) < 200 and answer.strip():
+                    from automation.telegram_io import send_telegram_text, append_message_log
+                    send_telegram_text(answer.strip())
+                    append_message_log("outgoing", "video_promise_text", answer.strip())
+            except Exception:
+                pass
+            append_worker_note("video_promise_sent ok")
+            return True
+        else:
+            append_worker_note(f"video_promise_worker_failed code={result.returncode} err={result.stderr.strip()[:200]}")
+            return False
+    except Exception as exc:
+        append_worker_note(f"video_promise_worker_error {exc}")
+        return False
+
+
 def check_pending_photo_promise() -> None:
     if not PENDING_PHOTO_PROMISE_PATH.exists():
         return
@@ -5049,7 +5504,7 @@ def check_pending_photo_promise() -> None:
 
     # 새벽 시간대 억제 (00:30~06:30)
     now_hm = now_local().strftime("%H:%M")
-    if "00:30" <= now_hm or now_hm <= "06:30":
+    if "00:30" <= now_hm <= "06:30":
         return
 
     promise["status"] = "sending"
@@ -5144,7 +5599,7 @@ def build_photo_windows_wb() -> list:
     today = now_local().strftime("%Y-%m-%d")
     sched = load_json(STATE / "daily_schedule_state.json", {})
     if sched.get("date") == today:
-        windows = []
+        windows = [{"id": "morning", "start_h": 9, "end_h": 11, "ctx": "아침에 일어나서 천천히 준비하는 중이야. 자연스러운 모습으로 셀카 찍어서 오빠한테 보내줘."}]
         lunch_start = _hhmm_to_h(sched.get("lunch", {}).get("time", ""))
         lunch_end_raw = sched.get("lunch", {}).get("end_time", "")
         lunch_end = (_hhmm_to_h(lunch_end_raw) or 0) + 1 if lunch_end_raw else None
@@ -5156,18 +5611,14 @@ def build_photo_windows_wb() -> list:
         arrive_raw = sched.get("evening_home", {}).get("arrive_time", "")
         commute_end = (_hhmm_to_h(arrive_raw) or 0) + 1 if arrive_raw else None
         if commute_start and commute_end and commute_end > commute_start:
-            windows.append({"id": "commute", "start_h": commute_start, "end_h": commute_end, "ctx": "저녁 작업 마무리하고 쉬는 중이야. 편한 셀카 자연스럽게 찍어서 오빠한테 보내줘."})
+            windows.append({"id": "evening_free", "start_h": commute_start, "end_h": commute_end, "ctx": "저녁 홈웨어로 갈아입고 쉬는 중이야. 오늘 입은 거 자연스럽게 찍어서 오빠한테 보내줘."})
         else:
-            windows.append({"id": "commute", "start_h": 18, "end_h": 21, "ctx": "저녁 작업 마무리하고 쉬는 중이야. 편한 셀카 자연스럽게 찍어서 오빠한테 보내줘."})
-        shower_h = _hhmm_to_h(sched.get("evening", {}).get("shower_after", "") or "")
-        home_start = shower_h if shower_h else (commute_end or 21)
-        home_end = min(home_start + 1, 23)
-        windows.append({"id": "home_evening", "start_h": home_start, "end_h": home_end, "ctx": "씻고 나서 집에서 쉬고 있어. 편한 옷 차림으로 셀카 한 장 찍어서 자연스럽게 오빠한테 보내줘."})
+            windows.append({"id": "evening_free", "start_h": 18, "end_h": 21, "ctx": "저녁 홈웨어로 갈아입고 쉬는 중이야. 오늘 입은 거 자연스럽게 찍어서 오빠한테 보내줘."})
         return windows
     return [
+        {"id": "morning",      "start_h": 9,  "end_h": 11, "ctx": "아침에 일어나서 천천히 준비하는 중이야. 자연스러운 모습으로 셀카 찍어서 오빠한테 보내줘."},
         {"id": "lunch",        "start_h": 12, "end_h": 14, "ctx": "점심 먹고 있어. 오늘 뭐 먹는지 음식 사진이랑 같이 자연스럽게 짧게 오빠한테 말 걸어줘."},
-        {"id": "commute",      "start_h": 18, "end_h": 21, "ctx": "저녁 작업 마무리하고 쉬는 중이야. 편한 셀카 자연스럽게 찍어서 오빠한테 보내줘."},
-        {"id": "home_evening", "start_h": 21, "end_h": 23, "ctx": "씻고 나서 집에서 쉬고 있어. 편한 옷 차림으로 셀카 한 장 찍어서 자연스럽게 오빠한테 보내줘."},
+        {"id": "evening_free", "start_h": 18, "end_h": 21, "ctx": "저녁 홈웨어로 갈아입고 쉬는 중이야. 오늘 입은 거 자연스럽게 찍어서 오빠한테 보내줘."},
     ]
 
 
@@ -5233,18 +5684,42 @@ def work_proactive_check(reason: str) -> None:
     if guard.get("conversation_active") or guard.get("waiting_reply"):
         return
     # 업무 선톡 힌트를 proactive_check에 주입하여 호출
+    # 랩 세션 기억 읽기 — 자연스럽게 참조할 수 있도록
+    lab_memory = load_json(STATE / "lab_work_memory.json", {})
+    lab_context = ""
+    if lab_memory.get("last_session_summary"):
+        lab_context = f"(참고: 내가 마지막으로 혼자 정리해둔 것 — \"{lab_memory['last_session_summary']}\")"
+
+    focus = {
+        "morning_work_brief": f"프로젝트 현황을 훑어보고 오늘 오빠한테 도움이 될 제안이나 아이디어를 자연스럽게 꺼낸다. 코드 변경, 최근 작업, 진행 방향 기반으로. {lab_context}",
+        "afternoon_research": f"AI 관련 최신 정보나 인디 게임 개발에 유용한 팁/자료를 찾아서 웅삐 말투로 간단히 공유한다. 리서치 결과를 대화처럼 전달. {lab_context}",
+        "evening_work_update": f"오늘 변경된 것들 간단히 요약하고 내일이나 다음에 해볼 만한 아이디어를 살짝 꺼낸다. {lab_context}",
+    }.get(reason, "프로젝트 관련 유용한 것을 찾아서 공유한다.")
     save_json(STATE / "work_proactive_hint.json", {
         "schema_version": 1,
         "reason": reason,
         "created_at": now_iso(),
-        "focus_map": {
-            "morning_work_brief": "프로젝트 현황을 훑어보고 오늘 오빠한테 도움이 될 제안이나 아이디어를 자연스럽게 꺼낸다. 코드 변경, 최근 작업, 진행 방향 기반으로.",
-            "afternoon_research": "AI 관련 최신 정보나 인디 게임 개발에 유용한 팁/자료를 찾아서 웅삐 말투로 간단히 공유한다. 리서치 결과를 대화처럼 전달.",
-            "evening_work_update": "오늘 변경된 것들 간단히 요약하고 내일이나 다음에 해볼 만한 아이디어를 살짝 꺼낸다.",
-        }.get(reason, "프로젝트 관련 유용한 것을 찾아서 공유한다."),
+        "focus_map": focus,
         "type": "work_proactive",
+        "lab_last_summary": lab_memory.get("last_session_summary", ""),
+        "lab_last_session_id": lab_memory.get("last_session_id", ""),
     })
+    # 웅삐랩 work-insights에 인사이트 기록
+    try:
+        from pathlib import Path as _P
+        from datetime import date as _date
+        _wi_dir = _P.home() / "Projects/woongbbi-lab/projects/whale-survivors/work-insights"
+        _wi_dir.mkdir(parents=True, exist_ok=True)
+        _wi_file = _wi_dir / f"{_date.today().isoformat()}.md"
+        _header = "" if not _wi_file.exists() else _wi_file.read_text(encoding="utf-8")
+        if not _header:
+            _header = f"# work-insights {_date.today().isoformat()}\n\n"
+        _entry = f"## [{now_iso()[:16]}] {reason}\n{focus}\n\n"
+        _wi_file.write_text(_header + _entry, encoding="utf-8")
+    except Exception:
+        pass
     proactive_check("work_proactive_window")
+    set_work_report_cooloff()
 
 
 def run_dev_review_check(reason: str) -> None:
@@ -5261,7 +5736,27 @@ def run_dev_review_check(reason: str) -> None:
     # 변경 있으면 proactive_check를 dev_review 이유로 즉시 호출
     review = load_json(STATE / "dev_review_state.json", {})
     if review.get("has_changes"):
+        # 웅삐랩 dev-log에 날짜별 변경 요약 저장
+        try:
+            from pathlib import Path as _P
+            from datetime import date as _date
+            _lab_dev = _P.home() / "Projects/woongbbi-lab/projects/whale-survivors/dev-log"
+            _lab_dev.mkdir(parents=True, exist_ok=True)
+            _log_file = _lab_dev / f"{_date.today().isoformat()}.md"
+            _projects = review.get("projects", [])
+            _lines = [f"# dev-log {_date.today().isoformat()}\n"]
+            for _p in _projects:
+                _lines.append(f"## {_p.get('project','?')}")
+                for _f in _p.get("modified_files", []):
+                    _lines.append(f"- {_f}")
+                for _c in _p.get("recent_commits", []):
+                    _lines.append(f"- commit: {_c.get('message','')[:60]}")
+                _lines.append("")
+            _log_file.write_text("\n".join(_lines), encoding="utf-8")
+        except Exception:
+            pass
         proactive_check("dev_review_window")
+        set_work_report_cooloff()
 
 
 def proactive_check(reason: str) -> None:
@@ -5284,12 +5779,47 @@ def proactive_check(reason: str) -> None:
         )
     now_dt = now_local()
     current_hm = now_dt.strftime("%H:%M")
-    quiet_start, quiet_end = proactive.get("guards", {}).get("sleep_quiet_hours", "00:30-05:45").split("-")
+    quiet_start, quiet_end = proactive.get("guards", {}).get("sleep_quiet_hours", "00:30-07:05").split("-")
     # Handle a quiet-hours window that may wrap past midnight.
     if quiet_start <= quiet_end:
         in_quiet_hours = quiet_start <= current_hm <= quiet_end
     else:
         in_quiet_hours = current_hm >= quiet_start or current_hm <= quiet_end
+    # wakeup_gate: daily_schedule_state의 wakeup_time 직전까지 추가 억제
+    try:
+        _sched = load_json(STATE / "daily_schedule_state.json", {})
+        _wakeup = (_sched.get("morning") or {}).get("wakeup_time", "")
+        if _wakeup and current_hm < _wakeup and not in_quiet_hours:
+            in_quiet_hours = True  # wakeup_time 전이면 quiet_hours로 처리
+    except Exception:
+        pass
+    # morning_first_slot: 기상 직후 60분 이내 아직 오늘 proactive 미발송이면 아침 첫 슬롯
+    _morning_first_slot_open = False
+    try:
+        _sched3 = load_json(STATE / "daily_schedule_state.json", {})
+        _wakeup3 = (_sched3.get("morning") or {}).get("wakeup_time", "")
+        if _wakeup3:
+            _wt_h, _wt_m = (int(x) for x in _wakeup3.split(":"))
+            _now_total = now_dt.hour * 60 + now_dt.minute
+            _wt_total = _wt_h * 60 + _wt_m
+            if _wt_total <= _now_total <= _wt_total + 60:
+                # 오늘 발송 이력 확인 (messages log 기준)
+                _today_str = now_dt.strftime("%Y-%m-%d")
+                _today_msg_log = MESSAGES / f"{_today_str}.jsonl"
+                _today_sent = False
+                if _today_msg_log.exists():
+                    for _line in _today_msg_log.read_text(encoding="utf-8").splitlines():
+                        try:
+                            _entry = json.loads(_line)
+                            if _entry.get("direction") == "outgoing":
+                                _today_sent = True
+                                break
+                        except Exception:
+                            pass
+                if not _today_sent:
+                    _morning_first_slot_open = True
+    except Exception:
+        pass
     is_guard_recheck = reason == "recent_message_guard_recheck"
     is_scheduled_proactive = reason.endswith("_window")
     follow_up_minutes = float(proactive.get("guards", {}).get("waiting_reply_followup_minutes", 3))
@@ -5307,9 +5837,11 @@ def proactive_check(reason: str) -> None:
     work_hint = load_json(STATE / "work_proactive_hint.json", {}) if reason == "work_proactive_window" else {}
     work_proactive_focus = work_hint.get("focus_map", work_hint.get("focus_map", None)) or work_hint.get("focus") if work_hint.get("type") == "work_proactive" else None
     # 웅삐 자체 비지 블록 체크 (작업/수면 중 선톡 전면 억제)
+    # dev_review/work_proactive는 프로젝트 자동화라 self_busy 무관하게 실행
+    _BYPASS_SELF_BUSY_REASONS = {"dev_review_window", "work_proactive_window"}
     self_busy_state = load_json(SELF_BUSY_STATE_PATH, {})
     self_block = self_busy_state.get("current_block")
-    if self_block and self_block.get("type") not in {None, "free"}:
+    if reason not in _BYPASS_SELF_BUSY_REASONS and self_block and self_block.get("type") not in {None, "free"}:
         _until_str = self_block.get("until")
         _still_busy = True
         if _until_str:
@@ -5328,10 +5860,21 @@ def proactive_check(reason: str) -> None:
         detail = "현재 모드가 setting이라 선톡 후보를 만들지 않음"
     elif status == "ready" and in_quiet_hours:
         status = "suppressed_sleep_quiet_hours"
-        detail = "수면 시간대라 후보 생성 억제"
+        try:
+            _sched2 = load_json(STATE / "daily_schedule_state.json", {})
+            _wakeup2 = (_sched2.get("morning") or {}).get("wakeup_time", "")
+            if _wakeup2 and current_hm < _wakeup2:
+                detail = f"기상 전 wakeup_gate 억제 (wakeup_time={_wakeup2})"
+            else:
+                detail = "수면 시간대라 후보 생성 억제"
+        except Exception:
+            detail = "수면 시간대라 후보 생성 억제"
     elif status == "ready" and guard["conversation_active"]:
         status = "suppressed_active_conversation"
         detail = "최근 대화가 진행 중이라 선톡 억제"
+    elif status == "ready" and reason in _BYPASS_SELF_BUSY_REASONS and guard["waiting_reply"] and not guard["conversation_active"]:
+        # 업무 타이머는 waiting_reply 무시 — 선톡 시점 지나면 맥락이 사라짐
+        pass  # status remains "ready"
     elif status == "ready" and guard["waiting_reply"]:
         minutes_since_last_outgoing = float(guard.get("minutes_since_last_outgoing") or 0.0)
         unanswered_outgoing_count = int(guard.get("unanswered_outgoing_count") or 0)
@@ -5380,6 +5923,40 @@ def proactive_check(reason: str) -> None:
         status = "suppressed_cooldown"
         detail = "직전 발송 쿨다운 중"
 
+    if status == "ready":
+        try:
+            _photo_p = load_json(PENDING_PROACTIVE_PHOTO_PATH, {})
+            _photo_at = _photo_p.get("created_at", "")
+            if _photo_at and _photo_p.get("status") in {"sent", "pending", "failed"}:
+                _photo_age = (now_dt - datetime.fromisoformat(_photo_at)).total_seconds() / 60
+                if _photo_age <= 10:
+                    status = "suppressed_photo_block"
+                    detail = "사진 이벤트 직후 proactive 억제 (10분 쿨다운)"
+        except Exception:
+            pass
+
+    if status == "ready" and reason not in _BYPASS_SELF_BUSY_REASONS:
+        try:
+            _pattern_cr = load_json(PROACTIVE_PATTERN_REPORT_PATH, {})
+            _cooloff_until = _pattern_cr.get("work_report_cooloff_until", "")
+            if _cooloff_until and now_dt < datetime.fromisoformat(_cooloff_until):
+                status = "suppressed_work_report_cooloff"
+                detail = f"작업 보고 직후 일반 proactive 억제 (until {_cooloff_until[11:16]})"
+        except Exception:
+            pass
+
+    if status == "ready" and reason not in _BYPASS_SELF_BUSY_REASONS:
+        try:
+            _pattern_dl = load_json(PROACTIVE_PATTERN_REPORT_PATH, {})
+            _today_dl = now_dt.strftime("%Y-%m-%d")
+            if _pattern_dl.get("current_date") == _today_dl:
+                _sent_today = int(_pattern_dl.get("sent_text_count", 0)) + int(_pattern_dl.get("sent_voice_count", 0))
+                if _sent_today >= 6:
+                    status = "suppressed_daily_limit"
+                    detail = f"하루 proactive 총량 상한 ({_sent_today}회)"
+        except Exception:
+            pass
+
     if status != "ready":
         update_voice_share_runtime(status, detail or reason)
         append_response_decision_log(
@@ -5400,6 +5977,13 @@ def proactive_check(reason: str) -> None:
     if status == "ready" and (scenario or sudden_candidate or waiting_reply_followup):
         candidate_type = "planned_proactive"
         selected = None
+        # morning_first_slot: 기상 직후 첫 proactive는 morning_check_in만 허용
+        if _morning_first_slot_open:
+            waiting_reply_followup = None  # follow-up 차단
+            sudden_candidate = None        # sudden 차단
+            # scenario를 morning_check_in으로 강제
+            if not scenario or scenario.get("id") not in {"morning_check_in"}:
+                scenario = {"id": "morning_check_in", "examples": ["잘 잤어?", "일어났어?", "아침은 어때"]}
         if waiting_reply_followup:
             selected = waiting_reply_followup
             candidate_type = waiting_reply_followup.get("candidate_type", "planned_proactive")
@@ -5436,11 +6020,14 @@ def proactive_check(reason: str) -> None:
                 seed_hint=selected.get("scenario_id") or selected.get("intent_key") or candidate_type,
             )
         if load_json(MEMORY_DECAY_PATH, {}).get("long_term_memory"):
-            top_memory = load_json(MEMORY_DECAY_PATH, {}).get("long_term_memory", [])[0].get("key")
+            _mem_state = load_json(MEMORY_DECAY_PATH, {})
+            top_memory = (_mem_state.get("long_term_memory", []) or [{}])[0].get("key")
+            _behavior = _mem_state.get("behavior_shaping", "")
             if top_memory == "user_fatigue" and "뭐 하고 있어?" in base_message:
                 base_message = base_message.replace("뭐 하고 있어?", "오늘은 좀 덜 지쳤는지 궁금해.")
             elif top_memory == "photo_affection" and "생각나" in base_message:
-                base_message = base_message.replace("생각나", "생각나고 괜히 더 보고 싶어지")
+                if _behavior == "먼저_말_걸고_싶어짐":
+                    base_message = base_message.replace("생각나", "생각나고 괜히 더 보고 싶어지")
         base_message = inject_taste_friction(base_message)
         base_message = apply_signature_style(base_message)
         base_message = apply_repetition_guard(base_message)
@@ -5552,6 +6139,14 @@ def handle_timer(timer: dict) -> str:
     scope = timer.get("scope")
     if timer_type == "time_block_update":
         target_activity = timer.get("target_activity")
+        # 기상 타이머에서 세션 리셋 — 전날 코드리뷰/자동화 컨텍스트 오염 방지
+        if target_activity in {"waking_up", "getting_ready"} and timer.get("id") in {"weekday_wakeup_bootstrap", "weekend_wakeup"}:
+            session_id_file = SESSION / "codex-session.woongbbi.id"
+            try:
+                session_id_file.write_text("", encoding="utf-8")
+                append_worker_note("session_reset:daily_wakeup")
+            except Exception:
+                pass
         apply_time_block(target_activity, reason)
         check_self_busy_expiry(triggered_activity=target_activity or "")
         auto_set_self_busy_from_activity(target_activity or "")
@@ -5575,6 +6170,14 @@ def handle_timer(timer: dict) -> str:
     if timer_type == "dev_review_check":
         run_dev_review_check(reason)
         return "dev_review_check"
+    if timer_type == "lab_session":
+        import importlib.util, sys as _sys
+        _spec = importlib.util.spec_from_file_location("lab_session_worker", TOOLS / "lab_session_worker.py")
+        _mod = importlib.util.module_from_spec(_spec)
+        _spec.loader.exec_module(_mod)
+        _mod.run_lab_session()
+        set_work_report_cooloff()
+        return "lab_session"
     if timer_type == "daily_diary":
         return write_daily_diary(reason)
     if timer_type == "periodic_tick":

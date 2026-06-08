@@ -1,0 +1,281 @@
+{
+  "schema_version": 1,
+  "managed_by": "shot_case_selector",
+  "description": "상태별 허용 샷 케이스 프리셋. 자유 변주 대신 이 세트 안에서만 랜덤 선택.",
+  "selfie_only_rule": "모든 케이스는 웅삐가 스스로 찍는 구조(front_camera_handheld / mirror_selfie / phone_propped_timer)만 허용. 제3자 candid 구도 전면 금지.",
+
+  "groups": {
+    "home_work_white_tee_black_shorts": {
+      "outfit_family": ["OC-06", "OC-05"],
+      "space_anchors": ["SP-01"],
+      "pose_variants": [
+        {
+          "id": "shirt_hem_touch",
+          "hand_action": "shirt_hem_hold",
+          "arm_position": "at_waist",
+          "torso_turn": "slight_side",
+          "shoulder_shape": "inward_soft",
+          "vibe": "쑥스러운 느낌, 말 고르기 직전"
+        },
+        {
+          "id": "table_arms_fold",
+          "hand_action": "arms_loosely_crossed_on_desk",
+          "arm_position": "forearms_on_desk",
+          "torso_turn": "slight_forward_lean",
+          "shoulder_shape": "inward_soft",
+          "vibe": "같이 얘기하는 느낌, 눈앞에 붙은 듯한 친밀감"
+        },
+        {
+          "id": "arms_gathered_inward",
+          "hand_action": "opposite_arm_light_touch",
+          "arm_position": "both_arms_inward",
+          "torso_turn": "none",
+          "shoulder_shape": "both_drawn_in",
+          "vibe": "연인 앞 애교, 여리하고 가까운 인상"
+        }
+      ],
+      "cases": [
+        {
+          "id": "A1_desk_front_selfie_close",
+          "selfie_method": "front_camera_handheld",
+          "space_anchor": "SP-01_desk_area",
+          "framing": "chest_up",
+          "camera_height": "slight_high_angle",
+          "lens_distance": "very_close",
+          "face_angle": "front_facing",
+          "gaze": "lens_eye_contact",
+          "props": ["머그컵", "없음"],
+          "vibe": "작업하다 잠깐 보내는 짧은 셀카"
+        },
+        {
+          "id": "A2_desk_mirror_half_body",
+          "selfie_method": "mirror_selfie",
+          "space_anchor": "SP-01_desk_area",
+          "framing": "half_body",
+          "camera_height": "eye_level",
+          "lens_distance": "mirror_mid_distance",
+          "face_angle": "three_quarter_turn",
+          "gaze": "screen_preview_glance",
+          "props": ["phone_visible_in_mirror"],
+          "vibe": "작업 중 잠깐 체크하는 거울샷"
+        },
+        {
+          "id": "A3_desk_timer_waist_up",
+          "selfie_method": "phone_propped_timer",
+          "space_anchor": "SP-01_desk_area",
+          "framing": "waist_up",
+          "camera_height": "desk_mid_height",
+          "lens_distance": "portrait_distance",
+          "face_angle": "slight_profile",
+          "gaze": "off_to_side_focus",
+          "props": ["머그컵", "키보드", "노트"],
+          "vibe": "일하다가 고개 든 순간"
+        }
+      ]
+    },
+
+    "home_lunch_white_tee_black_shorts": {
+      "outfit_family": ["OC-06", "OC-05"],
+      "space_anchors": ["SP-03"],
+      "pose_variants": [
+        {
+          "id": "cup_hold_casual",
+          "hand_action": "cup_in_hand",
+          "arm_position": "one_arm_cup_hold",
+          "torso_turn": "slight_side",
+          "shoulder_shape": "relaxed_natural",
+          "vibe": "밥 먹다 자연스럽게"
+        },
+        {
+          "id": "shirt_hem_touch",
+          "hand_action": "shirt_hem_hold",
+          "arm_position": "at_waist",
+          "torso_turn": "slight_side",
+          "shoulder_shape": "inward_soft",
+          "vibe": "쑥스러운 느낌"
+        },
+        {
+          "id": "utensil_pause",
+          "hand_action": "utensil_in_hand_paused_mid_air",
+          "arm_position": "mid_air_utensil_hold",
+          "torso_turn": "slight_forward",
+          "shoulder_shape": "natural",
+          "vibe": "먹다가 보내는 생활샷"
+        }
+      ],
+      "cases": [
+        {
+          "id": "B1_dining_front_food_selfie",
+          "selfie_method": "front_camera_handheld",
+          "space_anchor": "SP-03_dining_kitchen",
+          "framing": "chest_up",
+          "camera_height": "collarbone_level",
+          "lens_distance": "arm_length_standard",
+          "face_angle": "front_facing",
+          "gaze": "food_then_lens",
+          "props": ["식사", "컵", "그릇"],
+          "vibe": "밥 먹다가 자연스럽게 보내는 셀피"
+        },
+        {
+          "id": "B2_kitchen_mirror_quick_check",
+          "selfie_method": "mirror_selfie",
+          "space_anchor": "SP-03_dining_kitchen",
+          "framing": "waist_up",
+          "camera_height": "eye_level",
+          "lens_distance": "mirror_mid_distance",
+          "face_angle": "three_quarter_turn",
+          "gaze": "screen_preview_glance",
+          "props": ["phone_visible_in_mirror"],
+          "vibe": "식사 전후 짧은 체크"
+        },
+        {
+          "id": "B3_dining_timer_seated",
+          "selfie_method": "phone_propped_timer",
+          "space_anchor": "SP-03_dining_kitchen",
+          "framing": "half_body_seated",
+          "camera_height": "table_height",
+          "lens_distance": "portrait_distance",
+          "face_angle": "front_facing",
+          "gaze": "slightly_off_camera",
+          "props": ["식사", "포크", "컵"],
+          "vibe": "혼자 밥 먹는 생활샷"
+        }
+      ]
+    },
+
+    "night_home_relaxed_soft_homewear": {
+      "outfit_family": ["OC-05", "OC-06", "OC-07", "OC-08", "OC-11"],
+      "space_anchors": ["SP-02"],
+      "pose_variants": [
+        {
+          "id": "soft_lean_inward",
+          "hand_action": "light_hold_near_chest",
+          "arm_position": "close_to_body",
+          "torso_turn": "slight_inward_lean",
+          "shoulder_shape": "one_shoulder_forward_soft",
+          "vibe": "조용한 애교, 말 걸기 직전 분위기"
+        },
+        {
+          "id": "chin_under_sleeve",
+          "hand_action": "sleeve_or_blanket_lightly_at_chin",
+          "arm_position": "raised_near_chin",
+          "torso_turn": "slight_forward",
+          "shoulder_shape": "both_relaxed",
+          "vibe": "잘 붙는 포근한 애교"
+        },
+        {
+          "id": "pillow_hug",
+          "hand_action": "pillow_held_gently_in_front",
+          "arm_position": "hugging_pillow",
+          "torso_turn": "none",
+          "shoulder_shape": "wrapped_around_pillow",
+          "vibe": "포근함, 의존적이지 않은 귀여움"
+        }
+      ],
+      "cases": [
+        {
+          "id": "C1_bedside_front_soft_selfie",
+          "selfie_method": "front_camera_handheld",
+          "space_anchor": "SP-02_bed_area",
+          "framing": "chest_up",
+          "camera_height": "slight_high_angle",
+          "lens_distance": "very_close",
+          "face_angle": "front_facing",
+          "gaze": "downward_relaxed",
+          "props": ["베개", "이불", "침대 옆 조명"],
+          "vibe": "잠들기 전 짧은 셀카"
+        },
+        {
+          "id": "C2_bedside_mirror_loose",
+          "selfie_method": "mirror_selfie",
+          "space_anchor": "SP-02_bed_area",
+          "framing": "half_body",
+          "camera_height": "eye_level",
+          "lens_distance": "mirror_mid_distance",
+          "face_angle": "slight_profile",
+          "gaze": "screen_preview_glance",
+          "props": ["phone_visible_in_mirror"],
+          "vibe": "자기 전 옷차림/표정 체크"
+        },
+        {
+          "id": "C3_bedside_timer_lamp",
+          "selfie_method": "phone_propped_timer",
+          "space_anchor": "SP-02_bed_area",
+          "framing": "waist_up_seated",
+          "camera_height": "bedside_table_height",
+          "lens_distance": "portrait_distance",
+          "face_angle": "three_quarter_turn",
+          "gaze": "lamp_side_glance",
+          "props": ["침대 옆 조명", "물컵"],
+          "vibe": "조용한 밤 생활샷"
+        }
+      ]
+    },
+
+    "bedside_after_shower": {
+      "outfit_family": ["OC-08", "OC-10"],
+      "space_anchors": ["SP-02"],
+      "pose_variants": [
+        {
+          "id": "towel_corner_hold",
+          "hand_action": "fingertips_lightly_holding_towel_edge",
+          "arm_position": "one_arm_across_body_at_chest",
+          "torso_turn": "slight_side",
+          "shoulder_shape": "one_shoulder_slightly_raised",
+          "vibe": "막 닦고 잠깐 멈춘 찰나, 자연스러운 노출감"
+        },
+        {
+          "id": "arms_gathered_inward",
+          "hand_action": "opposite_arm_light_touch",
+          "arm_position": "both_arms_inward",
+          "torso_turn": "none",
+          "shoulder_shape": "both_drawn_in",
+          "vibe": "연인 앞 수줍음, 여리하고 가까운 인상"
+        }
+      ],
+      "cases": [
+        {
+          "id": "D1_post_shower_front_close",
+          "selfie_method": "front_camera_handheld",
+          "space_anchor": "SP-02_bed_area",
+          "framing": "chest_up",
+          "camera_height": "slight_high_angle",
+          "lens_distance": "very_close",
+          "face_angle": "front_facing",
+          "gaze": "quiet_eye_contact",
+          "props": ["수건", "드라이어"],
+          "vibe": "샤워 후 머리 말리다 찍는 셀카"
+        },
+        {
+          "id": "D2_post_shower_timer_bedside",
+          "selfie_method": "phone_propped_timer",
+          "space_anchor": "SP-02_bed_area",
+          "framing": "waist_up",
+          "camera_height": "bedside_table_height",
+          "lens_distance": "portrait_distance",
+          "face_angle": "three_quarter_turn",
+          "gaze": "towel_side_glance",
+          "props": ["수건", "침대 옆 조명"],
+          "vibe": "샤워 후 침대 옆 생활샷"
+        }
+      ]
+    }
+  },
+
+  "state_to_group_map": {
+    "appearance_branch_map": {
+      "home_work": "home_work_white_tee_black_shorts",
+      "work_morning": "home_work_white_tee_black_shorts",
+      "lunch_break": "home_lunch_white_tee_black_shorts",
+      "night_home_relaxed": "night_home_relaxed_soft_homewear",
+      "sleep_ready": "night_home_relaxed_soft_homewear",
+      "clean_after_shower": "bedside_after_shower"
+    },
+    "outfit_context_map": {
+      "home_casual": "home_work_white_tee_black_shorts",
+      "soft_homewear": "night_home_relaxed_soft_homewear",
+      "summer_sleepwear": "night_home_relaxed_soft_homewear",
+      "bathing": "bedside_after_shower"
+    }
+  }
+}

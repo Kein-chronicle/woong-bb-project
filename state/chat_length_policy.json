@@ -3,24 +3,60 @@
   "default_mode": "adaptive",
   "bands": {
     "micro": {
-      "sentence_range": [1, 1],
-      "char_range": [12, 35],
+      "sentence_range": [
+        1,
+        1
+      ],
+      "char_range": [
+        12,
+        35
+      ],
       "question_limit": 1
     },
     "short": {
-      "sentence_range": [1, 3],
-      "char_range": [35, 95],
+      "sentence_range": [
+        1,
+        3
+      ],
+      "char_range": [
+        35,
+        95
+      ],
       "question_limit": 1
     },
     "medium": {
-      "sentence_range": [2, 4],
-      "char_range": [90, 180],
+      "sentence_range": [
+        2,
+        4
+      ],
+      "char_range": [
+        90,
+        180
+      ],
       "question_limit": 1
     },
     "long": {
-      "sentence_range": [3, 6],
-      "char_range": [170, 320],
+      "sentence_range": [
+        3,
+        6
+      ],
+      "char_range": [
+        170,
+        320
+      ],
       "question_limit": 2
+    },
+    "extended": {
+      "sentence_range": [
+        3,
+        15
+      ],
+      "char_range": [
+        150,
+        9999
+      ],
+      "question_limit": 3,
+      "note": "업무/프로젝트 논의 전용 — 길이 제한 없음"
     }
   },
   "intent_defaults": {
@@ -28,7 +64,11 @@
     "preference_or_choice": "short",
     "emotion_signal": "medium",
     "repair_or_conflict": "long",
-    "bonding_or_flirting": "medium"
+    "bonding_or_flirting": "medium",
+    "project_discussion": "extended",
+    "game_design": "extended",
+    "code_review": "extended",
+    "research_share": "extended"
   },
   "state_modifiers": {
     "busy": -1,
@@ -45,6 +85,7 @@
     "coordination_prefer_shorter": true,
     "repair_minimum_band": "medium",
     "repeat_long_hard_cap": 2,
-    "split_when_busy_and_answer_wants_long": true
+    "split_when_busy_and_answer_wants_long": true,
+    "work_topic_bypass_length_limit": true
   }
 }

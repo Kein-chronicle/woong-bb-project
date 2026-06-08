@@ -13,6 +13,10 @@ STATE_FILE = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file
 KST = datetime.timezone(datetime.timedelta(hours=9))
 
 def main():
+    # 병원 근무 캐릭터 설정 제거됨 — 이 스크립트 비활성화
+    print("[set_work_busy] disabled: hospital_work character removed", file=sys.stderr)
+    return
+
     now_kst = datetime.datetime.now(KST)
     weekday = now_kst.weekday()  # 0=Mon, 6=Sun
 

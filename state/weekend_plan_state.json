@@ -47,8 +47,98 @@
       },
       "last_referenced_at": "2026-05-23T08:55:00+09:00",
       "last_reference_source": "weekend_runtime_auto"
+    },
+    "2026-05-30": {
+      "weekend_key": "2026-05-30",
+      "selected_at": "2026-05-30T19:23:11+09:00",
+      "selected_by": "weekend_runtime_auto",
+      "source_text": "",
+      "preview": "토요일은 늦잠 자고 집에서 커피랑 브런치 먹고, 베이킹하거나 쉬면서 보내는 쪽, 일요일은 늦잠 후 장 보거나 정리하고 저녁은 집밥으로 마무리하는 날",
+      "days": {
+        "sat": {
+          "date": "2026-05-30",
+          "plan_id": "home_recovery_baking",
+          "title": "집콕 회복 + 베이킹",
+          "tags": [
+            "home",
+            "baking",
+            "rest"
+          ],
+          "preview": "늦잠 자고 집에서 커피랑 브런치 먹고, 베이킹하거나 쉬면서 보내는 쪽",
+          "blocks": {
+            "weekend_wakeup": "평소보다 늦게 일어나서 이불에서 조금 더 뒹굴다가 천천히 몸을 깨우는 중",
+            "weekend_brunch_or_coffee": "집에서 커피 내리고 간단한 브런치 챙기면서 오늘은 집에서 쉬엄쉬엄 보내기로 마음먹은 상태",
+            "weekend_outing_or_rest": "오후에는 베이킹이나 요리 조금 하고 책이나 영상 보면서 거의 집에서 쉬는 흐름",
+            "weekend_evening": "저녁엔 홈카페처럼 디저트 곁들여 먹고 조용히 쉬면서 느긋하게 대화하기 좋은 분위기"
+          }
+        },
+        "sun": {
+          "date": "2026-05-31",
+          "plan_id": "errands_and_home_reset",
+          "title": "생활 정리 + 집밥",
+          "tags": [
+            "errands",
+            "home",
+            "reset"
+          ],
+          "preview": "늦잠 후 장 보거나 정리하고 저녁은 집밥으로 마무리하는 날",
+          "blocks": {
+            "weekend_wakeup": "밀린 잠 조금 자고 일어나서 집안 정리나 장 볼 생각을 천천히 하는 중",
+            "weekend_brunch_or_coffee": "브런치 먹고 작업 시작 전에 체크리스트 대충 정리하는 상태",
+            "weekend_outing_or_rest": "오후에는 드라마 보고 저녁엔 요리해서 집밥으로 마무리하는 흐름",
+            "weekend_evening": "저녁엔 직접 챙긴 집밥 먹고 주말 마무리답게 집에서 안정감 있게 쉬는 분위기"
+          }
+        }
+      },
+      "last_referenced_at": "2026-05-31T23:59:23+09:00",
+      "last_reference_source": "weekend_runtime_auto"
+    },
+    "2026-06-06": {
+      "weekend_key": "2026-06-06",
+      "selected_at": "2026-06-03T20:57:05+09:00",
+      "selected_by": "weekend_runtime_auto",
+      "source_text": "",
+      "preview": "토요일은 오후에 그림 그리거나 드라마 보고 저녁은 간단히 요리해서 집에서 쉬는 날, 일요일은 늦잠 자고 집에서 커피랑 브런치 먹고, 베이킹하거나 쉬면서 보내는 쪽",
+      "days": {
+        "sat": {
+          "date": "2026-06-06",
+          "plan_id": "friend_meet_and_dinner",
+          "title": "가벼운 약속 + 저녁 외식",
+          "tags": [
+            "outing",
+            "friend",
+            "dinner"
+          ],
+          "preview": "오후에 그림 그리거나 드라마 보고 저녁은 간단히 요리해서 집에서 쉬는 날",
+          "blocks": {
+            "weekend_wakeup": "조금 늦게 일어났는데 오후에 가볍게 나갈 일이 있어서 느슨하지만 완전 퍼져 있진 않은 상태",
+            "weekend_brunch_or_coffee": "천천히 준비하면서 브런치 먹고 드라마 하나 틀까 생각하는 흐름",
+            "weekend_outing_or_rest": "오후엔 집에서 가볍게 쉬거나 오빠랑 같이 뭔가 보는 흐름",
+            "weekend_evening": "저녁은 집에서 요리해서 먹거나 간단하게 챙겨서 기분 좋게 마무리"
+          }
+        },
+        "sun": {
+          "date": "2026-06-07",
+          "plan_id": "home_recovery_baking",
+          "title": "집콕 회복 + 베이킹",
+          "tags": [
+            "home",
+            "baking",
+            "rest"
+          ],
+          "preview": "늦잠 자고 집에서 커피랑 브런치 먹고, 베이킹하거나 쉬면서 보내는 쪽",
+          "blocks": {
+            "weekend_wakeup": "평소보다 늦게 일어나서 이불에서 조금 더 뒹굴다가 천천히 몸을 깨우는 중",
+            "weekend_brunch_or_coffee": "집에서 커피 내리고 간단한 브런치 챙기면서 오늘은 집에서 쉬엄쉬엄 보내기로 마음먹은 상태",
+            "weekend_outing_or_rest": "오후에는 베이킹이나 요리 조금 하고 책이나 영상 보면서 거의 집에서 쉬는 흐름",
+            "weekend_evening": "저녁엔 홈카페처럼 디저트 곁들여 먹고 조용히 쉬면서 느긋하게 대화하기 좋은 분위기"
+          }
+        }
+      },
+      "last_referenced_at": "2026-06-07T23:59:13+09:00",
+      "last_reference_source": "weekend_runtime_auto"
     }
   },
-  "last_selected_weekend_key": "2026-05-23",
+  "last_selected_weekend_key": "2026-06-06",
   "notes": "주말 휴무일 플랜을 여러 후보 중 하나로 미리 고정해 주말 답변과 상황 설정에 재사용한다."
 }

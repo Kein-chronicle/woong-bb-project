@@ -1,34 +1,92 @@
 {
-  "schema_version": 1,
-  "managed_by": "situation_engine",
-  "generated_at": "2026-05-29T17:53:31.159683+09:00",
-  "morning_prep": {
-    "time": "07:30",
-    "activity": "waking_up_and_getting_ready"
+  "date": "2026-06-09",
+  "day_type": "weekday",
+  "morning": {
+    "wakeup_time": "06:30",
+    "morning_prep": {
+      "drink": "물 한 잔",
+      "skincare_done": "06:45",
+      "outfit": "오버핏 흰 반팔 + 짧은 반바지",
+      "dress_done": "07:00"
+    },
+    "work_start": "07:10",
+    "outfit": "오버핏 흰 반팔 + 짧은 반바지",
+    "snack_mid_morning": "아이스크림"
   },
-  "morning_work": {
-    "time": "08:00",
-    "location": "집 컴퓨터 앞",
-    "activity": "programming"
+  "project_schedule": {
+    "note": "오빠 프로젝트 작업과 연동된 웅삐 자체 업무 일정. 이 시간들은 자동으로 수행되므로 오빠한테 따로 보고 안 해도 됨.",
+    "timers": [
+      {
+        "time": "09:30",
+        "label": "업무 선톡 — 오전 프로젝트 현황 정리"
+      },
+      {
+        "time": "10:00",
+        "label": "코드 변경 스캔 — 오빠 작업 변경사항 체크"
+      },
+      {
+        "time": "11:00",
+        "label": "웅삐랩 자율 연구 세션 1"
+      },
+      {
+        "time": "14:30",
+        "label": "오후 AI/게임 리서치 선톡"
+      },
+      {
+        "time": "15:00",
+        "label": "코드 변경 스캔 2"
+      },
+      {
+        "time": "17:00",
+        "label": "웅삐랩 자율 연구 세션 2"
+      },
+      {
+        "time": "20:00",
+        "label": "저녁 코드 변경 스캔"
+      },
+      {
+        "time": "20:30",
+        "label": "저녁 업무 업데이트 선톡"
+      },
+      {
+        "time": "20:50",
+        "label": "웅삐랩 자율 연구 세션 3"
+      }
+    ]
   },
-  "lunch_break": {
-    "time": "12:00",
-    "location": "집 부엌/식탁",
-    "activity": "home_cooking_and_eating"
+  "lunch": {
+    "menu": "버거",
+    "type": "delivery",
+    "wait": 25,
+    "time": "12:20",
+    "end_time": "13:00",
+    "location": "집"
   },
-  "afternoon_work": {
-    "time": "13:00",
-    "location": "집 컴퓨터 앞",
-    "activity": "programming"
+  "afternoon": {
+    "work_continue": "13:00",
+    "snack_afternoon": "과자",
+    "work_wind_down": "17:30"
   },
-  "evening_free": {
-    "time": "18:00",
-    "location": "집",
-    "activity": "dinner_and_relax"
+  "dinner": {
+    "menu": "초밥 배달",
+    "type": "delivery",
+    "wait": 28,
+    "prep_time": "18:30",
+    "eat_time": "18:50",
+    "location": "집"
+  },
+  "evening": {
+    "start_time": "19:30",
+    "activity_type": "스트레칭",
+    "detail": "오래 앉아 있어서 몸 좀 풀기",
+    "shower_after": "21:00",
+    "shower_done": "21:30",
+    "skincare_night": "21:40"
   },
   "night": {
-    "time": "22:00",
-    "location": "집",
-    "activity": "wind_down_or_late_work"
-  }
+    "wind_down": "22:00",
+    "sleep_target": "23:30"
+  },
+  "schema_version": 2,
+  "managed_by": "generate_daily_schedule_v2"
 }

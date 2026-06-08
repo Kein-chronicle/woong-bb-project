@@ -95,6 +95,14 @@ CONFIG_HINTS = [
 ]
 
 CONFIG_TOPIC_WHITELIST = {"setting_feedback"}
+
+# 자기 자신/응우 관련 주제는 prefer_topics로 승격 금지
+# 대화에는 나올 수 있지만 장기 선호 토픽으로 누적되면 안 됨
+PREFER_TOPICS_BLOCKLIST = {
+    "setting_feedback",   # 웅삐 규칙/설정 관련 운영 피드백
+    "appearance_compliment",  # 사진/외형 칭찬은 대화 반응용, 세션 기획 주제로 쓰지 않음
+    "photo_request",      # 같은 이유
+}
 CONFIG_ACTION_WHITELIST = {
     "preference_learning",
     "send_text_after_photo",
@@ -267,6 +275,9 @@ def refresh_bias_summary(state: dict) -> None:
         for key, value in state[bucket_name].items():
             score = int(value.get("score", 0))
             if score >= score_min:
+                # 자기 자신/운영 관련 주제는 prefer_topics에서 제외
+                if bucket_name == "topic_scores" and key in PREFER_TOPICS_BLOCKLIST:
+                    continue
                 items.append({"key": key, "score": score})
         return sorted(items, key=lambda item: item["score"], reverse=True)[:5]
 
