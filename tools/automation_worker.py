@@ -2875,8 +2875,26 @@ def build_image_prompt_plan(reason: str) -> dict:
             expression_intensity_pool = ["gentle", "warm", "playful"]
             spontaneity_pool = ["casual_update", "table_pause", "between_tasks"]
             scene_focus = "lifestyle_space"
+        elif lunch_sub == "waiting_for_food":
+            # 음식 아직 안 온 상태 — food props 전면 금지
+            image_type = "lunch_waiting_selfie"
+            shot_pool = ["chest_up", "half_body", "waist_up"]
+            angle_pool = ["front_phone_selfie", "three_quarter_arm_length", "slight_high_angle"]
+            expression_pool = ["closed_lip_smile", "tired_but_cute", "content_relaxed"]
+            pose_pool = ["chin_rest", "resting_on_table", "cup_near_face", "phone_in_hand_relaxed"]
+            framing_pool = ["subject_centered", "environment_balanced"]  # food_and_face_combo 제외
+            capture_method_pool = ["front_camera_handheld", "propped_phone_timer"]
+            space_anchor_pool = ["desk_eating_area", "living_room_table", "room_corner"]
+            face_angle_pool = ["front_facing", "three_quarter_turn", "chin_lift"]
+            gaze_pool = ["lens_eye_contact", "downward_relaxed", "off_to_side_focus"]
+            camera_height_pool = ["eye_level", "slight_above_eye_level"]
+            lens_distance_pool = ["arm_length_standard", "table_distance"]
+            body_orientation_pool = ["seated_open", "leaning_to_table", "one_shoulder_forward"]
+            expression_intensity_pool = ["gentle", "tired_soft", "warm"]
+            spontaneity_pool = ["table_pause", "casual_update", "caught_mid_motion"]
+            scene_focus = "lunch_waiting_mood"
         else:
-            # waiting_for_food / eating_lunch / finishing_lunch / default
+            # eating_lunch / finishing_lunch / default — 음식 도착 후
             image_type = "lunch_eating_selfie"
             shot_pool = ["chest_up", "half_body", "table_portrait", "waist_up"]
             angle_pool = ["seated_three_quarter", "front_phone_selfie", "low_table_angle"]
