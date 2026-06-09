@@ -5665,6 +5665,10 @@ def check_proactive_photo() -> None:
     guard = compute_conversation_guard()
     if guard.get("conversation_active"):
         return
+    # 음식 기다리는 중이면 스킵 — 도착 후 eating_lunch 단계에서만 전송
+    presence = load_json(PRESENCE_PATH, {})
+    if presence.get("lunch_sub_phase") == "waiting_for_food":
+        return
     save_json(PENDING_PROACTIVE_PHOTO_PATH, {
         "created_at": now_iso(),
         "window": win["id"],
