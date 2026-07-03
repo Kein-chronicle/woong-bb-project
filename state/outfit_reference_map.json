@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "managed_by": "image_reference_validator",
+  "description": "outfit_context별 허용 outfit reference family. 생성 직전 검사에 사용.",
+  "outfit_context_map": {
+    "soft_homewear": ["OC-05", "OC-06", "OC-08", "OC-11"],
+    "summer_sleepwear": ["OC-05", "OC-06", "OC-08"],
+    "sleep_ready": ["OC-07", "OC-08", "OC-09"],
+    "night_home_relaxed": ["OC-06", "OC-07", "OC-08", "OC-11"],
+    "home_relaxed": ["OC-05", "OC-06", "OC-08", "OC-11"],
+    "home_casual": ["OC-01", "OC-02", "OC-04", "OC-06", "OC-11"],
+    "exercise_block": ["OC-03", "OC-13"],
+    "cafe_outing": ["OC-01", "OC-02", "OC-04", "OC-12"],
+    "dining_out": ["OC-01", "OC-04", "OC-12"],
+    "bathing": ["OC-10"],
+    "morning_fresh": ["OC-06", "OC-08", "OC-10"]
+  },
+  "space_anchor_map": {
+    "bedside": ["SP-02"],
+    "bed_area": ["SP-02"],
+    "room_wide": ["SP-04"],
+    "desk_area": ["SP-01"],
+    "dining_kitchen": ["SP-03"],
+    "neutral_personal_space": ["SP-02", "SP-04"],
+    "bedroom_mirror": ["SP-02"],
+    "vanity_corner": ["SP-02"],
+    "living_room": ["SP-04"],
+    "kitchen": ["SP-03"]
+  },
+  "space_anchor_downgrade": {
+    "bedroom_mirror": "bedside",
+    "vanity_corner": "bedside"
+  },
+  "notes": "bedroom_mirror/vanity_corner는 전용 레퍼런스 이미지 없음 → SP-02로 강등"
+}

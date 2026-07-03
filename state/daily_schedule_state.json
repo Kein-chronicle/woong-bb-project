@@ -1,17 +1,17 @@
 {
-  "date": "2026-06-09",
+  "date": "2026-07-03",
   "day_type": "weekday",
   "morning": {
-    "wakeup_time": "06:30",
+    "wakeup_time": "07:10",
     "morning_prep": {
       "drink": "물 한 잔",
-      "skincare_done": "06:45",
-      "outfit": "오버핏 흰 반팔 + 짧은 반바지",
-      "dress_done": "07:00"
+      "skincare_done": "07:25",
+      "outfit": "루즈핏 후디 + 레깅스",
+      "dress_done": "07:40"
     },
-    "work_start": "07:10",
-    "outfit": "오버핏 흰 반팔 + 짧은 반바지",
-    "snack_mid_morning": "아이스크림"
+    "work_start": "07:50",
+    "outfit": "루즈핏 후디 + 레깅스",
+    "snack_mid_morning": "포도"
   },
   "project_schedule": {
     "note": "오빠 프로젝트 작업과 연동된 웅삐 자체 업무 일정. 이 시간들은 자동으로 수행되므로 오빠한테 따로 보고 안 해도 됨.",
@@ -55,30 +55,30 @@
     ]
   },
   "lunch": {
-    "menu": "버거",
+    "menu": "타코야키 분식",
     "type": "delivery",
-    "wait": 25,
+    "wait": 20,
     "time": "12:20",
     "end_time": "13:00",
     "location": "집"
   },
   "afternoon": {
     "work_continue": "13:00",
-    "snack_afternoon": "과자",
+    "snack_afternoon": "치즈볼",
     "work_wind_down": "17:30"
   },
   "dinner": {
-    "menu": "초밥 배달",
+    "menu": "버거 세트",
     "type": "delivery",
-    "wait": 28,
+    "wait": 25,
     "prep_time": "18:30",
     "eat_time": "18:50",
     "location": "집"
   },
   "evening": {
     "start_time": "19:30",
-    "activity_type": "스트레칭",
-    "detail": "오래 앉아 있어서 몸 좀 풀기",
+    "activity_type": "게임",
+    "detail": "가볍게 즐기는 타입 취향",
     "shower_after": "21:00",
     "shower_done": "21:30",
     "skincare_night": "21:40"

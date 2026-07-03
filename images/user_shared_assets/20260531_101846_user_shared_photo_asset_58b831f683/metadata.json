@@ -1,0 +1,97 @@
+{
+  "asset_id": "20260531_101846_user_shared_photo_asset_58b831f683",
+  "created_at": "2026-05-31T10:18:46+09:00",
+  "last_seen_at": "2026-05-31T10:18:46+09:00",
+  "source": "telegram_incoming",
+  "telegram_user": "",
+  "kind": "user_shared_photo",
+  "title": "머핀틀에 구운 머핀 사진",
+  "canonical_path": "/Users/kein/Projects/woong-bb/images/user_shared_assets/20260531_101846_user_shared_photo_asset_58b831f683/source.jpg",
+  "asset_dir": "/Users/kein/Projects/woong-bb/images/user_shared_assets/20260531_101846_user_shared_photo_asset_58b831f683",
+  "source_paths": [
+    "/Users/kein/Projects/woong-bb/images/incoming/2026-05-31/101802_telegram_photo_AQADQw9rG1Sv4FR-.jpg"
+  ],
+  "source_sha256": "58b831f6834231ed5b385f0b8ceac1e30e5ecec5adbc272d83069dbecd1010c4",
+  "captions": [
+    "머핀틀에도 구었어 ㅋㅋ 이것도 줄테니깐 ㅋㅋ 이대로 들고 사진한장 찍어줘 ㅋㅋ"
+  ],
+  "tags": [
+    "갓구운간식",
+    "나눠주겠다는_장난스러운_순간",
+    "디저트",
+    "머핀",
+    "머핀틀",
+    "베이킹",
+    "식탁",
+    "오븐",
+    "오븐장갑",
+    "오빠가_직접_구운_간식",
+    "주방",
+    "홈베이킹"
+  ],
+  "analysis": {
+    "asset_kind": "photo",
+    "title": "머핀틀에 구운 머핀 사진",
+    "visible_summary_ko": "오빠가 오븐 장갑 낀 손으로 6구 머핀틀을 들고 있고, 파란 머핀컵에 담긴 노릇한 머핀 다섯 개가 막 구워진 듯 보이는 사진",
+    "visible_elements": [
+      "6구 머핀틀",
+      "파란 머핀컵",
+      "노릇하게 구워진 머핀 5개",
+      "주황색 오븐 장갑",
+      "식탁 매트와 식탁 배경"
+    ],
+    "scene_tags": [
+      "홈베이킹",
+      "주방",
+      "갓구운간식"
+    ],
+    "object_tags": [
+      "머핀틀",
+      "머핀",
+      "오븐장갑",
+      "식탁"
+    ],
+    "relationship_tags": [
+      "오빠가 직접 구운 간식",
+      "나눠주겠다는 장난스러운 순간"
+    ],
+    "reuse_triggers": [
+      "머핀",
+      "베이킹",
+      "오븐",
+      "디저트"
+    ],
+    "reusable_subjects": [
+      {
+        "type": "food",
+        "value": "머핀틀에 구운 노릇한 머핀"
+      },
+      {
+        "type": "prop",
+        "value": "주황색 오븐 장갑 낀 손"
+      },
+      {
+        "type": "table_setting",
+        "value": "초록 식탁 매트가 놓인 밝은 식탁"
+      }
+    ],
+    "generation_reuse": {
+      "allowed": true,
+      "face_reference": {
+        "allowed": false,
+        "requires_explicit_user_request": true
+      }
+    },
+    "privacy": {
+      "reuse_face_without_explicit_request": false,
+      "reuse_user_face_with_explicit_request": true
+    }
+  },
+  "generation_reuse": {
+    "allowed": true,
+    "face_reference": {
+      "allowed": false,
+      "requires_explicit_user_request": true
+    }
+  }
+}

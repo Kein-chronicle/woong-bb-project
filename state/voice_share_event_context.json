@@ -27,10 +27,10 @@
     "default_sentence_limit": 2
   },
   "runtime": {
-    "last_status": "suppressed_active_conversation",
-    "last_voice_sent_at": "2026-06-08T18:36:06+09:00",
-    "last_voice_type": "sudden_impulse",
-    "last_suppressed_reason": "최근 대화가 진행 중이라 선톡 억제",
+    "last_status": "suppressed_waiting_reply",
+    "last_voice_sent_at": "2026-06-09T23:02:58+09:00",
+    "last_voice_type": "planned_proactive",
+    "last_suppressed_reason": "마지막 발송 뒤 답을 기다리는 중",
     "last_candidate_text": null,
     "last_profile": null
   }

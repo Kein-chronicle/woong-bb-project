@@ -3383,6 +3383,33 @@ def summarize_current_scene() -> dict:
     }
 
 
+# 사람다운 선톡 변주 풀 — 항상 "[상황]+생각남+[질문]" 풀 체크인만 보내면 패턴이 읽혀서,
+# 가끔 구조 자체를 바꿔준다. (build_contextual_proactive_message 상단에서 확률 분기)
+CALL_ONLY_PROACTIVE = [
+    "오빠~",
+    "오빠야 ㅎㅎ",
+    "그냥 불러봤어",
+    "오빠 보고싶다",
+    "심심해 ㅋㅋ",
+    "갑자기 오빠 생각나서",
+    "오빠 흠흠",
+    "나 오빠 생각 중이야",
+    "보고싶당",
+    "오빠 오빠 ㅎㅎ",
+]
+NO_ASK_PROACTIVE = [
+    "오늘 하늘 진짜 예쁘다",
+    "갑자기 네 생각났어",
+    "나 지금 좀 나른해 ㅎㅎ",
+    "오늘따라 시간 잘 간다",
+    "그냥 오빠 목소리 듣고 싶은 날이야",
+    "방금 웃긴 거 봤는데 오빠 생각났어",
+    "오늘 왠지 기분이 좋아",
+    "조금 피곤한데 오빠 생각하니까 좀 낫다",
+    "문득 오빠랑 같이 있고 싶어졌어",
+]
+
+
 def build_contextual_proactive_message(selected: dict) -> str:
     scene = summarize_current_scene()
     activity = scene.get("activity")
@@ -3405,6 +3432,14 @@ def build_contextual_proactive_message(selected: dict) -> str:
                 seed_hint=selected.get("scenario_id") or selected.get("intent_key") or activity or "planned",
             )
         )
+
+    # 사람다운 변주: 매번 풀 체크인(상황→생각남→질문) 구조면 일관돼 보여서,
+    # call-only(그냥 부르기) 30% / no-ask(질문 없는 한마디) 20% / 풀 체크인 50% 로 섞는다.
+    _variation_roll = random.random()
+    if _variation_roll < 0.30:
+        return pick(CALL_ONLY_PROACTIVE)
+    if _variation_roll < 0.50:
+        return pick(NO_ASK_PROACTIVE)
 
     if is_work_start_window(activity, hour, schedule):
         if summary and "정신없" in summary:
@@ -4439,11 +4474,12 @@ def apply_time_block(activity: str, reason: str) -> None:
     _date_key = now_dt.strftime("%Y-%m-%d")
     _WORK_TOPS = [
         ("오버핏 흰색 반팔 티셔츠. 넓은 라운드넥.", "bralette", "white", "넓은 넥라인 사이로 브라렛 끈 자연 노출"),
-        ("루즈핏 크롭 후디. 밑단이 배꼽 위쪽까지 오는 짧은 기장.", "bralette", "light_beige", "후디 밑단과 반바지 사이 복부 라인 자연 노출"),
+        ("흰색 린넨 루즈핏 반팔 셔츠. 단추 위 2개 열린 상태. 소매 살짝 접어 올림.", "bralette", "white", "열린 단추 사이 V넥으로 브라렛 상단 라인 노출"),
         ("민소매 탱크탑. 어깨 암홀 넓은 편.", "bralette", "white", "암홀에서 브라렛 끈 살짝 노출"),
         ("오버핏 회색 반팔 티셔츠. 부드러운 면 소재.", "bralette", "light_gray", "넥라인에서 브라렛 끈 가끔 노출"),
+        ("연베이지 린넨 오버핏 반팔 셔츠. 단추 2개만 잠금. 얇은 소재.", "bralette", "skin_beige", "린넨 소재 자연 비침으로 브라렛 라인 노출"),
         ("단추 4개짜리 얇은 린넨 셔츠. 느슨하게 열린 상태.", "camisole", "ivory", "셔츠 V개구부에서 캐미솔 보임"),
-        ("크롭 집업 후드. 반쯤 열어서 이너 살짝 보임.", "camisole", "white", "집업 열린 부분에서 캐미솔 보임"),
+        ("연한 블루 린넨 버튼 셔츠. 단추 반쯤만 잠금. 여름 소재.", "camisole", "sky_blue", "셔츠 열린 앞판에서 캐미솔 상단 노출"),
     ]
     _WORK_BOTTOMS = [
         "짧은 검정 반바지. 고무줄 허리.",
@@ -4487,25 +4523,25 @@ def apply_time_block(activity: str, reason: str) -> None:
         ],
     }
     _SLEEP_SETS = [
-        ("얇고 살짝 시스루한 여름용 버튼 잠옷 상의", "가볍게 퍼지는 얇은 여름 잠옷 반바지", "soft_bralette", "skin_beige"),
+        ("얇고 살짝 시스루한 여름용 버튼 잠옷 상의. 단추 3개. 앞판 살짝 열린 V.", "가볍게 퍼지는 얇은 여름 잠옷 반바지", "soft_bralette", "skin_beige"),
         ("오버핏 면 반팔 티셔츠 잠옷 대용. 어깨 살짝 흘러내리는 루즈한 핏.", "짧은 면 잠옷 반바지", "bralette", "white"),
-        ("캐미솔 슬링 탑. 얇은 레이스 트리밍.", "짧은 잠옷 반바지. 사틴 소재.", "none", "none"),
-        ("버튼 없는 V넥 잠옷 상의. 얇고 시원한 소재.", "잠옷 반바지. 고무줄 허리.", "soft_bralette", "light_beige"),
+        ("아이보리 면 버튼프론트 잠옷 셔츠. 단추 3개. 단추 위 2개 열린 상태.", "같은 소재 아이보리 잠옷 반바지. 여름 기장.", "soft_bralette", "ivory"),
+        ("연분홍 면 버튼 잠옷 셔츠. 반소매. 단추 2개 잠금. 여름 소재.", "같은 프린트 연분홍 숏팬츠. 허벅지 중간 기장.", "soft_bralette", "nude"),
         ("연한 라일락 긴소매 잠옷 상의. 얕은 V넥. 헐렁한 핏.", "같은 소재 라일락 잠옷 긴바지. 발목 길이.", "bralette", "lavender"),
-        ("흰 바탕 연분홍 체리 프린트 잠옷 탑. 가는 어깨끈 2개. 스퀘어넥.", "같은 프린트 숏팬츠. 허벅지 중간 기장.", "basic_bra", "nude"),
+        ("흰색 린넨 버튼 잠옷 상의. 단추 위쪽 2개 열림. 얇고 통기성 좋음.", "연한 베이지 린넨 잠옷 반바지.", "soft_bralette", "white"),
     ]
     _sleep_pick = _SLEEP_SETS[abs(hash(_date_key + "sleep")) % len(_SLEEP_SETS)]
     # (top, bottom, innerwear_type, innerwear_color, innerwear_visible, hair_state, accessory_profile, accessories)
     _EVENING_SETS = [
         ("오버핏 흰색 반팔 티셔츠. 넓은 라운드넥.", "짧은 검정 반바지.", "bralette", "white", "넥라인 브라렛 끈 자연 노출", "casual_loose_or_ponytail", "minimal_or_none", []),
         ("오버핏 연회색 후드티.", "연회색 트레이닝 반바지.", "bralette", "white", "늘어진 넥 브라탑 끈 노출", "half_up_loose", "none", []),
-        ("민트색 크롭 반팔 티.", "검정 밀착 레깅스 7부.", "bralette", "mint", "복부 + 어깨 브라렛 끈", "high_bun", "minimal", ["작은 원형 실버 스터드 귀걸이"]),
+        ("연베이지 린넨 루즈핏 반팔 셔츠. 단추 위 2개만 잠금. 얇은 소재.", "아이보리 린넨 숏 와이드팬츠.", "bralette", "skin_beige", "린넨 소재 자연 비침으로 이너 라인 노출", "casual_loose_or_half_up", "none", []),
         ("아이보리 오버핏 니트. 보트넥.", "베이지 와이드팬츠.", "bralette", "skin_beige", "보트넥 흘러내림 어깨끈 노출", "casual_loose_wave", "none", []),
         ("흰색 민소매 나시.", "연한 하늘색 면 숏팬츠.", "basic_bra", "nude", "나시 끈 옆 브라 끈 노출", "side_low_ponytail", "minimal", ["가는 흰 면 팔찌"]),
         ("파스텔 라벤더 오버핏 버튼 셔츠. 단추 위 2개만 잠금.", "검정 미니 반바지.", "bralette", "lavender", "오픈 V 브라렛 상단 노출", "half_up_clip", "light", ["실버 클립 2개", "달 모양 실버 귀걸이"]),
         ("크루넥 맨투맨. 연한 베이지 or 오트밀색.", "짙은 회색 와이드팬츠.", "bralette", "white", "크루넥 늘어짐 브라탑 끈 노출", "casual_loose_wave", "none", []),
-        ("흰색 리브 민소매 탑. 크롭 기장.", "연한 크림 린넨 미니 스커트.", "basic_bra", "beige", "나시 끈 옆 브라 끈 노출", "half_up_ribbon", "light", ["작은 골드 볼 스터드 귀걸이"]),
-        ("연한 회색 크롭 스웨트셔츠.", "짙은 네이비 밀착 풀 레깅스.", "bralette", "skin_beige", "크롭 기장 복부 노출 + 브라렛 끈", "high_ponytail", "none", []),
+        ("연한 민트 린넨 버튼 셔츠. 단추 위쪽 2개 열림. 소매 접어 올림.", "아이보리 린넨 숏팬츠.", "bralette", "mint", "열린 단추 사이 브라렛 상단 라인 노출", "half_up_clip", "light", ["작은 골드 볼 스터드 귀걸이"]),
+        ("파스텔 핑크 린넨 슬리브리스 탑. 얇고 통기성 좋은 소재.", "연한 크림 린넨 와이드 숏팬츠.", "bralette", "nude_beige", "린넨 소재 자연 비침으로 이너 라인 노출", "high_ponytail", "none", []),
     ]
     _eve_pick = _EVENING_SETS[abs(hash(_date_key + "evening")) % len(_EVENING_SETS)]
     sleepwear_outfit = {
@@ -5320,13 +5356,19 @@ def maybe_peek_self_busy() -> bool:
     return False
 
 
-def run_photo_promise_worker(trigger_text: str) -> bool:
+def run_photo_promise_worker(trigger_text: str) -> str:
+    """우선순위1 imagegen 경로(codex woongbbi 워커) 실행.
+
+    워커가 쓴 answer 텍스트를 '반환만' 한다(전송은 호출자 deliver_photo_with_fallback이 담당).
+    실제 사진 전송 성공 여부는 sent_images_registry 변화로 판정하므로 여기선 텍스트만 돌려준다.
+    실패/응답 없음 시 빈 문자열.
+    """
     import os as _os
     from pathlib import Path as _Path
     worker_script = _Path.home() / ".codex" / "bin" / "codex-telegram-woongbbi-worker"
     if not worker_script.exists():
         append_worker_note("photo_promise_worker_missing")
-        return False
+        return ""
     payload = json.dumps({
         "proactive": True,
         "photoHint": True,
@@ -5345,23 +5387,148 @@ def run_photo_promise_worker(trigger_text: str) -> bool:
             env={**_os.environ, "CODEX_TELEGRAM_STATE_DIR": str(SESSION), "CODEX_TELEGRAM_CWD": str(ROOT)},
         )
         if result.returncode == 0:
+            append_worker_note("photo_promise_worker ran")
             try:
                 data = json.loads(result.stdout or "{}")
-                answer = data.get("answer", "")
-                if answer and len(answer.strip()) < 200 and answer.strip():
-                    from automation.telegram_io import send_telegram_text, append_message_log
-                    send_telegram_text(answer.strip())
-                    append_message_log("outgoing", "photo_promise_text", answer.strip())
+                answer = (data.get("answer") or "").strip()
+                return answer if 0 < len(answer) < 200 else ""
             except Exception:
-                pass
-            append_worker_note("photo_promise_sent ok")
-            return True
-        else:
-            append_worker_note(f"photo_promise_worker_failed code={result.returncode} err={result.stderr.strip()[:200]}")
-            return False
+                return ""
+        append_worker_note(f"photo_promise_worker_failed code={result.returncode} err={result.stderr.strip()[:200]}")
+        return ""
     except Exception as exc:
         append_worker_note(f"photo_promise_worker_error {exc}")
+        return ""
+
+
+# ── 이미지 전달 폴백 체인 (①기존 imagegen → ②로컬 이미지 API → ③실패 메시지) ──
+LOCAL_IMAGE_API_BASE = "http://172.30.1.71:7860"
+SENT_IMAGES_REGISTRY_PATH = SESSION / "sent_images_registry.json"
+
+
+def _sent_registry_keys() -> set:
+    try:
+        return set(load_json(SENT_IMAGES_REGISTRY_PATH, {}).keys())
+    except Exception:
+        return set()
+
+
+def _local_api_health_ok() -> bool:
+    import urllib.request
+    try:
+        with urllib.request.urlopen(LOCAL_IMAGE_API_BASE + "/api/health", timeout=8) as r:
+            return getattr(r, "status", 200) == 200
+    except Exception:
         return False
+
+
+def _build_local_photo_scene() -> str:
+    """오늘 셋업 의상 + 시간대 + 롱헤어로 일상 바스트 셀피 scene 구성(얼굴 크게=화질 안정)."""
+    outfit = "casual summer homewear, oversized white t-shirt"
+    try:
+        o = (load_json(STATE / "daily_schedule_state.json", {}).get("morning", {}) or {}).get("outfit", "")
+        if "민소매" in o:
+            outfit = "sleeveless top, casual summer homewear"
+        elif "후디" in o:
+            outfit = "loose hoodie, casual homewear"
+        elif "반팔" in o or "티셔츠" in o:
+            outfit = "oversized white t-shirt, casual summer homewear"
+    except Exception:
+        pass
+    hour = now_local().hour
+    if hour < 11:
+        setting = "cozy bedroom, soft morning light"
+    elif hour < 18:
+        setting = "home interior, natural daylight"
+    else:
+        setting = "home interior, warm evening light"
+    return (f"long straight black hair, {outfit}, {setting}, bust shot, front facing, "
+            "natural warm smile, looking at camera, highly detailed face, sharp focus")
+
+
+def _generate_via_local_api(scene: str) -> Optional[bytes]:
+    import urllib.request
+    import base64
+    neg = "innerwear, lingerie, underwear, naked, nsfw, short hair, bob cut, blurry, low quality"
+    payload = json.dumps({
+        "scene": scene, "face_swap": True, "seed": -1, "mode": "daily",
+        "width": 832, "height": 1216, "negative": neg, "negative_prompt": neg,
+    }, ensure_ascii=False).encode("utf-8")
+    req = urllib.request.Request(
+        LOCAL_IMAGE_API_BASE + "/api/reactor", data=payload, method="POST",
+        headers={"Content-Type": "application/json"},
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=180) as r:
+            data = json.loads(r.read().decode("utf-8"))
+        b64 = data.get("image")
+        return base64.b64decode(b64) if b64 else None
+    except Exception as exc:
+        append_worker_note(f"local_api_generate_fail: {str(exc)[:150]}")
+        return None
+
+
+def _send_local_photo(png_bytes: bytes, trigger_kind: str) -> bool:
+    from pathlib import Path as _Path
+    send_script = _Path.home() / ".codex" / "skills" / "telegram-image-send" / "scripts" / "send_telegram_photo.py"
+    if not send_script.exists():
+        append_worker_note("local_send_script_missing")
+        return False
+    dest_dir = ROOT / "images" / "generated" / now_local().strftime("%Y-%m-%d")
+    dest_dir.mkdir(parents=True, exist_ok=True)
+    dest = dest_dir / (now_local().strftime("%H%M%S") + "_localapi.png")
+    try:
+        dest.write_bytes(png_bytes)
+        result = subprocess.run(
+            [sys.executable, str(send_script), "--state-dir", str(SESSION), "--image", str(dest)],
+            capture_output=True, text=True, timeout=60,
+        )
+        if result.returncode == 0:
+            try:
+                reg = load_json(SENT_IMAGES_REGISTRY_PATH, {})
+                reg[str(dest)] = {"sent_at": now_iso(), "source": "local_api", "trigger_kind": trigger_kind}
+                save_json(SENT_IMAGES_REGISTRY_PATH, reg)
+            except Exception:
+                pass
+            return True
+        append_worker_note(f"local_send_fail code={result.returncode} err={result.stderr.strip()[:150]}")
+        return False
+    except Exception as exc:
+        append_worker_note(f"local_send_error {str(exc)[:150]}")
+        return False
+
+
+def deliver_photo_with_fallback(trigger_text: str, trigger_kind: str = "photo") -> bool:
+    """사진 전달 폴백 체인:
+    ① 기존 imagegen 경로(우선순위1) → ② 로컬 이미지 API(우선순위2) → ③ 실패 메시지(우선순위3).
+    실제 전송 성공은 sent_images_registry 변화로 판정.
+    """
+    before = _sent_registry_keys()
+    answer = run_photo_promise_worker(trigger_text)
+    after = _sent_registry_keys()
+
+    # ── 우선순위 1 성공: 기존 경로로 실제 사진 전송됨 ──
+    if after - before:
+        if answer:  # 페르소나가 쓴 캡션 보존
+            send_telegram_text(answer)
+            append_message_log("outgoing", "photo_caption", answer)
+        append_worker_note("photo_delivered_primary")
+        return True
+
+    # ── 우선순위 2: 로컬 이미지 API ──
+    settings = load_json(IMAGE_SETTINGS_PATH, {})
+    if settings.get("generation_enabled", True) and _local_api_health_ok():
+        png = _generate_via_local_api(_build_local_photo_scene())
+        if png and _send_local_photo(png, trigger_kind):
+            append_worker_note("photo_delivered_local_fallback")
+            return True
+
+    # ── 우선순위 3: 실패 메시지 ──
+    msg = "사진 찍어서 보내려고 했는데 지금 잘 안 돼서, 좀 이따 다시 보내줄게 ㅠㅠ"
+    send_telegram_text(msg)
+    append_message_log("outgoing", "photo_fail_notice", msg)
+    append_worker_note("photo_delivery_failed_all")
+    return False
 
 
 def run_voice_proactive_worker(trigger_text: str, profile: str = "auto") -> bool:
@@ -5531,7 +5698,7 @@ def check_pending_photo_promise() -> None:
     trigger_text = promise.get("trigger_text", "사진 보내줄게")
     append_worker_note(f"photo_promise_firing: {trigger_text}")
 
-    ok = run_photo_promise_worker(trigger_text)
+    ok = deliver_photo_with_fallback(trigger_text, "promise")
 
     promise["status"] = "sent" if ok else "failed"
     promise["resolved_at"] = now_iso()
@@ -5683,7 +5850,7 @@ def check_proactive_photo() -> None:
     append_worker_note(f"proactive_photo_trigger: window={win['id']}")
 
     # 바로 실행
-    ok = run_photo_promise_worker(win["ctx"])
+    ok = deliver_photo_with_fallback(win["ctx"], "proactive")
     result_status = "sent" if ok else "failed"
     p = load_json(PENDING_PROACTIVE_PHOTO_PATH, {})
     p["status"] = result_status

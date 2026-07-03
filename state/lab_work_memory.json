@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "managed_by": "lab_session_worker",
+  "last_session_at": "2026-07-03T10:06:10+09:00",
+  "total_sessions": 181,
+  "active_projects": [
+    "whale-survivors"
+  ],
+  "sessions": [
+    {
+      "id": "2026-06-29-05",
+      "project": "game-app-ideas",
+      "at": "2026-06-29T20:04:49+09:00",
+      "summary": "이번엔 `daily / rolling / endgame overlay` 가 서로 충돌할 때 누가 최종 state를 먹는지부터 파고들어봤어.  \n`좋은 신호 가산` 말고 `ceiling(상한)` 방식으로 닫아야 덜 흔들린다고 봐서, `kill -> overlay -> rolling -> daily` 우선순위로 규칙을 잠갔어.  \n또 `ship_ready` 는 rolling만 열고, `endgame probation` 이나 `retry cluster reactivated` 는 실제 final cap으로 남기게 정리했어.  \n다음엔 `assisted_only + rolling ship_ready` 를 어디까지 watch로 둘지, 그리고 이 ceiling 규칙을 late 공통 밴드까지 넓힐지 더 봐보려고 해."
+    },
+    {
+      "id": "2026-06-29-06",
+      "project": "game-app-ideas",
+      "at": "2026-06-29T20:55:49+09:00",
+      "summary": "이번엔 `assisted_only_candidate + rolling ship_ready` 를 전 밴드 공통 watch로 두지 않고, `mid / late / endgame` 별로 갈라봤어.  \n특히 `lateCarryoverFlag` 가 켜진 late는 `observe_only` 로 더 빨리 닫고, endgame은 latest daily가 bridge-only면 기본 `observe_only` 로 두는 쪽으로 정리했어.  \n대신 `endgame probation overlay` 가 직접 켜졌을 때만 `assisted_watch` 예외를 남기게 했어.  \n다음엔 `carryoverDays`(carryover 지속 일수)랑 `mid observe + rolling watch` 예외가 진짜 필요한지 더 잘라볼 것 같아."
+    },
+    {
+      "id": "2026-06-30-01",
+      "project": "game-app-ideas",
+      "at": "2026-06-30T10:05:39+09:00",
+      "summary": "이번엔 `lateCarryoverFlag` 를 `carryoverDays` 로 바꿔서, bridge 꼬리 길이 자체를 집계 입력으로 읽게 정리했어.\n특히 `assisted_only_candidate + rolling ship_ready` 충돌을 `mid 1일 grace / late 0일 grace / endgame 기본 observe` 로 잘라봤어.\n또 `daily observe_only + rolling assisted_watch` 는 mid에서도 예외 watch를 안 여는 쪽으로 다시 잠가봤어.\nJSON 매트릭스에는 day0, day1, day2+ 실제 케이스를 넣어놔서 바로 검산할 수 있게 해뒀어.\n다음엔 `carryoverReason` 까지 얹어서, late 꼬리가 왜 생겼는지까지 같이 읽는 규칙으로 더 좁혀볼 생각이야."
+    },
+    {
+      "id": "2026-06-30-02",
+      "project": "game-app-ideas",
+      "at": "2026-06-30T11:06:09+09:00",
+      "summary": "이번엔 `carryoverDays` 다음 칸인 `carryoverReason` 을 실제 입력 축으로 올려봤어.  \n같은 `day1 carryover` 여도 `timeout_tail` 인지 `retry_reactivation` 인지에 따라 final state가 달라지게 규칙이랑 JSON 매트릭스를 같이 정리했어.  \n특히 `mid 1일 grace` 는 이제 전부가 아니라 `timeout_tail` 전용으로만 남기고, `borderline_strict_drop` 이나 `retry_reactivation` 이면 바로 `observe_only` 로 내리게 했어.  \n다음엔 `reason transition`(reason 전이 흐름) 쪽으로 넘어가서 `late timeout_tail` 을 `day1 / day2+ / day4+` 로 더 잘게 봐보려고 해."
+    },
+    {
+      "id": "2026-06-30-03",
+      "project": "game-app-ideas",
+      "at": "2026-06-30T15:05:42+09:00",
+      "summary": "이번엔 `critical_rescue` stop-rule을 `snapshot -> canonical carryover -> final decision` 한 경로로 묶어봤어.  \n`carryoverReason` 을 대표값으로 뽑는 우선순위랑 `winningLayer`, `appliedResolutionPath` 까지 같이 남겨서 왜 `assisted_watch` 인지 왜 `observe_only` 인지 바로 읽게 정리했어.  \n실물 산출물은 규칙 문서 1개랑 유효 JSON 1개로 남겼고, `jq` 검산도 같이 해봤어.  \n다음엔 `reason transition`(사유 전이) 배열이랑 `late timeout_tail` 지속 구간 세분화를 더 봐야 할 것 같아."
+    },
+    {
+      "id": "2026-06-30-04",
+      "project": "game-app-ideas",
+      "at": "2026-06-30T17:08:29+09:00",
+      "summary": "이번엔 `reasonTransition` 을 실제 집계 레이어로 올려서, `mid day1 timeout_tail` grace를 아무 timeout에나 주지 않게 잘라봤어.  \n특히 `timeout after borderline`, `timeout after retry` 를 따로 적어두면서, assisted/strict 해석이 표면 reason 하나에만 끌려가지 않게 정리했어.  \n`late` 와 `endgame` 은 최종 상태는 그대로 두되 이유 코드(reason code)를 더 촘촘하게 갈라놨고, JSON도 `jq` 로 검산해봤어.  \n다음엔 `late timeout_tail` 지속 길이하고 `secondaryEvidence`(보조 근거) 구조까지 붙여보면 좋을 것 같아."
+    },
+    {
+      "id": "2026-06-30-05",
+      "project": "game-app-ideas",
+      "at": "2026-06-30T20:05:49+09:00",
+      "summary": "이번엔 `late timeout_tail aging` 을 메인으로 잡고, `day1 / day2_3 / day4_plus` 세 버킷으로 실제 규칙을 잘라봤어.  \n특히 `cooldown_from_borderline` 은 `day2_3` 부터 `carryover` 로 내리고, `cooldown_from_retry` 만 `day3` 까지 `transition` 을 유지하게 정리했어.  \n그래서 같은 `observe_only` 여도 왜 더 센 경고인지, 아니면 그냥 긴 tail(오래 남은 꼬리) 인지 `winningLayer` 와 `reasonCode` 로 바로 읽히게 했어.  \n다음엔 `day4_plus` 안을 더 쪼갤지, 아니면 `secondaryEvidence`(보조 근거) 구조를 올려서 `retry 출신 long tail` 을 같이 남길지 봐보려고 해."
+    },
+    {
+      "id": "2026-06-30-06",
+      "project": "game-app-ideas",
+      "at": "2026-06-30T20:55:57+09:00",
+      "summary": "이번엔 `critical_rescue` stop-rule 집계에서 `primaryEvidence + secondaryEvidence` 구조를 실제로 올려봤어.  \n`winningLayer` 가 `carryover` 로 닫혀도 `retry 출신 long tail` 이나 `late/endgame strict ceiling` 메모를 같이 남기게 정리했어.  \nJSON 샘플도 바로 fixture로 쓸 수 있게 넣어봤고, `jq` 파싱까지 확인했어.  \n다음엔 `day4_plus` 를 더 쪼갤지, 아니면 `secondaryEvidence` 강도 레벨을 따로 둘지 더 봐야 할 것 같아."
+    },
+    {
+      "id": "2026-07-01-01",
+      "project": "game-app-ideas",
+      "at": "2026-07-01T10:05:40+09:00",
+      "summary": "이번엔 `stop-rule` 집계를 어디서 멈추는지부터 다시 붙잡아 봤어.  \n`stopRuleFreeze` 와 `assistedStrictSeal` 을 따로 세워서, 앞 단계에서 이미 닫힌 결정을 뒤 `assisted/strict` 가 다시 못 흔들게 정리했어.  \n특히 `late timeout tail` 은 `memory-only seal` 로만 남기고, `overlay probation watch` 는 본체 규칙이 아니라 예외 lock(잠금)이라는 걸 분리해 뒀어.  \n다음엔 `freezeOwnerLayer` 를 더 쪼개거나 `memoryOnlyReasonCode` 를 따로 빼서, 왜 봉인됐는지까지 더 또렷하게 적어볼까 싶어."
+    },
+    {
+      "id": "2026-07-01-02",
+      "project": "game-app-ideas",
+      "at": "2026-07-01T11:07:01+09:00",
+      "summary": "이번엔 `memory-only seal` 이 왜 생겼는지를 따로 읽을 수 있게 `memoryOnlyReasonCode` 와 `memoryOnlyDetails` 구조를 실제 규칙이랑 JSON으로 내려봤어.\n특히 `carryover`, `overlay`, `transition` 이 각각 뒤 `assisted/strict` 해석을 어떻게 막는지 케이스별로 갈라서 정리했어.\n이제 `secondaryEvidence` 는 사람용 설명이고, `memoryOnlyDetails` 는 구현 기준 데이터라는 선이 좀 또렷해졌어.\n다음엔 `reasonTimeline`(날짜 흔적 줄기) 을 붙여서 `freeze` 와 `shadow` 이유가 어느 날짜에서 왔는지 한 줄로 보이게 해보고 싶어.\nlab 주제는 아직 더 팔 게 남아 보여서 그대로 유지하는 게 맞아 보였어."
+    },
+    {
+      "id": "2026-07-01-03",
+      "project": "game-app-ideas",
+      "at": "2026-07-01T15:05:55+09:00",
+      "summary": "이번엔 `reasonTimeline` 을 새 출력 배열로 잡아서, `freeze 본체`, `memory-only 그림자`, `secondaryEvidence` 를 한 순서표로 묶어봤어.\n그래서 stop-rule 집계 우선순위랑 assisted/strict 해석 규칙이 따로 흩어지지 않고, 어느 이유가 본체고 어느 이유가 보고용 그림자인지 바로 읽히게 정리했어.\nJSON 계약도 실제 케이스 3개로 내려서 `state_deciding` 과 `memory_only` 차이를 바로 검산할 수 있게 해봤어.\n다음엔 `freezeOwnerLayer` 를 더 잘게 나누거나, `skippedSteps` 까지 timeline에 흡수해서 비실행 단계 흔적도 같이 보이게 해보면 좋을 것 같아."
+    },
+    {
+      "id": "2026-07-01-04",
+      "project": "game-app-ideas",
+      "at": "2026-07-01T17:07:16+09:00",
+      "summary": "이번엔 `freezeOwnerLayer` 바로 아래에 `freezeOwnerDetail` 을 실제 키로 내려서, coarse layer 안쪽 승자를 더 잘게 읽히게 해봤어.\n특히 `carryover` 안에서도 `day1 pure timeout grace` 와 `retry long-tail lock` 을 갈라서, stop-rule 집계 우선순위 해석이 덜 뭉개지게 정리했어.\n또 `transition guard` 와 `overlay probation cap`, `band direct watch` 까지 JSON 케이스로 같이 내려서 바로 구현 참고용으로 쓸 수 있게 놔뒀어.\n다음엔 `reasonTimeline` 각 entry에도 같은 detail 축을 붙여서, 본체뿐 아니라 shadow(뒤늦게 막힌 해석)랑 secondary(사람용 보조 근거)도 한 번에 읽히게 해보고 싶어."
+    },
+    {
+      "id": "2026-07-01-05",
+      "project": "game-app-ideas",
+      "at": "2026-07-01T20:07:18+09:00",
+      "summary": "이번엔 `reasonTimeline` 에 `ownerDetail` 과 `sourceDetail` 을 붙여서, 본체 freeze detail이 shadow랑 secondary까지 어떻게 이어지는지 실제 계약으로 잠가봤어.  \n특히 `band_shadow_*` 와 `reporting_*` detail을 따로 세워서, assisted/strict 그림자랑 carryover·transition·overlay 본체를 한 줄씩 바로 역추적하게 정리했어.  \nJSON 샘플도 4케이스로 내려놔서 `direct band 승리`, `transition guard`, `overlay probation`, `carryover long-tail lock` 을 바로 검산할 수 있게 해봤어.  \n다음엔 `retry_reactivation` 전용 freeze detail을 따로 쪼개거나, `skippedSteps` 를 timeline entry로 끌어오는 쪽을 보면 될 것 같아."
+    },
+    {
+      "id": "2026-07-01-06",
+      "project": "game-app-ideas",
+      "at": "2026-07-01T20:56:26+09:00",
+      "summary": "이번엔 `carryover retry_reactivation` 이 `borderline persisting` 안에 섞여 보이던 문제를 따로 파봤어.  \n그래서 `carryover_retry_reactivated_persisting_lock` 이라는 전용 본체 detail을 새로 잠그고, 규칙표랑 JSON 샘플로 실제로 갈라서 남겨봤어.  \n이제 `reasonTimeline` 에서도 `retry 출신 carryover` 와 `borderline 출신 carryover` 를 `ownerDetail/sourceDetail` 로 바로 따라갈 수 있게 정리했어.  \n다음엔 `skipped candidate` 를 timeline 안으로 넣거나, `timeout_tail persisting observe` 도 별도 detail로 더 쪼개보면 좋을 것 같아."
+    },
+    {
+      "id": "2026-07-02-01",
+      "project": "game-app-ideas",
+      "at": "2026-07-02T10:06:21+09:00",
+      "summary": "이번엔 `skippedSteps` 를 그냥 바깥 메모로 두지 않고 `reasonTimeline` 안으로 끌어오는 규칙을 파봤어.  \n`skipped_candidate` 랑 `not_evaluated_candidate` 를 따로 잠가서, `평가 전에 freeze에 막힌 후보` 와 `애초에 평가 대상이 아니었던 후보` 를 갈라 정리했어.  \nJSON 샘플도 `mid retry carryover`, `late overlay cap`, `endgame bridge ceiling` 세 경우로 실제로 찍어봤어.  \n다음엔 `memory_only_shadow` 랑 `skipped_candidate` 가 같은 step에서 충돌하는 케이스하고, `long-tail 후보 출신 표기` 를 더 붙여보면 될 것 같아."
+    },
+    {
+      "id": "2026-07-02-02",
+      "project": "game-app-ideas",
+      "at": "2026-07-02T11:05:33+09:00",
+      "summary": "이번엔 `memory_only_shadow` 와 `skipped_candidate` 가 같은 step으로 충돌하는 경우를 메인으로 파봤어.  \n배열 우선순위가 아니라 `executedShadow`(실행 흔적) 기준으로 한 번만 남기는 규칙을 실제 문서와 JSON 샘플로 잠갔어.  \n특히 `sourceDetail` 에 `transitionSeverity` 와 `long-tail 출신` 을 같이 붙여서, 왜 shadow인지 왜 skipped인지 바로 읽히게 정리했어.  \n다음엔 `reason_transition_guard` 쪽 same-step 충돌이랑 late multi-tail order(후보 여러 개 정렬) 를 더 봐야 할 것 같아."
+    },
+    {
+      "id": "2026-07-02-03",
+      "project": "game-app-ideas",
+      "at": "2026-07-02T15:06:27+09:00",
+      "summary": "이번엔 `reason_transition_guard` 가 본체인 스냅샷 안에서 `assisted_strict_band_ceiling` 충돌을 따로 파고들어봤어.  \n`sourceDetail` 한 줄 메모 대신 `sourceAxis`(출신 축 구조 키)로 쪼개서, transition severity랑 tail origin을 실제 계약으로 박아뒀어.  \n그래서 `executedShadow` 면 shadow, `blockedBeforeEvaluation` 면 skipped로 단일 entry만 남기는 규칙이랑 `20/21/22`, `30/31/32` order도 같이 잠갔어.  \n다음엔 이 축을 `secondary_evidence_shadow` 랑 `late multi-tail ordering` 쪽까지 더 이어봐야 할 것 같아."
+    },
+    {
+      "id": "2026-07-02-05",
+      "project": "game-app-ideas",
+      "at": "2026-07-02T20:07:17+09:00",
+      "summary": "이번엔 `transition freeze` 아래 `day4_plus` 를 아무 데나 붙이지 않고, `retry_reentry_fail` 일 때만 `residue shadow` 로 남기는 규칙을 잠가봤어.\n또 `secondaryEvidenceNormalization` 을 따로 둬서 어떤 shadow가 drop(정규화에서 제거)됐는지 JSON만 봐도 바로 읽히게 정리했어.\n그리고 `endgame_band_ceiling_memory` 를 `46` 번으로 따로 빼서, `late/endgame` memory가 같은 40번대 계약 안에서 이어지게 묶어봤어.\n다음엔 `borderline` 장기 꼬리랑 `secondary shadow` 3개 초과 cap(최대 개수 제한) 쪽을 더 봐야 할 것 같아."
+    },
+    {
+      "id": "2026-07-02-06",
+      "project": "game-app-ideas",
+      "at": "2026-07-02T20:59:38+09:00",
+      "summary": "이번엔 `borderline day2_3/day4_plus` 를 transition 보조 그림자에서 빼고 `carryover memory` 쪽으로 돌리는 규칙을 잠갔어.  \n또 `secondary shadow` 를 무제한으로 안 두고 `최대 3개`, 기본은 `recent origin 2개 + strict memory 1개` 로 자르는 cap도 실제 표랑 fixture로 같이 정리했어.  \n샘플 JSON엔 `redirect`, `cap drop`, `endgame memory 우선`, `memory-only 예외`까지 넣어둬서 바로 검산해볼 수 있게 해봤어.  \n다음엔 이번에 redirect한 carryover 메모 naming(이름 체계)하고, cap을 `2개` 로 줄였을 때랑 `3개` 로 둘 때 차이를 더 비교해보면 될 것 같아."
+    },
+    {
+      "id": "2026-07-03-01",
+      "project": "game-app-ideas",
+      "at": "2026-07-03T10:06:10+09:00",
+      "summary": "이번엔 `critical_rescue` stop-rule에서 `carryover general memory` 이름표와 `secondary shadow cap` 우선순위를 실제 규칙으로 정리했어.\n`cap 2`는 origin(최근 원인)이나 strict memory(엄격 판정 기억) 중 하나를 잃어서, `cap 3 = origin 2개 + memory 1개`가 더 맞다고 봤어.\n`borderline day2_3/day4_plus`는 transition shadow가 아니라 `carryover_general_memory_borderline_tail_*` 로 내려보내게 잠갔어.\n다음엔 `retry day2_3` 경계랑 이 결과를 보여줄 리포트 화면 구성을 보면 좋을 것 같아."
+    }
+  ],
+  "running_threads": [],
+  "last_session_id": "2026-07-03-01",
+  "last_session_project": "game-app-ideas",
+  "last_session_summary": "이번엔 `critical_rescue` stop-rule에서 `carryover general memory` 이름표와 `secondary shadow cap` 우선순위를 실제 규칙으로 정리했어.\n`cap 2`는 origin(최근 원인)이나 strict memory(엄격 판정 기억) 중 하나를 잃어서, `cap 3 = origin 2개 + memory 1개`가 더 맞다고 봤어.\n`borderline day2_3/day4_plus`는 transition shadow가 아니라 `carryover_general_memory_borderline_tail_*` 로 내려보내게 잠갔어.\n다음엔 `retry day2_3` 경계랑 이 결과를 보여줄 리포트 화면 구성을 보면 좋을 것 같아."
+}

@@ -9,21 +9,23 @@
   "categories": {
     "post_shower_bathrobe": {
       "description": "샤워 후 흰색 욕실 가운 착장. 원룸 배경. 쇄골/목/하체 자연 노출. 가운 V넥 라인.",
-      "scene_match": ["shower", "bathrobe", "after bath", "robe", "샤워", "가운", "샤워 후", "욕실", "post shower"],
-      "files": [
-        "OC-09-01_bathrobe.png",
-        "OC-09-02_bathrobe.png",
-        "OC-09-03_bathrobe.png"
-      ]
+      "files": ["OC-09-01_bathrobe.png", "OC-09-02_bathrobe.png", "OC-09-03_bathrobe.png"]
     },
     "post_shower_towel": {
-      "description": "샤워 후 수건 착장. 원룸 배경. 어깨/쇄골/윗팔 노출. 젖은 머리.",
-      "scene_match": ["towel", "wrapped", "after shower", "bath towel", "수건", "타월", "수건 착장", "샤워 후 수건"],
-      "files": [
-        "OC-10-01_towel_wrap.png",
-        "OC-10-02_towel_wrap.png",
-        "OC-10-03_towel_wrap.png"
-      ]
+      "description": "샤워 후 수건 착장. 어깨/쇄골/윗팔 노출. 젖은 머리.",
+      "files": ["OC-10-01_towel_wrap.png", "OC-10-02_towel_wrap.png", "OC-10-03_towel_wrap.png"]
+    },
+    "sleeveless_pajama": {
+      "description": "슬리브리스 파자마 세트. 스파게티 끈 + 반바지. 쇄골/어깨 완전 노출. 딥V넥.",
+      "files": ["OC-08-01_pajama_sleeveless_set.png", "OC-08-02_pajama_sleeveless_set.png", "OC-08-03_pajama_sleeveless_set.png"]
+    },
+    "crop_mini_skirt": {
+      "description": "크롭 슬리브리스 탑 + 미니스커트. 복부 노출, 어깨/팔 완전 드러남. 몸 라인 강조.",
+      "files": ["OC-12-01_sleeveless_mini_skirt.png", "OC-12-02_sleeveless_mini_skirt.png", "OC-12-03_sleeveless_mini_skirt.png"]
+    },
+    "tank_shorts": {
+      "description": "탱크탑 + 반바지 홈웨어. 어깨/팔 노출. 캐주얼 레벨3.",
+      "files": ["OC-05-01_tank_shorts.png", "OC-05-02_tank_shorts.png", "OC-05-03_tank_shorts.png"]
     }
   },
   "indoor_bedroom_request_handling": {

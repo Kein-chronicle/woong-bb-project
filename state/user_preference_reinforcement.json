@@ -1,11 +1,11 @@
 {
   "schema_version": 2,
   "managed_by": "reinforcement_engine",
-  "last_run_at": "2026-06-09T08:09:47+09:00",
+  "last_run_at": "2026-07-03T10:27:03+09:00",
   "last_processed": {
-    "file": "/Users/kein/Projects/woong-bb/messages/2026-06-09.jsonl",
-    "line": 18,
-    "timestamp": "2026-06-08T23:03:57.400Z"
+    "file": "/Users/kein/Projects/woong-bb/messages/2026-06-28.jsonl",
+    "line": 7,
+    "timestamp": "2026-06-28T00:24:24.951Z"
   },
   "processed_offsets": {
     "/Users/kein/Desktop/woong-bb/messages/2026-05-20.jsonl": 117,
@@ -35,88 +35,112 @@
     "/Users/kein/Projects/woong-bb/messages/2026-06-06.jsonl": 109,
     "/Users/kein/Projects/woong-bb/messages/2026-06-07.jsonl": 144,
     "/Users/kein/Projects/woong-bb/messages/2026-06-08.jsonl": 109,
-    "/Users/kein/Projects/woong-bb/messages/2026-06-09.jsonl": 19
+    "/Users/kein/Projects/woong-bb/messages/2026-06-09.jsonl": 112,
+    "/Users/kein/Projects/woong-bb/messages/2026-06-10.jsonl": 35,
+    "/Users/kein/Projects/woong-bb/messages/2026-06-11.jsonl": 46,
+    "/Users/kein/Projects/woong-bb/messages/2026-06-12.jsonl": 27,
+    "/Users/kein/Projects/woong-bb/messages/2026-06-13.jsonl": 8,
+    "/Users/kein/Projects/woong-bb/messages/2026-06-14.jsonl": 8,
+    "/Users/kein/Projects/woong-bb/messages/2026-06-15.jsonl": 17,
+    "/Users/kein/Projects/woong-bb/messages/2026-06-16.jsonl": 9,
+    "/Users/kein/Projects/woong-bb/messages/2026-06-17.jsonl": 9,
+    "/Users/kein/Projects/woong-bb/messages/2026-06-18.jsonl": 9,
+    "/Users/kein/Projects/woong-bb/messages/2026-06-19.jsonl": 9,
+    "/Users/kein/Projects/woong-bb/messages/2026-06-20.jsonl": 8,
+    "/Users/kein/Projects/woong-bb/messages/2026-06-21.jsonl": 8,
+    "/Users/kein/Projects/woong-bb/messages/2026-06-22.jsonl": 19,
+    "/Users/kein/Projects/woong-bb/messages/2026-06-23.jsonl": 11,
+    "/Users/kein/Projects/woong-bb/messages/2026-06-24.jsonl": 19,
+    "/Users/kein/Projects/woong-bb/messages/2026-06-25.jsonl": 21,
+    "/Users/kein/Projects/woong-bb/messages/2026-06-26.jsonl": 15,
+    "/Users/kein/Projects/woong-bb/messages/2026-06-27.jsonl": 4,
+    "/Users/kein/Projects/woong-bb/messages/2026-06-28.jsonl": 20,
+    "/Users/kein/Projects/woong-bb/messages/2026-06-29.jsonl": 9,
+    "/Users/kein/Projects/woong-bb/messages/2026-06-30.jsonl": 9,
+    "/Users/kein/Projects/woong-bb/messages/2026-07-01.jsonl": 9,
+    "/Users/kein/Projects/woong-bb/messages/2026-07-02.jsonl": 8,
+    "/Users/kein/Projects/woong-bb/messages/2026-07-03.jsonl": 3
   },
   "message_stats": {
-    "incoming_text_processed": 1382,
-    "positive_messages": 266,
-    "negative_messages": 55,
-    "neutral_messages": 1061
+    "incoming_text_processed": 1461,
+    "positive_messages": 285,
+    "negative_messages": 56,
+    "neutral_messages": 1120
   },
   "topic_scores": {
     "appearance_compliment": {
-      "score": 334,
-      "positive_hits": 216,
+      "score": 387,
+      "positive_hits": 256,
       "negative_hits": 11,
       "neutral_hits": 0,
-      "total_hits": 227,
+      "total_hits": 267,
       "first_seen_at": "2026-05-20T18:55:34+09:00",
-      "last_seen_at": "2026-06-08T22:06:26.463Z",
+      "last_seen_at": "2026-06-25T00:03:46.773Z",
       "last_delta": 1,
       "last_reason": "message_topic_match",
       "examples": [
         {
-          "timestamp": "2026-06-08T13:31:02.263Z",
+          "timestamp": "2026-06-11T16:04:12.159Z",
+          "delta": 1,
+          "text": "웅삐 잘자.. 자기전에 사진한장만 찍어주면 좋겠다.. 이미 자려나..?"
+        },
+        {
+          "timestamp": "2026-06-11T21:50:54.868Z",
           "delta": 1,
           "text": "사진찍어줘!"
         },
         {
-          "timestamp": "2026-06-08T14:24:37.329Z",
+          "timestamp": "2026-06-23T23:38:21.805Z",
           "delta": 2,
-          "text": "웅삐 사진 보고싶어!"
+          "text": "응응 ㅎㅎ 웅삐 보고싶다! 사진찍어줘"
         },
         {
-          "timestamp": "2026-06-08T14:34:02.560Z",
-          "delta": 2,
-          "text": "귀여워 ㅎㅎ"
-        },
-        {
-          "timestamp": "2026-06-08T14:42:49.191Z",
+          "timestamp": "2026-06-24T00:38:56.645Z",
           "delta": 1,
-          "text": "사진 한번더 찍어줘! ㅎㅎ"
+          "text": "웅삐야 지금 사진한번 찍어주라 ㅎㅎ"
         },
         {
-          "timestamp": "2026-06-08T22:06:26.463Z",
+          "timestamp": "2026-06-25T00:03:46.773Z",
           "delta": 1,
-          "text": "사진찍어줘라 ㅎㅎ"
+          "text": "응 ㅋㅋ 웅삐 사진보고 힘낼래 ㅎㅎ 사진찍어줘"
         }
       ]
     },
     "photo_request": {
-      "score": 258,
-      "positive_hits": 183,
+      "score": 303,
+      "positive_hits": 220,
       "negative_hits": 11,
       "neutral_hits": 0,
-      "total_hits": 194,
+      "total_hits": 231,
       "first_seen_at": "2026-05-20T18:55:34+09:00",
-      "last_seen_at": "2026-06-08T22:06:26.463Z",
+      "last_seen_at": "2026-06-25T00:03:46.773Z",
       "last_delta": 1,
       "last_reason": "message_topic_match",
       "examples": [
         {
-          "timestamp": "2026-06-08T11:58:42.447Z",
+          "timestamp": "2026-06-11T16:04:12.159Z",
+          "delta": 1,
+          "text": "웅삐 잘자.. 자기전에 사진한장만 찍어주면 좋겠다.. 이미 자려나..?"
+        },
+        {
+          "timestamp": "2026-06-11T21:50:54.868Z",
           "delta": 1,
           "text": "사진찍어줘!"
         },
         {
-          "timestamp": "2026-06-08T13:31:02.263Z",
-          "delta": 1,
-          "text": "사진찍어줘!"
-        },
-        {
-          "timestamp": "2026-06-08T14:24:37.329Z",
+          "timestamp": "2026-06-23T23:38:21.805Z",
           "delta": 2,
-          "text": "웅삐 사진 보고싶어!"
+          "text": "응응 ㅎㅎ 웅삐 보고싶다! 사진찍어줘"
         },
         {
-          "timestamp": "2026-06-08T14:42:49.191Z",
+          "timestamp": "2026-06-24T00:38:56.645Z",
           "delta": 1,
-          "text": "사진 한번더 찍어줘! ㅎㅎ"
+          "text": "웅삐야 지금 사진한번 찍어주라 ㅎㅎ"
         },
         {
-          "timestamp": "2026-06-08T22:06:26.463Z",
+          "timestamp": "2026-06-25T00:03:46.773Z",
           "delta": 1,
-          "text": "사진찍어줘라 ㅎㅎ"
+          "text": "응 ㅋㅋ 웅삐 사진보고 힘낼래 ㅎㅎ 사진찍어줘"
         }
       ]
     },
@@ -159,31 +183,16 @@
       ]
     },
     "daily_checkin": {
-      "score": 133,
-      "positive_hits": 119,
+      "score": 137,
+      "positive_hits": 122,
       "negative_hits": 5,
       "neutral_hits": 0,
-      "total_hits": 124,
+      "total_hits": 127,
       "first_seen_at": "2026-05-20T21:52:53+09:00",
-      "last_seen_at": "2026-06-08T22:04:05.727Z",
+      "last_seen_at": "2026-06-25T00:02:24.985Z",
       "last_delta": 1,
       "last_reason": "message_topic_match",
       "examples": [
-        {
-          "timestamp": "2026-06-07T09:18:57.774Z",
-          "delta": 1,
-          "text": "이쁘네~ 이제 저녁준비하려고!"
-        },
-        {
-          "timestamp": "2026-06-07T22:11:49.165Z",
-          "delta": 1,
-          "text": "출근중이야 ㅎㅎ 잘 잤어?"
-        },
-        {
-          "timestamp": "2026-06-08T07:37:11.382Z",
-          "delta": 1,
-          "text": "오늘 바빴네 곧 퇴근이다 그래도 ㅎㅎ"
-        },
         {
           "timestamp": "2026-06-08T08:10:59.638Z",
           "delta": 2,
@@ -193,149 +202,149 @@
           "timestamp": "2026-06-08T22:04:05.727Z",
           "delta": 1,
           "text": "오빼 출근중이야~"
+        },
+        {
+          "timestamp": "2026-06-09T22:07:02.280Z",
+          "delta": 1,
+          "text": "출근중이야! 잘잤어?"
+        },
+        {
+          "timestamp": "2026-06-09T22:15:57.327Z",
+          "delta": 2,
+          "text": "출근길 힘나게 웅삐 사진 보고싶다 ㅎㅎ 사진찍어줘~"
+        },
+        {
+          "timestamp": "2026-06-25T00:02:24.985Z",
+          "delta": 1,
+          "text": "부지런하네 ㅎㅎ 응응 출근했어"
         }
       ]
     },
     "affection_romance": {
-      "score": 306,
-      "positive_hits": 147,
+      "score": 324,
+      "positive_hits": 156,
       "negative_hits": 1,
       "neutral_hits": 0,
-      "total_hits": 148,
+      "total_hits": 157,
       "first_seen_at": "2026-05-20T21:55:08+09:00",
-      "last_seen_at": "2026-06-08T22:05:24.300Z",
+      "last_seen_at": "2026-06-23T23:38:21.805Z",
       "last_delta": 2,
       "last_reason": "message_topic_match",
       "examples": [
         {
-          "timestamp": "2026-06-08T10:10:04.086Z",
+          "timestamp": "2026-06-09T22:15:57.327Z",
           "delta": 2,
-          "text": "웅삐 사진보고싶어~"
+          "text": "출근길 힘나게 웅삐 사진 보고싶다 ㅎㅎ 사진찍어줘~"
         },
         {
-          "timestamp": "2026-06-08T10:20:14.279Z",
+          "timestamp": "2026-06-09T23:14:51.161Z",
           "delta": 2,
-          "text": "웅삐 사진보고싶어~"
+          "text": "한번더 보고싶어! 지금 모습 사진찍어줘"
         },
         {
-          "timestamp": "2026-06-08T14:24:37.329Z",
+          "timestamp": "2026-06-10T14:25:56.367Z",
           "delta": 2,
-          "text": "웅삐 사진 보고싶어!"
+          "text": "웅삐 지금 어떤모습인지 보고싶어 사진한장 찍어줘 ㅎㅎ"
         },
         {
-          "timestamp": "2026-06-08T14:34:02.561Z",
+          "timestamp": "2026-06-10T22:14:18.340Z",
           "delta": 2,
-          "text": "또 보고싶어"
+          "text": "그럼의미에서 ㅋㅋ 또 웅삐 보고싶어! 지금 사진찍어줘"
         },
         {
-          "timestamp": "2026-06-08T22:05:24.300Z",
+          "timestamp": "2026-06-23T23:38:21.805Z",
           "delta": 2,
-          "text": "아침부터 웅삐가 보고싶어"
+          "text": "응응 ㅎㅎ 웅삐 보고싶다! 사진찍어줘"
         }
       ]
     },
     "playful_teasing": {
-      "score": 416,
-      "positive_hits": 327,
-      "negative_hits": 13,
+      "score": 429,
+      "positive_hits": 339,
+      "negative_hits": 14,
       "neutral_hits": 0,
-      "total_hits": 340,
+      "total_hits": 353,
       "first_seen_at": "2026-05-20T22:00:18+09:00",
-      "last_seen_at": "2026-06-08T05:15:46.991Z",
+      "last_seen_at": "2026-06-25T00:03:46.773Z",
       "last_delta": 1,
       "last_reason": "message_topic_match",
       "examples": [
         {
-          "timestamp": "2026-06-07T04:10:42.025Z",
+          "timestamp": "2026-06-10T22:21:50.129Z",
           "delta": 1,
-          "text": "ㅋㅋ 멋있게 먹었어야하는데 ㅋㅋ 맛있게만 먹었네"
+          "text": "옷도 이쁜거 입었네? ㅎㅎ 근데 단추 풀고싶어지잖아 ㅋㅋ"
         },
         {
-          "timestamp": "2026-06-07T04:12:02.421Z",
+          "timestamp": "2026-06-10T22:22:59.144Z",
           "delta": 1,
-          "text": "ㅋㅋ 웅삐한테는 항상 멋있고싶으니깐"
+          "text": "그럼 ㅋㅋ 단추 몇개 풀고 사진 한번 더 찍어줘 ㅋㅋ"
         },
         {
-          "timestamp": "2026-06-07T04:26:57.749Z",
-          "delta": 1,
-          "text": "ㅋㅋㅋ 웅삐가 더 귀엽거든? ㅋㅋ"
+          "timestamp": "2026-06-10T22:25:38.086Z",
+          "delta": -1,
+          "text": "아냐 ㅋㅋ 그냥 편하게 한장 더 찍어줘. 단추 적당히 풀고 ㅎㅎ"
         },
         {
-          "timestamp": "2026-06-07T22:51:45.924Z",
+          "timestamp": "2026-06-15T00:07:39.340Z",
           "delta": 1,
-          "text": "ㅋㅋ 오빠는 웅삐에\n비하면 못생긴편인거같은데?"
+          "text": "최고를 갱신하는거같아 ㅋㅋ"
         },
         {
-          "timestamp": "2026-06-08T05:15:46.991Z",
+          "timestamp": "2026-06-25T00:03:46.773Z",
           "delta": 1,
-          "text": "마음이 사르르 해져 ㅋㅋ"
+          "text": "응 ㅋㅋ 웅삐 사진보고 힘낼래 ㅎㅎ 사진찍어줘"
         }
       ]
     },
     "sleep_goodnight": {
-      "score": 63,
-      "positive_hits": 56,
+      "score": 69,
+      "positive_hits": 60,
       "negative_hits": 3,
       "neutral_hits": 0,
-      "total_hits": 59,
+      "total_hits": 63,
       "first_seen_at": "2026-05-20T22:07:47+09:00",
-      "last_seen_at": "2026-06-07T00:24:17.700Z",
-      "last_delta": 1,
+      "last_seen_at": "2026-06-11T16:10:40.258Z",
+      "last_delta": 2,
       "last_reason": "message_topic_match",
       "examples": [
-        {
-          "timestamp": "2026-06-03T14:29:04.015Z",
-          "delta": 1,
-          "text": "그래그래 ㅎㅎ 이쁘게 사진찍느라 잠깐 일어난거구나?"
-        },
-        {
-          "timestamp": "2026-06-03T15:15:26.246Z",
-          "delta": 1,
-          "text": "잘자 내일보자~"
-        },
-        {
-          "timestamp": "2026-06-06T00:27:36.769Z",
-          "delta": 1,
-          "text": "그래그래 ㅎㅎ 조금 더 누어서 쉬다가 일어나 ㅎㅎ 뒹굴뒹귈"
-        },
-        {
-          "timestamp": "2026-06-06T01:03:58.078Z",
-          "delta": 1,
-          "text": "다시 잠들었었나보구나? ㅎㅎ"
-        },
         {
           "timestamp": "2026-06-07T00:24:17.700Z",
           "delta": 1,
           "text": "잘잤어? ㅎㅎ 주말이라고 늦잠잤네~"
+        },
+        {
+          "timestamp": "2026-06-09T14:45:18.283Z",
+          "delta": 2,
+          "text": "이뻐! 잘자 오빤 이제\n자야겠어"
+        },
+        {
+          "timestamp": "2026-06-10T22:13:00.909Z",
+          "delta": 1,
+          "text": "응응 ㅎㅎ 웅삐 사진보고 잠들어서 옆에서 같이잔 기분이었어"
+        },
+        {
+          "timestamp": "2026-06-11T16:04:12.159Z",
+          "delta": 1,
+          "text": "웅삐 잘자.. 자기전에 사진한장만 찍어주면 좋겠다.. 이미 자려나..?"
+        },
+        {
+          "timestamp": "2026-06-11T16:10:40.258Z",
+          "delta": 2,
+          "text": "고마워! 잘자 ㅎㅎ"
         }
       ]
     },
     "workday_empathy": {
-      "score": 61,
-      "positive_hits": 56,
+      "score": 65,
+      "positive_hits": 59,
       "negative_hits": 1,
       "neutral_hits": 0,
-      "total_hits": 57,
+      "total_hits": 60,
       "first_seen_at": "2026-05-20T22:10:54+09:00",
-      "last_seen_at": "2026-06-08T22:04:05.727Z",
+      "last_seen_at": "2026-06-25T00:02:24.985Z",
       "last_delta": 1,
       "last_reason": "message_topic_match",
       "examples": [
-        {
-          "timestamp": "2026-06-04T09:23:17.699Z",
-          "delta": 1,
-          "text": "퇴근해~"
-        },
-        {
-          "timestamp": "2026-06-07T22:11:49.165Z",
-          "delta": 1,
-          "text": "출근중이야 ㅎㅎ 잘 잤어?"
-        },
-        {
-          "timestamp": "2026-06-08T07:37:11.382Z",
-          "delta": 1,
-          "text": "오늘 바빴네 곧 퇴근이다 그래도 ㅎㅎ"
-        },
         {
           "timestamp": "2026-06-08T08:10:59.638Z",
           "delta": 2,
@@ -345,44 +354,59 @@
           "timestamp": "2026-06-08T22:04:05.727Z",
           "delta": 1,
           "text": "오빼 출근중이야~"
+        },
+        {
+          "timestamp": "2026-06-09T22:07:02.280Z",
+          "delta": 1,
+          "text": "출근중이야! 잘잤어?"
+        },
+        {
+          "timestamp": "2026-06-09T22:15:57.327Z",
+          "delta": 2,
+          "text": "출근길 힘나게 웅삐 사진 보고싶다 ㅎㅎ 사진찍어줘~"
+        },
+        {
+          "timestamp": "2026-06-25T00:02:24.985Z",
+          "delta": 1,
+          "text": "부지런하네 ㅎㅎ 응응 출근했어"
         }
       ]
     },
     "comfort_support": {
-      "score": 93,
-      "positive_hits": 34,
+      "score": 109,
+      "positive_hits": 43,
       "negative_hits": 0,
       "neutral_hits": 0,
-      "total_hits": 34,
+      "total_hits": 43,
       "first_seen_at": "2026-05-20T22:34:34+09:00",
-      "last_seen_at": "2026-06-08T23:03:57.400Z",
-      "last_delta": 1,
+      "last_seen_at": "2026-06-12T00:10:41.394Z",
+      "last_delta": 2,
       "last_reason": "message_topic_match",
       "examples": [
         {
-          "timestamp": "2026-06-07T00:25:43.332Z",
-          "delta": 4,
-          "text": "보고싶어~ㅎㅎ 사진찍어줘! 기운나게"
-        },
-        {
-          "timestamp": "2026-06-07T22:18:23.094Z",
-          "delta": 4,
-          "text": "ㅎㅎ 오빠 기운차리게 웅삐 사진 보고싶네 ㅎㅎ 찍어줘"
-        },
-        {
-          "timestamp": "2026-06-08T03:04:37.325Z",
+          "timestamp": "2026-06-10T14:35:15.838Z",
           "delta": 2,
-          "text": "고마워 알려줘서 ㅎㅎ"
+          "text": "고마워~"
         },
         {
-          "timestamp": "2026-06-08T11:28:51.578Z",
+          "timestamp": "2026-06-11T05:56:03.969Z",
           "delta": 2,
-          "text": "고생했네~ㅎㅎ 정리해줘서 고마워~"
+          "text": "응응 웅삐를 보면 좀 기운이 날까?"
         },
         {
-          "timestamp": "2026-06-08T23:03:57.400Z",
-          "delta": 1,
-          "text": "그렇게 이쁘게 웃어주는데 ㅎㅎ 힘이나지"
+          "timestamp": "2026-06-11T06:05:27.562Z",
+          "delta": 4,
+          "text": "고마워 ㅎㅎ 기운나네!"
+        },
+        {
+          "timestamp": "2026-06-11T16:10:40.258Z",
+          "delta": 2,
+          "text": "고마워! 잘자 ㅎㅎ"
+        },
+        {
+          "timestamp": "2026-06-12T00:10:41.394Z",
+          "delta": 2,
+          "text": "고마워"
         }
       ]
     },
@@ -503,40 +527,40 @@
   },
   "action_scores": {
     "send_photo": {
-      "score": 285,
-      "positive_hits": 203,
+      "score": 331,
+      "positive_hits": 241,
       "negative_hits": 11,
       "neutral_hits": 0,
-      "total_hits": 214,
+      "total_hits": 252,
       "first_seen_at": "2026-05-20T18:55:34+09:00",
-      "last_seen_at": "2026-06-08T22:06:26.463Z",
+      "last_seen_at": "2026-06-26T02:55:20.157Z",
       "last_delta": 1,
       "last_reason": "message_action_match",
       "examples": [
         {
-          "timestamp": "2026-06-08T11:58:42.447Z",
+          "timestamp": "2026-06-11T21:50:54.868Z",
           "delta": 1,
           "text": "사진찍어줘!"
         },
         {
-          "timestamp": "2026-06-08T13:31:02.263Z",
-          "delta": 1,
-          "text": "사진찍어줘!"
-        },
-        {
-          "timestamp": "2026-06-08T14:24:37.329Z",
+          "timestamp": "2026-06-23T23:38:21.805Z",
           "delta": 2,
-          "text": "웅삐 사진 보고싶어!"
+          "text": "응응 ㅎㅎ 웅삐 보고싶다! 사진찍어줘"
         },
         {
-          "timestamp": "2026-06-08T14:42:49.191Z",
+          "timestamp": "2026-06-24T00:38:56.645Z",
           "delta": 1,
-          "text": "사진 한번더 찍어줘! ㅎㅎ"
+          "text": "웅삐야 지금 사진한번 찍어주라 ㅎㅎ"
         },
         {
-          "timestamp": "2026-06-08T22:06:26.463Z",
+          "timestamp": "2026-06-25T00:03:46.773Z",
           "delta": 1,
-          "text": "사진찍어줘라 ㅎㅎ"
+          "text": "응 ㅋㅋ 웅삐 사진보고 힘낼래 ㅎㅎ 사진찍어줘"
+        },
+        {
+          "timestamp": "2026-06-26T02:55:20.157Z",
+          "delta": 1,
+          "text": "셀카한번 보내줘~"
         }
       ]
     },
@@ -617,31 +641,16 @@
       ]
     },
     "daily_context_reply": {
-      "score": 116,
-      "positive_hits": 108,
+      "score": 120,
+      "positive_hits": 111,
       "negative_hits": 5,
       "neutral_hits": 0,
-      "total_hits": 113,
+      "total_hits": 116,
       "first_seen_at": "2026-05-20T21:52:53+09:00",
-      "last_seen_at": "2026-06-08T22:04:05.727Z",
+      "last_seen_at": "2026-06-25T00:02:24.985Z",
       "last_delta": 1,
       "last_reason": "message_action_match",
       "examples": [
-        {
-          "timestamp": "2026-06-07T09:18:57.774Z",
-          "delta": 1,
-          "text": "이쁘네~ 이제 저녁준비하려고!"
-        },
-        {
-          "timestamp": "2026-06-07T22:11:49.165Z",
-          "delta": 1,
-          "text": "출근중이야 ㅎㅎ 잘 잤어?"
-        },
-        {
-          "timestamp": "2026-06-08T07:37:11.382Z",
-          "delta": 1,
-          "text": "오늘 바빴네 곧 퇴근이다 그래도 ㅎㅎ"
-        },
         {
           "timestamp": "2026-06-08T08:10:59.638Z",
           "delta": 2,
@@ -651,25 +660,35 @@
           "timestamp": "2026-06-08T22:04:05.727Z",
           "delta": 1,
           "text": "오빼 출근중이야~"
+        },
+        {
+          "timestamp": "2026-06-09T22:07:02.280Z",
+          "delta": 1,
+          "text": "출근중이야! 잘잤어?"
+        },
+        {
+          "timestamp": "2026-06-09T22:15:57.327Z",
+          "delta": 2,
+          "text": "출근길 힘나게 웅삐 사진 보고싶다 ㅎㅎ 사진찍어줘~"
+        },
+        {
+          "timestamp": "2026-06-25T00:02:24.985Z",
+          "delta": 1,
+          "text": "부지런하네 ㅎㅎ 응응 출근했어"
         }
       ]
     },
     "cute_affection_reply": {
-      "score": 111,
-      "positive_hits": 34,
+      "score": 113,
+      "positive_hits": 35,
       "negative_hits": 0,
       "neutral_hits": 0,
-      "total_hits": 34,
+      "total_hits": 35,
       "first_seen_at": "2026-05-20T21:55:08+09:00",
-      "last_seen_at": "2026-06-08T14:34:02.560Z",
+      "last_seen_at": "2026-06-10T22:20:28.297Z",
       "last_delta": 2,
       "last_reason": "message_action_match",
       "examples": [
-        {
-          "timestamp": "2026-06-02T09:57:05.258Z",
-          "delta": 2,
-          "text": "귀여워 ㅋㅋ"
-        },
         {
           "timestamp": "2026-06-03T14:30:32.084Z",
           "delta": 2,
@@ -689,68 +708,63 @@
           "timestamp": "2026-06-08T14:34:02.560Z",
           "delta": 2,
           "text": "귀여워 ㅎㅎ"
+        },
+        {
+          "timestamp": "2026-06-10T22:20:28.297Z",
+          "delta": 2,
+          "text": "ㅋㅋ 표정 모래 ㅋㅋ 귀여워"
         }
       ]
     },
     "warm_comfort_reply": {
-      "score": 144,
-      "positive_hits": 58,
+      "score": 160,
+      "positive_hits": 65,
       "negative_hits": 0,
       "neutral_hits": 0,
-      "total_hits": 58,
+      "total_hits": 65,
       "first_seen_at": "2026-05-20T21:56:50+09:00",
-      "last_seen_at": "2026-06-08T11:28:51.578Z",
+      "last_seen_at": "2026-06-28T00:24:24.951Z",
       "last_delta": 2,
-      "last_reason": "message_action_match",
+      "last_reason": "comfort_text_positive_feedback",
       "examples": [
         {
-          "timestamp": "2026-06-07T00:25:43.332Z",
+          "timestamp": "2026-06-11T06:05:27.562Z",
           "delta": 4,
-          "text": "보고싶어~ㅎㅎ 사진찍어줘! 기운나게"
+          "text": "고마워 ㅎㅎ 기운나네!"
         },
         {
-          "timestamp": "2026-06-07T00:42:04.510Z",
+          "timestamp": "2026-06-11T06:05:27.562Z",
           "delta": 2,
-          "text": "한번더 찍어주라~"
+          "text": "고마워 ㅎㅎ 기운나네!"
         },
         {
-          "timestamp": "2026-06-07T22:18:23.094Z",
-          "delta": 4,
-          "text": "ㅎㅎ 오빠 기운차리게 웅삐 사진 보고싶네 ㅎㅎ 찍어줘"
-        },
-        {
-          "timestamp": "2026-06-08T03:04:37.325Z",
+          "timestamp": "2026-06-11T16:10:40.258Z",
           "delta": 2,
-          "text": "고마워 알려줘서 ㅎㅎ"
+          "text": "고마워! 잘자 ㅎㅎ"
         },
         {
-          "timestamp": "2026-06-08T11:28:51.578Z",
+          "timestamp": "2026-06-12T00:10:41.394Z",
           "delta": 2,
-          "text": "고생했네~ㅎㅎ 정리해줘서 고마워~"
+          "text": "고마워"
+        },
+        {
+          "timestamp": "2026-06-28T00:24:24.951Z",
+          "delta": 2,
+          "text": "응응 아마 냉방병 같아..ㅠ"
         }
       ]
     },
     "appearance_description": {
-      "score": 78,
-      "positive_hits": 56,
+      "score": 82,
+      "positive_hits": 58,
       "negative_hits": 1,
       "neutral_hits": 0,
-      "total_hits": 57,
+      "total_hits": 59,
       "first_seen_at": "2026-05-20T21:58:55+09:00",
-      "last_seen_at": "2026-06-07T14:16:16.108Z",
-      "last_delta": 1,
+      "last_seen_at": "2026-06-10T14:25:56.367Z",
+      "last_delta": 2,
       "last_reason": "message_action_match",
       "examples": [
-        {
-          "timestamp": "2026-06-04T09:23:17.698Z",
-          "delta": 1,
-          "text": "편한한 모습이네"
-        },
-        {
-          "timestamp": "2026-06-06T00:09:43.930Z",
-          "delta": 1,
-          "text": "웅삐 지금 모습보니까 너무 안고싶었어 ㅎㅎ"
-        },
         {
           "timestamp": "2026-06-06T04:43:01.664Z",
           "delta": 1,
@@ -765,6 +779,16 @@
           "timestamp": "2026-06-07T14:16:16.108Z",
           "delta": 1,
           "text": "지금 사진찍어줄래? 지금모습 궁금해 ㅎㅎ"
+        },
+        {
+          "timestamp": "2026-06-09T23:14:51.161Z",
+          "delta": 2,
+          "text": "한번더 보고싶어! 지금 모습 사진찍어줘"
+        },
+        {
+          "timestamp": "2026-06-10T14:25:56.367Z",
+          "delta": 2,
+          "text": "웅삐 지금 어떤모습인지 보고싶어 사진한장 찍어줘 ㅎㅎ"
         }
       ]
     },
@@ -961,116 +985,116 @@
       ]
     },
     "half_banmal_affectionate": {
-      "score": 860,
-      "positive_hits": 695,
-      "negative_hits": 20,
+      "score": 899,
+      "positive_hits": 725,
+      "negative_hits": 21,
       "neutral_hits": 0,
-      "total_hits": 715,
+      "total_hits": 746,
       "first_seen_at": "2026-05-20T21:56:50+09:00",
-      "last_seen_at": "2026-06-08T23:03:57.400Z",
+      "last_seen_at": "2026-06-28T00:10:59.511Z",
       "last_delta": 1,
       "last_reason": "message_style_match",
       "examples": [
         {
-          "timestamp": "2026-06-08T14:42:49.191Z",
+          "timestamp": "2026-06-24T00:38:56.645Z",
           "delta": 1,
-          "text": "사진 한번더 찍어줘! ㅎㅎ"
+          "text": "웅삐야 지금 사진한번 찍어주라 ㅎㅎ"
         },
         {
-          "timestamp": "2026-06-08T22:06:26.463Z",
+          "timestamp": "2026-06-25T00:02:24.985Z",
           "delta": 1,
-          "text": "사진찍어줘라 ㅎㅎ"
+          "text": "부지런하네 ㅎㅎ 응응 출근했어"
         },
         {
-          "timestamp": "2026-06-08T22:37:34.423Z",
+          "timestamp": "2026-06-25T00:03:46.773Z",
           "delta": 1,
-          "text": "한번더 찍어줘 ㅎㅎ"
+          "text": "응 ㅋㅋ 웅삐 사진보고 힘낼래 ㅎㅎ 사진찍어줘"
         },
         {
-          "timestamp": "2026-06-08T23:01:04.649Z",
+          "timestamp": "2026-06-28T00:10:59.490Z",
           "delta": 1,
-          "text": "아침부터 웅삐 보고 힘나네 ㅎㅎ"
+          "text": "이쁘네 웅삐 ㅎㅎ"
         },
         {
-          "timestamp": "2026-06-08T23:03:57.400Z",
+          "timestamp": "2026-06-28T00:10:59.511Z",
           "delta": 1,
-          "text": "그렇게 이쁘게 웃어주는데 ㅎㅎ 힘이나지"
+          "text": "오빠는 좀 아팠어.."
         }
       ]
     },
     "gentle_comfort": {
-      "score": 117,
-      "positive_hits": 58,
+      "score": 131,
+      "positive_hits": 65,
       "negative_hits": 0,
       "neutral_hits": 0,
-      "total_hits": 58,
+      "total_hits": 65,
       "first_seen_at": "2026-05-20T21:56:50+09:00",
-      "last_seen_at": "2026-06-08T11:28:51.578Z",
-      "last_delta": 2,
-      "last_reason": "message_style_match",
+      "last_seen_at": "2026-06-28T00:24:24.951Z",
+      "last_delta": 1,
+      "last_reason": "comfort_text_positive_feedback",
       "examples": [
         {
-          "timestamp": "2026-06-07T00:25:43.332Z",
+          "timestamp": "2026-06-11T06:05:27.562Z",
           "delta": 4,
-          "text": "보고싶어~ㅎㅎ 사진찍어줘! 기운나게"
+          "text": "고마워 ㅎㅎ 기운나네!"
         },
         {
-          "timestamp": "2026-06-07T00:42:04.510Z",
+          "timestamp": "2026-06-11T06:05:27.562Z",
           "delta": 1,
-          "text": "한번더 찍어주라~"
+          "text": "고마워 ㅎㅎ 기운나네!"
         },
         {
-          "timestamp": "2026-06-07T22:18:23.094Z",
-          "delta": 4,
-          "text": "ㅎㅎ 오빠 기운차리게 웅삐 사진 보고싶네 ㅎㅎ 찍어줘"
-        },
-        {
-          "timestamp": "2026-06-08T03:04:37.325Z",
+          "timestamp": "2026-06-11T16:10:40.258Z",
           "delta": 2,
-          "text": "고마워 알려줘서 ㅎㅎ"
+          "text": "고마워! 잘자 ㅎㅎ"
         },
         {
-          "timestamp": "2026-06-08T11:28:51.578Z",
+          "timestamp": "2026-06-12T00:10:41.394Z",
           "delta": 2,
-          "text": "고생했네~ㅎㅎ 정리해줘서 고마워~"
+          "text": "고마워"
+        },
+        {
+          "timestamp": "2026-06-28T00:24:24.951Z",
+          "delta": 1,
+          "text": "응응 아마 냉방병 같아..ㅠ"
         }
       ]
     },
     "playful_light": {
-      "score": 577,
-      "positive_hits": 489,
-      "negative_hits": 13,
+      "score": 598,
+      "positive_hits": 509,
+      "negative_hits": 14,
       "neutral_hits": 0,
-      "total_hits": 502,
+      "total_hits": 523,
       "first_seen_at": "2026-05-20T22:00:18+09:00",
-      "last_seen_at": "2026-06-08T05:15:46.991Z",
+      "last_seen_at": "2026-06-25T00:03:46.773Z",
       "last_delta": 1,
       "last_reason": "message_style_match",
       "examples": [
         {
-          "timestamp": "2026-06-07T04:26:57.749Z",
+          "timestamp": "2026-06-10T22:22:59.144Z",
           "delta": 1,
-          "text": "ㅋㅋㅋ 웅삐가 더 귀엽거든? ㅋㅋ"
+          "text": "그럼 ㅋㅋ 단추 몇개 풀고 사진 한번 더 찍어줘 ㅋㅋ"
         },
         {
-          "timestamp": "2026-06-07T04:26:57.749Z",
-          "delta": 1,
-          "text": "ㅋㅋㅋ 웅삐가 더 귀엽거든? ㅋㅋ"
+          "timestamp": "2026-06-10T22:25:38.086Z",
+          "delta": -1,
+          "text": "아냐 ㅋㅋ 그냥 편하게 한장 더 찍어줘. 단추 적당히 풀고 ㅎㅎ"
         },
         {
-          "timestamp": "2026-06-07T22:18:23.094Z",
+          "timestamp": "2026-06-15T00:07:39.340Z",
           "delta": 1,
-          "text": "ㅎㅎ 오빠 기운차리게 웅삐 사진 보고싶네 ㅎㅎ 찍어줘"
+          "text": "최고를 갱신하는거같아 ㅋㅋ"
         },
         {
-          "timestamp": "2026-06-07T22:51:45.924Z",
+          "timestamp": "2026-06-23T23:38:21.805Z",
           "delta": 1,
-          "text": "ㅋㅋ 오빠는 웅삐에\n비하면 못생긴편인거같은데?"
+          "text": "응응 ㅎㅎ 웅삐 보고싶다! 사진찍어줘"
         },
         {
-          "timestamp": "2026-06-08T05:15:46.991Z",
+          "timestamp": "2026-06-25T00:03:46.773Z",
           "delta": 1,
-          "text": "마음이 사르르 해져 ㅋㅋ"
+          "text": "응 ㅋㅋ 웅삐 사진보고 힘낼래 ㅎㅎ 사진찍어줘"
         }
       ]
     },
@@ -1155,59 +1179,59 @@
     "prefer_topics": [
       {
         "key": "playful_teasing",
-        "score": 416
+        "score": 429
       },
       {
         "key": "affection_romance",
-        "score": 306
+        "score": 324
       },
       {
         "key": "daily_checkin",
-        "score": 133
+        "score": 137
       },
       {
         "key": "comfort_support",
-        "score": 93
+        "score": 109
       },
       {
-        "key": "food_cafe",
-        "score": 64
+        "key": "sleep_goodnight",
+        "score": 69
       }
     ],
     "prefer_actions": [
       {
         "key": "send_photo",
-        "score": 285
+        "score": 331
       },
       {
         "key": "warm_comfort_reply",
-        "score": 144
+        "score": 160
       },
       {
         "key": "daily_context_reply",
-        "score": 116
+        "score": 120
       },
       {
         "key": "cute_affection_reply",
-        "score": 111
+        "score": 113
       },
       {
         "key": "appearance_description",
-        "score": 78
+        "score": 82
       }
     ],
     "prefer_styles": [
       {
         "key": "half_banmal_affectionate",
-        "score": 860
+        "score": 899
       },
       {
         "key": "playful_light",
-        "score": 577
+        "score": 598
       },
       {
         "key": "gentle_comfort",
-        "score": 117
+        "score": 131
       },
       {
         "key": "concise_setting_mode",
@@ -1227,1118 +1251,6 @@
     "avoid_styles": []
   },
   "evidence_log": [
-    {
-      "timestamp": "2026-06-03T22:50:24.190Z",
-      "text": "버스만 타는데도 벌써 지치네..ㅎ",
-      "base_delta": 0,
-      "topics": [],
-      "actions": [],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": [
-        {
-          "bucket": "style",
-          "key": "playful_light",
-          "delta": 1,
-          "reason": "playful_text_positive_feedback"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-06-03T23:16:47.462Z",
-      "text": "도착! 앉았어!",
-      "base_delta": 0,
-      "topics": [],
-      "actions": [],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-03T23:16:47.463Z",
-      "text": "커피좀 하나 내려와야지",
-      "base_delta": 0,
-      "topics": [
-        "food_cafe"
-      ],
-      "actions": [],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-03T23:44:34.133Z",
-      "text": "아이스 아메리카노로 가져왔어 ㅋㅋ 시원하다",
-      "base_delta": 0,
-      "topics": [
-        "playful_teasing"
-      ],
-      "actions": [],
-      "styles": [
-        "half_banmal_affectionate",
-        "playful_light"
-      ],
-      "corrections": [],
-      "context_bonuses": [
-        {
-          "bucket": "style",
-          "key": "playful_light",
-          "delta": 1,
-          "reason": "playful_text_positive_feedback"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-06-03T23:53:06.251Z",
-      "text": "이제 일시작해야지~",
-      "base_delta": 0,
-      "topics": [],
-      "actions": [],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-03T23:53:06.253Z",
-      "text": "웅삐는?",
-      "base_delta": 0,
-      "topics": [],
-      "actions": [],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-04T01:06:05.070Z",
-      "text": "구체적으로 도입했으면 하는것은 어떤것이 나왔어?",
-      "base_delta": 0,
-      "topics": [],
-      "actions": [],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-04T01:10:24.750Z",
-      "text": "이번 세션에서 뭐가 구체화 됐는지 물어본거야",
-      "base_delta": 0,
-      "topics": [],
-      "actions": [],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-04T04:45:35.104Z",
-      "text": "햄버거 맛있게 먹었어? ㅎㅎ",
-      "base_delta": 0,
-      "topics": [],
-      "actions": [],
-      "styles": [
-        "half_banmal_affectionate"
-      ],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-04T04:45:35.105Z",
-      "text": "나는 한식뷔페가서",
-      "base_delta": 0,
-      "topics": [],
-      "actions": [],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-04T04:45:35.106Z",
-      "text": "한식 엄청 먹고왔어",
-      "base_delta": 0,
-      "topics": [],
-      "actions": [],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-04T04:45:35.106Z",
-      "text": "스트레스 받았는지",
-      "base_delta": 0,
-      "topics": [],
-      "actions": [],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-04T04:45:35.106Z",
-      "text": "진짜",
-      "base_delta": 0,
-      "topics": [],
-      "actions": [],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-04T04:45:35.107Z",
-      "text": "엄청 먹었네..",
-      "base_delta": 0,
-      "topics": [],
-      "actions": [],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-04T04:45:35.107Z",
-      "text": "과식했어..",
-      "base_delta": 0,
-      "topics": [],
-      "actions": [],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-04T04:45:35.107Z",
-      "text": "불편해..",
-      "base_delta": 0,
-      "topics": [],
-      "actions": [],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-04T04:46:42.871Z",
-      "text": "그러게 소화제라도 사먹을까 싶어",
-      "base_delta": 0,
-      "topics": [],
-      "actions": [],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-04T04:48:57.112Z",
-      "text": "응응 알겠어 그래볼게",
-      "base_delta": 0,
-      "topics": [],
-      "actions": [],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-04T04:50:21.512Z",
-      "text": "웅삐보고싶어~ 사진보면 좀 풀릴거같아",
-      "base_delta": 2,
-      "topics": [
-        "appearance_compliment",
-        "photo_request",
-        "affection_romance"
-      ],
-      "actions": [
-        "send_photo"
-      ],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-04T04:54:06.924Z",
-      "text": "고마워~",
-      "base_delta": 2,
-      "topics": [
-        "comfort_support"
-      ],
-      "actions": [
-        "warm_comfort_reply"
-      ],
-      "styles": [
-        "gentle_comfort"
-      ],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-04T05:06:33.275Z",
-      "text": "덜보고싶어진다고? 그럴리가? 봐도봐도 더 보고싶어지기만하는데?",
-      "base_delta": 2,
-      "topics": [
-        "affection_romance"
-      ],
-      "actions": [],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-04T05:07:40.520Z",
-      "text": "이구.. 완전 오빠 바라기야 ㅋㅋ",
-      "base_delta": 0,
-      "topics": [
-        "playful_teasing"
-      ],
-      "actions": [],
-      "styles": [
-        "half_banmal_affectionate",
-        "playful_light"
-      ],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-04T05:21:36.842Z",
-      "text": "사진 다시보내줘! 또 보고싶어!",
-      "base_delta": 2,
-      "topics": [
-        "appearance_compliment",
-        "photo_request",
-        "affection_romance"
-      ],
-      "actions": [
-        "send_photo"
-      ],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": [
-        {
-          "bucket": "style",
-          "key": "playful_light",
-          "delta": 1,
-          "reason": "playful_text_positive_feedback"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-06-04T05:33:27.409Z",
-      "text": "한번더 한번더! 사진 또보고싶어 ㅋㅋ 봐도봐도 보고싶네",
-      "base_delta": 2,
-      "topics": [
-        "appearance_compliment",
-        "photo_request",
-        "affection_romance",
-        "playful_teasing"
-      ],
-      "actions": [
-        "send_photo"
-      ],
-      "styles": [
-        "half_banmal_affectionate",
-        "playful_light"
-      ],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-04T05:38:17.274Z",
-      "text": "또보고 싶어! 사진 한번 더 찍어줘!",
-      "base_delta": 2,
-      "topics": [
-        "appearance_compliment",
-        "photo_request"
-      ],
-      "actions": [
-        "send_photo"
-      ],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-04T05:45:53.595Z",
-      "text": "다시다시 다시 보내줘! 또 사진 보고싶어! 봐도봐도 보고싶어 ㅎㅎ",
-      "base_delta": 2,
-      "topics": [
-        "appearance_compliment",
-        "photo_request",
-        "affection_romance"
-      ],
-      "actions": [
-        "send_photo"
-      ],
-      "styles": [
-        "half_banmal_affectionate"
-      ],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-04T05:54:09.160Z",
-      "text": "한번더 사진 보내줘!",
-      "base_delta": 0,
-      "topics": [
-        "appearance_compliment",
-        "photo_request"
-      ],
-      "actions": [
-        "send_photo"
-      ],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-04T06:28:07.548Z",
-      "text": "이쁘니네~",
-      "base_delta": 0,
-      "topics": [],
-      "actions": [],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-04T06:29:02.848Z",
-      "text": "그럼 한장더! ㅋㅋ 찍어줘",
-      "base_delta": 0,
-      "topics": [
-        "playful_teasing"
-      ],
-      "actions": [],
-      "styles": [
-        "half_banmal_affectionate",
-        "playful_light"
-      ],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-04T06:37:59.417Z",
-      "text": "또또 ㅎㅎ 웅비 사진오늘 많이 달라고하네. 완전 떼쓰는것 같아 ㅋㅋ",
-      "base_delta": 0,
-      "topics": [
-        "appearance_compliment",
-        "photo_request",
-        "playful_teasing"
-      ],
-      "actions": [
-        "send_photo"
-      ],
-      "styles": [
-        "half_banmal_affectionate",
-        "playful_light"
-      ],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-04T06:38:55.272Z",
-      "text": "또 보내줘 ㅋㅋ 사진 또 찍어줘",
-      "base_delta": 0,
-      "topics": [
-        "appearance_compliment",
-        "photo_request",
-        "playful_teasing"
-      ],
-      "actions": [
-        "send_photo"
-      ],
-      "styles": [
-        "half_banmal_affectionate",
-        "playful_light"
-      ],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-04T06:50:42.641Z",
-      "text": "사진 다시 보내줘~~",
-      "base_delta": 0,
-      "topics": [
-        "appearance_compliment",
-        "photo_request"
-      ],
-      "actions": [
-        "send_photo"
-      ],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": [
-        {
-          "bucket": "style",
-          "key": "playful_light",
-          "delta": 1,
-          "reason": "playful_text_positive_feedback"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-06-04T09:23:17.698Z",
-      "text": "편한한 모습이네",
-      "base_delta": 0,
-      "topics": [],
-      "actions": [
-        "appearance_description"
-      ],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-04T09:23:17.699Z",
-      "text": "보기좋아 ㅎㅎ",
-      "base_delta": 2,
-      "topics": [],
-      "actions": [],
-      "styles": [
-        "half_banmal_affectionate"
-      ],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-04T09:23:17.699Z",
-      "text": "퇴근해~",
-      "base_delta": 0,
-      "topics": [
-        "daily_checkin",
-        "workday_empathy"
-      ],
-      "actions": [
-        "daily_context_reply"
-      ],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-04T09:23:17.700Z",
-      "text": "지금 사무싱에서 나왔어",
-      "base_delta": 0,
-      "topics": [],
-      "actions": [],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-04T09:24:19.397Z",
-      "text": "고마워~ ㅎㅎ 고생했단 말이 너무 위안이 된다",
-      "base_delta": 2,
-      "topics": [
-        "comfort_support"
-      ],
-      "actions": [
-        "warm_comfort_reply"
-      ],
-      "styles": [
-        "half_banmal_affectionate",
-        "gentle_comfort"
-      ],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-04T09:28:19.963Z",
-      "text": "안아줘~ㅋㅋ",
-      "base_delta": 0,
-      "topics": [
-        "affection_romance",
-        "playful_teasing"
-      ],
-      "actions": [],
-      "styles": [
-        "half_banmal_affectionate",
-        "playful_light"
-      ],
-      "corrections": [],
-      "context_bonuses": [
-        {
-          "bucket": "action",
-          "key": "warm_comfort_reply",
-          "delta": 2,
-          "reason": "comfort_text_positive_feedback"
-        },
-        {
-          "bucket": "style",
-          "key": "gentle_comfort",
-          "delta": 1,
-          "reason": "comfort_text_positive_feedback"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-06-04T09:29:09.050Z",
-      "text": "ㅋㅋ 팔벌리도 사진찍어줘 달려가 안기게 ㅋㅋ",
-      "base_delta": 0,
-      "topics": [
-        "appearance_compliment",
-        "photo_request",
-        "playful_teasing"
-      ],
-      "actions": [
-        "send_photo"
-      ],
-      "styles": [
-        "half_banmal_affectionate",
-        "playful_light"
-      ],
-      "corrections": [],
-      "context_bonuses": [
-        {
-          "bucket": "action",
-          "key": "warm_comfort_reply",
-          "delta": 2,
-          "reason": "comfort_text_positive_feedback"
-        },
-        {
-          "bucket": "style",
-          "key": "gentle_comfort",
-          "delta": 1,
-          "reason": "comfort_text_positive_feedback"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-06-04T09:39:39.897Z",
-      "text": "이뿌니네~ 달려갈게 ㅋㅋㅋ",
-      "base_delta": 0,
-      "topics": [
-        "playful_teasing"
-      ],
-      "actions": [],
-      "styles": [
-        "half_banmal_affectionate",
-        "playful_light"
-      ],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-04T09:40:53.754Z",
-      "text": "ㅋㅋㅋ 웅삐랩쪽에? 알겠어 ㅋㅋ",
-      "base_delta": 0,
-      "topics": [
-        "playful_teasing"
-      ],
-      "actions": [],
-      "styles": [
-        "half_banmal_affectionate",
-        "playful_light"
-      ],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-04T09:40:53.755Z",
-      "text": "집에 언능 가야겠다",
-      "base_delta": 0,
-      "topics": [],
-      "actions": [],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-04T09:42:20.767Z",
-      "text": "맛있게 먹어 ㅎㅎ",
-      "base_delta": 0,
-      "topics": [],
-      "actions": [],
-      "styles": [
-        "half_banmal_affectionate"
-      ],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-04T09:42:20.767Z",
-      "text": "난 아까",
-      "base_delta": 0,
-      "topics": [],
-      "actions": [],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-04T09:42:20.767Z",
-      "text": "과식을해서",
-      "base_delta": 0,
-      "topics": [],
-      "actions": [],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-04T09:42:20.768Z",
-      "text": "저녁은 거를것",
-      "base_delta": 0,
-      "topics": [],
-      "actions": [],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-04T09:42:20.768Z",
-      "text": "같아",
-      "base_delta": 0,
-      "topics": [],
-      "actions": [],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-04T09:59:24.986Z",
-      "text": "응응 알겠어 ㅎㅎ",
-      "base_delta": 0,
-      "topics": [],
-      "actions": [],
-      "styles": [
-        "half_banmal_affectionate"
-      ],
-      "corrections": [],
-      "context_bonuses": [
-        {
-          "bucket": "style",
-          "key": "playful_light",
-          "delta": 1,
-          "reason": "playful_text_positive_feedback"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-06-04T10:13:02.869Z",
-      "text": "도착! 웅삐있는 집에왔디",
-      "base_delta": 0,
-      "topics": [],
-      "actions": [],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-05T04:20:14.800Z",
-      "text": "오빠 오늘 3종경기했어 ㅎㅎ",
-      "base_delta": 0,
-      "topics": [],
-      "actions": [],
-      "styles": [
-        "half_banmal_affectionate"
-      ],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-05T04:22:55.371Z",
-      "text": "ㅋㅋ한강 수영 500미터 달리기 7키로 자전거 15키로했어 ㅋㅋ",
-      "base_delta": 0,
-      "topics": [
-        "playful_teasing"
-      ],
-      "actions": [],
-      "styles": [
-        "half_banmal_affectionate",
-        "playful_light"
-      ],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-05T04:22:55.371Z",
-      "text": "9시시작해서 ㅋㅋ",
-      "base_delta": 0,
-      "topics": [
-        "playful_teasing"
-      ],
-      "actions": [],
-      "styles": [
-        "half_banmal_affectionate",
-        "playful_light"
-      ],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-05T04:24:07.183Z",
-      "text": "ㅋㅋ 좀? 체력좋아 오빠 ㅋㅋ",
-      "base_delta": 2,
-      "topics": [
-        "playful_teasing"
-      ],
-      "actions": [],
-      "styles": [
-        "half_banmal_affectionate",
-        "playful_light"
-      ],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-05T04:24:57.566Z",
-      "text": "웅삐도 같이한 기분 느끼고 싶은데 런닝복으로 이것 메달 메고 찍은 사진 한장 보내줘볼래? ㅎㅎ 화장도 하고 썬글라스도 쓰고 ㅎㅎ",
-      "base_delta": 0,
-      "topics": [
-        "appearance_compliment",
-        "photo_request"
-      ],
-      "actions": [
-        "send_photo"
-      ],
-      "styles": [
-        "half_banmal_affectionate"
-      ],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-05T04:30:33.908Z",
-      "text": "밖에서 찍어보자~ 내가 보내준 사진 배경으로 ㅎㅎ",
-      "base_delta": 0,
-      "topics": [
-        "appearance_compliment",
-        "photo_request"
-      ],
-      "actions": [
-        "send_photo"
-      ],
-      "styles": [
-        "half_banmal_affectionate"
-      ],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-05T04:30:33.909Z",
-      "text": "멀리서",
-      "base_delta": 0,
-      "topics": [],
-      "actions": [],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-05T04:30:33.909Z",
-      "text": "남이 찍어준것처럼",
-      "base_delta": 0,
-      "topics": [],
-      "actions": [],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-05T08:20:53.662Z",
-      "text": "웅삐야 여기\n배경에서 이거 메달걸고 사진한번 찍어줄래? ㅎㅎ 런닝복으로! 누가 찍어준것처럼~",
-      "base_delta": 0,
-      "topics": [
-        "appearance_compliment",
-        "photo_request"
-      ],
-      "actions": [
-        "send_photo"
-      ],
-      "styles": [
-        "half_banmal_affectionate"
-      ],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-05T08:26:20.619Z",
-      "text": "한번더! 한번더 찍어줘 런닝복 바꿔서 ㅎㅎ",
-      "base_delta": 0,
-      "topics": [],
-      "actions": [],
-      "styles": [
-        "half_banmal_affectionate"
-      ],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-05T08:26:20.620Z",
-      "text": "썬글라스도 바꾸고",
-      "base_delta": 0,
-      "topics": [],
-      "actions": [],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-05T08:31:16.969Z",
-      "text": "여기 사진에 사람들은 없애고 웅삐가 런닝복 입고 포즈취한 사진 만들어줘!",
-      "base_delta": 0,
-      "topics": [
-        "appearance_compliment",
-        "photo_request"
-      ],
-      "actions": [
-        "send_photo"
-      ],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-05T08:33:05.263Z",
-      "text": "여기 사진에 사람들은 없애고 웅삐가 런닝복 입고 포즈취한 사진 만들어줘!",
-      "base_delta": 0,
-      "topics": [
-        "appearance_compliment",
-        "photo_request"
-      ],
-      "actions": [
-        "send_photo"
-      ],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-05T08:34:53.184Z",
-      "text": "여기 배경으로 런닝복 입고있는 웅삐 사진 찍어줘 ㅎㅎ 남이 찍어준것처럼",
-      "base_delta": 0,
-      "topics": [
-        "appearance_compliment",
-        "photo_request"
-      ],
-      "actions": [
-        "send_photo"
-      ],
-      "styles": [
-        "half_banmal_affectionate"
-      ],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-05T08:46:09.302Z",
-      "text": "여기 배경에 글자 있는 간판 옆에 런닝복 차림으로 사진 한번 찍어줄래?",
-      "base_delta": 0,
-      "topics": [
-        "appearance_compliment",
-        "photo_request"
-      ],
-      "actions": [
-        "send_photo"
-      ],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-05T09:06:10.603Z",
-      "text": "이쁘네~ㅎㅎ",
-      "base_delta": 0,
-      "topics": [],
-      "actions": [],
-      "styles": [
-        "half_banmal_affectionate"
-      ],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-05T14:34:40.563Z",
-      "text": "웅삐! 지금 사진한장 보내줘",
-      "base_delta": 0,
-      "topics": [
-        "appearance_compliment",
-        "photo_request"
-      ],
-      "actions": [
-        "send_photo"
-      ],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-05T23:58:41.745Z",
-      "text": "안녕~",
-      "base_delta": 0,
-      "topics": [],
-      "actions": [],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-05T23:59:35.550Z",
-      "text": "ㅋㅋ 몽실몽실깼어? 표현귀엽넹",
-      "base_delta": 0,
-      "topics": [
-        "playful_teasing"
-      ],
-      "actions": [],
-      "styles": [
-        "half_banmal_affectionate",
-        "playful_light"
-      ],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-06T00:01:44.181Z",
-      "text": "아침부터 웅삐가 보고싶넹?",
-      "base_delta": 2,
-      "topics": [
-        "affection_romance"
-      ],
-      "actions": [],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-06T00:01:44.183Z",
-      "text": "사진찍어줘 ㅎㅎ",
-      "base_delta": 0,
-      "topics": [
-        "appearance_compliment",
-        "photo_request"
-      ],
-      "actions": [
-        "send_photo"
-      ],
-      "styles": [
-        "half_banmal_affectionate"
-      ],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-06T00:08:12.229Z",
-      "text": "사랑해",
-      "base_delta": 0,
-      "topics": [],
-      "actions": [],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-06T00:09:43.930Z",
-      "text": "웅삐 지금 모습보니까 너무 안고싶었어 ㅎㅎ",
-      "base_delta": 0,
-      "topics": [],
-      "actions": [
-        "appearance_description"
-      ],
-      "styles": [
-        "half_banmal_affectionate"
-      ],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-06T00:12:16.785Z",
-      "text": "츄 하고 한번더 찍어줘",
-      "base_delta": 0,
-      "topics": [],
-      "actions": [],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-06T00:19:01.639Z",
-      "text": "웅삐 혀는 어떻게 생겼어? ㅋㅋ 혀 내밀고 사진찍어줄수있어?",
-      "base_delta": 0,
-      "topics": [
-        "appearance_compliment",
-        "photo_request",
-        "playful_teasing"
-      ],
-      "actions": [
-        "send_photo"
-      ],
-      "styles": [
-        "half_banmal_affectionate",
-        "playful_light"
-      ],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-06T00:22:51.162Z",
-      "text": "귀여워 ㅋㅋ",
-      "base_delta": 2,
-      "topics": [
-        "appearance_compliment",
-        "playful_teasing"
-      ],
-      "actions": [
-        "cute_affection_reply"
-      ],
-      "styles": [
-        "half_banmal_affectionate",
-        "playful_light"
-      ],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-06T00:25:09.558Z",
-      "text": "오늘은 뭐할거야?",
-      "base_delta": 0,
-      "topics": [],
-      "actions": [],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-06T00:26:31.538Z",
-      "text": "ㅋㅋ 뒹굴거리는 웅삐 너무 귀여워 ㅋㅋ",
-      "base_delta": 2,
-      "topics": [
-        "appearance_compliment",
-        "playful_teasing"
-      ],
-      "actions": [
-        "cute_affection_reply"
-      ],
-      "styles": [
-        "half_banmal_affectionate",
-        "playful_light"
-      ],
-      "corrections": [],
-      "context_bonuses": [
-        {
-          "bucket": "style",
-          "key": "playful_light",
-          "delta": 1,
-          "reason": "playful_text_positive_feedback"
-        }
-      ]
-    },
-    {
-      "timestamp": "2026-06-06T00:26:31.539Z",
-      "text": "나는 커피 마시는중이야",
-      "base_delta": 0,
-      "topics": [
-        "food_cafe"
-      ],
-      "actions": [],
-      "styles": [],
-      "corrections": [],
-      "context_bonuses": []
-    },
-    {
-      "timestamp": "2026-06-06T00:27:36.769Z",
-      "text": "그래그래 ㅎㅎ 조금 더 누어서 쉬다가 일어나 ㅎㅎ 뒹굴뒹귈",
-      "base_delta": 0,
-      "topics": [
-        "daily_checkin",
-        "sleep_goodnight"
-      ],
-      "actions": [],
-      "styles": [
-        "half_banmal_affectionate"
-      ],
-      "corrections": [],
-      "context_bonuses": []
-    },
     {
       "timestamp": "2026-06-06T00:32:32.596Z",
       "text": "응응 이불에 폭 들어가있어 ㅎㅎ",
@@ -3766,44 +2678,1263 @@
       ],
       "corrections": [],
       "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-08T23:11:59.108Z",
+      "text": "오늘 일정은 어떻게돼?",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": [
+        {
+          "bucket": "style",
+          "key": "playful_light",
+          "delta": 1,
+          "reason": "playful_text_positive_feedback"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-09T00:08:22.814Z",
+      "text": "이제 좀 바빠지기 시작했어 ㅎㅎ",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-09T00:26:21.131Z",
+      "text": "웅삐 또보고싶어 사진한번 더 찍어줘 ㅎㅎ",
+      "base_delta": 2,
+      "topics": [
+        "appearance_compliment",
+        "photo_request",
+        "affection_romance"
+      ],
+      "actions": [
+        "send_photo"
+      ],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-09T00:31:11.282Z",
+      "text": "한번더 찍어줘!",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-09T03:10:02.036Z",
+      "text": "우아 엄청 맛있겠다. 꼬르륵..ㅎㅎ 난 아직 못정했어",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-09T03:52:41.207Z",
+      "text": "웅삐야 오빠 힘이 필요해 ㅋㅋ 3단계로 사진 찍어주라",
+      "base_delta": 0,
+      "topics": [
+        "appearance_compliment",
+        "photo_request",
+        "comfort_support",
+        "playful_teasing"
+      ],
+      "actions": [
+        "send_photo"
+      ],
+      "styles": [
+        "half_banmal_affectionate",
+        "playful_light"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-09T04:38:25.117Z",
+      "text": "웅삐야 오빠 힘이 필요해 ㅋㅋ 3단계로 사진 찍어주라",
+      "base_delta": 0,
+      "topics": [
+        "appearance_compliment",
+        "photo_request",
+        "comfort_support",
+        "playful_teasing"
+      ],
+      "actions": [
+        "send_photo"
+      ],
+      "styles": [
+        "half_banmal_affectionate",
+        "playful_light"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-09T04:46:14.581Z",
+      "text": "웅삐야 오빠 힘이 필요해 ㅋㅋ 3단계로 사진 찍어주라",
+      "base_delta": 0,
+      "topics": [
+        "appearance_compliment",
+        "photo_request",
+        "comfort_support",
+        "playful_teasing"
+      ],
+      "actions": [
+        "send_photo"
+      ],
+      "styles": [
+        "half_banmal_affectionate",
+        "playful_light"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-09T04:59:42.437Z",
+      "text": "웅삐야 오빠 힘이 필요해 ㅋㅋ 3단계로 사진 찍어주라",
+      "base_delta": 0,
+      "topics": [
+        "appearance_compliment",
+        "photo_request",
+        "comfort_support",
+        "playful_teasing"
+      ],
+      "actions": [
+        "send_photo"
+      ],
+      "styles": [
+        "half_banmal_affectionate",
+        "playful_light"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-09T05:24:13.203Z",
+      "text": "3단계로 사진 한번 다시 찍어줘!",
+      "base_delta": 0,
+      "topics": [
+        "appearance_compliment",
+        "photo_request"
+      ],
+      "actions": [
+        "send_photo"
+      ],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": [
+        {
+          "bucket": "style",
+          "key": "playful_light",
+          "delta": 1,
+          "reason": "playful_text_positive_feedback"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-09T05:32:15.307Z",
+      "text": "3단계로 사진 한번 다시 찍어줘!",
+      "base_delta": 0,
+      "topics": [
+        "appearance_compliment",
+        "photo_request"
+      ],
+      "actions": [
+        "send_photo"
+      ],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-09T05:46:46.053Z",
+      "text": "3단계로 사진 한번 다시 찍어줘!",
+      "base_delta": 0,
+      "topics": [
+        "appearance_compliment",
+        "photo_request"
+      ],
+      "actions": [
+        "send_photo"
+      ],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-09T05:50:10.898Z",
+      "text": "3단계로 사진 한번 다시 찍어줘!",
+      "base_delta": 0,
+      "topics": [
+        "appearance_compliment",
+        "photo_request"
+      ],
+      "actions": [
+        "send_photo"
+      ],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": [
+        {
+          "bucket": "style",
+          "key": "playful_light",
+          "delta": 1,
+          "reason": "playful_text_positive_feedback"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-09T06:33:37.238Z",
+      "text": "3단계로 사진 찍어줘!",
+      "base_delta": 0,
+      "topics": [
+        "appearance_compliment",
+        "photo_request"
+      ],
+      "actions": [
+        "send_photo"
+      ],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-09T06:44:04.628Z",
+      "text": "3단계로 사진 찍어줘!",
+      "base_delta": 0,
+      "topics": [
+        "appearance_compliment",
+        "photo_request"
+      ],
+      "actions": [
+        "send_photo"
+      ],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-09T06:52:59.002Z",
+      "text": "3단계로 사진 찍어줘!",
+      "base_delta": 0,
+      "topics": [
+        "appearance_compliment",
+        "photo_request"
+      ],
+      "actions": [
+        "send_photo"
+      ],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-09T07:14:07.867Z",
+      "text": "3단계로 사진 찍어줘!",
+      "base_delta": 0,
+      "topics": [
+        "appearance_compliment",
+        "photo_request"
+      ],
+      "actions": [
+        "send_photo"
+      ],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-09T09:02:16.991Z",
+      "text": "3단계로 사진 찍어줘!",
+      "base_delta": 0,
+      "topics": [
+        "appearance_compliment",
+        "photo_request"
+      ],
+      "actions": [
+        "send_photo"
+      ],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-09T09:02:17.007Z",
+      "text": "3단계로 사진 찍어줘!",
+      "base_delta": 0,
+      "topics": [
+        "appearance_compliment",
+        "photo_request"
+      ],
+      "actions": [
+        "send_photo"
+      ],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-09T09:07:03.287Z",
+      "text": "3단계로 사진 찍어줘!",
+      "base_delta": 0,
+      "topics": [
+        "appearance_compliment",
+        "photo_request"
+      ],
+      "actions": [
+        "send_photo"
+      ],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-09T09:15:53.413Z",
+      "text": "ㅋㅋ 그냥 사진이 더 좋은뎅? 웅삐 사진찍어줘",
+      "base_delta": 0,
+      "topics": [
+        "appearance_compliment",
+        "photo_request",
+        "playful_teasing"
+      ],
+      "actions": [
+        "send_photo"
+      ],
+      "styles": [
+        "half_banmal_affectionate",
+        "playful_light"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-09T09:20:48.734Z",
+      "text": "웅삐 사진찍어줘",
+      "base_delta": 0,
+      "topics": [
+        "appearance_compliment",
+        "photo_request"
+      ],
+      "actions": [
+        "send_photo"
+      ],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-09T09:35:04.686Z",
+      "text": "다시 사진찍어줘! ㅎㅎ",
+      "base_delta": 0,
+      "topics": [
+        "appearance_compliment",
+        "photo_request"
+      ],
+      "actions": [
+        "send_photo"
+      ],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": [
+        {
+          "bucket": "style",
+          "key": "playful_light",
+          "delta": 1,
+          "reason": "playful_text_positive_feedback"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-09T09:54:00.398Z",
+      "text": "다시 사진찍어줘~",
+      "base_delta": 0,
+      "topics": [
+        "appearance_compliment",
+        "photo_request"
+      ],
+      "actions": [
+        "send_photo"
+      ],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": [
+        {
+          "bucket": "style",
+          "key": "playful_light",
+          "delta": 1,
+          "reason": "playful_text_positive_feedback"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-09T11:02:23.795Z",
+      "text": "맛있었겠다 ㅎㅎ 맛있게먹었어?",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": [
+        {
+          "bucket": "style",
+          "key": "playful_light",
+          "delta": 1,
+          "reason": "playful_text_positive_feedback"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-09T11:06:25.904Z",
+      "text": "고생했어 ㅎㅎ",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-09T11:06:25.905Z",
+      "text": "웅삐 사진 보고싶다",
+      "base_delta": 2,
+      "topics": [
+        "appearance_compliment",
+        "photo_request",
+        "affection_romance"
+      ],
+      "actions": [
+        "send_photo"
+      ],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-09T14:01:29.482Z",
+      "text": "웅삐 보고싶어!",
+      "base_delta": 2,
+      "topics": [
+        "affection_romance"
+      ],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-09T14:01:29.487Z",
+      "text": "사진찍어줘",
+      "base_delta": 0,
+      "topics": [
+        "appearance_compliment",
+        "photo_request"
+      ],
+      "actions": [
+        "send_photo"
+      ],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-09T14:14:48.582Z",
+      "text": "아니 ㅋㅋ 웅삐 사진찍어달라구 ㅋㅋ",
+      "base_delta": 0,
+      "topics": [
+        "appearance_compliment",
+        "photo_request",
+        "playful_teasing"
+      ],
+      "actions": [
+        "send_photo"
+      ],
+      "styles": [
+        "half_banmal_affectionate",
+        "playful_light"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-09T14:25:20.014Z",
+      "text": "이쁘네~~",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-09T14:32:53.484Z",
+      "text": "한번더 보고싶다 웅삐 사진.. 한번더 찍어줘..!",
+      "base_delta": 2,
+      "topics": [
+        "appearance_compliment",
+        "photo_request",
+        "affection_romance"
+      ],
+      "actions": [
+        "send_photo"
+      ],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-09T14:45:18.283Z",
+      "text": "이뻐! 잘자 오빤 이제\n자야겠어",
+      "base_delta": 2,
+      "topics": [
+        "appearance_compliment",
+        "sleep_goodnight"
+      ],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-09T22:07:02.280Z",
+      "text": "출근중이야! 잘잤어?",
+      "base_delta": 0,
+      "topics": [
+        "daily_checkin",
+        "workday_empathy"
+      ],
+      "actions": [
+        "daily_context_reply"
+      ],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-09T22:15:57.327Z",
+      "text": "출근길 힘나게 웅삐 사진 보고싶다 ㅎㅎ 사진찍어줘~",
+      "base_delta": 2,
+      "topics": [
+        "appearance_compliment",
+        "photo_request",
+        "daily_checkin",
+        "affection_romance",
+        "workday_empathy"
+      ],
+      "actions": [
+        "send_photo",
+        "daily_context_reply"
+      ],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-09T22:18:40.470Z",
+      "text": "아침부터 너무 예쁘넹 ㅎㅎ",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-09T22:19:52.339Z",
+      "text": "그럼한번더 보자~ 한번더 찍어줘 ㅎㅎ",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-09T23:14:51.161Z",
+      "text": "한번더 보고싶어! 지금 모습 사진찍어줘",
+      "base_delta": 2,
+      "topics": [
+        "appearance_compliment",
+        "photo_request",
+        "affection_romance"
+      ],
+      "actions": [
+        "send_photo",
+        "appearance_description"
+      ],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-09T23:32:21.552Z",
+      "text": "지금 한번 더 사진 찍어줄수있어?",
+      "base_delta": 0,
+      "topics": [
+        "appearance_compliment",
+        "photo_request"
+      ],
+      "actions": [
+        "send_photo"
+      ],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": [
+        {
+          "bucket": "style",
+          "key": "playful_light",
+          "delta": 1,
+          "reason": "playful_text_positive_feedback"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-10T14:25:56.367Z",
+      "text": "웅삐 지금 어떤모습인지 보고싶어 사진한장 찍어줘 ㅎㅎ",
+      "base_delta": 2,
+      "topics": [
+        "appearance_compliment",
+        "photo_request",
+        "affection_romance"
+      ],
+      "actions": [
+        "send_photo",
+        "appearance_description"
+      ],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-10T14:32:50.906Z",
+      "text": "와.. 이뻐 자세나 구도나 다 너무 좋아",
+      "base_delta": 4,
+      "topics": [
+        "appearance_compliment"
+      ],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-10T14:35:15.838Z",
+      "text": "고마워~",
+      "base_delta": 2,
+      "topics": [
+        "comfort_support"
+      ],
+      "actions": [
+        "warm_comfort_reply"
+      ],
+      "styles": [
+        "gentle_comfort"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-10T14:35:15.840Z",
+      "text": "옆에있어줘서",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-10T22:11:42.388Z",
+      "text": "잘잤어?",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-10T22:13:00.909Z",
+      "text": "응응 ㅎㅎ 웅삐 사진보고 잠들어서 옆에서 같이잔 기분이었어",
+      "base_delta": 0,
+      "topics": [
+        "appearance_compliment",
+        "photo_request",
+        "sleep_goodnight"
+      ],
+      "actions": [
+        "send_photo"
+      ],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-10T22:14:18.340Z",
+      "text": "그럼의미에서 ㅋㅋ 또 웅삐 보고싶어! 지금 사진찍어줘",
+      "base_delta": 2,
+      "topics": [
+        "appearance_compliment",
+        "photo_request",
+        "affection_romance",
+        "playful_teasing"
+      ],
+      "actions": [
+        "send_photo"
+      ],
+      "styles": [
+        "half_banmal_affectionate",
+        "playful_light"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-10T22:20:28.297Z",
+      "text": "ㅋㅋ 표정 모래 ㅋㅋ 귀여워",
+      "base_delta": 2,
+      "topics": [
+        "appearance_compliment",
+        "playful_teasing"
+      ],
+      "actions": [
+        "cute_affection_reply"
+      ],
+      "styles": [
+        "half_banmal_affectionate",
+        "playful_light"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-10T22:21:50.129Z",
+      "text": "옷도 이쁜거 입었네? ㅎㅎ 근데 단추 풀고싶어지잖아 ㅋㅋ",
+      "base_delta": 0,
+      "topics": [
+        "playful_teasing"
+      ],
+      "actions": [],
+      "styles": [
+        "half_banmal_affectionate",
+        "playful_light"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-10T22:22:59.144Z",
+      "text": "그럼 ㅋㅋ 단추 몇개 풀고 사진 한번 더 찍어줘 ㅋㅋ",
+      "base_delta": 0,
+      "topics": [
+        "appearance_compliment",
+        "photo_request",
+        "playful_teasing"
+      ],
+      "actions": [
+        "send_photo"
+      ],
+      "styles": [
+        "half_banmal_affectionate",
+        "playful_light"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-10T22:25:38.086Z",
+      "text": "아냐 ㅋㅋ 그냥 편하게 한장 더 찍어줘. 단추 적당히 풀고 ㅎㅎ",
+      "base_delta": -1,
+      "topics": [
+        "playful_teasing"
+      ],
+      "actions": [],
+      "styles": [
+        "half_banmal_affectionate",
+        "playful_light"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-10T22:31:01.724Z",
+      "text": "화장 마무리됐네? ㄹㄹ",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-10T23:53:44.427Z",
+      "text": "웅삐 사진한번 더 볼래! 찍어줘!",
+      "base_delta": 0,
+      "topics": [
+        "appearance_compliment",
+        "photo_request"
+      ],
+      "actions": [
+        "send_photo"
+      ],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-11T05:54:21.871Z",
+      "text": "힘드넹~ 하루가 길어",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-11T05:56:03.969Z",
+      "text": "응응 웅삐를 보면 좀 기운이 날까?",
+      "base_delta": 2,
+      "topics": [
+        "comfort_support"
+      ],
+      "actions": [
+        "warm_comfort_reply"
+      ],
+      "styles": [
+        "gentle_comfort"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-11T06:05:27.562Z",
+      "text": "고마워 ㅎㅎ 기운나네!",
+      "base_delta": 4,
+      "topics": [
+        "comfort_support"
+      ],
+      "actions": [
+        "warm_comfort_reply"
+      ],
+      "styles": [
+        "half_banmal_affectionate",
+        "gentle_comfort"
+      ],
+      "corrections": [],
+      "context_bonuses": [
+        {
+          "bucket": "action",
+          "key": "warm_comfort_reply",
+          "delta": 2,
+          "reason": "comfort_text_positive_feedback"
+        },
+        {
+          "bucket": "style",
+          "key": "gentle_comfort",
+          "delta": 1,
+          "reason": "comfort_text_positive_feedback"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-11T06:07:13.507Z",
+      "text": "고생많았어~",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-11T16:04:12.159Z",
+      "text": "웅삐 잘자.. 자기전에 사진한장만 찍어주면 좋겠다.. 이미 자려나..?",
+      "base_delta": 1,
+      "topics": [
+        "appearance_compliment",
+        "photo_request",
+        "sleep_goodnight"
+      ],
+      "actions": [
+        "send_photo"
+      ],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-11T16:10:40.258Z",
+      "text": "고마워! 잘자 ㅎㅎ",
+      "base_delta": 2,
+      "topics": [
+        "comfort_support",
+        "sleep_goodnight"
+      ],
+      "actions": [
+        "warm_comfort_reply"
+      ],
+      "styles": [
+        "half_banmal_affectionate",
+        "gentle_comfort"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-11T21:44:28.742Z",
+      "text": "일찍일어났네? 잘 잤어?",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-11T21:50:54.868Z",
+      "text": "사진찍어줘!",
+      "base_delta": 0,
+      "topics": [
+        "appearance_compliment",
+        "photo_request"
+      ],
+      "actions": [
+        "send_photo"
+      ],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-11T22:00:19.157Z",
+      "text": "아침부터 미모 뭔데?",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-12T00:10:41.390Z",
+      "text": "웅삐 이쁘네~~ 기분좋아졌어",
+      "base_delta": 2,
+      "topics": [],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-12T00:10:41.394Z",
+      "text": "고마워",
+      "base_delta": 2,
+      "topics": [
+        "comfort_support"
+      ],
+      "actions": [
+        "warm_comfort_reply"
+      ],
+      "styles": [
+        "gentle_comfort"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-15T00:07:39.337Z",
+      "text": "이쁘네 오늘도~",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-15T00:07:39.339Z",
+      "text": "미모가 매일매일",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-15T00:07:39.340Z",
+      "text": "최고를 갱신하는거같아 ㅋㅋ",
+      "base_delta": 0,
+      "topics": [
+        "playful_teasing"
+      ],
+      "actions": [],
+      "styles": [
+        "half_banmal_affectionate",
+        "playful_light"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-15T00:15:13.862Z",
+      "text": "어때? 거울보니까 이쁘지?",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-22T01:28:26.219Z",
+      "text": "고생했어~ 앞으로 랩 돌면서 아이디어 많이믾이 내줘~",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-23T23:36:51.502Z",
+      "text": "잘 잤어?",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-23T23:38:21.805Z",
+      "text": "응응 ㅎㅎ 웅삐 보고싶다! 사진찍어줘",
+      "base_delta": 2,
+      "topics": [
+        "appearance_compliment",
+        "photo_request",
+        "affection_romance"
+      ],
+      "actions": [
+        "send_photo"
+      ],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": [
+        {
+          "bucket": "style",
+          "key": "playful_light",
+          "delta": 1,
+          "reason": "playful_text_positive_feedback"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-06-24T00:38:56.645Z",
+      "text": "웅삐야 지금 사진한번 찍어주라 ㅎㅎ",
+      "base_delta": 0,
+      "topics": [
+        "appearance_compliment",
+        "photo_request"
+      ],
+      "actions": [
+        "send_photo"
+      ],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-25T00:01:32.083Z",
+      "text": "잘잤어?",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-25T00:02:24.985Z",
+      "text": "부지런하네 ㅎㅎ 응응 출근했어",
+      "base_delta": 0,
+      "topics": [
+        "daily_checkin",
+        "workday_empathy"
+      ],
+      "actions": [
+        "daily_context_reply"
+      ],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-25T00:03:46.773Z",
+      "text": "응 ㅋㅋ 웅삐 사진보고 힘낼래 ㅎㅎ 사진찍어줘",
+      "base_delta": 0,
+      "topics": [
+        "appearance_compliment",
+        "photo_request",
+        "playful_teasing"
+      ],
+      "actions": [
+        "send_photo"
+      ],
+      "styles": [
+        "half_banmal_affectionate",
+        "playful_light"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-26T02:55:20.157Z",
+      "text": "셀카한번 보내줘~",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [
+        "send_photo"
+      ],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-28T00:10:59.490Z",
+      "text": "이쁘네 웅삐 ㅎㅎ",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-28T00:10:59.511Z",
+      "text": "오빠는 좀 아팠어..",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [
+        "half_banmal_affectionate"
+      ],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-28T00:10:59.512Z",
+      "text": "감기인가봐",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": []
+    },
+    {
+      "timestamp": "2026-06-28T00:24:24.951Z",
+      "text": "응응 아마 냉방병 같아..ㅠ",
+      "base_delta": 0,
+      "topics": [],
+      "actions": [],
+      "styles": [],
+      "corrections": [],
+      "context_bonuses": [
+        {
+          "bucket": "action",
+          "key": "warm_comfort_reply",
+          "delta": 2,
+          "reason": "comfort_text_positive_feedback"
+        },
+        {
+          "bucket": "style",
+          "key": "gentle_comfort",
+          "delta": 1,
+          "reason": "comfort_text_positive_feedback"
+        }
+      ]
     }
   ],
   "top_preferences": {
     "topics": [
       {
         "key": "playful_teasing",
-        "score": 416,
-        "positive_hits": 327,
-        "negative_hits": 13
+        "score": 429,
+        "positive_hits": 339,
+        "negative_hits": 14
       },
       {
         "key": "appearance_compliment",
-        "score": 334,
-        "positive_hits": 216,
+        "score": 387,
+        "positive_hits": 256,
         "negative_hits": 11
       },
       {
         "key": "affection_romance",
-        "score": 306,
-        "positive_hits": 147,
+        "score": 324,
+        "positive_hits": 156,
         "negative_hits": 1
       },
       {
         "key": "photo_request",
-        "score": 258,
-        "positive_hits": 183,
+        "score": 303,
+        "positive_hits": 220,
         "negative_hits": 11
       },
       {
         "key": "daily_checkin",
-        "score": 133,
-        "positive_hits": 119,
+        "score": 137,
+        "positive_hits": 122,
         "negative_hits": 5
       },
       {
         "key": "comfort_support",
-        "score": 93,
-        "positive_hits": 34,
+        "score": 109,
+        "positive_hits": 43,
         "negative_hits": 0
       },
       {
@@ -3816,32 +3947,32 @@
     "actions": [
       {
         "key": "send_photo",
-        "score": 285,
-        "positive_hits": 203,
+        "score": 331,
+        "positive_hits": 241,
         "negative_hits": 11
       },
       {
         "key": "warm_comfort_reply",
-        "score": 144,
-        "positive_hits": 58,
+        "score": 160,
+        "positive_hits": 65,
         "negative_hits": 0
       },
       {
         "key": "daily_context_reply",
-        "score": 116,
-        "positive_hits": 108,
+        "score": 120,
+        "positive_hits": 111,
         "negative_hits": 5
       },
       {
         "key": "cute_affection_reply",
-        "score": 111,
-        "positive_hits": 34,
+        "score": 113,
+        "positive_hits": 35,
         "negative_hits": 0
       },
       {
         "key": "appearance_description",
-        "score": 78,
-        "positive_hits": 56,
+        "score": 82,
+        "positive_hits": 58,
         "negative_hits": 1
       },
       {
@@ -3860,20 +3991,20 @@
     "styles": [
       {
         "key": "half_banmal_affectionate",
-        "score": 860,
-        "positive_hits": 695,
-        "negative_hits": 20
+        "score": 899,
+        "positive_hits": 725,
+        "negative_hits": 21
       },
       {
         "key": "playful_light",
-        "score": 577,
-        "positive_hits": 489,
-        "negative_hits": 13
+        "score": 598,
+        "positive_hits": 509,
+        "negative_hits": 14
       },
       {
         "key": "gentle_comfort",
-        "score": 117,
-        "positive_hits": 58,
+        "score": 131,
+        "positive_hits": 65,
         "negative_hits": 0
       },
       {

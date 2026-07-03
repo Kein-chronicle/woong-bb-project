@@ -1,0 +1,44 @@
+# 2026-05-31 Voice Messages
+
+## Files
+
+- `213625_proactive_test.mp3`
+  - created_at: `21:36:29`
+  - engine: `elevenlabs`
+  - profile: `energetic_light`
+  - breath_preset: `1`
+  - stability: `0.5`
+  - similarity_boost: `0.76`
+  - style: `0.28`
+  - use_speaker_boost: `true`
+  - text: 오빠아 아직 그거 붙잡고 있어? 갑자기 오빠 생각나서 톡했어, 잠깐 쉬고 있었으면 좋겠는데 지금도 일해?
+- `213732_proactive_test2.mp3`
+  - created_at: `21:37:34`
+  - engine: `elevenlabs`
+  - profile: `energetic_light`
+  - breath_preset: `1`
+  - stability: `0.5`
+  - similarity_boost: `0.76`
+  - style: `0.28`
+  - use_speaker_boost: `true`
+  - text: 오빠아 아직 그거 붙잡고 있어? 갑자기 오빠 생각나서 톡했어, 잠깐 쉬고 있었으면 좋겠는데 지금도 일해?
+- `214102_voice_hint_test.mp3`
+  - created_at: `21:41:03`
+  - engine: `elevenlabs`
+  - profile: `energetic_light`
+  - breath_preset: `1`
+  - stability: `0.5`
+  - similarity_boost: `0.76`
+  - style: `0.28`
+  - use_speaker_boost: `true`
+  - text: 오빠아 뭐해? 나 지금 잠깐 생각났어. 오늘도 일해?
+- `230310_sudden_impulse_sudden_ambient_memory.mp3`
+  - created_at: `23:03:11`
+  - engine: `elevenlabs`
+  - profile: `night_soft`
+  - breath_preset: `2`
+  - stability: `0.58`
+  - similarity_boost: `0.82`
+  - style: `0.18`
+  - use_speaker_boost: `false`
+  - text: 침대 끝에 얇은 담요가 느슨하게 접혀 있다 그런 순간이라 괜히 오빠 생각이 더 났어.

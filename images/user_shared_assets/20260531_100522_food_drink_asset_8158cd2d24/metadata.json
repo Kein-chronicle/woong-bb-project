@@ -1,0 +1,120 @@
+{
+  "asset_id": "20260531_100522_food_drink_asset_8158cd2d24",
+  "created_at": "2026-05-31T10:05:22+09:00",
+  "last_seen_at": "2026-05-31T10:05:22+09:00",
+  "source": "telegram_incoming",
+  "telegram_user": "K8832353",
+  "kind": "food_drink",
+  "title": "오빠가 구운 버터쿠키 오븐팬 사진",
+  "canonical_path": "/Users/kein/Projects/woong-bb/images/user_shared_assets/20260531_100522_food_drink_asset_8158cd2d24/source.jpg",
+  "asset_dir": "/Users/kein/Projects/woong-bb/images/user_shared_assets/20260531_100522_food_drink_asset_8158cd2d24",
+  "source_paths": [
+    "/Users/kein/Projects/woong-bb/images/incoming/2026-05-31/100428_telegram_photo_AQADPw9rG1Sv4FR-.jpg"
+  ],
+  "source_sha256": "8158cd2d2411cdc1bd16de4eb48aeea0167cf905570f38da1a822e7f071ec707",
+  "captions": [
+    "쿠키만든거야 ㅋㅋ 오빠가 이렇게 보내줄테니깐 웅삐가 들고 사진찍어줘 한번 ㅋㅋ"
+  ],
+  "tags": [
+    "accessory",
+    "butter_cookies",
+    "food_drink",
+    "fresh_baked",
+    "fresh_baked_texture",
+    "golden_brown",
+    "home_kitchen",
+    "kitchen_baking",
+    "orange_oven_mitt",
+    "oven_mitt",
+    "oven_tray",
+    "parchment_paper",
+    "rustic_cookie_shape",
+    "weekend_cooking",
+    "버터쿠키",
+    "베이킹",
+    "베이킹_직후_따끈한_분위기를_강조할_때",
+    "연인에게_바로_보여준_요리_순간",
+    "오븐팬",
+    "오빠가_만든_쿠키를_다시_떠올릴_때",
+    "오빠가_직접_만든_간식",
+    "주방",
+    "집에서_구운_간식_장면을_만들_때",
+    "쿠키"
+  ],
+  "analysis": {
+    "asset_kind": "food_drink",
+    "title": "오빠가 구운 버터쿠키 오븐팬 사진",
+    "visible_summary_ko": "유산지를 깐 오븐팬 위에 진하게 구워진 버터쿠키 여러 개가 놓여 있고, 주황색 오븐 장갑 낀 손이 팬 한쪽을 잡고 있는 집 주방 장면.",
+    "visible_elements": [
+      "유산지 깐 오븐팬",
+      "진하게 구워진 버터쿠키 7개",
+      "주황색 오븐 장갑",
+      "검은 인덕션 상판",
+      "집 주방 조리대"
+    ],
+    "scene_tags": [
+      "home_kitchen",
+      "fresh_baked",
+      "weekend_cooking"
+    ],
+    "object_tags": [
+      "butter_cookies",
+      "oven_tray",
+      "parchment_paper",
+      "oven_mitt"
+    ],
+    "relationship_tags": [
+      "오빠가 직접 만든 간식",
+      "연인에게 바로 보여준 요리 순간"
+    ],
+    "reuse_triggers": [
+      "쿠키",
+      "버터쿠키",
+      "베이킹",
+      "오븐팬",
+      "주방"
+    ],
+    "reusable_subjects": [
+      {
+        "kind": "food_drink",
+        "label_ko": "버터쿠키 한 판",
+        "description_ko": "가장자리가 진하게 바삭해진 러스틱한 홈메이드 버터쿠키 여러 개",
+        "visual_tags": [
+          "golden_brown",
+          "rustic_cookie_shape",
+          "fresh_baked_texture"
+        ],
+        "reuse_when": [
+          "오빠가 만든 쿠키를 다시 떠올릴 때",
+          "집에서 구운 간식 장면을 만들 때"
+        ]
+      },
+      {
+        "kind": "accessory",
+        "label_ko": "주황색 오븐 장갑",
+        "description_ko": "오븐팬을 잡고 있는 두툼한 주황색 장갑",
+        "visual_tags": [
+          "orange_oven_mitt",
+          "kitchen_baking"
+        ],
+        "reuse_when": [
+          "베이킹 직후 따끈한 분위기를 강조할 때"
+        ]
+      }
+    ],
+    "generation_reuse": {
+      "allowed": true,
+      "default_strength": "supporting_reference",
+      "requires_user_intent": true
+    },
+    "privacy": {
+      "reuse_face_without_explicit_request": false,
+      "reuse_user_face_with_explicit_request": true
+    }
+  },
+  "generation_reuse": {
+    "allowed": true,
+    "default_strength": "supporting_reference",
+    "requires_user_intent": true
+  }
+}

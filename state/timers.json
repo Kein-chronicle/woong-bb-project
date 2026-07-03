@@ -142,7 +142,7 @@
         "thu",
         "fri"
       ],
-      "time": "23:50",
+      "time": "00:30",
       "target_activity": "sleep_window",
       "reason": "weekday_sleep_window"
     },

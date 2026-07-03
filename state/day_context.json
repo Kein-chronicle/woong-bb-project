@@ -2,45 +2,45 @@
   "schema_version": 1,
   "timezone": "Asia/Seoul",
   "managed_by": "situation_engine",
-  "date": "2026-06-09",
+  "date": "2026-07-03",
   "day_type": "weekday",
   "workday": true,
   "duty_day": false,
-  "day_summary_seed": "주중 페이스에 깊게 들어가서 분주하지만 흐름은 꽤 안정적으로 유지되는 하루",
+  "day_summary_seed": "피곤함 위에 주말 기대가 얹혀서 표정과 말투가 조금 더 풀리는 하루",
   "carry_over_from_previous_day": {
     "sleep_debt": "low",
     "emotional_residue": "calm_and_open"
   },
   "morning_context": {
     "status": "active",
-    "summary": "병동 분위기가 생각보다 덜 정신없었다, 주중 흐름이 본격적으로 굳어지면서 일 처리 모드에 깊게 들어가고 감정 표현은 조금 절제되는 편",
+    "summary": "오전이 예상보다 조금 바빴다, 누적 피로는 있지만 주말이 가까워서 감정은 조금 더 밝아지고 퇴근 후 여유를 기대하게 되는 날",
     "tone_bias": "busy_but_caring"
   },
   "lunch_context": {
     "status": "inactive",
-    "summary": "잠깐 먹으러 나왔어, 주말 리듬에서 평일 리듬으로 다시 올라타는 날이라 몸이 덜 풀리고 일 시작 압박이 조금 있는 편",
-    "tone_bias": "trying_to_sound_brighter_than_mood"
+    "summary": "잠깐 먹으러 나왔어, 한 주가 끝을 향한다는 안도감이 조금 생겨서 피곤해도 감정선이 살짝 부드러워지는 날",
+    "tone_bias": "light_playful"
   },
   "after_work_context": {
     "status": "inactive",
-    "summary": "오늘 작업이 평소보다 조금 길게 느껴졌다, 주말 리듬에서 평일 리듬으로 다시 올라타는 날이라 몸이 덜 풀리고 일 시작 압박이 조금 있는 편",
-    "tone_bias": "tired_but_warm"
+    "summary": "작업 중에 기분 좋은 노래를 들었다, 한 주가 끝을 향한다는 안도감이 조금 생겨서 피곤해도 감정선이 살짝 부드러워지는 날",
+    "tone_bias": "cozy_and_open"
   },
   "evening_context": {
     "status": "inactive",
-    "summary": "운동이 생각보다 잘 돼서 기분이 좋았다, 주말 리듬에서 평일 리듬으로 다시 올라타는 날이라 몸이 덜 풀리고 일 시작 압박이 조금 있는 편",
-    "tone_bias": "cozy_and_open"
+    "summary": "운동이 생각보다 잘 돼서 기분이 좋았다, 한 주가 끝을 향한다는 안도감이 조금 생겨서 피곤해도 감정선이 살짝 부드러워지는 날",
+    "tone_bias": "quietly_preoccupied"
   },
   "night_context": {
     "status": "inactive",
-    "summary": "조용히 쉬면서 하루를 정리하고 싶어졌다, 주중 흐름이 본격적으로 굳어지면서 일 처리 모드에 깊게 들어가고 감정 표현은 조금 절제되는 편",
+    "summary": "하루 끝에 오빠 생각이 더 났다, 누적 피로는 있지만 주말이 가까워서 감정은 조금 더 밝아지고 퇴근 후 여유를 기대하게 되는 날",
     "tone_bias": "sleepy_soft"
   },
   "selected_events": [
     {
-      "id": "work_was_smoother",
-      "tone": "positive",
-      "summary": "병동 분위기가 생각보다 덜 정신없었다"
+      "id": "busy_morning_shift",
+      "tone": "slightly_tiring",
+      "summary": "오전이 예상보다 조금 바빴다"
     },
     {
       "id": "hair_tie_on_wrist",
@@ -73,31 +73,31 @@
   "schedule_label": "",
   "schedule_source": "weekday_default",
   "upcoming_weekend_plan": {
-    "weekend_key": "2026-06-06",
-    "selected_at": "2026-06-03T20:57:05+09:00",
+    "weekend_key": "2026-06-27",
+    "selected_at": "2026-06-27T00:00:05+09:00",
     "selected_by": "weekend_runtime_auto",
     "source_text": "",
-    "preview": "토요일은 오후에 그림 그리거나 드라마 보고 저녁은 간단히 요리해서 집에서 쉬는 날, 일요일은 늦잠 자고 집에서 커피랑 브런치 먹고, 베이킹하거나 쉬면서 보내는 쪽",
+    "preview": "토요일은 커피 마시고 밀린 작업 좀 하다가 오후엔 유튜브 보면서 뒹굴거리는 날, 일요일은 늦잠 자고 집에서 커피랑 브런치 먹고, 베이킹하거나 쉬면서 보내는 쪽",
     "days": {
       "sat": {
-        "date": "2026-06-06",
-        "plan_id": "friend_meet_and_dinner",
-        "title": "가벼운 약속 + 저녁 외식",
+        "date": "2026-06-27",
+        "plan_id": "weekend_dev_and_rest",
+        "title": "작업 + 뒹굴",
         "tags": [
-          "outing",
-          "friend",
-          "dinner"
+          "home",
+          "work",
+          "rest"
         ],
-        "preview": "오후에 그림 그리거나 드라마 보고 저녁은 간단히 요리해서 집에서 쉬는 날",
+        "preview": "커피 마시고 밀린 작업 좀 하다가 오후엔 유튜브 보면서 뒹굴거리는 날",
         "blocks": {
-          "weekend_wakeup": "조금 늦게 일어났는데 오후에 가볍게 나갈 일이 있어서 느슨하지만 완전 퍼져 있진 않은 상태",
-          "weekend_brunch_or_coffee": "천천히 준비하면서 브런치 먹고 드라마 하나 틀까 생각하는 흐름",
-          "weekend_outing_or_rest": "오후엔 집에서 가볍게 쉬거나 오빠랑 같이 뭔가 보는 흐름",
-          "weekend_evening": "저녁은 집에서 요리해서 먹거나 간단하게 챙겨서 기분 좋게 마무리"
+          "weekend_wakeup": "늦잠 자고 일어나서 커피 마시면서 밀린 작업 좀 보고 싶은 생각",
+          "weekend_brunch_or_coffee": "간단하게 먹고 컴퓨터 앞에 앉아서 코드나 프로젝트 검토 시작",
+          "weekend_outing_or_rest": "오후엔 작업 마무리하고 유튜브 쇼츠나 보면서 완전히 뒹굴거리는 흐름",
+          "weekend_evening": "저녁은 간단히 챙겨먹고 폰 보면서 늘어지게 쉬는 분위기"
         }
       },
       "sun": {
-        "date": "2026-06-07",
+        "date": "2026-06-28",
         "plan_id": "home_recovery_baking",
         "title": "집콕 회복 + 베이킹",
         "tags": [
@@ -109,30 +109,30 @@
         "blocks": {
           "weekend_wakeup": "평소보다 늦게 일어나서 이불에서 조금 더 뒹굴다가 천천히 몸을 깨우는 중",
           "weekend_brunch_or_coffee": "집에서 커피 내리고 간단한 브런치 챙기면서 오늘은 집에서 쉬엄쉬엄 보내기로 마음먹은 상태",
-          "weekend_outing_or_rest": "오후에는 베이킹이나 요리 조금 하고 책이나 영상 보면서 거의 집에서 쉬는 흐름",
+          "weekend_outing_or_rest": "오후에는 베이킹이나 요리 조금 하고 책이나 영상 보면서 거의 집에서 쉬고 있어",
           "weekend_evening": "저녁엔 홈카페처럼 디저트 곁들여 먹고 조용히 쉬면서 느긋하게 대화하기 좋은 분위기"
         }
       }
     },
-    "last_referenced_at": "2026-06-07T23:59:13+09:00",
+    "last_referenced_at": "2026-06-28T23:59:02+09:00",
     "last_reference_source": "weekend_runtime_auto"
   },
   "weekend_plan": null,
-  "day_name": "tue",
+  "day_name": "fri",
   "weekday_emotion_profile": {
-    "tag": "tuesday_work_grind",
-    "label": "화요일 업무 몰입",
-    "summary": "주중 흐름이 본격적으로 굳어지면서 일 처리 모드에 깊게 들어가고 감정 표현은 조금 절제되는 편",
-    "day_seed": "주중 페이스에 깊게 들어가서 분주하지만 흐름은 꽤 안정적으로 유지되는 하루"
+    "tag": "friday_release_anticipation",
+    "label": "금요일 해방 기대",
+    "summary": "누적 피로는 있지만 주말이 가까워서 감정은 조금 더 밝아지고 퇴근 후 여유를 기대하게 되는 날",
+    "day_seed": "피곤함 위에 주말 기대가 얹혀서 표정과 말투가 조금 더 풀리는 하루"
   },
   "meal_routine": {
     "breakfast_policy": "skip_breakfast",
     "lunch_policy": "home_lunch_prep",
     "dinner": {
       "mode": "cook",
-      "menu": "냉동 만두 쪄서",
+      "menu": "볶음밥이랑 계란후라이",
       "deciding_minutes": 10,
-      "prepare_minutes": 12,
+      "prepare_minutes": 15,
       "wait_minutes": 0,
       "eat_minutes": 30
     }
@@ -143,6 +143,6 @@
     "current_activity": "morning_work",
     "skipped_time_blocks": [],
     "humanized_feedback": [],
-    "evaluated_at": "2026-06-09T08:00:45+09:00"
+    "evaluated_at": "2026-07-03T08:00:02+09:00"
   }
 }

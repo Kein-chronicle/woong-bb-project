@@ -1,0 +1,86 @@
+{
+  "asset_id": "20260605_172459_user_shared_photo_asset_e177a2ca54",
+  "created_at": "2026-06-05T17:24:59+09:00",
+  "last_seen_at": "2026-06-05T17:24:59+09:00",
+  "source": "telegram",
+  "telegram_user": "K8832353",
+  "kind": "user_shared_photo",
+  "title": "서울 마이소울 메달 행사장 배경 사진",
+  "canonical_path": "/Users/kein/Projects/woong-bb/images/user_shared_assets/20260605_172459_user_shared_photo_asset_e177a2ca54/source.jpg",
+  "asset_dir": "/Users/kein/Projects/woong-bb/images/user_shared_assets/20260605_172459_user_shared_photo_asset_e177a2ca54",
+  "source_paths": [
+    "/Users/kein/Projects/woong-bb/images/incoming/2026-06-05/172053_telegram_photo_AQADLA9rG-TSEFV-.jpg"
+  ],
+  "source_sha256": "e177a2ca54445f55a00d2dcd55decc8853d58889e2c1ea9547a2e61e98075f8c",
+  "captions": [
+    "웅삐야 여기 배경에서 이거 메달걸고 사진한번 찍어줄래? ㅎㅎ 런닝복으로! 누가 찍어준것처럼~"
+  ],
+  "tags": [
+    "event_signage",
+    "medal",
+    "medal_background",
+    "outdoor_event",
+    "race_event",
+    "ribbon",
+    "sky",
+    "user_shared_reference_background",
+    "러닝",
+    "메달",
+    "서울_마이소울",
+    "행사장_배경"
+  ],
+  "analysis": {
+    "asset_kind": "photo",
+    "title": "서울 마이소울 메달 행사장 배경 사진",
+    "visible_summary_ko": "초록색 서울 마이소울 메달이 전경에 또렷하게 걸려 있고, 뒤로 행사장 구조물과 파란 하늘 구름이 흐릿하게 보이는 야외 사진",
+    "visible_elements": [
+      "초록 메달 리본",
+      "원형 메달",
+      "행사장 사인 구조물",
+      "파란 하늘과 흰 구름"
+    ],
+    "scene_tags": [
+      "outdoor_event",
+      "race_event",
+      "medal_background"
+    ],
+    "object_tags": [
+      "medal",
+      "ribbon",
+      "event_signage",
+      "sky"
+    ],
+    "relationship_tags": [
+      "user_shared_reference_background"
+    ],
+    "reuse_triggers": [
+      "메달",
+      "러닝",
+      "행사장 배경",
+      "서울 마이소울"
+    ],
+    "reusable_subjects": [
+      "서울 마이소울 메달 디자인",
+      "러닝 행사장 배경 분위기",
+      "맑은 하늘 아래 이벤트 현장 톤"
+    ],
+    "generation_reuse": {
+      "allowed": true,
+      "face_reference": {
+        "allowed": false,
+        "requires_explicit_user_request": true
+      }
+    },
+    "privacy": {
+      "reuse_face_without_explicit_request": false,
+      "reuse_user_face_with_explicit_request": true
+    }
+  },
+  "generation_reuse": {
+    "allowed": true,
+    "face_reference": {
+      "allowed": false,
+      "requires_explicit_user_request": true
+    }
+  }
+}

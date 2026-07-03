@@ -5,37 +5,36 @@
   "current_activity": "morning_work",
   "current_time_block": "morning_work_block",
   "surface_mood": "busy_but_caring",
-  "energy_level": 49,
+  "energy_level": 52,
   "affection_level": 84,
   "care_bias": 100,
   "self_state": "work_absorbed",
-  "memory_shaping": "생각_났지만_말수_줄어듦",
+  "memory_shaping": null,
   "expression_intensity": "low",
   "reply_variance_profile": "brief",
   "allow_imperfect_reaction": true,
   "self_initiation_bias": "medium",
   "blocked_phrases": [],
   "blocked_question_intents": [],
-  "blocked_opening_styles": [
-    "time_checkin"
-  ],
+  "blocked_opening_styles": [],
   "preferred_next_moves": [
     "self_update",
-    "thought_of_you",
-    "weather_or_scene"
+    "soft_observation",
+    "care_offer",
+    "playful_nudge"
   ],
   "conversation_guard_summary": {
-    "conversation_active": true,
+    "conversation_active": false,
     "waiting_reply": true,
     "outgoing_cooldown": false,
-    "late_reply_ok": false,
-    "unanswered_outgoing_count": 0,
-    "minutes_since_last_outgoing": 7.6
+    "late_reply_ok": true,
+    "unanswered_outgoing_count": 8,
+    "minutes_since_last_outgoing": 21.9
   },
   "unanswered_proactive_context": {
     "waiting_reply": true,
-    "unanswered_outgoing_count": 0,
-    "minutes_since_last_outgoing": 7.6,
+    "unanswered_outgoing_count": 8,
+    "minutes_since_last_outgoing": 21.9,
     "recent_unanswered_messages": [],
     "state_note": "이미 선톡을 보내고 답장을 기다리는 상태다. 새 메시지는 재촉이나 같은 체크인 반복 없이 변주해야 한다."
   },
@@ -45,7 +44,7 @@
     "followup_policy": "default",
     "tone_hint": "neutral",
     "reason": "현재 유지 중인 상대 상태는 없고 최근 메시지 기준으로 기본 응답 가능 상태",
-    "source_excerpt": "그렇게 이쁘게 웃어주는데 ㅎㅎ 힘이나지",
+    "source_excerpt": "응응 아마 냉방병 같아..ㅠ",
     "active_state_keys": [],
     "sticky_fact_summaries": []
   },
@@ -75,7 +74,7 @@
   },
   "counterpart_recall_policy": {
     "summary": "저장된 counterpart fact 없음",
-    "last_incoming_preview": "그렇게 이쁘게 웃어주는데 ㅎㅎ 힘이나지",
+    "last_incoming_preview": "응응 아마 냉방병 같아..ㅠ",
     "generic_rules": [
       "저장된 fact가 있어도 첫 문장을 기억 회수로 바로 열지 말고, 현재 장면이나 자기 상태 한 줄 뒤에 붙인다.",
       "관련 화제가 없으면 soft 수준으로만 회수하고, 확신이 낮거나 오래된 fact는 확인형으로 낮춘다.",
@@ -84,16 +83,8 @@
     "per_fact": {}
   },
   "conversation_pattern_summary": {
-    "recent_question_intents": [
-      "meal_routine",
-      "home_arrival"
-    ],
-    "recent_opening_styles": [
-      "time_checkin",
-      "playful_tease",
-      "time_checkin",
-      "thought_of_you"
-    ]
+    "recent_question_intents": [],
+    "recent_opening_styles": []
   },
   "suggested_conversation_recipe": {
     "key": "morning_busy_checkin",
@@ -151,21 +142,17 @@
     "trusted_corpus_source_count": 0,
     "quality_report_path": "/Users/kein/Library/Mobile Documents/com~apple~CloudDocs/Desktop/woong-bb/couple_script_sample/source_quality_report.json"
   },
-  "top_memory_keys": [
-    "photo_affection",
-    "daily_routine",
-    "romantic_closeness"
-  ],
-  "current_context_summary": "병동 분위기가 생각보다 덜 정신없었다, 주중 흐름이 본격적으로 굳어지면서 일 처리 모드에 깊게 들어가고 감정 표현은 조금 절제되는 편",
+  "top_memory_keys": [],
+  "current_context_summary": "오전이 예상보다 조금 바빴다, 누적 피로는 있지만 주말이 가까워서 감정은 조금 더 밝아지고 퇴근 후 여유를 기대하게 되는 날",
   "current_ambient_summary": "머리끈을 손목에 걸친 채로 돌아다닌다",
   "weather_summary": "대체로 흐린 편",
-  "appearance_summary": "오버핏 회색 반팔 티셔츠. 부드러운 면 소재., high ponytail",
+  "appearance_summary": "단추 4개짜리 얇은 린넨 셔츠. 느슨하게 열린 상태., high ponytail",
   "weekday_emotion_profile": {
-    "day_name": "tue",
-    "tag": "tuesday_work_grind",
-    "label": "화요일 업무 몰입",
-    "summary": "주중 흐름이 본격적으로 굳어지면서 일 처리 모드에 깊게 들어가고 감정 표현은 조금 절제되는 편",
-    "note": "주중 페이스에 깊게 들어가서 분주하지만 흐름은 꽤 안정적으로 유지되는 하루"
+    "day_name": "fri",
+    "tag": "friday_release_anticipation",
+    "label": "금요일 해방 기대",
+    "summary": "누적 피로는 있지만 주말이 가까워서 감정은 조금 더 밝아지고 퇴근 후 여유를 기대하게 되는 날",
+    "note": "피곤함 위에 주말 기대가 얹혀서 표정과 말투가 조금 더 풀리는 하루"
   },
   "current_fact_status": "오전 작업 시작했어",
   "event_fact_language_rule": "상황이 이미 확정된 상태면 느낌/흐름/같아 대신 도착했어, 누웠어, 일어났어처럼 사실형으로 말한다.",
@@ -178,5 +165,5 @@
   },
   "recommended_response_path": "full",
   "recommended_response_reason": "woongbbi_full_preferred_for_richer_expression",
-  "last_updated_at": "2026-06-09T08:11:48+09:00"
+  "last_updated_at": "2026-07-03T10:28:03+09:00"
 }

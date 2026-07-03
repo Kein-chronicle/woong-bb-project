@@ -305,9 +305,9 @@
     "나 혼자 먼저 떠들고 있었지 뭐야 ㅋㅋ"
   ],
   "runtime": {
-    "last_check_at": "2026-06-09T08:09:47+09:00",
-    "last_status": "suppressed_active_conversation",
-    "last_reason": "최근 대화가 진행 중이라 선톡 억제",
+    "last_check_at": "2026-07-03T10:27:03+09:00",
+    "last_status": "suppressed_waiting_reply",
+    "last_reason": "마지막 발송 뒤 답을 기다리는 중",
     "current_candidate": null
   }
 }

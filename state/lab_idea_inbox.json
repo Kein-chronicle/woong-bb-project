@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "managed_by": "lab_idea_inbox",
+  "items": [
+    {
+      "id": "idea_20260601_101946",
+      "created_at": "2026-06-01T10:19:46+09:00",
+      "project": "whale-survivors",
+      "source": "telegram_chat",
+      "title": "고래 움직임 축 개선",
+      "summary": "입력에서 바로 위치를 옮기는 현재 이동을 방향 전환, 가속, 감속 여운이 있는 헤엄 감각으로 바꾸는 아이디어",
+      "detail": "핵심 축은 입력 -> 방향 전환 -> 가속 -> 감속 여운. 즉시 꺾이는 이동 대신 몸을 먼저 틀고 살짝 밀려나가듯 속도 붙고 손을 떼면 바로 멈추지 않는 흐름을 목표로 한다.",
+      "tags": [
+        "movement",
+        "input",
+        "acceleration",
+        "feel",
+        "whale-survivors"
+      ],
+      "status": "inbox"
+    },
+    {
+      "id": "idea_20260601_102223",
+      "created_at": "2026-06-01T10:22:23+09:00",
+      "project": "whale-survivors",
+      "source": "telegram_chat",
+      "title": "런 반복 동인과 최종 스테이지 동기 부족",
+      "summary": "플레이 순간 재미는 살아났지만 왜 반복 플레이를 해야 하는지, 왜 마지막 스테이지까지 가야 하는지에 대한 장기 동기가 약하다는 고민",
+      "detail": "핵심 질문은 두 가지. 1) 열고 바로 재밌는 게임에서 왜 다음 런을 다시 시작해야 하는가 2) 왜 마지막 스테이지까지 밀어야 하는가. 이동감보다 상위 축으로 메타 목표, 해금 기대, 서사적 압력, 빌드 실험 보상 중 무엇이 부족한지 검토 필요.",
+      "tags": [
+        "meta",
+        "retention",
+        "motivation",
+        "progression",
+        "final-stage"
+      ],
+      "status": "inbox"
+    },
+    {
+      "id": "idea_20260601_102424",
+      "created_at": "2026-06-01T10:24:24+09:00",
+      "project": "whale-survivors",
+      "source": "telegram_chat",
+      "title": "초반 통제와 후반 해방감 곡선",
+      "summary": "초반에는 일부러 갈증과 제약을 주고, 후반으로 갈수록 해방감과 만족감을 크게 터뜨리는 구조가 필요하다는 아이디어",
+      "detail": "핵심은 처음부터 다 풀어주기보다 초반엔 선택지, 화력, 자원, 이동 또는 해금 면에서 적당한 통제를 두고, 런 후반이나 최종 스테이지에 가까워질수록 그 제약이 풀리며 강한 해방감과 완주 만족감을 주는 리듬을 만드는 것. 반복 동기와 완주 동기를 동시에 키우는 페이싱 축으로 검토 필요.",
+      "tags": [
+        "pacing",
+        "scarcity",
+        "release",
+        "retention",
+        "final-stage"
+      ],
+      "status": "inbox"
+    },
+    {
+      "id": "idea_20260601_103114",
+      "created_at": "2026-06-01T10:31:14+09:00",
+      "project": "whale-survivors",
+      "source": "telegram_chat",
+      "title": "무기/태그 오픈 타이밍 구조화 필요",
+      "summary": "무기와 태그 총량은 정해졌으니 언제 어느 시점에 얼마나 열어줄지, 그때 어떤 체감을 주는지 구조화해서 검토해야 한다는 정리",
+      "detail": "초반 갈증, 중반 성장 체감, 후반 해방감을 만들기 위해 무기, 태그, 선택지, 슬롯 확장 같은 요소가 어느 액트/시점에 열려야 하는지 표 형태로 검토 필요. 총량보다 오픈 순서와 체감 곡선 설계가 핵심.",
+      "tags": [
+        "pacing",
+        "open-timing",
+        "structure",
+        "tags",
+        "weapons"
+      ],
+      "status": "inbox"
+    },
+    {
+      "id": "idea_20260601_103308",
+      "created_at": "2026-06-01T10:33:08+09:00",
+      "project": "whale-survivors",
+      "source": "telegram_chat",
+      "title": "엑트 클리어-성장-다음 엑트 돌파 루프",
+      "summary": "난이도 상승은 별도 축이 아니라 엑트 클리어 보상과 다음 성장, 다음 엑트 돌파가 이어지는 구조로 함께 설계되어야 한다는 정리",
+      "detail": "각 엑트 클리어가 단순 통과가 아니라 다음 성장 오픈으로 이어지고, 그 성장으로 다음 엑트를 뚫을 수 있어야 한다. 즉 스테이지 클리어 -> 성장/오픈 -> 다음 엑트 대응력 상승의 순환이 반복 동기와 완주 동기를 동시에 만들 수 있는지 검토 필요.",
+      "tags": [
+        "act",
+        "difficulty",
+        "progression",
+        "loop",
+        "retention"
+      ],
+      "status": "inbox"
+    }
+  ],
+  "last_updated_at": "2026-06-01T10:33:08+09:00"
+}

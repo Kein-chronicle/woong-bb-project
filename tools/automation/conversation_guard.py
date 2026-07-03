@@ -143,6 +143,11 @@ STATE_SPECS = [
 ]
 STATE_SPEC_BY_KEY = {spec["key"]: spec for spec in STATE_SPECS}
 
+# 재발방지: 어떤 상태도 마지막 언급 후 이 시간(h)이 지나면 '모름'으로 만료시킨다.
+# (이전엔 sleeping/working_or_busy가 stale_after_hours 없이 무기한 active로 박혀
+#  며칠 전 "잘자"가 오빠를 계속 자는 사람으로 만들어 사진/선톡을 억제했음)
+DEFAULT_STALE_AFTER_HOURS = 12
+
 
 def load_message_events(limit_files: int = 2) -> list:
     files = sorted(glob.glob(str(MESSAGES / "*.jsonl")))
@@ -565,7 +570,8 @@ def build_counterpart_state_memory(events: Optional[list] = None) -> dict:
                 active_states.pop(state_key, None)
                 continue
         # staleness 체크: last_mentioned_at 기준으로 오래됐으면 상태 모름으로 리셋
-        stale_hours = spec.get("stale_after_hours")
+        # spec에 stale_after_hours가 없어도 전역 기본값으로 반드시 만료시킨다(무기한 잔류 방지).
+        stale_hours = spec.get("stale_after_hours", DEFAULT_STALE_AFTER_HOURS)
         if stale_hours:
             last_mentioned = parse_event_timestamp(entry.get("last_mentioned_at") or entry.get("started_at"))
             if last_mentioned and (now_dt - last_mentioned).total_seconds() > stale_hours * 3600:

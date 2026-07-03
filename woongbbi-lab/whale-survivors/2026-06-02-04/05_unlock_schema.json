@@ -1,0 +1,56 @@
+{
+  "sessionId": "2026-06-02-04",
+  "focus": "act_permit_table",
+  "permitPools": [
+    {
+      "act": 1,
+      "permits": [
+        "permit_curse_research",
+        "permit_resonance_research",
+        "permit_frost_research",
+        "permit_pressure_research",
+        "bias_wave_offers",
+        "bias_pierce_offers",
+        "route_basic_trial"
+      ]
+    },
+    {
+      "act": 2,
+      "permits": [
+        "permit_curse_deepstudy",
+        "permit_resonance_deepstudy",
+        "permit_frost_deepstudy",
+        "permit_pressure_deepstudy",
+        "bias_dual_tag_offers",
+        "route_risk_sector",
+        "route_supply_chain"
+      ]
+    },
+    {
+      "act": 3,
+      "permits": [
+        "permit_cross_curse_resonance",
+        "permit_cross_frost_pressure",
+        "permit_cross_spirit_poison",
+        "bias_pinnacle_offers",
+        "route_abyss_gate",
+        "route_echo_observatory"
+      ]
+    }
+  ],
+  "researchCopyKeys": [
+    "curse_stage1",
+    "curse_stage2",
+    "resonance_stage1",
+    "resonance_stage2",
+    "frost_stage1",
+    "frost_stage2",
+    "pressure_stage1",
+    "pressure_stage2"
+  ],
+  "routeBuckets": [
+    "research",
+    "supply",
+    "risk"
+  ]
+}

@@ -1,46 +1,13 @@
 {
   "schema_version": 1,
   "managed_by": "counterpart_state_memory",
-  "last_refreshed_at": "2026-06-09T08:09:47+09:00",
+  "last_refreshed_at": "2026-07-03T10:27:03+09:00",
   "source_window": {
-    "event_count": 559,
-    "last_incoming_at": "2026-06-08T23:03:57.400Z"
+    "event_count": 279,
+    "last_incoming_at": "2026-06-28T00:24:24.951Z"
   },
   "active_states": [],
   "resolved_states": [
-    {
-      "key": "sleeping_or_falling_asleep",
-      "summary": "자는 중이거나 잠드는 흐름",
-      "status": "resolved",
-      "started_at": "2026-05-31T15:21:43.442Z",
-      "last_mentioned_at": "2026-05-31T15:21:43.442Z",
-      "resolved_at": "2026-05-31T21:57:31.149Z",
-      "source_excerpt": "웅삐 벌써 자려나 오빠 잘게~ 내일보자~",
-      "source_event_type": "text",
-      "resolution_reason": "explicit_or_implied_resolution"
-    },
-    {
-      "key": "working_or_busy",
-      "summary": "일하거나 바쁜 상태",
-      "status": "resolved",
-      "started_at": "2026-05-31T21:57:31.149Z",
-      "last_mentioned_at": "2026-05-31T23:08:34.808Z",
-      "resolved_at": "2026-06-01T11:33:47.359Z",
-      "source_excerpt": "오빠도 웃었어 ㅎㅎ 이제 회사 도착한다~",
-      "source_event_type": "text",
-      "resolution_reason": "explicit_or_implied_resolution"
-    },
-    {
-      "key": "working_or_busy",
-      "summary": "일하거나 바쁜 상태",
-      "status": "resolved",
-      "started_at": "2026-06-01T22:02:18.118Z",
-      "last_mentioned_at": "2026-06-01T22:02:18.118Z",
-      "resolved_at": "2026-06-02T03:30:19.762Z",
-      "source_excerpt": "ㅋㅋ 오빠 이제 출근해야해",
-      "source_event_type": "text",
-      "resolution_reason": "explicit_or_implied_resolution"
-    },
     {
       "key": "driving_or_in_transit",
       "summary": "운전 중이거나 이동 중",
@@ -73,6 +40,28 @@
       "source_excerpt": "계속 회의중이야",
       "source_event_type": "text",
       "resolution_reason": "explicit_or_implied_resolution"
+    },
+    {
+      "key": "sleeping_or_falling_asleep",
+      "summary": "자는 중이거나 잠드는 흐름",
+      "status": "resolved",
+      "started_at": "2026-06-09T14:45:18.283Z",
+      "last_mentioned_at": "2026-06-09T14:45:18.283Z",
+      "resolved_at": "2026-06-25T00:02:24.985Z",
+      "source_excerpt": "이뻐! 잘자 오빤 이제 자야겠어",
+      "source_event_type": "text",
+      "resolution_reason": "explicit_or_implied_resolution"
+    },
+    {
+      "key": "working_or_busy",
+      "summary": "일하거나 바쁜 상태",
+      "status": "resolved",
+      "started_at": "2026-06-09T00:08:22.814Z",
+      "last_mentioned_at": "2026-06-25T00:02:24.985Z",
+      "resolved_at": null,
+      "source_excerpt": "부지런하네 ㅎㅎ 응응 출근했어",
+      "source_event_type": "text",
+      "resolution_reason": "stale_unknown"
     }
   ],
   "sticky_facts": [],

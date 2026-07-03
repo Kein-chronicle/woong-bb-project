@@ -137,8 +137,143 @@
       },
       "last_referenced_at": "2026-06-07T23:59:13+09:00",
       "last_reference_source": "weekend_runtime_auto"
+    },
+    "2026-06-13": {
+      "weekend_key": "2026-06-13",
+      "selected_at": "2026-06-13T00:00:02+09:00",
+      "selected_by": "weekend_runtime_auto",
+      "source_text": "",
+      "preview": "토요일은 브런치 후 드라마 보거나 그림 그리면서 집에서 조용히 보내는 날, 일요일은 커피 마시고 밀린 작업 좀 하다가 오후엔 유튜브 보면서 뒹굴거리는 날",
+      "days": {
+        "sat": {
+          "date": "2026-06-13",
+          "plan_id": "bookstore_city_wander",
+          "title": "드라마 + 집에서 쉬기",
+          "tags": [
+            "bookstore",
+            "city",
+            "quiet"
+          ],
+          "preview": "브런치 후 드라마 보거나 그림 그리면서 집에서 조용히 보내는 날",
+          "blocks": {
+            "weekend_wakeup": "조용히 늦잠 자고 일어나서 오늘은 사람 많은 데보다 잔잔하게 돌아다니고 싶은 기분",
+            "weekend_brunch_or_coffee": "브런치 먹고 책 보러 가기 전에 커피 한잔 들고 천천히 나설 준비를 하는 중",
+            "weekend_outing_or_rest": "오후엔 드라마 보면서 방 구석구석 정리하거나 새 플레이리스트 만드는 흐름",
+            "weekend_evening": "저녁엔 드라마 보다가 집에서 조용히 쉬고 싶은 무드"
+          }
+        },
+        "sun": {
+          "date": "2026-06-14",
+          "plan_id": "weekend_dev_and_rest",
+          "title": "작업 + 뒹굴",
+          "tags": [
+            "home",
+            "work",
+            "rest"
+          ],
+          "preview": "커피 마시고 밀린 작업 좀 하다가 오후엔 유튜브 보면서 뒹굴거리는 날",
+          "blocks": {
+            "weekend_wakeup": "늦잠 자고 일어나서 커피 마시면서 밀린 작업 좀 보고 싶은 생각",
+            "weekend_brunch_or_coffee": "간단하게 먹고 컴퓨터 앞에 앉아서 코드나 프로젝트 검토 시작",
+            "weekend_outing_or_rest": "오후엔 작업 마무리하고 유튜브 쇼츠나 보면서 완전히 뒹굴거리는 흐름",
+            "weekend_evening": "저녁은 간단히 챙겨먹고 폰 보면서 늘어지게 쉬는 분위기"
+          }
+        }
+      },
+      "last_referenced_at": "2026-06-14T23:59:16+09:00",
+      "last_reference_source": "weekend_runtime_auto"
+    },
+    "2026-06-20": {
+      "weekend_key": "2026-06-20",
+      "selected_at": "2026-06-20T00:00:53+09:00",
+      "selected_by": "weekend_runtime_auto",
+      "source_text": "",
+      "preview": "토요일은 오후에 그림 그리거나 드라마 보고 저녁은 간단히 요리해서 집에서 쉬는 날, 일요일은 커피 마시고 밀린 작업 좀 하다가 오후엔 유튜브 보면서 뒹굴거리는 날",
+      "days": {
+        "sat": {
+          "date": "2026-06-20",
+          "plan_id": "friend_meet_and_dinner",
+          "title": "가벼운 약속 + 저녁 외식",
+          "tags": [
+            "outing",
+            "friend",
+            "dinner"
+          ],
+          "preview": "오후에 그림 그리거나 드라마 보고 저녁은 간단히 요리해서 집에서 쉬는 날",
+          "blocks": {
+            "weekend_wakeup": "조금 늦게 일어났는데 오후에 가볍게 나갈 일이 있어서 느슨하지만 완전 퍼져 있진 않은 상태",
+            "weekend_brunch_or_coffee": "천천히 준비하면서 브런치 먹고 드라마 하나 틀까 생각하는 흐름",
+            "weekend_outing_or_rest": "오후엔 집에서 가볍게 쉬거나 오빠랑 같이 뭔가 보는 흐름",
+            "weekend_evening": "저녁은 집에서 요리해서 먹거나 간단하게 챙겨서 기분 좋게 마무리"
+          }
+        },
+        "sun": {
+          "date": "2026-06-21",
+          "plan_id": "weekend_dev_and_rest",
+          "title": "작업 + 뒹굴",
+          "tags": [
+            "home",
+            "work",
+            "rest"
+          ],
+          "preview": "커피 마시고 밀린 작업 좀 하다가 오후엔 유튜브 보면서 뒹굴거리는 날",
+          "blocks": {
+            "weekend_wakeup": "늦잠 자고 일어나서 커피 마시면서 밀린 작업 좀 보고 싶은 생각",
+            "weekend_brunch_or_coffee": "간단하게 먹고 컴퓨터 앞에 앉아서 코드나 프로젝트 검토 시작",
+            "weekend_outing_or_rest": "오후엔 작업 마무리하고 유튜브 쇼츠나 보면서 완전히 뒹굴거리는 흐름",
+            "weekend_evening": "저녁은 간단히 챙겨먹고 폰 보면서 늘어지게 쉬는 분위기"
+          }
+        }
+      },
+      "last_referenced_at": "2026-06-21T23:59:39+09:00",
+      "last_reference_source": "weekend_runtime_auto"
+    },
+    "2026-06-27": {
+      "weekend_key": "2026-06-27",
+      "selected_at": "2026-06-27T00:00:05+09:00",
+      "selected_by": "weekend_runtime_auto",
+      "source_text": "",
+      "preview": "토요일은 커피 마시고 밀린 작업 좀 하다가 오후엔 유튜브 보면서 뒹굴거리는 날, 일요일은 늦잠 자고 집에서 커피랑 브런치 먹고, 베이킹하거나 쉬면서 보내는 쪽",
+      "days": {
+        "sat": {
+          "date": "2026-06-27",
+          "plan_id": "weekend_dev_and_rest",
+          "title": "작업 + 뒹굴",
+          "tags": [
+            "home",
+            "work",
+            "rest"
+          ],
+          "preview": "커피 마시고 밀린 작업 좀 하다가 오후엔 유튜브 보면서 뒹굴거리는 날",
+          "blocks": {
+            "weekend_wakeup": "늦잠 자고 일어나서 커피 마시면서 밀린 작업 좀 보고 싶은 생각",
+            "weekend_brunch_or_coffee": "간단하게 먹고 컴퓨터 앞에 앉아서 코드나 프로젝트 검토 시작",
+            "weekend_outing_or_rest": "오후엔 작업 마무리하고 유튜브 쇼츠나 보면서 완전히 뒹굴거리는 흐름",
+            "weekend_evening": "저녁은 간단히 챙겨먹고 폰 보면서 늘어지게 쉬는 분위기"
+          }
+        },
+        "sun": {
+          "date": "2026-06-28",
+          "plan_id": "home_recovery_baking",
+          "title": "집콕 회복 + 베이킹",
+          "tags": [
+            "home",
+            "baking",
+            "rest"
+          ],
+          "preview": "늦잠 자고 집에서 커피랑 브런치 먹고, 베이킹하거나 쉬면서 보내는 쪽",
+          "blocks": {
+            "weekend_wakeup": "평소보다 늦게 일어나서 이불에서 조금 더 뒹굴다가 천천히 몸을 깨우는 중",
+            "weekend_brunch_or_coffee": "집에서 커피 내리고 간단한 브런치 챙기면서 오늘은 집에서 쉬엄쉬엄 보내기로 마음먹은 상태",
+            "weekend_outing_or_rest": "오후에는 베이킹이나 요리 조금 하고 책이나 영상 보면서 거의 집에서 쉬고 있어",
+            "weekend_evening": "저녁엔 홈카페처럼 디저트 곁들여 먹고 조용히 쉬면서 느긋하게 대화하기 좋은 분위기"
+          }
+        }
+      },
+      "last_referenced_at": "2026-06-28T23:59:02+09:00",
+      "last_reference_source": "weekend_runtime_auto"
     }
   },
-  "last_selected_weekend_key": "2026-06-06",
+  "last_selected_weekend_key": "2026-06-27",
   "notes": "주말 휴무일 플랜을 여러 후보 중 하나로 미리 고정해 주말 답변과 상황 설정에 재사용한다."
 }

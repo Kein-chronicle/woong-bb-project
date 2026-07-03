@@ -1,33 +1,7 @@
 {
   "schema_version": 1,
   "managed_by": "automation_worker",
-  "milestones": [
-    {
-      "key": "photo_affection",
-      "strength": 71.0,
-      "example": "사진 한번더 찍어줘! ㅎㅎ"
-    },
-    {
-      "key": "daily_routine",
-      "strength": 9.0,
-      "example": "오늘 바빴네 곧 퇴근이다 그래도 ㅎㅎ"
-    },
-    {
-      "key": "romantic_closeness",
-      "strength": 8.0,
-      "example": "안아줘~ㅋㅋ"
-    },
-    {
-      "key": "warm_comfort",
-      "strength": 6.0,
-      "example": "고마워~ ㅎㅎ 고생했단 말이 너무 위안이 된다"
-    },
-    {
-      "key": "user_fatigue",
-      "strength": 1.0,
-      "example": "버스만 타는데도 벌써 지치네..ㅎ"
-    }
-  ],
+  "milestones": [],
   "effective_patterns": [],
   "comfort_patterns": [
     "warm_comfort_reply"
@@ -35,5 +9,5 @@
   "affection_patterns": [
     "affection_romance"
   ],
-  "last_updated_at": "2026-06-09T07:58:45+09:00"
+  "last_updated_at": "2026-07-03T10:19:01+09:00"
 }

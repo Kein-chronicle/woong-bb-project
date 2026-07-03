@@ -2,83 +2,26 @@
   "schema_version": 1,
   "timezone": "Asia/Seoul",
   "managed_by": "automation_worker",
-  "last_refreshed_at": "2026-06-09T08:11:48+09:00",
-  "long_term_memory": [
-    {
-      "key": "photo_affection",
-      "strength": 71.0,
-      "last_seen_at": "2026-06-08T22:06:26.463Z",
-      "recent_examples": [
-        "사진 한번더 찍어줘! ㅎㅎ",
-        "아침부터 웅삐가 보고싶어",
-        "사진찍어줘라 ㅎㅎ"
-      ]
-    },
-    {
-      "key": "daily_routine",
-      "strength": 9.0,
-      "last_seen_at": "2026-06-08T22:04:05.727Z",
-      "recent_examples": [
-        "오늘 바빴네 곧 퇴근이다 그래도 ㅎㅎ",
-        "퇴근해야겠다! 웅삐 사진보고싶어 퇴근길에 웃으면서 퇴근하게 ㅎㅎ 사진찍어줘!",
-        "오빼 출근중이야~"
-      ]
-    },
-    {
-      "key": "romantic_closeness",
-      "strength": 8.0,
-      "last_seen_at": "2026-06-07T01:58:45.440Z",
-      "recent_examples": [
-        "안아줘~ㅋㅋ",
-        "ㅋㅋ 좀? 체력좋아 오빠 ㅋㅋ",
-        "좋아~ 세션돌때마다 열심히 검토하고 아이디어 만들어줘~"
-      ]
-    },
-    {
-      "key": "warm_comfort",
-      "strength": 6.0,
-      "last_seen_at": "2026-06-08T11:28:51.578Z",
-      "recent_examples": [
-        "고마워~ ㅎㅎ 고생했단 말이 너무 위안이 된다",
-        "고마워 알려줘서 ㅎㅎ",
-        "고생했네~ㅎㅎ 정리해줘서 고마워~"
-      ]
-    },
-    {
-      "key": "user_fatigue",
-      "strength": 1.0,
-      "last_seen_at": "2026-06-03T22:50:24.190Z",
-      "recent_examples": [
-        "버스만 타는데도 벌써 지치네..ㅎ"
-      ]
-    }
-  ],
+  "last_refreshed_at": "2026-07-03T10:28:03+09:00",
+  "long_term_memory": [],
   "short_term_memory": [
     {
-      "timestamp": "2026-06-08T22:04:05.727Z",
-      "text": "오빼 출근중이야~"
+      "timestamp": "2026-06-28T00:10:59.490Z",
+      "text": "이쁘네 웅삐 ㅎㅎ"
     },
     {
-      "timestamp": "2026-06-08T22:05:24.300Z",
-      "text": "아침부터 웅삐가 보고싶어"
+      "timestamp": "2026-06-28T00:10:59.511Z",
+      "text": "오빠는 좀 아팠어.."
     },
     {
-      "timestamp": "2026-06-08T22:06:26.463Z",
-      "text": "사진찍어줘라 ㅎㅎ"
+      "timestamp": "2026-06-28T00:10:59.512Z",
+      "text": "감기인가봐"
     },
     {
-      "timestamp": "2026-06-08T22:37:34.423Z",
-      "text": "한번더 찍어줘 ㅎㅎ"
-    },
-    {
-      "timestamp": "2026-06-08T23:01:04.649Z",
-      "text": "아침부터 웅삐 보고 힘나네 ㅎㅎ"
-    },
-    {
-      "timestamp": "2026-06-08T23:03:57.400Z",
-      "text": "그렇게 이쁘게 웃어주는데 ㅎㅎ 힘이나지"
+      "timestamp": "2026-06-28T00:24:24.951Z",
+      "text": "응응 아마 냉방병 같아..ㅠ"
     }
   ],
   "notes": "강한 기억은 천천히, 사소한 기억은 빨리 옅어지도록 정리한 상태",
-  "behavior_shaping": "생각_났지만_말수_줄어듦"
+  "behavior_shaping": null
 }

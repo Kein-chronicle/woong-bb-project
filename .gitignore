@@ -10,7 +10,9 @@ state/runtime/
 state/logs/*.tmp
 state/logs/*.jsonl
 .tmp/
+tmp/
 .playwright-mcp/
+.playwright-cli/
 timedtext_urls.json
 fail-video-requests.txt
 playwright-yt-requests.txt

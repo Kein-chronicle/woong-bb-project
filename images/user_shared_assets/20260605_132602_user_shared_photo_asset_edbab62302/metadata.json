@@ -1,0 +1,108 @@
+{
+  "asset_id": "20260605_132602_user_shared_photo_asset_edbab62302",
+  "created_at": "2026-06-05T13:26:02+09:00",
+  "last_seen_at": "2026-06-05T13:26:02+09:00",
+  "source": "telegram",
+  "telegram_user": "K8832353",
+  "kind": "user_shared_photo",
+  "title": "서울 트라이애슬론 메달 클로즈업",
+  "canonical_path": "/Users/kein/Projects/woong-bb/images/user_shared_assets/20260605_132602_user_shared_photo_asset_edbab62302/source.jpg",
+  "asset_dir": "/Users/kein/Projects/woong-bb/images/user_shared_assets/20260605_132602_user_shared_photo_asset_edbab62302",
+  "source_paths": [
+    "/Users/kein/Projects/woong-bb/images/incoming/2026-06-05/132457_telegram_photo_AQADrg5rG-TSEFV-.jpg"
+  ],
+  "source_sha256": "edbab62302dfc416d544703459fc51770d6955b5e86e1eb0f783c9ac4ef8103d",
+  "captions": [
+    "웅삐도 같이한 기분 느끼고 싶은데 런닝복으로 이것 메달 메고 찍은 사진 한장 보내줘볼래? ㅎㅎ 화장도 하고 썬글라스도 쓰고 ㅎㅎ"
+  ],
+  "tags": [
+    "accessory",
+    "event_context",
+    "공유한_순간",
+    "구름",
+    "달리기",
+    "메달",
+    "수영",
+    "스트랩",
+    "야외",
+    "오빠의_완주_기록",
+    "완주",
+    "운동",
+    "운동_성취",
+    "자전거",
+    "트라이애슬론",
+    "하늘",
+    "한강",
+    "행사장"
+  ],
+  "analysis": {
+    "asset_kind": "event_medal_photo",
+    "title": "서울 트라이애슬론 메달 클로즈업",
+    "visible_summary_ko": "초록 스트랩에 매달린 트라이애슬론 메달을 하늘 배경 앞에서 가까이 든 사진. 메달 아래에 수영, 자전거, 러닝 아이콘이 보인다.",
+    "visible_elements": [
+      "초록색 메달 스트랩",
+      "원형 겹침 디자인 메달",
+      "수영 아이콘",
+      "자전거 아이콘",
+      "러닝 아이콘",
+      "파란 하늘과 흰 구름",
+      "행사장처럼 보이는 배경"
+    ],
+    "scene_tags": [
+      "야외",
+      "행사장",
+      "완주",
+      "운동"
+    ],
+    "object_tags": [
+      "메달",
+      "스트랩",
+      "트라이애슬론",
+      "하늘",
+      "구름"
+    ],
+    "relationship_tags": [
+      "오빠의 완주 기록",
+      "운동 성취",
+      "공유한 순간"
+    ],
+    "reuse_triggers": [
+      "메달",
+      "수영",
+      "자전거",
+      "달리기",
+      "트라이애슬론",
+      "한강"
+    ],
+    "reusable_subjects": [
+      {
+        "kind": "accessory",
+        "summary": "초록 스트랩의 트라이애슬론 메달"
+      },
+      {
+        "kind": "event_context",
+        "summary": "야외 스포츠 행사 완주 분위기"
+      }
+    ],
+    "generation_reuse": {
+      "allowed": true,
+      "notes": "메달 디자인과 완주 분위기 참조 가능",
+      "face_reference": {
+        "allowed": false,
+        "requires_explicit_user_request": true
+      }
+    },
+    "privacy": {
+      "reuse_face_without_explicit_request": false,
+      "reuse_user_face_with_explicit_request": true
+    }
+  },
+  "generation_reuse": {
+    "allowed": true,
+    "notes": "메달 디자인과 완주 분위기 참조 가능",
+    "face_reference": {
+      "allowed": false,
+      "requires_explicit_user_request": true
+    }
+  }
+}

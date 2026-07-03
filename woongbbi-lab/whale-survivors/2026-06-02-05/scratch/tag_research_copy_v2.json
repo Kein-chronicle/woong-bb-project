@@ -1,0 +1,126 @@
+{
+  "sessionId": "2026-06-02-05",
+  "notes": [
+    "실제 코드 반영용이 아니라 문구와 구조 점검용 초안이다.",
+    "직전 세션의 curse/resonance/frost/pressure 형식을 그대로 따라간다."
+  ],
+  "tags": [
+    {
+      "tag": "poison",
+      "displayName": "맹독",
+      "tiers": [
+        {
+          "tier": 1,
+          "title": "맹독 축적 실험",
+          "objective": "맹독 3단계 상태에서 중독 피해로 적 160기를 처치하라",
+          "progressLabel": "중독 처치 {current}/160",
+          "successText": "맹독 축적 데이터가 확보됐다. 다음 런부터 맹독 심화 후보가 등장한다",
+          "failText": "즉시 화력이 너무 강했다. 중독 피해가 마무리한 처치만 기록된다",
+          "routeHint": "적이 오래 살아남는 군집 해역이 유리하다"
+        },
+        {
+          "tier": 2,
+          "title": "심해 독순환 시험",
+          "objective": "맹독 4단계 상태에서 엘리트 6기를 중독 상태로 처치하라",
+          "progressLabel": "중독 엘리트 처치 {current}/6",
+          "successText": "맹독 4단계 연구가 승인됐다",
+          "failText": "엘리트를 마무리할 때 맹독 4단계를 유지하지 못했다",
+          "routeHint": "보급 해역보다 장기 교전이 많은 리스크 해역이 더 잘 맞는다"
+        }
+      ]
+    },
+    {
+      "tag": "spirit",
+      "displayName": "정령",
+      "tiers": [
+        {
+          "tier": 1,
+          "title": "정령 군집 관측",
+          "objective": "정령 3단계 상태에서 정령 타격 400회를 기록하라",
+          "progressLabel": "정령 타격 {current}/400",
+          "successText": "정령 반응 패턴이 안정화됐다. 다음 런부터 정령 심화 후보가 등장한다",
+          "failText": "정령 유지가 자주 끊겼다. 정령이 오래 필드에 남는 구성이 필요하다",
+          "routeHint": "적 밀도가 꾸준한 연구 해역이 기록을 쌓기 쉽다"
+        },
+        {
+          "tier": 2,
+          "title": "포드 동조 실험",
+          "objective": "정령 4단계 상태에서 챔피언 4기를 정령 타격으로 마무리하라",
+          "progressLabel": "정령 마무리 {current}/4",
+          "successText": "정령 4단계 연구가 승인됐다",
+          "failText": "챔피언을 쓰러뜨릴 때 정령 타격이 막타를 가져오지 못했다",
+          "routeHint": "체력이 두꺼운 챔피언이 많은 심화 해역이 오히려 유리하다"
+        }
+      ]
+    },
+    {
+      "tag": "mobility",
+      "displayName": "기동",
+      "tiers": [
+        {
+          "tier": 1,
+          "title": "기동 회피 기록",
+          "objective": "기동 3단계 상태에서 45초 동안 피격 없이 적 120기를 처치하라",
+          "progressLabel": "무피격 처치 {current}/120",
+          "successText": "기동 회피 기록이 승인됐다. 다음 런부터 기동 심화 후보가 등장한다",
+          "failText": "한 번의 피격으로 기록이 초기화됐다. 좁은 해역보다 회피 공간이 넓은 루트가 낫다",
+          "routeHint": "장애물이 적고 동선이 넓은 해역을 노리는 편이 좋다"
+        },
+        {
+          "tier": 2,
+          "title": "급가속 돌파 시험",
+          "objective": "기동 4단계 상태에서 피격 3회 이하로 보스를 처치하라",
+          "progressLabel": "현재 피격 {current}/3",
+          "successText": "기동 4단계 연구가 승인됐다",
+          "failText": "보스전에서 불필요한 접촉이 많았다. 기동은 화력보다 회피 리듬이 먼저다",
+          "routeHint": "보스 패턴이 단순한 항로에서 먼저 시도하는 편이 안정적이다"
+        }
+      ]
+    },
+    {
+      "tag": "summon",
+      "displayName": "소환",
+      "tiers": [
+        {
+          "tier": 1,
+          "title": "소환 유지 시험",
+          "objective": "소환 3단계 상태에서 소환체 처치 220회를 기록하라",
+          "progressLabel": "소환체 처치 {current}/220",
+          "successText": "소환 유지 패턴이 확보됐다. 다음 런부터 소환 심화 후보가 등장한다",
+          "failText": "소환체가 필드를 오래 지키지 못했다. 재배치보다 유지 구성이 더 필요하다",
+          "routeHint": "적이 몰려와 소환체가 계속 일할 수 있는 해역이 유리하다"
+        },
+        {
+          "tier": 2,
+          "title": "다중 소환 통제 실험",
+          "objective": "소환 4단계 상태에서 엘리트 8기를 소환체로 처치하라",
+          "progressLabel": "소환 엘리트 처치 {current}/8",
+          "successText": "소환 4단계 연구가 승인됐다",
+          "failText": "엘리트를 쓰러뜨릴 때 소환체가 마무리하지 못했다",
+          "routeHint": "장기전이 가능한 시험 해역에서 누적시키는 편이 쉽다"
+        }
+      ]
+    }
+  ],
+  "crossResearch": {
+    "id": "permit_cross_spirit_poison",
+    "displayName": "포식 떼허가서",
+    "title": "포식 떼 동조 실험",
+    "tiers": [
+      {
+        "tier": 1,
+        "objective": "정령 3단계와 맹독 3단계를 동시에 유지한 상태에서 중독된 적 120기를 정령 타격으로 처치하라",
+        "progressLabel": "포식 동조 처치 {current}/120",
+        "successText": "정령 떼가 독순환에 동조하기 시작했다",
+        "failText": "두 태그 중 하나가 자주 끊겼다. 동시 유지 시간이 더 필요하다"
+      },
+      {
+        "tier": 2,
+        "objective": "정령 4단계와 맹독 4단계를 동시에 유지한 상태에서 보스를 1회 처치하라",
+        "progressLabel": "교차 보스 처치 {current}/1",
+        "successText": "포식 떼 연구가 승인됐다. 다음 런부터 교차 종결 후보가 등장한다",
+        "failText": "보스 마무리 순간에 정령 4단계와 맹독 4단계를 동시에 유지하지 못했다"
+      }
+    ]
+  }
+}
