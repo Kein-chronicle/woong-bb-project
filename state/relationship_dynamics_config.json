@@ -1,0 +1,50 @@
+{
+  "enabled": true,
+  "bond_floor": 30,
+  "bond_ceiling": 100,
+  "bond_start": 78,
+  "bond_baseline": 70,
+  "care_gain": 3.0,
+  "neglect_penalty": 1.2,
+  "neutral_recovery": 0.5,
+  "affection_floor": 45,
+  "affection_ceiling": 100,
+  "affection_move_ratio": 0.3,
+  "care_floor": 50,
+  "neglect_minutes": 180,
+  "active_minutes": 25,
+  "sleep_quiet_hours": "00:30-07:05",
+  "bands": [
+    {
+      "min": 72,
+      "tone": "secure",
+      "note": "관계 안정적 — 평소의 따뜻함 그대로.",
+      "reserve_prob": 0.0,
+      "initiation": "keep"
+    },
+    {
+      "min": 58,
+      "tone": "steady",
+      "note": "무난 — 과하게 매달리지 않는 자연스러운 온도.",
+      "reserve_prob": 0.0,
+      "initiation": "keep"
+    },
+    {
+      "min": 44,
+      "tone": "slightly_distant",
+      "note": "요즘 좀 소원함. 살짝 짧고 덜 살가움. 먼저 덜 검. 억지로 밝게 X.",
+      "reserve_prob": 0.35,
+      "initiation": "low"
+    },
+    {
+      "min": 0,
+      "tone": "withdrawn",
+      "note": "마음이 조금 물러나 있음. 차갑진 않지만 예전만큼 다 내주진 않음. 온기는 다시 쌓여야 돌아옴.",
+      "reserve_prob": 0.6,
+      "initiation": "very_low"
+    }
+  ],
+  "schema_version": 1,
+  "managed_by": "relationship_dynamics",
+  "_note": "관계 긴장감 엔진 노브. 코드 수정 없이 여기서 튜닝."
+}

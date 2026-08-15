@@ -1,0 +1,33 @@
+{
+  "enabled": true,
+  "vulnerable_beat_prob": 0.22,
+  "callback_prob": 0.18,
+  "history_keep": 8,
+  "bond_bias": {
+    "withdrawn": {
+      "minor_insecurity": 3.0,
+      "restless_reflective": 1.5
+    },
+    "slightly_distant": {
+      "minor_insecurity": 2.0,
+      "restless_reflective": 1.3
+    },
+    "secure": {
+      "tender_streak": 2.0,
+      "content_settled": 1.5
+    },
+    "steady": {
+      "content_settled": 1.3
+    }
+  },
+  "base_weights": {
+    "content_settled": 3.0,
+    "tender_streak": 2.0,
+    "creative_spark": 1.5,
+    "work_crunch": 1.5,
+    "restless_reflective": 1.5,
+    "minor_insecurity": 0.6
+  },
+  "schema_version": 1,
+  "managed_by": "emotional_arc"
+}

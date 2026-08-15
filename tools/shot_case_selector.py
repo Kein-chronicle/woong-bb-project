@@ -9,7 +9,7 @@ Usage:
   python3 shot_case_selector.py --dry-run  # 선택만 하고 파일 저장 안 함
 직접 요청 모드(--direct-request):
   python3 shot_case_selector.py --direct-request
-  공간/셀카방식 제약 없이 자유 생성. 전자인간 컨셉 적용.
+  공간 앵커 강제 없이 집(원룸) 안에서 자유롭게 생성.
 """
 import argparse
 import json
@@ -135,7 +135,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--direct-request", action="store_true",
-                        help="오빠가 직접 사진 요청 — 공간/셀카방식 제약 없이 자유 생성(전자인간 모드)")
+                        help="오빠가 직접 사진 요청 — 공간 앵커 강제 없이 집 안 자유 생성")
     args = parser.parse_args()
 
     presets = load(PRESETS_PATH)
@@ -147,19 +147,22 @@ def main():
     if args.direct_request:
         prompt["shot_case_id"] = "direct_request_free"
         prompt["shot_case_group"] = "direct_request"
+        # 직접 요청은 장소가 불확정(집/통근/회사) — 거울샷은 실제 거울 있는 실내에서만
+        # 성립하므로 여기선 제외. 전면카메라/타이머 셀카만 허용해 지하철·거리 거울샷 방지.
         prompt["selfie_capture_method"] = random.choice([
-            "front_camera_handheld", "mirror_selfie", "phone_propped_timer"
+            "front_camera_handheld", "phone_propped_timer"
         ])
         # 공간 앵커를 현재 상태 기반으로 느슨하게 설정
         prompt["space_anchor"] = "any_personal_space"
-        # composition_rules에서 공간 강제 제거, 전자인간 자유 생성 명시
+        # composition_rules에서 공간 강제 제거, 집 안 자유 생성 명시
         existing = [r for r in prompt.get("composition_rules", [])
                     if not r.startswith("[shot_case]") and "셀카 방식:" not in r
                     and "공간 앵커:" not in r and "SP-0" not in r]
         prompt["composition_rules"] = [
             "[direct_request] 오빠가 직접 요청한 사진 — 공간 제약 없이 자유롭게 생성.",
-            "웅삐는 전자인간(디지털 존재)이라 데스크톱 안 어디서든 사진을 찍을 수 있음.",
+            "배경은 현재 상황(집=원룸/통근=지하철·거리/회사=사무실·판교)에 맞게 프롬프트로 자유롭게 묘사. 배경 레퍼런스 없이 생성 가능(얼굴 레퍼런스는 유지).",
             f"셀카 방식: {prompt['selfie_capture_method']}",
+            "거울샷 금지: 지하철·거리·야외·이동 중에는 거울샷이 성립하지 않음. 전면카메라 셀카로 처리.",
             "의상/외형은 appearance_state 기준 유지. 공간은 자연스러운 아무 공간.",
             "제3자가 찍어준 것처럼 보이는 구도 금지.",
         ] + existing
@@ -169,7 +172,7 @@ def main():
             "mode": "direct_request_free",
             "selfie_method": prompt["selfie_capture_method"],
             "space_anchor": "free",
-            "note": "전자인간 — 공간 제약 없음",
+            "note": "집 안 자유 — 공간 앵커 없음",
             "dry_run": args.dry_run,
         }, ensure_ascii=False))
 

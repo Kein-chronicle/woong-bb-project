@@ -242,8 +242,33 @@ def _local_api_health_ok() -> bool:
         return False
 
 
-def _build_local_scene() -> str:
-    """오늘 셋업 의상 + 시간대 + 롱헤어로 일상 바스트 셀피 scene (얼굴 크게=화질 안정, 레벨2)."""
+LAST_PHOTO_REQUEST_CONTEXT_PATH = STATE_DIR / "last_photo_request_context.json"
+_REQUEST_CONTEXT_MAX_AGE_MIN = 10
+
+
+def _read_request_context_hint() -> str:
+    """codex-telegram-woongbbi-worker가 남긴 원 요청 텍스트를 읽는다.
+    ReActor는 얼굴 없인 못 도니, 씬은 항상 셀카 포맷을 유지하되 이 텍스트를 곁들여서
+    실패한 원래 요청(예: '라면 사진')과 무관한 랜덤 셀카가 나가는 걸 줄인다."""
+    try:
+        if not LAST_PHOTO_REQUEST_CONTEXT_PATH.exists():
+            return ""
+        data = json.loads(LAST_PHOTO_REQUEST_CONTEXT_PATH.read_text())
+        text = str(data.get("text") or "").strip()
+        at = _parse_iso(data.get("at"))
+        if not text or not at:
+            return ""
+        age_min = (datetime.now().astimezone() - at).total_seconds() / 60
+        if age_min > _REQUEST_CONTEXT_MAX_AGE_MIN:
+            return ""
+        return text[:80]
+    except Exception:
+        return ""
+
+
+def _build_local_scene(context_hint: str = "") -> str:
+    """오늘 셋업 의상 + 시간대 + 롱헤어로 일상 바스트 셀피 scene (얼굴 크게=화질 안정, 레벨2).
+    ReActor는 얼굴 스왑 기반이라 셀카 포맷 자체는 못 벗어남 — 원 요청 맥락은 곁들이는 정도로만 반영."""
     outfit = "casual summer homewear, oversized white t-shirt"
     try:
         sched = json.loads(DAILY_SCHEDULE_PATH.read_text()) if DAILY_SCHEDULE_PATH.exists() else {}
@@ -263,14 +288,19 @@ def _build_local_scene() -> str:
         setting = "home interior, natural daylight"
     else:
         setting = "home interior, warm evening light"
-    return (f"long straight black hair, {outfit}, {setting}, bust shot, front facing, "
-            "natural warm smile, looking at camera, highly detailed face, sharp focus")
+    scene = (f"long straight black hair, {outfit}, {setting}, bust shot, front facing, "
+             "natural warm smile, looking at camera, highly detailed face, sharp focus")
+    # 로컬 모델(ReActor 얼굴스왑)은 사람 셀카만 안정적으로 뽑음.
+    # 원 요청의 구체 상황/오브젝트(예: '라면 사진', '지하철에서')를 씬에 주입하면
+    # 사람 아닌 장면·소품을 억지로 그리다 퀄리티가 무너지므로 context_hint는 반영하지 않는다.
+    return scene
 
 
 def _generate_via_local_api(scene: str):
     import urllib.request
     import base64
-    neg = "innerwear, lingerie, underwear, naked, nsfw, short hair, bob cut, blurry, low quality"
+    neg = ("innerwear, lingerie, underwear, naked, nsfw, short hair, bob cut, blurry, low quality, "
+           "food, objects, props, text, complex background, crowd, multiple people, vehicle interior")
     payload = json.dumps({
         "scene": scene, "face_swap": True, "seed": -1, "mode": "daily",
         "width": 832, "height": 1216, "negative": neg, "negative_prompt": neg,
