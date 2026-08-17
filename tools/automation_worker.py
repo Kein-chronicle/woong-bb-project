@@ -3434,7 +3434,7 @@ def apply_time_block(activity: str, reason: str) -> None:
     weekend_plan = current_weekend_day_plan(now_dt)
     weekend_summary = weekend_plan.get("blocks", {}).get(activity) if weekend_plan else None
     meal_fields_by_activity = {
-        "lunch_break": {"meal_phase", "meal_status_note", "lunch_sub_phase"},
+        "lunch_break": {"meal_phase", "meal_status_note", "lunch_sub_phase", "lunch_break_started_at"},
         "afternoon_work": {"meal_phase", "meal_status_note"},
         "dinner_deciding": {"meal_phase", "meal_status_note", "dinner_mode", "dinner_menu_hint"},
         "dinner_preparing": {"meal_phase", "meal_status_note", "dinner_mode", "dinner_menu_hint"},
@@ -3445,7 +3445,7 @@ def apply_time_block(activity: str, reason: str) -> None:
         if activity == supported_activity:
             active_meal_fields = fields
             break
-    for stale_field in {"meal_phase", "meal_status_note", "dinner_mode", "dinner_menu_hint", "lunch_sub_phase"} - active_meal_fields:
+    for stale_field in {"meal_phase", "meal_status_note", "dinner_mode", "dinner_menu_hint", "lunch_sub_phase", "lunch_break_started_at"} - active_meal_fields:
         presence.pop(stale_field, None)
 
     presence.update(
@@ -3493,38 +3493,57 @@ def apply_time_block(activity: str, reason: str) -> None:
         }
     )
     if activity == "lunch_break":
-        if "lunch_break" in skipped_blocks or (reason == "runtime_bootstrap" and (now_dt.hour > 12 or now_dt.minute >= 20)):
-            presence["meal_phase"] = "late_lunch"
-            presence["meal_status_note"] = "점심시간이 밀려서 바쁘다가 이제야 먹으려는 중"
-        else:
-            presence["meal_phase"] = "lunch_now"
-            presence["meal_status_note"] = "잠깐 먹으러 나왔어"
-        # lunch_sub_phase: time-based heuristic within lunch_break (total ~60min)
-        prev_sub = presence.get("lunch_sub_phase", "")
-        lunch_start_min = meal_plan.get("lunch", {}).get("time")  # e.g. "12:00"
-        elapsed_min: Optional[int] = None
-        if lunch_start_min and isinstance(lunch_start_min, str) and ":" in lunch_start_min:
+        # 점심 진입 시각을 기록해 경과시간 계산(멱등, 날짜 키).
+        # (버그 수정: 기존엔 meal_plan["lunch"]["time"]을 봤는데 그런 키가 없어 elapsed가 항상 0 →
+        #  lunch_sub_phase가 영원히 moving_to_lunch에 고정됐음.)
+        prev_activity = previous_presence.get("current_activity")
+        today_key = now_dt.strftime("%Y-%m-%d")
+        started_dt = None
+        _saved_start = presence.get("lunch_break_started_at")
+        if _saved_start:
             try:
-                lh, lm = [int(x) for x in lunch_start_min.split(":")]
-                elapsed_min = (now_dt.hour * 60 + now_dt.minute) - (lh * 60 + lm)
+                started_dt = datetime.fromisoformat(_saved_start)
             except Exception:
-                pass
-        if elapsed_min is None:
-            elapsed_min = 0
+                started_dt = None
+        # 점심으로 막 진입/기록없음/어제 것이면 지금으로 리셋
+        if prev_activity != "lunch_break" or started_dt is None or started_dt.strftime("%Y-%m-%d") != today_key:
+            started_dt = now_dt
+        presence["lunch_break_started_at"] = started_dt.isoformat(timespec="seconds")
+        elapsed_min = int((now_dt - started_dt).total_seconds() // 60)
+
+        # 대화 단서로 잡힌 상태는 시간으로 덮지 않음
+        prev_sub = presence.get("lunch_sub_phase", "")
         if prev_sub in {"getting_coffee", "returning_from_lunch"}:
-            pass  # keep context set by chat clues; don't override by time
-        elif elapsed_min < 0:
-            presence["lunch_sub_phase"] = "moving_to_lunch"
+            sub = prev_sub
         elif elapsed_min < 8:
-            presence["lunch_sub_phase"] = "moving_to_lunch"
+            sub = "moving_to_lunch"
         elif elapsed_min < 15:
-            presence["lunch_sub_phase"] = "waiting_for_food"
+            sub = "waiting_for_food"
         elif elapsed_min < 40:
-            presence["lunch_sub_phase"] = "eating_lunch"
+            sub = "eating_lunch"
         elif elapsed_min < 55:
-            presence["lunch_sub_phase"] = "finishing_lunch"
+            sub = "finishing_lunch"
         else:
-            presence["lunch_sub_phase"] = "returning_from_lunch"
+            sub = "returning_from_lunch"
+        presence["lunch_sub_phase"] = sub
+
+        # meal_phase / meal_status_note를 lunch_sub_phase에서 파생(단일 진실원천).
+        # (버그 수정: 기존엔 note가 sub_phase와 무관하게 "잠깐 먹으러 나왔어"로 박혀서 —
+        #  이게 context_summary가 되어 코덱스가 '먹는 중'으로 오해, 아직 안 먹었는데 먹는 캡션 발생.)
+        _late = "lunch_break" in skipped_blocks or (reason == "runtime_bootstrap" and (now_dt.hour > 12 or now_dt.minute >= 20))
+        _note_map = {
+            "moving_to_lunch":      ("before_lunch", "점심 먹으러 가려는/가는 중 (아직 안 먹음)"),
+            "waiting_for_food":     ("before_lunch", "식당에서 음식 기다리는 중 (아직 안 먹음)"),
+            "eating_lunch":         ("lunch_now",    "점심 먹는 중"),
+            "finishing_lunch":      ("lunch_now",    "점심 거의 다 먹어감"),
+            "returning_from_lunch": ("after_lunch",  "점심 먹고 자리로 돌아가는 중"),
+            "getting_coffee":       ("after_lunch",  "점심 먹고 커피 마시는 중"),
+        }
+        _phase, _note = _note_map.get(sub, ("lunch_now", "점심시간"))
+        if _late and sub in {"moving_to_lunch", "waiting_for_food"}:
+            _phase, _note = "late_lunch", "점심시간이 밀려서 이제야 먹으러 가려는 중 (아직 안 먹음)"
+        presence["meal_phase"] = _phase
+        presence["meal_status_note"] = _note
     elif activity == "afternoon_work" and "lunch_break" in skipped_blocks:
         presence["meal_phase"] = "lunch_missed_or_delayed"
         presence["meal_status_note"] = "점심시간을 놓쳐서 늦게 먹었거나 아직 못 먹은 채 오후 근무로 넘어감"
@@ -4023,6 +4042,13 @@ def apply_time_block(activity: str, reason: str) -> None:
     appearance["valid_until"] = (now_dt + timedelta(hours=2)).isoformat(timespec="seconds")
     appearance["generated_at"] = now_iso()
     appearance.update(appearance_profile)
+    # lunch_sub_phase를 appearance_state에도 동기화 — 코덱스 워커의 사진 props 규칙이
+    # presence가 아니라 eunbi_appearance_state.json에서 이 값을 읽기 때문(안 하면 항상 None → 음식 props 게이팅 무력화).
+    _lunch_sub = presence.get("lunch_sub_phase")
+    if _lunch_sub:
+        appearance["lunch_sub_phase"] = _lunch_sub
+    else:
+        appearance.pop("lunch_sub_phase", None)
     save_json(APPEARANCE_PATH, appearance)
 
     mark_recalc("time_block_update:%s" % activity)
