@@ -3714,11 +3714,10 @@ def apply_time_block(activity: str, reason: str) -> None:
     if ctx_key:
         context_summary = weekend_summary or (selected_event.get("summary") if selected_event else "%s 상태로 전환" % activity)
         if activity == "lunch_break":
-            context_summary = (
-                "점심시간을 놓쳤다가 바빠서 이제야 늦게 먹으려는 중"
-                if presence.get("meal_phase") == "late_lunch"
-                else "잠깐 먹으러 나왔어"
-            )
+            # 코덱스가 읽는 실제 consumed 필드(current_context_summary). lunch_sub_phase에서 파생된
+            # 정직한 meal_status_note를 그대로 재사용 — 하드코딩 "잠깐 먹으러 나왔어"가 조기에 '먹는 중'으로
+            # 오해되던 버그 수정(안 먹었으면 "가는 중, 아직 안 먹음").
+            context_summary = presence.get("meal_status_note") or "점심시간"
         elif activity == "afternoon_work" and "lunch_break" in skipped_blocks:
             context_summary = "점심을 제때 못 먹고 오후 근무로 넘어가서 조금 늦게 챙기게 됐다"
         elif activity == "dinner_deciding":
