@@ -174,12 +174,14 @@ def _pick_reference_images(face_angle: str, shot_type: str, pose: str) -> dict:
     now_h = now_local().hour
 
     # 얼굴: v2 생성 이미지 우선, 없으면 v1 curated fallback
-    # 안경 낀 컷, 과한 미소 컷 제외. 핵심 2장만 사용.
-    _face_exclude_keywords = {"glasses", "smile_glasses"}
+    # 안경 낀 컷 제외. 단 "no_glasses"는 안경 안 낀 컷이므로 유지해야 함.
+    # (기존 버그: "glasses" in "no_glasses" == True 라 안경 없는 컷까지 전부 제외 → face_front 항상 빈 리스트)
+    def _wears_glasses(name: str) -> bool:
+        return "glasses" in name and "no_glasses" not in name
     if v2_faces.exists():
         face_imgs = [
             f for f in v2_faces.iterdir()
-            if f.suffix in {".png", ".jpg"} and not any(kw in f.name for kw in _face_exclude_keywords)
+            if f.suffix in {".png", ".jpg"} and not _wears_glasses(f.name)
         ]
         face_imgs.sort(key=lambda f: f.name)
         result["face_front"] = [str(f) for f in face_imgs[:2]]

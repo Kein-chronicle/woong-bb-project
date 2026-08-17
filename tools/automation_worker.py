@@ -4701,8 +4701,8 @@ def _build_local_photo_scene(context_hint: str = "") -> str:
         setting = "home interior, warm evening light"
     scene = (f"long straight black hair, {outfit}, {setting}, bust shot, front facing, "
              "natural warm smile, looking at camera, highly detailed face, sharp focus")
-    if context_hint:
-        scene += f", context: {context_hint[:80]}"
+    # 로컬 모델(ReActor 얼굴스왑)은 사람 셀카만 안정적 — 구체 상황/오브젝트를 주입하면 퀄 무너짐.
+    # photo_delivery_guard._build_local_scene와 정합: context_hint는 씬에 반영하지 않는다.
     return scene
 
 

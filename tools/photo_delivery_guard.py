@@ -162,13 +162,17 @@ def _send_png_bytes(raw: bytes, source: str, trigger_kind: str) -> bool:
 
 def rollout_fallback(trigger_kind: str, after_dt) -> bool:
     """우선순위1.5: 코덱스 세션 롤아웃에서 image_gen 결과 추출 → 전송. 성공 시 True.
-    롤아웃 append 지연 대비 1회 재시도."""
+    롤아웃 append는 지연될 수 있어(무성 실패의 주원인) 여러 번 재시도한다."""
     import time
-    raw = extract_rollout_image(after_dt)
-    if not raw:
-        time.sleep(1.5)
+    raw = None
+    for attempt, wait in enumerate((0, 1.5, 3.0, 4.0)):  # 즉시 + 1.5s + 3s + 4s
+        if wait:
+            time.sleep(wait)
         raw = extract_rollout_image(after_dt)
+        if raw:
+            break
     if not raw:
+        print(f"rollout_fallback: {trigger_kind} — 4회 시도에도 롤아웃에서 image_gen base64 못 찾음")
         return False
     return _send_png_bytes(raw, "codex_rollout", trigger_kind)
 
@@ -219,6 +223,9 @@ FAIL_CODES = {
 }
 
 
+PHOTO_FAILURE_LOG_PATH = STATE_BASE / "photo_failure_log.jsonl"
+
+
 def update_pending_status(status: str, fail_code: str = "") -> None:
     try:
         data = json.loads(PENDING_PHOTO_PATH.read_text()) if PENDING_PHOTO_PATH.exists() else {}
@@ -231,15 +238,32 @@ def update_pending_status(status: str, fail_code: str = "") -> None:
         PENDING_PHOTO_PATH.write_text(json.dumps(data, ensure_ascii=False, indent=2))
     except Exception:
         pass
+    # 직접요청 경로는 여태 실패가 계측되지 않아 체감 실패율을 측정 불가였음 —
+    # 모든 실패를 append-only 로그로 남겨 이후 수정 효과를 측정 가능하게 한다.
+    if status == "failed":
+        try:
+            rec = {"at": now_iso(), "fail_code": fail_code or "unknown",
+                   "trigger_kind": (data.get("trigger_kind") if isinstance(data, dict) else None)}
+            with open(PHOTO_FAILURE_LOG_PATH, "a", encoding="utf-8") as fh:
+                fh.write(json.dumps(rec, ensure_ascii=False) + "\n")
+        except Exception:
+            pass
 
 
-def _local_api_health_ok() -> bool:
+def _local_api_health_ok(retries: int = 3, timeout: int = 12) -> bool:
+    # 아침엔 LAN GPU 박스가 잠들어 있어(09시대 실패 집중) — 재시도로 깨어날 시간을 준다.
     import urllib.request
-    try:
-        with urllib.request.urlopen(LOCAL_IMAGE_API_BASE + "/api/health", timeout=8) as r:
-            return getattr(r, "status", 200) == 200
-    except Exception:
-        return False
+    import time as _t
+    for attempt in range(retries):
+        try:
+            with urllib.request.urlopen(LOCAL_IMAGE_API_BASE + "/api/health", timeout=timeout) as r:
+                if getattr(r, "status", 200) == 200:
+                    return True
+        except Exception:
+            pass
+        if attempt < retries - 1:
+            _t.sleep(2 * (attempt + 1))  # 2s, 4s 백오프 — 박스 웨이크업 대기
+    return False
 
 
 LAST_PHOTO_REQUEST_CONTEXT_PATH = STATE_DIR / "last_photo_request_context.json"
