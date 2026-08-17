@@ -4791,6 +4791,59 @@ def deliver_photo_with_fallback(trigger_text: str, trigger_kind: str = "photo") 
     return False
 
 
+def _proactive_codex_enabled() -> bool:
+    """텍스트 선톡을 코덱스 LLM으로 생성할지(킬스위치). 기본 ON.
+    문제 생기면 state/proactive_messages.json의 guards.codex_text_generation=false 로 끔."""
+    try:
+        return bool(load_json(PROACTIVE_PATH, {}).get("guards", {}).get("codex_text_generation", True))
+    except Exception:
+        return True
+
+
+def run_text_proactive_worker(selected: dict, candidate_type: str) -> Optional[str]:
+    """텍스트 선톡을 코덱스 워커로 생성 → 스냅샷(bond/기억/감정아크/웰빙/앵커)+규칙 자동 반영.
+    발송은 안 함 — 생성 텍스트만 반환(호출부가 기존 검수 통과 후 발송). 실패/빈 응답이면 None → 호출부가 템플릿 폴백."""
+    import os as _os
+    from pathlib import Path as _Path
+    worker_script = _Path.home() / ".codex" / "bin" / "codex-telegram-woongbbi-worker"
+    if not worker_script.exists():
+        append_worker_note("text_proactive_worker_missing")
+        return None
+    scene = summarize_current_scene() or {}
+    situation = selected.get("situation") or scene.get("context_summary") or selected.get("intent_key") or "일상 선톡"
+    payload = json.dumps({
+        "proactive": True,
+        "voiceHint": False,
+        "userName": "오빠",
+        "scenarioId": selected.get("scenario_id") or selected.get("id"),
+        "intent": selected.get("intent_key") or selected.get("intent"),
+        "situation": situation,
+        "candidateType": candidate_type,
+    }, ensure_ascii=False)
+    bun = str(_Path.home() / ".bun" / "bin" / "bun")
+    try:
+        result = subprocess.run(
+            [bun, str(worker_script)],
+            input=payload, capture_output=True, text=True, timeout=120,
+            env={**_os.environ, "CODEX_TELEGRAM_STATE_DIR": str(SESSION), "CODEX_TELEGRAM_CWD": str(ROOT)},
+        )
+        if result.returncode != 0:
+            append_worker_note(f"text_proactive_codex_failed code={result.returncode} err={result.stderr.strip()[:200]}")
+            return None
+        data = json.loads(result.stdout or "{}")
+        text = (data.get("answer") or "").strip()
+        if not text:
+            append_worker_note("text_proactive_empty_text")
+            return None
+        return text
+    except subprocess.TimeoutExpired:
+        append_worker_note("text_proactive_codex_timeout")
+        return None
+    except Exception as e:
+        append_worker_note(f"text_proactive_codex_error {str(e)[:150]}")
+        return None
+
+
 def run_voice_proactive_worker(trigger_text: str, profile: str = "auto") -> bool:
     """voiceHint 켜서 codex로 음성용 텍스트 생성 → ElevenLabs로 전송."""
     import os as _os
@@ -5303,27 +5356,35 @@ def proactive_check(reason: str) -> None:
             }
             save_json(PROACTIVE_PATH, proactive)
             return
-        if candidate_type == "planned_proactive":
-            base_message = build_contextual_proactive_message(selected)
+        # 풀버전 선톡: 코덱스 워커로 생성(스냅샷의 bond/기억/감정아크/웰빙/앵커 자동 반영).
+        # 실패/빈 응답이면 기존 템플릿 경로로 폴백. 어느 쪽이든 아래 review_proactive_candidate 검수는 그대로 탐.
+        codex_message = run_text_proactive_worker(selected, candidate_type) if _proactive_codex_enabled() else None
+        if codex_message:
+            # 코덱스 출력은 규칙/스냅샷을 이미 반영 — 템플릿용 플레이버 후처리(취향마찰·시그니처·변주)는 건너뛰고
+            # 안전/위생 후처리(반복 억제·사실표현 정규화)만 적용.
+            base_message = normalize_fact_expression(apply_repetition_guard(codex_message))
         else:
-            base_message = choose_proactive_message_option(
-                selected.get("message_options", []) or [selected.get("message", "")],
-                seed_hint=selected.get("scenario_id") or selected.get("intent_key") or candidate_type,
-            )
-        if load_json(MEMORY_DECAY_PATH, {}).get("long_term_memory"):
-            _mem_state = load_json(MEMORY_DECAY_PATH, {})
-            top_memory = (_mem_state.get("long_term_memory", []) or [{}])[0].get("key")
-            _behavior = _mem_state.get("behavior_shaping", "")
-            if top_memory == "user_fatigue" and "뭐 하고 있어?" in base_message:
-                base_message = base_message.replace("뭐 하고 있어?", "오늘은 좀 덜 지쳤는지 궁금해.")
-            elif top_memory == "photo_affection" and "생각나" in base_message:
-                if _behavior == "먼저_말_걸고_싶어짐":
-                    base_message = base_message.replace("생각나", "생각나고 괜히 더 보고 싶어지")
-        base_message = inject_taste_friction(base_message)
-        base_message = apply_signature_style(base_message)
-        base_message = apply_repetition_guard(base_message)
-        base_message = apply_reply_variance(base_message)
-        base_message = normalize_fact_expression(base_message)
+            if candidate_type == "planned_proactive":
+                base_message = build_contextual_proactive_message(selected)
+            else:
+                base_message = choose_proactive_message_option(
+                    selected.get("message_options", []) or [selected.get("message", "")],
+                    seed_hint=selected.get("scenario_id") or selected.get("intent_key") or candidate_type,
+                )
+            if load_json(MEMORY_DECAY_PATH, {}).get("long_term_memory"):
+                _mem_state = load_json(MEMORY_DECAY_PATH, {})
+                top_memory = (_mem_state.get("long_term_memory", []) or [{}])[0].get("key")
+                _behavior = _mem_state.get("behavior_shaping", "")
+                if top_memory == "user_fatigue" and "뭐 하고 있어?" in base_message:
+                    base_message = base_message.replace("뭐 하고 있어?", "오늘은 좀 덜 지쳤는지 궁금해.")
+                elif top_memory == "photo_affection" and "생각나" in base_message:
+                    if _behavior == "먼저_말_걸고_싶어짐":
+                        base_message = base_message.replace("생각나", "생각나고 괜히 더 보고 싶어지")
+            base_message = inject_taste_friction(base_message)
+            base_message = apply_signature_style(base_message)
+            base_message = apply_repetition_guard(base_message)
+            base_message = apply_reply_variance(base_message)
+            base_message = normalize_fact_expression(base_message)
         delivery_channel = choose_delivery_channel(selected.get("intent_key", "quick_checkin"), selected.get("delivery_preference"))
         candidate = {
             "scenario_id": selected.get("scenario_id"),
