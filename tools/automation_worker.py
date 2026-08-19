@@ -4789,6 +4789,7 @@ def deliver_photo_with_fallback(trigger_text: str, trigger_kind: str = "photo") 
     실제 전송 성공은 sent_images_registry 변화로 판정.
     """
     before = _sent_registry_keys()
+    batch_start_ms = int(now_local().timestamp() * 1000)
     answer = run_photo_promise_worker(trigger_text)
     after = _sent_registry_keys()
 
@@ -4799,6 +4800,25 @@ def deliver_photo_with_fallback(trigger_text: str, trigger_kind: str = "photo") 
             append_message_log("outgoing", "photo_caption", answer)
         append_worker_note("photo_delivered_primary")
         return True
+
+    # ── 우선순위 1.5: 롤아웃 복구 ──
+    # codex 0.141+는 생성 결과를 파일이 아니라 세션 이벤트에 base64로 넣어서, 전송 감지(registry diff)가
+    # "실패"로 오판 → 로컬로 직행하던 문제. 코덱스가 이미 생성한 이미지를 세션 롤아웃에서 꺼내 전송한다
+    # (로컬 폴백보다 원본 코덱스 품질). 브릿지가 이미 쓰는 photo_delivery_guard send-rollout을 재사용.
+    try:
+        _guard = str(TOOLS / "photo_delivery_guard.py")
+        _rr = subprocess.run(
+            [sys.executable, _guard, "send-rollout", "--after-epoch-ms", str(batch_start_ms)],
+            capture_output=True, text=True, timeout=90,
+        )
+        if _rr.returncode == 0 and (_sent_registry_keys() - before):
+            if answer:
+                send_telegram_text(answer)
+                append_message_log("outgoing", "photo_caption", answer)
+            append_worker_note("photo_delivered_rollout")
+            return True
+    except Exception as e:
+        append_worker_note("rollout_recover_error %s" % str(e)[:120])
 
     # ── 우선순위 2: 로컬 이미지 API ──
     settings = load_json(IMAGE_SETTINGS_PATH, {})
