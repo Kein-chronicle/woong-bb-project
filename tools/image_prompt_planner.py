@@ -615,6 +615,12 @@ def build_image_prompt_plan(reason: str) -> dict:
             lens_distance_pool, seed_base + ":lens_distance:%d" % attempt, recent_lens_distances[:2]
         )
 
+    # 거울셀카는 "몸 + 폰 든 팔 + 거울 반사"를 그리다 팔/손을 중복 생성하는 아티팩트(팔 세 개)가 잦음.
+    # 선택돼도 60% 확률로 전면카메라 셀카로 대체해 빈도를 낮춘다(완전 제거는 아님 — 다양성 유지).
+    if selfie_capture_method == "mirror_selfie" and "front_camera_handheld" in capture_method_pool:
+        if random.Random(seed_base + ":mirror_reduce").random() < 0.6:
+            selfie_capture_method = "front_camera_handheld"
+
     if selfie_capture_method == "mirror_selfie":
         if "mirror" not in shot_type:
             shot_type = rotate_pick_recent(
