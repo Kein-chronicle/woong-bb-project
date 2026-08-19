@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "managed_by": "outfit_selector",
+  "concept": "개발자 & 20대 여성 일상복. revealing 방향(크롭/미드리프/플런지·스퀘어넥/오프숄더/홀터/브라렛탑/숏·미니/다리노출)을 상황이 허용할 때 적극 사용. 통근·회사는 커버.",
+  "_note": "하이브리드(③): silhouette은 아래 풀에서 anti-repeat 로테이션으로 통제, 색/디테일은 pool에서 랜덤 레이어. 갈아입는 순간 1회 선택 후 다음 이벤트까지 유지.",
+
+  "context_exposure": {
+    "_desc": "activity/outfit_context별 허용 노출 상한. 이걸 넘는 variation은 그 상황에선 제외.",
+    "work_office": "moderate",
+    "work_home": "high",
+    "commute": "covered",
+    "casual_home": "high",
+    "post_shower": "high",
+    "sleep": "high"
+  },
+
+  "exposure_tier_rank": { "covered": 0, "moderate": 1, "high": 2 },
+
+  "color_pool": ["아이보리", "화이트", "블랙", "차콜 그레이", "라이트 그레이", "파스텔 라벤더", "파스텔 핑크", "민트", "네이비", "버건디", "카키", "베이지", "더스티 블루"],
+  "detail_pool": ["리브드 니트 질감", "컷아웃 디테일", "시스루 소매", "끈 조절 스트랩", "스퀘어 네크라인", "라운드 스쿱넥", "레이스 트림"],
+
+  "categories": {
+    "work": {
+      "maps_from": ["home_casual_work", "work", "morning_prep"],
+      "variations": [
+        {"id": "w1", "top": "몸에 붙는 리브드 니트 반팔", "bottom": "하이웨이스트 슬랙스", "exposes": ["fitted"], "tier": "moderate"},
+        {"id": "w2", "top": "루즈핏 셔츠(단추 위 2개 오픈, 소매 접음)", "bottom": "슬림 트라우저", "exposes": ["neckline"], "tier": "moderate"},
+        {"id": "w3", "top": "크롭 가디건 안에 피티드 캐미", "bottom": "하이웨이스트 와이드 팬츠", "exposes": ["midriff_hint", "neckline"], "tier": "moderate"},
+        {"id": "w4", "top": "피티드 반팔 티", "bottom": "미디 H라인 스커트", "exposes": ["fitted", "legs_calf"], "tier": "moderate"},
+        {"id": "w5", "top": "스퀘어넥 니트 탑", "bottom": "테일러드 숏팬츠", "exposes": ["neckline", "legs_thigh"], "tier": "high"},
+        {"id": "w6", "top": "오프숄더 니트", "bottom": "하이웨이스트 슬랙스", "exposes": ["shoulder", "neckline"], "tier": "high"}
+      ]
+    },
+    "casual": {
+      "maps_from": ["home_casual", "home_casual_evening", "soft_homewear", "evening_free"],
+      "variations": [
+        {"id": "c1", "top": "크롭 탱크탑(배꼽 위로)", "bottom": "데님 숏팬츠", "exposes": ["midriff", "legs_thigh", "shoulder"], "tier": "high"},
+        {"id": "c2", "top": "오프숄더 니트", "bottom": "미니 스커트", "exposes": ["shoulder", "neckline", "legs_thigh"], "tier": "high"},
+        {"id": "c3", "top": "플런지넥 피티드 롱슬리브", "bottom": "하이웨이스트 숏팬츠", "exposes": ["cleavage", "legs_thigh"], "tier": "high"},
+        {"id": "c4", "top": "브라렛탑 위에 오버핏 오픈 셔츠(앞 열림)", "bottom": "마이크로 숏팬츠", "exposes": ["cleavage", "midriff", "legs_thigh"], "tier": "high"},
+        {"id": "c5", "top": "홀터넥 크롭탑", "bottom": "레깅스", "exposes": ["shoulder", "back", "midriff"], "tier": "high"},
+        {"id": "c6", "top": "한쪽 어깨 흘러내린 오버사이즈 슬라우치 티", "bottom": "숏팬츠", "exposes": ["shoulder", "neckline", "legs_thigh"], "tier": "high"},
+        {"id": "c7", "top": "컷아웃 미드리프 롱슬리브", "bottom": "미니 스커트", "exposes": ["midriff", "legs_thigh"], "tier": "high"},
+        {"id": "c8", "top": "루즈 오버핏 티(넓은 넥라인)", "bottom": "니트 반바지", "exposes": ["neckline", "legs_thigh"], "tier": "moderate"}
+      ]
+    },
+    "post_shower": {
+      "maps_from": ["clean_after_shower", "bathing", "post_shower"],
+      "variations": [
+        {"id": "p1", "top": "오버사이즈 루즈 티(넥라인 넓게 흘러내림, 브라 없음)", "bottom": "숏팬츠", "exposes": ["shoulder", "neckline", "legs_thigh"], "tier": "high"},
+        {"id": "p2", "top": "크롭 탱크(젖은 머리)", "bottom": "슬립 숏", "exposes": ["midriff", "legs_thigh"], "tier": "high"},
+        {"id": "p3", "top": "얇은 캐미솔", "bottom": "짧은 반바지", "exposes": ["cleavage", "shoulder", "legs_thigh"], "tier": "high"},
+        {"id": "p4", "top": "반쯤 단추 푼 오버핏 셔츠(안에 캐미)", "bottom": "숏팬츠", "exposes": ["neckline", "legs_thigh"], "tier": "high"}
+      ]
+    },
+    "sleep": {
+      "maps_from": ["summer_sleepwear", "sleep", "night_home_relaxed"],
+      "variations": [
+        {"id": "s1", "top": "짧은 슬립 원피스", "bottom": "", "exposes": ["cleavage", "shoulder", "legs_thigh"], "tier": "high"},
+        {"id": "s2", "top": "크롭 캐미", "bottom": "짧은 파자마 숏", "exposes": ["midriff", "cleavage", "legs_thigh"], "tier": "high"},
+        {"id": "s3", "top": "오버사이즈 티(허벅지 기장, 넓은 넥라인)", "bottom": "", "exposes": ["neckline", "shoulder", "legs_thigh"], "tier": "high"},
+        {"id": "s4", "top": "브라렛 + 매칭 세트", "bottom": "숏 파자마", "exposes": ["cleavage", "midriff", "legs_thigh"], "tier": "high"},
+        {"id": "s5", "top": "실크 캐미", "bottom": "실크 숏", "exposes": ["cleavage", "shoulder", "legs_thigh"], "tier": "high"},
+        {"id": "s6", "top": "반팔 파자마 셔츠(단추 위 3개 오픈)", "bottom": "짧은 파자마 숏", "exposes": ["neckline", "legs_thigh"], "tier": "moderate"}
+      ]
+    }
+  }
+}

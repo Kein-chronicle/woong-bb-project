@@ -44,6 +44,7 @@ import user_persona_tracker as upt  # 오빠 페르소나 장기 기억 — docs
 import wellbeing_guard as wbg  # 건강한 사용 가드레일 — docs/ai_companion_research_ko.md 방향3
 import emotional_arc as earc  # 감정 아크(며칠짜리 그녀 자신의 감정 서사) — docs/ai_companion_research_ko.md 방향2
 import persona_anchor as panc  # 페르소나 앵커(불변 정체성 코어) — docs/ai_companion_research_ko.md 방향4
+import outfit_selector  # 의상 하이브리드 선택기 — 갈아입는 순간 다양한 착장 구성
 
 
 # 상태 파일 경로 상수는 automation/paths.py로 분리(리팩토링). 모든 기존 참조는 그대로 유지됨.
@@ -4040,7 +4041,30 @@ def apply_time_block(activity: str, reason: str) -> None:
     appearance["current_time_block"] = activity_to_block(activity)
     appearance["valid_until"] = (now_dt + timedelta(hours=2)).isoformat(timespec="seconds")
     appearance["generated_at"] = now_iso()
+    _prev_outfit_ctx = appearance.get("outfit_context")
+    _persisted_outfit = appearance.get("current_outfit")
     appearance.update(appearance_profile)
+    # 의상 하이브리드: 갈아입는 순간(outfit_context 전환)에만 새 착장 뽑고, 같은 기간엔 유지
+    # (프로파일 기본 top/bottom이 매 사이클 덮어쓰는 걸 방지하고 지속 착장 복원).
+    _new_outfit_ctx = appearance.get("outfit_context")
+    try:
+        _changed = (_new_outfit_ctx != _prev_outfit_ctx) or (not isinstance(_persisted_outfit, dict)) or (not _persisted_outfit.get("top"))
+        if _changed:
+            _o = outfit_selector.compose_outfit(
+                activity, _new_outfit_ctx or "",
+                "%s:%s" % (now_dt.strftime("%Y-%m-%d:%H"), _new_outfit_ctx or ""),
+            )
+            if _o and _o.get("top"):
+                appearance["top"] = _o["top"]
+                appearance["bottom"] = _o["bottom"]
+                appearance["current_outfit"] = {k: _o.get(k) for k in ("outfit_id", "category", "tier", "exposes", "summary", "top", "bottom")}
+        elif isinstance(_persisted_outfit, dict) and _persisted_outfit.get("top"):
+            # 같은 기간 — 지속 착장 복원(프로파일 기본값 대신)
+            appearance["top"] = _persisted_outfit["top"]
+            appearance["bottom"] = _persisted_outfit.get("bottom", appearance.get("bottom"))
+            appearance["current_outfit"] = _persisted_outfit
+    except Exception:
+        pass
     # lunch_sub_phase를 appearance_state에도 동기화 — 코덱스 워커의 사진 props 규칙이
     # presence가 아니라 eunbi_appearance_state.json에서 이 값을 읽기 때문(안 하면 항상 None → 음식 props 게이팅 무력화).
     _lunch_sub = presence.get("lunch_sub_phase")
