@@ -4041,18 +4041,23 @@ def apply_time_block(activity: str, reason: str) -> None:
     appearance["current_time_block"] = activity_to_block(activity)
     appearance["valid_until"] = (now_dt + timedelta(hours=2)).isoformat(timespec="seconds")
     appearance["generated_at"] = now_iso()
-    _prev_outfit_ctx = appearance.get("outfit_context")
     _persisted_outfit = appearance.get("current_outfit")
     appearance.update(appearance_profile)
-    # 의상 하이브리드: 갈아입는 순간(outfit_context 전환)에만 새 착장 뽑고, 같은 기간엔 유지
-    # (프로파일 기본 top/bottom이 매 사이클 덮어쓰는 걸 방지하고 지속 착장 복원).
+    # 의상 하이브리드: 갈아입는 '기간'(카테고리=출근/퇴근/샤워후/취침) 전환 때만 새 착장을 뽑고,
+    # 같은 기간이면 색·디테일까지 그대로 유지. (예: 저녁 안에서 outfit_context가
+    # home_casual_evening→home_casual→soft_homewear로 바뀌어도 카테고리는 casual 하나라 옷 안 바뀜.)
     _new_outfit_ctx = appearance.get("outfit_context")
+    _new_category = outfit_selector.category_for(_new_outfit_ctx)
+    _prev_category = _persisted_outfit.get("category") if isinstance(_persisted_outfit, dict) else None
     try:
-        _changed = (_new_outfit_ctx != _prev_outfit_ctx) or (not isinstance(_persisted_outfit, dict)) or (not _persisted_outfit.get("top"))
-        if _changed:
+        _period_changed = (_new_category is not None and _new_category != _prev_category)
+        _no_persisted = (not isinstance(_persisted_outfit, dict)) or (not _persisted_outfit.get("top"))
+        if _new_category is None:
+            pass  # 카테고리 매핑 없는 context → 프로파일 기본값 유지(건드리지 않음)
+        elif _period_changed or _no_persisted:
             _o = outfit_selector.compose_outfit(
                 activity, _new_outfit_ctx or "",
-                "%s:%s" % (now_dt.strftime("%Y-%m-%d:%H"), _new_outfit_ctx or ""),
+                "%s:%s" % (now_dt.strftime("%Y-%m-%d"), _new_category),
             )
             if _o and _o.get("top"):
                 appearance["top"] = _o["top"]

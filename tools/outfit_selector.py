@@ -47,6 +47,12 @@ def resolve_category(outfit_context: str, wardrobe: dict) -> str | None:
     return None
 
 
+def category_for(outfit_context: str) -> str | None:
+    """outfit_context → 착장 카테고리(출근=work/퇴근=casual/샤워후=post_shower/취침=sleep).
+    같은 카테고리면 '같은 기간'이라 착장 유지(색 포함). apply_time_block의 변경 감지에 씀."""
+    return resolve_category(outfit_context or "", _load(WARDROBE_PATH, {}))
+
+
 def resolve_exposure_cap(activity: str) -> str:
     if activity in _COVERED_ACTIVITIES:
         return "covered"
