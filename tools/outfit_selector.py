@@ -22,9 +22,11 @@ STATE = BASE / "state"
 WARDROBE_PATH = STATE / "outfit_wardrobe.json"
 ROTATION_PATH = STATE / "outfit_rotation_state.json"
 
-# 상황(activity)별 노출 상한. 없으면 high(집/사적 기본).
-_COVERED_ACTIVITIES = {"morning_commute", "evening_commute"}
-_MODERATE_ACTIVITIES = {"morning_work", "afternoon_work", "late_afternoon", "lunch_break"}
+# 상황(activity)별 노출 상한. 낮/회사도 완전 커버가 아니라 노출 있게(사용자 요청) → high 허용,
+# 실제 렌더 수위는 워커 content_level(통근=2 / 낮·회사=2.5 / 사적=3)이 정밀 게이팅.
+# 통근(대중교통 공개)만 moderate로 조금 눌러둠.
+_COVERED_ACTIVITIES: set = set()
+_MODERATE_ACTIVITIES = {"morning_commute", "evening_commute"}
 
 
 def _load(p, d):

@@ -27,8 +27,11 @@
         {"id": "w2", "top": "루즈핏 셔츠(단추 위 2개 오픈, 소매 접음)", "bottom": "슬림 트라우저", "exposes": ["neckline"], "tier": "moderate"},
         {"id": "w3", "top": "크롭 가디건 안에 피티드 캐미", "bottom": "하이웨이스트 와이드 팬츠", "exposes": ["midriff_hint", "neckline"], "tier": "moderate"},
         {"id": "w4", "top": "피티드 반팔 티", "bottom": "미디 H라인 스커트", "exposes": ["fitted", "legs_calf"], "tier": "moderate"},
-        {"id": "w5", "top": "스퀘어넥 니트 탑", "bottom": "테일러드 숏팬츠", "exposes": ["neckline", "legs_thigh"], "tier": "high"},
-        {"id": "w6", "top": "오프숄더 니트", "bottom": "하이웨이스트 슬랙스", "exposes": ["shoulder", "neckline"], "tier": "high"}
+        {"id": "w5", "top": "스퀘어넥 니트 탑", "bottom": "테일러드 숏팬츠", "exposes": ["neckline", "legs_thigh"], "tier": "high", "innerwear": "none"},
+        {"id": "w6", "top": "오프숄더 니트", "bottom": "하이웨이스트 슬랙스", "exposes": ["shoulder", "neckline"], "tier": "high", "innerwear": "none"},
+        {"id": "w7", "top": "가슴선 살짝 파인 딥 스쿱넥 피티드 니트(이너 살짝 비침)", "bottom": "미니 스커트", "exposes": ["cleavage", "neckline", "legs_thigh"], "tier": "high", "innerwear": "camisole"},
+        {"id": "w8", "top": "크롭 기장 피티드 반팔 니트(미드리프 살짝)", "bottom": "하이웨이스트 슬림 팬츠", "exposes": ["midriff", "fitted"], "tier": "high", "innerwear": "none"},
+        {"id": "w9", "top": "브이넥 슬리브리스 니트 톱", "bottom": "테일러드 숏", "exposes": ["cleavage", "shoulder", "legs_thigh"], "tier": "high", "innerwear": "none"}
       ]
     },
     "casual": {
