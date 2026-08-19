@@ -121,6 +121,7 @@ def compose_outfit(activity: str, outfit_context: str, seed_key: str) -> dict | 
         "category": category,
         "tier": var.get("tier"),
         "exposes": var.get("exposes", []),
+        "innerwear": var.get("innerwear", "none"),
         "exposure_cap": exposure_cap,
         "summary": summary,
     }

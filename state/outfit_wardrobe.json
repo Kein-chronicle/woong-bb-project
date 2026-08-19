@@ -34,34 +34,34 @@
     "casual": {
       "maps_from": ["home_casual", "home_casual_evening", "soft_homewear", "evening_free"],
       "variations": [
-        {"id": "c1", "top": "크롭 탱크탑(배꼽 위로)", "bottom": "데님 숏팬츠", "exposes": ["midriff", "legs_thigh", "shoulder"], "tier": "high"},
-        {"id": "c2", "top": "오프숄더 니트", "bottom": "미니 스커트", "exposes": ["shoulder", "neckline", "legs_thigh"], "tier": "high"},
-        {"id": "c3", "top": "플런지넥 피티드 롱슬리브", "bottom": "하이웨이스트 숏팬츠", "exposes": ["cleavage", "legs_thigh"], "tier": "high"},
-        {"id": "c4", "top": "브라렛탑 위에 오버핏 오픈 셔츠(앞 열림)", "bottom": "마이크로 숏팬츠", "exposes": ["cleavage", "midriff", "legs_thigh"], "tier": "high"},
-        {"id": "c5", "top": "홀터넥 크롭탑", "bottom": "레깅스", "exposes": ["shoulder", "back", "midriff"], "tier": "high"},
-        {"id": "c6", "top": "한쪽 어깨 흘러내린 오버사이즈 슬라우치 티", "bottom": "숏팬츠", "exposes": ["shoulder", "neckline", "legs_thigh"], "tier": "high"},
-        {"id": "c7", "top": "컷아웃 미드리프 롱슬리브", "bottom": "미니 스커트", "exposes": ["midriff", "legs_thigh"], "tier": "high"},
-        {"id": "c8", "top": "루즈 오버핏 티(넓은 넥라인)", "bottom": "니트 반바지", "exposes": ["neckline", "legs_thigh"], "tier": "moderate"}
+        {"id": "c1", "top": "배꼽 훨씬 위로 올라오는 딥 스쿱넥 크롭 탱크(브라렛 살짝 비침)", "bottom": "로우라이즈 데님 마이크로 숏팬츠", "exposes": ["midriff", "cleavage", "legs_thigh", "shoulder"], "tier": "high", "innerwear": "bralette"},
+        {"id": "c2", "top": "양어깨 드러나는 오프숄더 크롭 니트", "bottom": "타이트 미니 스커트", "exposes": ["shoulder", "cleavage", "legs_thigh"], "tier": "high", "innerwear": "none"},
+        {"id": "c3", "top": "가슴골까지 깊게 파인 딥 플런지넥 피티드 롱슬리브", "bottom": "하이컷 숏팬츠", "exposes": ["cleavage", "legs_thigh"], "tier": "high", "innerwear": "none"},
+        {"id": "c4", "top": "브라렛을 아우터로 입고 위에 시스루 오버핏 오픈 셔츠(앞 완전 열림)", "bottom": "로우라이즈 마이크로 숏팬츠", "exposes": ["cleavage", "midriff", "legs_thigh"], "tier": "high", "innerwear": "bralette"},
+        {"id": "c5", "top": "등 파인 홀터넥 크롭탑(미드리프 완전 노출)", "bottom": "하이웨이스트 하이컷 숏", "exposes": ["shoulder", "back", "midriff", "legs_thigh"], "tier": "high", "innerwear": "none"},
+        {"id": "c6", "top": "한쪽 어깨 완전히 흘러내린 오버사이즈 슬라우치 티(속에 얇은 캐미)", "bottom": "마이크로 숏팬츠", "exposes": ["shoulder", "neckline", "legs_thigh"], "tier": "high", "innerwear": "camisole"},
+        {"id": "c7", "top": "사이드·언더 컷아웃 미드리프 롱슬리브", "bottom": "타이트 미니 스커트", "exposes": ["midriff", "cleavage", "legs_thigh"], "tier": "high", "innerwear": "none"},
+        {"id": "c8", "top": "얇은 스파게티 스트랩 캐미 톱", "bottom": "숏 데님", "exposes": ["cleavage", "shoulder", "legs_thigh"], "tier": "high", "innerwear": "none"}
       ]
     },
     "post_shower": {
       "maps_from": ["clean_after_shower", "bathing", "post_shower"],
       "variations": [
-        {"id": "p1", "top": "오버사이즈 루즈 티(넥라인 넓게 흘러내림, 브라 없음)", "bottom": "숏팬츠", "exposes": ["shoulder", "neckline", "legs_thigh"], "tier": "high"},
-        {"id": "p2", "top": "크롭 탱크(젖은 머리)", "bottom": "슬립 숏", "exposes": ["midriff", "legs_thigh"], "tier": "high"},
-        {"id": "p3", "top": "얇은 캐미솔", "bottom": "짧은 반바지", "exposes": ["cleavage", "shoulder", "legs_thigh"], "tier": "high"},
-        {"id": "p4", "top": "반쯤 단추 푼 오버핏 셔츠(안에 캐미)", "bottom": "숏팬츠", "exposes": ["neckline", "legs_thigh"], "tier": "high"}
+        {"id": "p1", "top": "넥라인이 어깨까지 넓게 흘러내린 오버사이즈 루즈 티(브라 없이 맨몸에)", "bottom": "하이컷 숏팬츠", "exposes": ["shoulder", "neckline", "legs_thigh"], "tier": "high", "innerwear": "none"},
+        {"id": "p2", "top": "젖은 머리에 얇은 크롭 탱크(브라렛 비침)", "bottom": "짧은 슬립 숏", "exposes": ["midriff", "cleavage", "legs_thigh"], "tier": "high", "innerwear": "bralette"},
+        {"id": "p3", "top": "가슴선 드러나는 얇은 새틴 캐미솔", "bottom": "아주 짧은 반바지", "exposes": ["cleavage", "shoulder", "legs_thigh"], "tier": "high", "innerwear": "none"},
+        {"id": "p4", "top": "단추 대부분 푼 오버핏 셔츠(안에 브라렛만)", "bottom": "하이컷 숏", "exposes": ["cleavage", "midriff", "legs_thigh"], "tier": "high", "innerwear": "bralette"}
       ]
     },
     "sleep": {
       "maps_from": ["summer_sleepwear", "sleep", "night_home_relaxed"],
       "variations": [
-        {"id": "s1", "top": "짧은 슬립 원피스", "bottom": "", "exposes": ["cleavage", "shoulder", "legs_thigh"], "tier": "high"},
-        {"id": "s2", "top": "크롭 캐미", "bottom": "짧은 파자마 숏", "exposes": ["midriff", "cleavage", "legs_thigh"], "tier": "high"},
-        {"id": "s3", "top": "오버사이즈 티(허벅지 기장, 넓은 넥라인)", "bottom": "", "exposes": ["neckline", "shoulder", "legs_thigh"], "tier": "high"},
-        {"id": "s4", "top": "브라렛 + 매칭 세트", "bottom": "숏 파자마", "exposes": ["cleavage", "midriff", "legs_thigh"], "tier": "high"},
-        {"id": "s5", "top": "실크 캐미", "bottom": "실크 숏", "exposes": ["cleavage", "shoulder", "legs_thigh"], "tier": "high"},
-        {"id": "s6", "top": "반팔 파자마 셔츠(단추 위 3개 오픈)", "bottom": "짧은 파자마 숏", "exposes": ["neckline", "legs_thigh"], "tier": "moderate"}
+        {"id": "s1", "top": "가슴선 깊게 파인 아주 짧은 새틴 슬립 원피스(가는 스트랩)", "bottom": "", "exposes": ["cleavage", "shoulder", "legs_thigh"], "tier": "high", "innerwear": "none"},
+        {"id": "s2", "top": "짧은 크롭 캐미(가슴 밑 미드리프 완전 노출)", "bottom": "로우라이즈 아주 짧은 파자마 숏", "exposes": ["midriff", "cleavage", "legs_thigh"], "tier": "high", "innerwear": "none"},
+        {"id": "s3", "top": "넓은 넥라인으로 어깨 드러나는 오버사이즈 티(허벅지 위 기장, 브라 없이)", "bottom": "", "exposes": ["neckline", "shoulder", "legs_thigh"], "tier": "high", "innerwear": "none"},
+        {"id": "s4", "top": "레이스 브라렛 + 매칭 란제리 세트", "bottom": "짧은 매칭 숏", "exposes": ["cleavage", "midriff", "legs_thigh"], "tier": "high", "innerwear": "bralette"},
+        {"id": "s5", "top": "가슴선 파인 얇은 실크 캐미", "bottom": "짧은 실크 숏", "exposes": ["cleavage", "shoulder", "legs_thigh"], "tier": "high", "innerwear": "none"},
+        {"id": "s6", "top": "단추 대부분 푼 짧은 파자마 셔츠(가슴선·미드리프 드러남)", "bottom": "아주 짧은 파자마 숏", "exposes": ["neckline", "cleavage", "legs_thigh"], "tier": "high", "innerwear": "none"}
       ]
     }
   }

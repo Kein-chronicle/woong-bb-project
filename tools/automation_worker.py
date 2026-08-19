@@ -4057,11 +4057,13 @@ def apply_time_block(activity: str, reason: str) -> None:
             if _o and _o.get("top"):
                 appearance["top"] = _o["top"]
                 appearance["bottom"] = _o["bottom"]
-                appearance["current_outfit"] = {k: _o.get(k) for k in ("outfit_id", "category", "tier", "exposes", "summary", "top", "bottom")}
+                appearance["innerwear_type"] = _o.get("innerwear", "none")  # 워커가 bust_visibility 결정에 씀
+                appearance["current_outfit"] = {k: _o.get(k) for k in ("outfit_id", "category", "tier", "exposes", "innerwear", "summary", "top", "bottom")}
         elif isinstance(_persisted_outfit, dict) and _persisted_outfit.get("top"):
             # 같은 기간 — 지속 착장 복원(프로파일 기본값 대신)
             appearance["top"] = _persisted_outfit["top"]
             appearance["bottom"] = _persisted_outfit.get("bottom", appearance.get("bottom"))
+            appearance["innerwear_type"] = _persisted_outfit.get("innerwear", "none")
             appearance["current_outfit"] = _persisted_outfit
     except Exception:
         pass
