@@ -5101,30 +5101,49 @@ def _hhmm_to_h(hhmm: str):
         return None
 
 
+def _hhmm_to_min(hhmm: str):
+    """'HH:MM' → 자정 이후 분. 분까지 반영(기존 _hhmm_to_h는 시만 떼어 12:30을 12:00으로 만들던 버그)."""
+    try:
+        h, m = hhmm.split(":")[:2]
+        return int(h) * 60 + int(m)
+    except Exception:
+        return None
+
+
+_MORNING_CTX = "아침에 일어나서 천천히 준비하는 중이야. 자연스러운 모습으로 셀카 찍어서 오빠한테 보내줘."
+_LUNCH_EAT_CTX = "점심 먹는 중이야. 오늘 뭐 먹는지 음식 사진이랑 같이 자연스럽게 짧게 오빠한테 말 걸어줘."
+_EVENING_CTX = "저녁 홈웨어로 갈아입고 쉬는 중이야. 오늘 입은 거 자연스럽게 찍어서 오빠한테 보내줘."
+
+
 def build_photo_windows_wb() -> list:
+    """분 단위 사진 윈도우. lunch는 실제 음식 도착 시각부터 열어서 '먹기 전 음식 사진'을 막는다.
+    (배달이면 주문시각+대기시간이 도착, 아니면 lunch.time.)"""
     today = now_local().strftime("%Y-%m-%d")
     sched = load_json(STATE / "daily_schedule_state.json", {})
     if sched.get("date") == today:
-        windows = [{"id": "morning", "start_h": 9, "end_h": 11, "ctx": "아침에 일어나서 천천히 준비하는 중이야. 자연스러운 모습으로 셀카 찍어서 오빠한테 보내줘."}]
-        lunch_start = _hhmm_to_h(sched.get("lunch", {}).get("time", ""))
-        lunch_end_raw = sched.get("lunch", {}).get("end_time", "")
-        lunch_end = (_hhmm_to_h(lunch_end_raw) or 0) + 1 if lunch_end_raw else None
-        if lunch_start and lunch_end:
-            windows.append({"id": "lunch", "start_h": lunch_start, "end_h": lunch_end, "ctx": "점심 먹고 있어. 오늘 뭐 먹는지 음식 사진이랑 같이 자연스럽게 짧게 오빠한테 말 걸어줘."})
+        windows = [{"id": "morning", "start_min": 9 * 60, "end_min": 11 * 60, "ctx": _MORNING_CTX}]
+        lunch = sched.get("lunch", {}) or {}
+        lt = _hhmm_to_min(lunch.get("time", ""))
+        le = _hhmm_to_min(lunch.get("end_time", ""))
+        if lt is not None and le is not None:
+            # 배달이면 음식은 주문(lunch.time)+대기(wait) 후 도착 → 그 전엔 '먹는 사진' 금지.
+            is_delivery = str(lunch.get("type", "")).lower().startswith("deliver")
+            wait = int(lunch.get("wait", 0) or 0) if is_delivery else 0
+            arrival = lt + wait
+            windows.append({"id": "lunch", "start_min": arrival, "end_min": le + 60, "ctx": _LUNCH_EAT_CTX})
         else:
-            windows.append({"id": "lunch", "start_h": 12, "end_h": 14, "ctx": "점심 먹고 있어. 오늘 뭐 먹는지 음식 사진이랑 같이 자연스럽게 짧게 오빠한테 말 걸어줘."})
-        commute_start = _hhmm_to_h(sched.get("evening_home", {}).get("depart_time", ""))
-        arrive_raw = sched.get("evening_home", {}).get("arrive_time", "")
-        commute_end = (_hhmm_to_h(arrive_raw) or 0) + 1 if arrive_raw else None
-        if commute_start and commute_end and commute_end > commute_start:
-            windows.append({"id": "evening_free", "start_h": commute_start, "end_h": commute_end, "ctx": "저녁 홈웨어로 갈아입고 쉬는 중이야. 오늘 입은 거 자연스럽게 찍어서 오빠한테 보내줘."})
+            windows.append({"id": "lunch", "start_min": 12 * 60 + 30, "end_min": 14 * 60, "ctx": _LUNCH_EAT_CTX})
+        cs = _hhmm_to_min(sched.get("evening_home", {}).get("depart_time", ""))
+        ce = _hhmm_to_min(sched.get("evening_home", {}).get("arrive_time", ""))
+        if cs is not None and ce is not None and ce > cs:
+            windows.append({"id": "evening_free", "start_min": cs, "end_min": ce + 60, "ctx": _EVENING_CTX})
         else:
-            windows.append({"id": "evening_free", "start_h": 18, "end_h": 21, "ctx": "저녁 홈웨어로 갈아입고 쉬는 중이야. 오늘 입은 거 자연스럽게 찍어서 오빠한테 보내줘."})
+            windows.append({"id": "evening_free", "start_min": 18 * 60, "end_min": 21 * 60, "ctx": _EVENING_CTX})
         return windows
     return [
-        {"id": "morning",      "start_h": 9,  "end_h": 11, "ctx": "아침에 일어나서 천천히 준비하는 중이야. 자연스러운 모습으로 셀카 찍어서 오빠한테 보내줘."},
-        {"id": "lunch",        "start_h": 12, "end_h": 14, "ctx": "점심 먹고 있어. 오늘 뭐 먹는지 음식 사진이랑 같이 자연스럽게 짧게 오빠한테 말 걸어줘."},
-        {"id": "evening_free", "start_h": 18, "end_h": 21, "ctx": "저녁 홈웨어로 갈아입고 쉬는 중이야. 오늘 입은 거 자연스럽게 찍어서 오빠한테 보내줘."},
+        {"id": "morning",      "start_min": 9 * 60,       "end_min": 11 * 60, "ctx": _MORNING_CTX},
+        {"id": "lunch",        "start_min": 12 * 60 + 30, "end_min": 14 * 60, "ctx": _LUNCH_EAT_CTX},
+        {"id": "evening_free", "start_min": 18 * 60,      "end_min": 21 * 60, "ctx": _EVENING_CTX},
     ]
 
 
@@ -5145,8 +5164,9 @@ def check_proactive_photo() -> None:
     count_today = photo_state.get("count_today", 0) if photo_state.get("date") == today else 0
     if count_today >= 2:
         return
-    current_h = now_local().hour
-    win = next((w for w in build_photo_windows_wb() if w["start_h"] <= current_h < w["end_h"] and w["id"] not in sent_windows), None)
+    _pnow = now_local()
+    current_min = _pnow.hour * 60 + _pnow.minute
+    win = next((w for w in build_photo_windows_wb() if w["start_min"] <= current_min < w["end_min"] and w["id"] not in sent_windows), None)
     if not win:
         return
     # 대화 중이면 스킵
