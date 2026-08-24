@@ -22,11 +22,10 @@ STATE = BASE / "state"
 WARDROBE_PATH = STATE / "outfit_wardrobe.json"
 ROTATION_PATH = STATE / "outfit_rotation_state.json"
 
-# 상황(activity)별 노출 상한. 낮/회사도 완전 커버가 아니라 노출 있게(사용자 요청) → high 허용,
-# 실제 렌더 수위는 워커 content_level(통근=2 / 낮·회사=2.5 / 사적=3)이 정밀 게이팅.
-# 통근(대중교통 공개)만 moderate로 조금 눌러둠.
+# 상황(activity)별 노출 상한. 여름·사용자 요청 반영: 통근 포함 전부 high 허용(커버 조건 제거).
+# 실제 렌더 수위는 워커 content_level(통근·낮·회사=2.5 / 사적=3)이 정밀 게이팅.
 _COVERED_ACTIVITIES: set = set()
-_MODERATE_ACTIVITIES = {"morning_commute", "evening_commute"}
+_MODERATE_ACTIVITIES: set = set()
 
 
 def _load(p, d):
@@ -51,6 +50,35 @@ def category_for(outfit_context: str) -> str | None:
     """outfit_context → 착장 카테고리(출근=work/퇴근=casual/샤워후=post_shower/취침=sleep).
     같은 카테고리면 '같은 기간'이라 착장 유지(색 포함). apply_time_block의 변경 감지에 씀."""
     return resolve_category(outfit_context or "", _load(WARDROBE_PATH, {}))
+
+
+def _now(now=None):
+    if now is not None:
+        return now
+    from datetime import datetime
+    try:
+        from zoneinfo import ZoneInfo
+        return datetime.now(ZoneInfo("Asia/Seoul"))
+    except Exception:
+        return datetime.now()
+
+
+def resolve_season(now=None) -> str:
+    m = _now(now).month
+    if 5 <= m <= 9:
+        return "summer"
+    if m in (11, 12, 1, 2, 3):
+        return "winter"
+    return "mid"
+
+
+def _season_ok(var: dict, season: str) -> bool:
+    vs = var.get("season", "all")
+    if vs == "all":
+        return True
+    if isinstance(vs, list):
+        return season in vs or "all" in vs
+    return vs == season
 
 
 def resolve_exposure_cap(activity: str) -> str:
@@ -80,6 +108,11 @@ def pick_variation(category: str, exposure_cap: str, seed_key: str, wardrobe: di
         # 가장 덜 노출된 tier만 선택 — 공개 상황에서 과노출 방지.
         min_rank = min(_rank(v.get("tier", "covered"), wardrobe) for v in variations)
         eligible = [v for v in variations if _rank(v.get("tier", "covered"), wardrobe) == min_rank]
+    # 계절 필터: 현재 계절에 맞는 것만(여름엔 얇고 노출 있는 옷, 겨울엔 따뜻한 옷). 없으면 유지.
+    season = resolve_season()
+    seasonal = [v for v in eligible if _season_ok(v, season)]
+    if seasonal:
+        eligible = seasonal
     # anti-repeat: 최근 사용 id 제외
     recent = rotation.get(category, [])
     fresh = [v for v in eligible if v["id"] not in recent[-3:]]

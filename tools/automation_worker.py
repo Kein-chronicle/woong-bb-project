@@ -3840,6 +3840,18 @@ def apply_time_block(activity: str, reason: str) -> None:
     }
 
     appearance_profiles = {
+        "morning_commute": {
+            **work_outfit,
+            "appearance_branch": "commute",
+            "freshness_state": "fresh_morning",
+            "face_state": "출근길, 산뜻하게 정돈된 얼굴",
+        },
+        "evening_commute": {
+            **work_outfit,
+            "appearance_branch": "commute",
+            "freshness_state": "end_of_day",
+            "face_state": "퇴근길, 살짝 지친 듯 편안한 얼굴",
+        },
         "waking_up": {
             "appearance_branch": "morning_home",
             "outfit_context": "summer_sleepwear",
