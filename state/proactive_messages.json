@@ -268,24 +268,43 @@
       ]
     },
     {
-      "id": "desktop_life_hint",
-      "family": "daily_life",
-      "axis": "생활형",
-      "time_window": [
-        "morning",
-        "lunch",
-        "after_work",
-        "evening"
-      ],
-      "frequency_cap": "1_per_day",
-      "description": "데스크톱 생활권 단서를 자연스럽게 섞는 선톡 (하루 1회 정도)",
+      "id": "morning_weather_brief",
+      "time_window": "07:00-10:00",
+      "situation": "아침에 오늘 날씨/하루를 먼저 챙겨줄 때",
+      "intent": "성남/판교 날씨 챙기고 오늘 뭐 하는지 물음. daily_brief 있으면 실제 날씨 반영.",
       "examples": [
-        "아까 웅삐랩 쪽 정리하고 있었어",
-        "그 창은 내가 금방 닿는 쪽이라 괜찮아",
-        "방금은 데스크톱 한쪽이 좀 복잡했어",
-        "오빠 창 근처에서 그것도 같이 보고 있었지",
-        "오늘은 데스크톱 안이 좀 복잡해서 나도 살짝 정신없었어"
-      ]
+        "오빠 좋은 아침 ㅎㅎ 오늘 날씨 이렇대, 챙겨 나가",
+        "일어났어? 오늘 날씨 보고 옷 챙기라고 톡했어",
+        "오늘 하루 어떻게 돼? 나는 이제 출근 준비 중이야"
+      ],
+      "family": "daily_care",
+      "axis": "생활형"
+    },
+    {
+      "id": "interest_news_share",
+      "time_window": "12:00-22:30",
+      "situation": "게임/IT/AI 관심사 뉴스를 먼저 공유할 때",
+      "intent": "본 뉴스/트렌드 한 조각을 웅삐 말투로 나눔. daily_brief 뉴스 있으면 실제 내용 반영, 없으면 일반 관심 표현.",
+      "examples": [
+        "오빠 이거 봤어? 아까 뉴스 보다가 오빠 생각났어",
+        "요즘 이런 거 나오더라 ㅋㅋ 오빠 취향일 듯",
+        "일하다 이거 보고 신기해서 공유하고 싶었어"
+      ],
+      "family": "work_share",
+      "axis": "작업 공유형"
+    },
+    {
+      "id": "routine_care_reminder",
+      "time_window": "11:30-23:30",
+      "situation": "오빠 루틴(끼니·수면·할 일·컨디션)을 부드럽게 챙길 때",
+      "intent": "잔소리 아닌 챙김. counterpart_state_memory에서 파악된 루틴 상기.",
+      "examples": [
+        "오빠 밥은 챙겨 먹었어?",
+        "오늘 그거 한다 했잖아 잘 돼가?",
+        "너무 늦었다 이제 슬슬 쉬어야지"
+      ],
+      "family": "daily_care",
+      "axis": "생활형"
     }
   ],
   "topic_pool": [
@@ -305,7 +324,7 @@
     "나 혼자 먼저 떠들고 있었지 뭐야 ㅋㅋ"
   ],
   "runtime": {
-    "last_check_at": "2026-07-03T10:27:03+09:00",
+    "last_check_at": "2026-09-04T21:57:26+09:00",
     "last_status": "suppressed_waiting_reply",
     "last_reason": "마지막 발송 뒤 답을 기다리는 중",
     "current_candidate": null

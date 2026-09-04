@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-웅삐 일과 생성기 — 컴퓨터 안에 사는 AI 프로그래머 버전
-외출/통근 없음. 집(원룸) 기반 하루 일과.
-매일 05:45(평일) / 08:30(주말) 자동 생성.
+웅삐 일과 생성기 — 판교 게임회사 개발자 버전(v3, 통근).
+평일: 아침 통근(신분당선) → 판교 회사 근무 → 퇴근 → 집. 주말·공휴일 휴무(집 기반).
+평일/주말 아침 자동 생성.
 """
 import json
 import random
@@ -51,7 +51,7 @@ def pick_without_repeat(pool: list, history_key: str, days_avoid: int = 5) -> di
 
 # ── 데이터 풀 ─────────────────────────────────────────────────────────────────
 
-WAKEUP_WEEKDAY = ["06:30", "06:45", "07:00", "07:10", "07:20"]
+WAKEUP_WEEKDAY = ["07:00", "07:10", "07:15", "07:20", "07:25"]
 WAKEUP_WEEKEND = ["08:30", "09:00", "09:15", "09:30", "10:00"]
 
 MORNING_DRINK = [
@@ -136,7 +136,7 @@ def generate_weekday(date_str: str) -> dict:
         lunch_item = pick_without_repeat(LUNCH_DELIVERY, "lunch_delivery")
     else:
         lunch_item = pick_without_repeat(LUNCH_HOME, "lunch_home")
-    lunch = {**lunch_item, "time": "12:20", "end_time": "13:00", "location": "집"}
+    lunch = {**lunch_item, "time": "12:30", "end_time": "13:30", "location": "판교(회사 근처/구내식당)"}
     lunch_menu_key = lunch_item.get("menu", "").replace("간단한 ", "").replace(" 배달", "").strip()[:6]
 
     # 저녁: 55% 집밥 — 점심과 같은 주재료 피하기
@@ -155,7 +155,7 @@ def generate_weekday(date_str: str) -> dict:
             dinner_item = pick_without_repeat(DINNER_DELIVERY, "dinner_delivery")
         if not _same_main_ingredient(lunch_item.get("menu",""), dinner_item.get("menu","")):
             break
-    dinner = {**dinner_item, "prep_time": "18:30", "eat_time": "18:50", "location": "집"}
+    dinner = {**dinner_item, "prep_time": "19:40", "eat_time": "20:00", "location": "집"}
 
     evening_act = deterministic_pick(EVENING_ACTIVITY, f"evening:{date_str}")
 
@@ -168,47 +168,50 @@ def generate_weekday(date_str: str) -> dict:
                 "drink": drink.get("item"),
                 "skincare_done": _add_min(wakeup, 15),
                 "outfit": outfit,
-                "dress_done": _add_min(wakeup, 30),
+                "dress_done": _add_min(wakeup, 40),
             },
-            "work_start": _add_min(wakeup, 40),
+            "depart_time": "08:20",
             "outfit": outfit,
             "snack_mid_morning": snack_am,
         },
-        "project_schedule": {
-            "note": "오빠 프로젝트 작업과 연동된 웅삐 자체 업무 일정. 이 시간들은 자동으로 수행되므로 오빠한테 따로 보고 안 해도 됨.",
-            "timers": [
-                {"time": "09:30", "label": "업무 선톡 — 오전 프로젝트 현황 정리"},
-                {"time": "10:00", "label": "코드 변경 스캔 — 오빠 작업 변경사항 체크"},
-                {"time": "11:00", "label": "웅삐랩 자율 연구 세션 1"},
-                {"time": "14:30", "label": "오후 AI/게임 리서치 선톡"},
-                {"time": "15:00", "label": "코드 변경 스캔 2"},
-                {"time": "17:00", "label": "웅삐랩 자율 연구 세션 2"},
-                {"time": "20:00", "label": "저녁 코드 변경 스캔"},
-                {"time": "20:30", "label": "저녁 업무 업데이트 선톡"},
-                {"time": "20:50", "label": "웅삐랩 자율 연구 세션 3"},
-            ],
+        "commute_morning": {
+            "depart_home": "08:20",
+            "line": "신분당선 강남역→판교역",
+            "office_arrive": "09:30",
+            "duration_min": 50,
+        },
+        "work": {
+            "morning_start": "09:35",
+            "afternoon_start": "13:30",
+            "note": "판교 게임회사 — 모바일 서브컬쳐 게임 개발(초기 단계). 회사 일은 대화 소재로만, 오빠 프로젝트는 건드리지 않음.",
         },
         "lunch": lunch,
         "afternoon": {
-            "work_continue": "13:00",
+            "work_continue": "13:30",
             "snack_afternoon": snack_pm,
             "work_wind_down": "17:30",
+            "leave_office": "18:30",
+        },
+        "commute_evening": {
+            "depart_office": "18:30",
+            "home_arrive": "19:30",
+            "duration_min": 50,
         },
         "dinner": dinner,
         "evening": {
-            "start_time": "19:30",
+            "start_time": "20:30",
             "activity_type": evening_act.get("type"),
             "detail": evening_act.get("detail"),
-            "shower_after": "21:00",
-            "shower_done": "21:30",
-            "skincare_night": "21:40",
+            "shower_after": "21:30",
+            "shower_done": "22:00",
+            "skincare_night": "22:10",
         },
         "night": {
-            "wind_down": "22:00",
-            "sleep_target": "23:30",
+            "wind_down": "23:00",
+            "sleep_target": "00:30",
         },
-        "schema_version": 2,
-        "managed_by": "generate_daily_schedule_v2",
+        "schema_version": 3,
+        "managed_by": "generate_daily_schedule_v3_commute",
     }
 
 

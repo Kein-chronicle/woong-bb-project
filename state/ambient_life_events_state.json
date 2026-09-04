@@ -2,24 +2,24 @@
   "schema_version": 1,
   "timezone": "Asia/Seoul",
   "managed_by": "automation_worker",
-  "current_date": "2026-07-03",
+  "current_date": "2026-09-04",
   "selected_persistent_details": [
     {
       "category": "room",
-      "id": "hair_tie_on_wrist",
-      "summary": "머리끈을 손목에 걸친 채로 돌아다닌다"
+      "id": "bedside_mug",
+      "summary": "협탁 쪽에 머그컵이 하나 남아 있다"
     },
     {
       "category": "table",
-      "id": "water_bottle_near_bag",
-      "summary": "가방 옆에 물병을 둔 채로 움직인다"
+      "id": "half_read_book",
+      "summary": "식탁이나 소파 쪽에 펼쳐둔 책이 있다"
     },
     {
       "category": "carry",
-      "id": "small_perfume",
-      "summary": "작은 향수나 미스트를 챙겨 다닌다"
+      "id": "lip_balm_in_bag",
+      "summary": "가방 안에 립밤이 늘 들어 있다"
     }
   ],
-  "last_refreshed_at": "2026-07-03T00:00:11+09:00",
+  "last_refreshed_at": "2026-09-04T00:00:54+09:00",
   "notes": "하루 단위로 유지되는 작은 생활 흔적"
 }

@@ -1,7 +1,13 @@
 {
   "schema_version": 1,
   "managed_by": "automation_worker",
-  "milestones": [],
+  "milestones": [
+    {
+      "key": "photo_affection",
+      "strength": 1.0,
+      "example": "아고 이뻐라 ㅋㅋ"
+    }
+  ],
   "effective_patterns": [],
   "comfort_patterns": [
     "warm_comfort_reply"
@@ -9,5 +15,5 @@
   "affection_patterns": [
     "affection_romance"
   ],
-  "last_updated_at": "2026-07-03T10:19:01+09:00"
+  "last_updated_at": "2026-09-04T22:00:27+09:00"
 }

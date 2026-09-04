@@ -9,40 +9,37 @@
 ## 상태 파일
 
 - 경로: `/Users/kein/projects/woong-bb/state/daily_schedule_state.json`
-- 생성 시점: 기상 타이머 발동 직후
-  - 평일: 05:45 KST
-  - 주말: 08:30 KST
+- 생성 시점: 아침 기상 전후(평일/주말)
 - 생성 스크립트: `/Users/kein/projects/woong-bb/tools/generate_daily_schedule.py`
 - 날짜 seed 기반으로 같은 날 같은 결과를 보장한다.
 
 ## 포함 항목
 
-### 평일 (weekday)
+### 평일 (weekday) — 판교 출근
 
 | 항목 | 예시 |
 |---|---|
-| wakeup_time | "05:47" |
-| shower_done | "06:08" |
-| outfit | "홈웨어 (기본 작업복)" |
-| breakfast.menu | "바나나 + 우유" |
-| breakfast.time | "06:15" |
-| depart_time | "06:58" |
-| morning_work.location | "집 컴퓨터 앞" |
-| morning_work.start_time | "07:56" |
-| lunch.menu | "된장찌개 정식" |
-| lunch.location | "집 부엌/식탁" |
-| lunch.time | "12:10" |
-| lunch.with | "혼자" |
-| afternoon_work.end_time | "18:05" |
-| evening_free.note | "작업 마무리" |
+| wakeup_time | "07:18" |
+| morning_prep.dress_done | "07:58" |
+| outfit | "출근 복장" |
+| depart_time | "08:20" |
+| commute_morning | "신분당선 강남역→판교역, office_arrive 09:30, 약 50분" |
+| work.morning_start | "09:35" (판교 게임회사) |
+| lunch.menu | "타코야키 분식" |
+| lunch.location | "판교(회사 근처/구내식당)" |
+| lunch.time | "12:30" |
+| lunch.with | "동료/혼자" |
+| afternoon.work_wind_down | "17:30" |
+| afternoon.leave_office | "18:30" |
+| commute_evening | "판교역→강남역, home_arrive 19:30" |
 | dinner.menu | "파스타 (토마토 소스)" |
-| dinner.eat_time | "18:40" |
-| evening.activity_type: "draw_or_drama" |
-| evening.location: "집" |
-| evening.start_time | "19:20" |
-| evening.shower_after | "20:25" |
-| night.content | "OTT" |
-| night.sleep_target | "23:52" |
+| dinner.location | "집" |
+| dinner.eat_time | "20:00" |
+| evening.activity_type | "draw_or_drama" |
+| evening.location | "집" |
+| evening.start_time | "20:30" |
+| evening.shower_after | "21:30" |
+| night.sleep_target | "00:20" |
 
 ### 주말 (weekend)
 

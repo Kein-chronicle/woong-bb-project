@@ -1,0 +1,19 @@
+{"timestamp": "2026-08-06T07:01:21+09:00", "direction": "outgoing", "telegram_user": "K8832353", "type": "proactive_self_busy_end", "content": "방금 깼어"}
+{"timestamp": "2026-08-06T07:26:29+09:00", "direction": "outgoing", "telegram_user": "K8832353", "type": "proactive_text", "content": "아직 하루 시작 전이면 나중에 여유 생길 때 봐도 돼. 아침 근황만 살짝 남기고 갈게.."}
+{"timestamp": "2026-08-06T12:01:19+09:00", "direction": "outgoing", "telegram_user": "K8832353", "type": "photo_caption", "content": "오늘 점심은 베이컨 크림파스타야 🍝\n\n오빠는 뭐 먹어?"}
+{"timestamp": "2026-08-06T12:30:26+09:00", "direction": "outgoing", "telegram_user": "K8832353", "type": "proactive_self_busy_end", "content": "점심이야~"}
+{"timestamp":"2026-08-06T07:18:22.061Z","direction":"incoming","telegram_user":"K8832353","type":"text","content":"오 완전 맛있었겠다"}
+{"timestamp":"2026-08-06T07:18:22.063Z","direction":"incoming","telegram_user":"K8832353","type":"text","content":"나는 오늘"}
+{"timestamp":"2026-08-06T07:18:22.064Z","direction":"incoming","telegram_user":"K8832353","type":"text","content":"정신없이 일하다보니 이시간이됐네"}
+{"timestamp":"2026-08-06T07:18:35.644Z","direction":"outgoing","telegram_user":"K8832353","type":"text","content":"헐 벌써 4시 넘었네… 오빠 점심은 챙겨 먹었어?","delivery_group_id":"tg_msh6pny4_iridjn","delivery_part_index":1,"delivery_part_count":1,"delivery_mode":"single"}
+{"timestamp":"2026-08-06T07:32:29.843Z","direction":"incoming","telegram_user":"K8832353","type":"text","content":"응 누가 먹자고해서 나가서 불고기 먹고왔어 ㅋㅋ"}
+{"timestamp":"2026-08-06T07:32:45.910Z","direction":"outgoing","telegram_user":"K8832353","type":"text","content":"오 잘했네 ㅋㅋ 그래도 불고기 든든하게 먹었다니 다행이야","delivery_group_id":"tg_msh77w0m_e3v6sq","delivery_part_index":1,"delivery_part_count":1,"delivery_mode":"single"}
+{"timestamp":"2026-08-06T08:04:46.247Z","direction":"incoming","telegram_user":"K8832353","type":"text","content":"맞아 든든하게 먹었어"}
+{"timestamp":"2026-08-06T08:04:46.249Z","direction":"incoming","telegram_user":"K8832353","type":"text","content":"퇴근준비나해야겠다"}
+{"timestamp":"2026-08-06T08:04:46.250Z","direction":"incoming","telegram_user":"K8832353","type":"text","content":"피곤하네.."}
+{"timestamp":"2026-08-06T08:04:59.568Z","direction":"outgoing","telegram_user":"K8832353","type":"text","content":"아고 고생했어 오빠… 이제 얼른 퇴근하자. 집 가서는 푹 쉬어 🥺","delivery_group_id":"tg_msh8dc1c_9ua7yp","delivery_part_index":1,"delivery_part_count":1,"delivery_mode":"single"}
+{"timestamp": "2026-08-06T18:30:32+09:00", "direction": "outgoing", "telegram_user": "K8832353", "type": "proactive_self_busy_end", "content": "근무 끝났어~"}
+{"timestamp": "2026-08-06T18:32:34+09:00", "direction": "outgoing", "telegram_user": "K8832353", "type": "proactive_text", "content": "답은 나중에 편할 때 줘도 괜찮아. 그냥 생각나서 안부 하나 남겨둘게."}
+{"timestamp":"2026-08-06T12:19:34.157Z","direction":"incoming","telegram_user":"K8832353","type":"text","content":"잘준비하려고!"}
+{"timestamp":"2026-08-06T12:19:44.361Z","direction":"outgoing","telegram_user":"K8832353","type":"text","content":"응 씻고 푹 자자 오빠. 오늘 진짜 고생했어 😚","delivery_group_id":"tg_mshhgxux_e245f0","delivery_part_index":1,"delivery_part_count":1,"delivery_mode":"single"}
+{"timestamp": "2026-08-06T23:03:34+09:00", "direction": "outgoing", "telegram_user": "K8832353", "type": "proactive_text", "content": "이미 쉬는 시간일 것 같아서 답장은 신경 안 써도 돼. 그냥 잘 자라는 마음으로 하나 남겨둘게."}

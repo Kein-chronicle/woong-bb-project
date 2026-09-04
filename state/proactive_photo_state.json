@@ -1,7 +1,8 @@
 {
-  "date": "2026-07-03",
-  "count_today": 1,
+  "date": "2026-09-04",
+  "count_today": 2,
   "sent_windows": [
-    "morning"
+    "morning",
+    "lunch"
   ]
 }

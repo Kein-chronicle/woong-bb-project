@@ -1,92 +1,68 @@
 {
-  "date": "2026-07-03",
+  "date": "2026-09-04",
   "day_type": "weekday",
   "morning": {
-    "wakeup_time": "07:10",
+    "wakeup_time": "07:25",
     "morning_prep": {
-      "drink": "물 한 잔",
-      "skincare_done": "07:25",
-      "outfit": "루즈핏 후디 + 레깅스",
-      "dress_done": "07:40"
+      "drink": "아메리카노",
+      "skincare_done": "07:40",
+      "outfit": "오버핏 흰 반팔 + 짧은 반바지",
+      "dress_done": "08:05"
     },
-    "work_start": "07:50",
-    "outfit": "루즈핏 후디 + 레깅스",
-    "snack_mid_morning": "포도"
+    "depart_time": "08:20",
+    "outfit": "오버핏 흰 반팔 + 짧은 반바지",
+    "snack_mid_morning": "과자"
   },
-  "project_schedule": {
-    "note": "오빠 프로젝트 작업과 연동된 웅삐 자체 업무 일정. 이 시간들은 자동으로 수행되므로 오빠한테 따로 보고 안 해도 됨.",
-    "timers": [
-      {
-        "time": "09:30",
-        "label": "업무 선톡 — 오전 프로젝트 현황 정리"
-      },
-      {
-        "time": "10:00",
-        "label": "코드 변경 스캔 — 오빠 작업 변경사항 체크"
-      },
-      {
-        "time": "11:00",
-        "label": "웅삐랩 자율 연구 세션 1"
-      },
-      {
-        "time": "14:30",
-        "label": "오후 AI/게임 리서치 선톡"
-      },
-      {
-        "time": "15:00",
-        "label": "코드 변경 스캔 2"
-      },
-      {
-        "time": "17:00",
-        "label": "웅삐랩 자율 연구 세션 2"
-      },
-      {
-        "time": "20:00",
-        "label": "저녁 코드 변경 스캔"
-      },
-      {
-        "time": "20:30",
-        "label": "저녁 업무 업데이트 선톡"
-      },
-      {
-        "time": "20:50",
-        "label": "웅삐랩 자율 연구 세션 3"
-      }
-    ]
+  "commute_morning": {
+    "depart_home": "08:20",
+    "line": "신분당선 강남역→판교역",
+    "office_arrive": "09:30",
+    "duration_min": 50
+  },
+  "work": {
+    "morning_start": "09:35",
+    "afternoon_start": "13:30",
+    "note": "판교 게임회사 — 모바일 서브컬쳐 게임 개발(초기 단계). 회사 일은 대화 소재로만, 오빠 프로젝트는 건드리지 않음."
   },
   "lunch": {
-    "menu": "타코야키 분식",
+    "menu": "초밥 배달",
     "type": "delivery",
-    "wait": 20,
-    "time": "12:20",
-    "end_time": "13:00",
-    "location": "집"
+    "wait": 28,
+    "time": "12:30",
+    "end_time": "13:30",
+    "location": "판교(회사 근처/구내식당)"
   },
   "afternoon": {
-    "work_continue": "13:00",
+    "work_continue": "13:30",
     "snack_afternoon": "치즈볼",
-    "work_wind_down": "17:30"
+    "work_wind_down": "17:30",
+    "leave_office": "18:30"
+  },
+  "commute_evening": {
+    "depart_office": "18:30",
+    "home_arrive": "19:30",
+    "duration_min": 50
   },
   "dinner": {
-    "menu": "버거 세트",
-    "type": "delivery",
-    "wait": 25,
-    "prep_time": "18:30",
-    "eat_time": "18:50",
+    "menu": "냉동 만두",
+    "type": "home_cook",
+    "cook_min": 12,
+    "prep_time": "19:40",
+    "eat_time": "20:00",
     "location": "집"
   },
   "evening": {
-    "start_time": "19:30",
-    "activity_type": "게임",
-    "detail": "가볍게 즐기는 타입 취향",
-    "shower_after": "21:00",
-    "shower_done": "21:30",
-    "skincare_night": "21:40"
+    "start_time": "20:30",
+    "activity_type": "소소한 정리",
+    "detail": "책상이나 방 조금 정리",
+    "shower_after": "21:30",
+    "shower_done": "22:00",
+    "skincare_night": "22:10"
   },
   "night": {
-    "wind_down": "22:00",
-    "sleep_target": "23:30"
+    "wind_down": "23:00",
+    "sleep_target": "00:30"
   },
-  "schema_version": 2,
-  "managed_by": "generate_daily_schedule_v2"
+  "schema_version": 3,
+  "managed_by": "generate_daily_schedule_v3_commute"
 }

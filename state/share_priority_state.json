@@ -7,34 +7,36 @@
   "strong_image_threshold": 85,
   "strong_link_threshold": 80,
   "last_decision": "text_only",
-  "last_image_score": -20,
+  "last_image_score": -8,
   "last_link_score": -32,
-  "last_time_block_bias": "morning_work_block",
+  "last_time_block_bias": "evening_home",
   "last_applied_penalties": [
     "link_no_real_url",
     "waiting_reply_penalty"
   ],
-  "last_applied_bonuses": [],
-  "last_candidate_image_type": "home_work_selfie",
+  "last_applied_bonuses": [
+    "warm_mood_image"
+  ],
+  "last_candidate_image_type": "work_selfie",
   "last_candidate_link_type": "youtube_recommendation",
   "last_decision_reason": "현재는 텍스트 우선 유지가 자연스러움",
   "notes": "공유 이벤트의 우선순위를 상황 점수표로 계산하기 위한 상태 파일",
   "last_candidate_image_plan": {
-    "shot_type": "half_body",
-    "camera_angle": "slight_high_angle",
+    "shot_type": "chest_up",
+    "camera_angle": "front_phone_selfie",
     "selfie_capture_method": "front_camera_handheld",
     "camera_visibility": "front_camera_phone_not_visible",
-    "expression": "quiet_eye_contact",
+    "expression": "focused_soft",
     "expression_intensity": "gentle",
-    "pose": "hair_adjust",
-    "framing": "window_light_natural",
-    "crop_bias": "half_body_to_waist",
-    "space_anchor": "room_corner",
-    "face_angle": "slight_profile",
-    "gaze_direction": "quick_mirror_check",
-    "camera_height": "slight_high_angle",
+    "pose": "chin_rest",
+    "framing": "subject_centered",
+    "crop_bias": "chest_up",
+    "space_anchor": "desk_area",
+    "face_angle": "three_quarter_turn",
+    "gaze_direction": "lens_eye_contact",
+    "camera_height": "eye_level",
     "lens_distance": "portrait_distance",
-    "body_orientation": "angled_shoulders_inward",
-    "spontaneity": "between_tasks"
+    "body_orientation": "square_to_camera",
+    "spontaneity": "soft_timer_setup"
   }
 }

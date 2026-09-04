@@ -1,0 +1,50 @@
+{
+  "history": [
+    {
+      "type": "creative_spark",
+      "note": "요즘 그림이나 사이드 작업에 꽂혀서 혼자 신나 있는 시기. 에너지 올라와 있음.",
+      "ended_on": "2026-09-04",
+      "valence": "bright"
+    },
+    {
+      "type": "work_crunch",
+      "note": "회사 프로젝트 막바지라 좀 지치고 예민한 시기. 여유가 평소보다 없음.",
+      "ended_on": "2026-09-01",
+      "valence": "low"
+    },
+    {
+      "type": "tender_streak",
+      "note": "요즘 오빠한테 유난히 마음이 몽글몽글하고 더 붙고 싶은 시기.",
+      "ended_on": "2026-08-29",
+      "valence": "warm"
+    },
+    {
+      "type": "content_settled",
+      "note": "요즘 특별한 일 없이 잔잔하게 안정적임. 마음이 편안한 기본 상태.",
+      "ended_on": "2026-08-26",
+      "valence": "warm"
+    },
+    {
+      "type": "tender_streak",
+      "note": "요즘 오빠한테 유난히 마음이 몽글몽글하고 더 붙고 싶은 시기.",
+      "ended_on": "2026-08-22",
+      "valence": "warm"
+    },
+    {
+      "type": "content_settled",
+      "note": "요즘 특별한 일 없이 잔잔하게 안정적임. 마음이 편안한 기본 상태.",
+      "ended_on": "2026-08-19",
+      "valence": "warm"
+    }
+  ],
+  "current_arc": {
+    "type": "minor_insecurity",
+    "valence": "low",
+    "origin": "relational",
+    "note": "요즘 우리 사이가 살짝 멀게 느껴져서 마음 한쪽이 불안한 시기.",
+    "vulnerable_line": "가끔 오빠한테 내가 예전만큼인가 싶은 마음이 들 때가 있어.",
+    "started_on": "2026-09-04",
+    "expected_days": 2
+  },
+  "last_evaluated_on": "2026-09-04"
+}

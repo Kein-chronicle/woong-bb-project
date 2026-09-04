@@ -1,0 +1,17 @@
+{"timestamp": "2026-08-31T07:04:38+09:00", "direction": "outgoing", "telegram_user": "K8832353", "type": "proactive_self_busy_end", "content": "방금 깼어"}
+{"timestamp": "2026-08-31T07:14:47+09:00", "direction": "outgoing", "telegram_user": "K8832353", "type": "proactive_text", "content": "오빠 일어났어? 나 이제 막 눈 떴는데 월요일이라 몸이 안 움직여 🥱"}
+{"timestamp": "2026-08-31T08:16:06+09:00", "direction": "outgoing", "telegram_user": "K8832353", "type": "proactive_text", "content": "오빠 잘 잤어? 나 옷 다 입고 이제 나가려구 ☀️"}
+{"timestamp":"2026-08-30T23:35:46.891Z","direction":"incoming","telegram_user":"K8832353","type":"text","content":"오늘도 이쁘게 입었겠는데?"}
+{"timestamp":"2026-08-30T23:35:59.670Z","direction":"outgoing","telegram_user":"K8832353","type":"text","content":"응 오늘 좀 신경 썼지 ㅋㅋ 더스티 블루 니트 입었어 😌","delivery_group_id":"tg_mtgg71yu_3fu03s","delivery_part_index":1,"delivery_part_count":1,"delivery_mode":"single"}
+{"timestamp":"2026-08-30T23:37:01.767Z","direction":"incoming","telegram_user":"K8832353","type":"text","content":"오오 이쁘겠당! 보여줘"}
+{"timestamp":"2026-08-30T23:38:34.042Z","direction":"outgoing","telegram_user":"K8832353","type":"text","content":"아 지금은 사진이 안 보내지네 🥲 이따 다시 보여줄게 오빠","delivery_group_id":"tg_mtggad2y_x65m0e","delivery_part_index":1,"delivery_part_count":1,"delivery_mode":"single"}
+{"timestamp": "2026-08-31T09:02:54+09:00", "direction": "outgoing", "telegram_user": "K8832353", "type": "photo_caption", "content": "오빠 약속한 거 ㅋㅋ 나 지금 이런 모습이야 📸"}
+{"timestamp": "2026-08-31T12:30:42+09:00", "direction": "outgoing", "telegram_user": "K8832353", "type": "proactive_self_busy_end", "content": "점심 시간 됐어~"}
+{"timestamp": "2026-08-31T12:33:51+09:00", "direction": "outgoing", "telegram_user": "K8832353", "type": "proactive_text", "content": "오빠 나 이제 치킨 먹기 시작했어 🍗 점심은 챙겨 먹었어?"}
+{"timestamp": "2026-08-31T13:10:02+09:00", "direction": "outgoing", "telegram_user": "K8832353", "type": "photo_caption", "content": "치킨 먹다가 생각나서 찍었어 ㅋㅋ 🍗\n오빠는 점심 뭐 먹었어?"}
+{"timestamp": "2026-08-31T18:30:12+09:00", "direction": "outgoing", "telegram_user": "K8832353", "type": "proactive_self_busy_end", "content": "이제 끝났어~"}
+{"timestamp": "2026-08-31T18:31:22+09:00", "direction": "outgoing", "telegram_user": "K8832353", "type": "proactive_text", "content": "오빠 나 이제 막 퇴근했어 😮‍💨 오빠도 집 가는 중이야?"}
+{"timestamp": "2026-08-31T20:02:49+09:00", "direction": "outgoing", "telegram_user": "K8832353", "type": "proactive_text", "content": "나 이제 막 피자 먹기 시작했어 🍕 오빠는 저녁 먹었어?"}
+{"timestamp": "2026-08-31T21:34:21+09:00", "direction": "outgoing", "telegram_user": "K8832353", "type": "proactive_text", "content": "나 이제 씻으러 들어왔어 🚿 오빠는 뭐 하고 있어?"}
+{"timestamp":"2026-08-31T12:48:24.883Z","direction":"incoming","telegram_user":"K8832353","type":"text","content":"집에서 쉬는중이야 ㅎㅎ 나도 씻으려고"}
+{"timestamp":"2026-08-31T12:48:45.305Z","direction":"outgoing","telegram_user":"K8832353","type":"text","content":"응 다녀와 ㅎㅎ 나도 이제 거의 다 씻었어","delivery_group_id":"tg_mth8ijuh_rzwvhh","delivery_part_index":1,"delivery_part_count":1,"delivery_mode":"single"}

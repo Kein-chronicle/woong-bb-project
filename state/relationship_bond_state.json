@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "managed_by": "relationship_dynamics",
+  "bond_security": 38.86,
+  "last_applied_block": "2026-09-04:evening_free",
+  "last_signal": -1.0,
+  "last_reason": "ignored_bid",
+  "updated_at": "2026-09-04T20:30:55+09:00",
+  "signal_detail": {
+    "signal": -1.0,
+    "care": 0.0,
+    "neglect": 1.0,
+    "reason": "ignored_bid",
+    "mins_since_incoming": 1301.0,
+    "availability": "open",
+    "tone_hint": "neutral"
+  }
+}

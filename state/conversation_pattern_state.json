@@ -2,9 +2,13 @@
   "schema_version": 1,
   "timezone": "Asia/Seoul",
   "managed_by": "automation_worker",
-  "recent_question_intents": [],
+  "recent_question_intents": [
+    "emotion_check"
+  ],
   "recent_opening_styles": [],
-  "question_intent_counts": {},
+  "question_intent_counts": {
+    "emotion_check": 1
+  },
   "opening_style_counts": {},
   "blocked_question_intents": [],
   "blocked_opening_styles": [],
@@ -14,6 +18,6 @@
     "care_offer",
     "playful_nudge"
   ],
-  "last_updated_at": "2026-07-03T10:19:01+09:00",
+  "last_updated_at": "2026-09-04T22:00:27+09:00",
   "notes": "최근 outgoing 답장에서 같은 질문 줄기와 같은 선톡 시작 패턴이 겹치면 잠시 피하게 만드는 상태"
 }

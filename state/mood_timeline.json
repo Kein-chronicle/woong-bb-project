@@ -1,68 +1,128 @@
 {
   "schema_version": 1,
   "managed_by": "automation_worker",
-  "current_date": "2026-07-03",
+  "current_date": "2026-09-04",
   "entries": [
     {
-      "timestamp": "2026-07-03T00:00:11+09:00",
+      "timestamp": "2026-09-04T00:00:54+09:00",
       "activity": "night_wind_down",
       "time_block": "night_wind_down",
-      "surface_mood": "cozy_and_open",
-      "energy_level": 39,
-      "affection_level": 84,
-      "care_bias": 100,
+      "surface_mood": "mentally_busy",
+      "energy_level": 31,
+      "affection_level": 55,
+      "care_bias": 77,
       "reply_tempo": "comfortable"
     },
     {
-      "timestamp": "2026-07-03T00:30:16+09:00",
+      "timestamp": "2026-09-04T00:30:04+09:00",
       "activity": "sleep_window",
       "time_block": "sleep_window",
       "surface_mood": "sleepy_soft",
-      "energy_level": 26,
-      "affection_level": 84,
-      "care_bias": 100,
+      "energy_level": 24,
+      "affection_level": 55,
+      "care_bias": 75,
       "reply_tempo": "slow"
     },
     {
-      "timestamp": "2026-07-03T05:45:29+09:00",
+      "timestamp": "2026-09-04T07:20:57+09:00",
       "activity": "waking_up",
       "time_block": "morning_wakeup",
       "surface_mood": "sleepy_soft",
       "energy_level": 32,
-      "affection_level": 84,
-      "care_bias": 100,
+      "affection_level": 55,
+      "care_bias": 75,
       "reply_tempo": "comfortable"
     },
     {
-      "timestamp": "2026-07-03T06:15:39+09:00",
+      "timestamp": "2026-09-04T07:40:08+09:00",
       "activity": "getting_ready",
       "time_block": "morning_ready",
-      "surface_mood": "lightly_rushed",
-      "energy_level": 41,
-      "affection_level": 84,
-      "care_bias": 100,
+      "surface_mood": "quietly_preoccupied",
+      "energy_level": 33,
+      "affection_level": 55,
+      "care_bias": 75,
       "reply_tempo": "steady"
     },
     {
-      "timestamp": "2026-07-03T07:00:49+09:00",
-      "activity": "morning_prep",
-      "time_block": "morning_work_start",
-      "surface_mood": "quietly_chatty",
-      "energy_level": 48,
-      "affection_level": 84,
-      "care_bias": 100,
+      "timestamp": "2026-09-04T08:20:17+09:00",
+      "activity": "morning_commute",
+      "time_block": "morning_commute",
+      "surface_mood": "slightly_flat",
+      "energy_level": 36,
+      "affection_level": 55,
+      "care_bias": 74,
       "reply_tempo": "steady"
     },
     {
-      "timestamp": "2026-07-03T08:00:02+09:00",
+      "timestamp": "2026-09-04T09:35:02+09:00",
       "activity": "morning_work",
       "time_block": "morning_work_block",
       "surface_mood": "busy_but_caring",
       "energy_level": 52,
-      "affection_level": 84,
-      "care_bias": 100,
+      "affection_level": 55,
+      "care_bias": 73,
       "reply_tempo": "slow"
+    },
+    {
+      "timestamp": "2026-09-04T12:30:39+09:00",
+      "activity": "lunch_break",
+      "time_block": "lunch_break",
+      "surface_mood": "quietly_preoccupied",
+      "energy_level": 49,
+      "affection_level": 55,
+      "care_bias": 73,
+      "reply_tempo": "comfortable"
+    },
+    {
+      "timestamp": "2026-09-04T13:30:10+09:00",
+      "activity": "afternoon_work",
+      "time_block": "afternoon_work_block",
+      "surface_mood": "slightly_drained",
+      "energy_level": 43,
+      "affection_level": 54,
+      "care_bias": 72,
+      "reply_tempo": "slow"
+    },
+    {
+      "timestamp": "2026-09-04T17:30:59+09:00",
+      "activity": "late_afternoon",
+      "time_block": "afternoon_work_block",
+      "surface_mood": "slightly_drained",
+      "energy_level": 39,
+      "affection_level": 54,
+      "care_bias": 72,
+      "reply_tempo": "slow"
+    },
+    {
+      "timestamp": "2026-09-04T18:30:11+09:00",
+      "activity": "evening_commute",
+      "time_block": "evening_commute",
+      "surface_mood": "soft_but_short",
+      "energy_level": 32,
+      "affection_level": 54,
+      "care_bias": 72,
+      "reply_tempo": "steady"
+    },
+    {
+      "timestamp": "2026-09-04T19:30:37+09:00",
+      "activity": "dinner_eating",
+      "time_block": "dinner_time",
+      "surface_mood": "mentally_busy",
+      "energy_level": 50,
+      "affection_level": 54,
+      "care_bias": 72,
+      "reply_tempo": "comfortable"
+    },
+    {
+      "timestamp": "2026-09-04T20:30:55+09:00",
+      "activity": "evening_free",
+      "time_block": "evening_home",
+      "surface_mood": "light_playful",
+      "energy_level": 46,
+      "affection_level": 53,
+      "care_bias": 71,
+      "reply_tempo": "steady"
     }
   ],
-  "last_updated_at": "2026-07-03T08:00:02+09:00"
+  "last_updated_at": "2026-09-04T20:30:56+09:00"
 }

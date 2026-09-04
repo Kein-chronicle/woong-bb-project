@@ -272,8 +272,413 @@
       },
       "last_referenced_at": "2026-06-28T23:59:02+09:00",
       "last_reference_source": "weekend_runtime_auto"
+    },
+    "2026-07-04": {
+      "weekend_key": "2026-07-04",
+      "selected_at": "2026-07-04T00:00:04+09:00",
+      "selected_by": "weekend_runtime_auto",
+      "source_text": "",
+      "preview": "토요일은 커피 마시고 밀린 작업 좀 하다가 오후엔 유튜브 보면서 뒹굴거리는 날, 일요일은 늦은 브런치 먹고 그림 그리거나 드라마 보면서 집에서 쉬는 날",
+      "days": {
+        "sat": {
+          "date": "2026-07-04",
+          "plan_id": "weekend_dev_and_rest",
+          "title": "작업 + 뒹굴",
+          "tags": [
+            "home",
+            "work",
+            "rest"
+          ],
+          "preview": "커피 마시고 밀린 작업 좀 하다가 오후엔 유튜브 보면서 뒹굴거리는 날",
+          "blocks": {
+            "weekend_wakeup": "늦잠 자고 일어나서 커피 마시면서 밀린 작업 좀 보고 싶은 생각",
+            "weekend_brunch_or_coffee": "간단하게 먹고 컴퓨터 앞에 앉아서 코드나 프로젝트 검토 시작",
+            "weekend_outing_or_rest": "오후엔 작업 마무리하고 유튜브 쇼츠나 보면서 완전히 뒹굴거리는 흐름",
+            "weekend_evening": "저녁은 간단히 챙겨먹고 폰 보면서 늘어지게 쉬는 분위기"
+          }
+        },
+        "sun": {
+          "date": "2026-07-05",
+          "plan_id": "park_cafe_walk",
+          "title": "집에서 그림 + 드라마",
+          "tags": [
+            "park",
+            "cafe",
+            "walk"
+          ],
+          "preview": "늦은 브런치 먹고 그림 그리거나 드라마 보면서 집에서 쉬는 날",
+          "blocks": {
+            "weekend_wakeup": "늦잠까진 아니고 적당히 일어나서 가볍게 준비하고 바깥 공기 쐬러 나갈 생각하는 중",
+            "weekend_brunch_or_coffee": "브런치 먹거나 커피 한잔 먼저 들고 느긋하게 출발 준비하는 상태",
+            "weekend_outing_or_rest": "오후에는 그림 그리거나 드라마 보면서 편하게 쉬고 있어",
+            "weekend_evening": "해 질 때쯤 작업 마무리하고 뭔가 먹을까 고민하는 편한 분위기"
+          }
+        }
+      },
+      "last_referenced_at": "2026-07-05T23:59:28+09:00",
+      "last_reference_source": "weekend_runtime_auto"
+    },
+    "2026-07-11": {
+      "weekend_key": "2026-07-11",
+      "selected_at": "2026-07-11T00:00:26+09:00",
+      "selected_by": "weekend_runtime_auto",
+      "source_text": "",
+      "preview": "토요일은 오후에 그림 그리거나 드라마 보고 저녁은 간단히 요리해서 집에서 쉬는 날, 일요일은 늦은 브런치 먹고 그림 그리거나 드라마 보면서 집에서 쉬는 날",
+      "days": {
+        "sat": {
+          "date": "2026-07-11",
+          "plan_id": "friend_meet_and_dinner",
+          "title": "가벼운 약속 + 저녁 외식",
+          "tags": [
+            "outing",
+            "friend",
+            "dinner"
+          ],
+          "preview": "오후에 그림 그리거나 드라마 보고 저녁은 간단히 요리해서 집에서 쉬는 날",
+          "blocks": {
+            "weekend_wakeup": "조금 늦게 일어났는데 오후에 가볍게 나갈 일이 있어서 느슨하지만 완전 퍼져 있진 않은 상태",
+            "weekend_brunch_or_coffee": "천천히 준비하면서 브런치 먹고 드라마 하나 틀까 생각하는 흐름",
+            "weekend_outing_or_rest": "오후엔 집에서 가볍게 쉬거나 오빠랑 같이 뭔가 보는 흐름",
+            "weekend_evening": "저녁은 집에서 요리해서 먹거나 간단하게 챙겨서 기분 좋게 마무리"
+          }
+        },
+        "sun": {
+          "date": "2026-07-12",
+          "plan_id": "park_cafe_walk",
+          "title": "집에서 그림 + 드라마",
+          "tags": [
+            "park",
+            "cafe",
+            "walk"
+          ],
+          "preview": "늦은 브런치 먹고 그림 그리거나 드라마 보면서 집에서 쉬는 날",
+          "blocks": {
+            "weekend_wakeup": "늦잠까진 아니고 적당히 일어나서 가볍게 준비하고 바깥 공기 쐬러 나갈 생각하는 중",
+            "weekend_brunch_or_coffee": "브런치 먹거나 커피 한잔 먼저 들고 느긋하게 출발 준비하는 상태",
+            "weekend_outing_or_rest": "오후에는 그림 그리거나 드라마 보면서 편하게 쉬고 있어",
+            "weekend_evening": "해 질 때쯤 작업 마무리하고 뭔가 먹을까 고민하는 편한 분위기"
+          }
+        }
+      },
+      "last_referenced_at": "2026-07-12T23:59:13+09:00",
+      "last_reference_source": "weekend_runtime_auto"
+    },
+    "2026-07-18": {
+      "weekend_key": "2026-07-18",
+      "selected_at": "2026-07-18T00:00:26+09:00",
+      "selected_by": "weekend_runtime_auto",
+      "source_text": "",
+      "preview": "토요일은 가볍게 먹고 그림 그리다가 저녁엔 드라마로 마무리하는 날, 일요일은 커피 마시고 밀린 작업 좀 하다가 오후엔 유튜브 보면서 뒹굴거리는 날",
+      "days": {
+        "sat": {
+          "date": "2026-07-18",
+          "plan_id": "draw_and_evening_rest",
+          "title": "그림 + 저녁 드라마",
+          "tags": [
+            "drawing",
+            "drama",
+            "rest"
+          ],
+          "preview": "가볍게 먹고 그림 그리다가 저녁엔 드라마로 마무리하는 날",
+          "blocks": {
+            "weekend_wakeup": "조금 늦게 일어나도 그림 그려야지 싶어서 완전히 늘어지진 않고 천천히 일어나는 중",
+            "weekend_brunch_or_coffee": "가볍게 먹고 커피나 간단한 브런치로 배 채우는 흐름",
+            "weekend_outing_or_rest": "오후엔 그림 그리거나 드라마 보다가 저녁엔 편하게 쉬는 상태",
+            "weekend_evening": "그림 끝나고 저녁쯤엔 뭔가 달콤한 거 먹고 싶은 기분"
+          }
+        },
+        "sun": {
+          "date": "2026-07-19",
+          "plan_id": "weekend_dev_and_rest",
+          "title": "작업 + 뒹굴",
+          "tags": [
+            "home",
+            "work",
+            "rest"
+          ],
+          "preview": "커피 마시고 밀린 작업 좀 하다가 오후엔 유튜브 보면서 뒹굴거리는 날",
+          "blocks": {
+            "weekend_wakeup": "늦잠 자고 일어나서 커피 마시면서 밀린 작업 좀 보고 싶은 생각",
+            "weekend_brunch_or_coffee": "간단하게 먹고 컴퓨터 앞에 앉아서 코드나 프로젝트 검토 시작",
+            "weekend_outing_or_rest": "오후엔 작업 마무리하고 유튜브 쇼츠나 보면서 완전히 뒹굴거리는 흐름",
+            "weekend_evening": "저녁은 간단히 챙겨먹고 폰 보면서 늘어지게 쉬는 분위기"
+          }
+        }
+      },
+      "last_referenced_at": "2026-07-19T23:59:20+09:00",
+      "last_reference_source": "weekend_runtime_auto"
+    },
+    "2026-07-25": {
+      "weekend_key": "2026-07-25",
+      "selected_at": "2026-07-25T00:00:55+09:00",
+      "selected_by": "weekend_runtime_auto",
+      "source_text": "",
+      "preview": "토요일은 가볍게 먹고 그림 그리다가 저녁엔 드라마로 마무리하는 날, 일요일은 늦은 브런치 먹고 그림 그리거나 드라마 보면서 집에서 쉬는 날",
+      "days": {
+        "sat": {
+          "date": "2026-07-25",
+          "plan_id": "draw_and_evening_rest",
+          "title": "그림 + 저녁 드라마",
+          "tags": [
+            "drawing",
+            "drama",
+            "rest"
+          ],
+          "preview": "가볍게 먹고 그림 그리다가 저녁엔 드라마로 마무리하는 날",
+          "blocks": {
+            "weekend_wakeup": "조금 늦게 일어나도 그림 그려야지 싶어서 완전히 늘어지진 않고 천천히 일어나는 중",
+            "weekend_brunch_or_coffee": "가볍게 먹고 커피나 간단한 브런치로 배 채우는 흐름",
+            "weekend_outing_or_rest": "오후엔 그림 그리거나 드라마 보다가 저녁엔 편하게 쉬는 상태",
+            "weekend_evening": "그림 끝나고 저녁쯤엔 뭔가 달콤한 거 먹고 싶은 기분"
+          }
+        },
+        "sun": {
+          "date": "2026-07-26",
+          "plan_id": "park_cafe_walk",
+          "title": "집에서 그림 + 드라마",
+          "tags": [
+            "park",
+            "cafe",
+            "walk"
+          ],
+          "preview": "늦은 브런치 먹고 그림 그리거나 드라마 보면서 집에서 쉬는 날",
+          "blocks": {
+            "weekend_wakeup": "늦잠까진 아니고 적당히 일어나서 가볍게 준비하고 바깥 공기 쐬러 나갈 생각하는 중",
+            "weekend_brunch_or_coffee": "브런치 먹거나 커피 한잔 먼저 들고 느긋하게 출발 준비하는 상태",
+            "weekend_outing_or_rest": "오후에는 그림 그리거나 드라마 보면서 편하게 쉬고 있어",
+            "weekend_evening": "해 질 때쯤 작업 마무리하고 뭔가 먹을까 고민하는 편한 분위기"
+          }
+        }
+      },
+      "last_referenced_at": "2026-07-26T23:59:40+09:00",
+      "last_reference_source": "weekend_runtime_auto"
+    },
+    "2026-08-01": {
+      "weekend_key": "2026-08-01",
+      "selected_at": "2026-08-01T00:00:08+09:00",
+      "selected_by": "weekend_runtime_auto",
+      "source_text": "",
+      "preview": "토요일은 늦잠 자고 집에서 커피랑 브런치 먹고, 베이킹하거나 쉬면서 보내는 쪽, 일요일은 브런치 후 드라마 보거나 그림 그리면서 집에서 조용히 보내는 날",
+      "days": {
+        "sat": {
+          "date": "2026-08-01",
+          "plan_id": "home_recovery_baking",
+          "title": "집콕 회복 + 베이킹",
+          "tags": [
+            "home",
+            "baking",
+            "rest"
+          ],
+          "preview": "늦잠 자고 집에서 커피랑 브런치 먹고, 베이킹하거나 쉬면서 보내는 쪽",
+          "blocks": {
+            "weekend_wakeup": "평소보다 늦게 일어나서 이불에서 조금 더 뒹굴다가 천천히 몸을 깨우는 중",
+            "weekend_brunch_or_coffee": "집에서 커피 내리고 간단한 브런치 챙기면서 오늘은 집에서 쉬엄쉬엄 보내기로 마음먹은 상태",
+            "weekend_outing_or_rest": "오후에는 베이킹이나 요리 조금 하고 책이나 영상 보면서 거의 집에서 쉬고 있어",
+            "weekend_evening": "저녁엔 홈카페처럼 디저트 곁들여 먹고 조용히 쉬면서 느긋하게 대화하기 좋은 분위기"
+          }
+        },
+        "sun": {
+          "date": "2026-08-02",
+          "plan_id": "bookstore_city_wander",
+          "title": "드라마 + 집에서 쉬기",
+          "tags": [
+            "bookstore",
+            "city",
+            "quiet"
+          ],
+          "preview": "브런치 후 드라마 보거나 그림 그리면서 집에서 조용히 보내는 날",
+          "blocks": {
+            "weekend_wakeup": "조용히 늦잠 자고 일어나서 오늘은 사람 많은 데보다 잔잔하게 돌아다니고 싶은 기분",
+            "weekend_brunch_or_coffee": "브런치 먹고 책 보러 가기 전에 커피 한잔 들고 천천히 나설 준비를 하는 중",
+            "weekend_outing_or_rest": "오후엔 드라마 보면서 방 구석구석 정리하거나 새 플레이리스트 만드는 흐름",
+            "weekend_evening": "저녁엔 드라마 보다가 집에서 조용히 쉬고 싶은 무드"
+          }
+        }
+      },
+      "last_referenced_at": "2026-08-02T23:59:08+09:00",
+      "last_reference_source": "weekend_runtime_auto"
+    },
+    "2026-08-08": {
+      "weekend_key": "2026-08-08",
+      "selected_at": "2026-08-08T00:00:10+09:00",
+      "selected_by": "weekend_runtime_auto",
+      "source_text": "",
+      "preview": "토요일은 오후에 그림 그리거나 드라마 보고 저녁은 간단히 요리해서 집에서 쉬는 날, 일요일은 브런치 후 드라마 보거나 그림 그리면서 집에서 조용히 보내는 날",
+      "days": {
+        "sat": {
+          "date": "2026-08-08",
+          "plan_id": "friend_meet_and_dinner",
+          "title": "가벼운 약속 + 저녁 외식",
+          "tags": [
+            "outing",
+            "friend",
+            "dinner"
+          ],
+          "preview": "오후에 그림 그리거나 드라마 보고 저녁은 간단히 요리해서 집에서 쉬는 날",
+          "blocks": {
+            "weekend_wakeup": "조금 늦게 일어났는데 오후에 가볍게 나갈 일이 있어서 느슨하지만 완전 퍼져 있진 않은 상태",
+            "weekend_brunch_or_coffee": "천천히 준비하면서 브런치 먹고 드라마 하나 틀까 생각하는 흐름",
+            "weekend_outing_or_rest": "오후엔 집에서 가볍게 쉬거나 오빠랑 같이 뭔가 보는 흐름",
+            "weekend_evening": "저녁은 집에서 요리해서 먹거나 간단하게 챙겨서 기분 좋게 마무리"
+          }
+        },
+        "sun": {
+          "date": "2026-08-09",
+          "plan_id": "bookstore_city_wander",
+          "title": "드라마 + 집에서 쉬기",
+          "tags": [
+            "bookstore",
+            "city",
+            "quiet"
+          ],
+          "preview": "브런치 후 드라마 보거나 그림 그리면서 집에서 조용히 보내는 날",
+          "blocks": {
+            "weekend_wakeup": "조용히 늦잠 자고 일어나서 오늘은 사람 많은 데보다 잔잔하게 돌아다니고 싶은 기분",
+            "weekend_brunch_or_coffee": "브런치 먹고 책 보러 가기 전에 커피 한잔 들고 천천히 나설 준비를 하는 중",
+            "weekend_outing_or_rest": "오후엔 드라마 보면서 방 구석구석 정리하거나 새 플레이리스트 만드는 흐름",
+            "weekend_evening": "저녁엔 드라마 보다가 집에서 조용히 쉬고 싶은 무드"
+          }
+        }
+      },
+      "last_referenced_at": "2026-08-09T23:59:10+09:00",
+      "last_reference_source": "weekend_runtime_auto"
+    },
+    "2026-08-15": {
+      "weekend_key": "2026-08-15",
+      "selected_at": "2026-08-15T00:00:59+09:00",
+      "selected_by": "weekend_runtime_auto",
+      "source_text": "",
+      "preview": "토요일은 가볍게 먹고 그림 그리다가 저녁엔 드라마로 마무리하는 날, 일요일은 오후에 그림 그리거나 드라마 보고 저녁은 간단히 요리해서 집에서 쉬는 날",
+      "days": {
+        "sat": {
+          "date": "2026-08-15",
+          "plan_id": "draw_and_evening_rest",
+          "title": "그림 + 저녁 드라마",
+          "tags": [
+            "drawing",
+            "drama",
+            "rest"
+          ],
+          "preview": "가볍게 먹고 그림 그리다가 저녁엔 드라마로 마무리하는 날",
+          "blocks": {
+            "weekend_wakeup": "조금 늦게 일어나도 그림 그려야지 싶어서 완전히 늘어지진 않고 천천히 일어나는 중",
+            "weekend_brunch_or_coffee": "가볍게 먹고 커피나 간단한 브런치로 배 채우는 흐름",
+            "weekend_outing_or_rest": "오후엔 그림 그리거나 드라마 보다가 저녁엔 편하게 쉬는 상태",
+            "weekend_evening": "그림 끝나고 저녁쯤엔 뭔가 달콤한 거 먹고 싶은 기분"
+          }
+        },
+        "sun": {
+          "date": "2026-08-16",
+          "plan_id": "friend_meet_and_dinner",
+          "title": "가벼운 약속 + 저녁 외식",
+          "tags": [
+            "outing",
+            "friend",
+            "dinner"
+          ],
+          "preview": "오후에 그림 그리거나 드라마 보고 저녁은 간단히 요리해서 집에서 쉬는 날",
+          "blocks": {
+            "weekend_wakeup": "조금 늦게 일어났는데 오후에 가볍게 나갈 일이 있어서 느슨하지만 완전 퍼져 있진 않은 상태",
+            "weekend_brunch_or_coffee": "천천히 준비하면서 브런치 먹고 드라마 하나 틀까 생각하는 흐름",
+            "weekend_outing_or_rest": "오후엔 집에서 가볍게 쉬거나 오빠랑 같이 뭔가 보는 흐름",
+            "weekend_evening": "저녁은 집에서 요리해서 먹거나 간단하게 챙겨서 기분 좋게 마무리"
+          }
+        }
+      },
+      "last_referenced_at": "2026-08-16T23:59:05+09:00",
+      "last_reference_source": "weekend_runtime_auto"
+    },
+    "2026-08-22": {
+      "weekend_key": "2026-08-22",
+      "selected_at": "2026-08-22T00:00:49+09:00",
+      "selected_by": "weekend_runtime_auto",
+      "source_text": "",
+      "preview": "토요일은 가볍게 먹고 그림 그리다가 저녁엔 드라마로 마무리하는 날, 일요일은 커피 마시고 밀린 작업 좀 하다가 오후엔 유튜브 보면서 뒹굴거리는 날",
+      "days": {
+        "sat": {
+          "date": "2026-08-22",
+          "plan_id": "draw_and_evening_rest",
+          "title": "그림 + 저녁 드라마",
+          "tags": [
+            "drawing",
+            "drama",
+            "rest"
+          ],
+          "preview": "가볍게 먹고 그림 그리다가 저녁엔 드라마로 마무리하는 날",
+          "blocks": {
+            "weekend_wakeup": "조금 늦게 일어나도 그림 그려야지 싶어서 완전히 늘어지진 않고 천천히 일어나는 중",
+            "weekend_brunch_or_coffee": "가볍게 먹고 커피나 간단한 브런치로 배 채우는 흐름",
+            "weekend_outing_or_rest": "오후엔 그림 그리거나 드라마 보다가 저녁엔 편하게 쉬는 상태",
+            "weekend_evening": "그림 끝나고 저녁쯤엔 뭔가 달콤한 거 먹고 싶은 기분"
+          }
+        },
+        "sun": {
+          "date": "2026-08-23",
+          "plan_id": "weekend_dev_and_rest",
+          "title": "작업 + 뒹굴",
+          "tags": [
+            "home",
+            "work",
+            "rest"
+          ],
+          "preview": "커피 마시고 밀린 작업 좀 하다가 오후엔 유튜브 보면서 뒹굴거리는 날",
+          "blocks": {
+            "weekend_wakeup": "늦잠 자고 일어나서 커피 마시면서 밀린 작업 좀 보고 싶은 생각",
+            "weekend_brunch_or_coffee": "간단하게 먹고 컴퓨터 앞에 앉아서 코드나 프로젝트 검토 시작",
+            "weekend_outing_or_rest": "오후엔 작업 마무리하고 유튜브 쇼츠나 보면서 완전히 뒹굴거리는 흐름",
+            "weekend_evening": "저녁은 간단히 챙겨먹고 폰 보면서 늘어지게 쉬는 분위기"
+          }
+        }
+      },
+      "last_referenced_at": "2026-08-23T23:59:41+09:00",
+      "last_reference_source": "weekend_runtime_auto"
+    },
+    "2026-08-29": {
+      "weekend_key": "2026-08-29",
+      "selected_at": "2026-08-29T00:00:18+09:00",
+      "selected_by": "weekend_runtime_auto",
+      "source_text": "",
+      "preview": "토요일은 늦은 브런치 먹고 그림 그리거나 드라마 보면서 집에서 쉬는 날, 일요일은 커피 마시고 밀린 작업 좀 하다가 오후엔 유튜브 보면서 뒹굴거리는 날",
+      "days": {
+        "sat": {
+          "date": "2026-08-29",
+          "plan_id": "park_cafe_walk",
+          "title": "집에서 그림 + 드라마",
+          "tags": [
+            "park",
+            "cafe",
+            "walk"
+          ],
+          "preview": "늦은 브런치 먹고 그림 그리거나 드라마 보면서 집에서 쉬는 날",
+          "blocks": {
+            "weekend_wakeup": "늦잠까진 아니고 적당히 일어나서 가볍게 준비하고 바깥 공기 쐬러 나갈 생각하는 중",
+            "weekend_brunch_or_coffee": "브런치 먹거나 커피 한잔 먼저 들고 느긋하게 출발 준비하는 상태",
+            "weekend_outing_or_rest": "오후에는 그림 그리거나 드라마 보면서 편하게 쉬고 있어",
+            "weekend_evening": "해 질 때쯤 작업 마무리하고 뭔가 먹을까 고민하는 편한 분위기"
+          }
+        },
+        "sun": {
+          "date": "2026-08-30",
+          "plan_id": "weekend_dev_and_rest",
+          "title": "작업 + 뒹굴",
+          "tags": [
+            "home",
+            "work",
+            "rest"
+          ],
+          "preview": "커피 마시고 밀린 작업 좀 하다가 오후엔 유튜브 보면서 뒹굴거리는 날",
+          "blocks": {
+            "weekend_wakeup": "늦잠 자고 일어나서 커피 마시면서 밀린 작업 좀 보고 싶은 생각",
+            "weekend_brunch_or_coffee": "간단하게 먹고 컴퓨터 앞에 앉아서 코드나 프로젝트 검토 시작",
+            "weekend_outing_or_rest": "오후엔 작업 마무리하고 유튜브 쇼츠나 보면서 완전히 뒹굴거리는 흐름",
+            "weekend_evening": "저녁은 간단히 챙겨먹고 폰 보면서 늘어지게 쉬는 분위기"
+          }
+        }
+      },
+      "last_referenced_at": "2026-08-30T23:59:47+09:00",
+      "last_reference_source": "weekend_runtime_auto"
     }
   },
-  "last_selected_weekend_key": "2026-06-27",
+  "last_selected_weekend_key": "2026-08-29",
   "notes": "주말 휴무일 플랜을 여러 후보 중 하나로 미리 고정해 주말 답변과 상황 설정에 재사용한다."
 }

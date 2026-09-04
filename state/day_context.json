@@ -2,7 +2,7 @@
   "schema_version": 1,
   "timezone": "Asia/Seoul",
   "managed_by": "situation_engine",
-  "date": "2026-07-03",
+  "date": "2026-09-04",
   "day_type": "weekday",
   "workday": true,
   "duty_day": false,
@@ -12,24 +12,24 @@
     "emotional_residue": "calm_and_open"
   },
   "morning_context": {
-    "status": "active",
+    "status": "inactive",
     "summary": "오전이 예상보다 조금 바빴다, 누적 피로는 있지만 주말이 가까워서 감정은 조금 더 밝아지고 퇴근 후 여유를 기대하게 되는 날",
     "tone_bias": "busy_but_caring"
   },
   "lunch_context": {
     "status": "inactive",
-    "summary": "잠깐 먹으러 나왔어, 한 주가 끝을 향한다는 안도감이 조금 생겨서 피곤해도 감정선이 살짝 부드러워지는 날",
-    "tone_bias": "light_playful"
+    "summary": "점심 먹으러 가려는/가는 중 (아직 안 먹음), 누적 피로는 있지만 주말이 가까워서 감정은 조금 더 밝아지고 퇴근 후 여유를 기대하게 되는 날",
+    "tone_bias": "quietly_preoccupied"
   },
   "after_work_context": {
-    "status": "inactive",
-    "summary": "작업 중에 기분 좋은 노래를 들었다, 한 주가 끝을 향한다는 안도감이 조금 생겨서 피곤해도 감정선이 살짝 부드러워지는 날",
-    "tone_bias": "cozy_and_open"
+    "status": "active",
+    "summary": "작업 중에 기분 좋은 노래를 들었다, 누적 피로는 있지만 주말이 가까워서 감정은 조금 더 밝아지고 퇴근 후 여유를 기대하게 되는 날",
+    "tone_bias": "light_playful"
   },
   "evening_context": {
     "status": "inactive",
-    "summary": "운동이 생각보다 잘 돼서 기분이 좋았다, 한 주가 끝을 향한다는 안도감이 조금 생겨서 피곤해도 감정선이 살짝 부드러워지는 날",
-    "tone_bias": "quietly_preoccupied"
+    "summary": "직접 한 저녁을 이제 막 먹기 시작한 상태, 누적 피로는 있지만 주말이 가까워서 감정은 조금 더 밝아지고 퇴근 후 여유를 기대하게 되는 날",
+    "tone_bias": "mentally_busy"
   },
   "night_context": {
     "status": "inactive",
@@ -38,14 +38,14 @@
   },
   "selected_events": [
     {
-      "id": "busy_morning_shift",
-      "tone": "slightly_tiring",
-      "summary": "오전이 예상보다 조금 바빴다"
+      "id": "good_song_on_the_way_home",
+      "tone": "positive",
+      "summary": "작업 중에 기분 좋은 노래를 들었다"
     },
     {
-      "id": "hair_tie_on_wrist",
+      "id": "bedside_mug",
       "tone": "ambient",
-      "summary": "머리끈을 손목에 걸친 채로 돌아다닌다"
+      "summary": "협탁 쪽에 머그컵이 하나 남아 있다"
     }
   ],
   "user_emotional_context": {
@@ -73,14 +73,31 @@
   "schedule_label": "",
   "schedule_source": "weekday_default",
   "upcoming_weekend_plan": {
-    "weekend_key": "2026-06-27",
-    "selected_at": "2026-06-27T00:00:05+09:00",
+    "weekend_key": "2026-08-29",
+    "selected_at": "2026-08-29T00:00:18+09:00",
     "selected_by": "weekend_runtime_auto",
     "source_text": "",
-    "preview": "토요일은 커피 마시고 밀린 작업 좀 하다가 오후엔 유튜브 보면서 뒹굴거리는 날, 일요일은 늦잠 자고 집에서 커피랑 브런치 먹고, 베이킹하거나 쉬면서 보내는 쪽",
+    "preview": "토요일은 늦은 브런치 먹고 그림 그리거나 드라마 보면서 집에서 쉬는 날, 일요일은 커피 마시고 밀린 작업 좀 하다가 오후엔 유튜브 보면서 뒹굴거리는 날",
     "days": {
       "sat": {
-        "date": "2026-06-27",
+        "date": "2026-08-29",
+        "plan_id": "park_cafe_walk",
+        "title": "집에서 그림 + 드라마",
+        "tags": [
+          "park",
+          "cafe",
+          "walk"
+        ],
+        "preview": "늦은 브런치 먹고 그림 그리거나 드라마 보면서 집에서 쉬는 날",
+        "blocks": {
+          "weekend_wakeup": "늦잠까진 아니고 적당히 일어나서 가볍게 준비하고 바깥 공기 쐬러 나갈 생각하는 중",
+          "weekend_brunch_or_coffee": "브런치 먹거나 커피 한잔 먼저 들고 느긋하게 출발 준비하는 상태",
+          "weekend_outing_or_rest": "오후에는 그림 그리거나 드라마 보면서 편하게 쉬고 있어",
+          "weekend_evening": "해 질 때쯤 작업 마무리하고 뭔가 먹을까 고민하는 편한 분위기"
+        }
+      },
+      "sun": {
+        "date": "2026-08-30",
         "plan_id": "weekend_dev_and_rest",
         "title": "작업 + 뒹굴",
         "tags": [
@@ -95,26 +112,9 @@
           "weekend_outing_or_rest": "오후엔 작업 마무리하고 유튜브 쇼츠나 보면서 완전히 뒹굴거리는 흐름",
           "weekend_evening": "저녁은 간단히 챙겨먹고 폰 보면서 늘어지게 쉬는 분위기"
         }
-      },
-      "sun": {
-        "date": "2026-06-28",
-        "plan_id": "home_recovery_baking",
-        "title": "집콕 회복 + 베이킹",
-        "tags": [
-          "home",
-          "baking",
-          "rest"
-        ],
-        "preview": "늦잠 자고 집에서 커피랑 브런치 먹고, 베이킹하거나 쉬면서 보내는 쪽",
-        "blocks": {
-          "weekend_wakeup": "평소보다 늦게 일어나서 이불에서 조금 더 뒹굴다가 천천히 몸을 깨우는 중",
-          "weekend_brunch_or_coffee": "집에서 커피 내리고 간단한 브런치 챙기면서 오늘은 집에서 쉬엄쉬엄 보내기로 마음먹은 상태",
-          "weekend_outing_or_rest": "오후에는 베이킹이나 요리 조금 하고 책이나 영상 보면서 거의 집에서 쉬고 있어",
-          "weekend_evening": "저녁엔 홈카페처럼 디저트 곁들여 먹고 조용히 쉬면서 느긋하게 대화하기 좋은 분위기"
-        }
       }
     },
-    "last_referenced_at": "2026-06-28T23:59:02+09:00",
+    "last_referenced_at": "2026-08-30T23:59:47+09:00",
     "last_reference_source": "weekend_runtime_auto"
   },
   "weekend_plan": null,
@@ -130,19 +130,19 @@
     "lunch_policy": "home_lunch_prep",
     "dinner": {
       "mode": "cook",
-      "menu": "볶음밥이랑 계란후라이",
+      "menu": "간단한 파스타",
       "deciding_minutes": 10,
-      "prepare_minutes": 15,
+      "prepare_minutes": 22,
       "wait_minutes": 0,
       "eat_minutes": 30
     }
   },
   "state_integrity": {
-    "last_transition_reason": "runtime_bootstrap",
-    "previous_activity": "morning_prep",
-    "current_activity": "morning_work",
+    "last_transition_reason": "weekday_evening",
+    "previous_activity": "evening_free",
+    "current_activity": "evening_free",
     "skipped_time_blocks": [],
     "humanized_feedback": [],
-    "evaluated_at": "2026-07-03T08:00:02+09:00"
+    "evaluated_at": "2026-09-04T20:30:56+09:00"
   }
 }

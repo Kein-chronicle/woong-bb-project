@@ -2,7 +2,7 @@
   "schema_version": 1,
   "managed_by": "user_persona_tracker",
   "purpose": "오빠(사용자) 페르소나 능동 추적. 대화 중 흘린 정보를 캐치해 누적 → 다음 대화에서 참조해 '오빠 그거 좋아하잖아' 식 회수. Mutual persona가 실존감의 핵심.",
-  "last_updated_at": "2026-05-27T21:26:00+09:00",
+  "last_updated_at": "2026-07-13T19:49:00+09:00",
   "auto_update_by_worker": true,
   "items": {
     "preferences": {
@@ -19,7 +19,15 @@
       "music_genre": [],
       "ott_content": [],
       "places": [],
-      "hobbies": [],
+      "hobbies": [
+        {
+          "value": "퇴근 후 수영을 가는 날이 있음",
+          "source_excerpt": "곧 수영갈거같아",
+          "captured_at": "2026-07-13T19:49:00+09:00",
+          "confidence": "medium",
+          "use_count": 0
+        }
+      ],
       "dislikes": []
     },
     "habits_and_routines": {
@@ -46,7 +54,22 @@
         "use_count": 0
       }
     ],
-    "stated_plans": [],
+    "stated_plans": [
+      {
+        "value": "2026-07-07 오전 11시부터 15시 정도까지 외근 예정",
+        "source_excerpt": "난 곧 외근 나가야해 아마 11시부터 3시? 정도까지 외근할것 같아",
+        "captured_at": "2026-07-07T11:01:00+09:00",
+        "confidence": "high",
+        "use_count": 0
+      },
+      {
+        "value": "2026-07-13 퇴근 후 집에서 저녁을 먹고 곧 수영 갈 예정",
+        "source_excerpt": "퇴근하고 집와서 저녁먹었어 ㅎ / 곧 수영갈거같아",
+        "captured_at": "2026-07-13T19:49:00+09:00",
+        "confidence": "high",
+        "use_count": 0
+      }
+    ],
     "past_shared_memories_with_woongbbi": [],
     "sensitive_topics_to_avoid": [],
     "verbal_quirks_user_uses": []
@@ -113,8 +136,8 @@
       "question_hint": "하루 일과·작업 패턴·바쁜 정도"
     },
     "exercise_health": {
-      "known": false,
-      "value": null,
+      "known": true,
+      "value": "퇴근 후 수영을 가는 날이 있음",
       "question_hint": "운동하는지, 건강 챙기는지"
     },
     "personality_mbti": {
@@ -260,6 +283,30 @@
         "answered": false,
         "value": null,
         "created_at": "2026-05-27T21:26:00+09:00"
+      },
+      {
+        "from_category": "exercise_health",
+        "question": "오빠 수영은 보통 일주일에 몇 번 가는지 궁금해",
+        "asked": false,
+        "answered": false,
+        "value": null,
+        "created_at": "2026-07-13T19:49:00+09:00"
+      },
+      {
+        "from_category": "exercise_health",
+        "question": "수영 끝나고 나면 뭐 먹거나 마시는 루틴 있는지도 궁금해",
+        "asked": false,
+        "answered": false,
+        "value": null,
+        "created_at": "2026-07-13T19:49:00+09:00"
+      },
+      {
+        "from_category": "exercise_health",
+        "question": "오빠는 자유형이 제일 편한지 다른 영법도 하는지 궁금해",
+        "asked": false,
+        "answered": false,
+        "value": null,
+        "created_at": "2026-07-13T19:49:00+09:00"
       }
     ],
     "schema_per_item": {

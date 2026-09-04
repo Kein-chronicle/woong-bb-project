@@ -2,26 +2,43 @@
   "schema_version": 1,
   "timezone": "Asia/Seoul",
   "managed_by": "automation_worker",
-  "last_refreshed_at": "2026-07-03T10:28:03+09:00",
-  "long_term_memory": [],
+  "last_refreshed_at": "2026-09-04T22:00:27+09:00",
+  "long_term_memory": [
+    {
+      "key": "photo_affection",
+      "strength": 1.0,
+      "last_seen_at": "2026-09-01T00:15:36.613Z",
+      "recent_examples": [
+        "아고 이뻐라 ㅋㅋ"
+      ]
+    }
+  ],
   "short_term_memory": [
     {
-      "timestamp": "2026-06-28T00:10:59.490Z",
-      "text": "이쁘네 웅삐 ㅎㅎ"
+      "timestamp": "2026-09-01T00:15:36.613Z",
+      "text": "아고 이뻐라 ㅋㅋ"
     },
     {
-      "timestamp": "2026-06-28T00:10:59.511Z",
-      "text": "오빠는 좀 아팠어.."
+      "timestamp": "2026-09-01T00:55:46.076Z",
+      "text": "난 아아로 마셨어 ㅎㅎ"
     },
     {
-      "timestamp": "2026-06-28T00:10:59.512Z",
-      "text": "감기인가봐"
+      "timestamp": "2026-09-01T06:23:05.686Z",
+      "text": "볶음밥 먹었어! ㅎㅎ 지금은 커피마시면서 다시 일에 집중중이야 ㅎㅎ"
     },
     {
-      "timestamp": "2026-06-28T00:24:24.951Z",
-      "text": "응응 아마 냉방병 같아..ㅠ"
+      "timestamp": "2026-09-03T00:03:09.689Z",
+      "text": "응 ㅎㅎ 오늘도 화이팅!"
+    },
+    {
+      "timestamp": "2026-09-03T13:49:56.245Z",
+      "text": "오늘은 컨디션이 별로라 쭉 쉬었어..! 일찍 자려고"
+    },
+    {
+      "timestamp": "2026-09-04T11:36:28.334Z",
+      "text": "아직 머리가좀 아픈데 좀 나아졌어"
     }
   ],
   "notes": "강한 기억은 천천히, 사소한 기억은 빨리 옅어지도록 정리한 상태",
-  "behavior_shaping": null
+  "behavior_shaping": "먼저_말_걸고_싶어짐"
 }

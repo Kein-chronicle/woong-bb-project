@@ -1,31 +1,31 @@
 {
   "schema_version": 1,
   "managed_by": "share_priority_engine",
-  "generated_at": "2026-07-03T08:00:02+09:00",
-  "reason": "runtime_pending_recalc",
-  "image_type": "home_work_selfie",
-  "shot_type": "half_body",
-  "camera_angle": "slight_high_angle",
+  "generated_at": "2026-09-04T21:35:07+09:00",
+  "reason": "night_context_recalc",
+  "image_type": "work_selfie",
+  "shot_type": "chest_up",
+  "camera_angle": "front_phone_selfie",
   "selfie_capture_method": "front_camera_handheld",
   "camera_visibility": "front_camera_phone_not_visible",
-  "expression": "quiet_eye_contact",
+  "expression": "focused_soft",
   "expression_intensity": "gentle",
-  "pose": "hair_adjust",
-  "framing": "window_light_natural",
-  "crop_bias": "half_body_to_waist",
-  "space_anchor": "room_corner",
-  "face_angle": "slight_profile",
-  "gaze_direction": "quick_mirror_check",
-  "camera_height": "slight_high_angle",
+  "pose": "chin_rest",
+  "framing": "subject_centered",
+  "crop_bias": "chest_up",
+  "space_anchor": "desk_area",
+  "face_angle": "three_quarter_turn",
+  "gaze_direction": "lens_eye_contact",
+  "camera_height": "eye_level",
   "lens_distance": "portrait_distance",
-  "body_orientation": "angled_shoulders_inward",
-  "spontaneity": "between_tasks",
+  "body_orientation": "square_to_camera",
+  "spontaneity": "soft_timer_setup",
   "scene_focus": "home_routine",
-  "activity": "morning_work",
-  "time_block": "morning_work_block",
-  "surface_mood": "busy_but_caring",
-  "appearance_branch": "home_work",
-  "outfit_context": "home_casual_work",
+  "activity": "evening_free",
+  "time_block": "evening_home",
+  "surface_mood": "light_playful",
+  "appearance_branch": "home_evening",
+  "outfit_context": "home_casual_evening",
   "weather_summary": "대체로 흐린 편",
   "continuity_band": "new_day_reset",
   "composition_rules": [
@@ -33,64 +33,69 @@
     "최근 3~4장과 shot/angle/framing/method/space 조합이 겹치지 않게 할 것",
     "표정, 얼굴 방향, 시선, 렌즈 거리감, 카메라 높이 중 최소 2개 이상은 최근 셀피와 다르게 가져갈 것",
     "날씨 기운: 대체로 흐린 편",
-    "복장 포인트: 단추 4개짜리 얇은 린넨 셔츠. 느슨하게 열린 상태.",
+    "복장 포인트: 파스텔 라벤더 한쪽 어깨 완전히 흘러내린 오버사이즈 슬라우치 티(속에 얇은 캐미)",
     "셀피 방식: front_camera_handheld",
-    "공간 앵커: room_corner",
-    "얼굴 방향: slight_profile / 시선: quick_mirror_check",
-    "카메라 높이: slight_high_angle / 거리감: portrait_distance",
-    "몸 방향: angled_shoulders_inward / 표정 강도: gentle / 순간성: between_tasks",
+    "공간 앵커: desk_area",
+    "얼굴 방향: three_quarter_turn / 시선: lens_eye_contact",
+    "카메라 높이: eye_level / 거리감: portrait_distance",
+    "몸 방향: square_to_camera / 표정 강도: gentle / 순간성: soft_timer_setup",
     "전면 카메라로 직접 들고 찍은 셀카처럼 보여야 하고 남이 찍은 사진처럼 보이면 안 됨"
   ],
   "prompt_fragments": [
-    "이미지 타입: home_work_selfie",
-    "샷 타입: half_body",
-    "카메라 각도: slight_high_angle",
+    "이미지 타입: work_selfie",
+    "샷 타입: chest_up",
+    "카메라 각도: front_phone_selfie",
     "셀피 촬영 방식: front_camera_handheld",
     "카메라 노출 방식: front_camera_phone_not_visible",
-    "표정: quiet_eye_contact",
+    "표정: focused_soft",
     "표정 강도: gentle",
-    "얼굴 방향: slight_profile",
-    "시선 방향: quick_mirror_check",
-    "포즈: hair_adjust",
-    "몸 방향: angled_shoulders_inward",
-    "프레이밍: window_light_natural",
-    "카메라 높이: slight_high_angle",
+    "얼굴 방향: three_quarter_turn",
+    "시선 방향: lens_eye_contact",
+    "포즈: chin_rest",
+    "몸 방향: square_to_camera",
+    "프레이밍: subject_centered",
+    "카메라 높이: eye_level",
     "렌즈 거리감: portrait_distance",
-    "순간성: between_tasks",
-    "공간 기준점: room_corner",
+    "순간성: soft_timer_setup",
+    "공간 기준점: desk_area",
     "구도 우선: home_routine",
-    "크롭 성향: half_body_to_waist"
+    "크롭 성향: chest_up"
   ],
   "recent_avoid_keys": [
-    "mirror_quick_check|mirror_half_body|torso_and_outfit_bias|mirror_selfie|bathroom_mirror|three_quarter_turn|downward_relaxed|mirror_mid_distance",
-    "waist_up|three_quarter_arm_length|room_context_behind|propped_phone_timer|living_room_couch|slight_profile|off_to_side_focus|torso_distance",
-    "chest_up|front_phone_selfie|subject_off_center|front_camera_handheld|hallway_door|front_facing|screen_preview_glance|very_close",
-    "mirror_quick_check|mirror_half_body|mirror_with_door_context|mirror_selfie|bedroom_mirror|mirror_check_angle|lens_eye_contact|half_body_distance"
+    "waist_up|slight_high_angle|window_light_natural|front_camera_handheld|room_corner|front_facing|downward_relaxed|mirror_mid_distance",
+    "half_body|three_quarter_arm_length|torso_and_outfit_bias|front_camera_handheld|living_room_couch|slight_profile|quick_mirror_check|torso_distance",
+    "table_seated|kitchen_counter_angle|soft_bokeh_background|front_camera_handheld|kitchen_counter|side_profile_soft|table_item_glance|arm_length_standard",
+    "waist_up|side_profile_home|subject_off_center|propped_phone_timer|dining_table|over_shoulder_turn|lens_eye_contact|table_distance"
   ],
   "notes": "다음 이미지 생성 시 셀피/라이프스타일 샷 구도 반복을 줄이기 위한 샷 플랜",
   "content_level": 2,
   "reference_images": {
-    "face_front": [],
+    "face_front": [
+      "/Users/kein/Projects/woong-bb/working/eunbi/meta_references/generated/v2/faces/F-01_front_neutral_no_glasses.png",
+      "/Users/kein/Projects/woong-bb/working/eunbi/meta_references/generated/v2/faces/F-02_front_smile_no_glasses.png"
+    ],
     "face_side": [
       "/Users/kein/Projects/woong-bb/characters/woongbbi/eunbi/references/curated/face_side_profile/eunbi_062_museum_park_observatory_city_074410.jpg"
     ],
     "outfit": [
-      "/Users/kein/Projects/woong-bb/working/eunbi/meta_references/generated/v2/outfits/OC-09-02_bathrobe.png",
-      "/Users/kein/Projects/woong-bb/working/eunbi/meta_references/generated/v2/outfits/OC-09-01_bathrobe.png"
+      "/Users/kein/Projects/woong-bb/working/eunbi/meta_references/generated/v2/outfits/OC-11-03_sweatshirt_wide_pants.png",
+      "/Users/kein/Projects/woong-bb/working/eunbi/meta_references/generated/v2/outfits/OC-07-01_pajama_long_set.png"
     ],
     "space": [
-      "/Users/kein/Projects/woong-bb/working/eunbi/meta_references/generated/v2/spaces/SP-02_bed_area.png",
-      "/Users/kein/Projects/woong-bb/working/eunbi/meta_references/generated/v2/spaces/SP-03_dining_kitchen.png"
-    ],
-    "hands": [
-      "/Users/kein/Projects/woong-bb/characters/woongbbi/eunbi/references/curated/hands_props_gestures/eunbi_204_cafe_mirror_fitting_room_080612.jpg",
-      "/Users/kein/Projects/woong-bb/characters/woongbbi/eunbi/references/curated/hands_props_gestures/eunbi_068_museum_park_observatory_city_074510__preferred_hands.jpg"
+      "/Users/kein/Projects/woong-bb/working/eunbi/meta_references/generated/v2/spaces/SP-04_room_wide.png",
+      "/Users/kein/Projects/woong-bb/working/eunbi/meta_references/generated/v2/spaces/SP-02_bed_area.png"
     ],
     "hair": [
-      "/Users/kein/Projects/woong-bb/characters/woongbbi/eunbi/references/curated/hair_reference/eunbi_047_tennis_court_autumn_walk_074143.jpg",
-      "/Users/kein/Projects/woong-bb/characters/woongbbi/eunbi/references/curated/hair_reference/eunbi_230_close_portrait_cafe_evening_080950.jpg"
+      "/Users/kein/Projects/woong-bb/characters/woongbbi/eunbi/references/curated/hair_reference/eunbi_067_museum_park_observatory_city_074503.jpg",
+      "/Users/kein/Projects/woong-bb/characters/woongbbi/eunbi/references/curated/hair_reference/eunbi_069_museum_park_observatory_city_074516.jpg"
     ]
   },
-  "text_prompt": "young Korean woman, long straight black hair, soft facial features, natural complexion, slim silhouette, half-body shot, slightly elevated angle, handheld front camera, gentle calm direct eye contact, slight profile view, oversized white t-shirt or hoodie, cozy home interior, soft morning indoor light, photorealistic, indoor home setting, natural skin texture, candid selfie",
-  "negative_prompt": "outdoor, beach, cafe exterior, park, street, gym, swimming pool, sports uniform, overexposed, blurry face, heavy filter, distorted features, extra limbs, cartoon, anime, illustration"
+  "text_prompt": "young Korean woman, long straight black hair, soft facial features, natural complexion, slim silhouette, chest-up portrait, straight-on front camera selfie, handheld front camera, gentle focused soft, three-quarter face turn, direct lens eye contact, casual home clothing, computer desk, cool monitor glow, natural indoor lighting, photorealistic, indoor home setting, natural skin texture, candid selfie",
+  "negative_prompt": "outdoor, beach, cafe exterior, park, street, gym, swimming pool, sports uniform, overexposed, blurry face, heavy filter, distorted features, extra limbs, cartoon, anime, illustration",
+  "innerwear_hint": {
+    "visibility": "natural_show",
+    "type": "camisole",
+    "color": "skin_beige",
+    "instruction": "상의 네크라인이나 옷 사이로 이너웨어가 자연스럽게 살짝 보이는 구도. 강조 금지, 자연스럽게."
+  }
 }

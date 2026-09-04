@@ -6,17 +6,17 @@
   "singleton_lock": {
     "path": "/Users/kein/Projects/woong-bb/state/runtime/automation_worker.lock",
     "active": true,
-    "generation": 11
+    "generation": 5
   },
-  "active_pid": 1696,
-  "last_heartbeat_at": "2026-07-03T10:28:03+09:00",
-  "last_success_at": "2026-07-03T10:28:03+09:00",
+  "active_pid": 1530,
+  "last_heartbeat_at": "2026-09-04T22:00:27+09:00",
+  "last_success_at": "2026-09-04T22:00:27+09:00",
   "last_error_at": "2026-05-30T19:24:58+09:00",
   "last_error_summary": null,
   "duplicate_suspected": false,
   "pending_control_action": null,
   "last_applied_action": "start",
-  "last_applied_at": "2026-07-03T00:46:22+09:00",
+  "last_applied_at": "2026-08-30T22:22:12+09:00",
   "last_action_result": "started",
   "notes": "worker 감시와 제어를 위한 supervisor 상태"
 }

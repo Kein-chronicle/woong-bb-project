@@ -202,7 +202,7 @@ The project has:
 - a recalc design that decides when the sharing score should be recomputed
 - a share event flow that binds trigger, scoring, candidate selection, delivery, and logging
 - a reinforcement preference system that accumulates what the user likes or dislikes by topic, action, and delivery style
-- a project-owned automation worker design for timers, recalculation, growth, research, and auto-event execution
+- a project-owned automation worker for timers, recalculation, proactive companion messages (weather/news/routine brief), and auto-event execution
 - a supervision/control design for launchd-based worker monitoring, singleton safety, heartbeat, and restart control
 - active persona/profile files
 - initial message and calendar storage
